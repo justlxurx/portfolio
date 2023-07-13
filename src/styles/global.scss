@@ -1,6 +1,12 @@
 @import 'normalize.css';
+@import './variables.scss';
 
 html,
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
+
+  &::selection {
+    background: $secondary-color;
+    color: $white-color;
+  }
 }
