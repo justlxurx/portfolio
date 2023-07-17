@@ -4,7 +4,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 7px 40px;
+  padding: 7px 0;
 }
 
 .info {
@@ -33,7 +33,6 @@
   &__buttons_wrapper {
     display: flex;
     gap: 30px;
-    list-style: none;
   }
 }
 
@@ -47,7 +46,7 @@
 
 @media (max-width: $desktop-width) {
   .header {
-    padding: 3px 40px;
+    padding: 3px 0;
   }
 
   .navigation {
@@ -63,7 +62,7 @@
 
 @media (max-width: $tablet-width) {
   .header {
-    padding: 16px;
+    padding: 16px 0;
   }
 
   .navigation {

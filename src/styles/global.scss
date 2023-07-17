@@ -1,12 +1,53 @@
 @import 'normalize.css';
 @import './variables.scss';
 
+::selection {
+  background: $secondary-color;
+  color: $white-color;
+}
+
 html,
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
+}
 
-  &::selection {
-    background: $secondary-color;
-    color: $white-color;
+h1,
+h2,
+h3,
+h4,
+h4,
+h6,
+p,
+span {
+  color: $primary-color;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1593px;
+  margin: 0 auto;
+}
+
+@media (max-width: $desktop-width) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 863px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: calc(100% - 32px);
   }
 }
