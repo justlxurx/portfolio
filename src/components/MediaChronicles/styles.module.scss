@@ -1,5 +1,9 @@
 @import '/src/styles/variables.scss';
 
+.container {
+  margin-top: 140px;
+}
+
 .header {
   font-size: 54px;
   font-weight: 400;
@@ -92,7 +96,6 @@
   }
 
   &__cover {
-    // image-rendering: pixelated;
     background-repeat: no-repeat;
     background-position: center;
     aspect-ratio: 5/1;
@@ -120,7 +123,6 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-    //max-width: 50%;
     margin-right: 20px;
     font-size: 76px;
     line-height: 112%;
@@ -149,6 +151,10 @@
 }
 
 @media (max-width: $desktop-width) {
+  .container {
+    margin-top: 60px;
+  }
+
   .header {
     font-size: 29.307px;
     line-height: 21.709px;

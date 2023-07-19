@@ -8,6 +8,7 @@
 
 html,
 body {
+  background-color: $background-color;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
@@ -32,7 +33,7 @@ ul {
 .container {
   padding-left: 40px;
   padding-right: 40px;
-  max-width: 1593px;
+  max-width: 1588px;
   margin: 0 auto;
 }
 

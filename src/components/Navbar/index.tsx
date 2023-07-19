@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 import FeedbackButton from '../ui/FeedbackButton'
 import HamburgerButton from '../ui/HamburgerButton'
 import NavButton from '../ui/NavButton/index'
@@ -34,7 +36,7 @@ const Navbar = () => {
         <nav className={styles.navigation}>
           <ul className={styles.navigation__buttons_wrapper}>
             {buttons.map((button: INavButton) => (
-              <li key={button.path}>
+              <li key={nanoid()}>
                 <NavButton {...button} />
               </li>
             ))}

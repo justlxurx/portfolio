@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import Distance from '@/components/Distance'
 import MediaChronicles from '@/components/MediaChronicles'
 import Navbar from '@/components/Navbar/index'
 
@@ -10,6 +11,7 @@ export default function Home() {
     <main className={styles.main}>
       <Navbar />
       <MediaChronicles />
+      <Distance />
     </main>
   )
 }

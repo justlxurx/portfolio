@@ -1,6 +1,8 @@
 'use client'
+import classNames from 'classnames'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
+import { nanoid } from 'nanoid'
 import { useMedia } from 'react-use'
 
 import { IPublication } from './interface'
@@ -41,7 +43,7 @@ const MediaChronicles = () => {
   )
 
   return (
-    <section className="container">
+    <section className={classNames(styles.container, 'container')}>
       <h2 className={styles.header}>Медиа-хроники</h2>
       <ul className={styles.publications}>
         {data.map(
@@ -58,7 +60,7 @@ const MediaChronicles = () => {
             index,
           ) => (
             // FIXME: Change index to UUID
-            <li className={styles.publications__item} key={index}>
+            <li className={styles.publications__item} key={nanoid()}>
               <div className={styles.publication}>
                 <div className={styles.publication__info}>
                   <div className={styles.publication__info_left}>
@@ -67,7 +69,7 @@ const MediaChronicles = () => {
                     </h4>
                     <ul className={styles.publication__tags}>
                       {tags.map((tag: string) => (
-                        <li className={styles.publication__tag} key={tag}>
+                        <li className={styles.publication__tag} key={nanoid()}>
                           {tag}
                         </li>
                       ))}
