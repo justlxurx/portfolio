@@ -1,0 +1,111 @@
+@import '/src/styles/variables.scss';
+
+.card {
+  cursor: pointer;
+  border: 1px solid $primary-color;
+  border-radius: 8px;
+  max-height: 80px;
+  overflow: hidden;
+  transition: 0.3s all ease;
+
+  &__header {
+    align-items: center;
+    position: relative;
+    display: flex;
+  }
+
+  &__number {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 31.5px 40px 31.5px 40px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    max-width: 75%;
+  }
+
+  &__fully_button {
+    color: $white-color;
+    background-color: $primary-color;
+    border: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 36px;
+    font-weight: 200;
+    line-height: 1;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    height: 100%;
+    aspect-ratio: 1/1;
+
+    &___active {
+      background-color: $secondary-color;
+    }
+  }
+
+  &__description {
+    max-width: 70%;
+    margin: 20px 0 28px 107px;
+    font-size: 20px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .card {
+    border-radius: 4.27px;
+    max-height: 43px;
+
+    &__number {
+      font-size: 13.042px;
+      line-height: 1;
+      margin: 17.24px 21.74px;
+    }
+
+    &__title {
+      font-size: 13.042px;
+      line-height: 1;
+    }
+
+    &__description {
+      font-size: 10.868px;
+      line-height: 19.562px;
+      margin: 10.87px 0 15.22px 58.14px;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .card {
+    border-radius: 8px;
+    max-height: 50px;
+
+    &__number {
+      font-size: 24px;
+      line-height: 1;
+      margin: 14.5px 10px;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 1;
+      max-width: 70%;
+    }
+
+    &__description {
+      font-size: 14px;
+      line-height: 115%;
+      margin: 17px 10px 10px;
+      max-width: 80%;
+    }
+  }
+}
+
+.card {
+  &___fully {
+    max-height: max-content;
+  }
+}

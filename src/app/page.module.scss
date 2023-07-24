@@ -1,0 +1,13 @@
+@import '/src/styles/variables.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+@media (max-width: $desktop-width) {
+  .main {
+    gap: 60px;
+  }
+}

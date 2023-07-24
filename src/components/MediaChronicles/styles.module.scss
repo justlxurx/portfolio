@@ -1,9 +1,5 @@
 @import '/src/styles/variables.scss';
 
-.container {
-  margin-top: 140px;
-}
-
 .header {
   font-size: 54px;
   font-weight: 400;
@@ -151,10 +147,6 @@
 }
 
 @media (max-width: $desktop-width) {
-  .container {
-    margin-top: 60px;
-  }
-
   .header {
     font-size: 29.307px;
     line-height: 21.709px;
