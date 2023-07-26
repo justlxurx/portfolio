@@ -1,0 +1,37 @@
+@import '/src/styles/variables.scss';
+
+.button {
+  background: $primary-color;
+  border: none;
+  border-radius: 10px;
+  color: $white-color;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1.02px;
+  padding: 26px;
+  transition: 0.3s all ease;
+
+  &:active {
+    background: $secondary-color;
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .button {
+    border-radius: 5.333px;
+    padding: 13.8px;
+    font-size: 12.8px;
+    letter-spacing: -0.544px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .button {
+    border-radius: 10px;
+    padding: 26px;
+    font-size: 24px;
+    letter-spacing: -1.02px;
+  }
+}

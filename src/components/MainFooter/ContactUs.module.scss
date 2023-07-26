@@ -1,0 +1,59 @@
+@import '/src/styles/variables.scss';
+
+.form {
+  &__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+
+  &__input {
+    min-width: 130px;
+  }
+
+  &__button {
+    flex: 1;
+    margin-top: 25px;
+    max-width: 356px;
+    width: 100%;
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .form {
+    &__inputs {
+      gap: 19px;
+    }
+
+    &__input {
+      min-width: 130px;
+    }
+
+    &__button {
+      flex: 1;
+      margin-top: 15px;
+      max-width: 190px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .form {
+    &__inputs {
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    &__input {
+      min-width: 130px;
+    }
+
+    &__button {
+      flex: 1;
+      margin-top: 25px;
+      max-width: 356px;
+      width: 100%;
+    }
+  }
+}

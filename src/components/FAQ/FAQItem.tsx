@@ -18,8 +18,6 @@ const FAQItem = ({ title, description, fully = false, number }: IFAQ) => {
     setShowFully(!showFully)
   }
 
-  console.log(showFully)
-
   return (
     <div
       onClick={onClickShowFullyButtonHandler}

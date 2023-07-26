@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import Distance from '@/components/Distance'
 import FAQ from '@/components/FAQ'
+import MainFooter from '@/components/MainFooter'
 import MediaChronicles from '@/components/MediaChronicles'
 import Navbar from '@/components/Navbar/index'
 
@@ -16,6 +17,7 @@ export default function Home() {
         <Distance />
         <FAQ />
       </main>
+      <MainFooter />
     </>
   )
 }

@@ -1,0 +1,121 @@
+@import '/src/styles/variables.scss';
+
+.footer {
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  margin: 140px 0 197px;
+  padding-bottom: 68px;
+  overflow: hidden;
+
+  &__image {
+    aspect-ratio: 2/1;
+    background-image: url('/main_footer_planet.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    margin: 0 auto 70px;
+    max-width: 762px;
+    width: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 126px;
+  }
+
+  &__additional {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  &__header {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 112.5%;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin: 32px 0;
+    font-size: 20px;
+    line-height: 136%;
+    letter-spacing: -0.109px;
+  }
+
+  &__hr_email {
+    color: $transparent-color;
+    font-size: 24px;
+    line-height: 112.5%;
+    transition: 0.3s all ease;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__contact_us {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .footer {
+    &__inner {
+      gap: 67px;
+    }
+
+    &__image {
+      max-width: 661px;
+    }
+
+    &__header {
+      font-size: 29.333px;
+      line-height: 112.5%;
+    }
+
+    &__description {
+      margin: 17px 0;
+      font-size: 10.667px;
+      line-height: 136%;
+      letter-spacing: -0.058px;
+    }
+
+    &__hr_email {
+      font-size: 12.8px;
+      line-height: 112.5%;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .footer {
+    &__inner {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    &__image {
+      margin: 0 auto 40px;
+      max-width: 531px;
+    }
+
+    &__header {
+      font-size: 34px;
+      line-height: 112.5%;
+    }
+
+    &__description {
+      margin: 20px 0;
+      font-size: 12px;
+      line-height: 136%;
+      letter-spacing: -0.068px;
+    }
+
+    &__hr_email {
+      font-size: 16px;
+      line-height: 112.5%;
+    }
+  }
+}
