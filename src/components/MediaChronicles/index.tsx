@@ -9,34 +9,12 @@ import { IPublication } from './interface'
 
 import styles from './styles.module.scss'
 
-const MediaChronicles = () => {
+const MediaChronicles = ({ data }: { data: IPublication[] }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
-  const data: IPublication[] = [
-    {
-      header: 'О команде qazdev',
-      subheader: 'The Steppe – О команде QazDev',
-      shortInfo:
-        'Недавно QAZDEVELOP начала работу в качестве техпартнера в крупнейшем онлайн-сервисе поиска автомобильных',
-      tags: ['Разработка ПО', 'Международные проекты', 'IT-специалисты'],
-      publicationDate: Date.now(),
-      cover: 'https://wallpaperaccess.com/full/2637581.jpg',
-      link: '#',
-    },
-    {
-      header: 'Итоги IT-конференции DevCorn 2023',
-      subheader: 'The Steppe – О команде QazDev',
-      shortInfo: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-      tags: ['Разработка ПО', 'Международные проекты', 'IT-специалисты'],
-      publicationDate: Date.now(),
-      cover: 'https://wallpaperaccess.com/full/2637581.jpg',
-      link: '#',
-    },
-  ]
-
-  const PublicationPreview = ({ shortInfo }: { shortInfo: string }) => (
+  const PublicationPreview = ({ shortContent }: { shortContent: string }) => (
     <>
-      <p className={styles.publication__short_info}>{shortInfo}</p>
+      <p className={styles.publication__short_content}>{shortContent}</p>
 
       <button className={styles.publication__show_more}>Читать</button>
     </>
@@ -51,7 +29,7 @@ const MediaChronicles = () => {
             {
               header,
               subheader,
-              shortInfo,
+              shortContent,
               tags,
               publicationDate,
               cover,
@@ -59,7 +37,6 @@ const MediaChronicles = () => {
             }: IPublication,
             index,
           ) => (
-            // FIXME: Change index to UUID
             <li className={styles.publications__item} key={nanoid()}>
               <div className={styles.publication}>
                 <div className={styles.publication__info}>
@@ -76,7 +53,9 @@ const MediaChronicles = () => {
                     </ul>
                   </div>
                   <div className={styles.publication__info_right}>
-                    {!isMobile && <PublicationPreview shortInfo={shortInfo} />}
+                    {!isMobile && (
+                      <PublicationPreview shortContent={shortContent} />
+                    )}
                   </div>
                 </div>
                 <div

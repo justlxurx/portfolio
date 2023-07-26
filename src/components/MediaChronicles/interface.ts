@@ -1,7 +1,8 @@
 export interface IPublication {
+  _id: string
   header: string
   subheader: string
-  shortInfo: string
+  shortContent: string
   tags: string[]
   publicationDate: number
   cover: string

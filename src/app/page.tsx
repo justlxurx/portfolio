@@ -8,12 +8,24 @@ import Navbar from '@/components/Navbar/index'
 
 import styles from './page.module.scss'
 
-export default function Home() {
+const SERVER_ENDPOINT = process.env.SERVER_ENDPOINT || 'http://localhost:3000'
+
+async function getPosts() {
+  const response = await fetch(`${SERVER_ENDPOINT}/api/news`)
+
+  const data = await response.json()
+
+  return data
+}
+
+export default async function Home() {
+  const data = await getPosts()
+
   return (
     <>
       <Navbar />
       <main className={styles.main}>
-        <MediaChronicles />
+        <MediaChronicles data={...data} />
         <Distance />
         <FAQ />
       </main>
