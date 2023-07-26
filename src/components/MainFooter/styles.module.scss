@@ -62,6 +62,8 @@
 
 @media (max-width: $desktop-width) {
   .footer {
+    margin: 90px 0 0;
+
     &__inner {
       gap: 67px;
     }
@@ -91,6 +93,8 @@
 
 @media (max-width: $tablet-width) {
   .footer {
+    margin: 100px 0 0;
+
     &__inner {
       flex-direction: column;
       gap: 50px;

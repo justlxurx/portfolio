@@ -43,7 +43,7 @@ const MediaChronicles = () => {
   )
 
   return (
-    <section className={classNames(styles.container, 'container')}>
+    <section className={'container'}>
       <h2 className={styles.header}>Медиа-хроники</h2>
       <ul className={styles.publications}>
         {data.map(
