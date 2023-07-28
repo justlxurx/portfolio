@@ -55,11 +55,19 @@ const Projects = () => {
     afterChange: (current: number) => setActiveSlide(current + 1),
   }
 
+  //FIXME: any, alert
+  const onClickAllCasesButtonHandler = (e: any) => {
+    alert('Страница в разработке')
+  }
+
   return (
     <section className={classNames(styles.container, 'container')}>
       <div className={styles.additional}>
         <h2 className={styles.header}>Последние проекты</h2>
-        <Button className={styles.cases_button}>
+        <Button
+          className={styles.cases_button}
+          onClick={onClickAllCasesButtonHandler}
+        >
           <Image
             className={styles.cases_button__arrow}
             src={arrowIcon}
@@ -78,7 +86,10 @@ const Projects = () => {
         </Slider>
       </div>
       <footer className={styles.footer}>
-        <Button className={styles.cases_button}>
+        <Button
+          className={styles.cases_button}
+          onClick={onClickAllCasesButtonHandler}
+        >
           <Image
             className={styles.cases_button__arrow}
             src={arrowIcon}

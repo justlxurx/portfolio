@@ -9,23 +9,23 @@ const Socials = () => {
   const socials: ISocial[] = [
     {
       title: `instagram`,
-      label: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-      link: '#',
+      label: `Следите за всеми нашими новостями в instagram!`,
+      link: 'https://instagram.com/qazdev.team',
     },
     {
       title: `instagram`,
-      label: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-      link: '#',
+      label: `Следите за всеми нашими новостями в instagram!`,
+      link: 'https://instagram.com/qazdev.team',
     },
     {
       title: `instagram`,
-      label: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-      link: '#',
+      label: `Следите за всеми нашими новостями в instagram!`,
+      link: 'https://instagram.com/qazdev.team',
     },
     {
       title: `instagram`,
-      label: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-      link: '#',
+      label: `Следите за всеми нашими новостями в instagram!`,
+      link: 'https://instagram.com/qazdev.team',
     },
   ]
 

@@ -6,13 +6,23 @@
 }
 
 .card {
+  cursor: pointer;
   border-radius: 15px;
   overflow: hidden;
   flex-basis: 50%;
 
-  &__image {
-    height: auto;
+  &__image_wrapper {
+    align-items: center;
+    display: flex;
     width: 100%;
+    position: relative;
+    justify-content: center;
+    aspect-ratio: 1/0.8;
+
+    img {
+      max-height: 70%;
+      max-width: 70%;
+    }
   }
 
   &__content {
@@ -71,9 +81,6 @@
       background: $primary-color;
 
       .card {
-        &__barcode {
-        }
-
         &__tag span {
           color: rgba($white-color, 0.6);
         }
@@ -90,6 +97,18 @@
           filter: $primary-color;
         }
       }
+
+      &:hover {
+        background: $secondary-color;
+      }
+
+      &:active {
+        background: $secondary-color;
+
+        .card__header {
+          color: $primary-color;
+        }
+      }
     }
 
     &_light {
@@ -100,17 +119,42 @@
           fill: $primary-color;
         }
 
-        &__tag {
-        }
-
-        &__header {
-        }
-
-        &__description {
-        }
-
         &__puzzle rect {
           fill: $primary-color;
+        }
+      }
+
+      &:hover,
+      &:active {
+        background: $primary-color;
+        .card {
+          &__barcode path {
+            fill: $white-color;
+          }
+
+          &__tag span {
+            color: $white-color;
+          }
+
+          &__description {
+            color: $white-color;
+          }
+
+          &__puzzle rect {
+            fill: $white-color;
+          }
+        }
+      }
+
+      &:hover {
+        .card__header {
+          color: $white-color;
+        }
+      }
+
+      &:active {
+        .card__header {
+          color: $secondary-color;
         }
       }
     }

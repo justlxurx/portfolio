@@ -27,6 +27,7 @@
   }
 
   &__fully_button {
+    cursor: pointer;
     color: $white-color;
     background-color: $primary-color;
     border: 0;
@@ -36,10 +37,23 @@
     font-weight: 200;
     line-height: 1;
     position: absolute;
-    top: -1px;
+    text-align: center;
+    top: -5px;
     right: -1px;
+    width: 80px;
     height: 100%;
-    aspect-ratio: 1/1;
+
+    &::before {
+      float: left;
+      padding-left: 100%;
+      content: '';
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
 
     &___active {
       background-color: $secondary-color;
@@ -74,6 +88,11 @@
       font-size: 10.868px;
       line-height: 19.562px;
       margin: 10.87px 0 15.22px 58.14px;
+    }
+
+    &__fully_button {
+      top: -3px;
+      width: 46px;
     }
   }
 }

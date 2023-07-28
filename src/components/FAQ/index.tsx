@@ -15,20 +15,38 @@ const FAQ = () => {
     },
     {
       title: 'У нас есть идея проекта, что дальше?',
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: (
+        <span>
+          <strong>Обсуждение требований</strong>: мы тщательно анализируем ваши
+          требования и цели проекта. Планирование и оценка: разрабатываем
+          детальный план проекта, составляем ТЗ, оцениваем затраты времени и
+          ресурсов.
+          <br />
+          <strong>Разработка</strong>: наша команда разработчиков приступает к
+          созданию программного обеспечения в соответствии с заданными
+          требованиями.
+          <br />
+          <strong>Тестирование и качество</strong>: мы проводим тщательное
+          тестирование, чтобы гарантировать высокое качество продукта.
+          <br />
+          <strong>Развертывание и поддержка</strong>: после завершения
+          разработки мы обеспечиваем развертывание ПО и предоставляем поддержку
+          в дальнейшем.
+        </span>
+      ),
     },
     {
       title: 'Какие условия оплаты вы предлагаете?',
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: `qazdev предлагает гибкие условия оплаты. Их мы обсуждаем с каждым клиентом индивидуально, в зависимости от требований и объема проекта. Мы можем предложить фиксированную стоимость за месяц, почасовую оплату при небольших объемах или иные варианты, которые лучше соответствуют вашим потребностям.`,
     },
     {
       title:
         'Какие технологии и языки программирования использует ваша компания?',
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: `Разработчики qazdev используют широкий спектр технологий и языков программирования: Java (Spring, Java EE, Java SE), React, Node.js, C#, Python, PHP, Angular и другие.`,
     },
     {
       title: 'Сколько времени займет разработка?',
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: `Сроки выполнения проектов зависят от сложности и объема работы. Мы тщательно проанализируем требования к функционалу, который необходимо реализовать, и предоставим расчет стоимости и  реалистичных сроков.`,
     },
   ]
 

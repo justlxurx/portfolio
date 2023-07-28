@@ -1,9 +1,11 @@
+//FIXME: remove use client
+'use client'
 import { Fragment } from 'react'
 import Image from 'next/image'
 import classNames from 'classnames'
 import { nanoid } from 'nanoid'
 import CareerImage from 'public/pages_career_image.svg'
-import DevPracticeImage from 'public/pages_devpractice_image.svg'
+import devPracticeImage from 'public/pages_devpractice_image.svg'
 
 import BarcodeIcon from './BarcodeIcon'
 import { ICard } from './interface'
@@ -23,7 +25,7 @@ const Pages = () => {
       description: `Образовательный интенсив для студентов IT-специальностей. Практические навыки, ключевые компоненты, командная работа.`,
       tag: <span>DevPractice</span>,
       link: '#',
-      image: DevPracticeImage,
+      image: devPracticeImage,
       className: styles.card_color_dark,
     },
     {
@@ -47,12 +49,23 @@ const Pages = () => {
     },
   ]
 
+  //FIXME: remove
+  const onClickPageHandler = () => {
+    alert('Страница в разработке')
+  }
+
   return (
     <div className={styles.cards}>
       {data?.map(
         ({ title, description, tag, link, image, className }: ICard) => (
-          <div className={classNames(styles.card, className)} key={nanoid()}>
-            <Image className={styles.card__image} src={image} alt={`Обложка`} />
+          <div
+            className={classNames(styles.card, className)}
+            onClick={onClickPageHandler}
+            key={nanoid()}
+          >
+            <div className={styles.card__image_wrapper}>
+              <Image src={image} alt={`Обложка`} />
+            </div>
             <div className={styles.card__content}>
               <BarcodeIcon className={styles.card__barcode} />
               <div className={styles.card__content_inner}>

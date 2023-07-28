@@ -16,7 +16,10 @@ const ContactUs = ({ className }: IContactUs) => {
       phone: '',
     },
     onSubmit: (values) => {
-      console.log(values)
+      alert(`Функционал в разработке! Введенные данные:
+        Имя: ${values.userName}
+        Номер телефона: ${values.phone} 
+      `)
     },
   })
 
