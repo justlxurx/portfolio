@@ -49,7 +49,7 @@ const Pages = () => {
 
   return (
     <div className={styles.cards}>
-      {data.map(
+      {data?.map(
         ({ title, description, tag, link, image, className }: ICard) => (
           <div className={classNames(styles.card, className)} key={nanoid()}>
             <Image className={styles.card__image} src={image} alt={`Обложка`} />

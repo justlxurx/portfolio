@@ -9,7 +9,7 @@ import { IPublication } from './interface'
 
 import styles from './styles.module.scss'
 
-const MediaChronicles = ({ data }: { data: IPublication[] }) => {
+const News = ({ data }: { data: IPublication[] }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
   const PublicationPreview = ({ shortContent }: { shortContent: string }) => (
@@ -24,7 +24,7 @@ const MediaChronicles = ({ data }: { data: IPublication[] }) => {
     <section className={'container'}>
       <h2 className={styles.header}>Медиа-хроники</h2>
       <ul className={styles.publications}>
-        {data.map(
+        {data?.map(
           (
             {
               header,
@@ -65,7 +65,7 @@ const MediaChronicles = ({ data }: { data: IPublication[] }) => {
                   <div className={styles.publication__cover_inner}>
                     {isMobile && (
                       <div>
-                        <PublicationPreview shortInfo={shortInfo} />
+                        <PublicationPreview shortContent={shortContent} />
                       </div>
                     )}
                     <h3 className={styles.publication__header}>{header}</h3>
@@ -83,4 +83,4 @@ const MediaChronicles = ({ data }: { data: IPublication[] }) => {
   )
 }
 
-export default MediaChronicles
+export default News

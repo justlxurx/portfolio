@@ -34,6 +34,11 @@ ul {
   padding: 0;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 .container {
   padding-left: 40px;
   padding-right: 40px;

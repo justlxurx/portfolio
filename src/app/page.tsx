@@ -1,10 +1,11 @@
 import Image from 'next/image'
 
+import About from '@/components/About'
 import Distance from '@/components/Distance'
 import FAQ from '@/components/FAQ'
 import MainFooter from '@/components/MainFooter'
-import MediaChronicles from '@/components/MediaChronicles'
 import Navbar from '@/components/Navbar/index'
+import News from '@/components/News'
 
 import styles from './page.module.scss'
 
@@ -25,7 +26,8 @@ export default async function Home() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <MediaChronicles data={...data} />
+        <About />
+        <News data={...data} />
         <Distance />
         <FAQ />
       </main>
