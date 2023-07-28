@@ -3,6 +3,8 @@ import classNames from 'classnames'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { nanoid } from 'nanoid'
+import coverPlugDesktop from 'public/media_cover_desktop.png'
+import coverPlugMobile from 'public/media_cover_mobile.png'
 import { useMedia } from 'react-use'
 
 import { IPublication } from './interface'
@@ -12,13 +14,25 @@ import styles from './styles.module.scss'
 const News = ({ data }: { data: IPublication[] }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
+  const buttonPreviewClickHandler = () => {
+    alert('Страница в разработке')
+  }
+
   const PublicationPreview = ({ shortContent }: { shortContent: string }) => (
     <>
       <p className={styles.publication__short_content}>{shortContent}</p>
 
-      <button className={styles.publication__show_more}>Читать</button>
+      <button
+        onClick={buttonPreviewClickHandler}
+        className={styles.publication__show_more}
+      >
+        Читать
+      </button>
     </>
   )
+
+  //FIXME: fix cover
+  const cover = isMobile ? coverPlugMobile : coverPlugDesktop
 
   return (
     <section className={'container'}>
@@ -32,7 +46,7 @@ const News = ({ data }: { data: IPublication[] }) => {
               shortContent,
               tags,
               publicationDate,
-              cover,
+              // cover,
               link,
             }: IPublication,
             index,
@@ -60,7 +74,9 @@ const News = ({ data }: { data: IPublication[] }) => {
                 </div>
                 <div
                   className={styles.publication__cover}
-                  style={{ backgroundImage: `url(${cover})` }}
+                  style={{
+                    backgroundImage: `url(${cover.src})`,
+                  }}
                 >
                   <div className={styles.publication__cover_inner}>
                     {isMobile && (

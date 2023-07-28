@@ -4,6 +4,7 @@ import { ISocial } from './interface'
 import styles from './SocialCard.module.scss'
 
 const SocialCard = ({ title, label, link }: ISocial) => {
+  console.log(new Date('December 15, 2022'))
   return (
     <a href={link} target="_blank">
       <div className={styles.card}>

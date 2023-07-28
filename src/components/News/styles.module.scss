@@ -92,6 +92,7 @@
   }
 
   &__cover {
+    mix-blend-mode: luminosity;
     background-repeat: no-repeat;
     background-position: center;
     aspect-ratio: 5/1;
@@ -256,6 +257,7 @@
     }
 
     &__cover {
+      background-size: cover;
       aspect-ratio: 1/1;
 
       &_inner {
