@@ -4,8 +4,8 @@ import type { Metadata } from 'next'
 import '@/styles/global.scss'
 
 export const metadata: Metadata = {
-  title: 'Index Page',
-  description: 'Description',
+  title: 'qazdev - Главная страница',
+  description: 'qazdev',
 }
 
 export default function RootLayout({
