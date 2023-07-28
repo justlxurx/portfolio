@@ -6,6 +6,7 @@ import FAQ from '@/components/FAQ'
 import MainFooter from '@/components/MainFooter'
 import Navbar from '@/components/Navbar/index'
 import News from '@/components/News'
+import Projects from '@/components/Projects'
 
 import styles from './page.module.scss'
 
@@ -27,6 +28,7 @@ export default async function Home() {
       <Navbar />
       <main className={styles.main}>
         <About />
+        <Projects />
         <News data={...data} />
         <Distance />
         <FAQ />

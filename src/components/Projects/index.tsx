@@ -1,0 +1,94 @@
+'use client'
+import { useState } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import classNames from 'classnames'
+import arrowIcon from 'public/arrow_icon.svg'
+import firstSlide from 'public/projects_1_image.png'
+import Slider from 'react-slick'
+
+import Button from '@/components/ui/Button'
+
+import 'node_modules/slick-carousel/slick/slick.css'
+import 'node_modules/slick-carousel/slick/slick-theme.css'
+import styles from './styles.module.scss'
+
+const Projects = () => {
+  const [activeSlide, setActiveSlide] = useState(1)
+
+  interface ISlide {
+    title: string
+    src: StaticImageData
+  }
+
+  const slides: ISlide[] = [
+    {
+      title: 'Кортим команда  blablacar',
+      src: firstSlide,
+    },
+    {
+      title: 'Кортим команда  blablacar',
+      src: firstSlide,
+    },
+  ]
+
+  const settings = {
+    className: styles.slider,
+    dotsClass: styles.dots,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    customPaging: (i: number) => {
+      const buttonNumber = i + 1
+      return (
+        <Button
+          className={classNames(styles.dot, {
+            [styles.dot___active]: activeSlide === buttonNumber,
+          })}
+        >
+          {buttonNumber}
+        </Button>
+      )
+    },
+    afterChange: (current: number) => setActiveSlide(current + 1),
+  }
+
+  return (
+    <section className={classNames(styles.container, 'container')}>
+      <div className={styles.additional}>
+        <h2 className={styles.header}>Последние проекты</h2>
+        <Button className={styles.cases_button}>
+          <Image
+            className={styles.cases_button__arrow}
+            src={arrowIcon}
+            alt={'Arrow'}
+          />
+          Все кейсы
+        </Button>
+      </div>
+      <div className={styles.slider_wrapper}>
+        <Slider {...settings}>
+          {slides.map(({ title, src }) => (
+            <div className={styles.slide_wrapper} key={title}>
+              <Image src={src} fill alt={title} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <footer className={styles.footer}>
+        <Button className={styles.cases_button}>
+          <Image
+            className={styles.cases_button__arrow}
+            src={arrowIcon}
+            alt={'Arrow'}
+          />
+          Все кейсы
+        </Button>
+      </footer>
+    </section>
+  )
+}
+
+export default Projects
