@@ -1,4 +1,5 @@
 'use client'
+import React from 'react'
 import classNames from 'classnames'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
@@ -11,7 +12,11 @@ import { IPublication } from './interface'
 
 import styles from './styles.module.scss'
 
-const News = ({ data }: { data: IPublication[] }) => {
+type Props = {
+  data: IPublication[]
+}
+
+const News: React.FC<Props> = ({ data }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
   const buttonPreviewClickHandler = () => {

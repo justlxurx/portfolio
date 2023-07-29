@@ -29,7 +29,7 @@ export default async function Home() {
       <main className={styles.main}>
         <About />
         <Projects />
-        <News data={...data} />
+        {Array.isArray(data) && <News data={...data} />}
         <Distance />
         <FAQ />
       </main>
