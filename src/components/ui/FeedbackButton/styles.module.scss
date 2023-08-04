@@ -5,13 +5,14 @@
   border-radius: 7.47px;
   border: none;
   cursor: pointer;
-  padding: 7px 8px;
+  padding: 0 8px;
+  height: 36px;
 
   &__inner {
     align-items: center;
     display: flex;
     font-size: 10.868px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 13.585px;
     letter-spacing: -0.109px;
     text-transform: uppercase;
@@ -46,13 +47,22 @@
 @media (max-width: $desktop-width) {
   .button {
     border-radius: 4px;
-    padding: 4px;
+    height: 24.66px;
+    padding: 0 4.18px;
 
     &__inner {
+      font-size: 10px;
+      line-height: 7.09px;
+      letter-spacing: -0.06px;
+
+      &_title {
+        margin-bottom: 3.18px;
+      }
+
       &::before {
         margin-right: 2.13px;
-        // height: 17.34px;
-        // width: 11.34px;
+        height: 17.34px;
+        width: 11.34px;
       }
     }
   }

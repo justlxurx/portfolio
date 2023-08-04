@@ -27,29 +27,27 @@ const Navbar = () => {
   ]
 
   return (
-    <div className={'container'}>
-      <header className={styles.header}>
-        <div className={styles.info}>
-          <span className={styles.info__label}>Цифровые решения</span>
-          <span className={styles.info__tag}>#пишемкод</span>
+    <header className={styles.header}>
+      <div className={styles.info}>
+        <span className={styles.info__label}>Цифровые решения</span>
+        <span className={styles.info__tag}>#пишемкод</span>
+      </div>
+      <nav className={styles.navigation}>
+        <ul className={styles.navigation__buttons_wrapper}>
+          {buttons.map((button: INavButton) => (
+            <li key={nanoid()}>
+              <NavButton {...button} />
+            </li>
+          ))}
+        </ul>
+        <div className={styles.feedback_button}>
+          <FeedbackButton />
         </div>
-        <nav className={styles.navigation}>
-          <ul className={styles.navigation__buttons_wrapper}>
-            {buttons.map((button: INavButton) => (
-              <li key={nanoid()}>
-                <NavButton {...button} />
-              </li>
-            ))}
-          </ul>
-          <div className={styles.feedback_button}>
-            <FeedbackButton />
-          </div>
-          <div className={styles.hamburger_button}>
-            <HamburgerButton />
-          </div>
-        </nav>
-      </header>
-    </div>
+        <div className={styles.hamburger_button}>
+          <HamburgerButton />
+        </div>
+      </nav>
+    </header>
   )
 }
 
