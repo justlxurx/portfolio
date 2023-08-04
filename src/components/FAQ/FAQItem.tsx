@@ -36,7 +36,7 @@ const FAQItem = ({ title, description, fully = false, number }: IFAQ) => {
           })}
           onClick={onClickShowFullyButtonHandler}
         >
-          {showFully ? '+' : '-'}
+          {showFully ? '-' : '+'}
         </button>
       </div>
       <p className={styles.card__description}>{description}</p>

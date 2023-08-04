@@ -17,7 +17,7 @@
     width: 100%;
     position: relative;
     justify-content: center;
-    aspect-ratio: 1/0.8;
+    aspect-ratio: 1/0.8147;
 
     img {
       max-height: 70%;
@@ -51,8 +51,8 @@
   }
 
   &__header {
-    font-size: 76px;
-    line-height: 112%;
+    font-size: 93px;
+    line-height: 73.77px;
     letter-spacing: -0.16px;
     position: absolute;
     bottom: 0;
@@ -157,6 +157,15 @@
           color: $secondary-color;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1550px) {
+  .card {
+    &__header {
+      font-size: 76px;
+      line-height: 113%;
     }
   }
 }

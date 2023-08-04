@@ -13,9 +13,11 @@
 
   &__button {
     flex: 1;
+    font-weight: 700;
     margin-top: 25px;
     max-width: 356px;
     width: 100%;
+    text-transform: uppercase;
   }
 }
 

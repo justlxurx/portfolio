@@ -77,6 +77,7 @@ const Projects = () => {
         </Button>
       </div>
       <div className={styles.slider_wrapper}>
+        <h3 className={styles.title}>{slides[activeSlide - 1].title}</h3>
         <Slider {...settings}>
           {slides.map(({ title, src }) => (
             <div className={styles.slide_wrapper} key={title}>

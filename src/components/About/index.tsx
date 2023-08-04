@@ -111,11 +111,11 @@ const About = () => {
         >
           <div className={styles.fourth_column__symbols}>
             <div className={styles.fourth_column__s_symbol}>
-              <Image src={sSymbol} fill alt={'S'} />
+              <Image src={sSymbol} fill alt={'S'} quality={100} />
             </div>
 
             <div className={styles.fourth_column__t_symbol}>
-              <Image src={tSymbol} fill alt={'T'} />
+              <Image src={tSymbol} fill alt={'T'} quality={100} />
             </div>
           </div>
           <div className={styles.fourth_column__short_info}>

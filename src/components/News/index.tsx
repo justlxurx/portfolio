@@ -8,6 +8,8 @@ import coverPlugDesktop from 'public/media_cover_desktop.png'
 import coverPlugMobile from 'public/media_cover_mobile.png'
 import { useMedia } from 'react-use'
 
+import { FormattedString } from '@/helpers/FormattedString'
+
 import { IPublication } from './interface'
 
 import styles from './styles.module.scss'
@@ -25,7 +27,9 @@ const News: React.FC<Props> = ({ data }) => {
 
   const PublicationPreview = ({ shortContent }: { shortContent: string }) => (
     <>
-      <p className={styles.publication__short_content}>{shortContent}</p>
+      <p className={styles.publication__short_content}>
+        <FormattedString sentence={shortContent} />
+      </p>
 
       <button
         onClick={buttonPreviewClickHandler}
@@ -41,7 +45,7 @@ const News: React.FC<Props> = ({ data }) => {
 
   return (
     <section className={'container'}>
-      <h2 className={styles.header}>Медиа-хроники</h2>
+      <h2 className={styles.header}>Медиахроники</h2>
       <ul className={styles.publications}>
         {data?.map(
           (
@@ -61,12 +65,12 @@ const News: React.FC<Props> = ({ data }) => {
                 <div className={styles.publication__info}>
                   <div className={styles.publication__info_left}>
                     <h4 className={styles.publication__subheader}>
-                      {subheader}
+                      <FormattedString sentence={subheader} />
                     </h4>
                     <ul className={styles.publication__tags}>
                       {tags.map((tag: string) => (
-                        <li className={styles.publication__tag} key={nanoid()}>
-                          {tag}
+                        <li key={nanoid()}>
+                          <span className={styles.publication__tag}>{tag}</span>
                         </li>
                       ))}
                     </ul>
@@ -89,7 +93,9 @@ const News: React.FC<Props> = ({ data }) => {
                         <PublicationPreview shortContent={shortContent} />
                       </div>
                     )}
-                    <h3 className={styles.publication__header}>{header}</h3>
+                    <h3 className={styles.publication__header}>
+                      <FormattedString sentence={header} />
+                    </h3>
                     <p className={styles.publication__date}>
                       {format(publicationDate, 'LLLL, yyyy', { locale: ru })}
                     </p>

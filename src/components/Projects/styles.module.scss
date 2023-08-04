@@ -17,7 +17,7 @@
 
 .header {
   font-size: 54px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 40px;
   letter-spacing: -1.02px;
   text-transform: uppercase;
@@ -28,6 +28,7 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 24px;
+  font-weight: 700;
   padding: 15px 16px;
 
   &__arrow {
@@ -42,6 +43,16 @@
   border-radius: 10px;
   position: relative;
   padding: 39px 34px;
+}
+
+.title {
+  position: absolute;
+  top: 51.75px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 116.5%;
+  text-transform: uppercase;
+  max-width: 30%;
 }
 
 .slider {
@@ -138,6 +149,11 @@
     padding: 21.14px 18.43px;
   }
 
+  .title {
+    font-size: 16.262px;
+    line-height: 116.5%;
+  }
+
   .dots {
     bottom: 28px;
     left: 18.43px;
@@ -189,6 +205,10 @@
 
   .slider_wrapper {
     padding: 25px 20px;
+  }
+
+  .title {
+    display: none;
   }
 
   .dots {

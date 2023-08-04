@@ -2,7 +2,7 @@
 
 .header {
   font-size: 54px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 40px;
   letter-spacing: -1.02px;
   margin: 0 0 87px;
@@ -42,6 +42,7 @@
     font-weight: 400;
     line-height: 30.5px;
     margin: 0 0 47px;
+    text-transform: uppercase;
   }
 
   &__tags {
@@ -53,13 +54,15 @@
   &__tag {
     border: 1px solid $primary-color;
     border-radius: 10px;
+    display: block;
     font-size: 22px;
     font-weight: 400;
     flex-shrink: 0;
     line-height: 40px;
     letter-spacing: -1.02px;
+    height: 38px;
     text-transform: uppercase;
-    padding: 11px;
+    padding: 0 11px;
   }
 
   &__short_content {
@@ -120,7 +123,7 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-    margin-right: 20px;
+    max-width: 43%;
     font-size: 76px;
     line-height: 112%;
     letter-spacing: -0.16px;
@@ -131,6 +134,7 @@
     display: flex;
     flex-shrink: 0;
     font-size: 52px;
+    font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.16px;
     color: $white-color;
@@ -180,10 +184,13 @@
     }
 
     &__tag {
+      border-radius: 5.427px;
+      border: 0.543px solid $primary-color;
       font-size: 11.94px;
       line-height: 21.709px;
+      height: 21px;
       letter-spacing: -0.554px;
-      padding: 6px;
+      padding: 0 5.96px;
     }
 
     &__show_more {
@@ -285,6 +292,14 @@
       position: absolute;
       bottom: 0;
       right: 0;
+    }
+
+    &__tag {
+      font-size: 16px;
+      line-height: 30.069px;
+      letter-spacing: -0.767px;
+      height: 27.54px;
+      padding: 0 8.27px;
     }
   }
 }

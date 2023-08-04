@@ -7,7 +7,7 @@ import ContactUs from './ContactUs'
 import styles from './styles.module.scss'
 
 const MainFooter = () => {
-  const EMAIL = 'hr@qazdevelop.com'
+  const EMAIL = 'team@qazdev.kz'
 
   return (
     <footer className={styles.footer}>
@@ -15,7 +15,9 @@ const MainFooter = () => {
         <div className={styles.footer__image} />
         <div className={styles.footer__inner}>
           <div className={styles.footer__additional}>
-            <h3 className={styles.footer__header}>Воплощаем будущее в коде</h3>
+            <h3 className={styles.footer__header}>
+              Воплощаем <br /> будущее в коде
+            </h3>
             <p className={styles.footer__description}>
               Пишем код, который упрощает бизнес-процессы и помогаем компаниям
               воплощать идеи эффективно и технологично
