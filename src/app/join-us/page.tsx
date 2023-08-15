@@ -10,7 +10,7 @@ export default async function JoinUs() {
       <Navbar />
       <main className="container">
         <Career />
-        <Gallery />
+        {/* <Gallery /> */}
         <section>Сильный код</section>
         <section>кейсы, на которых растешь</section>
         <section>Хочу в команду</section>
