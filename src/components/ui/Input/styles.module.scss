@@ -5,7 +5,6 @@
   border-top: none;
   border-left: none;
   border-right: 0;
-  border-bottom: 1px solid $primary-color;
   flex: 1;
   font-size: 20px;
   font-weight: 400;
@@ -13,8 +12,24 @@
   padding-bottom: 20px;
 
   &:focus {
-    border-bottom: 1px solid $secondary-color;
     outline: none;
+  }
+
+  &__default {
+    border-bottom: 1px solid $primary-color;
+
+    &:focus {
+      border-bottom: 1px solid $secondary-color;
+    }
+  }
+
+  &__white {
+    color: $white-color;
+    border-bottom: 1px solid $white-color;
+
+    &:focus {
+      border-bottom: 1px solid $white-color;
+    }
   }
 }
 
