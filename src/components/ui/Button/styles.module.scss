@@ -29,6 +29,18 @@
       background: $secondary-color;
     }
   }
+
+  &__outlined_transparent {
+    border: 1px solid $primary-color;
+    background: transparent;
+    color: $primary-color;
+
+    &:active {
+      border: 1px solid $secondary-color;
+      background: $secondary-color;
+      color: $white-color;
+    }
+  }
 }
 
 @media (max-width: $desktop-width) {
