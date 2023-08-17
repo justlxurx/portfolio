@@ -1,4 +1,5 @@
 import Career from '@/components/Career'
+import Cases from '@/components/Cases'
 import Gallery from '@/components/Gallery'
 import Navbar from '@/components/Navbar'
 
@@ -13,8 +14,11 @@ export default async function JoinUs() {
         <Gallery />
         <section>Сильный код</section>
         <section>кейсы, на которых растешь</section>
+
         <section>Хочу в команду</section>
+        <Cases />
       </main>
+
       <footer>Начни карьеру в IT стремительно</footer>
     </>
   )

@@ -11,17 +11,19 @@ import Projects from '@/components/Projects'
 
 import styles from './page.module.scss'
 
-async function getPosts(host: string) {
-  const response = await fetch(`http://${host}/api/news`)
+// async function getPosts(host: string) {
+//   const response = await fetch(`http://${host}/api/news`)
 
-  const data = await response.json()
+//   console.log(response)
 
-  return data
-}
+//   const data = await response.json()
+
+//   return data
+// }
 
 export default async function Home() {
-  const host = headers().get('host')
-  const data = await getPosts(host!)
+  //const host = headers().get('host')
+  //const data = await getPosts(host!)
 
   return (
     <>
@@ -29,7 +31,7 @@ export default async function Home() {
       <main className={styles.main}>
         <About />
         <Projects />
-        {Array.isArray(data) && <News data={...data} />}
+        {/* {Array.isArray(data) && <News data={...data} />} */}
         <Distance />
         <FAQ />
       </main>

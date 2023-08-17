@@ -101,7 +101,7 @@
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: $desktop-width) {
   .first {
     &__inner {
       padding: 16.5px 12.5px;
