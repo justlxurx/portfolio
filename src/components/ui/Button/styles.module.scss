@@ -1,10 +1,8 @@
 @import '/src/styles/variables.scss';
 
 .button {
-  background: $primary-color;
   border: none;
   border-radius: 10px;
-  color: $white-color;
   cursor: pointer;
   font-size: 24px;
   font-weight: 400;
@@ -13,8 +11,23 @@
   padding: 26px;
   transition: 0.3s all ease;
 
-  &:active {
-    background: $secondary-color;
+  &__default {
+    background: $primary-color;
+    color: $white-color;
+
+    &:active {
+      background: $secondary-color;
+    }
+  }
+
+  &__white {
+    background: $white-color;
+    color: $primary-color;
+
+    &:active {
+      color: $white-color;
+      background: $secondary-color;
+    }
   }
 }
 

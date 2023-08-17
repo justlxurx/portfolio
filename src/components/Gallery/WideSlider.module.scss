@@ -1,0 +1,16 @@
+@import '/src/styles/variables.scss';
+
+.slider_wrapper {
+}
+
+.slider {
+  position: initial;
+  max-width: 300px;
+}
+
+.slide_wrapper {
+  aspect-ratio: 2/1.3;
+  display: flex;
+  position: relative;
+  width: 100%;
+}

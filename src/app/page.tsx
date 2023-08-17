@@ -9,6 +9,8 @@ import Navbar from '@/components/Navbar/index'
 import News from '@/components/News'
 import Projects from '@/components/Projects'
 
+import 'node_modules/slick-carousel/slick/slick.css'
+import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './page.module.scss'
 
 // async function getPosts(host: string) {
