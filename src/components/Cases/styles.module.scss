@@ -3,6 +3,8 @@
 .grow_cases {
   padding: 50px 0px 0 0px;
   display: grid;
+  justify-content: center;
+  align-items: center;
   gap: 50px 70px;
 
   background-image: url('/vector_line.png');
@@ -22,19 +24,17 @@
 
 .section1 {
   grid-area: A;
-  margin-left: 135px;
 }
 .section2 {
   grid-area: B;
-  margin-right: 135px;
   background-color: #eaeaea;
   width: auto;
-  height: 350px;
-  border: 1px solid black;
 
   img {
+    justify-content: flex-start;
     width: 100%;
     height: 100%;
+    border: 0.25px solid black;
   }
 }
 .section3 {
@@ -53,11 +53,8 @@
 
 .short_article {
   display: flex;
-  width: 319.667px;
-  padding: 11.973px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20.667px;
   border: 0.599px solid #000;
   background: #eaeaea;
   margin-bottom: 85px;
@@ -69,6 +66,10 @@
   align-items: center;
   justify-content: space-between;
   align-content: 1fr 1fr;
+  .person_info {
+    position: relative;
+    top: -6px;
+  }
 
   h5 {
     color: #000;
@@ -81,8 +82,6 @@
     color: #000;
     font-family: Helvetica;
     font-size: 11px;
-    position: relative;
-    top: -13px;
   }
   img {
     display: flex;
@@ -163,6 +162,7 @@
   column-gap: 50px;
   padding-bottom: 20px;
   p {
+    padding: 28px;
     color: #000;
     font-family: Helvetica;
     font-size: 17.8px;
@@ -172,6 +172,229 @@
     align-items: center;
     justify-content: center;
     gap: 5.333px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .grow_cases {
+    padding: 53px 100px 0px 100px;
+    gap: 64px 65px;
+    background-size: 100%;
+  }
+
+  .section1 {
+    margin: 0px;
+    justify-items: center;
+    padding-left: 60px;
+  }
+  .section2 {
+    width: 93%;
+    height: auto;
+  }
+  .short_info__header {
+    font-size: 64px;
+    line-height: 101.5%; /* 35.187px */
+    letter-spacing: -0.056px;
+    margin-bottom: 75px;
+    margin-left: 185px;
+  }
+
+  .short_article {
+    width: 89%;
+    padding: 4px 16px 16px 20px;
+    gap: 10px;
+    border: 1px solid #000;
+    margin-bottom: 120px;
+  }
+
+  .person_info {
+    align-content: 1fr 1fr;
+    position: relative;
+    top: -0.2px;
+
+    .person_name {
+      position: relative;
+      top: -12px;
+    }
+
+    h5 {
+      font-size: 23px;
+      padding-top: -5px;
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 17px;
+    }
+    img {
+      width: 74px;
+      height: 74px;
+      border-radius: 8px;
+      margin-right: 14px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 0px;
+    }
+    &::after {
+      width: 35px;
+      height: 35px;
+      background-size: cover;
+      position: relative;
+      top: 2px;
+      left: 118px;
+    }
+  }
+
+  .short_article__description {
+    width: 100%;
+    font-size: 28px;
+    line-height: 110%;
+  }
+  .cases_button_1 {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 24px;
+    margin-right: 63px;
+    margin-top: -8px;
+
+    .cases_button__arrow1 {
+      border-radius: 6px;
+      margin-right: 26px;
+      height: 37px;
+      width: 37px;
+    }
+  }
+  .cases_social {
+    width: 51px;
+    height: 51px;
+    margin-left: 8px;
+  }
+  .cases_social_1,
+  .cases_social_2 {
+    margin-right: 0;
+    width: 39px;
+    height: 39px;
+    background-color: #000;
+    border-radius: 50%;
+    padding: 6px;
+    margin-left: 8px;
+  }
+
+  .specialists {
+    column-gap: 110px;
+
+    p {
+      padding: 28px;
+      font-size: 24px;
+      letter-spacing: 0.8px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .grow_cases {
+    padding: 50px 50px 0 50px;
+    gap: 50px 75px;
+    background-size: auto 380px;
+  }
+
+  .section1 {
+    padding-left: 35px;
+  }
+  .section2 {
+    width: auto;
+    height: 350px;
+  }
+
+  .short_info__header {
+    font-size: 34.667px;
+    line-height: 101.5%; /* 35.187px */
+    letter-spacing: -0.056px;
+    margin-bottom: 50px;
+    margin-left: 120px;
+  }
+
+  .short_article {
+    width: auto; //320
+    padding: 12px;
+    gap: 8px;
+    margin-bottom: 105px;
+
+    border: 0.599px solid #000;
+  }
+
+  .person_info {
+    h5 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 11px;
+    }
+    img {
+      width: 60.167px;
+      height: 60.167px;
+      border-radius: 5.986px;
+      margin-right: 11px;
+    }
+    &::after {
+      background-size: inherit;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: 0px;
+      left: 45px;
+    }
+  }
+
+  .short_article__description {
+    font-size: 16.467px;
+  }
+  .cases_button_1 {
+    padding: 8px;
+    border-radius: 7px;
+    font-size: 14px;
+    margin-right: 38px;
+
+    .cases_button__arrow1 {
+      border-radius: 5px;
+      margin-right: 13px;
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  .cases_social {
+    width: 36px;
+    height: 36px;
+
+    margin-left: 2px;
+  }
+  .cases_social_1 {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 6px;
+
+    margin-left: 2px;
+  }
+
+  .cases_social_2 {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 4px;
+    margin-left: 2px;
+  }
+
+  .specialists {
+    column-gap: 50px;
+    padding-bottom: 20px;
+    p {
+      font-size: 17.8px;
+      border: 0.533px solid #000;
+      display: flex;
+      padding: 15px 23px 15px 23px;
+      gap: 5.333px;
+    }
   }
 }
 @media (max-width: 1150px) {
@@ -258,28 +481,8 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .specialists {
-    column-gap: 50px;
-    padding-bottom: 20px;
-
-    p {
-      font-size: 12px;
-      gap: 5.333px;
-      padding: auto;
-    }
-  }
-
-  .section1 {
-    margin-left: 45px;
-  }
-  .section2 {
-    margin-right: 45px;
-    width: auto;
-    height: 330px;
-  }
-}
 @media (max-width: $desktop-width) {
+  //992px
   .grow_cases {
     padding: 30px 0px 0px 0px;
     gap: 39px 55px;
@@ -517,13 +720,15 @@
   }
 
   .person_info {
+    .person_info {
+      position: relative;
+      top: 5px;
+    }
     h5 {
       font-size: 19px;
     }
     p {
       font-size: 14px;
-      position: relative;
-      top: -24px;
     }
     img {
       width: 61px;
@@ -533,13 +738,13 @@
       margin-left: 0px;
     }
     &::after {
-      background-size: 35px;
+      background-size: 20px;
       background-position: cover;
-      width: 35px;
-      height: 50px;
+      width: 28px;
+      height: 28px;
       position: relative;
       top: 6px;
-      left: 105px;
+      left: 130px;
       margin: 0px;
     }
   }

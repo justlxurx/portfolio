@@ -16,7 +16,7 @@ import styles from './styles.module.scss'
 
 const Cases = () => {
   return (
-    <section style={{ paddingTop: '80px' }}>
+    <section style={{ paddingTop: '80px', marginBottom: '120px' }}>
       <h4 className={styles.short_info__header}>
         КЕЙСЫ,
         <br /> НА КОТОРЫХ РАСТЕШЬ
@@ -26,7 +26,7 @@ const Cases = () => {
           <article className={styles.short_article}>
             <div className={styles.person_info}>
               <Image src={avatar} alt={'Avatar'} />
-              <div>
+              <div className={styles.person_name}>
                 <h5>Оксана Герасименко</h5>
                 <p>
                   Lead IT-recruiter компании
@@ -39,8 +39,10 @@ const Cases = () => {
             </div>
 
             <p className={styles.short_article__description}>
-              Работая в мировых проектах и участвуя в международном комьюнити,
-              разработчики непрерывно развивают свои hard skills и становятся
+              Работая в мировых проектах и участвуя
+              <br />в международном комьюнити, <br />
+              разработчики непрерывно развивают <br /> свои hard skills и
+              становятся <br />
               востребованными профессионалами
             </p>
           </article>
