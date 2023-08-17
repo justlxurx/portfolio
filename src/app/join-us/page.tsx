@@ -1,6 +1,7 @@
 import Career from '@/components/Career'
 import Cases from '@/components/Cases'
 import Gallery from '@/components/Gallery'
+import JoinUsFooter from '@/components/JoinUsFooter'
 import Navbar from '@/components/Navbar'
 import TeamMember from '@/components/TeamMember'
 
@@ -18,7 +19,7 @@ export default async function JoinUs() {
         <Cases />
         <TeamMember />
       </main>
-      {/* <footer>Начни карьеру в IT стремительно</footer> */}
+      <JoinUsFooter />
     </>
   )
 }
