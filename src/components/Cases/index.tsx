@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import classNames from 'classnames'
 import arrow_icon from 'public/arrow_icon.svg'
@@ -10,11 +11,50 @@ import linkedin from 'public/linkedin.svg'
 import logo from 'public/qazdev_logo.svg'
 import telegram from 'public/telegram.svg'
 import vector_line from 'public/vector_line.png'
+import { useMedia } from 'react-use'
 
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 
+const Socials = () => {
+  return (
+    <div className={styles.social}>
+      <button className={styles.cases_button_1}>
+        <Image
+          className={styles.cases_button__arrow1}
+          src={arrow_icon}
+          alt={'Arrow'}
+        />
+        все кейсы
+      </button>
+      <div className="social_networks">
+        <Image
+          className={styles.cases_social}
+          src={instagram}
+          alt={'instagram'}
+        />
+        <Image
+          className={styles.cases_social_1}
+          src={linkedin}
+          alt={'linkedin'}
+        />
+        <Image
+          className={styles.cases_social}
+          src={telegram}
+          alt={'telegram'}
+        />
+        <Image
+          className={styles.cases_social_2}
+          src={facebook}
+          alt={'facebook'}
+        />
+      </div>
+    </div>
+  )
+}
+
 const Cases = () => {
+  const isMobile = useMedia('(max-width: 768px)')
   return (
     <section style={{ paddingTop: '80px', marginBottom: '120px' }}>
       <h4 className={styles.short_info__header}>
@@ -25,7 +65,8 @@ const Cases = () => {
         <section className={styles.section1}>
           <article className={styles.short_article}>
             <div className={styles.person_info}>
-              <Image src={avatar} alt={'Avatar'} />
+              <Image src={avatar} alt={'Avatar'} className={styles.avatar1} />
+
               <div className={styles.person_name}>
                 <h5>Оксана Герасименко</h5>
                 <p>
@@ -36,6 +77,11 @@ const Cases = () => {
                   </strong>{' '}
                 </p>
               </div>
+              <Image
+                src={confirmation}
+                alt="confirmation"
+                className={styles.confirmation1}
+              />
             </div>
 
             <p className={styles.short_article__description}>
@@ -46,55 +92,17 @@ const Cases = () => {
               востребованными профессионалами
             </p>
           </article>
-          <div className={styles.social}>
-            <button className={styles.cases_button_1}>
-              <Image
-                className={styles.cases_button__arrow1}
-                src={arrow_icon}
-                alt={'Arrow'}
-              />
-              все кейсы
-            </button>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-around',
-                columnGap: '10px',
-              }}
-            >
-              <Image
-                className={styles.cases_social}
-                src={instagram}
-                alt={'instagram'}
-              />
-              <Image
-                className={styles.cases_social_1}
-                src={linkedin}
-                alt={'linkedin'}
-              />
-              <Image
-                className={styles.cases_social}
-                src={telegram}
-                alt={'telegram'}
-              />
-              <Image
-                className={styles.cases_social_2}
-                src={facebook}
-                alt={'facebook'}
-              />
-            </div>
-          </div>
+          {!isMobile && <Socials />}
         </section>
 
         <section className={styles.section2}>
           <Image src={group_of_phones} alt="group_of_phones" />
         </section>
 
+        {isMobile && <Socials />}
+
         <section className={styles.section3}>
-          <div
-            className={styles.specialists}
-            style={{ justifyContent: 'center' }}
-          >
+          <div className={styles.specialists}>
             <div>
               <p>
                 {'<'}разработчики{'>'}
@@ -119,7 +127,7 @@ const Cases = () => {
 
           <div
             className={styles.specialists}
-            style={{ justifyContent: 'center' }}
+            style={{ paddingLeft: '14%', paddingRight: '14%' }}
           >
             <div>
               <p>

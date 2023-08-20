@@ -19,7 +19,7 @@ export default async function JoinUs() {
         <Cases />
         <TeamMember />
       </main>
-      <JoinUsFooter />
+      {/* <JoinUsFooter /> */}
     </>
   )
 }

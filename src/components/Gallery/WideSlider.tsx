@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 // import { nanoid } from 'nanoid'
-import { Carousel } from 'react-responsive-carousel'
+// import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
 
 import { ISlide } from './interface'
