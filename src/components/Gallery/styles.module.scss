@@ -79,16 +79,14 @@
     }
 
     &_bottom {
-      white-space: nowrap;
-      writing-mode: vertical-lr;
-      text-orientation: mixed;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 16.24px;
-      letter-spacing: -0.109px;
-      position: relative;
-      padding-bottom: 43px;
+      position: absolute;
+      bottom: 38%;
+      left: 14px;
+      display: flex;
+      word-wrap: unset;
+      transform: rotate(90deg);
+      transform-origin: top left;
+      width: max-content;
 
       &::after {
         background: $primary-color;
@@ -96,15 +94,14 @@
         display: block;
         height: 20px;
         width: 20px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        position: relative;
+        left: 22px;
       }
     }
   }
 }
 
-@media (max-width: $desktop-width) {
+@media (max-width: 1150px) {
   .first {
     &__inner {
       padding: 16.5px 12.5px;
@@ -154,26 +151,6 @@
       &_icon {
         max-height: 75.296px;
         max-width: 75.296px;
-      }
-    }
-
-    &__additional {
-      &_top {
-        height: 26px;
-        width: 17px;
-      }
-
-      &_bottom {
-        font-size: 8.917px;
-        font-weight: 400;
-        line-height: 9.051px;
-        letter-spacing: -0.061px;
-        padding-bottom: 24px;
-
-        &::after {
-          height: 11px;
-          width: 11px;
-        }
       }
     }
   }
