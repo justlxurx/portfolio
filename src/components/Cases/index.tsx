@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import classNames from 'classnames'
+import { nanoid } from 'nanoid'
 import arrow_icon from 'public/arrow_icon.svg'
 import avatar from 'public/avatar.svg'
 import confirmation from 'public/confirmation.png'
@@ -17,6 +18,24 @@ import { useMedia } from 'react-use'
 import styles from './styles.module.scss'
 
 const Socials = () => {
+  const socialLinks2 = [
+    {
+      icon: 'instagram.svg',
+      path: '#',
+    },
+    {
+      icon: 'linkedin.svg',
+      path: '#',
+    },
+    {
+      icon: 'telegram.svg',
+      path: '#',
+    },
+    {
+      icon: 'facebook.svg',
+      path: '#',
+    },
+  ]
   return (
     <div className={styles.social}>
       <button className={styles.cases_button_1}>
@@ -27,28 +46,17 @@ const Socials = () => {
         />
         все кейсы
       </button>
-      <div className="social_networks">
-        <Image
-          className={styles.cases_social}
-          src={instagram}
-          alt={'instagram'}
-        />
-        <Image
-          className={styles.cases_social_1}
-          src={linkedin}
-          alt={'linkedin'}
-        />
-        <Image
-          className={styles.cases_social}
-          src={telegram}
-          alt={'telegram'}
-        />
-        <Image
-          className={styles.cases_social_2}
-          src={facebook}
-          alt={'facebook'}
-        />
-      </div>
+      <nav className={styles.navigation1}>
+        <ul className={styles.social_networks}>
+          {socialLinks2.map(({ path, icon }) => (
+            <li key={nanoid()}>
+              <a className={styles.link} href={path}>
+                <Image src={icon} alt="icon" width="100" height="100" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   )
 }

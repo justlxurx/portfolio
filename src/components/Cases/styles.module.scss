@@ -1,21 +1,17 @@
 @import '/src/styles/variables.scss';
 
 .grow_cases {
-  padding: 50px 0px 0 0px;
+  padding: 80px 146px;
+  gap: 65px 135px;
   display: grid;
   justify-content: center;
   align-items: center;
-  gap: 50px 70px;
-
   background-image: url('/vector_line.png');
   background-position: cover;
   background-position-x: center;
   background-size: 100%;
-
   background-repeat: no-repeat;
-
   background-color: #eaeaea;
-
   grid-template-areas:
     'A A A A   B B B B'
     'A A A A   B B B B'
@@ -27,16 +23,16 @@
   flex-direction: column;
   justify-content: space-between;
   grid-area: A;
-  padding: 0px 10px 0px 60px;
-  margin: 0;
-  height: 449px;
+  padding-left: 65px;
+  width: auto;
+  height: 100%;
 }
 .section2 {
   grid-area: B;
   background-color: #eaeaea;
   width: auto;
   height: 100%;
-  margin-right: 13%;
+  margin-right: 65px;
 
   img {
     justify-content: flex-start;
@@ -48,23 +44,26 @@
 .section3 {
   grid-area: C;
 }
+
 .short_info__header {
+  font-size: 64px;
+  margin-left: 146px;
   color: #000;
   font-family: Helvetica;
-  font-size: 34.667px;
   line-height: 101.5%; /* 35.187px */
   letter-spacing: -0.056px;
   text-transform: uppercase;
   margin-bottom: 50px;
-  margin-left: 100px;
 }
 
 .short_article {
+  width: auto;
+  // width: 100%;
+  gap: 25px;
   display: flex;
   flex-direction: column;
   background: #eaeaea;
   padding: 16px;
-  width: 100%;
   border: 1px solid #000;
   margin-left: 0;
 }
@@ -72,19 +71,20 @@
 .person_info {
   align-content: flex-end;
   display: grid;
-  // grid-template-columns: 1fr 3fr 1fr;
   grid-template-columns: 16% 57% 26%;
   .person_name {
     justify-self: start;
   }
 
   h5 {
-    font-size: revert;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-size: 21px;
     color: #000;
     font-family: Helvetica;
   }
   p {
-    font-size: 15px;
+    font-size: 16px;
     color: #000;
     font-family: Helvetica;
   }
@@ -94,10 +94,9 @@
     border-radius: 8px;
     align-self: end;
     justify-self: start;
-    // margin-right: 14px;
   }
   .confirmation1 {
-    width: 30%;
+    width: 25%;
     height: auto;
     align-self: center;
     justify-self: end;
@@ -107,19 +106,24 @@
 .short_article__description {
   color: #000;
   font-family: Helvetica;
-  font-size: 16.467px;
   font-style: normal;
+  font-size: 25px;
+  line-height: 110%;
 }
+
 .social {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
   .cases_button_1 {
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
     background: #000;
     color: #eaeaea;
     font-family: Helvetica;
@@ -127,145 +131,55 @@
     border: 0px;
 
     .cases_button__arrow1 {
-      border-radius: 5px;
       background: #eaeaea;
-      margin-right: 13px;
+      border-radius: 6px;
+      margin-right: 18px;
+      height: 37px;
+      width: 37px;
     }
   }
-
   .social_networks {
-    .cases_social {
-      width: 36px;
-      height: 36px;
-    }
-    .cases_social_1 {
-      width: 24px;
-      height: 24px;
-      background-color: #000;
-      border-radius: 50%;
-      padding: 6px;
-    }
-
-    .cases_social_2 {
-      width: 28px;
-      height: 28px;
-      background-color: #000;
-      border-radius: 50%;
-      padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 51px;
+      height: 51px;
+      margin-left: 10px;
     }
   }
 }
+
 .specialists {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
+  // padding: 28px;
+  margin-bottom: 25px;
 
   p {
     color: #000;
     font-family: Helvetica;
-    font-size: 17px;
-    border: 0.533px solid #000;
-    padding: 15px;
+    font-size: 24px;
+    border: 1px solid #000;
+    padding: 28px;
     align-items: center;
-    // display: flex;
-    // justify-content: center;
     text-align: center;
     letter-spacing: 0.8px;
   }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1617px) {
   .grow_cases {
-    padding: 53px 100px 0px 100px;
-    gap: 64px 85px;
-    background-size: 100%;
+    gap: 64px 75px;
+    padding: 53px 96px;
   }
-
   .section1 {
     width: auto;
     height: 100%;
   }
-
   .short_info__header {
-    font-size: 64px;
-    line-height: 101.5%; /* 35.187px */
-    letter-spacing: -0.056px;
-    margin-left: 185px;
+    margin-left: 96px;
+    font-size: 51px;
   }
-
-  .short_article {
-    width: auto;
-    gap: 25px;
-  }
-
-  .person_info {
-    h5 {
-      // font-size: 23px;
-      font-size: revert;
-      margin-top: 4%;
-      margin-bottom: 4%;
-    }
-    p {
-      font-size: 17px;
-    }
-
-    .avatar1 {
-      border-radius: 8px;
-      // margin-right: 14px;
-    }
-    .confirmation1 {
-      width: 25%;
-      height: auto;
-    }
-  }
-
-  .short_article__description {
-    font-size: 28px;
-    line-height: 110%;
-  }
-  .cases_button_1 {
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 23px;
-
-    .cases_button__arrow1 {
-      border-radius: 6px;
-      margin-right: 26px;
-      height: 37px;
-      width: 37px;
-    }
-  }
-
-  .cases_social {
-    width: 51px;
-    height: 51px;
-    margin-left: 10px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 39px;
-    height: 39px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 6px;
-
-    margin-left: 10px;
-  }
-
-  .specialists {
-    p {
-      padding: 28px;
-      font-size: 24px;
-    }
-  }
-}
-
-@media (max-width: 1590px) {
-  .section1 {
-    width: auto;
-    height: 100%;
-  }
-
   .short_article {
     height: auto;
     padding: 13px;
@@ -274,22 +188,21 @@
 
   .person_info {
     h5 {
-      // font-size: 17px;
-      font-size: revert;
+      font-size: 19px;
       margin-top: 4%;
       margin-bottom: 4%;
     }
     p {
-      font-size: 11px;
+      font-size: 15px;
     }
   }
 
   .short_article__description {
-    font-size: 17px;
+    font-size: 24px;
   }
   .social {
     .cases_button_1 {
-      font-size: 14px;
+      font-size: 17px;
       padding: 11px;
       border-radius: 7px;
       margin-right: 28px;
@@ -297,55 +210,38 @@
       .cases_button__arrow1 {
         border-radius: 4px;
         margin-right: 13px;
-        height: 24px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 40px;
+        width: 40px;
+        margin-left: 10px;
       }
     }
   }
 
-  .cases_social {
-    width: 35px;
-    height: 35px;
-    margin-left: 10px;
-  }
-  .cases_social_1 {
-    width: 23px;
-    height: 23px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 6px;
-    margin-left: 10px;
-  }
-  .cases_social_2 {
-    width: 29px;
-    height: 29px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 3px;
-    margin-left: 10px;
-  }
-
   .specialists {
     p {
-      padding: 18px;
-      font-size: 18px;
+      padding: 20px;
+      font-size: 20px;
     }
   }
 }
 
-@media (max-width: 1300px) {
-  //992px
+@media (max-width: 1385px) {
   .grow_cases {
-    padding: 30px 50px 0px 50px;
-    gap: 39px 55px;
+    gap: 49px 65px;
   }
 
   .section2 {
     margin-right: 40px;
   }
   .short_info__header {
-    font-size: 30px;
-    line-height: 101.5%; /* 35.187px */
+    font-size: 40px;
+    line-height: 101.5%;
     letter-spacing: -0.056px;
     margin-bottom: 40px;
     margin-left: 80px;
@@ -359,6 +255,50 @@
 
   .person_info {
     h5 {
+      font-size: 19px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .short_article__description {
+    font-size: 22px;
+  }
+  .social {
+    .cases_button_1 {
+      padding: 10px;
+      border-radius: 7px;
+      font-size: 17px;
+      margin-right: 30px;
+
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 9px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 38px;
+        width: 38px;
+        margin-left: 5px;
+      }
+    }
+  }
+  .specialists {
+    padding-bottom: 14px;
+    p {
+      font-size: 18px;
+      border: 0.533px solid #000;
+      padding: 17px;
+    }
+  }
+}
+@media (max-width: 1240px) {
+  .person_info {
+    h5 {
       font-size: 14px;
     }
     p {
@@ -369,42 +309,38 @@
   .short_article__description {
     font-size: 17px;
   }
-  .cases_button_1 {
-    padding: 7px;
-    border-radius: 7px;
-    font-size: 11px;
-    margin-right: 30px;
+  .social {
+    .cases_button_1 {
+      padding: 8px;
+      border-radius: 7px;
+      font-size: 15px;
+      margin-right: 30px;
 
-    .cases_button__arrow1 {
-      border-radius: 3px;
-      margin-right: 9px;
-      height: 19px;
-      width: 19px;
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 9px;
+        height: 25px;
+        width: 25px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 38px;
+        width: 38px;
+        margin-left: 5px;
+      }
     }
   }
-  .cases_social {
-    width: 31px;
-    height: 31px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 23px;
-    height: 23px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 4px;
-  }
   .specialists {
-    padding-bottom: 20px;
+    padding-bottom: 14px;
     p {
-      font-size: 14px;
+      font-size: 17px;
       border: 0.533px solid #000;
       padding: 17px;
     }
   }
 }
 @media (max-width: 1100px) {
-  //992px
   .grow_cases {
     padding: 30px 50px 0px 50px;
   }
@@ -417,8 +353,8 @@
   .short_info__header {
     font-size: 30px;
     margin-bottom: 40px;
+    margin-left: 50px;
   }
-
   .person_info {
     h5 {
       font-size: 12px;
@@ -427,104 +363,43 @@
       font-size: 10px;
     }
   }
-
   .short_article__description {
     font-size: 16px;
   }
-  .cases_button_1 {
-    padding: 5px;
-    border-radius: 7px;
-    font-size: 11px;
-    margin-right: 17px;
-
-    .cases_button__arrow1 {
-      border-radius: 3px;
-      margin-right: 5px;
-      height: 19px;
-      width: 19px;
+  .social {
+    .cases_button_1 {
+      padding: 10px;
+      border-radius: 7px;
+      font-size: 12px;
+      margin-right: 17px;
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 5px;
+        height: 19px;
+        width: 19px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 35px;
+        width: 35px;
+        margin-left: 4px;
+      }
     }
   }
-  .cases_social {
-    width: 31px;
-    height: 31px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 23px;
-    height: 23px;
-    padding: 4px;
-  }
-
   .specialists {
-    padding-bottom: 17px;
+    padding-bottom: 2px;
     p {
       padding: 14px;
       font-size: 14px;
     }
   }
 }
-@media (max-width: $desktop-width) {
-  //992px
-  .grow_cases {
-    padding: 30px 50px 0px 50px;
-  }
-  .section1 {
-    padding: 0 0 0 50px;
-  }
-  .section2 {
-    margin-right: 40px;
-  }
-  .short_info__header {
-    font-size: 30px;
-  }
 
-  .person_info {
-    h5 {
-      font-size: 11px;
-    }
-    p {
-      font-size: 9px;
-    }
-  }
-
-  .short_article__description {
-    font-size: 15px;
-  }
-  .social {
-    .cases_button_1 {
-      padding: 8px;
-      border-radius: 7px;
-      font-size: 13px;
-      margin-right: 10px;
-
-      .cases_button__arrow1 {
-        border-radius: 3px;
-        margin-right: 5px;
-        height: 22px;
-        width: 22px;
-      }
-    }
-  }
-  .cases_social {
-    width: 28px;
-    height: 28px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 22px;
-    height: 22px;
-    padding: 3px;
-  }
-
-  .specialists {
-    padding-bottom: 17px;
-    p {
-      padding: 13px;
-      font-size: 13px;
-    }
-  }
-}
 @media (max-width: 920px) {
+  .grow_cases {
+    gap: 29px 45px;
+  }
   .person_info {
     .person_name {
       margin-left: 7px;
@@ -533,10 +408,9 @@
       font-size: 10px;
     }
     p {
-      font-size: 8px;
+      font-size: 7px;
     }
   }
-
   .short_article__description {
     font-size: 12px;
   }
@@ -544,60 +418,8 @@
     .cases_button_1 {
       padding: 8px;
       border-radius: 7px;
-      font-size: 12px;
+      font-size: 11px;
       margin-right: 8px;
-
-      .cases_button__arrow1 {
-        border-radius: 3px;
-        margin-right: 5px;
-        height: 20px;
-        width: 20px;
-      }
-    }
-  }
-  .cases_social {
-    width: 25px;
-    height: 25px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 19px;
-    height: 19px;
-    padding: 3px;
-  }
-
-  .specialists {
-    padding-bottom: 17px;
-    p {
-      padding: 10px;
-      font-size: 12px;
-    }
-  }
-}
-
-@media (max-width: 830px) {
-  .person_info {
-    .person_name {
-      margin-left: 10px;
-    }
-    h5 {
-      font-size: 9px;
-    }
-    p {
-      font-size: 7px;
-    }
-  }
-
-  .short_article__description {
-    font-size: 11px;
-  }
-  .social {
-    .cases_button_1 {
-      padding: 8px;
-      border-radius: 7px;
-      font-size: 10px;
-      margin-right: 5px;
-
       .cases_button__arrow1 {
         border-radius: 3px;
         margin-right: 5px;
@@ -605,20 +427,17 @@
         width: 17px;
       }
     }
-  }
-  .cases_social {
-    width: 22px;
-    height: 22px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 16px;
-    height: 16px;
-    padding: 3px;
+    .social_networks {
+      img {
+        height: 25px;
+        width: 25px;
+        margin-left: 4px;
+      }
+    }
   }
 
   .specialists {
-    padding-bottom: 17px;
+    padding-bottom: 7px;
     p {
       padding: 10px;
       font-size: 12px;
@@ -626,7 +445,8 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $tablet-width) {
+  //768px
   .grow_cases {
     margin: 0;
     padding: 30px 30px 0px 30px;
@@ -678,7 +498,6 @@
       font-size: 22px;
     }
   }
-
   .short_article__description {
     font-size: 32px;
   }
@@ -688,7 +507,6 @@
       padding: 15px;
       border-radius: 8px;
       font-size: 25px;
-
       .cases_button__arrow1 {
         border-radius: 4px;
         margin-right: 25px;
@@ -696,28 +514,15 @@
         width: 39px;
       }
     }
+    .social_networks {
+      img {
+        height: 60px;
+        width: 60px;
+        margin-left: 20px;
+      }
+    }
   }
-  .cases_social {
-    width: 60px;
-    height: 60px;
-    margin-left: 20px;
-  }
-  .cases_social_1 {
-    width: 50px;
-    height: 50px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 5px;
-    margin-left: 20px;
-  }
-  .cases_social_2 {
-    width: 52px;
-    height: 52px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 4px;
-    margin-left: 20px;
-  }
+
   .specialists {
     display: none;
   }
@@ -730,12 +535,10 @@
   .short_info__header {
     font-size: 30px;
   }
-
   .short_article {
     padding: 17px;
     gap: 15px;
   }
-
   .person_info {
     h5 {
       font-size: 22px;
@@ -744,7 +547,6 @@
       font-size: 17px;
     }
   }
-
   .short_article__description {
     font-size: 25px;
   }
@@ -754,7 +556,6 @@
       padding: 10px;
       border-radius: 7px;
       font-size: 16px;
-
       .cases_button__arrow1 {
         border-radius: 4px;
         margin-right: 23px;
@@ -762,41 +563,29 @@
         width: 28px;
       }
     }
-  }
-  .cases_social {
-    width: 38px;
-    height: 38px;
-    margin-left: 15px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 30px;
-    height: 30px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 4px;
-    margin-left: 15px;
+    .social_networks {
+      img {
+        height: 38px;
+        width: 38px;
+        margin-left: 15px;
+      }
+    }
   }
   .specialists {
     display: none;
   }
 }
 @media (max-width: 582px) {
-  //576px
   .grow_cases {
-    // padding: 30px 16px 150px 16px;
     gap: 30px;
   }
-
   .short_info__header {
     font-size: 33px;
   }
-
   .short_article {
     padding: 20px;
     gap: 15px;
   }
-
   .person_info {
     h5 {
       font-size: 19px;
@@ -805,7 +594,6 @@
       font-size: 15px;
     }
   }
-
   .short_article__description {
     font-size: 23px;
   }
@@ -815,7 +603,6 @@
       padding: 14px;
       border-radius: 7px;
       font-size: 19px;
-
       .cases_button__arrow1 {
         border-radius: 4px;
         margin-right: 23px;
@@ -823,20 +610,13 @@
         width: 29px;
       }
     }
-  }
-  .cases_social {
-    width: 42px;
-    height: 42px;
-    margin-left: 15px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 34px;
-    height: 34px;
-    background-color: #000;
-    border-radius: 50%;
-    padding: 4px;
-    margin-left: 15px;
+    .social_networks {
+      img {
+        height: 42px;
+        width: 42px;
+        margin-left: 15px;
+      }
+    }
   }
   .specialists {
     display: none;
@@ -850,8 +630,6 @@
     margin-bottom: 50px;
     margin-left: 15px;
     font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 112.5%; /* 31.5px */
     letter-spacing: -1.02px;
   }
@@ -861,7 +639,6 @@
     gap: 15px;
     border: 0.599px solid #000;
   }
-
   .person_info {
     h5 {
       font-size: 16px;
@@ -870,7 +647,6 @@
       font-size: 12px;
     }
   }
-
   .short_article__description {
     font-size: 19px;
   }
@@ -879,7 +655,6 @@
       padding: 11px;
       border-radius: 7px;
       font-size: 17px;
-
       .cases_button__arrow1 {
         border-radius: 4px;
         margin-right: 18px;
@@ -887,18 +662,13 @@
         width: 27px;
       }
     }
-  }
-  .cases_social {
-    width: 35px;
-    height: 35px;
-    margin-left: 12px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 27px;
-    height: 27px;
-    padding: 4px;
-    margin-left: 12px;
+    .social_networks {
+      img {
+        height: 35px;
+        width: 35px;
+        margin-left: 12px;
+      }
+    }
   }
 }
 @media (max-width: 413px) {
@@ -913,7 +683,6 @@
       font-size: 8px;
     }
   }
-
   .short_article__description {
     font-size: 14px;
   }
@@ -922,7 +691,6 @@
       padding: 8px;
       border-radius: 7px;
       font-size: 10px;
-
       .cases_button__arrow1 {
         border-radius: 4px;
         margin-right: 10px;
@@ -930,17 +698,12 @@
         width: 22px;
       }
     }
-  }
-  .cases_social {
-    width: 27px;
-    height: 27px;
-    margin-left: 8px;
-  }
-  .cases_social_1,
-  .cases_social_2 {
-    width: 19px;
-    height: 19px;
-    padding: 4px;
-    margin-left: 8px;
+    .social_networks {
+      img {
+        height: 27px;
+        width: 27px;
+        margin-left: 8px;
+      }
+    }
   }
 }
