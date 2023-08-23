@@ -102,12 +102,19 @@
     }
   }
 
-  .slider {
+  .slider1 {
     border-top-left-radius: 19.375px;
     border-top-right-radius: 19.375px;
     background: black;
     height: 100%;
     width: auto;
+    &_big {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
   }
 }
 @media (max-width: 1670px) {
@@ -242,7 +249,7 @@
         }
       }
     }
-    .slider {
+    .slider1 {
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
     }
@@ -390,7 +397,7 @@
       }
     }
 
-    .slider {
+    .slider1 {
       border-radius: 8px;
       background: black;
       height: 342px;
@@ -420,7 +427,7 @@
       }
     }
 
-    .slider {
+    .slider1 {
       height: 242px;
       padding: 17px;
       border-radius: 5px;

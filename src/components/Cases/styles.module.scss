@@ -1,7 +1,7 @@
 @import '/src/styles/variables.scss';
 
 .grow_cases {
-  padding: 80px 146px;
+  padding: 80px 0px; //146px
   gap: 65px 135px;
   display: grid;
   justify-content: center;
@@ -170,7 +170,7 @@
 @media (max-width: 1617px) {
   .grow_cases {
     gap: 64px 75px;
-    padding: 53px 96px;
+    padding: 53px 0px; //96px
   }
   .section1 {
     width: auto;
@@ -342,7 +342,7 @@
 }
 @media (max-width: 1100px) {
   .grow_cases {
-    padding: 30px 50px 0px 50px;
+    padding: 30px 0px; //50
   }
   .section1 {
     padding: 0 0 0 50px;
@@ -353,7 +353,6 @@
   .short_info__header {
     font-size: 30px;
     margin-bottom: 40px;
-    margin-left: 50px;
   }
   .person_info {
     h5 {
@@ -388,18 +387,69 @@
     }
   }
   .specialists {
-    padding-bottom: 2px;
+    padding-bottom: 17px;
     p {
       padding: 14px;
       font-size: 14px;
     }
   }
 }
-
-@media (max-width: 920px) {
+@media (max-width: $desktop-width) {
+  //992px
   .grow_cases {
-    gap: 29px 45px;
+    padding: 30px 0; //50
   }
+  .section1 {
+    padding: 0 0 0 50px;
+  }
+  .section2 {
+    margin-right: 40px;
+  }
+  .short_info__header {
+    font-size: 30px;
+  }
+  .person_info {
+    h5 {
+      font-size: 11px;
+    }
+    p {
+      font-size: 9px;
+    }
+  }
+  .short_article__description {
+    font-size: 15px;
+  }
+  .social {
+    .cases_button_1 {
+      padding: 8px;
+      border-radius: 7px;
+      font-size: 13px;
+      margin-right: 10px;
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 5px;
+        height: 22px;
+        width: 22px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 28px;
+        width: 28px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .specialists {
+    padding-bottom: 17px;
+    p {
+      padding: 13px;
+      font-size: 13px;
+    }
+  }
+}
+@media (max-width: 920px) {
   .person_info {
     .person_name {
       margin-left: 7px;
@@ -437,7 +487,7 @@
   }
 
   .specialists {
-    padding-bottom: 7px;
+    padding-bottom: 17px;
     p {
       padding: 10px;
       font-size: 12px;
@@ -445,11 +495,10 @@
   }
 }
 
-@media (max-width: $tablet-width) {
-  //768px
+@media (max-width: 768px) {
   .grow_cases {
     margin: 0;
-    padding: 30px 30px 0px 30px;
+    padding: 30px 0 0 0; //30
     gap: 60px;
     display: flex;
     flex-direction: column;
@@ -465,9 +514,11 @@
   }
   .section2 {
     width: 100%;
-    padding: 0px;
     height: auto;
     margin: 0px;
+    img {
+      width: 99%;
+    }
   }
   .short_info__header {
     margin-bottom: 50px;
@@ -623,9 +674,9 @@
   }
 }
 @media (max-width: 550px) {
-  .grow_cases {
-    padding: 0 15px 0 15px;
-  }
+  // .grow_cases {
+  //   padding: 0 15px 0 15px;
+  // }
   .short_info__header {
     margin-bottom: 50px;
     margin-left: 15px;

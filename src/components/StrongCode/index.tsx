@@ -1,16 +1,33 @@
 import Image from 'next/image'
 import classNames from 'classnames'
-import { nanoid } from 'nanoid'
 import arrow_icon from 'public/arrow_icon.svg'
-import ellipse from 'public/ellipse.svg'
-import line from 'public/line.svg'
-import vector_line from 'public/vector_line.png'
+//import ellipse from 'public/ellipse.svg'
+import fitness from 'public/fitness.png'
 import { useMedia } from 'react-use'
+
+import BigSlider from './BigSlider'
 
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 
 const StrongCode = () => {
+  const firstEvent = [
+    {
+      component: <Image src={fitness} alt={'fitness'} fill />,
+    },
+    {
+      component: <Image src={fitness} alt={'fitness'} fill />,
+    },
+    {
+      component: <Image src={fitness} alt={'fitness'} fill />,
+    },
+    {
+      component: <Image src={fitness} alt={'fitness'} fill />,
+    },
+    {
+      component: <Image src={fitness} alt={'fitness'} fill />,
+    },
+  ]
   return (
     <section className={styles.strong_coding}>
       <div className={styles.strong_coding_main}>
@@ -57,7 +74,11 @@ const StrongCode = () => {
         </div>
       </div>
 
-      <div className={styles.slider}></div>
+      <div className={styles.slider1}>
+        <div className={styles.slider1_big}>
+          <BigSlider items={firstEvent} />
+        </div>
+      </div>
     </section>
   )
 }

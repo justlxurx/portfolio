@@ -1,0 +1,47 @@
+@import '/src/styles/variables.scss';
+
+// .slider_wrapper {
+// }
+/* Стили для точек навигации */
+
+.slider {
+  position: inherit;
+  //padding: 88px;
+  height: 100%;
+  width: 450px;
+  background: black;
+}
+
+.slide_wrapper1 {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 100%;
+  //   display: flex;
+  aspect-ratio: 3/4;
+  display: flex;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+  width: 100%;
+
+  //height: 100%;
+}
+
+@media (width: 1300px) {
+  .slider {
+    position: relative;
+    padding: 0 58px;
+    height: 50px;
+    width: 280px;
+    //display: flex;
+    background: black;
+  }
+
+  .slide_wrapper1 {
+    aspect-ratio: 3/4;
+    display: block;
+
+    position: relative;
+    width: auto;
+    height: 100%;
+  }
+}
