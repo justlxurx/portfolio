@@ -113,7 +113,7 @@ const Career = () => {
 
       <div className={styles.third_row}>
         <div className={styles.small_text} id={styles.word1}><p>наши ценности</p> </div>
-        <div className={styles.main_text}><p><em>qazdev</em>  –  аутсорсинговая компания про:  {'<'}готовность к росту{'>'}  </p> </div>
+        <div className={styles.main_text}><p> <strong><em>qazdev</em> </strong>  –  аутсорсинговая компания про:  {'<'}готовность к росту{'>'}  </p> </div>
         <div className={styles.small_text}id={styles.word2} style={{justifySelf:"end"}}> <p>каждый важен</p> </div>
      
       </div>

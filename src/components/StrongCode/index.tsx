@@ -76,7 +76,7 @@ const StrongCode = () => {
 
       <div className={styles.slider1}>
         <div className={styles.slider1_big}>
-          {/* <BigSlider items={firstEvent} /> */}
+          <BigSlider items={firstEvent} />
         </div>
       </div>
     </section>

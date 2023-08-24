@@ -14,7 +14,7 @@ export default async function JoinUs() {
       <Navbar />
       <main>
         <Career />
-        {/* <Gallery /> */}
+        <Gallery />
         {/* <section>Сильный код</section>
         <section>кейсы, на которых растешь</section> */}
         <StrongCode />
