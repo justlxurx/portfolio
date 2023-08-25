@@ -10,12 +10,14 @@ export default async function JoinUs() {
   return (
     <>
       <Navbar />
-      <main className="container">
-        <Career />
-        {/* <Gallery /> */}
-        {/* <section>Сильный код</section>
-        <section>кейсы, на которых растешь</section> */}
-        <TeamMember />
+      <main>
+        {/* <Career /> */}
+        <div className="container">
+          <Gallery />
+        </div>
+        <div className="container">
+          <TeamMember />
+        </div>
       </main>
       <JoinUsFooter />
     </>

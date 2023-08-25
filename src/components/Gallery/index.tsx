@@ -19,7 +19,11 @@ import styles from './styles.module.scss'
 const Gallery = () => {
   const specializedEvents = [
     {
-      label: 'Сами организовываем профильные мероприятия ',
+      label: (
+        <span>
+          Сами организовываем <br /> профильные мероприятия
+        </span>
+      ),
       component: (
         <Image
           src={specializedEvents1}
@@ -29,40 +33,56 @@ const Gallery = () => {
       ),
     },
     {
-      label: 'Сами организовываем профильные мероприятия ',
+      label: (
+        <span>
+          Сами организовываем <br /> профильные мероприятия
+        </span>
+      ),
       component: (
         <Image
-          src={specializedEvents1}
+          src={specializedEvents2}
           alt={'Профильное мероприятие #2'}
           fill
         />
       ),
     },
     {
-      label: 'Сами организовываем профильные мероприятия ',
+      label: (
+        <span>
+          Сами организовываем <br /> профильные мероприятия
+        </span>
+      ),
       component: (
         <Image
-          src={specializedEvents1}
+          src={specializedEvents3}
           alt={'Профильное мероприятие #3'}
           fill
         />
       ),
     },
     {
-      label: 'Сами организовываем профильные мероприятия ',
+      label: (
+        <span>
+          Сами организовываем <br /> профильные мероприятия
+        </span>
+      ),
       component: (
         <Image
-          src={specializedEvents1}
+          src={specializedEvents4}
           alt={'Профильное мероприятие #4'}
           fill
         />
       ),
     },
     {
-      label: 'Сами организовываем профильные мероприятия ',
+      label: (
+        <span>
+          Сами организовываем <br /> профильные мероприятия
+        </span>
+      ),
       component: (
         <Image
-          src={specializedEvents1}
+          src={specializedEvents5}
           alt={'Профильное мероприятие #5 '}
           fill
         />
@@ -89,39 +109,39 @@ const Gallery = () => {
       </header>
       <div className={styles.blocks}>
         <div className={classNames(styles.blocks__first, styles.first)}>
-          <div className={styles.first__inner}>
-            <span className={styles.first__inner_header}>
-              Участвуем и выступаем <br /> на митапах
-            </span>
-            <div className={styles.first__inner_icon}>
-              <Image
-                src={firstBlockMainIcon}
-                alt="First block main icon"
-                fill={true}
-              />
-            </div>
-            <span className={styles.first__inner_footer}>
-              Посещаем профильные <br /> конференции
-            </span>
-          </div>
-          <div className={styles.first__additional}>
+          <span className={styles.first__header}>
+            Участвуем и выступаем <br /> на митапах
+          </span>
+          <div className={styles.first__icon}>
             <Image
-              className={styles.first__additional_top}
-              src={firstBlockSymbolsIcon}
-              alt="1cm"
+              src={firstBlockMainIcon}
+              alt="First block main icon"
+              fill={true}
             />
-            <span className={styles.first__additional_bottom}>
-              event направление
-            </span>
           </div>
+          <span className={styles.first__footer}>
+            Посещаем профильные <br /> конференции
+          </span>
         </div>
-        <div className={styles.blocks__second}>
+        <div className={classNames(styles.blocks__second, styles.second)}>
+          <Image
+            className={styles.second__top}
+            src={firstBlockSymbolsIcon}
+            alt="1cm"
+          />
+          <span className={styles.second__bottom}>event направление</span>
+        </div>
+        <div className={classNames(styles.blocks__third, styles.third)}>
           <WideSlider items={specializedEvents} />
         </div>
-        <div className={styles.blocks__third}>3</div>
-        <div className={styles.blocks__fourth}>4</div>
-        <div className={styles.blocks__fives}>5</div>
-        <div className={styles.blocks__sixth}>6</div>
+        <div className={classNames(styles.blocks__fourth, styles.fourth)}></div>
+      </div>
+      <div className={classNames(styles.blocks, styles.secondary_blocks)}>
+        <div className={classNames(styles.blocks__fives, styles.fives)}></div>
+        <div className={classNames(styles.blocks__sixth, styles.sixth)}></div>
+        <div className={classNames(styles.blocks__seventh, styles.seventh)}>
+          <WideSlider items={specializedEvents} />
+        </div>
       </div>
     </section>
   )

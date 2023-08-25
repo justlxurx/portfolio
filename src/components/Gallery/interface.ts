@@ -1,4 +1,4 @@
 export interface ISlide {
-  label: string
+  label: string | React.ReactNode
   component: React.ReactNode
 }
