@@ -5,6 +5,7 @@ import Slider from 'react-slick'
  import 'node_modules/slick-carousel/slick/slick.css'
  import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './BigSlider.module.scss'
+import { lightFormat } from 'date-fns'
 
 export interface FirstSlider {
   component: React.ReactNode
@@ -18,8 +19,7 @@ const BigSlider: React.FC<SliderFitness> = ({ items }) => {
   const [activeSlide, setActiveSlide] = useState(0)
 
   const settings = {
-    dotsClass:styles.dots,
-
+    //dotsClass:styles.dots,
     className: styles.slider,
     dots: true,
     infinite: true,
@@ -27,19 +27,18 @@ const BigSlider: React.FC<SliderFitness> = ({ items }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-   //dotsClass:styles.dots,
+    adaptiveHeight: true,
    customPaging: (i: number) => {
     const buttonNumber = i + 1
     return (
-      <div
-        className={classNames(styles.dot, {
-          [styles.dot___active]: activeSlide === buttonNumber,
-        })}
-      >
+      <div className={classNames(styles.dot, {[styles.dot__active]: activeSlide === buttonNumber-1,})}>
       </div>
     )
   },
   afterChange: (current: number) => setActiveSlide(current),
+
+
+
   }
 
   return (
