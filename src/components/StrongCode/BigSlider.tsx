@@ -29,6 +29,7 @@ const BigSlider: React.FC<SliderFitness> = ({ items }) => {
     slidesToScroll: 1,
     arrows: false,
     afterChange: (current: number) => setActiveSlide(current),
+     
   }
 
   return (
