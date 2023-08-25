@@ -5,10 +5,10 @@
   height: 850px;
   width: auto;
   display: grid;
+  margin-bottom: 140px;
   grid-template-columns: 1fr 1fr;
   border-radius: 14.531px;
   background: #f2f2f2;
-  margin: 140px 0px;
   column-gap: 3%;
   &_main {
     padding: 10px 0 65px 0;
@@ -416,10 +416,10 @@
     .slider1 {
       border-radius: 8px;
       background: black;
-      height: 390px;
+      height: 420px;
       width: auto;
       padding: 40px; 
-     
+   
     
     }
   }

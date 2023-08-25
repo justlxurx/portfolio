@@ -64,7 +64,7 @@ const Socials = () => {
 const Cases = () => {
   const isMobile = useMedia('(max-width: 768px)')
   return (
-    <section style={{ paddingTop: '80px', marginBottom: '120px' }}>
+    <section >
       <h4 className={styles.short_info__header}>
         КЕЙСЫ,
         <br /> НА КОТОРЫХ РАСТЕШЬ
@@ -135,7 +135,7 @@ const Cases = () => {
 
           <div
             className={styles.specialists}
-            style={{ paddingLeft: '14%', paddingRight: '14%' }}
+            style={{ paddingLeft: '14%', paddingRight: '14%', marginBottom:"0" }}
           >
             <div>
               <p>

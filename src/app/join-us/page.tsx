@@ -13,8 +13,9 @@ export default async function JoinUs() {
     <>
       <Navbar />
       <main>
-        <Career />
+        
         <div className="container">
+        <Career />
           <Gallery />
           <StrongCode />
         </div>

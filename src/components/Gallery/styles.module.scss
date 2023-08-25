@@ -1,4 +1,7 @@
 @import '/src/styles/variables.scss';
+.gallery{
+  margin-bottom: 140px;
+}
 
 .header {
   font-size: 65px;
@@ -180,6 +183,16 @@
     }
   }
 }
+
+  .fourth{
+      background-color: black;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+
+
+
+  }
 
 @media (max-width: $desktop-width) {
   .header {
