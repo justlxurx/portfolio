@@ -1,7 +1,9 @@
 import Career from '@/components/Career'
+import Cases from '@/components/Cases'
 import Gallery from '@/components/Gallery'
 import JoinUsFooter from '@/components/JoinUsFooter'
 import Navbar from '@/components/Navbar'
+import StrongCode from '@/components/StrongCode'
 import TeamMember from '@/components/TeamMember'
 
 import styles from './page.module.scss'
@@ -11,13 +13,11 @@ export default async function JoinUs() {
     <>
       <Navbar />
       <main>
-        {/* <Career /> */}
-        <div className="container">
-          <Gallery />
-        </div>
-        <div className="container">
-          <TeamMember />
-        </div>
+        <Career />
+        <Gallery />
+        <StrongCode />
+        <Cases />
+        <TeamMember />
       </main>
       <JoinUsFooter />
     </>

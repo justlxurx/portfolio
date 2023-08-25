@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
 import { nanoid } from 'nanoid'
+import arrow from 'public/arrow.svg'
 import logo from 'public/logo.svg'
 
 import { FormattedString } from '@/helpers/FormattedString'
@@ -41,15 +42,15 @@ const JoinUsFooter = () => {
 
   const socialLinks = [
     {
-      icon: '',
+      icon: 'twitter.svg',
       path: '#',
     },
     {
-      icon: '',
+      icon: 'insta.svg',
       path: '#',
     },
     {
-      icon: '',
+      icon: 'linkedin1.svg',
       path: '#',
     },
   ]
@@ -68,6 +69,7 @@ const JoinUsFooter = () => {
                 variant={ButtonVariant.outlined_transparent}
               >
                 Связаться с нами
+                <Image src={arrow} alt="arrow" />
               </Button>
             </div>
             <nav className={styles.navigation}>
@@ -80,15 +82,26 @@ const JoinUsFooter = () => {
                   </li>
                 ))}
               </ul>
-              <ul className={styles.secondary_navigation}>
-                {secondaryLinks.map(({ path, title }) => (
-                  <li key={nanoid()}>
-                    <a className={styles.link} href={path}>
-                      {title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <ul className={styles.secondary_navigation}>
+                  {secondaryLinks.map(({ path, title }) => (
+                    <li key={nanoid()}>
+                      <a className={styles.link} href={path}>
+                        {title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <ul className={styles.social_navigation}>
+                  {socialLinks.map(({ path, icon }) => (
+                    <li key={nanoid()}>
+                      <a className={styles.link} href={path}>
+                        <Image src={icon} alt="icon" width="40" height="40" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </nav>
           </div>
           <footer className={styles.secondary_block}>

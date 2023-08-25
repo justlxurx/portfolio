@@ -38,6 +38,10 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 0.75;
+  img {
+    height: 100%;
+    margin-left: 10px;
+  }
 }
 
 .navigation {
@@ -52,6 +56,16 @@
   flex-direction: column;
   gap: 26px;
   flex-shrink: 0;
+}
+.social_navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  padding-top: 8%;
+  img {
+    width: auto;
+    height: 100%;
+  }
 }
 
 .link {
@@ -96,8 +110,8 @@
   text-align: end;
 }
 
-.logo {
-}
+// .logo {
+// }
 
 @media (max-width: 1400px) {
   .navigation {
@@ -118,6 +132,13 @@
 
   .link {
     font-size: 26px;
+  }
+  .social_navigation {
+    padding-top: 18%;
+    img {
+      width: auto;
+      height: 70%;
+    }
   }
 }
 
@@ -145,6 +166,9 @@
     line-height: 0.5;
     height: 24px;
     padding: 8.5px 10.67px;
+    img {
+      margin-left: 2px;
+    }
   }
 
   .navigation {
@@ -157,6 +181,14 @@
 
   .secondary_navigation {
     gap: 13.87px;
+  }
+
+  .social_navigation {
+    padding-top: 10%;
+    img {
+      width: auto;
+      height: 50%;
+    }
   }
 
   .link {
@@ -211,6 +243,9 @@
     line-height: 0.7;
     padding: 16px 20px;
     height: 45px;
+    img {
+      margin-left: 10px;
+    }
   }
 
   .navigation {
@@ -223,6 +258,13 @@
     gap: 26px;
   }
 
+  .social_navigation {
+    margin-top: 15px;
+    img {
+      width: auto;
+      height: 45%;
+    }
+  }
   .link {
     font-size: 20px;
     line-height: 30.214px;
