@@ -13,19 +13,19 @@ const Socials = () => {
       link: 'https://instagram.com/qazdev.team',
     },
     {
-      title: `instagram`,
-      label: `Следите за всеми нашими новостями в instagram!`,
-      link: 'https://instagram.com/qazdev.team',
+      title: `LinkedIn`,
+      label: `Следите за всеми нашими новостями в LinkedIn!`,
+      link: 'https://www.linkedin.com/in/qazdev-team-067a82205/',
     },
     {
-      title: `instagram`,
-      label: `Следите за всеми нашими новостями в instagram!`,
-      link: 'https://instagram.com/qazdev.team',
+      title: `Telegram`,
+      label: `Следите за всеми нашими новостями в Telegram!`,
+      link: 'https://t.me/devcorn',
     },
     {
-      title: `instagram`,
-      label: `Следите за всеми нашими новостями в instagram!`,
-      link: 'https://instagram.com/qazdev.team',
+      title: `Facebook`,
+      label: `Следите за всеми нашими новостями в Facebook!`,
+      link: 'https://www.facebook.com/qazdevelop.itcompany',
     },
   ]
 
