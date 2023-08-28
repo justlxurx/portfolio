@@ -116,14 +116,11 @@
 @media (max-width: 1200px) {
   .title {
     max-width: 50%;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1;
   }
 
-  .slider {
-    max-width: 75%;
-  }
-
+ 
   .arrow {
     height: 32px;
     width: 32px;
@@ -153,6 +150,11 @@
     //margin-bottom: 30px;
   }
 
+  .slider {
+    max-width: 75%;
+    }
+  
+
   .dots {
     top: 18px;
     right: 12px;
@@ -170,9 +172,6 @@
 
     &__right {
       right: 12px;
-
-      &::after {
-      }
     }
 
     &__left {
@@ -202,3 +201,65 @@
     max-width: 65%;
   }
 }
+@media(max-width:$tablet-width){
+
+  .slider_wrapper {
+    padding: 30px 20px;
+    width: calc(100% - 40px);
+  }
+
+
+.title {
+  font-size: 20px;
+  margin-bottom: 25px;
+  line-height: 100%;
+}
+
+.slider {
+  max-width: 75%;
+}
+
+.slide_wrapper {
+  aspect-ratio: 2/1;
+  position: relative;
+}
+
+.dots {
+  gap: 13px;
+  top: 30px;
+  right: 20px;
+}
+
+.dot {
+  height: 17px;
+  width: 17px;
+}
+
+.arrow {
+  bottom: 32px;
+  border-radius: 2px;
+  height: 57px;
+  width: 57px;
+  position: absolute;
+
+
+  &::after {
+    background-size: 12px;
+    height: 57px;
+    width: 57px;
+    right: 3px;
+  }
+
+  &__right {
+    rotate: 180deg;
+    right: 23px;
+  }
+
+  &__left {
+    left: auto;
+    right: 99px;
+  }
+
+}
+}
+
