@@ -173,6 +173,7 @@
 @media(max-width:1370px){
     .career_main{
         height: 850px;
+        margin-bottom: 100px;
         }
         .first_row_first_column_3{
         font-size: 22px;
@@ -222,6 +223,10 @@
         }
         }
 }
+@media(max-width:992px){
+    .career_main{
+        margin-bottom: 60px;
+        }}
 @media(max-width:936px){
     .career_main{
         height: 567px;
@@ -272,6 +277,7 @@
     .career_main{
         display: flex;
         border-top: 1px solid black;
+        margin-bottom: 60px;
         }
         .in_it{
             display: grid;
@@ -436,7 +442,11 @@
     
 }
 
-@media(max-width:576px){//770       
+@media(max-width:576px){//770      
+    .career_main{
+        margin-bottom: 60px;
+    
+    } 
         .first_row{
             
             .feedback{
@@ -498,5 +508,30 @@
     .second_row{
      font-size: 50px;
  }
+     
+ }
+
+ @media(max-width:499px){//770       
+  
+    
+    .second_row{
+     font-size: 40px;
+ }
+
+ .third_row{
+.small_text{
+    p{
+    font-size: 13px;
+    padding: 10px;
+    }
+}
+
+.main_text{
+    p{
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+}
      
  }

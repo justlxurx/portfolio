@@ -116,14 +116,11 @@
 @media (max-width: 1200px) {
   .title {
     max-width: 50%;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1;
   }
 
-  .slider {
-    max-width: 75%;
-  }
-
+ 
   .arrow {
     height: 32px;
     width: 32px;
@@ -135,6 +132,9 @@
 
     &__left {
       right: 60px;
+    }
+    &::after{
+      background-size: 7px;
     }
   }
 }
@@ -153,6 +153,11 @@
     //margin-bottom: 30px;
   }
 
+  .slider {
+    max-width: 65%;
+    }
+  
+
   .dots {
     top: 18px;
     right: 12px;
@@ -170,9 +175,6 @@
 
     &__right {
       right: 12px;
-
-      &::after {
-      }
     }
 
     &__left {
@@ -195,6 +197,31 @@
   .slider {
     max-width: 70%;
   }
+  .arrow {
+    bottom: 18px;
+    width: 25px;
+    height: 25px ;
+
+    &__right {
+      right: 12px;
+    }
+
+    &__left {
+      right: 45px;
+
+      &::after {
+        right: 0;
+        top: -2px;
+        left: -2px;
+      }
+    }
+
+    &::after {
+      background-size: 6px;
+      width: 25px;
+      height: 25px;
+    }
+  }
 }
 
 @media (max-width: 830px) {
@@ -202,3 +229,126 @@
     max-width: 65%;
   }
 }
+@media(max-width:$tablet-width){
+
+  .slider_wrapper {
+    padding: 25px 18px 17px 18px;
+    width: calc(100% - 36px);
+  }
+
+
+.title {
+  font-size: 20px;
+  margin-bottom: 25px;
+  line-height: 100%;
+}
+
+.slider {
+  max-width: 68%;
+}
+
+.slide_wrapper {
+  aspect-ratio: 2/1;
+  position: relative;
+}
+
+.dots {
+  gap: 13px;
+  top: 30px;
+  right: 20px;
+}
+
+.dot {
+  height: 17px;
+  width: 17px;
+}
+
+.arrow {
+  bottom: 13px;
+  border-radius: 2px;
+  height: 45px;
+  width: 45px;
+  position: absolute;
+
+  &::after {
+    background-size: 12px;
+    height: 45px;
+    width: 45px;
+    right: 3px;
+  }
+
+  &__right {
+    rotate: 180deg;
+    right: 23px;
+  }
+
+  &__left {
+    left: auto;
+    right: 79px;
+  }
+
+}
+}
+
+@media(max-width:$mobile-width){
+
+  .slider_wrapper {
+    padding: 21px 14px 13px 14px;
+    width: calc(100% - 28px);
+  }
+
+
+.title {
+  font-size: 14px;
+  margin-bottom: 25px;
+ line-height: 101.5%; /* 13.029px */
+ letter-spacing: -0.07px;
+}
+
+.slider {
+  max-width: 70%;
+}
+
+.slide_wrapper {
+  aspect-ratio: 2/1;
+  position: relative;
+}
+
+.dots {
+  gap: 7px;
+  top: 22px;
+  right: 16px;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+}
+.arrow {
+  bottom: 13px;
+  border-radius: 2px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+
+  &::after {
+    background-size: 8px;
+    height: 30px;
+    width: 30px;
+    right: 3px;
+  }
+
+  &__right {
+    rotate: 180deg;
+    right: 16px;
+  }
+
+  &__left {
+    left: auto;
+    right: 55px;
+  }
+
+}
+
+}
+
