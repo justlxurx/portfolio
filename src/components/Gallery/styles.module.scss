@@ -197,6 +197,11 @@
 
 
   }
+  @media (max-width:1370px){
+    .gallery{
+      margin-bottom: 100px;
+    }
+  }
 @media(max-width:1200px){
   .first {
 
@@ -217,7 +222,10 @@
 
 
 @media (max-width: $desktop-width) {
-
+  .gallery{
+    margin-bottom: 60px;
+  }
+  
   .header {
     font-size: 36.23px;
     line-height: 41.12px;
@@ -455,7 +463,7 @@
 
 @media (max-width: $mobile-width) {
   .gallery{
-    margin-bottom: 0px;
+    margin-bottom: 60px;
   }
   .header {
     font-size: 28px;

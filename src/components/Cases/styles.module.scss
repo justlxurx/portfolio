@@ -149,6 +149,7 @@
       line-height: 30.214px;
       letter-spacing: -1px;
       transition: 0.3s all ease;
+      
     }
     img{
       width: 51px;
@@ -178,7 +179,6 @@
 @media (max-width: 1617px) {
   .grow_cases {
     gap: 64px 75px;
-    padding: 53px 96px; //96px
   }
   .section1 {
     width: auto;
@@ -296,12 +296,16 @@
     }
   }
   .specialists {
-    padding-bottom: 14px;
     p {
       font-size: 18px;
       border: 0.533px solid #000;
       padding: 17px;
     }
+  }
+}
+@media (max-width:1370px){
+  .grow_cases {
+    padding: 53px 96px 100px 96px; //96px
   }
 }
 @media (max-width: 1240px) {
@@ -340,7 +344,6 @@
     }
   }
   .specialists {
-    padding-bottom: 14px;
     p {
       font-size: 17px;
       border: 0.533px solid #000;
@@ -349,9 +352,7 @@
   }
 }
 @media (max-width: 1100px) {
-  .grow_cases {
-    padding: 30px 50px; 
-  }
+  
   .section1 {
     padding: 0 0 0 50px;
   }
@@ -395,7 +396,6 @@
     }
   }
   .specialists {
-    padding-bottom: 17px;
     p {
       padding: 14px;
       font-size: 14px;
@@ -405,7 +405,7 @@
 @media (max-width: $desktop-width) {
   //992px
   .grow_cases {
-    padding: 30px 70px; 
+    padding: 30px 60px 60px 60px; 
   }
   .section1 {
     padding: 0 0 0 50px;
@@ -450,7 +450,6 @@
   }
 
   .specialists {
-    padding-bottom: 17px;
     p {
       padding: 13px;
       font-size: 13px;
@@ -459,7 +458,7 @@
 }
 @media (max-width: 920px) {
   .grow_cases {
-    padding: 30px 60px ; //30
+    padding: 30px 60px 60px 60px ; //30
    
   }
   .person_info {
@@ -499,7 +498,6 @@
   }
 
   .specialists {
-    padding-bottom: 17px;
     p {
       padding: 10px;
       font-size: 12px;
@@ -510,7 +508,7 @@
 @media (max-width: 768px) {
   .grow_cases {
     margin: 0;
-    padding: 30px 30px 0 30px; //30
+    padding: 30px 30px 60px 30px; //30
     gap: 60px;
     display: flex;
     flex-direction: column;
@@ -687,7 +685,7 @@
 }
 @media (max-width: 550px) {
   .grow_cases {
-    padding: 0 15px 0 15px;
+    padding: 0 15px 60px 15px;
   }
   .short_info__header {
     margin-bottom: 50px;
