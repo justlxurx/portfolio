@@ -504,3 +504,28 @@
  }
      
  }
+
+ @media(max-width:499px){//770       
+  
+    
+    .second_row{
+     font-size: 40px;
+ }
+
+ .third_row{
+.small_text{
+    p{
+    font-size: 13px;
+    padding: 10px;
+    }
+}
+
+.main_text{
+    p{
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+}
+     
+ }
