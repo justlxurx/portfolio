@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import classNames from 'classnames'
 import arrowIcon from 'public/arrow_icon.svg'
-import firstSlide from 'public/projects_1_image.png'
+import firstSlide from 'public/projects_1_image1.png'
 import Slider from 'react-slick'
 
 import Button from '@/components/ui/Button'
