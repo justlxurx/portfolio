@@ -6,27 +6,25 @@ import { INavButton } from './interface'
 
 import styles from './styles.module.scss'
 
-const NavButton = ({ title, description, path }: INavButton) => {
-  const onClickNavButtonHandler = (e: any) => {
-    e.preventDefault()
-    alert('Раздел в разработке')
+const NavButton = ({ title, description, path, redirect }: INavButton) => {
+  if (redirect) {
+    return (
+      <a className={styles.button} href={path}>
+        <div className={styles.button__inner}>
+          <span className={styles.button__title}>{title}</span>
+          <span className={styles.button__description}>{description}</span>
+        </div>
+      </a>
+    )
   }
+
   return (
-    // <Link
-    //   className={styles.button}
-    //   href={path}
-    // >
-    //   <div className={styles.button__inner}>
-    //     <span className={styles.button__title}>{title}</span>
-    //     <span className={styles.button__description}>{description}</span>
-    //   </div>
-    // </Link>
-    <div onClick={(e) => onClickNavButtonHandler(e)} className={styles.button}>
+    <Link className={styles.button} href={path}>
       <div className={styles.button__inner}>
         <span className={styles.button__title}>{title}</span>
         <span className={styles.button__description}>{description}</span>
       </div>
-    </div>
+    </Link>
   )
 }
 

@@ -12,17 +12,18 @@ const Navbar = () => {
     {
       title: 'Devcorn',
       description: 'IT мероприятие',
-      path: '/devcorn',
+      path: 'https://devcorn.kz/',
+      redirect: true,
     },
     {
       title: 'Devpractice',
       description: 'Учись у нас',
-      path: '/devpractice',
+      path: '/education',
     },
     {
       title: 'Карьера',
       description: 'Будь с нами',
-      path: '/career',
+      path: '/join-us',
     },
   ]
 
