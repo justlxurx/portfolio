@@ -354,7 +354,99 @@
             height: 390px;}}
 }
 @media (max-width:768px) {
-   
+    .work_environment{
+        margin-top: 50px;
+        h1{
+            font-size: 40px;
+            padding: 2% 11%;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        &_main{
+            margin: 0 9%;
+            display: grid;
+            grid-template-rows: none;
+            height: 100%;
+            border: 1px solid black;
+            border: none;
+            &_1{
+                border-bottom: 1px solid black;
+                display: grid;
+                grid-template-columns: none;
+                font-size: 28px;
+                b{
+                    font-size: 28px;
+                   }
+                
+                .column1{
+                border-right: 1px solid black;   
+                padding: 9% 7%;   
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+                }
+                .column2{
+                border-right: 1px solid black;
+                padding: 9% 7%;   
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+                }
+                .column3{
+                    border-right: 1px solid black;
+                    padding: 9% 7%;   
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+                }
+                .column4{
+                    padding: 9% 7%; 
+                display: flex;
+                flex-direction: column;   
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                }
+            }
+            &_2{
+                display: flex;
+                flex-direction: column;
+                grid-template-columns: none;
+                padding: 0 1%;
+                width: 100%;
+                height: 100%;
+    
+                p{  
+                    margin-top: 6%;
+                    font-size: 40px;
+                }
+                &_image{
+                    background-image: url('/shape.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    height: 500px;
+                    width: 100%;
+                    margin-top: 7%;
+                    margin-bottom: 9%;
+                }
+    
+            }
+            &_3{
+                border: 1px solid black;
+                display: flex;
+                align-items: center;
+                padding:5%;
+                justify-content: center;
+                p{
+
+                    font-size: 40px;
+                }
+                
+            }
+        }
+    }
 }
 
 @media (max-width:576px) {
