@@ -13,9 +13,8 @@
     &_main{
         display: grid;
         grid-template-rows: 87% 13%;
-        border: 1px solid black;
-        border-top: none;
-        border-bottom: none;
+        border-left: 1px solid black;
+        
         .main1{
             display: grid;
             grid-template-columns: 65% 35%;
