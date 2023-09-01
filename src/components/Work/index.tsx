@@ -1,8 +1,11 @@
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
+import Image from 'next/image'
+import arrow from 'public/arrow.svg'
 
 const DevPractice = () => {
   return (
+    
     <section className={styles.work_environment}>
     <h1>Погружение в рабочую среду </h1>
     <div className={styles.work_environment_main}>
@@ -36,12 +39,35 @@ const DevPractice = () => {
         </div>
 
         <div className={styles.work_environment_main_3}>
-        <p>Успеть записаться</p>
-        <img src="" alt="" />
+        <button>Успеть записаться
+        <Image src={arrow} alt="arrow" />
+        </button>
         </div>
     </div>
     </section>
   )
 }
 
-export default DevPractice
+const Distance=()=>{
+  return(
+    <section className={styles.distance}>
+      <div ></div>
+      <div className={styles.distance_line}></div>
+      <div ></div>
+    </section>
+  )
+}
+
+const Dev=()=>{
+  return(
+    <>
+    <Distance />
+    <DevPractice />
+    <Distance />
+    </>
+  )
+}
+
+
+
+export default Dev
