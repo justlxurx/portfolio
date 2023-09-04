@@ -43,8 +43,23 @@ const Programmer = () => {
   )
 }
 
+const Distance=()=>{
+  return(
+    <section className={styles.distance}>
+      <div ></div>
+      <div className={styles.distance_line}></div>
+      <div ></div>
+    </section>
+  )
+}
 
+const BeProgrammer=()=>{
+  return(
+    <>
+    <Distance />
+    <Programmer/>
+    </>
+  )
+}
 
-
-
-export default Programmer
+export default BeProgrammer

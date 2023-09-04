@@ -7,16 +7,21 @@ import Work from '@/components/Work'
 import styles from './page.module.scss'
 import Table from '@/components/Table'
 import BeProgrammer from '@/components/BeProgrammer'
+import EightBlock from '@/components/EightBlock'
 
 export default async function Education() {
   return (
     <>
       <Navbar />
       <main>
+      <div className="container"> 
         <DevPractice/>
+        </div>
         <Work />
+        <EightBlock/>
+        <div className="container"> 
         <BeProgrammer />
-        <Table/>
+         <Table/></div>
         <div className="container">
           {/* <TeamMember /> */}
         </div>

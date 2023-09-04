@@ -24,7 +24,7 @@
         border-bottom: 1px solid black;
     }
     &_main{
-        margin: 0 9%;
+        margin: 0 4.3%;
         display: grid;
         grid-template-rows: 40% 47% 13%;
         height: 888px;
@@ -67,13 +67,13 @@
             flex-direction: column;
             }
             .column3{
-                border-right: 1px solid black;
-                padding: 9% 7%;   
+            border-right: 1px solid black;
+            padding: 9% 7%;   
             display: flex;
             flex-direction: column;
             }
             .column4{
-                padding: 9% 7%; 
+            padding: 9% 7%; 
             display: flex;
             flex-direction: column;   
             }
@@ -82,7 +82,7 @@
             display: grid;
             grid-template-columns: 65% 35%;
             padding: 0 5%;
-            width: 100%;
+            width: 90%;
             height: 100%;
 
             p{  
