@@ -18,7 +18,7 @@ const Navbar = () => {
     {
       title: 'Devpractice',
       description: 'Учись у нас',
-      path: '/education',
+      path: '#',
     },
     {
       title: 'Карьера',
