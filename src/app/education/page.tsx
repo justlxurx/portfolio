@@ -1,27 +1,25 @@
-
-import JoinUsFooter from '@/components/JoinUsFooter'
+import BeProgrammer from '@/components/BeProgrammer'
 import DevPractice from '@/components/DevPractice'
+import JoinUsFooter from '@/components/JoinUsFooter'
 import Navbar from '@/components/Navbar'
+import Table from '@/components/Table'
 import TeamMember from '@/components/TeamMember'
 import Work from '@/components/Work'
+
 import styles from './page.module.scss'
-import Table from '@/components/Table'
-import BeProgrammer from '@/components/BeProgrammer'
 
 export default async function Education() {
   return (
     <>
       <Navbar />
       <main>
-        <DevPractice/>
+        <DevPractice />
         <Work />
         <BeProgrammer />
-        <Table/>
-        <div className="container">
-          {/* <TeamMember /> */}
-        </div>
+        <Table />
+        <div className="container">{/* <TeamMember /> */}</div>
       </main>
-      
+
       <JoinUsFooter />
     </>
   )
