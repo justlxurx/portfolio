@@ -1,7 +1,7 @@
-//FIXME: remove use client
 'use client'
 import { Fragment } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import classNames from 'classnames'
 import { nanoid } from 'nanoid'
 import CareerImage from 'public/pages_career_image.svg'
@@ -43,7 +43,7 @@ const Pages = () => {
           </b>
         </span>
       ),
-      link: '#',
+      link: '/join-us',
       image: CareerImage,
       className: styles.card_color_light,
     },
@@ -58,9 +58,9 @@ const Pages = () => {
     <div className={styles.cards}>
       {data?.map(
         ({ title, description, tag, link, image, className }: ICard) => (
-          <div
+          <Link
             className={classNames(styles.card, className)}
-            onClick={onClickPageHandler}
+            href={link}
             key={nanoid()}
           >
             <div className={styles.card__image_wrapper}>
@@ -79,7 +79,7 @@ const Pages = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ),
       )}
     </div>
