@@ -1,8 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import classNames from 'classnames'
-// import { nanoid } from 'nanoid'
-// import { Carousel } from 'react-responsive-carousel'
+import { lightFormat } from 'date-fns'
 import Slider from 'react-slick'
 
 import 'node_modules/slick-carousel/slick/slick.css'
@@ -21,6 +20,7 @@ const BigSlider: React.FC<SliderFitness> = ({ items }) => {
   const [activeSlide, setActiveSlide] = useState(0)
 
   const settings = {
+    //dotsClass:styles.dots,
     className: styles.slider,
     dots: true,
     infinite: true,
@@ -28,22 +28,21 @@ const BigSlider: React.FC<SliderFitness> = ({ items }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    adaptiveHeight: true,
+    customPaging: (i: number) => {
+      const buttonNumber = i + 1
+      return (
+        <div
+          className={classNames(styles.dot, {
+            [styles.dot__active]: activeSlide === buttonNumber - 1,
+          })}
+        ></div>
+      )
+    },
     afterChange: (current: number) => setActiveSlide(current),
-     
   }
 
   return (
-    // <div className={styles.slider_wrapper}>
-    //   <h3 className={styles.title}>{items[activeSlide - 1].label}</h3>
-    //   <Slider {...settings}>
-    //     {items.map(({ component }, index) => (
-    //       <div className={styles.slide_wrapper} key={index}>
-    //         {component}
-    //       </div>
-    //     ))}
-    //   </Slider>
-    // </div>
-
     <div className={styles.slider_wrapper1}>
       <Slider {...settings}>
         {items.map(({ component }, index) => (

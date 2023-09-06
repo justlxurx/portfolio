@@ -1,8 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import classNames from 'classnames'
-// import { nanoid } from 'nanoid'
-// import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
 
 import { ISlide } from './interface'
@@ -13,20 +11,66 @@ import styles from './WideSlider.module.scss'
 
 interface IWideSliderProps {
   items: ISlide[]
+  className?: string
 }
 
-const WideSlider: React.FC<IWideSliderProps> = ({ items }) => {
+enum ArrowVariant {
+  left = 'left',
+  right = 'right',
+}
+
+interface ICustomArrowProps {
+  variant: ArrowVariant
+  className?: string
+}
+
+const CustomArrow: React.FC<ICustomArrowProps> = ({
+  className,
+  variant,
+  ...rest
+}) => (
+  <button
+    className={classNames(styles.arrow, styles[`arrow__${variant}`], className)}
+    {...rest}
+  />
+)
+
+const WideSlider: React.FC<IWideSliderProps> = ({ items, className }) => {
   const [activeSlide, setActiveSlide] = useState(1)
 
   const settings = {
     className: styles.slider,
     dotsClass: styles.dots,
+    customPaging: function (i: number) {
+      const buttonNumber = i + 1
+
+      return (
+        <button
+          className={classNames(
+            styles.dot,
+            {
+              [styles.dot___active]: activeSlide === buttonNumber,
+            },
+            className,
+          )}
+        />
+      )
+    },
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
+    nextArrow: (
+      <CustomArrow
+        className={styles.arrow__right}
+        variant={ArrowVariant.right}
+      />
+    ),
+    prevArrow: (
+      <CustomArrow className={styles.arrow__left} variant={ArrowVariant.left} />
+    ),
     afterChange: (current: number) => setActiveSlide(current + 1),
   }
 

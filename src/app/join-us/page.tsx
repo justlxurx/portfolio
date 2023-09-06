@@ -14,12 +14,14 @@ export default async function JoinUs() {
       <Navbar />
       <main>
         <Career />
-        <Gallery />
-        {/* <section>Сильный код</section>
-        <section>кейсы, на которых растешь</section> */}
-        <StrongCode />
+        <div className="container">
+          <Gallery />
+          <StrongCode />
+        </div>
         <Cases />
-        <TeamMember />
+        <div className="container">
+          <TeamMember />
+        </div>
       </main>
       <JoinUsFooter />
     </>

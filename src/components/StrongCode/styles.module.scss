@@ -103,6 +103,7 @@
   }
 
   .slider1 {
+  
     border-top-left-radius: 19.375px;
     border-top-right-radius: 19.375px;
     background: black;
@@ -114,6 +115,20 @@
       justify-content: center;
       align-items: center;
       display: flex;
+      &::after{
+        content: "";
+         background-image: url('/scheme.png');
+      background-size: cover; 
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 25%;
+      background-repeat: no-repeat;
+     background-position-x: 50%;
+     opacity: 0.6;
+     pointer-events: none;
+      }
     }
   }
 }
@@ -252,6 +267,7 @@
     .slider1 {
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
+    
     }
   }
 }
@@ -400,9 +416,11 @@
     .slider1 {
       border-radius: 8px;
       background: black;
-      height: 342px;
+      height: 390px;
       width: auto;
-      padding: 17px;
+      padding: 40px; 
+     
+    
     }
   }
 }
@@ -428,7 +446,7 @@
     }
 
     .slider1 {
-      height: 242px;
+      height: 332px;
       padding: 17px;
       border-radius: 5px;
     }

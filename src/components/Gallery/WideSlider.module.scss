@@ -1,16 +1,204 @@
 @import '/src/styles/variables.scss';
 
-// .slider_wrapper {
-// }
+.slider_wrapper {
+  border: 1px solid $primary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 33px 23px;
+  width: calc(100% - 46px);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20.3px;
+  letter-spacing: -0.109px;
+  //margin-bottom: 55px;
+  text-transform: uppercase;
+}
 
 .slider {
   position: initial;
-  max-width: 300px;
+  max-width: 75%;
 }
 
 .slide_wrapper {
   aspect-ratio: 2/1.3;
-  display: flex;
   position: relative;
-  width: 100%;
+  bottom: -5px;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.dots {
+  display: flex !important;
+  gap: 11px;
+  position: absolute;
+  top: 33px;
+  right: 23px;
+}
+
+.dot {
+  cursor: pointer;
+  border: 1px solid $primary-color;
+  height: 14px;
+  width: 14px;
+  background-color: transparent;
+
+  &:hover {
+    border: 1px solid $secondary-color;
+    background-color: $secondary-color;
+  }
+
+  &___active {
+    cursor: default;
+    background-color: $primary-color;
+
+    &:hover {
+      border: 1px solid $primary-color;
+      background-color: $primary-color;
+    }
+  }
+}
+
+.arrow {
+  top: auto;
+  transform: none;
+  bottom: 32px;
+  border: 1px dashed $primary-color;
+  border-radius: 2px;
+  height: 57px;
+  width: 57px;
+  position: absolute;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    background-image: url('/arrow_chevron_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+    content: '';
+    display: block;
+    height: 57px;
+    width: 57px;
+    position: relative;
+    right: 3px;
+  }
+
+  &__right {
+    rotate: 180deg;
+    right: 23px;
+  }
+
+  &__left {
+    left: auto;
+    right: 99px;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+@media (max-width: 1550px) {
+  .slider {
+    max-width: 65%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    max-width: 50%;
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .slider {
+    max-width: 75%;
+  }
+
+  .arrow {
+    height: 32px;
+    width: 32px;
+
+    &::after {
+      height: 32px;
+      width: 32px;
+    }
+
+    &__left {
+      right: 60px;
+    }
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .slider_wrapper {
+    padding: 18px 12px;
+    width: calc(100% - 24px);
+  }
+
+  .title {
+    font-size: 11.147px;
+    line-height: 11.314px;
+    letter-spacing: -0.061px;
+    max-width: 60%;
+    //margin-bottom: 30px;
+  }
+
+  .dots {
+    top: 18px;
+    right: 12px;
+    gap: 6px;
+  }
+
+  .dot {
+    height: 6.8px;
+    padding: 0;
+    width: 6.8px;
+  }
+
+  .arrow {
+    bottom: 18px;
+
+    &__right {
+      right: 12px;
+
+      &::after {
+      }
+    }
+
+    &__left {
+      right: 55px;
+
+      &::after {
+        right: 0;
+        top: -2px;
+        left: -2px;
+      }
+    }
+
+    &::after {
+      background-size: 6px;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .slider {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 830px) {
+  .slider {
+    max-width: 65%;
+  }
 }
