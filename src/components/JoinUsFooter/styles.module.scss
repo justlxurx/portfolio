@@ -3,7 +3,7 @@
 .footer {
   border-top: 1px solid $primary-color;
   border-bottom: 1px solid $primary-color;
-  margin-top: 111px;
+  margin-top: 140px;
 
   &__inner {
     border-left: 1px solid $primary-color;
@@ -119,6 +119,12 @@
   }
 }
 
+@media(max-width: 1370px){
+  .footer{
+    margin-top: 100px;
+  }
+}
+
 @media (max-width: 1270px) {
   .footer {
     &__inner {
@@ -144,6 +150,7 @@
 
 @media (max-width: $desktop-width) {
   .footer {
+    margin-top: 60px;
     &__inner {
       padding: 31px 39px 25px;
     }

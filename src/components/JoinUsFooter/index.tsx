@@ -41,17 +41,17 @@ const JoinUsFooter = () => {
   ]
 
   const socialLinks = [
-    {
-      icon: 'twitter.svg',
-      path: '#',
-    },
+    // {
+    //   icon: 'twitter.svg',
+    //   path: '#',
+    // },
     {
       icon: 'insta.svg',
-      path: '#',
+      path: 'https://instagram.com/qazdev.team?igshid=MzRlODBiNWFlZA==',
     },
     {
       icon: 'linkedin1.svg',
-      path: '#',
+      path: 'https://www.linkedin.com/in/qazdev-team-067a82205/ ',
     },
   ]
 
@@ -95,7 +95,7 @@ const JoinUsFooter = () => {
                 <ul className={styles.social_navigation}>
                   {socialLinks.map(({ path, icon }) => (
                     <li key={nanoid()}>
-                      <a className={styles.link} href={path}>
+                      <a className={styles.link} href={path} target="_blank">
                         <Image src={icon} alt="icon" width="40" height="40" />
                       </a>
                     </li>

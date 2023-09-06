@@ -16,16 +16,14 @@ import styles from './page.module.scss'
 // async function getPosts(host: string) {
 //   const response = await fetch(`http://${host}/api/news`)
 
-//   console.log(response)
-
 //   const data = await response.json()
 
 //   return data
 // }
 
 export default async function Home() {
-  //const host = headers().get('host')
-  //const data = await getPosts(host!)
+  // const host = headers().get('host')
+  // const data = await getPosts(host!)
 
   return (
     <>

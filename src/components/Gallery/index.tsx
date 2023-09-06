@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
+import A3 from 'public/A3.svg'
 import buttons from 'public/buttons.svg'
 import firstBlockMainIcon from 'public/gallery_first_block_main_icon.svg'
 import firstBlockSymbolsIcon from 'public/gallery_first_block_symbols_icon.svg'
@@ -12,6 +13,7 @@ import specializedEvents5 from 'public/gallery_specialized_events_5.png'
 
 import { FormattedString } from '@/helpers/FormattedString'
 
+import SmallSlider from './SmallSlider'
 import WideSlider from './WideSlider'
 
 import styles from './styles.module.scss'
@@ -90,6 +92,36 @@ const Gallery = () => {
     },
   ]
 
+  const whatWeDo = [
+    {
+      label: (
+        <span>
+          Пользуемся <br />и оформляем <br />
+          tech-библиотеку
+        </span>
+      ),
+      component: <Image src={A3} alt={'figures'} />,
+    },
+    {
+      label: (
+        <span>
+          Пользуемся <br />и оформляем <br />
+          tech-библиотеку
+        </span>
+      ),
+      component: <Image src={A3} alt={'figures'} />,
+    },
+    {
+      label: (
+        <span>
+          Пользуемся <br />и оформляем <br />
+          tech-библиотеку
+        </span>
+      ),
+      component: <Image src={A3} alt={'figures'} />,
+    },
+  ]
+
   return (
     <section className={styles.gallery}>
       <h2 className={styles.header}>
@@ -134,7 +166,9 @@ const Gallery = () => {
         <div className={classNames(styles.blocks__third, styles.third)}>
           <WideSlider items={specializedEvents} />
         </div>
-        <div className={classNames(styles.blocks__fourth, styles.fourth)}></div>
+        <div className={classNames(styles.blocks__fourth, styles.fourth)}>
+          <SmallSlider items={whatWeDo} />
+        </div>
       </div>
       <div className={classNames(styles.blocks, styles.secondary_blocks)}>
         <div className={classNames(styles.blocks__fives, styles.fives)}></div>

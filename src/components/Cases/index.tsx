@@ -21,19 +21,19 @@ const Socials = () => {
   const socialLinks2 = [
     {
       icon: 'instagram.svg',
-      path: '#',
+      path: 'https://instagram.com/qazdev.team?igshid=MzRlODBiNWFlZA==',
     },
     {
       icon: 'linkedin.svg',
-      path: '#',
+      path: 'https://www.linkedin.com/in/qazdev-team-067a82205/ ',
     },
     {
       icon: 'telegram.svg',
-      path: '#',
+      path: 'https://t.me/devcorn',
     },
     {
       icon: 'facebook.svg',
-      path: '#',
+      path: 'https://www.facebook.com/qazdevelop.itcompany',
     },
   ]
   return (
@@ -50,8 +50,8 @@ const Socials = () => {
         <ul className={styles.social_networks}>
           {socialLinks2.map(({ path, icon }) => (
             <li key={nanoid()}>
-              <a className={styles.link} href={path}>
-                <Image src={icon} alt="icon" width="100" height="100" />
+              <a className={styles.link} href={path} target="_blank">
+                <Image src={icon} alt="icon" width="40" height="40"  />
               </a>
             </li>
           ))}
@@ -64,7 +64,7 @@ const Socials = () => {
 const Cases = () => {
   const isMobile = useMedia('(max-width: 768px)')
   return (
-    <section style={{ paddingTop: '80px', marginBottom: '120px' }}>
+    <section >
       <h4 className={styles.short_info__header}>
         КЕЙСЫ,
         <br /> НА КОТОРЫХ РАСТЕШЬ
@@ -135,7 +135,7 @@ const Cases = () => {
 
           <div
             className={styles.specialists}
-            style={{ paddingLeft: '14%', paddingRight: '14%' }}
+            style={{ paddingLeft: '14%', paddingRight: '14%', marginBottom:"0" }}
           >
             <div>
               <p>
