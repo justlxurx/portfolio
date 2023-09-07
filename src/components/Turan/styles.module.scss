@@ -1,0 +1,853 @@
+@import '/src/styles/variables.scss';
+
+.running_line {
+  border-radius: 15px;
+  height: 100%;
+  background-color: black;
+  color: #eaeaea;
+  font-family: Helvetica;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 26.4px */
+  @keyframes moveHorizontallyLeft {
+    0% {
+      transform: translateX(0); /* Начальное положение - без сдвига по X */
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes moveHorizontallyRight {
+    0% {
+      transform: translateX(0%); /* Начальное положение - без сдвига по X */
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
+  &_1 {
+    padding: 1%;
+    ul {
+      list-style-type: circle;
+      display: flex;
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: moveHorizontallyLeft 10s linear infinite;
+
+      li {
+        margin: 0% 4%;
+      }
+    }
+  }
+  &_2 {
+    padding: 1%;
+    border-top: 3px dashed #eaeaea;
+    ul {
+      list-style-type: circle;
+      display: flex;
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: moveHorizontallyRight 10s linear infinite;
+
+      li {
+        margin: 0px 4%;
+      }
+    }
+  }
+}
+
+.turan {
+  display: grid;
+  grid-template-rows: 20% 73% 7%;
+  border-radius: 13.534px;
+  background: var(--black, #000);
+  height: 774px;
+  width: auto;
+  padding: 3% 2.5%;
+  margin: 0 3%;
+  &_heading {
+    display: grid;
+    grid-template-columns: 10% 3% 66% 21%;
+    width: 100%;
+
+    &_logo {
+      background-image: url('/logo_turan.svg');
+      background-size: contain;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+    }
+    &_line {
+      background: linear-gradient(
+        to bottom right,
+        transparent 49%,
+        white.5%,
+        white.51%,
+        transparent 51%
+      );
+    }
+    &_words {
+      color: #eaeaea;
+      font-family: Helvetica;
+      font-size: 76px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      align-self: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      cursor: pointer;
+      align-self: center;
+      display: grid;
+      grid-template-columns: 15% 85%;
+      border-radius: 8.613px;
+      background: #eaeaea;
+      padding: 2%;
+      height: 40%;
+      border: none;
+      justify-content: space-between;
+      .turan_button {
+        border-radius: 5.168px;
+        background: var(--black, #000);
+        width: 90%;
+        display: flex;
+        align-self: center;
+        aspect-ratio: 1;
+        img {
+          align-self: center;
+          width: 100%;
+        }
+      }
+
+      p {
+        color: var(--black, #000);
+        font-family: Helvetica;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 34.45px; /* 156.593% */
+        letter-spacing: -0.878px;
+        text-transform: uppercase;
+        align-self: center;
+      }
+    }
+  }
+  &_main {
+    display: grid;
+    grid-template-columns: 49% 2% 49%;
+    margin: 2% 0 1% 0;
+
+    &_1 {
+      display: grid;
+      grid-template-rows: 45% 10% 45%;
+      &_h1 {
+        border: 1px solid #eaeaea;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom: none;
+        padding: 5%;
+
+        &_div {
+          display: grid;
+          grid-template-columns: 8% 92%;
+          .h1_circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #eaeaea;
+            align-self: center;
+          }
+          p {
+            color: #e84137;
+            font-family: Helvetica;
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 60px */
+          }
+        }
+      }
+      &_p {
+        display: flex;
+        padding: 5%;
+        border: 1px solid #eaeaea;
+        border-top: none;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        p {
+          align-self: end;
+          color: #eaeaea;
+          font-family: Helvetica;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 28.8px */
+        }
+      }
+    }
+    &_2 {
+      display: grid;
+      justify-content: space-between;
+      padding: 0 4%;
+      height: 100%;
+      border: 1px solid #eaeaea;
+      border-radius: 15px;
+      position: relative;
+
+      &_h1 {
+        border: 1px solid #eaeaea;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom: none;
+        padding: 3%;
+
+        &_div {
+          display: grid;
+          grid-template-columns: 8% 92%;
+          .h1_circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #eaeaea;
+            align-self: center;
+          }
+          p {
+            align-self: center;
+            color: #eaeaea;
+            font-family: Helvetica;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 60px */
+            b {
+              color: #e84137;
+            }
+          }
+        }
+      }
+    }
+    // &_2::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 10px; /* Смещаем псевдоэлементы внутрь элемента на толщину границы */
+    //   bottom: 10px;
+    //   width: 10px; /* Ширина прозрачной середины */
+    //   background: black;
+    // }
+  }
+  &_a {
+    color: rgba(234, 234, 234, 0.5);
+    text-align: right;
+    font-family: Helvetica;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    a {
+      cursor: pointer;
+      color: rgba(234, 234, 234, 0.5);
+      margin-left: 1%;
+    }
+  }
+}
+@media (max-width: 1450px) {
+  .turan {
+    border-radius: 13.534px;
+    height: 654px;
+    &_heading {
+      &_words {
+        font-size: 56px;
+      }
+      button {
+        border-radius: 8.613px;
+        .turan_button {
+          border-radius: 5.168px;
+        }
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+    &_main {
+      &_1 {
+        &_h1 {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          //padding: 3%;
+
+          &_div {
+            .h1_circle {
+              width: 20px;
+              height: 20px;
+            }
+            p {
+              font-size: 35px;
+            }
+          }
+        }
+        &_p {
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+      &_2 {
+        &_h1 {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          &_div {
+            .h1_circle {
+              width: 20px;
+              height: 20px;
+            }
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 17px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .turan {
+    border-radius: 13.534px;
+    height: 604px;
+    &_heading {
+      &_words {
+        font-size: 50px;
+      }
+      button {
+        border-radius: 8.613px;
+        .turan_button {
+          border-radius: 5.168px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    &_main {
+      &_1 {
+        &_h1 {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          &_div {
+            .h1_circle {
+              width: 15px;
+              height: 15px;
+            }
+            p {
+              font-size: 30px;
+            }
+          }
+        }
+        &_p {
+          p {
+            font-size: 17px;
+          }
+        }
+      }
+      &_2 {
+        &_h1 {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          &_div {
+            .h1_circle {
+              width: 15px;
+              height: 15px;
+            }
+            p {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: $desktop-width) {
+  .turan {
+    border-radius: 13.534px;
+    height: 554px;
+    &_heading {
+      &_words {
+        font-size: 40px;
+      }
+      button {
+        border-radius: 8.613px;
+        .turan_button {
+          border-radius: 5.168px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    &_main {
+      &_1 {
+        &_h1 {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          &_div {
+            .h1_circle {
+              width: 15px;
+              height: 15px;
+            }
+            p {
+              font-size: 25px;
+            }
+          }
+        }
+        &_p {
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+      &_2 {
+        &_h1 {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          &_div {
+            .h1_circle {
+              width: 15px;
+              height: 15px;
+            }
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 13px;
+    }
+  }
+}
+@media (max-width: $tablet-width) {
+  .turan {
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+    border-radius: 13.534px;
+    background: var(--black, #000);
+    height: 780px;
+    width: auto;
+    padding: 3% 2.5%;
+    margin: 0 3%;
+    &_heading {
+      display: grid;
+      grid-template-columns: 10% 3% 87%;
+      width: 100%;
+
+      &_logo {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+      }
+
+      &_words {
+        font-size: 50px;
+        align-self: center;
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        cursor: pointer;
+        align-self: center;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        border-radius: 8.613px;
+        padding: 6%;
+        height: auto;
+        border: none;
+        width: 300%;
+        justify-content: space-between;
+        .turan_button {
+          border-radius: 5.168px;
+          background: var(--black, #000);
+          height: 70%;
+          display: flex;
+          align-self: center;
+          img {
+            align-self: center;
+            width: 100%;
+          }
+        }
+
+        p {
+          color: var(--black, #000);
+          font-family: Helvetica;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 34.45px; /* 156.593% */
+          letter-spacing: -0.878px;
+          text-transform: uppercase;
+          align-self: center;
+        }
+      }
+    }
+    &_main {
+      display: grid;
+      grid-template-rows: 49% 2% 49%;
+      margin: 2% 0 1% 0;
+      grid-template-columns: none;
+
+      &_1 {
+        display: grid;
+        &_h1 {
+          border: 1px solid #eaeaea;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          border-bottom: none;
+          padding: 5%;
+
+          &_div {
+            display: grid;
+            grid-template-columns: 8% 92%;
+            .h1_circle {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background-color: #eaeaea;
+              align-self: center;
+            }
+            p {
+              color: #e84137;
+              font-family: Helvetica;
+              font-size: 42px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 120%; /* 60px */
+            }
+          }
+        }
+        &_p {
+          display: flex;
+          padding: 5%;
+          border: 1px solid #eaeaea;
+          border-top: none;
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          p {
+            align-self: end;
+            color: #eaeaea;
+            font-family: Helvetica;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 28.8px */
+          }
+        }
+      }
+
+      &_2 {
+        display: grid;
+        justify-content: space-between;
+        padding: 4%;
+        height: 100%;
+        border: 1px solid #eaeaea;
+        border-radius: 15px;
+        position: relative;
+
+        &_h1 {
+          border: 1px solid #eaeaea;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          border-bottom: none;
+          padding: 3%;
+
+          &_div {
+            display: grid;
+            grid-template-columns: 8% 92%;
+            .h1_circle {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background-color: #eaeaea;
+              align-self: center;
+            }
+            p {
+              align-self: center;
+              color: #eaeaea;
+              font-family: Helvetica;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 120%; /* 60px */
+              b {
+                color: #e84137;
+              }
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      color: rgba(234, 234, 234, 0.5);
+      text-align: right;
+      font-family: Helvetica;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: flex;
+      align-items: end;
+      justify-content: flex-end;
+      a {
+        cursor: pointer;
+        color: rgba(234, 234, 234, 0.5);
+        margin-left: 1%;
+      }
+    }
+  }
+}
+@media (max-width: 635px) {
+  .turan {
+    border-radius: 13.534px;
+    height: 780px;
+    padding: 3% 2.5%;
+    margin: 0 3%;
+    &_heading {
+      &_words {
+        font-size: 40px;
+      }
+      button {
+        border-radius: 8.613px;
+        padding: 4%;
+        width: 300%;
+        height: auto;
+        .turan_button {
+          border-radius: 5.168px;
+          height: 70%;
+        }
+        p {
+          font-size: 11px;
+        }
+      }
+    }
+    &_main {
+      margin: 2% 0 1% 0;
+      &_1 {
+        &_h1 {
+          padding: 5%;
+          &_div {
+            .h1_circle {
+              width: 13px;
+              height: 13px;
+            }
+            p {
+              font-size: 37px;
+            }
+          }
+        }
+        &_p {
+          padding: 5%;
+          p {
+            font-size: 17px;
+          }
+        }
+      }
+
+      &_2 {
+        padding: 4%;
+        border-radius: 15px;
+        &_h1 {
+          padding: 3%;
+
+          &_div {
+            display: grid;
+            grid-template-columns: 8% 92%;
+            .h1_circle {
+              width: 13px;
+              height: 13px;
+            }
+            p {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 12px;
+      a {
+        margin-left: 1%;
+      }
+    }
+  }
+}
+@media (max-width: 542px) {
+  .turan {
+    border-radius: 13.534px;
+    height: 700px;
+    padding: 3% 2.5%;
+    margin: 0 3%;
+    &_heading {
+      &_words {
+        font-size: 30px;
+      }
+      button {
+        border-radius: 8.613px;
+        padding: 4%;
+        width: 300%;
+        height: auto;
+        .turan_button {
+          border-radius: 5.168px;
+          height: auto;
+          img {
+            width: 80%;
+          }
+        }
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+    &_main {
+      margin: 2% 0 1% 0;
+      &_1 {
+        &_h1 {
+          padding: 5%;
+          &_div {
+            .h1_circle {
+              width: 13px;
+              height: 13px;
+            }
+            p {
+              font-size: 34px;
+            }
+          }
+        }
+        &_p {
+          padding: 5%;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      &_2 {
+        padding: 4%;
+        border-radius: 15px;
+        &_h1 {
+          padding: 3%;
+
+          &_div {
+            display: grid;
+            grid-template-columns: 8% 92%;
+            .h1_circle {
+              width: 13px;
+              height: 13px;
+            }
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 11px;
+      a {
+        margin-left: 1%;
+      }
+    }
+  }
+}
+@media (max-width: 499px) {
+  .turan {
+    border-radius: 13.534px;
+    height: 650px;
+    padding: 3% 2.5%;
+    margin: 0 3%;
+    &_heading {
+      &_words {
+        font-size: 21px;
+      }
+      button {
+        border-radius: 8.613px;
+        padding: 4%;
+        width: 300%;
+        height: auto;
+        .turan_button {
+          border-radius: 5.168px;
+          height: auto;
+          img {
+            width: 80%;
+          }
+        }
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+    &_main {
+      margin: 2% 0 1% 0;
+      &_1 {
+        &_h1 {
+          padding: 5%;
+          &_div {
+            .h1_circle {
+              width: 13px;
+              height: 13px;
+            }
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+        &_p {
+          padding: 5%;
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &_2 {
+        padding: 4%;
+        border-radius: 15px;
+        &_h1 {
+          padding: 3%;
+
+          &_div {
+            display: grid;
+            grid-template-columns: 8% 92%;
+            .h1_circle {
+              width: 13px;
+              height: 13px;
+            }
+            p {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 9px;
+      a {
+        margin-left: 1%;
+      }
+    }
+  }
+}
