@@ -8,6 +8,7 @@ import MainFooter from '@/components/MainFooter'
 import Navbar from '@/components/Navbar/index'
 import News from '@/components/News'
 import Projects from '@/components/Projects'
+import Turan from '@/components/Turan'
 
 import 'node_modules/slick-carousel/slick/slick.css'
 import 'node_modules/slick-carousel/slick/slick-theme.css'
@@ -30,6 +31,7 @@ export default async function Home() {
       <Navbar />
       <main className={styles.main}>
         <About />
+        <Turan />
         <Projects />
         {/* {Array.isArray(data) && <News data={...data} />} */}
         <Distance />
