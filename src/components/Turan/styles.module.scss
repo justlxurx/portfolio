@@ -9,12 +9,12 @@
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 26.4px */
-  margin: 0 3% 50px 3%;
+  line-height: 120%;
+  margin-bottom: 50px;
   overflow: hidden;
   @keyframes moveHorizontallyLeft {
     0% {
-      transform: translateX(0); /* Начальное положение - без сдвига по X */
+      transform: translateX(0);
     }
     100% {
       transform: translateX(-50%);
@@ -22,7 +22,7 @@
   }
   @keyframes moveHorizontallyRight {
     0% {
-      transform: translateX(-50%); /* Начальное положение - без сдвига по X */
+      transform: translateX(-50%); 
     }
     100% {
       transform: translateX(0%);
@@ -30,35 +30,54 @@
   }
 
   &_1 {
-    padding: 1%;
+    padding: 18px 18px 22px 18px;
     ul {
-      list-style-type: circle;
       display: flex;
       color: white;
-    //  overflow: hidden;
       white-space: nowrap;
       animation: moveHorizontallyLeft 6s linear infinite;
-     animation-direction: alternate;
+      animation-direction: alternate;
+      position: relative;
       li {
+        list-style: none;
         margin: 0% 4%;
       }
     }
+
+ul li::before {
+  content: "\2022";
+  color: white;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
   }
   &_2 {
-    padding: 1%;
+    padding: 22px 18px 18px 18px;
     border-top: 3px dashed #eaeaea;
     ul {
-      list-style-type: circle;
+      
       display: flex;
       color: white;
-    //  overflow: hidden;
       white-space: nowrap;
       animation: moveHorizontallyRight 6s linear infinite;
       animation-direction: alternate;
       li {
+        list-style: none;
         margin: 0px 4%;
       }
+      
     }
+
+ul li::before {
+  content: "\2022";
+  color: white;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
   }
 }
 
@@ -69,8 +88,7 @@
   background: var(--black, #000);
   height: 774px;
   width: auto;
-  padding: 3% 2.5%;
-  margin: 0 3%;
+  padding: 40px 36px;
   &_heading {
     display: grid;
     grid-template-columns: 10% 3% 66% 21%;
@@ -107,18 +125,25 @@
     button {
       cursor: pointer;
       align-self: center;
-    
       border-radius: 8.613px;
       background: #eaeaea;
       padding: 2%;
       height: 40%;
       border: none;
       justify-content: space-between;
+      &:hover{
+        background-color: blue;
+        p{
+          color: #eaeaea;
+        }
+      
+      }
       a{
           display: grid;
       grid-template-columns: 15% 85%;
       }
       .turan_button {
+        margin-left: 5px;
         border-radius: 5.168px;
         background: var(--black, #000);
         width: 90%;
@@ -150,15 +175,14 @@
     grid-template-columns: 49% 2% 49%;
     margin: 2% 0 1% 0;
     position: relative;
+    
 
     &_1 {
+      border: 1px solid #eaeaea;
       display: grid;
       grid-template-rows: 45% 10% 45%;
+      border-radius: 15px;
       &_h1 {
-        border: 1px solid #eaeaea;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        border-bottom: none;
         padding: 5%;
 
         &_div {
@@ -184,10 +208,6 @@
       &_p {
         display: flex;
         padding: 5%;
-        border: 1px solid #eaeaea;
-        border-top: none;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
         p {
           align-self: end;
           color: #eaeaea;
@@ -266,10 +286,16 @@
       cursor: pointer;
       color: rgba(234, 234, 234, 0.5);
       margin-left: 1%;
-    }
+    &:hover{
+      color: red;
+    }}
+    
   }
 }
 @media (max-width: 1450px) {
+  .container{
+    margin: inherit;
+  }
   .turan {
     border-radius: 13.534px;
     height: 654px;
@@ -290,9 +316,6 @@
     &_main {
       &_1 {
         &_h1 {
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
-          //padding: 3%;
 
           &_div {
             .h1_circle {
@@ -312,8 +335,6 @@
       }
       &_2 {
         &_h1 {
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
           &_div {
             .h1_circle {
               width: 20px;
@@ -353,8 +374,6 @@
     &_main {
       &_1 {
         &_h1 {
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
           &_div {
             .h1_circle {
               width: 15px;
@@ -373,8 +392,6 @@
       }
       &_2 {
         &_h1 {
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
           &_div {
             .h1_circle {
               width: 15px;
@@ -391,23 +408,107 @@
       font-size: 14px;
     }
   }
+}.running_line {
+  border-radius: 15px;
+  height: 100%;
+  background-color: black;
+  color: #eaeaea;
+  font-family: Helvetica;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 26.4px */
+  margin-bottom: 50px;
+  overflow: hidden;
+  @keyframes moveHorizontallyLeft {
+    0% {
+      transform: translateX(0); /* Начальное положение - без сдвига по X */
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes moveHorizontallyRight {
+    0% {
+      transform: translateX(-50%); /* Начальное положение - без сдвига по X */
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  &_1 {
+    padding: 18px;
+    ul {
+      list-style-type: circle;
+      display: flex;
+      color: white;
+      white-space: nowrap;
+      animation: moveHorizontallyLeft 6s linear infinite;
+      animation-direction: alternate;
+      li {
+        margin: 0% 4%;
+      }
+    }
+  }
+  &_2 {
+    padding: 18px;
+    border-top: 3px dashed #eaeaea;
+    ul {
+      list-style-type: circle;
+      display: flex;
+      color: white;
+    //  overflow: hidden;
+      white-space: nowrap;
+      animation: moveHorizontallyRight 6s linear infinite;
+      animation-direction: alternate;
+      li {
+        margin: 0px 4%;
+      }
+    }
+  }
 }
 @media (max-width: $desktop-width) {
   .running_line {
-    margin: 0 3% 35px 3%;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 27px;
+    
+  
+    &_1 {
+      padding: 10px 10px 12px 10px;
+      ul {
+        li {
+          margin: 0% 4%;
+        }
+      }
+    }
+    &_2 {
+      padding: 12px 10px 10px 10px;
+      border-top: 3px dashed #eaeaea;
+      ul {
+        li {
+          margin: 0px 4%;
+        }
+      }
+    }
   }
   .turan {
-    border-radius: 13.534px;
-    height: 554px;
+    border-radius: 8px;
+    height: calc(420px - 42px);
+    padding: 21px 19px;
     &_heading {
       &_words {
         font-size: 40px;
       }
       button {
         border-radius: 5px;
-        height: 35%;
+        padding: inherit;
+        height: 50%;
         .turan_button {
           border-radius: 5.168px;
+          margin-left: 15%;
         }
         p {
           font-size: 12px;
@@ -417,55 +518,111 @@
     &_main {
       &_1 {
         &_h1 {
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
           &_div {
             .h1_circle {
-              width: 15px;
-              height: 15px;
+              width: 11px;
+              height: 11px;
             }
             p {
-              font-size: 25px;
+              font-size: 26px;
             }
           }
         }
         &_p {
           p {
-            font-size: 15px;
+            font-size: 12px;
           }
         }
       }
       &_2 {
         &_h1 {
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
           &_div {
             .h1_circle {
-              width: 15px;
-              height: 15px;
+              width: 11px;
+              height: 11px;
             }
             p {
-              font-size: 15px;
+              font-size: 12px;
             }
           }
         }
       }
     }
     &_a {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 }
+
+@media (max-width: 840px) {
+
+  .turan {
+    &_heading {
+      &_words {
+        font-size: 40px;
+      }
+      button {
+        border-radius: 5px;
+        padding: inherit;
+        height: 50%;
+        .turan_button {
+          border-radius: 5.168px;
+          margin-left: 12%;
+        }
+        p {
+          font-size: 11px;
+        }
+      }
+    }
+    &_main {
+      &_1 {
+        &_h1 {
+          &_div {
+            .h1_circle {
+              width: 11px;
+              height: 11px;
+            }
+            p {
+              font-size: 23px;
+            }
+          }
+        }
+        &_p {
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+      &_2 {
+        &_h1 {
+          &_div {
+            .h1_circle {
+              width: 11px;
+              height: 11px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    &_a {
+      font-size: 12px;
+    }
+  }
+}
+
+
 @media (max-width: $tablet-width) {
   .turan {
     display: grid;
     grid-template-rows: 20% 70% 10%;
     border-radius: 13.534px;
     background: var(--black, #000);
-    height: 780px;
+    height: calc(780px - 42px);
     width: auto;
-    padding: 3% 2.5%;
-    margin: 0 3%;
+    padding: 21px 20px;
     &_heading {
       display: grid;
       grid-template-columns: 10% 3% 87%;
@@ -485,8 +642,7 @@
       }
       button {
         cursor: pointer;
-        align-self: center;
-        
+        align-self: center;        
         border-radius: 5px;
         padding: 6%;
         height: auto;
@@ -502,10 +658,8 @@
           background: var(--black, #000);
           height: 70%;
           display: flex;
-          align-self: center;
-         
+          align-self: center;         
         }
-
         p {
           color: var(--black, #000);
           font-family: Helvetica;
@@ -524,14 +678,68 @@
       grid-template-rows: 49% 2% 49%;
       margin: 2% 0 1% 0;
       grid-template-columns: none;
-
       &_1 {
         display: grid;
-        &_h1 {
-          border: 1px solid #eaeaea;
-          border-top-left-radius: 15px;
-          border-top-right-radius: 15px;
-          border-bottom: none;
+        &_h1 {.running_line {
+          border-radius: 15px;
+          height: 100%;
+          background-color: black;
+          color: #eaeaea;
+          font-family: Helvetica;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 26.4px */
+          margin: 0 3% 50px 3%;
+          overflow: hidden;
+          @keyframes moveHorizontallyLeft {
+            0% {
+              transform: translateX(0); /* Начальное положение - без сдвига по X */
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          @keyframes moveHorizontallyRight {
+            0% {
+              transform: translateX(-50%); /* Начальное положение - без сдвига по X */
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
+        
+          &_1 {
+            padding: 18px;
+            ul {
+              list-style-type: circle;
+              display: flex;
+              color: white;
+              white-space: nowrap;
+              animation: moveHorizontallyLeft 6s linear infinite;
+              animation-direction: alternate;
+              li {
+                margin: 0% 4%;
+              }
+            }
+          }
+          &_2 {
+            padding: 18px;
+            border-top: 3px dashed #eaeaea;
+            ul {
+              list-style-type: circle;
+              display: flex;
+              color: white;
+            //  overflow: hidden;
+              white-space: nowrap;
+              animation: moveHorizontallyRight 6s linear infinite;
+              animation-direction: alternate;
+              li {
+                margin: 0px 4%;
+              }
+            }
+          }
+        }
           padding: 5%;
 
           &_div {
@@ -557,10 +765,6 @@
         &_p {
           display: flex;
           padding: 5%;
-          border: 1px solid #eaeaea;
-          border-top: none;
-          border-bottom-left-radius: 15px;
-          border-bottom-right-radius: 15px;
           p {
             align-self: end;
             color: #eaeaea;
@@ -654,7 +858,6 @@
     border-radius: 13.534px;
     height: 780px;
     padding: 3% 2.5%;
-    margin: 0 3%;
     &_heading {
       &_words {
         font-size: 40px;
@@ -675,6 +878,7 @@
     &_main {
       margin: 2% 0 1% 0;
       &_1 {
+        border-radius: 10px;
         &_h1 {
           padding: 5%;
           &_div {
@@ -697,7 +901,7 @@
 
       &_2 {
         padding: 4%;
-        border-radius: 15px;
+        border-radius: 10px;
         &_h1 {
           padding: 3%;
 
@@ -723,23 +927,42 @@
     }
   }
 }
-@media (max-width: 542px) {
-
-  .turan {
-    border-radius: 13.534px;
-    height: 700px;
-    padding: 3% 2.5%;
-    margin: 0 3%;
+@media (max-width: $mobile-width){
+  .running_line {
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 27px;
+  
+    &_1 {
+      padding: 15px 15px 18px 15px;
+      ul {
+        li {
+          margin: 0% 4%;
+        }
+      }
+    }
+    &_2 {
+      padding: 18px 15px 15px 15px;
+      border-top: 3px dashed #eaeaea;
+      ul {
+        li {
+          margin: 0px 4%;
+        }
+      }
+    }
+  }
+  .turan{
+    padding: 10px 16px;
+    border-radius: 10px;
+    height: 784px;
     &_heading {
       &_words {
-        font-size: 30px;
+        font-size: 28px;
       }
       button {
-        padding: 4%;
         .turan_button {
-          border-radius: 5.168px;
-          height: 70%;
-          width: auto;
+          margin-left: 3px;
         }
         p {
           font-size: 12px;
@@ -747,62 +970,47 @@
       }
     }
     &_main {
-      margin: 2% 0 1% 0;
       &_1 {
+        border-radius: 10px;
         &_h1 {
-          padding: 5%;
           &_div {
-            .h1_circle {
-              width: 13px;
-              height: 13px;
-            }
+              .h1_circle {
+                width: 10px;
+                height: 10px;
+              }
             p {
-              font-size: 34px;
+              font-size: 24px;
             }
           }
         }
         &_p {
-          padding: 5%;
           p {
-            font-size: 15px;
+            font-size: 12px;
           }
         }
       }
+      
 
       &_2 {
-        padding: 4%;
-        border-radius: 15px;
+        border-radius: 10px;
         &_h1 {
-          padding: 3%;
-
           &_div {
-            display: grid;
-            grid-template-columns: 8% 92%;
             .h1_circle {
-              width: 13px;
-              height: 13px;
+              width: 10px;
+              height: 10px;
             }
             p {
-              font-size: 15px;
+              font-size: 12px;
             }
           }
         }
-      }
-    }
-    &_a {
-      font-size: 11px;
-      a {
-        margin-left: 1%;
-      }
-    }
   }
-}
+}}}
 @media (max-width: 499px) {
   .turan {
     border-radius: 13.534px;
     height: 650px;
     padding: 3% 2.5%;
-    margin: 0 3%;
     &_heading {
       &_words {
         font-size: 21px;
@@ -844,7 +1052,6 @@
 
       &_2 {
         padding: 4%;
-        border-radius: 15px;
         &_h1 {
           padding: 3%;
 
@@ -936,6 +1143,20 @@
         width: 410%;
         p {
           font-size: 10px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 380px) {
+  .turan {
+    height: 620px;
+    &_heading {
+      button {
+        width: 410%;
+       
+        p {
+          font-size: 8px;
         }
       }
     }
