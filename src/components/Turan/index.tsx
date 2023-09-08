@@ -4,52 +4,54 @@ import white_icon from 'public/white_icon.svg'
 
 import styles from './styles.module.scss'
 
-const RunningLine = () => {
-  return (
-    <section className={styles.running_line}>
-      <div className={styles.running_line_1}>
-        <ul>
-          <li>IT event</li>
-          <li>Central Asia</li>
-          <li>Hackers</li>
-          <li>IT developers</li>
-          <li>Cybersecurity</li>
-          <li>International experts</li>
-          <li>Media</li>
-          <li>Businessmen</li>
-          <li>Discussion</li>
-        </ul>
-      </div>
-      <div className={styles.running_line_2}>
-        <ul>
-          <li>30+ speakers</li>
-          <li>Registration</li>
-          <li>Program</li>
-          <li>3000+ participants</li>
-          <li>Networking</li>
-          <li>Tech community</li>
-          <li>Workshop sessions</li>
-          <li>Innovation</li>
-          <li>Best practices</li>
-        </ul>
-      </div>
-    </section>
-  )
-}
 
 const Turan = () => {
   return (
+    <section>
+    <section className={styles.running_line}>
+    <div className={styles.running_line_1}>
+      <ul>
+        <li>IT event</li>
+        <li>Central Asia</li>
+        <li>Hackers</li>
+        <li>IT developers</li>
+        <li>Cybersecurity</li>
+        <li>International experts</li>
+        <li>Media</li>
+        <li>Businessmen</li>
+        <li>Discussion</li>
+        
+        
+      </ul>
+    </div>
+    <div className={styles.running_line_2}>
+      <ul>
+        <li>30+ speakers</li>
+        <li>Registration</li>
+        <li>Program</li>
+        <li>3000+ participants</li>
+        <li>Networking</li>
+        <li>Tech community</li>
+        <li>Workshop sessions</li>
+        <li>Innovation</li>
+        <li>Best practices</li>
+         
+      </ul>
+    </div>
+  </section>
+
     <section className={styles.turan}>
       <div className={styles.turan_heading}>
         <div className={styles.turan_heading_logo}></div>
         <div className={styles.turan_heading_line}></div>
         <div className={styles.turan_heading_words}>KazHackStan Turan</div>
-        <button>
+        <button><a href="https://kazhackstan.com/" target='_blank'> 
           <div className={styles.turan_button}>
             <Image src={white_icon} alt="arrow" />
           </div>
           <p>Стать участником</p>
-        </button>
+         </a>
+          </button>
       </div>
 
       <div className={styles.turan_main}>
@@ -110,19 +112,13 @@ const Turan = () => {
 
       <div className={styles.turan_a}>
         Подробная программа на официальном сайте{' '}
-        <a href="https://kazhackstan.com"> https://kazhackstan.com</a>
+        <a href="https://kazhackstan.com" target="_blank"> https://kazhackstan.com</a>
       </div>
+    </section>
     </section>
   )
 }
 
-const KazHackStan = () => {
-  return (
-    <>
-      <RunningLine />
-      <Turan />
-    </>
-  )
-}
 
-export default KazHackStan
+
+export default Turan
