@@ -24,19 +24,24 @@ const ContactUs = ({ className, host }: IContactUs) => {
       username: '',
       phone: '',
     },
-    onSubmit: async (values) => {
-      // await fetch(`http://${host}/api/contact-us`, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(values),
-      // })
+    onSubmit: async (values, { resetForm }) => {
+      await fetch(`http://${host}/api/contact-us`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+        .then((response) => {
+          //TODO: Переделать на popup
+          alert('Данные успешно отправлены')
 
-      alert(`Функционал в разработке! Введенные данные:
-        Имя: ${values.username}
-        Номер телефона: ${values.phone}
-      `)
+          resetForm()
+        })
+        .catch((error) => {
+          //TODO: Переделать на popup
+          console.log(error)
+        })
     },
   })
 
