@@ -7,6 +7,7 @@ import styles from './styles.module.scss'
 const Input = ({
   className,
   variant = InputVariant.default,
+  error,
   ...rest
 }: IInput) => {
   return (
@@ -14,6 +15,9 @@ const Input = ({
       className={classNames(
         styles.input,
         styles[`input__${variant}`],
+        {
+          [styles.input__error]: error,
+        },
         className,
       )}
       {...rest}

@@ -8,4 +8,5 @@ export enum InputVariant {
 export interface IInput extends React.HTMLProps<HTMLInputElement> {
   className?: string
   variant?: InputVariant
+  error?: boolean
 }
