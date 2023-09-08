@@ -1,7 +1,7 @@
 import Image from 'next/image'
-//import classNames from 'classnames'
-import white_icon from 'public/white_icon.svg'
 import classNames from 'classnames'
+import white_icon from 'public/white_icon.svg'
+
 import styles from './styles.module.scss'
 
 
