@@ -1,13 +1,13 @@
 import Image from 'next/image'
 //import classNames from 'classnames'
 import white_icon from 'public/white_icon.svg'
-
+import classNames from 'classnames'
 import styles from './styles.module.scss'
 
 
 const Turan = () => {
   return (
-    <section>
+    <section className={classNames(styles.container, 'container')}>
     <section className={styles.running_line}>
     <div className={styles.running_line_1}>
       <ul>
