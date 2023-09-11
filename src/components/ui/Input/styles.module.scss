@@ -31,6 +31,10 @@
       border-bottom: 1px solid $white-color;
     }
   }
+
+  &__error::placeholder {
+    color: $red-color;
+  }
 }
 
 .input::-webkit-outer-spin-button,

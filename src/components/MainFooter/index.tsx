@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import Image from 'next/image'
 import classNames from 'classnames'
 import Planet from 'public/main_footer_planet.svg'
@@ -7,6 +8,7 @@ import ContactUs from './ContactUs'
 import styles from './styles.module.scss'
 
 const MainFooter = () => {
+  const host = headers().get('host')
   const EMAIL = 'team@qazdev.kz'
 
   return (
@@ -26,7 +28,7 @@ const MainFooter = () => {
               {EMAIL}
             </a>
           </div>
-          <ContactUs className={styles.footer__contact_us} />
+          <ContactUs className={styles.footer__contact_us} host={host} />
         </div>
       </div>
     </footer>

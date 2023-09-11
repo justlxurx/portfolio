@@ -6,8 +6,9 @@ import Navbar from '@/components/Navbar'
 import Table from '@/components/Table'
 import TeamMember from '@/components/TeamMember'
 import Work from '@/components/Work'
-
+import FormDev from '@/components/FormDev'
 import styles from './page.module.scss'
+import Details from '@/components/Details'
 
 export default async function Education() {
   return (
@@ -20,10 +21,13 @@ export default async function Education() {
         <Work />
         <EightBlock />
         <div className="container">
-          <BeProgrammer />
-          <Table />
+          <BeProgrammer />         
         </div>
-        <div className="container">{/* <TeamMember /> */}</div>
+        <Details />
+        <div className="container">
+           <Table />
+          <FormDev />
+        </div>
       </main>
 
       <JoinUsFooter />

@@ -1,9 +1,11 @@
+@import '/src/styles/variables.scss';
+
 .learn_program {
   display: grid;
   grid-template-rows: 15% 85%;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  height: 880px;
+  height: 1030px;
 
   &__heading {
     display: grid;
@@ -29,9 +31,9 @@
   &__main {
     margin: 0 4.3%;
     border: 1px solid black;
-    padding: 5% 0% 2.5% 4%;
+    padding: 116px 0% 0% 44px;
     display: grid;
-    grid-template-rows: 20% 28% 57%;
+    grid-template-rows: 20% 28% 52%;
 
     h2 {
       color: var(--black, #000);
@@ -57,15 +59,14 @@
 
       &__figure {
         //margin-top: 1%;
-        margin-left: 3%;
         background-image: url('/binary.svg');
         background-size: auto;
         background-repeat: no-repeat;
-        height: 90%;
+        height: 100%;
         width: 45%;
-        background-position: center;
+        background-position: 40% 60%;
       }
-      .scroll_container {
+      &__scrolling {
         //margin-bottom: -3.8%;
         width: 70%;
         border: 1px solid black;
@@ -74,7 +75,7 @@
         background: #eaeaea;
         overflow-y: auto;
         .scroll_blocks {
-          height: 254px;
+          height: 270px;
           border-bottom: 1px solid black;
           width: 100%;
           display: flex;
@@ -122,6 +123,7 @@
             background: #eaeaea;
             img {
               align-self: center;
+              margin-left: 5%;
             }
           }
           .bottom_color {
@@ -167,7 +169,7 @@
 
 @media (max-width: 1400px) {
   .learn_program {
-    height: 640px;
+    height: 740px;
     &__heading {
       h1 {
         font-size: 27px;
@@ -186,7 +188,7 @@
           width: 45%;
           background-size: 100%;
         }
-        .scroll_container {
+        &__scrolling {
           .scroll_blocks {
             height: 204px;
             h3 {
@@ -198,7 +200,8 @@
             button {
               font-size: 16px;
               img {
-                height: 70%;
+                height: 12px;
+              
               }
             }
             .bottom_color {
@@ -210,3 +213,279 @@
     }
   }
 }
+
+@media (max-width: 1050px) {
+  .learn_program {
+    height: 572px;
+    &__heading {
+      h1 {
+        font-size: 22px;
+      }
+    }
+    &__main {
+      padding: 64px 0 0 24px;
+      h2 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 22px;
+      }
+      .bottom_section {
+        &__figure {
+          height: 100%;
+          width: 45%;
+          background-size: 100%;
+        }
+        &__scrolling {
+          .scroll_blocks {
+            height: 150px;
+            h3 {
+              font-size: 22px;
+            }
+            p {
+              font-size: 13px;
+            }
+            button {
+              font-size: 13px;
+              img {
+              height: 10px;
+              }
+            }
+            .bottom_color {
+              height: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:$tablet-width) {
+  
+.learn_program {
+  display: grid;
+  grid-template-rows: 7% 93%;
+  border-top: 1px solid black;
+ border-bottom: none;
+  height: 1100px;
+
+  &__heading {
+    display: grid;
+    grid-template-columns: 4.3% 91.4% 4.3%;
+
+    h1 {
+      font-size: 28px;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      height: auto;
+      display: flex;
+      align-items: center;
+      padding: 20px 16px 20px 16px;
+    }
+  }
+  &__main {
+    margin: 0 4.3%;
+    border: 1px solid black;
+    padding: 67px 0 0 0;
+    overflow: hidden;
+    grid-template-rows: 15% 15% 70%;
+    h2 {
+      font-size:52px;
+      text-transform: uppercase;
+      margin: 0 20px 0 20px;
+    }
+    p {
+      font-size: 25px;
+      margin: 0 20px;
+    }
+    .bottom_section {
+      display: grid;
+      flex-direction: column;
+      grid-template-rows: 65% 35%;
+      height: 100%;
+
+      &__figure {
+        background-size: auto;
+        width: 100%;
+        height: 100%;
+        background-position: 40% 60%;
+      }
+      &__scrolling {
+        width: 100%;
+        border: none;
+        border-top: 1px solid black;
+        height: 100%;
+        overflow-y: auto;
+        .scroll_blocks {
+          height: 160px;
+          border-bottom: 1px solid black;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          h3 {
+            font-size: 20px;
+            margin: 3%;
+          }
+          p {
+            font-size: 15px;
+            margin: 0 3%;
+          }
+          button {
+            font-size: 20px;
+            text-decoration-line: underline;
+            border: none;
+            text-align: left;
+            margin: 7% 3% 0 3%;
+            width: 17%;
+            display: flex;
+            justify-content: space-between;
+            img {
+              align-self: center;
+              margin-left: 5%;
+            }
+          }
+          .bottom_color {
+            width: 1calc (100% - 2%);
+            margin: 0 2% 0 2%;
+            height: 4px;
+            border: 1px solid black;
+            transition-duration: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+}
+@media (max-width:$mobile-width) {
+  
+  .learn_program {
+    border-top: 1px solid black;
+    height: 1000px;
+  
+    &__heading {
+  
+      h1 {
+        font-size: 28px;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        height: auto;
+        display: flex;
+        align-items: center;
+        padding: 20px 16px 20px 16px;
+      }
+    }
+    &__main {
+      margin: 0 4.3%;
+      padding: 67px 0px 0% 0px;
+      h2 {
+        font-size:48px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .bottom_section {
+  
+        &__figure {
+          width: auto;
+      
+        }
+        &__scrolling {
+          .scroll_blocks {
+            height: 140px;
+  
+            h3 {
+              font-size: 18px;
+              margin: 3%;
+            }
+            p {
+              font-size: 12px;
+              margin: 0 3%;
+            }
+            button {
+              font-size: 17px;
+              text-decoration-line: underline;
+              border: none;
+              text-align: left;
+              margin: 10% 3% 0 3%;
+              width: 17%;
+              display: flex;
+              justify-content: space-between;
+              img {
+                align-self: center;
+                margin-left: 5%;
+              }
+            }
+            .bottom_color {
+              width: calc (100% - 2%);
+              margin: 0 2% 0 2%;
+              height: 3px;
+              border: 1px solid black;
+              transition-duration: 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  @media (max-width:447px) {
+  
+    .learn_program {
+      height: 800px;
+    
+      &__heading {
+    
+        h1 {
+          font-size: 22px;
+          padding: 15px 16px 20px 16px;
+        }
+      }
+      &__main {
+        margin: 0 4.3%;
+        padding: 47px 0px 0% 0px;
+        h2 {
+          font-size:40px;
+        }
+        p {
+          font-size: 15px;
+        }
+        .bottom_section {
+          &__figure{
+            background-position: center;
+            background-size: 150%;
+          }
+          &__scrolling {
+            .scroll_blocks {
+              height: 120px;
+    
+              h3 {
+                font-size: 18px;
+                margin: 3%;
+              }
+              p {
+                font-size: 12px;
+                margin: 0 3%;
+              }
+              button {
+                font-size: 17px;
+                margin: 10% 3% 0 3%;
+                width: 17%;
+                img {
+                  margin-left: 5%;
+                }
+              }
+              .bottom_color {
+                margin: 0 2% 0 2%;
+                height: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+    }
+    
