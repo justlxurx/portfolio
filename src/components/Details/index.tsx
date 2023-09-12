@@ -63,7 +63,7 @@ const Details = () => {
           <br /> <br />
           {'<'}Исключения
           <br /> <br />
-          {'<'}Потоки. Использование ключевого слова synchronized и методы wait,
+          {'<'}Потоки. Использование ключевого слова synchronized и методы wait
           <br /> <br />
           {'<'}notify, notifyAll
           <br />
@@ -72,8 +72,6 @@ const Details = () => {
           <br />
           <br />
           {'<'}Generics
-          <br />
-          <br />
         </>
       ),
     },
@@ -90,7 +88,6 @@ const Details = () => {
           {'<'}Многоязычный поиск
           <br /> <br />
           {'<'}Поиск с поддержкой релевантности
-          <br /> <br />
         </>
       ),
     },
@@ -123,7 +120,6 @@ const Details = () => {
           {'<'}Обработка форм <br />
           <br />
           {'<'}Работа с файлами и загрузка файлов
-          <br /> <br />
         </>
       ),
     },
@@ -146,8 +142,6 @@ const Details = () => {
           {'<'}Форматы данных для передачи информации в REST API (JSON & XML)
           <br /> <br />
           {'<'}Методы аутентификации и авторизации в REST API
-          <br />
-          <br />
         </>
       ),
     },
@@ -169,13 +163,10 @@ const Details = () => {
           ></button>
         </div>
       </div>
-      {/* TODO: Вынести position: relative и transition в css */}
       <div
         className={styles.intensive_details__main}
         style={{
-          position: 'relative',
           left: setctionPosition + 'px',
-          transition: '1s left ease',
         }}
       >
         {details.map(({ title, content }, index) => (
@@ -188,6 +179,7 @@ const Details = () => {
             <div className={styles.table_info}>
               <h1 className={styles.table_info__heading}>{title}</h1> <br />
               <p className={styles.table_info__text}>{content}</p>
+              <div className={styles.table_info__dots}></div>
             </div>
           </div>
         ))}
