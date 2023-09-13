@@ -108,88 +108,87 @@ const Blocks = () => {
   return (
     <div>
       <section className={styles.learn_program}>
-        <div className={styles.learn_program__heading}>
-          <div></div>
+        <div className={classNames(styles.learn_program__heading, 'container')}>
           <h1>программа обучения</h1>
-          <div></div>
         </div>
-
-        <div className={styles.learn_program__main} ref={blockRef}>
-          <h2>8 блоков обучения</h2>
-          <p>
-            Интенсив захватывает основы языка <br /> программирования Java,
-            работу <br />
-            с различными инструментами <br />
-            и библиотеками, а также непосредственно <br /> разработку
-            веб-приложений
-          </p>
-          <div className={styles.bottom_section}>
-            <div className={styles.bottom_section__figure}></div>
-            <div className={styles.bottom_section__scrolling}>
-              <Block
-                title="Java Core"
-                description="База, которая необходима для старта. На интенсиве изучаем основы программирования и на практике 
+        <div className="container">
+          <div className={styles.learn_program__main} ref={blockRef}>
+            <h2>8 блоков обучения</h2>
+            <p>
+              Интенсив захватывает основы языка <br /> программирования Java,
+              работу <br />
+              с различными инструментами <br />
+              и библиотеками, а также непосредственно <br /> разработку
+              веб-приложений
+            </p>
+            <div className={styles.bottom_section}>
+              <div className={styles.bottom_section__figure}></div>
+              <div className={styles.bottom_section__scrolling}>
+                <Block
+                  title="Java Core"
+                  description="База, которая необходима для старта. На интенсиве изучаем основы программирования и на практике 
               работаем с Java Core: интеграции с другими технологиями, 
               многопоточные программировании, разработка приложений и др."
-                showInfo={blockStates[0]}
-                onClick={() => handleBlockClick(0)}
-              />
+                  showInfo={blockStates[0]}
+                  onClick={() => handleBlockClick(0)}
+                />
 
-              <Block
-                title="Java Spring"
-                description="Описание для Java Spring."
-                showInfo={blockStates[1]}
-                onClick={() => handleBlockClick(1)}
-              />
+                <Block
+                  title="Java Spring"
+                  description="Описание для Java Spring."
+                  showInfo={blockStates[1]}
+                  onClick={() => handleBlockClick(1)}
+                />
 
-              <Block
-                title="Elasticsearch"
-                description="Описание для Elasticsearch."
-                showInfo={blockStates[2]}
-                onClick={() => handleBlockClick(2)}
-              />
+                <Block
+                  title="Elasticsearch"
+                  description="Описание для Elasticsearch."
+                  showInfo={blockStates[2]}
+                  onClick={() => handleBlockClick(2)}
+                />
 
-              <Block
-                title="Spring Core & MVC"
-                description="Описание для Java Spring."
-                showInfo={blockStates[3]}
-                onClick={() => handleBlockClick(3)}
-              />
+                <Block
+                  title="Spring Core & MVC"
+                  description="Описание для Java Spring."
+                  showInfo={blockStates[3]}
+                  onClick={() => handleBlockClick(3)}
+                />
 
-              <Block
-                title="Spring REST API"
-                description="Описание для Elasticsearch."
-                showInfo={blockStates[4]}
-                onClick={() => handleBlockClick(4)}
-              />
+                <Block
+                  title="Spring REST API"
+                  description="Описание для Elasticsearch."
+                  showInfo={blockStates[4]}
+                  onClick={() => handleBlockClick(4)}
+                />
 
-              <Block
-                title="Spring OpenAPI"
-                description="Описание для Java Spring."
-                showInfo={blockStates[5]}
-                onClick={() => handleBlockClick(5)}
-              />
+                <Block
+                  title="Spring OpenAPI"
+                  description="Описание для Java Spring."
+                  showInfo={blockStates[5]}
+                  onClick={() => handleBlockClick(5)}
+                />
 
-              <Block
-                title="JUnit Tests"
-                description="Описание для Elasticsearch."
-                showInfo={blockStates[6]}
-                onClick={() => handleBlockClick(6)}
-              />
-              <Block
-                title="Spring Data"
-                description="Описание для Java Spring."
-                showInfo={blockStates[7]}
-                onClick={() => handleBlockClick(7)}
-              />
+                <Block
+                  title="JUnit Tests"
+                  description="Описание для Elasticsearch."
+                  showInfo={blockStates[6]}
+                  onClick={() => handleBlockClick(6)}
+                />
+                <Block
+                  title="Spring Data"
+                  description="Описание для Java Spring."
+                  showInfo={blockStates[7]}
+                  onClick={() => handleBlockClick(7)}
+                />
 
-              <Block
-                title="Spring Security"
-                description="Описание для Elasticsearch."
-                showInfo={blockStates[8]}
-                onClick={() => handleBlockClick(8)}
-                className={styles.last_block}
-              />
+                <Block
+                  title="Spring Security"
+                  description="Описание для Elasticsearch."
+                  showInfo={blockStates[8]}
+                  onClick={() => handleBlockClick(8)}
+                  className={styles.last_block}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -198,4 +197,23 @@ const Blocks = () => {
   )
 }
 
-export default Blocks
+const Distance = () => {
+  return (
+    <section className={styles.distance}>
+      <div></div>
+      <div className={styles.distance_line}></div>
+      <div></div>
+    </section>
+  )
+}
+
+const EightBlock = () => {
+  return (
+    <>
+      <Distance />
+      <Blocks />
+    </>
+  )
+}
+
+export default EightBlock

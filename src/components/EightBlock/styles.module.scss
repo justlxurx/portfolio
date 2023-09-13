@@ -1,17 +1,29 @@
 @import '/src/styles/variables.scss';
 
-.learn_program {
+.distance {
+  border-top: 1px solid black;
   display: grid;
-  grid-template-rows: 15% 85%;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 124px;
+  &_line {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+}
+
+.learn_program {
+  // display: grid;
+  //  grid-template-rows: 15% 85%;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  height: 1030px;
+  //height: 1030px;
 
   &__heading {
-    display: grid;
-    grid-template-columns: 40px auto 40px;
-
+    height: 123px;
+    //  width: 100%;
     h1 {
+      border-bottom: 1px solid black;
       color: var(--black, #000);
       font-family: Helvetica;
       font-size: 40px;
@@ -25,12 +37,13 @@
       height: 100%;
       display: flex;
       align-items: center;
-      padding-left: 5%;
+      padding-left: 3%;
     }
   }
   &__main {
-    margin: 0 40px;
+    height: 909px;
     border: 1px solid black;
+    border-bottom: none;
     padding: 116px 0% 0% 44px;
     display: grid;
     grid-template-rows: 20% 28% 52%;
@@ -60,7 +73,7 @@
       &__figure {
         //margin-top: 1%;
         background-image: url('/binary.svg');
-        background-size: auto;
+        background-size: 150%;
         background-repeat: no-repeat;
         height: 100%;
         width: 45%;
@@ -169,13 +182,14 @@
 
 @media (max-width: 1400px) {
   .learn_program {
-    height: 740px;
     &__heading {
+      height: 100px;
       h1 {
         font-size: 27px;
       }
     }
     &__main {
+      height: 600px;
       h2 {
         font-size: 70px;
       }
@@ -186,7 +200,7 @@
         &__figure {
           height: 100%;
           width: 45%;
-          background-size: 100%;
+          background-size: 150%;
         }
         &__scrolling {
           .scroll_blocks {
@@ -215,13 +229,15 @@
 
 @media (max-width: 1050px) {
   .learn_program {
-    height: 572px;
+    //  height: 572px;
     &__heading {
+      height: 72px;
       h1 {
         font-size: 22px;
       }
     }
     &__main {
+      height: 500px;
       padding: 64px 0 0 24px;
       h2 {
         font-size: 48px;
@@ -233,7 +249,7 @@
         &__figure {
           height: 100%;
           width: 45%;
-          background-size: 100%;
+          background-size: 150%;
         }
         &__scrolling {
           .scroll_blocks {
@@ -261,29 +277,30 @@
 }
 
 @media (max-width: $tablet-width) {
+  .distance {
+    height: 102px;
+  }
   .learn_program {
-    display: grid;
-    grid-template-rows: 7% 93%;
     border-top: 1px solid black;
     border-bottom: none;
-    height: 1100px;
+    //  height: 1100px;
 
     &__heading {
-      display: grid;
-      grid-template-columns: 15px auto 15px;
+      height: 100px;
 
       h1 {
+        height: 100%;
         font-size: 28px;
         border-left: 1px solid black;
         border-right: 1px solid black;
-        height: auto;
+        height: 100%;
         display: flex;
         align-items: center;
-        padding: 20px 16px 20px 16px;
       }
     }
     &__main {
-      margin: 0 15px;
+      display: grid;
+      height: 1000px;
       border: 1px solid black;
       padding: 67px 0 0 0;
       overflow: hidden;
@@ -304,7 +321,6 @@
         height: 100%;
 
         &__figure {
-          background-size: auto;
           width: 100%;
           height: 100%;
           background-position: 40% 60%;
@@ -361,20 +377,20 @@
 @media (max-width: $mobile-width) {
   .learn_program {
     border-top: 1px solid black;
-    height: 1000px;
+    // height: 1000px;
 
     &__heading {
       h1 {
         font-size: 28px;
         border-left: 1px solid black;
         border-right: 1px solid black;
-        height: auto;
+        height: 100%;
         display: flex;
         align-items: center;
-        padding: 20px 16px 20px 16px;
       }
     }
     &__main {
+      height: 900px;
       padding: 67px 0px 0% 0px;
       h2 {
         font-size: 48px;
@@ -427,16 +443,16 @@
 }
 @media (max-width: 447px) {
   .learn_program {
-    height: 800px;
+    //  height: 800px;
 
     &__heading {
+      height: 70px;
       h1 {
         font-size: 22px;
-        padding: 15px 16px 20px 16px;
       }
     }
     &__main {
-      //  margin: 0 4.3%;
+      height: 730px;
       padding: 47px 0 0 0;
       h2 {
         font-size: 40px;

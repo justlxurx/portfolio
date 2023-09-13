@@ -1,13 +1,15 @@
 // import Button from '@/components/ui/Button'
 import Image from 'next/image'
 import arrow from 'public/arrow.svg'
-
+import classNames from 'classnames'
 import styles from './styles.module.scss'
 
-const DevPractice = () => {
+const Work = () => {
   return (
     <section className={styles.work_environment}>
-      <h1>Погружение в рабочую среду </h1>
+      <div className={classNames(styles.work_environment_heading, 'container')}>
+        <h1>Погружение в рабочую среду </h1>
+      </div>
       <div className="container">
         <div className={styles.work_environment_main}>
           <div className={styles.work_environment_main_1}>
@@ -96,8 +98,7 @@ const Dev = () => {
   return (
     <>
       <Distance />
-      <DevPractice />
-      <Distance />
+      <Work />
     </>
   )
 }
