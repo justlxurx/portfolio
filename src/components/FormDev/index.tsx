@@ -4,13 +4,11 @@ import classNames from 'classnames'
 import { useFormik } from 'formik'
 // @ts-ignore
 import InputMask from 'react-input-mask'
-import React, { useState} from 'react';
-
+import React, { useState } from 'react'
 import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
 import Input from '../ui/Input'
 import { InputVariant } from '../ui/Input/interface'
-
 import styles from './styles.module.scss'
 
 const TeamMember = () => {
@@ -18,7 +16,6 @@ const TeamMember = () => {
     initialValues: {
       userName: '',
       phone: '',
-    
     },
     onSubmit: (values) => {
       alert(`Функционал в разработке! Введенные данные:
@@ -47,18 +44,19 @@ const TeamMember = () => {
     variant: InputVariant.white,
   }
 
-  const [isPrivacyPolicyAccepted, setIsPrivacyPolicyAccepted] = useState(false);
+  const [isPrivacyPolicyAccepted, setIsPrivacyPolicyAccepted] = useState(false)
 
-  const handlePrivacyPolicyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsPrivacyPolicyAccepted(event.target.checked);
-  };
-
-
+  const handlePrivacyPolicyChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setIsPrivacyPolicyAccepted(event.target.checked)
+  }
 
   return (
     <section className={styles.container}>
       <h2 className={styles.header}>
-      Dev <br />Practice
+        Dev <br />
+        Practice
       </h2>
       <h3 className={styles.subheader}>
         Превратите свою страсть к IT <br /> в карьеру - присоединяйтесь к нам!
@@ -75,17 +73,24 @@ const TeamMember = () => {
         </InputMask>
       </div>
       <div className={styles.agreement}>
-      <label>
-        <Input className={styles.custom_checkbox}
-          type="checkbox"
-          checked={isPrivacyPolicyAccepted}
-          onChange={handlePrivacyPolicyChange}
-        />
-        Принимаю <a href="/privacy-policy" style={{color:"white", textDecoration:"underline"}}>политику конфиденциальности</a>.
-      </label>
-    </div>
+        <label>
+          <Input
+            className={styles.custom_checkbox}
+            type="checkbox"
+            checked={isPrivacyPolicyAccepted}
+            onChange={handlePrivacyPolicyChange}
+          />
+          Принимаю{' '}
+          <a
+            href="/privacy-policy"
+            style={{ color: 'white', textDecoration: 'underline' }}
+          >
+            политику конфиденциальности
+          </a>
+          .
+        </label>
+      </div>
 
-    
       <Button className={styles.submit_button} variant={ButtonVariant.white}>
         Отправить
       </Button>

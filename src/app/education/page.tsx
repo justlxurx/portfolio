@@ -21,15 +21,14 @@ export default async function Education() {
         <Work />
         <EightBlock />
         <div className="container">
-          <BeProgrammer />         
+          <BeProgrammer />
         </div>
         <Details />
         <div className="container">
-           <Table />
+          <Table />
           <FormDev />
         </div>
       </main>
-
       <JoinUsFooter />
     </>
   )
