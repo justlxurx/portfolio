@@ -457,8 +457,7 @@
           height: 100%;
           margin: 5% 15px;
           align-items: center;
-          display: grid;
-          grid-template-columns: 3fr 1fr;
+          display: flex;
           cursor: pointer;
           background: var(--orange, #e97810);
           border-left: 1px solid black;
@@ -470,7 +469,7 @@
           letter-spacing: -0.16px;
         }
         img {
-          margin-left: 1%;
+          margin-left: 3%;
           width: auto;
           height: 30%;
         }
