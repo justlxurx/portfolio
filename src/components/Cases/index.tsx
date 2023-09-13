@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { nanoid } from 'nanoid'
 import arrow_icon from 'public/arrow_icon.svg'
 import avatar from 'public/avatar.svg'
-import confirmation from 'public/confirmation.png'
+import confirmation from 'public/confirmation.svg'
 import facebook from 'public/facebook.svg'
 import group_of_phones from 'public/group_of_phones.png'
 import instagram from 'public/instagram.svg'
@@ -51,7 +51,7 @@ const Socials = () => {
           {socialLinks2.map(({ path, icon }) => (
             <li key={nanoid()}>
               <a className={styles.link} href={path} target="_blank">
-                <Image src={icon} alt="icon" width="40" height="40"  />
+                <Image src={icon} alt="icon" width="40" height="40" />
               </a>
             </li>
           ))}
@@ -64,7 +64,7 @@ const Socials = () => {
 const Cases = () => {
   const isMobile = useMedia('(max-width: 768px)')
   return (
-    <section >
+    <section>
       <h4 className={styles.short_info__header}>
         КЕЙСЫ,
         <br /> НА КОТОРЫХ РАСТЕШЬ
@@ -73,7 +73,8 @@ const Cases = () => {
         <section className={styles.section1}>
           <article className={styles.short_article}>
             <div className={styles.person_info}>
-              <Image src={avatar} alt={'Avatar'} className={styles.avatar1} />
+              {/* <Image src={avatar} alt={'Avatar'}  /> */}
+              <div className={styles.avatar1}></div>
 
               <div className={styles.person_name}>
                 <h5>Оксана Герасименко</h5>
@@ -135,7 +136,11 @@ const Cases = () => {
 
           <div
             className={styles.specialists}
-            style={{ paddingLeft: '14%', paddingRight: '14%', marginBottom:"0" }}
+            style={{
+              paddingLeft: '14%',
+              paddingRight: '14%',
+              marginBottom: '0',
+            }}
           >
             <div>
               <p>

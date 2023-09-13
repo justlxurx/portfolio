@@ -5,8 +5,18 @@
   display: flex;
   justify-content: space-between;
   padding: 7px 40px;
+  &__text {
+    display: flex;
+  }
 }
-
+.qazdev_logo {
+  background-image: url('/logo.svg');
+  background-size: contain;
+  width: 92px;
+  height: 23px;
+  background-repeat: no-repeat;
+  margin-right: 16px;
+}
 .info {
   cursor: default;
   display: flex;
@@ -69,6 +79,10 @@
 @media (max-width: $tablet-width) {
   .header {
     padding: 16px;
+  }
+
+  .qazdev_logo {
+    margin-right: 16px;
   }
 
   .navigation {

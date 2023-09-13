@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import { nanoid } from 'nanoid'
 
 import styles from './styles.module.scss'
+import { relative } from 'path'
 const ROADMAP_STEP = 350
 
 const Details = () => {

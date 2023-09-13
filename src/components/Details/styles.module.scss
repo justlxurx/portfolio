@@ -51,12 +51,11 @@
     }
   }
   &__main {
-    position: relative;
     display: flex;
     padding: 79px 0px 124px 40px;
     gap: 50px;
-    transition: '1s left ease';
-
+    position: relative;
+    transition: 1s left ease;
     &__display {
       color: #000;
       font-family: Helvetica;

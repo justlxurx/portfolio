@@ -18,7 +18,7 @@ const Navbar = () => {
     {
       title: 'Devpractice',
       description: 'Учись у нас',
-      path: '#',
+      path: '/education',
     },
     {
       title: 'Карьера',
@@ -29,9 +29,14 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.info}>
-        <span className={styles.info__label}>Цифровые решения</span>
-        <span className={styles.info__tag}>#пишемкод</span>
+      <div className={styles.header__text}>
+        <a href="/">
+          <div className={styles.qazdev_logo}></div>
+        </a>
+        <div className={styles.info}>
+          <span className={styles.info__label}>Цифровые решения</span>
+          <span className={styles.info__tag}>#пишемкод</span>
+        </div>
       </div>
       <nav className={styles.navigation}>
         <ul className={styles.navigation__buttons_wrapper}>

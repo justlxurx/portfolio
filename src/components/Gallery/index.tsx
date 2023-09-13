@@ -10,6 +10,7 @@ import specializedEvents2 from 'public/gallery_specialized_events_2.png'
 import specializedEvents3 from 'public/gallery_specialized_events_3.png'
 import specializedEvents4 from 'public/gallery_specialized_events_4.png'
 import specializedEvents5 from 'public/gallery_specialized_events_5.png'
+import learning_eng from 'public/learning_eng.png'
 
 import { FormattedString } from '@/helpers/FormattedString'
 
@@ -89,6 +90,52 @@ const Gallery = () => {
           fill
         />
       ),
+    },
+  ]
+
+  const learnEnglish = [
+    {
+      label: (
+        <span>
+          Изучаем бесплатно
+          <br /> английский язык
+        </span>
+      ),
+      component: <Image src={learning_eng} alt={'learn English #1'} fill />,
+    },
+    {
+      label: (
+        <span>
+          Изучаем бесплатно <br /> английский язык
+        </span>
+      ),
+      component: <Image src={learning_eng} alt={'learn English #3'} fill />,
+    },
+    {
+      label: (
+        <span>
+          Изучаем бесплатно
+          <br /> английский язык
+        </span>
+      ),
+      component: <Image src={learning_eng} alt={'learn English #4'} fill />,
+    },
+    {
+      label: (
+        <span>
+          Изучаем бесплатно <br /> английский язык
+        </span>
+      ),
+      component: <Image src={learning_eng} alt={'learn English #3'} fill />,
+    },
+    {
+      label: (
+        <span>
+          Изучаем бесплатно
+          <br /> английский язык
+        </span>
+      ),
+      component: <Image src={learning_eng} alt={'learn English #4'} fill />,
     },
   ]
 
@@ -174,7 +221,7 @@ const Gallery = () => {
         <div className={classNames(styles.blocks__fives, styles.fives)}></div>
         <div className={classNames(styles.blocks__sixth, styles.sixth)}></div>
         <div className={classNames(styles.blocks__seventh, styles.seventh)}>
-          <WideSlider items={specializedEvents} />
+          <WideSlider items={learnEnglish} />
         </div>
       </div>
     </section>
