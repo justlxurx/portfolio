@@ -3,7 +3,7 @@ import format from 'date-fns/format'
 import { ValidationError } from 'yup'
 
 import clientPromise from '@/lib/mongodb'
-import { contactUsFormSchema } from '@/schemas/contactUs'
+import { educationFormSchema } from '@/schemas/education'
 
 import { sendMail } from '../mailer'
 
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
       const date = format(new Date(), 'dd.MM.yyyy HH:mm')
 
-      const data = contactUsFormSchema.validateSync(
+      const data = educationFormSchema.validateSync(
         { ...res, date },
         {
           abortEarly: false,
@@ -23,16 +23,16 @@ export async function POST(request: Request) {
       )
 
       const client = await clientPromise
-      const db = client.db('contact-us')
+      const db = client.db('education')
 
       await db.collection('data').insertOne(data)
 
       try {
         await sendMail({
-          theme: 'Форма обратной связи',
+          theme: 'Образовательная программа',
           textHtml: `
             <div>
-              <h3>Форма обратной связи</h3>
+              <h3>Образовательная программа</h3>
               <p>Телефон: ${res.phone}</p>
               <p>ФИО: ${res.username}</p>
               <p>Дата отправки: ${date}</p>
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       } catch (error) {
         return NextResponse.json(
           {
-            error: "Произошла ошибка в '/api/contact-us': " + error,
+            error: "Произошла ошибка в '/api/education': " + error,
           },
           {
             status: 400,
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
   } catch (error) {
     return NextResponse.json(
       {
-        error: "Произошла ошибка в '/api/contact-us': " + error,
+        error: "Произошла ошибка в '/api/education': " + error,
       },
       {
         status: 400,
