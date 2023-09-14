@@ -83,6 +83,8 @@ const FormDev = ({ className, host }: IFormDev) => {
     variant: InputVariant.white,
   }
 
+  console.log(formik.isValid)
+
   return (
     <form onSubmit={formik.handleSubmit}>
       <div className={styles.inputs_wrapper}>
@@ -99,16 +101,18 @@ const FormDev = ({ className, host }: IFormDev) => {
       <div className={styles.agreement}>
         <Input {...checkBoxInputProps} />
         <label>
-          Принимаю <a href=""> политику конфиденциальности.</a>
+          Принимаю{' '}
+          <a href="" className={styles.agreement_link}>
+            {' '}
+            политику конфиденциальности.
+          </a>
         </label>
-        {/* {formik.touched.acceptedTerms && formik.errors.acceptedTerms }</div> : null} */}
-        {/* {formik.touched.acceptedTerms && formik.errors.acceptedTerms ? (
-          <span className={styles.errorText}>
-            {formik.errors.acceptedTerms}
-          </span>
-        ) : null} */}
       </div>
-      <Button className={styles.submit_button} variant={ButtonVariant.white}>
+      <Button
+        className={styles.submit_button}
+        variant={ButtonVariant.white}
+        disabled={!formik.isValid}
+      >
         Отправить
       </Button>
     </form>

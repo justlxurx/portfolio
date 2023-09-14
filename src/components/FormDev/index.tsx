@@ -7,7 +7,7 @@ import styles from './styles.module.scss'
 
 const MainForm = () => {
   const host = headers().get('host')
-  const EMAIL = 'justlxurx0@gmail.com'
+  const EMAIL = 'team@qazdev.kz'
   return (
     <section className={styles.container}>
       <h2 className={styles.header}>
