@@ -24,7 +24,7 @@ const Pages = () => {
       ),
       description: `Образовательный интенсив для студентов IT-специальностей. Практические навыки, ключевые компоненты, командная работа.`,
       tag: <span>DevPractice</span>,
-      link: '#',
+      link: '/education',
       image: devPracticeImage,
       className: styles.card_color_dark,
     },

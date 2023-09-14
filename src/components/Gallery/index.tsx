@@ -120,23 +120,6 @@ const Gallery = () => {
       ),
       component: <Image src={learning_eng} alt={'learn English #4'} fill />,
     },
-    {
-      label: (
-        <span>
-          Изучаем бесплатно <br /> английский язык
-        </span>
-      ),
-      component: <Image src={learning_eng} alt={'learn English #3'} fill />,
-    },
-    {
-      label: (
-        <span>
-          Изучаем бесплатно
-          <br /> английский язык
-        </span>
-      ),
-      component: <Image src={learning_eng} alt={'learn English #4'} fill />,
-    },
   ]
 
   const whatWeDo = [

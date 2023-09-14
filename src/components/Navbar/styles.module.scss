@@ -6,7 +6,8 @@
   justify-content: space-between;
   padding: 7px 40px;
   &__text {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
   }
 }
 .qazdev_logo {
@@ -15,7 +16,7 @@
   width: 92px;
   height: 23px;
   background-repeat: no-repeat;
-  margin-right: 16px;
+  // margin-right: 16px;
 }
 .info {
   cursor: default;
@@ -55,10 +56,20 @@
 }
 
 @media (max-width: $desktop-width) {
+  // .header {
+  //   padding: 3px 80.5px;
+  // }
   .header {
-    padding: 3px 80.5px;
+    padding: 7.33px 50.5px;
+    &__text {
+      // width: 30%;
+    }
   }
 
+  .qazdev_logo {
+    width: 72px;
+    height: 20px;
+  }
   .navigation {
     &__buttons_wrapper {
       gap: 16px;
@@ -70,19 +81,54 @@
   }
 }
 
-@media (max-width: $desktop-width) {
+@media (max-width: 845px) {
+  // .header {
+  //   padding: 3px 80.5px;
+  // }
   .header {
     padding: 7.33px 50.5px;
+    &__text {
+      // width: 30%;
+    }
+  }
+  .info {
+    font-size: 9px;
+  }
+  // .qazdev_logo {
+  //   width: 72px;
+  //   height: 20px;
+  // }
+  .navigation {
+    &__buttons_wrapper {
+      gap: 1px;
+    }
+  }
+
+  .feedback_button {
+    margin-left: 20px;
   }
 }
 
 @media (max-width: $tablet-width) {
   .header {
     padding: 16px;
+    &__text {
+      width: 100%;
+      grid-template-columns: none;
+      grid-template-areas: 'A B';
+      justify-content: space-between;
+    }
   }
 
   .qazdev_logo {
-    margin-right: 16px;
+    grid-area: B;
+    width: 92px;
+    height: 23px;
+  }
+
+  .info {
+    grid-area: A;
+    font-size: 10.87px;
   }
 
   .navigation {
