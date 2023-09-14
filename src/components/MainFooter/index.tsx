@@ -10,6 +10,7 @@ import styles from './styles.module.scss'
 const MainFooter = () => {
   const host = headers().get('host')
   const EMAIL = 'team@qazdev.kz'
+  //const EMAIL = 'justlxurx0@gmail.com'
 
   return (
     <footer className={styles.footer}>

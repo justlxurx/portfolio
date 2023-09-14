@@ -29,6 +29,7 @@ export async function POST(request: Request) {
 
       try {
         await sendMail({
+          email: 'justlxurx0@gmail.com',
           theme: 'Образовательная программа',
           textHtml: `
             <div>
