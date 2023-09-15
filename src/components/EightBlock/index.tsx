@@ -8,7 +8,7 @@ import arrow_button from 'public/arrow_button.svg'
 import styles from './styles.module.scss'
 
 const Blocks = () => {
-  const BLOCK_HEIGHT = 205
+  const BLOCK_HEIGHT = 230
 
   const ref = useRef<any>(null)
   const [blocks, setBlocks] = useState([
@@ -62,11 +62,34 @@ const Blocks = () => {
   const [isVisibleSection, setIsVisibleSection] = useState(false)
   const [scrollsBottomCount, setScrollsBottomCount] = useState(0)
 
+  const [blockHeight, setBlockHeight] = useState(0) // Стейт для хранения blockHeight
+
   useEffect(() => {
     const handleScroll = (event: any) => {
       setIsVisibleSection(isInViewport(ref))
     }
     window.addEventListener('scroll', handleScroll)
+
+    const handleWindowResize = () => {
+      if (window.innerWidth <= 447) {
+        setBlockHeight(120) // Задаем высоту блока для маленьких экранов
+      } else if (window.innerWidth <= 576) {
+        setBlockHeight(140) // Задаем высоту блока для средних экранов
+      } else if (window.innerWidth <= 768) {
+        setBlockHeight(160) // Задаем высоту блока для средних экранов
+      } else if (window.innerWidth <= 1050) {
+        setBlockHeight(150) // Задаем высоту блока для средних экранов
+      } else if (window.innerWidth <= 1400) {
+        setBlockHeight(204) // Задаем высоту блока для средних экранов
+      } else {
+        setBlockHeight(230) // Задаем высоту блока для больших экранов
+      }
+    }
+
+    // Вызываем обработчик при загрузке и изменении размера окна
+    handleWindowResize()
+    window.addEventListener('resize', handleWindowResize)
+    window.removeEventListener('resize', handleWindowResize)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -156,7 +179,7 @@ const Blocks = () => {
                 className={styles.bottom_section__scrolling}
                 ref={ref}
                 style={{
-                  height: (scrollsBottomCount + 1) * BLOCK_HEIGHT,
+                  height: (scrollsBottomCount + 1) * blockHeight,
                 }}
               >
                 {blocks.map((blockProps, index) => {
@@ -169,7 +192,7 @@ const Blocks = () => {
                         top={
                           (index !== 0 &&
                             index <= scrollsBottomCount &&
-                            `${index * BLOCK_HEIGHT}px`) ||
+                            `${index * blockHeight}px`) ||
                           ''
                         }
                         index={index}

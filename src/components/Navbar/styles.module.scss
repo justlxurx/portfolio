@@ -8,6 +8,7 @@
   &__text {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
+    align-items: center;
   }
 }
 .qazdev_logo {
