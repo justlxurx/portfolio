@@ -17,7 +17,7 @@
   width: 92px;
   height: 23px;
   background-repeat: no-repeat;
-  // margin-right: 16px;
+  margin-right: 16px;
 }
 .info {
   cursor: default;
@@ -45,6 +45,9 @@
   &__buttons_wrapper {
     display: flex;
     gap: 30px;
+    a {
+      display: flex;
+    }
   }
 }
 
@@ -70,6 +73,7 @@
   .qazdev_logo {
     width: 72px;
     height: 20px;
+    margin-right: 2px;
   }
   .navigation {
     &__buttons_wrapper {
