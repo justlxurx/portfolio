@@ -1,17 +1,18 @@
 'use client'
-import Image from 'next/image'
-import classNames from 'classnames'
+import React from 'react'
 import { useFormik } from 'formik'
 // @ts-ignore
 import InputMask from 'react-input-mask'
-import React, { useState } from 'react'
+import * as Yup from 'yup'
+
 import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
 import Input from '../ui/Input'
 import { InputVariant } from '../ui/Input/interface'
-import styles from './styles.module.scss'
-import * as Yup from 'yup'
+
 import { IFormDev } from './interface'
+
+import styles from './styles.module.scss'
 
 const validationSchema = Yup.object({
   username: Yup.string().required('Заполните поле "Имя"'),
@@ -30,12 +31,17 @@ const FormDev = ({ className, host }: IFormDev) => {
       acceptedTerms: false,
     },
     onSubmit: async (values, { resetForm }) => {
+      const data = {
+        username: values.username,
+        phone: values.phone,
+      }
+
       await fetch(`http://${host}/api/education`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(data),
       })
         .then((response) => {
           //TODO: Переделать на popup
@@ -83,8 +89,6 @@ const FormDev = ({ className, host }: IFormDev) => {
     variant: InputVariant.white,
   }
 
-  console.log(formik.isValid)
-
   return (
     <form onSubmit={formik.handleSubmit}>
       <div className={styles.inputs_wrapper}>
@@ -111,7 +115,7 @@ const FormDev = ({ className, host }: IFormDev) => {
       <Button
         className={styles.submit_button}
         variant={ButtonVariant.white}
-        disabled={!formik.isValid}
+        disabled={!formik.isValid || !formik.values.acceptedTerms}
       >
         Отправить
       </Button>
