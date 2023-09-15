@@ -82,7 +82,7 @@ const Blocks = () => {
       } else if (window.innerWidth <= 1400) {
         setBlockHeight(204) // Задаем высоту блока для средних экранов
       } else {
-        setBlockHeight(230) // Задаем высоту блока для больших экранов
+        setBlockHeight(250) // Задаем высоту блока для больших экранов
       }
     }
 
