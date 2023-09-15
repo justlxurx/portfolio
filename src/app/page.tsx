@@ -1,5 +1,4 @@
 import { headers } from 'next/headers'
-import Image from 'next/image'
 
 import About from '@/components/About'
 import Distance from '@/components/Distance'

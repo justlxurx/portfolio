@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import classNames from 'classnames'
 import { nanoid } from 'nanoid'
 import arrow from 'public/arrow.svg'
 import logo from 'public/logo.svg'

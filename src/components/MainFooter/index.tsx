@@ -1,7 +1,4 @@
 import { headers } from 'next/headers'
-import Image from 'next/image'
-import classNames from 'classnames'
-import Planet from 'public/main_footer_planet.svg'
 
 import ContactUs from './ContactUs'
 
