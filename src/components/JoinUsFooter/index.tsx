@@ -64,12 +64,15 @@ const JoinUsFooter = () => {
               <h2 className={styles.header}>
                 Начни карьеру <br /> в IT стремительно
               </h2>
+
               <Button
                 className={styles.feedback_button}
                 variant={ButtonVariant.outlined_transparent}
               >
-                Связаться с нами
-                <Image src={arrow} alt="arrow" />
+                <a href={'tel:+77212940165'}>
+                  Связаться с нами
+                  <Image src={arrow} alt="arrow" />
+                </a>
               </Button>
             </div>
             <nav className={styles.navigation}>

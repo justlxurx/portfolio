@@ -15,6 +15,9 @@ import styles from './ContactUs.module.scss'
 const validationSchema = Yup.object({
   username: Yup.string().required('Заполните поле "Имя"'),
   phone: Yup.string().required('Заполните поле "Телефон"'),
+  acceptedTerms: Yup.boolean()
+    .required('Required')
+    .oneOf([true], 'You must accept the terms and conditions.'),
 })
 
 const ContactUs = ({ className, host }: IContactUs) => {
@@ -23,6 +26,7 @@ const ContactUs = ({ className, host }: IContactUs) => {
     initialValues: {
       username: '',
       phone: '',
+      acceptedTerms: false,
     },
     onSubmit: async (values, { resetForm }) => {
       await fetch(`http://${host}/api/contact-us`, {
@@ -64,6 +68,17 @@ const ContactUs = ({ className, host }: IContactUs) => {
     error: !!(formik.touched.phone && formik.errors.phone),
   }
 
+  const checkBoxInputProps = {
+    className: styles.custom_checkbox,
+    name: 'acceptedTerms',
+    onChange: formik.handleChange,
+    type: 'checkbox',
+    checked: formik.values.acceptedTerms,
+
+    error: !!(formik.touched.acceptedTerms && formik.errors.acceptedTerms),
+    //variant: InputVariant.white,
+  }
+
   return (
     <form
       className={classNames(styles.form, className)}
@@ -79,6 +94,16 @@ const ContactUs = ({ className, host }: IContactUs) => {
         >
           {() => <Input {...phoneInputProps} />}
         </InputMask>
+      </div>
+      <div className={styles.agreement}>
+        <Input {...checkBoxInputProps} />
+        <label>
+          Принимаю{' '}
+          <a href="" className={styles.agreement_link}>
+            {' '}
+            политику конфиденциальности.
+          </a>
+        </label>
       </div>
       <Button className={styles.form__button}>Отправить</Button>
     </form>

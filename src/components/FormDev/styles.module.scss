@@ -54,6 +54,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 112.5%;
+  display: flex;
+  align-items: center;
   &_link {
     color: #eaeaea;
     text-decoration: underline;
@@ -64,6 +66,7 @@
     margin-right: 8px;
     background-color: black;
     border: 1px solid white;
+    flex: initial;
   }
 }
 

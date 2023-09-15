@@ -38,6 +38,9 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 0.75;
+  a {
+    color: black;
+  }
   img {
     height: 100%;
     margin-left: 10px;
@@ -59,8 +62,10 @@
 }
 .social_navigation {
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
   width: 85%;
+  gap: 15%;
+
   padding-top: 8%;
   img {
     width: auto;
@@ -119,8 +124,8 @@
   }
 }
 
-@media(max-width: 1370px){
-  .footer{
+@media (max-width: 1370px) {
+  .footer {
     margin-top: 100px;
   }
 }
@@ -173,6 +178,7 @@
     line-height: 0.5;
     height: 24px;
     padding: 8.5px 10.67px;
+
     img {
       margin-left: 2px;
     }
@@ -192,6 +198,7 @@
 
   .social_navigation {
     padding-top: 10%;
+    gap: 0;
     img {
       width: auto;
       height: 50%;
@@ -267,6 +274,7 @@
 
   .social_navigation {
     margin-top: 15px;
+    //gap: 0;
     img {
       width: auto;
       height: 45%;
