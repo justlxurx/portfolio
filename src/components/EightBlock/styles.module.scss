@@ -48,6 +48,7 @@
     // grid-template-rows: 20% 28% 52%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 
     h2 {
       color: var(--black, #000);
@@ -55,9 +56,10 @@
       font-size: 83px;
       font-style: normal;
       font-weight: 400;
-      line-height: 113%; /* 98.31px */
+      line-height: 113%;
       letter-spacing: -0.16px;
       text-transform: uppercase;
+      margin-bottom: 70px;
     }
     p {
       color: var(--black, #000);
@@ -65,8 +67,9 @@
       font-size: 37px;
       font-style: normal;
       font-weight: 400;
-      line-height: 113%; /* 45.2px */
+      line-height: 113%;
       letter-spacing: -0.16px;
+      margin-bottom: 3%;
     }
     .bottom_section {
       display: flex;
@@ -76,24 +79,25 @@
         background-image: url('/binary.svg');
         background-size: 150%;
         background-repeat: no-repeat;
-        height: 100%;
+        height: 350px;
         width: 45%;
         background-position: 40% 60%;
       }
       &__scrolling {
         width: 70%;
         border: 1px solid black;
-        height: 270px;
+        height: 100%;
         box-shadow: -10px 4px 28px 0px rgba(0, 0, 0, 0.14);
         background: #eaeaea;
         position: relative;
+        align-self: end;
 
         div:first-child .scroll_blocks {
           z-index: 1000;
         }
 
         .scroll_blocks {
-          height: 270px;
+          height: 230px;
           border-bottom: 1px solid black;
           width: 100%;
           display: flex;
@@ -154,27 +158,6 @@
             border: 1px solid black;
             transition-duration: 0.5s;
           }
-          .block1 {
-            opacity: 0;
-          }
-          .block2 {
-            opacity: 0;
-          }
-          .block3 {
-            opacity: 0;
-          }
-          .block4 {
-            opacity: 0;
-          }
-          .block5 {
-            opacity: 0;
-          }
-          .block6 {
-            opacity: 0;
-          }
-          .block7 {
-            opacity: 0;
-          }
         }
 
         .scroll_blocks:hover {
@@ -204,7 +187,7 @@
       }
       .bottom_section {
         &__figure {
-          height: 100%;
+          height: 300px;
           width: 45%;
           background-size: 150%;
         }
@@ -243,17 +226,18 @@
       }
     }
     &__main {
-      height: 500px;
+      //height: 500px;
       padding: 64px 0 0 24px;
       h2 {
         font-size: 48px;
+        margin-bottom: 40px;
       }
       p {
         font-size: 22px;
       }
       .bottom_section {
         &__figure {
-          height: 100%;
+          height: 250px;
           width: 45%;
           background-size: 150%;
         }
@@ -305,30 +289,31 @@
       }
     }
     &__main {
-      display: grid;
-      height: 1000px;
+      // display: grid;
       border: 1px solid black;
       padding: 67px 0 0 0;
-      overflow: hidden;
-      grid-template-rows: 15% 15% 70%;
+      //grid-template-rows: 15% 15% 70%;
+
+      display: flex;
+      flex-direction: column;
+
       h2 {
         font-size: 52px;
         text-transform: uppercase;
-        margin: 0 20px 0 20px;
+        margin: 0 20px 45px 20px;
       }
       p {
         font-size: 25px;
         margin: 0 20px;
       }
       .bottom_section {
-        display: grid;
+        display: flex;
         flex-direction: column;
-        grid-template-rows: 65% 35%;
         height: 100%;
 
         &__figure {
           width: 100%;
-          height: 100%;
+          height: 500px;
           background-position: 40% 60%;
         }
         &__scrolling {
@@ -336,7 +321,6 @@
           border: none;
           border-top: 1px solid black;
           height: 100%;
-          overflow-y: auto;
           .scroll_blocks {
             height: 160px;
             border-bottom: 1px solid black;
@@ -344,6 +328,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: absolute;
 
             h3 {
               font-size: 20px;
@@ -396,7 +381,7 @@
       }
     }
     &__main {
-      height: 900px;
+      //   height: 900px;
       padding: 67px 0px 0% 0px;
       h2 {
         font-size: 48px;
@@ -407,6 +392,7 @@
       .bottom_section {
         &__figure {
           width: auto;
+          height: 400px;
         }
         &__scrolling {
           .scroll_blocks {
@@ -458,7 +444,6 @@
       }
     }
     &__main {
-      height: 730px;
       padding: 47px 0 0 0;
       h2 {
         font-size: 40px;
@@ -470,6 +455,7 @@
         &__figure {
           background-position: center;
           background-size: 150%;
+          height: 300px;
         }
         &__scrolling {
           .scroll_blocks {
