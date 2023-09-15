@@ -1,9 +1,7 @@
 import Image from 'next/image'
-import classNames from 'classnames'
 import arrow_icon from 'public/arrow_icon.svg'
 //import ellipse from 'public/ellipse.svg'
 import fitness from 'public/fitness.png'
-import { useMedia } from 'react-use'
 
 import BigSlider from './BigSlider'
 

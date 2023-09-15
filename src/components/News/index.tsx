@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import classNames from 'classnames'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { nanoid } from 'nanoid'

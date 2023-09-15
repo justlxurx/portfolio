@@ -1,5 +1,4 @@
 import { headers } from 'next/headers'
-import classNames from 'classnames'
 
 import FormDevPractice from './FormDevPracrice'
 

@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import { lightFormat } from 'date-fns'
 import Slider from 'react-slick'
 
 import 'node_modules/slick-carousel/slick/slick.css'

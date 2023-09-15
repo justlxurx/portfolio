@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import classNames from 'classnames'
 import A3 from 'public/A3.svg'
 import buttons from 'public/buttons.svg'

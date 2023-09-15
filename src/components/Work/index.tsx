@@ -1,7 +1,8 @@
 // import Button from '@/components/ui/Button'
 import Image from 'next/image'
-import arrow from 'public/arrow.svg'
 import classNames from 'classnames'
+import arrow from 'public/arrow.svg'
+
 import styles from './styles.module.scss'
 
 const Work = () => {
