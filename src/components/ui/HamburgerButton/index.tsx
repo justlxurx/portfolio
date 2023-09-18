@@ -1,26 +1,15 @@
 'use client'
 import styles from './styles.module.scss'
-import Burger from '@/components/Burger'
-import React, { useState } from 'react'
+import React from 'react'
 
-const HamburgerButton = () => {
-  const [activeComponent, setActiveComponent] = useState<string | null>(null)
+interface HamburgerButtonProps {
+  onClick: () => void
+}
 
-  const handleButtonClick = () => {
-    // Если Burger уже активен, скрываем его
-    if (activeComponent === 'Burger') {
-      setActiveComponent(null)
-    } else {
-      // В противном случае показываем Burger
-      setActiveComponent('Burger')
-    }
-  }
-
+const HamburgerButton: React.FC<HamburgerButtonProps> = ({ onClick }) => {
   return (
     <div>
-      {/* Добавьте текст на кнопке для отладки */}
-      <button className={styles.hamburger_button} onClick={handleButtonClick} />
-      {activeComponent === 'Burger' && <Burger />}
+      <button className={styles.hamburger_button} onClick={onClick} />
     </div>
   )
 }

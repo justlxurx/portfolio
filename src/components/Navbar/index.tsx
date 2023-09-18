@@ -1,5 +1,7 @@
+'use client'
+import Burger from '@/components/Burger'
 import { nanoid } from 'nanoid'
-
+import React, { useState } from 'react'
 import FeedbackButton from '../ui/FeedbackButton'
 import HamburgerButton from '../ui/HamburgerButton'
 import NavButton from '../ui/NavButton/index'
@@ -8,6 +10,12 @@ import { INavButton } from '../ui/NavButton/interface'
 import styles from './styles.module.scss'
 
 const Navbar = () => {
+  const [isShowBurgerMenu, setIsShowBurgerMenu] = useState(false)
+
+  const changeBurgerMenuVisibilityHandler = (state: boolean) => {
+    setIsShowBurgerMenu(state)
+  }
+
   const buttons: INavButton[] = [
     {
       title: 'Devcorn',
@@ -50,9 +58,15 @@ const Navbar = () => {
           <FeedbackButton />
         </div>
         <div className={styles.hamburger_button}>
-          <HamburgerButton />
+          <HamburgerButton
+            onClick={() => changeBurgerMenuVisibilityHandler(!isShowBurgerMenu)}
+          />
         </div>
       </nav>
+      {/* {isShowBurgerMenu && <Burger />} */}
+      {isShowBurgerMenu && (
+        <Burger closeBurgerMenu={() => setIsShowBurgerMenu(false)} />
+      )}
     </header>
   )
 }
