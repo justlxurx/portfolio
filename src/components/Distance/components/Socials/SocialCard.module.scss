@@ -1,0 +1,106 @@
+@import '/src/styles/variables.scss';
+
+.card {
+  border: 1px solid $primary-color;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  min-height: 200px;
+  padding: 16px 25px;
+  position: relative;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -1.02px;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__label {
+    color: $primary-color;
+    cursor: pointer;
+    bottom: 25px;
+    position: absolute;
+    left: 15px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 70%;
+  }
+
+  &__arrow {
+    bottom: 25px;
+    position: absolute;
+    right: 15px;
+  }
+
+  &:active {
+    .card__arrow {
+      rect {
+        fill: $primary-color;
+      }
+
+      path {
+        fill: $white-color;
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .card {
+    padding: 13.5px 8.5px;
+    min-height: 120px;
+
+    &__title {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__label {
+      left: 8.5px;
+      bottom: 13.5px;
+      font-size: 8px;
+      line-height: 12px;
+    }
+
+    &__arrow {
+      bottom: 13.5px;
+      right: 8.5px;
+      height: 21px;
+      width: 21px;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .card {
+    padding: 12px 18px;
+    min-height: 115px;
+
+    &__title {
+      display: flex;
+      gap: 4px;
+
+      span {
+        display: inline;
+        font-weight: 700;
+        font-style: italic;
+      }
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__arrow {
+      bottom: 12px;
+      left: 11px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+}

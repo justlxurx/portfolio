@@ -1,0 +1,123 @@
+@import '/src/styles/variables.scss';
+
+.form {
+  font-size: 20px;
+  &__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+
+  &__input {
+    min-width: 130px;
+  }
+
+  &__button {
+    flex: 1;
+    font-weight: 700;
+    margin-top: 25px;
+    max-width: 356px;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 26px;
+  }
+  .agreement {
+    margin-top: 72px;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 112.5%;
+    display: flex;
+    align-items: center;
+    &_link {
+      color: black;
+      text-decoration: underline;
+    }
+    .custom_checkbox {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      background-color: black;
+      border: 1px solid white;
+      flex: initial;
+    }
+  }
+}
+
+@media (max-width: 1090px) {
+  .form {
+    .agreement {
+      margin-top: 35px;
+      font-size: 18px;
+      .custom_checkbox {
+        width: 18px;
+        height: 18px;
+        margin-right: px;
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .form {
+    font-size: 11px;
+    &__inputs {
+      gap: 19px;
+    }
+
+    &__input {
+      min-width: 130px;
+      font-size: 12px;
+    }
+
+    &__button {
+      flex: 1;
+      margin-top: 15px;
+      max-width: 190px;
+      width: 100%;
+      padding: 13.8px;
+    }
+    .agreement {
+      margin-top: 38px;
+      font-size: 10px;
+      .custom_checkbox {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .form {
+    font-size: 20px;
+    &__inputs {
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    &__input {
+      min-width: 130px;
+      font-size: 20px;
+    }
+
+    &__button {
+      flex: 1;
+      margin-top: 25px;
+      max-width: 356px;
+      width: 100%;
+      padding: 26px;
+    }
+    .agreement {
+      margin-top: 50px;
+      font-size: 14px;
+      .custom_checkbox {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

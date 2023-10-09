@@ -1,0 +1,41 @@
+@import '/src/styles/variables.scss';
+
+.hamburger_button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  position: relative;
+  height: 32px;
+  width: 32px;
+
+  &::before,
+  &::after {
+    border-radius: 3px;
+    background: $primary-color;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    left: 5.33px;
+    width: 21px;
+  }
+
+  &::before {
+    top: 10px;
+  }
+
+  &::after {
+    bottom: 10px;
+  }
+
+  &:hover,
+  &:active {
+    background: $secondary-color;
+    transition: 0.3s all ease;
+
+    &::before,
+    &::after {
+      background: $white-color;
+    }
+  }
+}

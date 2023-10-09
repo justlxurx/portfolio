@@ -1,0 +1,315 @@
+@import '/src/styles/variables.scss';
+
+.cards {
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-basis: 50%;
+
+  &__image_wrapper {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    aspect-ratio: 1/0.8147;
+
+    img {
+      max-height: 70%;
+      max-width: 70%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 70px 65px;
+  }
+
+  &__content_inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    min-height: 220px;
+    position: relative;
+  }
+
+  &__barcode {
+    margin: 0 0 15px auto;
+  }
+
+  &__tag {
+    font-size: 19.606px;
+    font-weight: 500;
+    line-height: 15.389px;
+    margin-bottom: 10px;
+  }
+
+  &__header {
+    font-size: 93px;
+    line-height: 73.77px;
+    letter-spacing: -0.16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__description {
+    text-align: right;
+    font-size: 16.616px;
+    font-weight: 400;
+    line-height: 20.73px;
+    max-width: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__puzzle {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  &_color {
+    &_dark {
+      background: $primary-color;
+
+      .card {
+        &__tag span {
+          color: rgba($white-color, 0.6);
+        }
+
+        &__header {
+          color: $white-color;
+        }
+
+        &__description {
+          color: rgba($white-color, 0.6);
+        }
+
+        &__puzzle {
+          filter: $primary-color;
+        }
+      }
+
+      &:hover {
+        background: $secondary-color;
+      }
+
+      &:active {
+        background: $secondary-color;
+
+        .card__header {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &_light {
+      background: $white-color;
+
+      .card {
+        &__barcode path {
+          fill: $primary-color;
+        }
+
+        &__puzzle rect {
+          fill: $primary-color;
+        }
+      }
+
+      &:hover,
+      &:active {
+        background: $primary-color;
+        .card {
+          &__barcode path {
+            fill: $white-color;
+          }
+
+          &__tag span {
+            color: $white-color;
+          }
+
+          &__description {
+            color: $white-color;
+          }
+
+          &__puzzle rect {
+            fill: $white-color;
+          }
+        }
+      }
+
+      &:hover {
+        .card__header {
+          color: $white-color;
+        }
+      }
+
+      &:active {
+        .card__header {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1550px) {
+  .card {
+    &__header {
+      font-size: 76px;
+      line-height: 113%;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .card {
+    &__header {
+      font-size: 50px;
+    }
+
+    &__tag {
+      font-size: 16px;
+    }
+
+    &__description {
+      font-size: 14px;
+      max-width: 220px;
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .card {
+    &__header {
+      font-size: 32px;
+    }
+
+    &__tag {
+      font-size: 14px;
+    }
+
+    &__description {
+      font-size: 12px;
+      max-width: 200px;
+    }
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .cards {
+    gap: 13px;
+  }
+
+  .card {
+    &__content {
+      margin: 0 40px 38px;
+    }
+
+    &__content_inner {
+      min-height: 120px;
+    }
+
+    &__header {
+      font-size: 52px;
+      line-height: 40.032px;
+      letter-spacing: -2.074px;
+    }
+
+    &__tag {
+      font-size: 9.3px;
+    }
+
+    &__description {
+      font-size: 9px;
+      line-height: 11.25px;
+      max-width: 170px;
+    }
+
+    &__puzzle {
+      height: 48px;
+      width: 48px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    &__header {
+      font-size: 32px;
+    }
+
+    &__content_inner {
+      min-height: 120px;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    flex-basis: 100%;
+
+    &__content {
+      position: relative;
+      margin: 0px 30px 30px;
+    }
+
+    &__content_inner {
+      position: initial;
+      min-height: 125px;
+    }
+
+    &__barcode {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 11px;
+      width: 123px;
+    }
+
+    &__tag {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 7.773px;
+    }
+
+    &__header {
+      font-size: 52px;
+      line-height: 46.8px;
+      letter-spacing: -2.08px;
+    }
+
+    &__description {
+      font-size: 10px;
+      line-height: 10.471px;
+      top: 29px;
+    }
+
+    &__puzzle {
+      height: 45px;
+      width: 45px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    &__header {
+      font-size: 36px;
+      line-height: 30px;
+    }
+  }
+}
