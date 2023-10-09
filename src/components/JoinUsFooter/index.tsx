@@ -1,11 +1,12 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import { nanoid } from 'nanoid'
 import arrow from 'public/arrow.svg'
 import logo from 'public/logo.svg'
-
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
 import { FormattedString } from '@/helpers/FormattedString'
-
 import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
 
@@ -13,6 +14,7 @@ import styles from './styles.module.scss'
 
 const JoinUsFooter = () => {
   //FIXME: Paths
+
   const primaryLinks = [
     {
       title: 'Главная',
@@ -20,23 +22,23 @@ const JoinUsFooter = () => {
     },
     {
       title: 'Наши работы',
-      path: '#',
+      path: '/portfolio',
     },
     {
       title: 'Будь с нами',
-      path: '#',
+      path: '/join-us',
     },
   ]
 
   const secondaryLinks = [
     {
       title: 'DevPractice',
-      path: '#',
+      path: '/education',
     },
-    {
-      title: 'СМИ',
-      path: '#',
-    },
+    // {
+    //   title: 'СМИ',
+    //   path: '#',
+    // },
   ]
 
   const socialLinks = [
@@ -53,83 +55,124 @@ const JoinUsFooter = () => {
       path: 'https://www.linkedin.com/in/qazdev-team-067a82205/ ',
     },
   ]
-
+  const scrollRef = useRef(null)
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.footer__inner}>
           <div className={styles.primary_block}>
             <div className={styles.info}>
-              <h2 className={styles.header}>
-                Начни карьеру <br /> в IT стремительно
-              </h2>
-
-              <Button
-                className={styles.feedback_button}
-                variant={ButtonVariant.outlined_transparent}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ root: scrollRef }}
+                transition={{ delay: 0.4, duration: 0.5, ease: 'easeIn' }}
               >
-                <a href={'tel:+77212940165'}>
-                  Связаться с нами
-                  <Image src={arrow} alt="arrow" />
-                </a>
-              </Button>
+                <h2 className={styles.header}>
+                  Начни карьеру <br /> в IT стремительно
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ root: scrollRef }}
+                transition={{ delay: 0.6 }}
+              >
+                <Button
+                  className={styles.feedback_button}
+                  variant={ButtonVariant.outlined_transparent}
+                >
+                  <a href={'tel:+77212940165'}>
+                    Связаться с нами
+                    <Image src={arrow} alt="arrow" />
+                  </a>
+                </Button>
+              </motion.div>
             </div>
             <nav className={styles.navigation}>
-              <ul className={styles.primary_navigation}>
-                {primaryLinks.map(({ path, title }) => (
-                  <li key={nanoid()}>
-                    <Link className={styles.link} href={path}>
-                      {title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div>
-                <ul className={styles.secondary_navigation}>
-                  {secondaryLinks.map(({ path, title }) => (
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ root: scrollRef }}
+                transition={{ delay: 0.5, duration: 0.5, ease: 'easeIn' }}
+              >
+                <ul className={styles.primary_navigation}>
+                  {primaryLinks.map(({ path, title }) => (
                     <li key={nanoid()}>
-                      <a className={styles.link} href={path}>
+                      <Link className={styles.link} href={path}>
                         {title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
-                <ul className={styles.social_navigation}>
-                  {socialLinks.map(({ path, icon }) => (
-                    <li key={nanoid()}>
-                      <a className={styles.link} href={path} target="_blank">
-                        <Image src={icon} alt="icon" width="40" height="40" />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              </motion.div>
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ root: scrollRef }}
+                  transition={{ delay: 0.7, duration: 0.5, ease: 'easeIn' }}
+                >
+                  <ul className={styles.secondary_navigation}>
+                    {secondaryLinks.map(({ path, title }) => (
+                      <li key={nanoid()}>
+                        <a className={styles.link} href={path}>
+                          {title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ root: scrollRef }}
+                  transition={{ delay: 0.8, duration: 0.5, ease: 'easeIn' }}
+                >
+                  <ul className={styles.social_navigation}>
+                    {socialLinks.map(({ path, icon }) => (
+                      <li key={nanoid()}>
+                        <a className={styles.link} href={path} target="_blank">
+                          <Image src={icon} alt="icon" width="40" height="40" />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
               </div>
             </nav>
           </div>
-          <footer className={styles.secondary_block}>
-            <div>
-              <p className={styles.address}>
-                г.Караганда, ​Проспект Шахтёров, 5/1​
-              </p>
-              <p className={styles.copyright}>
-                <FormattedString
-                  sentence={
-                    'Copyright © 2023 qazdev. Политика конфиденциальности.'
-                  }
+          <motion.div
+            initial={{ opacity: 0.1, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ root: scrollRef }}
+            transition={{ delay: 0.3, duration: 0.5, ease: 'easeIn' }}
+          >
+            <footer className={styles.secondary_block}>
+              <div>
+                <p className={styles.address}>
+                  г.Караганда, ​Проспект Шахтёров, 5/1​
+                </p>
+                <p className={styles.copyright}>
+                  <FormattedString
+                    sentence={
+                      'Copyright © 2023 qazdev. Политика конфиденциальности.'
+                    }
+                  />
+                </p>
+              </div>
+              <div>
+                <p className={styles.hotkeys}>press Shift+F6</p>
+                <Image
+                  className={styles.logo}
+                  src={logo}
+                  alt={'qazdev logo'}
+                  width={128}
+                  height={30}
                 />
-              </p>
-            </div>
-            <div>
-              <p className={styles.hotkeys}>press Shift+F6</p>
-              <Image
-                className={styles.logo}
-                src={logo}
-                alt={'qazdev logo'}
-                width={128}
-                height={30}
-              />
-            </div>
-          </footer>
+              </div>
+            </footer>
+          </motion.div>
         </div>
       </div>
     </footer>

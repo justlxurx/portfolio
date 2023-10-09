@@ -44,7 +44,7 @@ const News: React.FC<Props> = ({ data }) => {
 
   return (
     <section className={'container'}>
-      <h2 className={styles.header}>Медиахроники</h2>
+      <h2 className={styles.header}>Медиа-хроники</h2>
       <ul className={styles.publications}>
         {data?.map(
           (

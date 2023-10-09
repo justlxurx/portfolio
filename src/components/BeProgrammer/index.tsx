@@ -16,9 +16,11 @@ const Programmer = () => {
               Стать востребованным <br />
               разработчиком
             </p>
-            <button>
-              <Image src={Key} alt="button" />
-            </button>
+            <a href="#form">
+              <button>
+                <Image src={Key} alt="button" />
+              </button>
+            </a>
           </div>
           <div className={styles.main1_column2}>
             <div className={styles.main1_column2_buttons}>
@@ -48,21 +50,21 @@ const Programmer = () => {
   )
 }
 
-const Distance=()=>{
-  return(
+const Distance = () => {
+  return (
     <section className={styles.distance}>
-      <div ></div>
+      <div></div>
       <div className={styles.distance_line}></div>
-      <div ></div>
+      <div></div>
     </section>
   )
 }
 
-const BeProgrammer=()=>{
-  return(
+const BeProgrammer = () => {
+  return (
     <>
-    <Distance />
-    <Programmer/>
+      <Distance />
+      <Programmer />
     </>
   )
 }

@@ -3,7 +3,8 @@ import { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import classNames from 'classnames'
 import arrowIcon from 'public/arrow_icon.svg'
-import firstSlide from 'public/projects_1_image1.png'
+import firstSlide from 'public/case.png'
+import imgSlide from 'public/car_line.svg'
 import Slider from 'react-slick'
 
 import Button from '@/components/ui/Button'
@@ -18,21 +19,25 @@ const Projects = () => {
   interface ISlide {
     title: string
     src: StaticImageData
+    src2: StaticImageData
   }
 
   const slides: ISlide[] = [
     {
       title: 'Кортим команда  blablacar',
       src: firstSlide,
+      src2: imgSlide,
     },
     {
       title: 'Кортим команда  blablacar',
       src: firstSlide,
+      src2: imgSlide,
     },
   ]
 
   const settings = {
     className: styles.slider,
+    id: styles.slider1,
     dotsClass: styles.dots,
     dots: true,
     infinite: true,
@@ -64,17 +69,16 @@ const Projects = () => {
     <section className={classNames(styles.container, 'container')}>
       <div className={styles.additional}>
         <h2 className={styles.header}>Последние проекты</h2>
-        <Button
-          className={styles.cases_button}
-          onClick={onClickAllCasesButtonHandler}
-        >
-          <Image
-            className={styles.cases_button__arrow}
-            src={arrowIcon}
-            alt={'Arrow'}
-          />
-          Все кейсы
-        </Button>
+        <a href="/portfolio">
+          <Button className={styles.cases_button}>
+            <Image
+              className={styles.cases_button__arrow}
+              src={arrowIcon}
+              alt={'Arrow'}
+            />
+            Все кейсы
+          </Button>
+        </a>
       </div>
       <div className={styles.slider_wrapper}>
         <h3 className={styles.title}>{slides[activeSlide - 1].title}</h3>
@@ -82,6 +86,12 @@ const Projects = () => {
           {slides.map(({ title, src }) => (
             <div className={styles.slide_wrapper} key={title}>
               <Image src={src} fill alt={title} />
+              <div
+                className={styles.slide_wrapper_img}
+                style={{
+                  backgroundImage: `url(${slides[activeSlide - 1].src2.src})`,
+                }}
+              ></div>
             </div>
           ))}
         </Slider>

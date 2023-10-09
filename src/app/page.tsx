@@ -7,11 +7,12 @@ import MainFooter from '@/components/MainFooter'
 import Navbar from '@/components/Navbar/index'
 import News from '@/components/News'
 import Projects from '@/components/Projects'
-import Turan from '@/components/Turan'
-
+import { PageWrapper } from '@/components/PageWrapper'
 import 'node_modules/slick-carousel/slick/slick.css'
 import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './page.module.scss'
+
+import { ComponentWrapper } from '@/components/ComponentWrapper'
 
 async function getPosts(host: string) {
   const response = await fetch(`http://${host}/api/news`)
@@ -28,15 +29,29 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <main className={styles.main}>
-        <About />
-        <Turan />
-        <Projects />
-        {Array.isArray(data) && <News data={...data} />}
-        <Distance />
-        <FAQ />
-      </main>
-      <MainFooter />
+      <PageWrapper>
+        <main className={styles.main}>
+          <ComponentWrapper>
+            <About />
+          </ComponentWrapper>
+          <ComponentWrapper>
+            <Projects />
+          </ComponentWrapper>
+          <ComponentWrapper>
+            {Array.isArray(data) && <News data={...data} />}
+          </ComponentWrapper>
+          <ComponentWrapper>
+            {' '}
+            <Distance />
+          </ComponentWrapper>
+          <ComponentWrapper>
+            <FAQ />
+          </ComponentWrapper>
+        </main>
+        <ComponentWrapper>
+          <MainFooter />
+        </ComponentWrapper>
+      </PageWrapper>
     </>
   )
 }

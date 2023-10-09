@@ -7,25 +7,27 @@ import JoinUsFooter from '@/components/JoinUsFooter'
 import Navbar from '@/components/Navbar'
 import StrongCode from '@/components/StrongCode'
 import TeamMember from '@/components/TeamMember'
-
+import { PageWrapper } from '@/components/PageWrapper'
 export default async function JoinUs() {
   const host = headers().get('host')
 
   return (
     <>
       <Navbar />
-      <main>
-        <div className="container">
-          <Career />
-          <Gallery />
-          <StrongCode />
-        </div>
-        <Cases />
-        <div className="container">
-          <TeamMember host={host} />
-        </div>
-      </main>
-      <JoinUsFooter />
+      <PageWrapper>
+        <main>
+          <div className="container">
+            <Career />
+            <Gallery />
+            <StrongCode />
+          </div>
+          <Cases />
+          <div className="container">
+            <TeamMember host={host} />
+          </div>
+        </main>
+        <JoinUsFooter />
+      </PageWrapper>
     </>
   )
 }

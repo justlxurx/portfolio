@@ -18,6 +18,10 @@
   height: 23px;
   background-repeat: no-repeat;
   margin-right: 16px;
+  &:hover {
+    transform: scale(1.1);
+    transition-delay: 2ms;
+  }
 }
 .info {
   cursor: default;

@@ -13,6 +13,8 @@ import { InputVariant } from '../ui/Input/interface'
 
 import styles from './styles.module.scss'
 
+import { motion } from 'framer-motion'
+
 const validationSchema = Yup.object({
   username: Yup.string().required('Заполните поле "Имя"'),
   phone: Yup.string().required('Заполните поле "Телефон"'),
@@ -150,17 +152,43 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
     error: !!(formik.touched.acceptedTerms && formik.errors.acceptedTerms),
     variant: InputVariant.white,
   }
-
+  const textAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.5, ease: 'easeOut' },
+    }),
+  }
   return (
     <form onSubmit={formik.handleSubmit}>
-      <section className={styles.container}>
-        <h2 className={styles.header}>
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        className={styles.container}
+      >
+        <motion.h2
+          variants={textAnimation}
+          custom={2}
+          className={styles.header}
+        >
           Хочу <br /> в команду
-        </h2>
-        <h3 className={styles.subheader}>
+        </motion.h2>
+        <motion.h3
+          variants={textAnimation}
+          custom={3}
+          className={styles.subheader}
+        >
           Превратите свою страсть к IT <br /> в карьеру - присоединяйтесь к нам!
-        </h3>
-        <div className={styles.inputs_wrapper}>
+        </motion.h3>
+        <motion.div
+          variants={textAnimation}
+          custom={4}
+          className={styles.inputs_wrapper}
+        >
           <Input {...userNameInputProps} />
           <InputMask
             mask={'+9 (999) 999-99-99'}
@@ -170,9 +198,15 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
           >
             {() => <Input {...phoneInputProps} />}
           </InputMask>
-        </div>
-        <Input {...aboutUserInputProps} />
-        <div className={styles.additional}>
+        </motion.div>
+        <motion.div variants={textAnimation} custom={5}>
+          <Input {...aboutUserInputProps} />
+        </motion.div>
+        <motion.div
+          variants={textAnimation}
+          custom={5}
+          className={styles.additional}
+        >
           <label className={styles.additional__clip_button}>
             Прикрепить файл {` ${selectedFileName}`}
             <input style={{ visibility: 'hidden' }} {...fileInputProps} />
@@ -180,8 +214,12 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
           <span className={styles.additional__about_symbols}>
             {formik.values.about.length}/1000
           </span>
-        </div>
-        <div className={styles.agreement}>
+        </motion.div>
+        <motion.div
+          variants={textAnimation}
+          custom={6}
+          className={styles.agreement}
+        >
           <Input {...checkBoxInputProps} />
           <label>
             Принимаю{' '}
@@ -190,7 +228,7 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
               политику конфиденциальности.
             </a>
           </label>
-        </div>
+        </motion.div>
         <Button
           className={styles.submit_button}
           variant={ButtonVariant.white}
@@ -199,7 +237,7 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
         >
           Отправить
         </Button>
-      </section>
+      </motion.section>
     </form>
   )
 }

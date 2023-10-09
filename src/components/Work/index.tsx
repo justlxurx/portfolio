@@ -74,10 +74,12 @@ const Work = () => {
           </div>
 
           <div className={styles.work_environment_main_3}>
-            <button>
-              Успеть записаться
-              <Image src={arrow} alt="arrow" />
-            </button>
+            <a href="#form">
+              <button>
+                Успеть записаться
+                <Image src={arrow} alt="arrow" />
+              </button>
+            </a>
           </div>
         </div>
       </div>

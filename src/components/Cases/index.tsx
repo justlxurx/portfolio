@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { nanoid } from 'nanoid'
 import arrow_icon from 'public/arrow_icon.svg'
 import confirmation from 'public/confirmation.svg'
-import group_of_phones from 'public/group_of_phones.png'
-import { useMedia } from 'react-use'
-
+import cases from 'public/cases.png'
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 
@@ -30,14 +30,16 @@ const Socials = () => {
   ]
   return (
     <div className={styles.social}>
-      <button className={styles.cases_button_1}>
-        <Image
-          className={styles.cases_button__arrow1}
-          src={arrow_icon}
-          alt={'Arrow'}
-        />
-        все кейсы
-      </button>
+      <a href="/portfolio">
+        <button className={styles.cases_button_1}>
+          <Image
+            className={styles.cases_button__arrow1}
+            src={arrow_icon}
+            alt={'Arrow'}
+          />
+          все кейсы
+        </button>
+      </a>
       <nav className={styles.navigation1}>
         <ul className={styles.social_networks}>
           {socialLinks2.map(({ path, icon }) => (
@@ -52,18 +54,37 @@ const Socials = () => {
     </div>
   )
 }
-
+const textAnimation = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: (custom: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2, duration: 0.5, ease: 'easeOut' },
+  }),
+}
 const Cases = () => {
-  const isMobile = useMedia('(max-width: 768px)')
+  // const isMobile = useMedia('(max-width: 768px)')
+  const scrollRef = useRef(null)
   return (
-    <section>
-      <h4 className={styles.short_info__header}>
+    <motion.section initial="hidden" whileInView="visible">
+      <motion.h4
+        variants={textAnimation}
+        custom={2}
+        className={styles.short_info__header}
+      >
         КЕЙСЫ,
         <br /> НА КОТОРЫХ РАСТЕШЬ
-      </h4>
+      </motion.h4>
       <section className={styles.grow_cases}>
         <section className={styles.section1}>
-          <article className={styles.short_article}>
+          <motion.article
+            variants={textAnimation}
+            custom={3}
+            className={styles.short_article}
+          >
             <div className={styles.person_info}>
               {/* <Image src={avatar} alt={'Avatar'}  /> */}
               <div className={styles.avatar1}></div>
@@ -92,40 +113,56 @@ const Cases = () => {
               становятся <br />
               востребованными профессионалами
             </p>
-          </article>
-          {!isMobile && <Socials />}
+          </motion.article>
+          {/* {!isMobile && <Socials />} */}
+          <motion.div
+            variants={textAnimation}
+            custom={4}
+            className={styles.hidden_social1}
+          >
+            <Socials />
+          </motion.div>
         </section>
 
-        <section className={styles.section2}>
-          <Image src={group_of_phones} alt="group_of_phones" />
-        </section>
-
-        {isMobile && <Socials />}
+        <motion.section
+          variants={textAnimation}
+          custom={5}
+          className={styles.section2}
+        >
+          <Image src={cases} alt="cases" />
+        </motion.section>
+        {/* {isMobile && <Socials />} */}
+        <motion.div
+          variants={textAnimation}
+          custom={6}
+          className={styles.hidden_social2}
+        >
+          <Socials />
+        </motion.div>
 
         <section className={styles.section3}>
           <div className={styles.specialists}>
-            <div>
+            <motion.div variants={textAnimation} custom={6}>
               <p>
                 {'<'}разработчики{'>'}
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={textAnimation} custom={7}>
               <p>
                 {'<'}тестировщики{'>'}
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={textAnimation} custom={7}>
               <p>
                 {'<'}проектные менеджеры{'>'}
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={textAnimation} custom={8}>
               <p>
                 {'<'}деливери-специалисты{'>'}
               </p>
-            </div>
+            </motion.div>
           </div>
-
           <div
             className={styles.specialists}
             style={{
@@ -134,25 +171,25 @@ const Cases = () => {
               marginBottom: '0',
             }}
           >
-            <div>
+            <motion.div variants={textAnimation} custom={9}>
               <p>
                 {'<'}бизнес-аналитики{'>'}
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={textAnimation} custom={10}>
               <p>
                 {'<'}девопс-специалисты{'>'}
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={textAnimation} custom={11}>
               <p>
                 {'<'}hr-менеджеры{'>'}
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
       </section>
-    </section>
+    </motion.section>
   )
 }
 

@@ -134,6 +134,11 @@
         font-size: 40px;
         font-weight: 400;
         letter-spacing: -0.16px;
+        &:hover {
+          transform: scale(0.97);
+          transition-duration: 0.5;
+          transition-timing-function: ease;
+        }
       }
       img {
         margin-left: 8%;
@@ -504,7 +509,6 @@
         align-items: center;
         padding: 0%;
         justify-content: center;
-        background: none;
         margin-left: -15px;
         margin-right: -15px;
         button {
@@ -516,8 +520,8 @@
           display: flex;
           cursor: pointer;
           background: var(--orange, #e97810);
-          border-left: 1px solid black;
-          border-right: 1px solid black;
+          // border-left: 1px solid black;
+          // border-right: 1px solid black;
           color: var(--black, #000);
           font-family: Helvetica;
           font-size: 40px;

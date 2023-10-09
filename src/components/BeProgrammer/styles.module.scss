@@ -60,6 +60,9 @@
             width: 100%;
             height: 100%;
           }
+          &:hover {
+            transform: scale(0.95);
+          }
         }
       }
       &_column2 {

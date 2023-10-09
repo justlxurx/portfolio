@@ -80,21 +80,19 @@ const Blocks = () => {
 
     const handleWindowResize = () => {
       if (window.innerWidth <= 447) {
-        setBlockHeight(120) // Задаем высоту блока для маленьких экранов
+        setBlockHeight(120)
       } else if (window.innerWidth <= 576) {
-        setBlockHeight(140) // Задаем высоту блока для средних экранов
+        setBlockHeight(140)
       } else if (window.innerWidth <= 768) {
-        setBlockHeight(160) // Задаем высоту блока для средних экранов
+        setBlockHeight(160)
       } else if (window.innerWidth <= 1050) {
-        setBlockHeight(150) // Задаем высоту блока для средних экранов
+        setBlockHeight(150)
       } else if (window.innerWidth <= 1400) {
-        setBlockHeight(204) // Задаем высоту блока для средних экранов
+        setBlockHeight(204)
       } else {
-        setBlockHeight(250) // Задаем высоту блока для больших экранов
+        setBlockHeight(250)
       }
     }
-
-    // Вызываем обработчик при загрузке и изменении размера окна
     handleWindowResize()
     window.addEventListener('resize', handleWindowResize)
     window.removeEventListener('resize', handleWindowResize)

@@ -8,7 +8,7 @@ const MainForm = () => {
   const host = headers().get('host')
   const EMAIL = 'team@qazdev.kz'
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="form">
       <h2 className={styles.header}>
         Dev <br />
         Practice
