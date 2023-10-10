@@ -238,6 +238,9 @@
 
   .footer {
     display: flex;
+    a {
+      width: 100%;
+    }
 
     .cases_button {
       margin: 24px 0 0 auto;

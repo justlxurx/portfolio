@@ -358,6 +358,20 @@
 
 @media (max-width: 576px) {
   .monitoring {
+    .cases_button_1 {
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 20px;
+      margin-bottom: 25px;
+      margin: 110px 25px 70px 25px;
+
+      .cases_button__arrow1 {
+        border-radius: 6px;
+        margin-right: 16px;
+        height: 35px;
+        width: 35px;
+      }
+    }
     &__title {
       padding: 20px 16px;
       font-size: 27px;

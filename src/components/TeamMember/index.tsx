@@ -199,7 +199,11 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
             {() => <Input {...phoneInputProps} />}
           </InputMask>
         </motion.div>
-        <motion.div variants={textAnimation} custom={5}>
+        <motion.div
+          variants={textAnimation}
+          custom={5}
+          className={styles.third_input_block}
+        >
           <Input {...aboutUserInputProps} />
         </motion.div>
         <motion.div

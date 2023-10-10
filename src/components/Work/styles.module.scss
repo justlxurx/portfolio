@@ -344,7 +344,7 @@
     }
   }
 }
-@media (max-width: $tablet-width) {
+@media (max-width: $desktop-width) {
   .work_environment {
     &_heading {
       height: 100px;
@@ -505,17 +505,23 @@
 
       &_3 {
         display: flex;
-        background: var(--orange, #e97810);
+        background: none;
         align-items: center;
         padding: 0%;
         justify-content: center;
         margin-left: -15px;
         margin-right: -15px;
+        a {
+          width: 100%;
+          margin-left: 15px;
+          margin-right: 15px;
+          background: var(--orange, #e97810);
+        }
         button {
           justify-content: center;
           width: 100%;
           height: 100%;
-          margin: 5% 15px;
+          margin: 5% 0px;
           align-items: center;
           display: flex;
           cursor: pointer;
@@ -598,7 +604,7 @@
       }
       &_3 {
         button {
-          font-size: 25px;
+          font-size: 20px;
         }
       }
     }

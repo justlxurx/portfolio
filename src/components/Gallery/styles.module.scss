@@ -561,7 +561,14 @@
     }
     &_img {
       background-position: left;
-      background-size: contain;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .fourth {
+    p {
+      font-size: 12px;
     }
   }
 }

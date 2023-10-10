@@ -70,11 +70,12 @@
 }
 
 .person_info {
-  align-content: flex-end;
   display: grid;
-  grid-template-columns: 16% 57% 26%;
+  grid-template-columns: 15% auto 10%;
+
+  gap: 2%;
   .person_name {
-    justify-self: start;
+    // justify-self: start;
   }
 
   h5 {
@@ -90,20 +91,19 @@
     font-family: Helvetica;
   }
   .avatar1 {
-    height: 100%;
-    width: 100%;
     border-radius: 8px;
     //align-self: end;
-    justify-self: start;
-    background-image: url('/avatar.svg');
-    background-size: contain;
+    // justify-self: start;
+    background-image: url('/avatar.png');
+    background-size: cover;
+    background-position: center 30%;
     background-repeat: no-repeat;
+    aspect-ratio: 1;
   }
   .confirmation1 {
-    width: 30%;
-    height: auto;
+    height: 50%;
     align-self: center;
-    justify-self: end;
+    // justify-self: end;
   }
 }
 
@@ -711,14 +711,14 @@
   }
   .person_info {
     h5 {
-      font-size: 16px;
+      font-size: 18px;
     }
     p {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
   .short_article__description {
-    font-size: 19px;
+    font-size: 20px;
   }
   .social {
     .cases_button_1 {
@@ -747,14 +747,14 @@
   }
   .person_info {
     h5 {
-      font-size: 11px;
+      font-size: 13px;
     }
     p {
-      font-size: 8px;
+      font-size: 10px;
     }
   }
   .short_article__description {
-    font-size: 14px;
+    font-size: 16px;
   }
   .social {
     .cases_button_1 {
