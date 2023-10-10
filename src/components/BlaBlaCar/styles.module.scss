@@ -587,9 +587,14 @@
 }
 @media (max-width: 576px) {
   .cases_button {
+    margin-bottom: 50px;
+    justify-content: center;
+    padding: 30px 25px;
     &_get {
+      margin-bottom: 0;
       h1 {
         font-size: 41px;
+        margin-bottom: 20px;
       }
       button {
         font-size: 20px;

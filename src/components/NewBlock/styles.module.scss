@@ -1,0 +1,484 @@
+@import '/src/styles/variables.scss';
+.distance {
+  border-top: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 124px;
+  &_line {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+}
+.program {
+  height: 3100px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.learn_program {
+  display: grid;
+  grid-template-rows: 15% 85%;
+  height: 1030px;
+
+  &__heading {
+    h1 {
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      letter-spacing: -0.16px;
+      text-transform: uppercase;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 5%;
+    }
+  }
+  &__main {
+    border: 1px solid black;
+    padding: 116px 0% 0% 44px;
+    display: grid;
+    grid-template-rows: 20% 28% 52%;
+
+    h2 {
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 83px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 113%; /* 98.31px */
+      letter-spacing: -0.16px;
+      text-transform: uppercase;
+    }
+    p {
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 37px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 113%; /* 45.2px */
+      letter-spacing: -0.16px;
+    }
+    .bottom_section {
+      display: flex;
+
+      &__figure {
+        //margin-top: 1%;
+        background-image: url('/binary.svg');
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 45%;
+        background-position: 40% 60%;
+      }
+      &__scrolling {
+        //margin-bottom: -3.8%;
+        width: 70%;
+
+        .scroll_blocks {
+          box-shadow: -10px 4px 28px 0px rgba(0, 0, 0, 0.14);
+          background: #eaeaea;
+          z-index: 2;
+          height: 270px;
+          border-bottom: 1px solid black;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: height 0.5s ease;
+          border: 1px solid black;
+          h3 {
+            color: var(--black, #000);
+            font-family: Helvetica;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            letter-spacing: -0.16px;
+            text-transform: uppercase;
+            margin: 3%;
+          }
+          p {
+            color: var(--black, #000);
+            font-family: Helvetica;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 113%;
+            letter-spacing: -0.16px;
+            margin: 0 3%;
+          }
+          button {
+            color: var(--black, #000);
+            font-family: Helvetica;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 113%; /* 27.12px */
+            letter-spacing: -0.16px;
+            text-decoration-line: underline;
+            border: none;
+            text-align: left;
+            margin: 10% 3% 0 3%;
+            width: 17%;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            background: #eaeaea;
+            img {
+              align-self: center;
+              margin-left: 5%;
+            }
+          }
+          .bottom_color {
+            width: 1calc (100% - 2%);
+            margin: 0 2% 0 2%;
+            height: 12px;
+            background-color: #eaeaea;
+            border: 1px solid black;
+            transition-duration: 0.5s;
+          }
+        }
+
+        .scroll_blocks:hover {
+          .bottom_color {
+            background-color: #e97810;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .program {
+    height: 2350px;
+  }
+  .learn_program {
+    height: 740px;
+    &__heading {
+      h1 {
+        font-size: 27px;
+      }
+    }
+    &__main {
+      h2 {
+        font-size: 70px;
+      }
+      p {
+        font-size: 27px;
+      }
+      .bottom_section {
+        &__figure {
+          height: 100%;
+          width: 45%;
+          background-size: 100%;
+        }
+        &__scrolling {
+          .scroll_blocks {
+            height: 204px;
+            h3 {
+              font-size: 30px;
+            }
+            p {
+              font-size: 16px;
+            }
+            button {
+              font-size: 16px;
+              img {
+                height: 12px;
+              }
+            }
+            .bottom_color {
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .program {
+    height: 1750px;
+    border-bottom: 1px solid black;
+  }
+  .learn_program {
+    height: 572px;
+    &__heading {
+      h1 {
+        font-size: 22px;
+      }
+    }
+    &__main {
+      padding: 64px 0 0 24px;
+      h2 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 22px;
+      }
+      .bottom_section {
+        &__figure {
+          height: 100%;
+          width: 45%;
+          background-size: 100%;
+        }
+        &__scrolling {
+          .scroll_blocks {
+            height: 150px;
+            h3 {
+              font-size: 22px;
+            }
+            p {
+              font-size: 13px;
+            }
+            button {
+              font-size: 13px;
+              img {
+                height: 10px;
+              }
+            }
+            .bottom_color {
+              height: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .distance {
+    height: 102px;
+  }
+  .program {
+    height: auto;
+  }
+  .learn_program {
+    display: grid;
+    grid-template-rows: 3% auto;
+    height: 2240px;
+
+    &__heading {
+      h1 {
+        font-size: 28px;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        height: auto;
+        display: flex;
+        align-items: center;
+        padding: 20px 16px 20px 16px;
+      }
+    }
+    &__main {
+      padding: 30px 0;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-bottom: none;
+      overflow: hidden;
+      grid-template-rows: 4% 7% 89%;
+      h2 {
+        font-size: 52px;
+        text-transform: uppercase;
+        margin: 0 20px 0 20px;
+        align-self: center;
+      }
+      p {
+        font-size: 25px;
+        margin: 0 20px;
+        align-self: end;
+      }
+      .bottom_section {
+        display: grid;
+        flex-direction: column;
+        grid-template-rows: 25% auto;
+        height: 100%;
+
+        &__figure {
+          background-size: auto;
+          width: 100%;
+          height: 100%;
+          background-position: 40% 60%;
+        }
+        &__scrolling {
+          width: 100%;
+
+          .scroll_blocks {
+            height: 160px;
+            border: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h3 {
+              font-size: 20px;
+              margin: 3%;
+            }
+            p {
+              font-size: 15px;
+              margin: 0 3%;
+            }
+            button {
+              font-size: 20px;
+              text-decoration-line: underline;
+              border: none;
+              text-align: left;
+              margin: 7% 3% 0 3%;
+              width: 17%;
+              display: flex;
+              justify-content: space-between;
+              img {
+                align-self: center;
+                margin-left: 5%;
+              }
+            }
+            .bottom_color {
+              width: 1calc (100% - 2%);
+              margin: 0 2% 0 2%;
+              height: 4px;
+              border: 1px solid black;
+              transition-duration: 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 680px) {
+  .learn_program {
+    &__main {
+      padding: 30px 0;
+      h2 {
+        font-size: 45px;
+      }
+    }
+  }
+}
+@media (max-width: $mobile-width) {
+  .learn_program {
+    height: 1965px;
+
+    &__heading {
+      h1 {
+        font-size: 28px;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        height: auto;
+        display: flex;
+        align-items: center;
+        padding: 20px 16px 20px 16px;
+      }
+    }
+    &__main {
+      padding: 30px 0;
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .bottom_section {
+        &__figure {
+          width: auto;
+        }
+        &__scrolling {
+          .scroll_blocks {
+            height: 140px;
+
+            h3 {
+              font-size: 18px;
+              margin: 3%;
+            }
+            p {
+              font-size: 12px;
+              margin: 0 3%;
+            }
+            button {
+              font-size: 17px;
+              text-decoration-line: underline;
+              border: none;
+              text-align: left;
+              margin: 10% 3% 0 3%;
+              width: 17%;
+              display: flex;
+              justify-content: space-between;
+              img {
+                align-self: center;
+                margin-left: 5%;
+              }
+            }
+            .bottom_color {
+              width: calc (100% - 2%);
+              margin: 0 2% 0 2%;
+              height: 3px;
+              border: 1px solid black;
+              transition-duration: 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .learn_program {
+    height: 1716px;
+
+    &__heading {
+      h1 {
+        font-size: 22px;
+        padding: 15px 16px 20px 16px;
+      }
+    }
+    &__main {
+      padding: 47px 0px 0% 0px;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 15px;
+      }
+      .bottom_section {
+        &__figure {
+          background-position: center;
+          background-size: 150%;
+        }
+        &__scrolling {
+          .scroll_blocks {
+            height: 120px;
+
+            h3 {
+              font-size: 18px;
+              margin: 3%;
+            }
+            p {
+              font-size: 12px;
+              margin: 0 3%;
+            }
+            button {
+              font-size: 17px;
+              margin: 10% 3% 0 3%;
+              width: 17%;
+              img {
+                margin-left: 5%;
+              }
+            }
+            .bottom_color {
+              margin: 0 2% 0 2%;
+              height: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

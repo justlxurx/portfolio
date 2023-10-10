@@ -57,7 +57,10 @@ const DevPractice = () => {
                 {'<'}Java Spring Framework{'>'}
               </p>
               <div className={styles.click}>
-                <button className={styles.click_plus}>+</button>
+                <a href="#form">
+                  {' '}
+                  <button className={styles.click_plus}>+</button>
+                </a>
                 <div className={styles.click_text}>
                   <b>
                     <p>ЗАПИСАТЬСЯ</p>

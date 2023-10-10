@@ -87,6 +87,7 @@
   font-weight: 400;
   line-height: 112.5%;
   margin-top: 91px;
+
   &_link {
     color: #eaeaea;
     text-decoration: underline;
@@ -177,6 +178,7 @@
   .agreement {
     font-size: 14px;
     margin-top: 50px;
+
     .custom_checkbox {
       width: 14px;
       height: 14px;
@@ -223,7 +225,7 @@
   .input {
     font-size: 20px;
     line-height: 22.5px;
-    width: 100%;
+    width: auto;
   }
 
   .additional {
@@ -251,7 +253,9 @@
       line-height: 15.069px;
     }
   }
-
+  .third_input_block {
+    display: flex;
+  }
   .agreement {
     color: #eaeaea;
     font-family: Helvetica;
@@ -274,6 +278,92 @@
     width: 100%;
     padding: 26px initial;
     font-size: 24px;
+    line-height: 23.223px;
+    letter-spacing: -0.592px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .container {
+    padding: 30px 25px;
+    border-radius: 20px;
+    background-image: none;
+  }
+
+  .header {
+    font-size: 28px;
+    line-height: 28.42px;
+    letter-spacing: -0.109px;
+    margin-bottom: 30px;
+  }
+
+  .subheader {
+    font-size: 18px;
+    line-height: 20.3px;
+    letter-spacing: -0.109px;
+    margin-bottom: 50px;
+  }
+
+  .inputs_wrapper {
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 29px;
+  }
+
+  .input {
+    font-size: 16px;
+    width: auto;
+  }
+
+  .additional {
+    margin-top: 13.5px;
+
+    &__clip_button {
+      align-items: start;
+      font-size: 13.395px;
+      line-height: 15.069px;
+
+      &::before {
+        background-size: 19.6px 12.9px;
+        height: 12.9px;
+        width: 19.6px;
+        margin-right: 11px;
+      }
+
+      &:hover {
+        color: $white-color;
+      }
+    }
+
+    &__about_symbols {
+      font-size: 13.395px;
+      line-height: 15.069px;
+    }
+  }
+  .third_input_block {
+    display: flex;
+  }
+  .agreement {
+    display: grid;
+    grid-template-columns: 6% auto;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 50px;
+    gap: 1%;
+    .custom_checkbox {
+      width: 17px;
+      height: 17px;
+      margin-right: 5px;
+    }
+  }
+
+  .submit_button {
+    height: 50px;
+    border-radius: 5.806px;
+    margin-top: 17.6px;
+    width: 100%;
+    padding: 20px initial;
+    font-size: 22px;
     line-height: 23.223px;
     letter-spacing: -0.592px;
   }
