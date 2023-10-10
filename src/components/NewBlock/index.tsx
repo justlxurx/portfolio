@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from './styles.module.scss'
-import React, { useState, RefObject } from 'react'
+import React, { useState, useEffect, RefObject } from 'react'
 import classNames from 'classnames'
 import arrow_button from 'public/arrow_button.svg'
 
@@ -67,74 +67,34 @@ const Blocks = () => {
     Array(9).fill(false),
   )
 
-  const [blocks, setBlocks] = useState([
-    {
-      title: 'Java Core',
-      description:
-        'База, которая необходима для старта. На интенсиве изучаем основы программирования и на практике работаем с Java Core: интеграции с другими технологиями, многопоточные программировании, разработка приложений и др.',
-      showInfo: false,
-    },
-    {
-      title: 'Java Spring',
-      description:
-        'В теории и на практике учимся работать с универсальным фреймворк для Java, который является популярным и используется в создании подавляющего большинства приложений',
-      showInfo: false,
-    },
-    {
-      title: 'Elasticsearch',
-      description:
-        'Вместе со спикерами интенсива разбираем поисково-аналитический движок Elasticsearch. Изучаем полнотекстовый поиск и лог-аналитику',
-      showInfo: false,
-    },
-    {
-      title: 'Spring Core & MVC',
-      description:
-        'В этом модуле обучения вместе создаем контроллеры, учимся обрабатывать запросы, работать с представлениями и обеспечивать взаимодействие с пользователем',
-      showInfo: false,
-    },
-    {
-      title: 'Spring REST API',
-      description:
-        'REST API используют везде, где сайт или приложение взаимодействует с сервером. Мы работаем с инструментами необходимыми для создания RESTful-сервисов. Изучаем разработку API, учимся обрабатывать НТТР-запросы, маршрутизировать запросы и возвращать данные в форматах JSON или XML',
-      showInfo: false,
-    },
-    {
-      title: 'Spring OpenAPI',
-      description:
-        'В этом модуле работаем с концепциями OpenАРІ и изучаем интеграцию инструментов с Spring Framework',
-      showInfo: false,
-    },
-    {
-      title: 'JUnit Tests',
-      description:
-        'Важный блок интенсива, в котором мы разбираем механизмы для обработки ошибок и исключений, а также создаем пользовательские обработчики ошибок и работаем с Аннотациями',
-      showInfo: false,
-    },
-    {
-      title: 'Spring Data',
-      description:
-        'Каждый разработчик должен уметь работать с такими направлениями как: взаимодействие с базами данных, создания запросов и управления транзакциями. Спикеры и кураторы учат этому студентов DevPractice в 7 блоке интенсива',
-      showInfo: false,
-    },
-    {
-      title: 'Spring Security',
-      description:
-        '8 блок интенсива мы посвящаем безопасности. В первую очередь работаем с инструментами для обеспечения защиты, а также настраиваем аутентификацию и авторизацию',
-      showInfo: false,
-    },
-  ])
-
   const handleBlockClick = (index: number) => {
     const updatedBlockStates = blockStates.map((state, i) =>
       i === index ? !state : false,
     )
     setBlockStates(updatedBlockStates)
   }
+  /////////////////////
+  const [isScrollingUp, setIsScrollingUp] = useState(true)
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY
+      setIsScrollingUp(currentScrollY < lastScrollY)
+      lastScrollY = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   const textAnimation = {
     hidden: {
-      y: -100,
-      opacity: 0,
+      y: isScrollingUp ? -100 : 0,
+      opacity: isScrollingUp ? 0 : 1,
     },
     visible: (custom: number) => ({
       y: 0,
