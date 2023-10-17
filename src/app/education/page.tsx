@@ -1,9 +1,9 @@
 import BeProgrammer from '@/components/BeProgrammer'
-import { ComponentWrapper } from '@/components/ComponentWrapper'
+import { AnimationWrapper } from '@/components/AnimationWrapper'
 import Details from '@/components/Details'
 import DevPractice from '@/components/DevPractice'
 import FormDev from '@/components/FormDev'
-import JoinUsFooter from '@/components/JoinUsFooter'
+import DevPracticeFooter from '@/components/DevPracticeFooter'
 import Navbar from '@/components/Navbar'
 import { PageWrapper } from '@/components/PageWrapper'
 import Table from '@/components/Table'
@@ -16,38 +16,30 @@ export default async function Education() {
       <Navbar />
       <PageWrapper>
         <main>
-          <ComponentWrapper>
+          <AnimationWrapper custom={4}>
             <div className="container">
               <DevPractice />
             </div>
-          </ComponentWrapper>
-          <ComponentWrapper>
-            <Work />
-          </ComponentWrapper>
+          </AnimationWrapper>
+          <Work />
           {/* <ComponentWrapper>
             <EightBlock />
           </ComponentWrapper> */}
           <NewBlock />
-          <ComponentWrapper>
-            <div className="container">
-              <BeProgrammer />
-            </div>
-          </ComponentWrapper>
-          <ComponentWrapper>
-            <Details />
-          </ComponentWrapper>
-          <ComponentWrapper>
-            <div className="container">
-              <ComponentWrapper>
-                <Table />
-              </ComponentWrapper>
-              <ComponentWrapper>
-                <FormDev />
-              </ComponentWrapper>
-            </div>
-          </ComponentWrapper>
+          <div className="container">
+            <BeProgrammer />
+          </div>
+          <Details />
+          <div className="container">
+            <AnimationWrapper custom={4}>
+              <Table />
+            </AnimationWrapper>
+            <AnimationWrapper custom={4}>
+              <FormDev />
+            </AnimationWrapper>
+          </div>
         </main>
-        <JoinUsFooter />
+        <DevPracticeFooter />
       </PageWrapper>
     </>
   )

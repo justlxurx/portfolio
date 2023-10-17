@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import buttons from 'public/buttons.svg'
 import Key from 'public/Key.svg'
-
+import { AnimationWrapper } from '../AnimationWrapper'
 import styles from './styles.module.scss'
 
 const Programmer = () => {
@@ -64,7 +64,9 @@ const BeProgrammer = () => {
   return (
     <>
       <Distance />
-      <Programmer />
+      <AnimationWrapper custom={5}>
+        <Programmer />
+      </AnimationWrapper>
     </>
   )
 }

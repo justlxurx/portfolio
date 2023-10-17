@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import classNames from 'classnames'
 import arrow from 'public/arrow.svg'
-
 import styles from './styles.module.scss'
+import { AnimationWrapper } from '../AnimationWrapper'
 
 const Work = () => {
   return (
@@ -101,7 +101,9 @@ const Dev = () => {
   return (
     <>
       <Distance />
-      <Work />
+      <AnimationWrapper custom={3}>
+        <Work />
+      </AnimationWrapper>
     </>
   )
 }

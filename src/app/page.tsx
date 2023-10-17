@@ -12,7 +12,7 @@ import 'node_modules/slick-carousel/slick/slick.css'
 import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './page.module.scss'
 
-import { ComponentWrapper } from '@/components/ComponentWrapper'
+import { AnimationWrapper } from '@/components/AnimationWrapper'
 
 async function getPosts(host: string) {
   const response = await fetch(`http://${host}/api/news`)
@@ -31,26 +31,25 @@ export default async function Home() {
       <Navbar />
       <PageWrapper>
         <main className={styles.main}>
-          <ComponentWrapper>
+          <AnimationWrapper custom={4}>
             <About />
-          </ComponentWrapper>
-          <ComponentWrapper>
+          </AnimationWrapper>
+          <AnimationWrapper custom={4}>
             <Projects />
-          </ComponentWrapper>
-          <ComponentWrapper>
+          </AnimationWrapper>
+          <AnimationWrapper custom={4}>
             {Array.isArray(data) && <News data={...data} />}
-          </ComponentWrapper>
-          <ComponentWrapper>
-            {' '}
+          </AnimationWrapper>
+          <AnimationWrapper custom={4}>
             <Distance />
-          </ComponentWrapper>
-          <ComponentWrapper>
+          </AnimationWrapper>
+          <AnimationWrapper custom={4}>
             <FAQ />
-          </ComponentWrapper>
+          </AnimationWrapper>
         </main>
-        <ComponentWrapper>
+        <AnimationWrapper custom={4}>
           <MainFooter />
-        </ComponentWrapper>
+        </AnimationWrapper>
       </PageWrapper>
     </>
   )

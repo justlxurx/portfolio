@@ -3,10 +3,8 @@ import React from 'react'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { nanoid } from 'nanoid'
-import coverPlugDesktop from 'public/media_cover_desktop.png'
-import coverPlugMobile from 'public/media_cover_mobile.png'
 import { useMedia } from 'react-use'
-
+import { AnimationWrapper } from '../AnimationWrapper'
 import { FormattedString } from '@/helpers/FormattedString'
 
 import { IPublication } from './interface'
@@ -20,31 +18,28 @@ type Props = {
 const News: React.FC<Props> = ({ data }) => {
   const isMobile = useMedia('(max-width: 768px)')
 
-  const buttonPreviewClickHandler = () => {
-    alert('Страница в разработке')
-  }
-
-  const PublicationPreview = ({ shortContent }: { shortContent: string }) => (
+  const PublicationPreview = ({
+    shortContent,
+    link,
+  }: {
+    shortContent: string
+    link: string
+  }) => (
     <>
       <p className={styles.publication__short_content}>
         <FormattedString sentence={shortContent} />
       </p>
-
-      <button
-        onClick={buttonPreviewClickHandler}
-        className={styles.publication__show_more}
-      >
-        Читать
-      </button>
+      <a href={link} target="_blank">
+        <button className={styles.publication__show_more}>Читать</button>
+      </a>
     </>
   )
 
-  //FIXME: fix cover
-  const cover = isMobile ? coverPlugMobile : coverPlugDesktop
-
   return (
     <section className={'container'}>
-      <h2 className={styles.header}>Медиа-хроники</h2>
+      <AnimationWrapper custom={5}>
+        <h2 className={styles.header}>Медиа-хроники</h2>
+      </AnimationWrapper>
       <ul className={styles.publications}>
         {data?.map(
           (
@@ -54,47 +49,59 @@ const News: React.FC<Props> = ({ data }) => {
               shortContent,
               tags,
               publicationDate,
-              // cover,
+              cover,
               link,
             }: IPublication,
             index,
           ) => (
             <li className={styles.publications__item} key={nanoid()}>
               <div className={styles.publication}>
-                <div className={styles.publication__info}>
-                  <div className={styles.publication__info_left}>
-                    <h4 className={styles.publication__subheader}>
-                      <FormattedString sentence={subheader} />
-                    </h4>
-                    <ul className={styles.publication__tags}>
-                      {tags.map((tag: string) => (
-                        <li key={nanoid()}>
-                          <span className={styles.publication__tag}>{tag}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <AnimationWrapper custom={6}>
+                  <div className={styles.publication__info}>
+                    <div className={styles.publication__info_left}>
+                      <h4 className={styles.publication__subheader}>
+                        <FormattedString sentence={subheader} />
+                      </h4>
+                      <ul className={styles.publication__tags}>
+                        {tags.map((tag: string) => (
+                          <li key={nanoid()}>
+                            <span className={styles.publication__tag}>
+                              {tag}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className={styles.publication__info_right}>
+                      {!isMobile && (
+                        <PublicationPreview
+                          shortContent={shortContent}
+                          link={link}
+                        />
+                      )}
+                    </div>
                   </div>
-                  <div className={styles.publication__info_right}>
-                    {!isMobile && (
-                      <PublicationPreview shortContent={shortContent} />
-                    )}
-                  </div>
-                </div>
+                </AnimationWrapper>
                 <div
                   className={styles.publication__cover}
                   style={{
-                    backgroundImage: `url(${cover.src})`,
+                    backgroundImage: `url(${cover})`,
                   }}
                 >
                   <div className={styles.publication__cover_inner}>
                     {isMobile && (
                       <div>
-                        <PublicationPreview shortContent={shortContent} />
+                        <PublicationPreview
+                          shortContent={shortContent}
+                          link={link}
+                        />
                       </div>
                     )}
+
                     <h3 className={styles.publication__header}>
                       <FormattedString sentence={header} />
                     </h3>
+
                     <p className={styles.publication__date}>
                       {format(publicationDate, 'LLLL, yyyy', { locale: ru })}
                     </p>

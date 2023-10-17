@@ -1,13 +1,11 @@
-'use client'
 import Image from 'next/image'
 import { nanoid } from 'nanoid'
 import arrow_icon from 'public/arrow_icon.svg'
 import confirmation from 'public/confirmation.svg'
 import cases from 'public/cases.png'
-import { motion } from 'framer-motion'
-import { useRef } from 'react'
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
+import { AnimationWrapper } from '../AnimationWrapper'
 
 const Socials = () => {
   const socialLinks2 = [
@@ -54,58 +52,40 @@ const Socials = () => {
     </div>
   )
 }
-const textAnimation = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
-  visible: (custom: number) => ({
-    x: 0,
-    opacity: 1,
-    transition: { delay: custom * 0.2, duration: 0.5, ease: 'easeOut' },
-  }),
-}
 const Cases = () => {
-  // const isMobile = useMedia('(max-width: 768px)')
-  const scrollRef = useRef(null)
   return (
-    <motion.section initial="hidden" whileInView="visible">
-      <motion.h4
-        variants={textAnimation}
-        custom={2}
-        className={styles.short_info__header}
-      >
-        КЕЙСЫ,
-        <br /> НА КОТОРЫХ РАСТЕШЬ
-      </motion.h4>
+    <section>
+      <AnimationWrapper custom={2}>
+        <h4 className={styles.short_info__header}>
+          КЕЙСЫ,
+          <br /> НА КОТОРЫХ РАСТЕШЬ
+        </h4>
+      </AnimationWrapper>
       <section className={styles.grow_cases}>
         <section className={styles.section1}>
-          <motion.article
-            variants={textAnimation}
-            custom={3}
-            className={styles.short_article}
-          >
-            <div className={styles.person_info}>
-              {/* <Image src={avatar} alt={'Avatar'}  /> */}
-              <div className={styles.avatar1}></div>
+          <article className={styles.short_article}>
+            <AnimationWrapper custom={3}>
+              <div className={styles.person_info}>
+                {/* <Image src={avatar} alt={'Avatar'}  /> */}
+                <div className={styles.avatar1}></div>
 
-              <div className={styles.person_name}>
-                <h5>Оксана Герасименко</h5>
-                <p>
-                  Lead IT-recruiter компании
-                  <strong>
-                    {' '}
-                    <em>qazdev</em>
-                  </strong>{' '}
-                </p>
+                <div className={styles.person_name}>
+                  <h5>Оксана Герасименко</h5>
+                  <p>
+                    Lead IT-recruiter компании
+                    <strong>
+                      {' '}
+                      <em>qazdev</em>
+                    </strong>{' '}
+                  </p>
+                </div>
+                <Image
+                  src={confirmation}
+                  alt="confirmation"
+                  className={styles.confirmation1}
+                />
               </div>
-              <Image
-                src={confirmation}
-                alt="confirmation"
-                className={styles.confirmation1}
-              />
-            </div>
-
+            </AnimationWrapper>
             <p className={styles.short_article__description}>
               Работая в мировых проектах и участвуя
               <br />в международном комьюнити, <br />
@@ -113,55 +93,50 @@ const Cases = () => {
               становятся <br />
               востребованными профессионалами
             </p>
-          </motion.article>
+          </article>
+
           {/* {!isMobile && <Socials />} */}
-          <motion.div
-            variants={textAnimation}
-            custom={4}
-            className={styles.hidden_social1}
-          >
-            <Socials />
-          </motion.div>
+
+          <div className={styles.hidden_social1}>
+            <AnimationWrapper custom={4}>
+              <Socials />
+            </AnimationWrapper>
+          </div>
         </section>
 
-        <motion.section
-          variants={textAnimation}
-          custom={5}
-          className={styles.section2}
-        >
+        <section className={styles.section2}>
           <Image src={cases} alt="cases" />
-        </motion.section>
+        </section>
+
         {/* {isMobile && <Socials />} */}
-        <motion.div
-          variants={textAnimation}
-          custom={6}
-          className={styles.hidden_social2}
-        >
-          <Socials />
-        </motion.div>
+        <AnimationWrapper custom={6}>
+          <div className={styles.hidden_social2}>
+            <Socials />
+          </div>
+        </AnimationWrapper>
 
         <section className={styles.section3}>
           <div className={styles.specialists}>
-            <motion.div variants={textAnimation} custom={6}>
+            <AnimationWrapper custom={6}>
               <p>
                 {'<'}разработчики{'>'}
               </p>
-            </motion.div>
-            <motion.div variants={textAnimation} custom={7}>
+            </AnimationWrapper>
+            <AnimationWrapper custom={7}>
               <p>
                 {'<'}тестировщики{'>'}
               </p>
-            </motion.div>
-            <motion.div variants={textAnimation} custom={7}>
+            </AnimationWrapper>
+            <AnimationWrapper custom={7}>
               <p>
                 {'<'}проектные менеджеры{'>'}
               </p>
-            </motion.div>
-            <motion.div variants={textAnimation} custom={8}>
+            </AnimationWrapper>
+            <AnimationWrapper custom={8}>
               <p>
                 {'<'}деливери-специалисты{'>'}
               </p>
-            </motion.div>
+            </AnimationWrapper>
           </div>
           <div
             className={styles.specialists}
@@ -171,25 +146,25 @@ const Cases = () => {
               marginBottom: '0',
             }}
           >
-            <motion.div variants={textAnimation} custom={9}>
+            <AnimationWrapper custom={9}>
               <p>
                 {'<'}бизнес-аналитики{'>'}
               </p>
-            </motion.div>
-            <motion.div variants={textAnimation} custom={10}>
+            </AnimationWrapper>
+            <AnimationWrapper custom={10}>
               <p>
                 {'<'}девопс-специалисты{'>'}
               </p>
-            </motion.div>
-            <motion.div variants={textAnimation} custom={11}>
+            </AnimationWrapper>
+            <AnimationWrapper custom={11}>
               <p>
                 {'<'}hr-менеджеры{'>'}
               </p>
-            </motion.div>
+            </AnimationWrapper>
           </div>
         </section>
       </section>
-    </motion.section>
+    </section>
   )
 }
 
