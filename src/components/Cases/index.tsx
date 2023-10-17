@@ -109,11 +109,10 @@ const Cases = () => {
         </section>
 
         {/* {isMobile && <Socials />} */}
-        <AnimationWrapper custom={6}>
-          <div className={styles.hidden_social2}>
-            <Socials />
-          </div>
-        </AnimationWrapper>
+
+        <div className={styles.hidden_social2}>
+          <Socials />
+        </div>
 
         <section className={styles.section3}>
           <div className={styles.specialists}>

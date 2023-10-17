@@ -319,3 +319,11 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .publication {
+    &__header {
+      font-size: 28px;
+    }
+  }
+}
