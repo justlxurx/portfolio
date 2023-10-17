@@ -1,27 +1,10 @@
 'use client'
 import Image from 'next/image'
 import styles from './styles.module.scss'
-import React, { useState, useEffect, RefObject } from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
 import arrow_button from 'public/arrow_button.svg'
-
-import { motion } from 'framer-motion'
-function isInViewport(elementRef: RefObject<HTMLElement>): boolean {
-  if (!elementRef || !elementRef.current) {
-    return false
-  }
-
-  const element = elementRef.current
-  const rect = element.getBoundingClientRect()
-
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  )
-}
+import { BlockWrapper } from '../BlockWrapper'
 
 type BlockProps = {
   title: string
@@ -74,34 +57,6 @@ const Blocks = () => {
     setBlockStates(updatedBlockStates)
   }
   /////////////////////
-  const [isScrollingUp, setIsScrollingUp] = useState(true)
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY
-
-    function handleScroll() {
-      const currentScrollY = window.scrollY
-      setIsScrollingUp(currentScrollY < lastScrollY)
-      lastScrollY = currentScrollY
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-  const textAnimation = {
-    hidden: {
-      y: isScrollingUp ? -100 : 0,
-      opacity: isScrollingUp ? 0 : 1,
-    },
-    visible: (custom: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.2, duration: 0.5, ease: 'easeOut' },
-    }),
-  }
 
   return (
     <div className={styles.program}>
@@ -124,126 +79,99 @@ const Blocks = () => {
           <div className={styles.bottom_section}>
             <div className={styles.bottom_section__figure}></div>
             <div className={styles.bottom_section__scrolling}>
-              <motion.div
-                variants={textAnimation}
-                custom={2}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Java Core"
-                  description="База, которая необходима для старта. На интенсиве изучаем основы программирования и на практике 
+              <BlockWrapper custom={2}>
+                <div>
+                  <Block
+                    title="Java Core"
+                    description="База, которая необходима для старта. На интенсиве изучаем основы программирования и на практике 
               работаем с Java Core: интеграции с другими технологиями, 
               многопоточные программировании, разработка приложений и др."
-                  showInfo={blockStates[0]}
-                  onClick={() => handleBlockClick(0)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={3}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Java Spring"
-                  description="В теории и на практике учимся работать с универсальным фреймворк для Java, который является популярным и используется в создании подавляющего большинства приложений"
-                  showInfo={blockStates[1]}
-                  onClick={() => handleBlockClick(1)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={4}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Elasticsearch"
-                  description="Вместе со спикерами интенсива разбираем поисково-аналитический движок Elasticsearch. Изучаем полнотекстовый поиск и лог-аналитику"
-                  showInfo={blockStates[2]}
-                  onClick={() => handleBlockClick(2)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={5}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Spring Core & MVC"
-                  description="В этом модуле обучения вместе создаем контроллеры, учимся обрабатывать запросы, работать с представлениями и обеспечивать взаимодействие с пользователем"
-                  showInfo={blockStates[3]}
-                  onClick={() => handleBlockClick(3)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={6}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Spring REST API"
-                  description="REST API используют везде, где сайт или приложение взаимодействует с сервером. Мы работаем с инструментами необходимыми для создания RESTful-сервисов. Изучаем разработку API, учимся обрабатывать НТТР-запросы, маршрутизировать запросы и возвращать данные в форматах JSON или XML"
-                  showInfo={blockStates[4]}
-                  onClick={() => handleBlockClick(4)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={7}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Spring OpenAPI"
-                  description="В этом модуле работаем с концепциями OpenАРІ и изучаем интеграцию инструментов с Spring Framework"
-                  showInfo={blockStates[5]}
-                  onClick={() => handleBlockClick(5)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={8}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="JUnit Tests"
-                  description="Важный блок интенсива, в котором мы разбираем механизмы для обработки ошибок и исключений, а также создаем пользовательские обработчики ошибок и работаем с Аннотациями"
-                  showInfo={blockStates[6]}
-                  onClick={() => handleBlockClick(6)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={9}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Spring Data"
-                  description="Каждый разработчик должен уметь работать с такими направлениями как: взаимодействие с базами данных, создания запросов и управления транзакциями. Спикеры и кураторы учат этому студентов DevPractice в 7 блоке интенсива"
-                  showInfo={blockStates[7]}
-                  onClick={() => handleBlockClick(7)}
-                />
-              </motion.div>
-              <motion.div
-                variants={textAnimation}
-                custom={10}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <Block
-                  title="Spring Security"
-                  description="8 блок интенсива мы посвящаем безопасности. В первую очередь работаем с инструментами для обеспечения защиты, а также настраиваем аутентификацию и авторизацию"
-                  showInfo={blockStates[8]}
-                  onClick={() => handleBlockClick(8)}
-                  className={styles.last_block}
-                />
-              </motion.div>
+                    showInfo={blockStates[0]}
+                    onClick={() => handleBlockClick(0)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={3}>
+                <div>
+                  <Block
+                    title="Java Spring"
+                    description="В теории и на практике учимся работать с универсальным фреймворк для Java, который является популярным и используется в создании подавляющего большинства приложений"
+                    showInfo={blockStates[1]}
+                    onClick={() => handleBlockClick(1)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={4}>
+                <div>
+                  <Block
+                    title="Elasticsearch"
+                    description="Вместе со спикерами интенсива разбираем поисково-аналитический движок Elasticsearch. Изучаем полнотекстовый поиск и лог-аналитику"
+                    showInfo={blockStates[2]}
+                    onClick={() => handleBlockClick(2)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={5}>
+                <div>
+                  <Block
+                    title="Spring Core & MVC"
+                    description="В этом модуле обучения вместе создаем контроллеры, учимся обрабатывать запросы, работать с представлениями и обеспечивать взаимодействие с пользователем"
+                    showInfo={blockStates[3]}
+                    onClick={() => handleBlockClick(3)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={6}>
+                <div>
+                  <Block
+                    title="Spring REST API"
+                    description="REST API используют везде, где сайт или приложение взаимодействует с сервером. Мы работаем с инструментами необходимыми для создания RESTful-сервисов. Изучаем разработку API, учимся обрабатывать НТТР-запросы, маршрутизировать запросы и возвращать данные в форматах JSON или XML"
+                    showInfo={blockStates[4]}
+                    onClick={() => handleBlockClick(4)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={7}>
+                <div>
+                  <Block
+                    title="Spring OpenAPI"
+                    description="В этом модуле работаем с концепциями OpenАРІ и изучаем интеграцию инструментов с Spring Framework"
+                    showInfo={blockStates[5]}
+                    onClick={() => handleBlockClick(5)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={8}>
+                <div>
+                  <Block
+                    title="JUnit Tests"
+                    description="Важный блок интенсива, в котором мы разбираем механизмы для обработки ошибок и исключений, а также создаем пользовательские обработчики ошибок и работаем с Аннотациями"
+                    showInfo={blockStates[6]}
+                    onClick={() => handleBlockClick(6)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={9}>
+                <div>
+                  <Block
+                    title="Spring Data"
+                    description="Каждый разработчик должен уметь работать с такими направлениями как: взаимодействие с базами данных, создания запросов и управления транзакциями. Спикеры и кураторы учат этому студентов DevPractice в 7 блоке интенсива"
+                    showInfo={blockStates[7]}
+                    onClick={() => handleBlockClick(7)}
+                  />
+                </div>
+              </BlockWrapper>
+              <BlockWrapper custom={10}>
+                <div>
+                  <Block
+                    title="Spring Security"
+                    description="8 блок интенсива мы посвящаем безопасности. В первую очередь работаем с инструментами для обеспечения защиты, а также настраиваем аутентификацию и авторизацию"
+                    showInfo={blockStates[8]}
+                    onClick={() => handleBlockClick(8)}
+                    className={styles.last_block}
+                  />
+                </div>
+              </BlockWrapper>
             </div>
           </div>
         </div>

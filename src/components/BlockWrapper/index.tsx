@@ -2,21 +2,13 @@
 import { ReactNode, useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-// export const ComponentWrapper = ({ children }: { children: ReactNode }) => {
-//   const scrollRef = useRef(null)
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, y: 50 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       viewport={{ root: scrollRef }}
-//       transition={{ delay: 0.5, ease: 'easeOut', duration: 0.5 }}
-//     >
-//       {children}
-//     </motion.div>
-//   )
-// }
-
-export const ComponentWrapper = ({ children }: { children: ReactNode }) => {
+export const BlockWrapper = ({
+  custom,
+  children,
+}: {
+  custom: number
+  children: ReactNode
+}) => {
   const scrollRef = useRef(null)
 
   const [isScrollingUp, setIsScrollingUp] = useState(true)
@@ -51,7 +43,7 @@ export const ComponentWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <motion.div
       variants={textAnimation}
-      custom={4}
+      custom={custom}
       initial="hidden"
       whileInView="visible"
     >

@@ -595,7 +595,7 @@
       }
       .click {
         margin-top: 5%;
-        width: 38%;
+        width: auto;
         &_plus {
           height: 33px;
           width: 33px;
@@ -636,7 +636,7 @@
       }
       .click {
         margin-top: 5%;
-        width: 38%;
+        width: auto;
         &_plus {
           height: 32px;
           width: 32px;
@@ -755,8 +755,6 @@
       .click {
         margin-top: 5%;
         &_plus {
-          height: 27px;
-          width: 23px;
           font-size: 15px;
         }
         &_text {

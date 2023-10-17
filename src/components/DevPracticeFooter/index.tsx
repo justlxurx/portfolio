@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import { nanoid } from 'nanoid'
@@ -10,9 +11,7 @@ import { ButtonVariant } from '../ui/Button/interface'
 
 import styles from './styles.module.scss'
 
-const JoinUsFooter = () => {
-  //FIXME: Paths
-
+const DevPracticeFooter = () => {
   const primaryLinks = [
     {
       title: 'Главная',
@@ -46,11 +45,7 @@ const JoinUsFooter = () => {
     // },
     {
       icon: 'insta.svg',
-      path: 'https://instagram.com/qazdev.team?igshid=MzRlODBiNWFlZA==',
-    },
-    {
-      icon: 'linkedin1.svg',
-      path: 'https://www.linkedin.com/in/qazdev-team-067a82205/ ',
+      path: 'https://instagram.com/devpractice.kz?igshid=MzRlODBiNWFlZA==',
     },
   ]
   return (
@@ -167,4 +162,4 @@ const JoinUsFooter = () => {
   )
 }
 
-export default JoinUsFooter
+export default DevPracticeFooter

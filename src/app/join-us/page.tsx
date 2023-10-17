@@ -3,11 +3,11 @@ import { headers } from 'next/headers'
 import Career from '@/components/Career'
 import Cases from '@/components/Cases'
 import Gallery from '@/components/Gallery'
-import JoinUsFooter from '@/components/JoinUsFooter'
 import Navbar from '@/components/Navbar'
 import StrongCode from '@/components/StrongCode'
 import TeamMember from '@/components/TeamMember'
 import { PageWrapper } from '@/components/PageWrapper'
+import JoinUsFooter from '@/components/JoinUsFooter'
 export default async function JoinUs() {
   const host = headers().get('host')
 

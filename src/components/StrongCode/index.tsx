@@ -1,4 +1,3 @@
-'use client'
 import Image from 'next/image'
 import fitness from 'public/fitness.png'
 import fitness1 from 'public/fitness1.png'
@@ -6,8 +5,7 @@ import fitness2 from 'public/fitness2.png'
 import fitness3 from 'public/fitness3.png'
 import fitness4 from 'public/fitness4.png'
 import BigSlider from './BigSlider'
-
-import { motion } from 'framer-motion'
+import { AnimationWrapper } from '../AnimationWrapper'
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 
@@ -41,27 +39,27 @@ const StrongCode = () => {
     }),
   }
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      className={styles.strong_coding}
-    >
+    <section className={styles.strong_coding}>
       <div className={styles.strong_coding_main}>
-        <motion.h2 variants={textAnimation} custom={2}>
-          Сильный <br />
-          код{' '}
-        </motion.h2>
+        <AnimationWrapper custom={2}>
+          <h2>
+            Сильный <br />
+            код
+          </h2>
+        </AnimationWrapper>
 
         <div className={styles.text1}>
           <p></p>
-          <motion.p variants={textAnimation} custom={3} className={styles.text}>
-            Компания{' '}
-            <strong>
-              <em>qazdev</em>
-            </strong>{' '}
-            основала первый <br /> в Караганде тренажерный зал <br />
-            для IT-специалистов с <br /> профессиональным оборудованием
-          </motion.p>
+          <AnimationWrapper custom={3}>
+            <p className={styles.text}>
+              Компания{' '}
+              <strong>
+                <em>qazdev</em>
+              </strong>{' '}
+              основала первый <br /> в Караганде тренажерный зал <br />
+              для IT-специалистов с <br /> профессиональным оборудованием
+            </p>
+          </AnimationWrapper>
         </div>
 
         <div className={styles.hr_line}>
@@ -82,26 +80,25 @@ const StrongCode = () => {
               {'<'}нажмите, чтобы запустить bug flyer{'>'}
             </p> */}
           </div>
-          <motion.p custom={4} variants={textAnimation} className={styles.text}>
-            Сотрудники{' '}
-            <strong>
-              <em>qazdev</em>
-            </strong>{' '}
-            <br /> занимаются в тренажерном <br /> зале ALPHA бесплатно
-          </motion.p>
+          <AnimationWrapper custom={4}>
+            <p className={styles.text}>
+              Сотрудники{' '}
+              <strong>
+                <em>qazdev</em>
+              </strong>{' '}
+              <br /> занимаются в тренажерном <br /> зале ALPHA бесплатно
+            </p>
+          </AnimationWrapper>
         </div>
       </div>
-
-      <motion.div
-        variants={textAnimation}
-        custom={5}
-        className={styles.slider1}
-      >
-        <div className={styles.slider1_big}>
-          <BigSlider items={firstEvent} />
+      <AnimationWrapper custom={5}>
+        <div className={styles.slider1}>
+          <div className={styles.slider1_big}>
+            <BigSlider items={firstEvent} />
+          </div>
         </div>
-      </motion.div>
-    </motion.section>
+      </AnimationWrapper>
+    </section>
   )
 }
 
