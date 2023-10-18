@@ -8,6 +8,7 @@ import Monitoring from '@/components/Monitoring'
 import { PageWrapper } from '@/components/PageWrapper'
 import { AnimationWrapper } from '@/components/AnimationWrapper'
 import JoinUsFooter from '@/components/JoinUsFooter'
+import Game from '@/components/Game'
 export default async function Education() {
   return (
     <>
@@ -33,6 +34,7 @@ export default async function Education() {
           <AnimationWrapper custom={5}>
             <Monitoring />
           </AnimationWrapper>
+          <Game />
         </main>
         <JoinUsFooter />
       </PageWrapper>

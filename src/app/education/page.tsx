@@ -9,6 +9,7 @@ import { PageWrapper } from '@/components/PageWrapper'
 import Table from '@/components/Table'
 import Work from '@/components/Work'
 import NewBlock from '@/components/NewBlock'
+import Game from '@/components/Game'
 
 export default async function Education() {
   return (
@@ -37,6 +38,7 @@ export default async function Education() {
             <AnimationWrapper custom={4}>
               <FormDev />
             </AnimationWrapper>
+            <Game />
           </div>
         </main>
         <DevPracticeFooter />
