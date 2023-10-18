@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import fitness from 'public/fitness.png'
 import fitness1 from 'public/fitness1.png'
@@ -7,7 +8,10 @@ import fitness4 from 'public/fitness4.png'
 import BigSlider from './BigSlider'
 import { AnimationWrapper } from '../AnimationWrapper'
 // import Button from '@/components/ui/Button'
+import arrow_icon from 'public/arrow_icon.svg'
 import styles from './styles.module.scss'
+import { useState } from 'react'
+import Game from '../Game'
 
 const StrongCode = () => {
   const firstEvent = [
@@ -27,17 +31,16 @@ const StrongCode = () => {
       component: <Image src={fitness4} alt={'fitness'} fill />,
     },
   ]
-  const textAnimation = {
-    hidden: {
-      x: -100,
-      opacity: 0,
-    },
-    visible: (custom: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.2, duration: 0.5, ease: 'easeOut' },
-    }),
+
+  const [isOpen, setIsOpen] = useState(false)
+  const openModel = () => {
+    setIsOpen(true)
   }
+
+  const closeModal = () => {
+    setIsOpen(false)
+  }
+
   return (
     <section className={styles.strong_coding}>
       <div className={styles.strong_coding_main}>
@@ -68,17 +71,18 @@ const StrongCode = () => {
 
         <div className={styles.text2}>
           <div>
-            {/* <button className={styles.cases_button_1}>
+            <button className={styles.cases_button_1} onClick={openModel}>
               <Image
                 className={styles.cases_button__arrow1}
                 src={arrow_icon}
                 alt={'Arrow'}
               />
-              SHIFT + F6{' '}
+              SHIFT + F6
             </button>
+            <Game isOpenInit={isOpen} changeIsOpenInit={closeModal} />
             <p className={styles.click_for}>
               {'<'}нажмите, чтобы запустить bug flyer{'>'}
-            </p> */}
+            </p>
           </div>
           <AnimationWrapper custom={4}>
             <p className={styles.text}>

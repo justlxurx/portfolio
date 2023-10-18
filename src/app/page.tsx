@@ -11,6 +11,7 @@ import { PageWrapper } from '@/components/PageWrapper'
 import 'node_modules/slick-carousel/slick/slick.css'
 import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './page.module.scss'
+import Game from '@/components/Game'
 
 import { AnimationWrapper } from '@/components/AnimationWrapper'
 
@@ -46,6 +47,7 @@ export default async function Home() {
           <AnimationWrapper custom={4}>
             <FAQ />
           </AnimationWrapper>
+          <Game />
         </main>
         <AnimationWrapper custom={4}>
           <MainFooter />

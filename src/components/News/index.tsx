@@ -1,9 +1,8 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { nanoid } from 'nanoid'
-import { useMedia } from 'react-use'
 import { AnimationWrapper } from '../AnimationWrapper'
 import { FormattedString } from '@/helpers/FormattedString'
 
@@ -15,8 +14,53 @@ type Props = {
   data: IPublication[]
 }
 
+let countOfWindowResizeCall = 0
+let resizeTimeout: NodeJS.Timeout | undefined
+
 const News: React.FC<Props> = ({ data }) => {
-  const isMobile = useMedia('(max-width: 768px)')
+  // const isMobile = useMedia('(max-width: 768px)')
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+  // useEffect(() => {
+  //   const handleWindowResize = (e: any) => {
+  //     setIsMobile(e.target.innerWidth < 768)
+  //     console.log(
+  //       `Функция handleWindowResize вызвана ${++countOfWindowResisizeCall} раз`,
+  //     )
+  //   }
+
+  //   window.addEventListener('resize', handleWindowResize)
+  //   return () => window.removeEventListener('resize', handleWindowResize)
+
+  // }, [])
+
+  const handleWindowResize = (e: any) => {
+    setIsMobile(e.target.innerWidth < 769)
+
+    console.log(
+      `Функция handleWindowResize вызвана ${++countOfWindowResizeCall} раз`,
+    )
+  }
+
+  const throttledHandleWindowResize = (e: any) => {
+    // Если таймер уже установлен, отмените его
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout)
+    }
+
+    // Устанавливаем новый таймер
+    resizeTimeout = setTimeout(() => {
+      handleWindowResize(e)
+    }, 1000)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', throttledHandleWindowResize)
+
+    return () => {
+      window.removeEventListener('resize', throttledHandleWindowResize)
+    }
+  }, [])
 
   const PublicationPreview = ({
     shortContent,
