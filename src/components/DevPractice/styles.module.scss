@@ -3,29 +3,32 @@
   grid-template-columns: 61% 39%;
   border: 1px solid black;
   height: 952px;
+  // height: 94vh;
   // margin: 0% 9% 0 9%;
 }
 
 .dev_section1 {
-  padding: 7% 2% 0 3.7%;
+  //padding: 7% 2% 0 3.7%;
+  padding: 80px 20px 0 20px;
   display: grid;
   grid-template-rows: 57% 43%;
   &_text {
     display: grid;
-    padding-bottom: 2%;
+    padding-bottom: 20px;
     p {
       color: #000;
-      font-family: Helvetica;
+      font-family: 'Helvetica';
       font-size: 28px;
       font-style: normal;
       font-weight: 400;
       line-height: 20px;
       letter-spacing: -0.16px;
       align-self: end;
+      //display: flex;
     }
     h1 {
       color: #e97810;
-      font-family: Helvetica;
+      // font-family: Helvetica;
       font-size: 167px;
       font-style: normal;
       font-weight: 700;
@@ -206,7 +209,8 @@
   }
   &_text {
     border-bottom: 1px solid black;
-    padding: 5.8% 4.3% 7% 4.3%;
+    //padding: 5.8% 4.3% 7% 4.3%;
+    padding: 43px 45px 54px 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -337,6 +341,7 @@
   }
 
   .dev_section1 {
+    padding: 7% 2% 0 3.7%;
     &_text {
       p {
         font-size: 24px;
@@ -353,6 +358,7 @@
       }
     }
     &_text {
+      padding: 5.8% 4.3% 7% 4.3%;
       &_1 {
         font-size: 35px;
       }

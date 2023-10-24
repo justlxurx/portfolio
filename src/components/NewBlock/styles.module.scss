@@ -18,7 +18,8 @@
 .learn_program {
   display: grid;
   grid-template-rows: 15% 85%;
-  height: 1030px;
+  // height: 1030px;
+  height: 100vh;
 
   &__heading {
     h1 {
@@ -35,7 +36,7 @@
       height: 100%;
       display: flex;
       align-items: center;
-      padding-left: 5%;
+      padding-left: 43px;
     }
   }
   &__main {
@@ -163,6 +164,7 @@
     &__heading {
       h1 {
         font-size: 27px;
+        padding-left: 4%;
       }
     }
     &__main {

@@ -14,7 +14,9 @@ import { AnimationWrapper } from '../AnimationWrapper'
 import styles from './styles.module.scss'
 
 const validationSchema = Yup.object({
-  username: Yup.string().required('Заполните поле "Имя"'),
+  username: Yup.string()
+    .required('Заполните поле "Имя"')
+    .matches(/^[A-Za-zА-Яа-яЁё]+$/, 'Имя должно содержать только буквы'),
   phone: Yup.string().required('Заполните поле "Телефон"'),
   about: Yup.string().required('Заполните поле "Расскажите о себе"'),
   acceptedTerms: Yup.boolean()
@@ -95,21 +97,32 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
     name: 'username',
     onChange: formik.handleChange,
     type: 'text',
+    style: {
+      color:
+        formik.touched.username && formik.errors.username ? 'red' : 'white',
+    },
     placeholder:
       (formik.touched.username && formik.errors.username) || 'Ваше имя',
-    value: formik.values.username,
+    value:
+      formik.touched.username && formik.errors.username
+        ? ''
+        : formik.values.username,
     error: !!(formik.touched.username && formik.errors.username),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
   }
   const phoneInputProps = {
     className: styles.input,
     name: 'phone',
     onChange: formik.handleChange,
     type: 'text',
+    style: {
+      color:
+        formik.touched.username && formik.errors.username ? 'red' : 'white',
+    },
     placeholder: (formik.touched.phone && formik.errors.phone) || 'Телефон',
     value: formik.values.phone,
     error: !!(formik.touched.phone && formik.errors.phone),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
   }
 
   const aboutUserInputProps = {
@@ -117,12 +130,16 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
     name: 'about',
     onChange: formik.handleChange,
     type: 'text',
+    style: {
+      color:
+        formik.touched.username && formik.errors.username ? 'red' : 'white',
+    },
     placeholder:
       (formik.touched.about && formik.errors.about) ||
       'Расскажите немного о своем опыте',
     value: formik.values.about,
     error: !!(formik.touched.about && formik.errors.about),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
     maxLength: 1000,
   }
 
@@ -148,9 +165,21 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
     checked: formik.values.acceptedTerms,
 
     error: !!(formik.touched.acceptedTerms && formik.errors.acceptedTerms),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
   }
 
+  const handleDownloadClick = () => {
+    // Задайте путь к вашей презентации
+    const presentationUrl = '/Политика_конфиденциальности_qazdev.pdf'
+
+    // Создайте ссылку для скачивания
+    const downloadLink = document.createElement('a')
+    downloadLink.href = presentationUrl
+    downloadLink.download = 'Политика_конфиденциальности_qazdev.pdf'
+
+    // Симулируйте клик по ссылке для начала скачивания
+    downloadLink.click()
+  }
   return (
     <form onSubmit={formik.handleSubmit}>
       <section className={styles.container}>
@@ -197,9 +226,19 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
         <AnimationWrapper custom={6}>
           <div className={styles.agreement}>
             <Input {...checkBoxInputProps} />
-            <label>
+            <label
+              style={{
+                color:
+                  formik.touched.acceptedTerms && formik.errors.acceptedTerms
+                    ? 'red'
+                    : '#EAEAEA',
+              }}
+            >
               Принимаю{' '}
-              <a href="" className={styles.agreement_link}>
+              <a
+                onClick={handleDownloadClick}
+                className={styles.agreement_link}
+              >
                 {' '}
                 политику конфиденциальности.
               </a>
@@ -208,8 +247,8 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
         </AnimationWrapper>
         <Button
           className={styles.submit_button}
-          variant={ButtonVariant.white}
-          disabled={!formik.isValid || !formik.values.acceptedTerms}
+          variant={ButtonVariant.inputColor}
+          // disabled={!formik.isValid || !formik.values.acceptedTerms}
           type="submit"
         >
           Отправить

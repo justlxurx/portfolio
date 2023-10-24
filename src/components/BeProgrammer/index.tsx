@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import buttons from 'public/buttons.svg'
 import Key from 'public/Key.svg'
-import { AnimationWrapper } from '../AnimationWrapper'
 import styles from './styles.module.scss'
 
 const Programmer = () => {
@@ -32,8 +31,12 @@ const Programmer = () => {
             </div>
             <div className={styles.main1_column2_p}>
               <p>
-                В конце обучения студенты получат{' '}
-                <b>сертификаты и рекомендательные письма</b> <br />
+                В конце обучения студенты <br />
+                получат{' '}
+                <b>
+                  сертификаты <br /> и рекомендательные письма
+                </b>
+                <br />
                 для будущих работодателей.
               </p>
             </div>
@@ -64,9 +67,7 @@ const BeProgrammer = () => {
   return (
     <>
       <Distance />
-      <AnimationWrapper custom={5}>
-        <Programmer />
-      </AnimationWrapper>
+      <Programmer />
     </>
   )
 }

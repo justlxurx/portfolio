@@ -216,9 +216,10 @@ const Career = () => {
               <AnimationWrapper custom={8}>
                 <p>
                   <strong>
-                    <em>qazdev</em>
+                    <em>qazdev</em> <br />
                   </strong>
-                  – аутсорсинговая компания про: {'<'}готовность к росту{'>'} 
+                  – аутсорсинговая <br /> компания про: <br />
+                  {'<'}готовность к росту{'>'} 
                 </p>
               </AnimationWrapper>
             </div>

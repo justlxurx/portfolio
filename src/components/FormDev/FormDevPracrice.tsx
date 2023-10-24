@@ -15,7 +15,9 @@ import { IFormDev } from './interface'
 import styles from './styles.module.scss'
 
 const validationSchema = Yup.object({
-  username: Yup.string().required('Заполните поле "Имя"'),
+  username: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁё]+$/, 'Имя должно содержать только буквы')
+    .required('Заполните поле "Имя"'),
   phone: Yup.string().required('Заполните поле "Телефон"'),
   acceptedTerms: Yup.boolean()
     .required('Required')
@@ -31,6 +33,7 @@ const FormDev = ({ className, host }: IFormDev) => {
       acceptedTerms: false,
     },
     onSubmit: async (values, { resetForm }) => {
+      //debugger
       const data = {
         username: values.username,
         phone: values.phone,
@@ -63,9 +66,12 @@ const FormDev = ({ className, host }: IFormDev) => {
     type: 'text',
     placeholder:
       (formik.touched.username && formik.errors.username) || 'Ваше имя',
-    value: formik.values.username,
+    value:
+      formik.touched.username && formik.errors.username
+        ? ''
+        : formik.values.username,
     error: !!(formik.touched.username && formik.errors.username),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
   }
   const phoneInputProps = {
     className: styles.input,
@@ -75,7 +81,7 @@ const FormDev = ({ className, host }: IFormDev) => {
     placeholder: (formik.touched.phone && formik.errors.phone) || 'Телефон',
     value: formik.values.phone,
     error: !!(formik.touched.phone && formik.errors.phone),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
   }
 
   const checkBoxInputProps = {
@@ -86,9 +92,21 @@ const FormDev = ({ className, host }: IFormDev) => {
     checked: formik.values.acceptedTerms,
 
     error: !!(formik.touched.acceptedTerms && formik.errors.acceptedTerms),
-    variant: InputVariant.white,
+    variant: InputVariant.inputColor,
   }
 
+  const handleDownloadClick = () => {
+    // Задайте путь к вашей презентации
+    const presentationUrl = '/Политика_конфиденциальности_qazdev.pdf'
+
+    // Создайте ссылку для скачивания
+    const downloadLink = document.createElement('a')
+    downloadLink.href = presentationUrl
+    downloadLink.download = 'Политика_конфиденциальности_qazdev.pdf'
+
+    // Симулируйте клик по ссылке для начала скачивания
+    downloadLink.click()
+  }
   return (
     <form onSubmit={formik.handleSubmit}>
       <div className={styles.inputs_wrapper}>
@@ -104,18 +122,26 @@ const FormDev = ({ className, host }: IFormDev) => {
       </div>
       <div className={styles.agreement}>
         <Input {...checkBoxInputProps} />
-        <label>
+        <label
+          style={{
+            color:
+              formik.touched.acceptedTerms && formik.errors.acceptedTerms
+                ? 'red'
+                : '#EAEAEA',
+          }}
+        >
           Принимаю{' '}
-          <a href="" className={styles.agreement_link}>
+          <a onClick={handleDownloadClick} className={styles.agreement_link}>
             {' '}
             политику конфиденциальности.
           </a>
         </label>
       </div>
       <Button
+        type="submit"
         className={styles.submit_button}
-        variant={ButtonVariant.white}
-        disabled={!formik.isValid || !formik.values.acceptedTerms}
+        variant={ButtonVariant.inputColor}
+        // disabled={!formik.isValid || !formik.values.acceptedTerms}
       >
         Отправить
       </Button>

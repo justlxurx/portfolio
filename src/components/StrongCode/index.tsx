@@ -77,7 +77,7 @@ const StrongCode = () => {
                 src={arrow_icon}
                 alt={'Arrow'}
               />
-              SHIFT + F6
+              SHIFT + Q
             </button>
             <Game isOpenInit={isOpen} changeIsOpenInit={closeModal} />
             <p className={styles.click_for}>

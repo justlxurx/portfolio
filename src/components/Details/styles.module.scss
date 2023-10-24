@@ -12,7 +12,7 @@
     line-height: 100%;
     letter-spacing: -0.16px;
     text-transform: uppercase;
-    padding: 2% 3%;
+    padding: 40px 155px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     display: flex;
@@ -52,7 +52,9 @@
   }
   &__main {
     display: flex;
-    padding: 79px 0px 124px 40px;
+    max-width: 1588px;
+    margin: 0 auto;
+    padding: 79px 0px 124px 0px;
     gap: 50px;
     position: relative;
     transition: 1s left ease;
@@ -71,7 +73,7 @@
   }
   .table_info {
     width: 422px;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 40px 30px;
     position: relative;
     margin-top: 8px;
@@ -197,7 +199,7 @@
   .intensive_details {
     &__heading {
       font-size: 30px;
-      padding: 2% 11%;
+      padding: 2% 9%;
 
       .button_to_left {
         background-size: 20%;
@@ -213,6 +215,7 @@
     &__main {
       padding: 69px 0px 124px 40px;
       gap: 50px;
+      max-width: 863px;
       &__display {
         font-size: 25px;
       }

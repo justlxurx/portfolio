@@ -1,5 +1,4 @@
 import BeProgrammer from '@/components/BeProgrammer'
-import { AnimationWrapper } from '@/components/AnimationWrapper'
 import Details from '@/components/Details'
 import DevPractice from '@/components/DevPractice'
 import FormDev from '@/components/FormDev'
@@ -10,38 +9,54 @@ import Table from '@/components/Table'
 import Work from '@/components/Work'
 import NewBlock from '@/components/NewBlock'
 import Game from '@/components/Game'
+import { Parallax1 } from '@/components/Parallax1'
+import styles from './page.module.scss'
+import { AnimationWrapper } from '@/components/AnimationWrapper'
 
 export default async function Education() {
   return (
     <>
       <Navbar />
       <PageWrapper>
+        {/* <nav>
+          <Sidebar />
+        </nav> */}
         <main>
-          <AnimationWrapper custom={4}>
-            <div className="container">
-              <DevPractice />
-            </div>
-          </AnimationWrapper>
-          <Work />
-          {/* <ComponentWrapper>
-            <EightBlock />
-          </ComponentWrapper> */}
-          <NewBlock />
-          <div className="container">
-            <BeProgrammer />
+          {/* <UseComponent> */}
+          {/* <div className={styles.snap_box}> */}
+          <div className={styles.snap_item}>
+            <AnimationWrapper custom={5}>
+              <div className="container">
+                <DevPractice />
+              </div>
+            </AnimationWrapper>
           </div>
-          <Details />
+          <div className={styles.snap_item}>
+            <Work />
+          </div>
+
+          <div className={styles.snap_item}>
+            <NewBlock />
+          </div>
+          <div className={styles.snap_item}>
+            <div className="container">
+              <BeProgrammer />
+            </div>
+          </div>
+          <div className={styles.snap_item}>
+            <Details />
+          </div>
+          {/* </div> */}
+          {/* </UseComponent> */}
           <div className="container">
-            <AnimationWrapper custom={4}>
-              <Table />
-            </AnimationWrapper>
-            <AnimationWrapper custom={4}>
-              <FormDev />
-            </AnimationWrapper>
+            <Table />
+            <FormDev />
             <Game />
           </div>
         </main>
-        <DevPracticeFooter />
+        <Parallax1>
+          <DevPracticeFooter />
+        </Parallax1>
       </PageWrapper>
     </>
   )

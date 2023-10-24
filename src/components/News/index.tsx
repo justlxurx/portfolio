@@ -81,7 +81,7 @@ const News: React.FC<Props> = ({ data }) => {
 
   return (
     <section className={'container'}>
-      <AnimationWrapper custom={5}>
+      <AnimationWrapper custom={3}>
         <h2 className={styles.header}>Медиа-хроники</h2>
       </AnimationWrapper>
       <ul className={styles.publications}>
@@ -100,7 +100,7 @@ const News: React.FC<Props> = ({ data }) => {
           ) => (
             <li className={styles.publications__item} key={nanoid()}>
               <div className={styles.publication}>
-                <AnimationWrapper custom={6}>
+                <AnimationWrapper custom={4}>
                   <div className={styles.publication__info}>
                     <div className={styles.publication__info_left}>
                       <h4 className={styles.publication__subheader}>
