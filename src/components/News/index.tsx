@@ -129,7 +129,7 @@ const News: React.FC<Props> = ({ data }) => {
                 <div
                   className={styles.publication__cover}
                   style={{
-                    backgroundImage: `url(${cover})`,
+                    backgroundImage: `url(${cover}) `,
                   }}
                 >
                   <div className={styles.publication__cover_inner}>
