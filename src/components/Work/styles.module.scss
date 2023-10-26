@@ -15,8 +15,7 @@
   border-top: 1px solid black;
 
   &_heading {
-    // height: 123px;
-    height: 10vh;
+    height: 123px;
 
     h1 {
       border-bottom: 1px solid black;
@@ -39,8 +38,8 @@
   &_main {
     display: grid;
     grid-template-rows: 40% 47% 13%;
-    // height: 888px;
-    height: 90vh;
+    height: 888px;
+    //height: 90vh;
     border: 1px solid black;
     border-bottom: none;
 

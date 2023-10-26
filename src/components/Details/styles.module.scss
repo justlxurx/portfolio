@@ -54,7 +54,7 @@
     display: flex;
     max-width: 1588px;
     margin: 0 auto;
-    padding: 79px 0px 124px 0px;
+    padding: 79px 40px 124px 40px;
     gap: 50px;
     position: relative;
     transition: 1s left ease;
@@ -215,7 +215,6 @@
     &__main {
       padding: 69px 0px 124px 40px;
       gap: 50px;
-      max-width: 863px;
       &__display {
         font-size: 25px;
       }
@@ -316,7 +315,8 @@
       }
     }
     &__main {
-      padding: 64px 0px 124px 50px;
+      max-width: 863px;
+      padding: 64px 50px 124px 50px;
       gap: 37px;
       &__display {
         font-size: 16px;
@@ -421,7 +421,8 @@
       }
     }
     &__main {
-      padding: 50px 0px 100px 22px;
+      max-width: calc(100% - 32px);
+      padding: 50px 16px 100px 16px;
       gap: 45px;
       &__display {
         font-size: 20px;
@@ -526,7 +527,7 @@
       }
     }
     &__main {
-      padding: 50px 0px 60px 22px;
+      padding: 50px 0px 60px 0px;
       gap: 45px;
       &__display {
         font-size: 18px;

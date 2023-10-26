@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { nanoid } from 'nanoid'
 
 import styles from './styles.module.scss'
-const ROADMAP_STEP = 350
+const ROADMAP_STEP = 300
 
 const Details = () => {
   const [setctionPosition, setSectionPosition] = useState(0)
