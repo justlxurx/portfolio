@@ -3,6 +3,7 @@ import React from 'react'
 export enum ButtonVariant {
   default = 'default',
   white = 'white',
+  inputColor = '#EAEAEA',
   outlined_transparent = 'outlined_transparent',
 }
 

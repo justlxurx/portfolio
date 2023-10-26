@@ -31,8 +31,8 @@
     display: flex;
     align-items: center;
     &_link {
-      color: black;
       text-decoration: underline;
+      cursor: pointer;
     }
     .custom_checkbox {
       width: 24px;
@@ -42,6 +42,11 @@
       border: 1px solid white;
       flex: initial;
     }
+  }
+  .checkbox_error {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
   }
 }
 

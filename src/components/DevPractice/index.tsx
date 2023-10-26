@@ -3,6 +3,9 @@
 import styles from './styles.module.scss'
 import { AnimationWrapper } from '../AnimationWrapper'
 import { BlockWrapper } from '../BlockWrapper'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({ subsets: ['devanagari'], weight: ['700'] })
 
 const DevPractice = () => {
   return (
@@ -10,13 +13,12 @@ const DevPractice = () => {
       <div className={styles.dev_section1}>
         <div className={styles.dev_section1_text}>
           <AnimationWrapper custom={6}>
-            <h1>
+            <h1 className={poppins.className}>
               Dev <br /> Practice
             </h1>
           </AnimationWrapper>
-          <AnimationWrapper custom={7}>
-            <p>идет набор на новый поток_</p>
-          </AnimationWrapper>
+
+          <p>идет набор на новый поток_ </p>
         </div>
         <BlockWrapper custom={8}>
           <div className={styles.new_flow}>
@@ -61,10 +63,12 @@ const DevPractice = () => {
               <strong>
                 <em>qazdev</em>
               </strong>
-            </p>
+            </p>{' '}
+          </BlockWrapper>
+          <BlockWrapper custom={10}>
             <p className={styles.dev_section2_text_2}>
               {'<'}Java Spring Framework{'>'}
-            </p>{' '}
+            </p>
           </BlockWrapper>
           <div className={styles.click}>
             <a href="#form">

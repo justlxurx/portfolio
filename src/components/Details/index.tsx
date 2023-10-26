@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { nanoid } from 'nanoid'
 
 import styles from './styles.module.scss'
-const ROADMAP_STEP = 350
+const ROADMAP_STEP = 300
 
 const Details = () => {
   const [setctionPosition, setSectionPosition] = useState(0)
@@ -77,6 +77,7 @@ const Details = () => {
     },
     {
       title: 'Elasticsearch',
+      marginChange: '36px',
       content: (
         <>
           {'<'}Работа с индексами и документами
@@ -125,6 +126,7 @@ const Details = () => {
     },
     {
       title: 'Spring REST API',
+      marginChange: '36px',
       content: (
         <>
           {'<'}НТТР протокол: GET, POST, PUT, DELETE
@@ -160,6 +162,7 @@ const Details = () => {
     },
     {
       title: 'JUnit Tests',
+      marginChange: '36px',
       content: (
         <>
           {'<'}Концепции и принципы тестирования программного обеспечения
@@ -208,6 +211,7 @@ const Details = () => {
     },
     {
       title: 'Spring Security',
+      marginChange: '36px',
       content: (
         <>
           {'<'}Концепции и принципы работы Spring
@@ -253,9 +257,10 @@ const Details = () => {
           left: setctionPosition + 'px',
         }}
       >
-        {details.map(({ title, content }, index) => (
+        {details.map(({ title, content, marginChange }, index) => (
           <div
             className={styles.intensive_details__main__display}
+            style={{ marginTop: `${marginChange}` }}
             key={nanoid()}
             ref={details.length - 1 === index ? lastSectionRef : undefined}
           >

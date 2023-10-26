@@ -8,7 +8,6 @@ import { AnimationWrapper } from '../AnimationWrapper'
 import { FormattedString } from '@/helpers/FormattedString'
 import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
-
 import styles from './styles.module.scss'
 
 const DevPracticeFooter = () => {
@@ -144,7 +143,7 @@ const DevPracticeFooter = () => {
                   </p>
                 </div>
                 <div>
-                  <p className={styles.hotkeys}>press Shift+F6</p>
+                  <p className={styles.hotkeys}>press Shift+Q</p>
                   <Image
                     className={styles.logo}
                     src={logo}

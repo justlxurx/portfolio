@@ -35,23 +35,13 @@ export default async function Home() {
           <AnimationWrapper custom={4}>
             <About />
           </AnimationWrapper>
-          <AnimationWrapper custom={4}>
-            <Projects />
-          </AnimationWrapper>
-          <AnimationWrapper custom={4}>
-            {Array.isArray(data) && <News data={...data} />}
-          </AnimationWrapper>
-          <AnimationWrapper custom={4}>
-            <Distance />
-          </AnimationWrapper>
-          <AnimationWrapper custom={4}>
-            <FAQ />
-          </AnimationWrapper>
+          <Projects />
+          {Array.isArray(data) && <News data={...data} />}
+          <Distance />
+          <FAQ />
           <Game />
         </main>
-        <AnimationWrapper custom={4}>
-          <MainFooter />
-        </AnimationWrapper>
+        <MainFooter />
       </PageWrapper>
     </>
   )

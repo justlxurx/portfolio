@@ -4,14 +4,14 @@
   background-image: url('/team_member_bg_moon.svg');
   background-repeat: no-repeat;
   background-position: right 180px top;
-  background-size: 600px 448px;
+  background-size: 700px 500px;
   border-radius: 20px;
   background-color: $primary-color;
   padding: 103px 137px;
 }
 
 .header {
-  color: $white-color;
+  color: #eaeaea;
   font-size: 65px;
   font-weight: 700;
   line-height: 65.975px;
@@ -21,7 +21,7 @@
 }
 
 .subheader {
-  color: $white-color;
+  color: #eaeaea;
   font-size: 28px;
   font-weight: 400;
   line-height: 28.42px;
@@ -84,13 +84,13 @@
   font-family: Helvetica;
   font-size: 26.784px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 112.5%;
   margin-top: 91px;
 
   &_link {
-    color: #eaeaea;
     text-decoration: underline;
+    cursor: pointer;
   }
   .custom_checkbox {
     width: 25px;
@@ -100,7 +100,6 @@
     border: 1px solid white;
   }
 }
-
 .submit_button {
   margin-top: 30px;
   text-transform: uppercase;
@@ -110,6 +109,10 @@
   letter-spacing: -1.043px;
   height: 70px;
   padding: 26px 109px;
+  &:hover {
+    background: #2313db;
+    color: #eaeaea;
+  }
 }
 
 @media (max-width: 1100px) {

@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { YandexMetrica } from '@/components/YandexMetrica'
 
 import '@/styles/global.scss'
 
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <YandexMetrica>{children}</YandexMetrica>
+      </body>
     </html>
   )
 }

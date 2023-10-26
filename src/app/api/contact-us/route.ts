@@ -8,6 +8,7 @@ import { contactUsFormSchema } from '@/schemas/contactUs'
 import { sendMail } from '../mailer'
 
 export async function POST(request: Request) {
+  debugger
   try {
     try {
       const res = await request.json()

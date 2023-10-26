@@ -74,9 +74,6 @@
   grid-template-columns: 15% auto 10%;
 
   gap: 2%;
-  .person_name {
-    // justify-self: start;
-  }
 
   h5 {
     margin-top: 4%;
@@ -178,7 +175,7 @@
     padding: 28px;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.8px;
+    letter-spacing: 0%;
   }
 }
 

@@ -149,7 +149,7 @@ const JoinUsFooter = () => {
                   </p>
                 </div>
                 <div>
-                  <p className={styles.hotkeys}>press Shift+F6</p>
+                  <p className={styles.hotkeys}>press Shift+Q</p>
                   <Image
                     className={styles.logo}
                     src={logo}
