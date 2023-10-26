@@ -203,9 +203,7 @@ const Career = () => {
           </div>
 
           <div className={styles.second_row}>
-            <div>
-              <AnimationWrapper custom={7}>КАРЬЕРА В IT</AnimationWrapper>
-            </div>
+            <AnimationWrapper custom={7}>КАРЬЕРА В IT</AnimationWrapper>
           </div>
 
           <div className={styles.third_row}>

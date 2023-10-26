@@ -118,6 +118,13 @@
   font-size: 205px;
   text-align: center;
   align-self: center;
+  height: 100%;
+  div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .third_row {
   display: grid;

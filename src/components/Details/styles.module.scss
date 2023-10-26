@@ -12,12 +12,15 @@
     line-height: 100%;
     letter-spacing: -0.16px;
     text-transform: uppercase;
-    padding: 40px 155px;
+    // padding: 40px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // max-width: 1588px;
+    // margin: 0 auto;
+    padding: 40px 8%;
 
     .buttons_for_scrolling {
       display: flex;
@@ -199,7 +202,7 @@
   .intensive_details {
     &__heading {
       font-size: 30px;
-      padding: 2% 9%;
+      padding: 40px;
 
       .button_to_left {
         background-size: 20%;
@@ -213,7 +216,9 @@
       }
     }
     &__main {
-      padding: 69px 0px 124px 40px;
+      max-width: 1588px;
+      margin: 0 auto;
+      padding: 69px 40px 124px 40px;
       gap: 50px;
       &__display {
         font-size: 25px;
@@ -301,7 +306,8 @@
   .intensive_details {
     &__heading {
       font-size: 23px;
-      padding: 25px 80px;
+      padding: 25px 50px;
+      max-width: 863px;
 
       .button_to_left {
         background-size: 20%;
@@ -407,6 +413,7 @@
     &__heading {
       font-size: 28px;
       padding: 20px 16px;
+      max-width: calc(100% - 32px);
 
       .button_to_left {
         background-size: 20%;

@@ -68,14 +68,16 @@ const Blocks = () => {
         </div>
 
         <div className={styles.learn_program__main}>
-          <h2>8 блоков обучения</h2>
-          <p>
-            Интенсив захватывает основы языка <br /> программирования Java,
-            работу <br />
-            с различными инструментами <br />
-            и библиотеками, а также непосредственно <br /> разработку
-            веб-приложений
-          </p>
+          <div>
+            <h2>8 блоков обучения</h2>
+            <p>
+              Интенсив захватывает основы языка <br /> программирования Java,
+              работу <br />
+              с различными инструментами <br />
+              и библиотеками, а также непосредственно <br /> разработку
+              веб-приложений
+            </p>
+          </div>
           <div className={styles.bottom_section}>
             <div className={styles.bottom_section__figure}></div>
             <div className={styles.bottom_section__scrolling}>
