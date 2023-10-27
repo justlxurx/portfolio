@@ -5,13 +5,16 @@ import { useFormik } from 'formik'
 // @ts-ignore
 import InputMask from 'react-input-mask'
 import * as Yup from 'yup'
-
+import Popup from '../Popup'
 import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
 import Input from '../ui/Input'
 import { InputVariant } from '../ui/Input/interface'
 import { AnimationWrapper } from '../AnimationWrapper'
 import styles from './styles.module.scss'
+import Image from 'next/image'
+import smile from 'public/smile2.svg'
+import close from 'public/close2.svg'
 
 const validationSchema = Yup.object({
   username: Yup.string()
@@ -30,7 +33,10 @@ interface ITeamMemberProps {
 
 const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
   const [selectedFileName, setSelectedFileName] = useState('')
-
+  const [isPopupVisible, setIsPopupVisible] = useState(false)
+  const onClose = () => {
+    setIsPopupVisible(false)
+  }
   const formik = useFormik({
     validationSchema,
     initialValues: {
@@ -57,8 +63,8 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
         })
           .then((response) => {
             //TODO: Переделать на popup
-            alert('Данные успешно отправлены')
-
+            //alert('Данные успешно отправлены')
+            setIsPopupVisible(true)
             resetForm()
             setSelectedFileName('')
           })
@@ -182,6 +188,13 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
   }
   return (
     <form onSubmit={formik.handleSubmit}>
+      {isPopupVisible && (
+        <Popup src={smile} color={'black'} backgroundColor={'#eaeaea'}>
+          <Button onClick={onClose}>
+            <Image src={close} alt="close" />
+          </Button>
+        </Popup>
+      )}
       <section className={styles.container}>
         <AnimationWrapper custom={2}>
           <h2 className={styles.header}>

@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image'
 import classNames from 'classnames'
 import arrowIcon from 'public/arrow_icon.svg'
 import firstSlide from 'public/case.png'
+import secondSlide from 'public/case2.png'
 import imgSlide from 'public/car_line.svg'
 import Slider from 'react-slick'
 
@@ -30,8 +31,8 @@ const Projects = () => {
     },
     {
       title: 'Кортим команда  blablacar',
-      src: firstSlide,
-      src2: imgSlide,
+      src: secondSlide,
+      src2: '',
     },
   ]
 
