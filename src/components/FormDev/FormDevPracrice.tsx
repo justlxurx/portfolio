@@ -4,14 +4,16 @@ import { useFormik } from 'formik'
 // @ts-ignore
 import InputMask from 'react-input-mask'
 import * as Yup from 'yup'
-
+import { useState } from 'react'
 import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
 import Input from '../ui/Input'
 import { InputVariant } from '../ui/Input/interface'
-
+import Popup from '../Popup'
 import { IFormDev } from './interface'
-
+import Image from 'next/image'
+import smile from 'public/smile2.svg'
+import close from 'public/close2.svg'
 import styles from './styles.module.scss'
 
 const validationSchema = Yup.object({
@@ -25,6 +27,10 @@ const validationSchema = Yup.object({
 })
 
 const FormDev = ({ className, host }: IFormDev) => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false)
+  const onClose = () => {
+    setIsPopupVisible(false)
+  }
   const formik = useFormik({
     validationSchema,
     initialValues: {
@@ -48,8 +54,8 @@ const FormDev = ({ className, host }: IFormDev) => {
       })
         .then((response) => {
           //TODO: Переделать на popup
-          alert('Данные успешно отправлены')
-
+          //alert('Данные успешно отправлены')
+          setIsPopupVisible(true)
           resetForm()
         })
         .catch((error) => {
@@ -109,6 +115,13 @@ const FormDev = ({ className, host }: IFormDev) => {
   }
   return (
     <form onSubmit={formik.handleSubmit}>
+      {isPopupVisible && (
+        <Popup src={smile} color={'black'} backgroundColor={'#eaeaea'}>
+          <Button onClick={onClose}>
+            <Image src={close} alt="close" />
+          </Button>
+        </Popup>
+      )}
       <div className={styles.inputs_wrapper}>
         <Input {...userNameInputProps} />
         <InputMask

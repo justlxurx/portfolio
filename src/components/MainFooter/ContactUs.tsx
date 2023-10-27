@@ -2,14 +2,17 @@
 import classNames from 'classnames'
 import { useFormik } from 'formik'
 // @ts-ignore
-
+import Image from 'next/image'
 import InputMask from 'react-input-mask'
 import * as Yup from 'yup'
 import Input from '@/components//ui/Input'
 import Button from '@/components/ui/Button'
 import { IContactUs } from './interface'
-
+import Popup from '../Popup'
+import { useState } from 'react'
 import styles from './ContactUs.module.scss'
+import close from 'public/close.svg'
+import smile from 'public/smile.png'
 const validationSchema = Yup.object({
   username: Yup.string()
     .required('Заполните поле "Имя"')
@@ -26,10 +29,10 @@ const validationSchema = Yup.object({
 })
 
 const ContactUs = ({ className, host }: IContactUs) => {
-  // const [isPopupVisible, setIsPopupVisible] = useState(false)
-  // const onClose = () => {
-  //   setIsPopupVisible(false)
-  // }
+  const [isPopupVisible, setIsPopupVisible] = useState(false)
+  const onClose = () => {
+    setIsPopupVisible(false)
+  }
   const formik = useFormik({
     validationSchema,
     initialValues: {
@@ -47,8 +50,8 @@ const ContactUs = ({ className, host }: IContactUs) => {
       })
         .then((response) => {
           //TODO: Переделать на popup
-          alert('Данные успешно отправлены')
-          // setIsPopupVisible(true)
+          // alert('Данные успешно отправлены')
+          setIsPopupVisible(true)
 
           resetForm()
         })
@@ -109,12 +112,13 @@ const ContactUs = ({ className, host }: IContactUs) => {
       className={classNames(styles.form, className)}
       onSubmit={formik.handleSubmit}
     >
-      {/* {isPopupVisible && (
-        <Popup>
-          <p>Данные успешно отправлены</p>
-          <Button onClick={onClose}>Ok</Button>
+      {isPopupVisible && (
+        <Popup src={smile} color={'#eaeaea'} backgroundColor={'black'}>
+          <Button onClick={onClose}>
+            <Image src={close} alt="close" />
+          </Button>
         </Popup>
-      )} */}
+      )}
 
       <div className={styles.form__inputs}>
         <Input {...usernameInputProps} />
