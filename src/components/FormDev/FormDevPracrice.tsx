@@ -16,6 +16,8 @@ import smile from 'public/smile2.svg'
 import close from 'public/close2.svg'
 import styles from './styles.module.scss'
 
+//import InputMaskCorrect from '../InputMaskCorrect'
+
 const validationSchema = Yup.object({
   username: Yup.string()
     .matches(/^[A-Za-zА-Яа-яЁё]+$/, 'Имя должно содержать только буквы')

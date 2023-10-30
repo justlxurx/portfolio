@@ -2,10 +2,11 @@
 import classNames from 'classnames'
 import { useFormik } from 'formik'
 // @ts-ignore
-import Image from 'next/image'
 import InputMask from 'react-input-mask'
+import Image from 'next/image'
+
 import * as Yup from 'yup'
-import Input from '@/components//ui/Input'
+import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import { IContactUs } from './interface'
 import Popup from '../Popup'
@@ -122,9 +123,6 @@ const ContactUs = ({ className, host }: IContactUs) => {
 
       <div className={styles.form__inputs}>
         <Input {...usernameInputProps} />
-        {/* {formik.touched.username && formik.errors.username ? (
-          <div>{formik.errors.username}</div>
-        ) : null} */}
         <InputMask
           mask={'+9 (999) 999-99-99'}
           maskChar={' '}
