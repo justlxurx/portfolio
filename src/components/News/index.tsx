@@ -19,7 +19,7 @@ let resizeTimeout: NodeJS.Timeout | undefined
 
 const News: React.FC<Props> = ({ data }) => {
   // const isMobile = useMedia('(max-width: 768px)')
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  const [isMobile, setIsMobile] = useState(globalThis.innerWidth < 768)
 
   // useEffect(() => {
   //   const handleWindowResize = (e: any) => {
