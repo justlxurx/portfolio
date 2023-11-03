@@ -54,7 +54,7 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
       }
 
       const addTeamMember = async (data: any) => {
-        fetch(`http://${host}/api/team-member`, {
+        fetch(`//${host}/api/team-member`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
         const formData = new FormData()
         formData.set('file', values.file)
 
-        await fetch(`http://${host}/api/file-upload`, {
+        await fetch(`//${host}/api/file-upload`, {
           method: 'POST',
           body: formData,
         })

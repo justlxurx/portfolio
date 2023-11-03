@@ -42,7 +42,7 @@ const ContactUs = ({ className, host }: IContactUs) => {
       acceptedTerms: false,
     },
     onSubmit: async (values, { resetForm }) => {
-      await fetch(`http://${host}/api/contact-us`, {
+      await fetch(`//${host}/api/contact-us`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
