@@ -16,7 +16,7 @@ import Game from '@/components/Game'
 import { AnimationWrapper } from '@/components/AnimationWrapper'
 
 async function getPosts(host: string) {
-  const response = await fetch(`http://${host}/api/news`)
+  const response = await fetch(`//${host}/api/news`)
 
   const data = await response.json()
 
