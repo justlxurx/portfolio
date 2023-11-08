@@ -47,7 +47,7 @@ const FormDev = ({ className, host }: IFormDev) => {
         phone: values.phone,
       }
 
-      await fetch(`http://${host}/api/education`, {
+      await fetch(`//${host}/api/education`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
