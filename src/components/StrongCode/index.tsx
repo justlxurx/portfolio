@@ -6,7 +6,6 @@ import fitness2 from 'public/fitness2.png'
 import fitness3 from 'public/fitness3.png'
 import fitness4 from 'public/fitness4.png'
 import BigSlider from './BigSlider'
-import { AnimationWrapper } from '../AnimationWrapper'
 // import Button from '@/components/ui/Button'
 import arrow_icon from 'public/arrow_icon.svg'
 import styles from './styles.module.scss'
@@ -44,25 +43,21 @@ const StrongCode = () => {
   return (
     <section className={styles.strong_coding}>
       <div className={styles.strong_coding_main}>
-        <AnimationWrapper custom={1}>
-          <h2>
-            Сильный <br />
-            код
-          </h2>
-        </AnimationWrapper>
+        <h2>
+          Сильный <br />
+          код
+        </h2>
 
         <div className={styles.text1}>
           <p></p>
-          <AnimationWrapper custom={2}>
-            <p className={styles.text}>
-              Компания{' '}
-              <strong>
-                <em>qazdev</em>
-              </strong>{' '}
-              основала первый <br /> в Караганде тренажерный зал <br />
-              для IT-специалистов с <br /> профессиональным оборудованием
-            </p>
-          </AnimationWrapper>
+          <p className={styles.text}>
+            Компания{' '}
+            <strong>
+              <em>qazdev</em>
+            </strong>{' '}
+            основала первый <br /> в Караганде тренажерный зал <br />
+            для IT-специалистов с <br /> профессиональным оборудованием
+          </p>
         </div>
 
         <div className={styles.hr_line}>
@@ -84,15 +79,13 @@ const StrongCode = () => {
               {'<'}нажмите, чтобы запустить bug flyer{'>'}
             </p>
           </div>
-          <AnimationWrapper custom={3}>
-            <p className={styles.text}>
-              Сотрудники{' '}
-              <strong>
-                <em>qazdev</em>
-              </strong>{' '}
-              <br /> занимаются в тренажерном <br /> зале ALPHA бесплатно
-            </p>
-          </AnimationWrapper>
+          <p className={styles.text}>
+            Сотрудники{' '}
+            <strong>
+              <em>qazdev</em>
+            </strong>{' '}
+            <br /> занимаются в тренажерном <br /> зале ALPHA бесплатно
+          </p>
         </div>
       </div>
       <div className={styles.slider1}>

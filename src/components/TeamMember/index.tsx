@@ -10,7 +10,6 @@ import Button from '../ui/Button'
 import { ButtonVariant } from '../ui/Button/interface'
 import Input from '../ui/Input'
 import { InputVariant } from '../ui/Input/interface'
-import { AnimationWrapper } from '../AnimationWrapper'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import smile from 'public/smile2.svg'
@@ -196,17 +195,12 @@ const TeamMember: React.FC<ITeamMemberProps> = ({ host }) => {
         </Popup>
       )}
       <section className={styles.container}>
-        <AnimationWrapper custom={1}>
-          <h2 className={styles.header}>
-            Хочу <br /> в команду
-          </h2>
-        </AnimationWrapper>
-        <AnimationWrapper custom={2}>
-          <h3 className={styles.subheader}>
-            Превратите свою страсть к IT <br /> в карьеру - присоединяйтесь к
-            нам!
-          </h3>
-        </AnimationWrapper>
+        <h2 className={styles.header}>
+          Хочу <br /> в команду
+        </h2>
+        <h3 className={styles.subheader}>
+          Превратите свою страсть к IT <br /> в карьеру - присоединяйтесь к нам!
+        </h3>
         <div className={styles.inputs_wrapper}>
           <Input {...userNameInputProps} />
           <InputMask

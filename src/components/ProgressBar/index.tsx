@@ -16,7 +16,7 @@ const StartAnimation = () => {
   //   setLoading(true)
   //   setDuration(calculateDuration(value))
   // }, [])
-  const duration = 4
+  const duration = 3
   const progressTextRef = useRef(null)
   const progressColorRef1 = useRef(null)
   const progressColorRef2 = useRef(null)

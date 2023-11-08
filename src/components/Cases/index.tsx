@@ -55,12 +55,10 @@ const Socials = () => {
 const Cases = () => {
   return (
     <section>
-      <AnimationWrapper custom={2}>
-        <h4 className={styles.short_info__header}>
-          КЕЙСЫ,
-          <br /> НА КОТОРЫХ РАСТЕШЬ
-        </h4>
-      </AnimationWrapper>
+      <h4 className={styles.short_info__header}>
+        КЕЙСЫ,
+        <br /> НА КОТОРЫХ РАСТЕШЬ
+      </h4>
       <section className={styles.grow_cases}>
         <section className={styles.section1}>
           <article className={styles.short_article}>

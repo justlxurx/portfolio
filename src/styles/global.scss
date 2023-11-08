@@ -92,4 +92,8 @@ img {
     max-width: calc(100% - 32px);
     width: 100%;
   }
+  html,
+  body {
+    scroll-snap-type: none;
+  }
 }

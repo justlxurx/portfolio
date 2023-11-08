@@ -13,7 +13,6 @@ import learning_eng from 'public/learning_eng.png'
 import learning_eng2 from 'public/learning_eng2.png'
 import learning_eng3 from 'public/learning_eng3.png'
 import { FormattedString } from '@/helpers/FormattedString'
-import { AnimationWrapper } from '../AnimationWrapper'
 import React from 'react'
 
 import WideSlider from './WideSlider'
@@ -155,19 +154,15 @@ const Gallery = () => {
 
   return (
     <section className={styles.gallery}>
-      <AnimationWrapper custom={1}>
-        <h2 className={styles.header}>
-          <FormattedString sentence="qazdev - не просто код" />
-        </h2>
-      </AnimationWrapper>
+      <h2 className={styles.header}>
+        <FormattedString sentence="qazdev - не просто код" />
+      </h2>
       <header className={styles.additional}>
-        <AnimationWrapper custom={2}>
-          <p className={styles.additional__info}>
-            Наша команда постоянно развивается и активно участвует в
-            профессиональных мероприятиях, образовательных программах и языковых
-            курсах
-          </p>
-        </AnimationWrapper>
+        <p className={styles.additional__info}>
+          Наша команда постоянно развивается и активно участвует в
+          профессиональных мероприятиях, образовательных программах и языковых
+          курсах
+        </p>
 
         <Image
           className={styles.additional__buttons}
