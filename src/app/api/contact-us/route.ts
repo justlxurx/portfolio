@@ -40,6 +40,7 @@ export async function POST(request: Request) {
             </div>`,
         })
       } catch (error) {
+        debugger
         return NextResponse.json(
           {
             error: "Произошла ошибка в '/api/contact-us': " + error,
@@ -69,6 +70,7 @@ export async function POST(request: Request) {
       )
     }
   } catch (error) {
+    debugger
     return NextResponse.json(
       {
         error: "Произошла ошибка в '/api/contact-us': " + error,

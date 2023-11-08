@@ -10,6 +10,26 @@ export const BlockWrapper = ({
   children: ReactNode
 }) => {
   const scrollRef = useRef(null)
+  const [y, setY] = useState(0) // Используем состояние для значения y
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY
+      const deltaY = currentScrollY - lastScrollY
+
+      // Увеличиваем или уменьшаем значение y в зависимости от направления скролла
+      setY((prevY) => prevY - deltaY)
+      lastScrollY = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const [isScrollingUp, setIsScrollingUp] = useState(true)
 
@@ -30,7 +50,7 @@ export const BlockWrapper = ({
   }, [])
   const textAnimation = {
     hidden: {
-      y: isScrollingUp ? -100 : 0,
+      y: isScrollingUp ? 100 : 0,
       opacity: isScrollingUp ? 0 : 1,
     },
     visible: (custom: number) => ({
@@ -46,6 +66,9 @@ export const BlockWrapper = ({
       custom={custom}
       initial="hidden"
       whileInView="visible"
+      style={{
+        overflow: 'hidden', // Добавляем стиль overflow: hidden
+      }}
     >
       {children}
     </motion.div>

@@ -16,22 +16,22 @@ export default async function Education() {
 
       <PageWrapper>
         <main>
-          <AnimationWrapper custom={5}>
+          <AnimationWrapper custom={1}>
             <BlaBlaCar />
           </AnimationWrapper>
-          <AnimationWrapper custom={5}>
+          <AnimationWrapper custom={1}>
             <OnlineDoc />
           </AnimationWrapper>
-          <AnimationWrapper custom={5}>
+          <AnimationWrapper custom={1}>
             <Fintech />
           </AnimationWrapper>
-          <AnimationWrapper custom={5}>
+          <AnimationWrapper custom={1}>
             <CRM />
           </AnimationWrapper>
-          <AnimationWrapper custom={5}>
+          <AnimationWrapper custom={1}>
             <Booking />
           </AnimationWrapper>
-          <AnimationWrapper custom={5}>
+          <AnimationWrapper custom={1}>
             <Monitoring />
           </AnimationWrapper>
           <Game />

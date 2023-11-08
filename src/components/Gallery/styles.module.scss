@@ -31,6 +31,7 @@
 }
 
 .blocks {
+  scroll-snap-align: start;
   display: flex;
   flex-wrap: nowrap;
   height: 420px;

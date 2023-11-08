@@ -49,11 +49,6 @@ const Pages = () => {
     },
   ]
 
-  //FIXME: remove
-  const onClickPageHandler = () => {
-    alert('Страница в разработке')
-  }
-
   return (
     <div className={styles.cards}>
       {data?.map(

@@ -35,7 +35,7 @@ const Details = () => {
         const refRect = lastSectionRef.current.getBoundingClientRect()
         const windowWidth = window.innerWidth
 
-        isVisible = refRect.right < windowWidth
+        isVisible = refRect.right + 40 < windowWidth
       }
 
       return isVisible

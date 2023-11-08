@@ -1,6 +1,7 @@
 @import '/src/styles/variables.scss';
 
 .grow_cases {
+  scroll-snap-align: start;
   padding: 80px 98px 140px 98px; //146px
   gap: 65px 135px;
   display: grid;
@@ -32,9 +33,10 @@
 .section2 {
   grid-area: B;
   background-color: #eaeaea;
-  width: auto;
+  width: 80%;
   height: 100%;
   margin-right: 65px;
+  border: 0.533px solid var(--black, #000);
 
   img {
     justify-content: flex-start;

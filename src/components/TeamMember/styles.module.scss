@@ -114,7 +114,11 @@
     color: #eaeaea;
   }
 }
-
+@media (max-width: 1700px) {
+  .container {
+    padding: 63px 117px;
+  }
+}
 @media (max-width: 1100px) {
   .container {
     padding: 63px 97px;

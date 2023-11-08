@@ -161,10 +161,18 @@
   }
 }
 
+@media (max-width: 1750px) {
+  .card {
+    &__header {
+      font-size: 77px;
+    }
+  }
+}
+
 @media (max-width: 1550px) {
   .card {
     &__header {
-      font-size: 76px;
+      font-size: 61px;
       line-height: 113%;
     }
   }

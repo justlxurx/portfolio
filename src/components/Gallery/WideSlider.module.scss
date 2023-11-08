@@ -107,6 +107,24 @@
   }
 }
 
+@media (max-width: 1800px) {
+  .arrow {
+    height: 47px;
+    width: 47px;
+
+    &::after {
+      height: 47px;
+      width: 47px;
+    }
+
+    &__left {
+      right: 80px;
+    }
+    // &::after {
+    //   background-size: 7px;
+    // }
+  }
+}
 @media (max-width: 1550px) {
   .slider {
     max-width: 65%;

@@ -13,7 +13,6 @@ import learning_eng from 'public/learning_eng.png'
 import learning_eng2 from 'public/learning_eng2.png'
 import learning_eng3 from 'public/learning_eng3.png'
 import { FormattedString } from '@/helpers/FormattedString'
-import { AnimationWrapper } from '../AnimationWrapper'
 import React from 'react'
 
 import WideSlider from './WideSlider'
@@ -155,78 +154,66 @@ const Gallery = () => {
 
   return (
     <section className={styles.gallery}>
-      <AnimationWrapper custom={5}>
-        <h2 className={styles.header}>
-          <FormattedString sentence="qazdev - не просто код" />
-        </h2>
-      </AnimationWrapper>
-      <AnimationWrapper custom={4}>
-        <header className={styles.additional}>
-          <p className={styles.additional__info}>
-            Наша команда постоянно развивается и активно участвует в
-            профессиональных мероприятиях, образовательных программах и языковых
-            курсах
-          </p>
+      <h2 className={styles.header}>
+        <FormattedString sentence="qazdev - не просто код" />
+      </h2>
+      <header className={styles.additional}>
+        <p className={styles.additional__info}>
+          Наша команда постоянно развивается и активно участвует в
+          профессиональных мероприятиях, образовательных программах и языковых
+          курсах
+        </p>
 
-          <Image
-            className={styles.additional__buttons}
-            src={buttons}
-            alt="Shift + F6"
-          />
-        </header>
-      </AnimationWrapper>
-      <AnimationWrapper custom={5}>
-        <div className={styles.blocks}>
-          <div className={classNames(styles.blocks__first, styles.first)}>
-            <AnimationWrapper custom={7}>
-              <span className={styles.first__header}>
-                Участвуем и выступаем <br /> на митапах
-              </span>
-            </AnimationWrapper>
-            <div className={styles.first__icon}>
-              <Image
-                src={firstBlockMainIcon}
-                alt="First block main icon"
-                fill={true}
-              />
-            </div>
-            <AnimationWrapper custom={6}>
-              <span className={styles.first__footer}>
-                Посещаем профильные <br /> конференции
-              </span>
-            </AnimationWrapper>
-          </div>
-
-          <div className={classNames(styles.blocks__second, styles.second)}>
+        <Image
+          className={styles.additional__buttons}
+          src={buttons}
+          alt="Shift + F6"
+        />
+      </header>
+      <div className={styles.blocks}>
+        <div className={classNames(styles.blocks__first, styles.first)}>
+          <span className={styles.first__header}>
+            Участвуем и выступаем <br /> на митапах
+          </span>
+          <div className={styles.first__icon}>
             <Image
-              className={styles.second__top}
-              src={firstBlockSymbolsIcon}
-              alt="1cm"
+              src={firstBlockMainIcon}
+              alt="First block main icon"
+              fill={true}
             />
-            <span className={styles.second__bottom}>event направление</span>
           </div>
-
-          <div className={classNames(styles.blocks__third, styles.third)}>
-            <WideSlider items={specializedEvents} />
-          </div>
-          <div className={classNames(styles.blocks__fourth, styles.fourth)}>
-            <div className={styles.fourth_img}></div>
-
-            <p>
-              Пользуемся <br />и оформляем <br /> tech-библиотеку
-            </p>
-          </div>
+          <span className={styles.first__footer}>
+            Посещаем профильные <br /> конференции
+          </span>
         </div>
-      </AnimationWrapper>
-      <AnimationWrapper custom={6}>
-        <div className={classNames(styles.blocks, styles.secondary_blocks)}>
-          <div className={classNames(styles.blocks__fives, styles.fives)}></div>
-          <div className={classNames(styles.blocks__sixth, styles.sixth)}></div>
-          <div className={classNames(styles.blocks__seventh, styles.seventh)}>
-            <WideSlider items={learnEnglish} />
-          </div>
+
+        <div className={classNames(styles.blocks__second, styles.second)}>
+          <Image
+            className={styles.second__top}
+            src={firstBlockSymbolsIcon}
+            alt="1cm"
+          />
+          <span className={styles.second__bottom}>event направление</span>
         </div>
-      </AnimationWrapper>
+
+        <div className={classNames(styles.blocks__third, styles.third)}>
+          <WideSlider items={specializedEvents} />
+        </div>
+        <div className={classNames(styles.blocks__fourth, styles.fourth)}>
+          <div className={styles.fourth_img}></div>
+
+          <p>
+            Пользуемся <br />и оформляем <br /> tech-библиотеку
+          </p>
+        </div>
+      </div>
+      <div className={classNames(styles.blocks, styles.secondary_blocks)}>
+        <div className={classNames(styles.blocks__fives, styles.fives)}></div>
+        <div className={classNames(styles.blocks__sixth, styles.sixth)}></div>
+        <div className={classNames(styles.blocks__seventh, styles.seventh)}>
+          <WideSlider items={learnEnglish} />
+        </div>
+      </div>
     </section>
   )
 }

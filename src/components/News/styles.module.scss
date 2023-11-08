@@ -162,7 +162,13 @@
     z-index: 3;
   }
 }
-
+@media (max-width: 1700px) {
+  .publication {
+    &__header {
+      font-size: 54px;
+    }
+  }
+}
 @media (max-width: 1400px) {
   .publication {
     &__header {

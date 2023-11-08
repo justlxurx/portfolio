@@ -7,7 +7,6 @@ import HamburgerButton from '../ui/HamburgerButton'
 import NavButton from '../ui/NavButton/index'
 import { INavButton } from '../ui/NavButton/interface'
 import styles from './styles.module.scss'
-import { AnimationWrapper } from '../AnimationWrapper'
 
 const Navbar = () => {
   const [isShowBurgerMenu, setIsShowBurgerMenu] = useState(false)
@@ -36,44 +35,42 @@ const Navbar = () => {
   ]
 
   return (
-    <AnimationWrapper custom={3}>
-      <div>
-        <header className={styles.header}>
-          <div className={styles.header__text}>
-            <a href="/">
-              <div className={styles.qazdev_logo}></div>
-            </a>
-            <div className={styles.info}>
-              <span className={styles.info__label}>Цифровые решения</span>
-              <span className={styles.info__tag}>#пишемкод</span>
-            </div>
+    <div>
+      <header className={styles.header}>
+        <div className={styles.header__text}>
+          <a href="/">
+            <div className={styles.qazdev_logo}></div>
+          </a>
+          <div className={styles.info}>
+            <span className={styles.info__label}>Цифровые решения</span>
+            <span className={styles.info__tag}>#пишемкод</span>
           </div>
-          <nav className={styles.navigation}>
-            <ul className={styles.navigation__buttons_wrapper}>
-              {buttons.map((button: INavButton) => (
-                <li key={nanoid()}>
-                  <NavButton {...button} />
-                </li>
-              ))}
-            </ul>
-            <div className={styles.feedback_button}>
-              <FeedbackButton />
-            </div>
-            <div className={styles.hamburger_button}>
-              <HamburgerButton
-                onClick={() =>
-                  changeBurgerMenuVisibilityHandler(!isShowBurgerMenu)
-                }
-              />
-            </div>
-          </nav>
-          {/* {isShowBurgerMenu && <Burger />} */}
-          {isShowBurgerMenu && (
-            <Burger closeBurgerMenu={() => setIsShowBurgerMenu(false)} />
-          )}
-        </header>
-      </div>
-    </AnimationWrapper>
+        </div>
+        <nav className={styles.navigation}>
+          <ul className={styles.navigation__buttons_wrapper}>
+            {buttons.map((button: INavButton) => (
+              <li key={nanoid()}>
+                <NavButton {...button} />
+              </li>
+            ))}
+          </ul>
+          <div className={styles.feedback_button}>
+            <FeedbackButton />
+          </div>
+          <div className={styles.hamburger_button}>
+            <HamburgerButton
+              onClick={() =>
+                changeBurgerMenuVisibilityHandler(!isShowBurgerMenu)
+              }
+            />
+          </div>
+        </nav>
+        {/* {isShowBurgerMenu && <Burger />} */}
+        {isShowBurgerMenu && (
+          <Burger closeBurgerMenu={() => setIsShowBurgerMenu(false)} />
+        )}
+      </header>
+    </div>
   )
 }
 
