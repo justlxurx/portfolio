@@ -1,5 +1,8 @@
 @import '/src/styles/variables.scss';
-
+.main_elements {
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
 .main {
   display: flex;
   flex-direction: column;

@@ -13,12 +13,16 @@
 
 .work_environment {
   border-top: 1px solid black;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+  //height: 100vh;
 
   &_heading {
     height: 123px;
+    //height: 10vh;
 
     h1 {
-      border-bottom: 1px solid black;
+      // border-bottom: 1px solid black;
       color: var(--black, #000);
       font-family: Helvetica;
       font-size: 40px;

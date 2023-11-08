@@ -44,7 +44,7 @@ const StrongCode = () => {
   return (
     <section className={styles.strong_coding}>
       <div className={styles.strong_coding_main}>
-        <AnimationWrapper custom={2}>
+        <AnimationWrapper custom={1}>
           <h2>
             Сильный <br />
             код
@@ -53,7 +53,7 @@ const StrongCode = () => {
 
         <div className={styles.text1}>
           <p></p>
-          <AnimationWrapper custom={3}>
+          <AnimationWrapper custom={2}>
             <p className={styles.text}>
               Компания{' '}
               <strong>
@@ -84,7 +84,7 @@ const StrongCode = () => {
               {'<'}нажмите, чтобы запустить bug flyer{'>'}
             </p>
           </div>
-          <AnimationWrapper custom={4}>
+          <AnimationWrapper custom={3}>
             <p className={styles.text}>
               Сотрудники{' '}
               <strong>
@@ -95,13 +95,11 @@ const StrongCode = () => {
           </AnimationWrapper>
         </div>
       </div>
-      <AnimationWrapper custom={5}>
-        <div className={styles.slider1}>
-          <div className={styles.slider1_big}>
-            <BigSlider items={firstEvent} />
-          </div>
+      <div className={styles.slider1}>
+        <div className={styles.slider1_big}>
+          <BigSlider items={firstEvent} />
         </div>
-      </AnimationWrapper>
+      </div>
     </section>
   )
 }

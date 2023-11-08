@@ -10,8 +10,15 @@ html,
 body {
   background-color: $background-color;
   font-family: 'Helvetica', 'Arial', sans-serif;
-}
 
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+div {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
 h1,
 h2,
 h3,
@@ -40,14 +47,38 @@ img {
 }
 
 .container {
-  padding-left: 40px;
-  padding-right: 40px;
-  max-width: 1588px;
+  // padding-left: 40px;
+  //padding-right: 40px;
+  //max-width: 1588px;
+  max-width: 82%;
   margin: 0 auto;
 }
-
+@media (max-width: 1880px) {
+  .container {
+    max-width: 82%;
+  }
+}
+@media (max-width: 1620px) {
+  .container {
+    max-width: 80%;
+  }
+}
+@media (max-width: 1460px) {
+  .container {
+    max-width: 78%;
+  }
+}
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1588px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
 @media (max-width: $desktop-width) {
   .container {
+    margin-left: 0px;
+    margin-right: 0px;
     padding-left: 50px;
     padding-right: 50px;
     max-width: 863px;

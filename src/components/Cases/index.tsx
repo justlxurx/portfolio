@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { nanoid } from 'nanoid'
 import arrow_icon from 'public/arrow_icon.svg'
 import confirmation from 'public/confirmation.svg'
-import cases from 'public/cases.png'
+import cases from 'public/fintech.png'
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 import { AnimationWrapper } from '../AnimationWrapper'
@@ -64,28 +64,26 @@ const Cases = () => {
       <section className={styles.grow_cases}>
         <section className={styles.section1}>
           <article className={styles.short_article}>
-            <AnimationWrapper custom={3}>
-              <div className={styles.person_info}>
-                {/* <Image src={avatar} alt={'Avatar'}  /> */}
-                <div className={styles.avatar1}></div>
+            <div className={styles.person_info}>
+              {/* <Image src={avatar} alt={'Avatar'}  /> */}
+              <div className={styles.avatar1}></div>
 
-                <div className={styles.person_name}>
-                  <h5>Оксана Герасименко</h5>
-                  <p>
-                    Lead IT-recruiter компании
-                    <strong>
-                      {' '}
-                      <em>qazdev</em>
-                    </strong>{' '}
-                  </p>
-                </div>
-                <Image
-                  src={confirmation}
-                  alt="confirmation"
-                  className={styles.confirmation1}
-                />
+              <div className={styles.person_name}>
+                <h5>Оксана Герасименко</h5>
+                <p>
+                  Lead IT-recruiter компании
+                  <strong>
+                    {' '}
+                    <em>qazdev</em>
+                  </strong>{' '}
+                </p>
               </div>
-            </AnimationWrapper>
+              <Image
+                src={confirmation}
+                alt="confirmation"
+                className={styles.confirmation1}
+              />
+            </div>
             <p className={styles.short_article__description}>
               Работая в мировых проектах и участвуя
               <br />в международном комьюнити, <br />
@@ -98,9 +96,7 @@ const Cases = () => {
           {/* {!isMobile && <Socials />} */}
 
           <div className={styles.hidden_social1}>
-            <AnimationWrapper custom={4}>
-              <Socials />
-            </AnimationWrapper>
+            <Socials />
           </div>
         </section>
 
@@ -116,22 +112,22 @@ const Cases = () => {
 
         <section className={styles.section3}>
           <div className={styles.specialists}>
-            <AnimationWrapper custom={6}>
+            <AnimationWrapper custom={3}>
               <p>
                 {'<'}разработчики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={7}>
+            <AnimationWrapper custom={4}>
               <p>
                 {'<'}тестировщики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={7}>
+            <AnimationWrapper custom={5}>
               <p>
                 {'<'}проектные менеджеры{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={8}>
+            <AnimationWrapper custom={6}>
               <p>
                 {'<'}деливери-специалисты{'>'}
               </p>
@@ -145,17 +141,17 @@ const Cases = () => {
               marginBottom: '0',
             }}
           >
-            <AnimationWrapper custom={9}>
+            <AnimationWrapper custom={7}>
               <p>
                 {'<'}бизнес-аналитики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={10}>
+            <AnimationWrapper custom={8}>
               <p>
                 {'<'}девопс-специалисты{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={11}>
+            <AnimationWrapper custom={9}>
               <p>
                 {'<'}hr-менеджеры{'>'}
               </p>

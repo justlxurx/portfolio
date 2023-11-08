@@ -1,22 +1,20 @@
 import { headers } from 'next/headers'
 
-import Career from '@/components/Career'
-import Cases from '@/components/Cases'
-import Gallery from '@/components/Gallery'
 import Navbar from '@/components/Navbar'
-import StrongCode from '@/components/StrongCode'
 import TeamMember from '@/components/TeamMember'
-import { PageWrapper } from '@/components/PageWrapper'
 import JoinUsFooter from '@/components/JoinUsFooter'
+import ContactUs from '@/components/CareerSideBar'
+import styles from './page.module.scss'
 export default async function JoinUs() {
   const host = headers().get('host')
 
   return (
     <>
-      <Navbar />
-      <PageWrapper>
-        <main>
-          <div className="container">
+      <div className={styles.main_elements}>
+        <Navbar />
+      </div>
+      <main>
+        {/* <div className="container">
             <Career />
             <Gallery />
             <StrongCode />
@@ -24,10 +22,14 @@ export default async function JoinUs() {
           <Cases />
           <div className="container">
             <TeamMember host={host} />
-          </div>
-        </main>
+          </div> */}
+        <ContactUs>
+          <TeamMember host={host} />
+        </ContactUs>
+      </main>
+      <div className={styles.main_elements}>
         <JoinUsFooter />
-      </PageWrapper>
+      </div>
     </>
   )
 }

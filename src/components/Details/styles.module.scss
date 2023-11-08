@@ -2,8 +2,10 @@
 
 .intensive_details {
   overflow: hidden;
+  //height: 100vh;
 
   &__heading {
+    scroll-snap-align: start;
     color: var(--black, #000);
     font-family: Helvetica;
     font-size: 40px;
@@ -19,8 +21,8 @@
     align-items: center;
     justify-content: space-between;
     // max-width: 1588px;
-    // margin: 0 auto;
-    padding: 40px 8%;
+    //margin: 0 auto;
+    padding: 40px 5px;
 
     .buttons_for_scrolling {
       display: flex;
@@ -55,9 +57,8 @@
   }
   &__main {
     display: flex;
-    max-width: 1588px;
-    margin: 0 auto;
-    padding: 79px 40px 124px 40px;
+
+    padding: 79px 10px 124px 10px;
     gap: 50px;
     position: relative;
     transition: 1s left ease;

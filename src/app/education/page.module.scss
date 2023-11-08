@@ -1,10 +1,11 @@
-// .snap_box {
-//   scroll-snap-type: y mandatory;
-//   overflow-y: auto;
-//   // height: 100vh;
-//   scroll-behavior: smooth;
-// }
+.main_elements {
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
 // .snap_item {
 //   scroll-behavior: smooth;
-//   scroll-snap-align: start;
+//   scroll-snap-align: center;
+//   height: 100vh;
+//   transition-delay: ease-in-out;
+//   transition-duration: 15s;
 // }

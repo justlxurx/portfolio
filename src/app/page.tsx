@@ -1,19 +1,13 @@
 import { headers } from 'next/headers'
 
-import About from '@/components/About'
-import Distance from '@/components/Distance'
-import FAQ from '@/components/FAQ'
 import MainFooter from '@/components/MainFooter'
 import Navbar from '@/components/Navbar/index'
 import News from '@/components/News'
-import Projects from '@/components/Projects'
-import { PageWrapper } from '@/components/PageWrapper'
 import 'node_modules/slick-carousel/slick/slick.css'
 import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './page.module.scss'
 import Game from '@/components/Game'
-
-import { AnimationWrapper } from '@/components/AnimationWrapper'
+import Main from '@/components/Main'
 
 async function getPosts(host: string) {
   const response = await fetch(`http://${host}/api/news`)
@@ -29,20 +23,21 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar />
-      <PageWrapper>
-        <main className={styles.main}>
-          <AnimationWrapper custom={4}>
-            <About />
-          </AnimationWrapper>
+      <div className={styles.main_elements}>
+        <Navbar />
+      </div>
+      <main className={styles.main}>
+        {/* <About />
           <Projects />
           {Array.isArray(data) && <News data={...data} />}
           <Distance />
-          <FAQ />
-          <Game />
-        </main>
+          <FAQ /> */}
+        <Main> {Array.isArray(data) && <News data={...data} />}</Main>
+        <Game />
+      </main>
+      <div className={styles.main_elements}>
         <MainFooter />
-      </PageWrapper>
+      </div>
     </>
   )
 }
