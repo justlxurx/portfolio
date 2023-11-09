@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid'
-
 //import HamburgerButton from '../ui/HamburgerButton'
 import NavButton from '../ui/NavButton/index'
 import { INavButton } from '../ui/NavButton/interface'

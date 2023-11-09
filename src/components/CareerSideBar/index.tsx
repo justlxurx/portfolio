@@ -6,11 +6,16 @@ import { useRef } from 'react'
 import { motion, useInView, useScroll } from 'framer-motion'
 import Career from '@/components/Career'
 import Gallery from '@/components/Gallery'
-import Cases from '@/components/Cases'
 import StrongCode from '@/components/StrongCode'
 import classNames from 'classnames'
 
-export default function CustomComponent({ children }: { children: ReactNode }) {
+export default function CustomComponent({
+  children,
+  component,
+}: {
+  children: ReactNode
+  component: ReactNode
+}) {
   const [y, setY] = useState(0) // Используем состояние для значения y
 
   useEffect(() => {
@@ -241,7 +246,8 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
             <StrongCode />
           </div>
           <div className={classNames(styles.main_elements)} ref={ref4}>
-            <Cases />
+            {/* <Cases /> */}
+            {component}
           </div>
         </div>
         <div

@@ -1,4 +1,11 @@
+@import '/src/styles/variables.scss';
 .main_elements {
   scroll-snap-stop: always;
   scroll-snap-align: start;
+}
+@media (max-width: $tablet-width) {
+  .main_elements {
+    scroll-snap-stop: always;
+    scroll-snap-align: unset;
+  }
 }
