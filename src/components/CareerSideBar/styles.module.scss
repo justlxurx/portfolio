@@ -1,3 +1,4 @@
+@import '/src/styles/variables.scss';
 .nav_links {
   //background-color: #eaeaea;
   //opacity: 0.9;
@@ -156,5 +157,9 @@
   }
   .box {
     width: 100%;
+  }
+  .main_elements {
+    scroll-snap-stop: always;
+    scroll-snap-align: unset;
   }
 }

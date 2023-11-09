@@ -1,5 +1,5 @@
 import { headers } from 'next/headers'
-
+import Cases from '@/components/Cases'
 import Navbar from '@/components/Navbar'
 import TeamMember from '@/components/TeamMember'
 import JoinUsFooter from '@/components/JoinUsFooter'
@@ -23,7 +23,7 @@ export default async function JoinUs() {
           <div className="container">
             <TeamMember host={host} />
           </div> */}
-        <ContactUs>
+        <ContactUs component={<Cases />}>
           <TeamMember host={host} />
         </ContactUs>
       </main>

@@ -8,6 +8,7 @@ import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './page.module.scss'
 import Game from '@/components/Game'
 import Main from '@/components/Main'
+import Distance from '@/components/Distance'
 
 async function getPosts(host: string) {
   const response = await fetch(`http://${host}/api/news`)
@@ -32,9 +33,13 @@ export default async function Home() {
           {Array.isArray(data) && <News data={...data} />}
           <Distance />
           <FAQ /> */}
-        <Main> {Array.isArray(data) && <News data={...data} />}</Main>
+        <Main component={<Distance />}>
+          {Array.isArray(data) && <News data={...data} />}
+        </Main>
+
         <Game />
       </main>
+
       <div className={styles.main_elements}>
         <MainFooter />
       </div>

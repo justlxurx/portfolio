@@ -5,12 +5,17 @@ import { nanoid } from 'nanoid'
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useAnimation } from 'framer-motion'
 import About from '@/components/About'
-import Distance from '@/components/Distance'
 import FAQ from '@/components/FAQ'
 import Projects from '@/components/Projects'
 import classNames from 'classnames'
 
-export default function CustomComponent({ children }: { children: ReactNode }) {
+export default function CustomComponent({
+  children,
+  component,
+}: {
+  children: ReactNode
+  component: ReactNode
+}) {
   const [y, setY] = useState(0) // Используем состояние для значения y
 
   useEffect(() => {
@@ -82,7 +87,7 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
     once: isScrollingUp ? false : true,
   })
   const isInView3 = useInView(ref3, {
-    amount: 0.5,
+    amount: 0.6,
     once: isScrollingUp ? false : true,
   })
   const isInView4 = useInView(ref4, {
@@ -202,7 +207,7 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
           ref={ref4}
           animate={control}
         >
-          <Distance />
+          {component}
         </motion.div>
         <motion.div
           className={classNames(styles.main_elements, 'stopped')}
