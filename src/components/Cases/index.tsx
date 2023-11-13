@@ -6,6 +6,7 @@ import cases from 'public/fintech.png'
 // import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 import { AnimationWrapper } from '../AnimationWrapper'
+import classNames from 'classnames'
 
 const Socials = () => {
   const socialLinks2 = [
@@ -55,7 +56,7 @@ const Socials = () => {
 const Cases = () => {
   return (
     <section>
-      <h4 className={styles.short_info__header}>
+      <h4 className={classNames(styles.short_info__header, 'container')}>
         КЕЙСЫ,
         <br /> НА КОТОРЫХ РАСТЕШЬ
       </h4>
@@ -110,22 +111,22 @@ const Cases = () => {
 
         <section className={styles.section3}>
           <div className={styles.specialists}>
-            <AnimationWrapper custom={3}>
+            <AnimationWrapper custom={1}>
               <p>
                 {'<'}разработчики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={4}>
+            <AnimationWrapper custom={2}>
               <p>
                 {'<'}тестировщики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={5}>
+            <AnimationWrapper custom={3}>
               <p>
                 {'<'}проектные менеджеры{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={6}>
+            <AnimationWrapper custom={4}>
               <p>
                 {'<'}деливери-специалисты{'>'}
               </p>
@@ -139,17 +140,17 @@ const Cases = () => {
               marginBottom: '0',
             }}
           >
-            <AnimationWrapper custom={7}>
+            <AnimationWrapper custom={5}>
               <p>
                 {'<'}бизнес-аналитики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={8}>
+            <AnimationWrapper custom={6}>
               <p>
                 {'<'}девопс-специалисты{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={9}>
+            <AnimationWrapper custom={7}>
               <p>
                 {'<'}hr-менеджеры{'>'}
               </p>
