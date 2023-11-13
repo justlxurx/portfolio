@@ -111,22 +111,22 @@ const Cases = () => {
 
         <section className={styles.section3}>
           <div className={styles.specialists}>
-            <AnimationWrapper custom={1}>
+            <AnimationWrapper custom={0}>
               <p>
                 {'<'}разработчики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={2}>
+            <AnimationWrapper custom={0.5}>
               <p>
                 {'<'}тестировщики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={3}>
+            <AnimationWrapper custom={1}>
               <p>
                 {'<'}проектные менеджеры{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={4}>
+            <AnimationWrapper custom={1.5}>
               <p>
                 {'<'}деливери-специалисты{'>'}
               </p>
@@ -140,17 +140,17 @@ const Cases = () => {
               marginBottom: '0',
             }}
           >
-            <AnimationWrapper custom={5}>
+            <AnimationWrapper custom={2}>
               <p>
                 {'<'}бизнес-аналитики{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={6}>
+            <AnimationWrapper custom={2.5}>
               <p>
                 {'<'}девопс-специалисты{'>'}
               </p>
             </AnimationWrapper>
-            <AnimationWrapper custom={7}>
+            <AnimationWrapper custom={3}>
               <p>
                 {'<'}hr-менеджеры{'>'}
               </p>
