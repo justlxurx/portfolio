@@ -32,7 +32,7 @@ const App: React.FC = () => {
     x: 450,
     y: 340,
   })
-  const [scale, setScale] = useState(17)
+  const [scale, setScale] = useState(15)
   useEffect(() => {
     const handleResize = () => {
       const newWidth = window.innerWidth
