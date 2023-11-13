@@ -49,39 +49,33 @@
         position: relative;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
-
-        .snake {
-          //width: 50px;
-          height: 100%;
-          position: relative;
-          img {
-            //position:;
-            left: 50%;
-            top: 360px;
-          }
+        &::after {
+          content: '';
+          position: absolute;
+          left: calc(50% - 227px);
+          top: calc(50% - 171px);
+          width: 455.15px;
+          height: 342.656px;
+          background-image: url('/display.png');
+          background-size: contain;
+          background-repeat: no-repeat;
         }
-
+        .snake {
+          display: flex;
+          justify-content: center;
+          padding-top: 16px;
+          // background-color: rgba(12, 11, 11, 0.8);
+          // border-top-left-radius: 15px;
+          // border-top-right-radius: 15px;
+        }
         .all_progress {
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
           align-items: center;
           padding: 5% 0;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black;
         }
         .progress_stage {
-          &::after {
-            content: '';
-            position: absolute;
-            left: calc(50% - 227px);
-            top: calc(50% - 171px);
-            width: 455.15px;
-            height: 342.656px;
-            background-image: url('/display.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
           z-index: 5;
           color: var(--black, #000);
           text-align: center;
@@ -93,6 +87,7 @@
           letter-spacing: -0.45px;
           display: flex;
           justify-content: center;
+          background-color: #eaeaea;
           ul {
             display: flex;
             border-radius: 0px 0px 5px 5px;
@@ -289,13 +284,14 @@
           width: 399px;
           height: 300px;
           border-radius: 16px;
+          &::after {
+            left: calc(50% - 195px);
+            top: calc(50% - 148px);
+            width: 390px;
+            height: 296px;
+          }
+
           .progress_stage {
-            &::after {
-              left: calc(50% - 195px);
-              top: calc(50% - 148px);
-              width: 390px;
-              height: 296px;
-            }
             font-size: 7px;
             ul {
               border-radius: 0px 0px 5px 5px;
@@ -397,14 +393,18 @@
           width: 225px;
           height: 165px;
           border-radius: 8px;
+          &::after {
+            left: calc(50% - 105px);
+            top: calc(50% - 81px);
+            width: 210px;
+            height: 162px;
+          }
+          .snake {
+            padding-top: 3px;
+          }
           .progress_stage {
             line-height: 10px;
-            &::after {
-              left: calc(50% - 105px);
-              top: calc(50% - 81px);
-              width: 210px;
-              height: 162px;
-            }
+
             font-size: 6px;
             ul {
               border-radius: 0px 0px 2px 2px;
