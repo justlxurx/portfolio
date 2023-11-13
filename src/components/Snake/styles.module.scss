@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+}
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(151, 216, 148);
+  position: relative;
+  width: 400px;
+  height: 200px;
+}

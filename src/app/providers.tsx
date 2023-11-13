@@ -7,7 +7,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 10000)
+    setTimeout(() => setLoading(false), 4000)
   }, [])
 
   return <>{loading ? <Loading /> : children}</>

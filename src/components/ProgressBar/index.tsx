@@ -4,19 +4,11 @@ import Image from 'next/image'
 import hour from 'public/land.png'
 import { useEffect, useState, useRef } from 'react'
 import { motion, animate } from 'framer-motion'
+import Snake from '@/components/Snake'
 
 const StartAnimation = () => {
   const value = 100
-  const [loading, setLoading] = useState(false)
-  // const [duration, setDuration] = useState(10)
-  // // const calculateDuration = (value: any) => {
-  // //   return value * 100
-  // // }
-  // useEffect(() => {
-  //   setLoading(true)
-  //   setDuration(calculateDuration(value))
-  // }, [])
-  const duration = 3
+  const duration = 4
   const progressTextRef = useRef(null)
   const progressColorRef1 = useRef(null)
   const progressColorRef2 = useRef(null)
@@ -42,6 +34,10 @@ const StartAnimation = () => {
   const [opacity4, setOpacity4] = useState('')
   const [opacity5, setOpacity5] = useState('')
   const [opacity6, setOpacity6] = useState('')
+
+  const [background, setBackground] = useState('')
+  const [background2, setBackground2] = useState('')
+  const [background3, setBackground3] = useState('')
 
   useEffect(() => {
     if (progressColorRef1.current !== null) {
@@ -91,6 +87,7 @@ const StartAnimation = () => {
           if (value1 >= 25 && value1 < 40) {
             setColor2('blue')
             setOpacity2('1')
+            //  setBackground('rgba(12,12,11,0.8)')
           } else {
             setColor2('')
             setOpacity2('0.5')
@@ -110,6 +107,7 @@ const StartAnimation = () => {
           if (value1 >= 40 && value1 < 55) {
             setColor3('blue')
             setOpacity3('1')
+            //setBackground2('rgba(12,12,11,0.8)')
           } else {
             setColor3('')
             setOpacity3('0.5')
@@ -129,6 +127,7 @@ const StartAnimation = () => {
           if (value1 >= 55 && value1 < 75) {
             setColor4('blue')
             setOpacity4('1')
+            //setBackground3('rgba(12,12,11,0.8)')
           } else {
             setColor4('')
             setOpacity4('0.5')
@@ -176,6 +175,18 @@ const StartAnimation = () => {
     }
   }, [value])
 
+  const animations = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 1, ease: 'easeOut' },
+    }),
+  }
+
   return (
     <>
       <section className={styles.start}>
@@ -183,8 +194,18 @@ const StartAnimation = () => {
           <div className={styles.top_gradient}>
             <div className={styles.tele_inside}>
               <div className={styles.display}>
-                <div className={styles.snake} style={{ zIndex: '6' }}></div>
-                <div className={styles.all_progress}>
+                <motion.div
+                  custom={2}
+                  variants={animations}
+                  className={styles.snake}
+                  style={{ zIndex: '6' }}
+                >
+                  <Snake />
+                </motion.div>
+                <div
+                  className={styles.all_progress}
+                  style={{ zIndex: '6', background: background2 }}
+                >
                   <div className={styles.progress}>
                     <p className={styles.progress_num1}></p>
                     <div className={styles.progress_bar}>
@@ -322,7 +343,7 @@ const StartAnimation = () => {
                     </ul>
                   </div>
                 </div>
-                <div></div>
+                <div style={{ zIndex: '6', background: background3 }}></div>
               </div>
             </div>
             <div className={styles.switch_block}>

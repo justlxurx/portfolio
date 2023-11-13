@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         <Providers>
+          {/* <Loading></Loading> */}
           <YandexMetrica> {children}</YandexMetrica>
         </Providers>
       </body>
