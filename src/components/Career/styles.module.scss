@@ -11,6 +11,7 @@
   //grid-template-rows: 44% 25% 31% ;
   grid-template-rows: 50% 23% 27%;
   border: 1px solid black;
+  border-top: none;
 }
 
 .first_row {
@@ -285,12 +286,13 @@
   //770
   .career_main {
     display: grid;
-    border-top: 1px solid black;
     margin-bottom: 60px;
+    margin-left: -16px;
+    margin-right: -16px;
   }
   .in_it {
     display: grid;
-    border: 1px solid black;
+    //border: 1px solid black;
     border-top: none;
     grid-template-areas:
       'A'

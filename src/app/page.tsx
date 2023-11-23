@@ -9,6 +9,7 @@ import styles from './page.module.scss'
 import Game from '@/components/Game'
 import Main from '@/components/Main'
 import Distance from '@/components/Distance'
+import Providers from './providers'
 
 async function getPosts(host: string) {
   const response = await fetch(`http://${host}/api/news`)
@@ -24,25 +25,23 @@ export default async function Home() {
 
   return (
     <>
-      <div className={styles.main_elements}>
-        <Navbar />
-      </div>
-      <main className={styles.main}>
-        {/* <About />
-          <Projects />
-          {Array.isArray(data) && <News data={...data} />}
-          <Distance />
-          <FAQ /> */}
-        <Main component={<Distance />}>
-          {Array.isArray(data) && <News data={...data} />}
-        </Main>
+      <Providers>
+        <div className={styles.main_elements}>
+          <Navbar />
+        </div>
 
-        <Game />
-      </main>
+        <main className={styles.main}>
+          <Main component={<Distance />}>
+            {Array.isArray(data) && <News data={...data} />}
+          </Main>
 
-      <div className={styles.main_elements}>
-        <MainFooter />
-      </div>
+          <Game />
+        </main>
+
+        <div className={styles.main_elements}>
+          <MainFooter />
+        </div>
+      </Providers>
     </>
   )
 }

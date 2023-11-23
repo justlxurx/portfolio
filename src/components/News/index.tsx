@@ -4,9 +4,7 @@ import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { nanoid } from 'nanoid'
 import { FormattedString } from '@/helpers/FormattedString'
-
 import { IPublication } from './interface'
-
 import styles from './styles.module.scss'
 
 type Props = {

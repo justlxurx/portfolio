@@ -3,16 +3,25 @@
 import styles from './styles.module.scss'
 import { AnimationWrapper } from '../AnimationWrapper'
 import { BlockWrapper } from '../BlockWrapper'
-import { Poppins } from 'next/font/google'
+import { Poppins, Silkscreen } from 'next/font/google'
 
 const poppins = Poppins({ subsets: ['devanagari'], weight: ['700'] })
-
+const silkscreen = Silkscreen({ subsets: ['latin'], weight: ['700'] })
+const textAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: (custom: number) => ({
+    opacity: 1,
+    transition: { delay: custom * 0.2, duration: 0.5, ease: 'easeOut' },
+  }),
+}
 const DevPractice = () => {
   return (
     <section className={styles.dev}>
       <div className={styles.dev_section1}>
         <div className={styles.dev_section1_text}>
-          <AnimationWrapper custom={6}>
+          <AnimationWrapper custom={0.5}>
             <h1 className={poppins.className}>
               Dev <br /> Practice
             </h1>
@@ -20,7 +29,7 @@ const DevPractice = () => {
 
           <p>идет набор на новый поток_ </p>
         </div>
-        <BlockWrapper custom={8}>
+        <BlockWrapper custom={1}>
           <div className={styles.new_flow}>
             <div className={styles.new_flow_1}>
               <div className={styles.new_flow_1_a}></div>
@@ -56,16 +65,16 @@ const DevPractice = () => {
           </p>
         </div>
         <div className={styles.dev_section2_text}>
-          <BlockWrapper custom={9}>
+          <BlockWrapper custom={1.5}>
             <p className={styles.dev_section2_text_1}>
               Обучение на практике <br />
               под руководством опытных <br /> разработчиков{' '}
               <strong>
                 <em>qazdev</em>
               </strong>
-            </p>{' '}
+            </p>
           </BlockWrapper>
-          <BlockWrapper custom={10}>
+          <BlockWrapper custom={2}>
             <p className={styles.dev_section2_text_2}>
               {'<'}Java Spring Framework{'>'}
             </p>
@@ -83,7 +92,7 @@ const DevPractice = () => {
             </div>
           </div>
         </div>
-        <AnimationWrapper custom={8}>
+        <AnimationWrapper custom={2}>
           <div className={styles.dev_section2_frame}>
             <div className={styles.dev_section2_frame_1}>
               <div className={styles.row1}>

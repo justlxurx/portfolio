@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   padding: 7px 40px;
+  border-bottom: 1px solid black;
   &__text {
     display: grid;
     grid-template-columns: 1fr 1.3fr;

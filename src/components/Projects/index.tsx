@@ -25,12 +25,12 @@ const Projects = () => {
 
   const slides: ISlide[] = [
     {
-      title: 'Кортим команда  blablacar',
+      title: 'Кортим команда ',
       src: firstSlide,
       src2: imgSlide,
     },
     {
-      title: 'Кортим команда  blablacar',
+      title: 'Кортим команда',
       src: secondSlide,
       src2: '',
     },
