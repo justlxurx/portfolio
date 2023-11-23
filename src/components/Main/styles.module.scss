@@ -20,7 +20,7 @@
     overflow: hidden;
     position: absolute;
     transition: background-color 0.25s ease-out;
-    width: 0.2352941176vw;
+    width: 5px;
   }
 
   .road_link {
@@ -30,7 +30,7 @@
     left: 20.5px;
     position: absolute;
     // transition: background-color 0.25s ease-out;
-    width: 0.2352941176vw;
+    width: 5px;
     z-index: 3;
   }
 
@@ -60,10 +60,10 @@
         border-radius: 100%;
         display: block;
         flex-shrink: 0;
-        height: 0.7058823529vw;
+        height: 15px;
         margin-right: 0.8235294118vw;
         transition: background-color 0.25s ease-out, border-color 0.25s ease-out;
-        width: 0.7058823529vw;
+        width: 15px;
       }
     }
   }
@@ -88,11 +88,11 @@
 @media (max-width: 1850px) {
   .nav_links {
     .road {
-      left: 22px;
+      left: 21px;
     }
 
     .road_link {
-      left: 22px;
+      left: 21px;
     }
   }
 }
@@ -105,17 +105,17 @@
     .road {
       top: 5%;
       height: 280px;
-      left: 29.5px;
+      left: 30px;
       transition: background-color 0.25s ease-out;
-      width: 0.2352941176vw;
+      width: 4px;
     }
 
     .road_link {
       top: 5%;
       height: 280px;
-      left: 29.5px;
+      left: 30px;
       transition: background-color 0.25s ease-out;
-      width: 0.2352941176vw;
+      width: 4px;
     }
 
     &_list {
@@ -124,9 +124,8 @@
 
       .nav_row {
         &_circle {
-          height: 0.7058823529vw;
-          margin-right: 0.8235294118vw;
-          width: 0.7058823529vw;
+          width: 13px;
+          height: 13px;
         }
       }
     }

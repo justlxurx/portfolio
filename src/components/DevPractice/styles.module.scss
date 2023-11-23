@@ -3,6 +3,7 @@
   grid-template-columns: 61% 39%;
   border: 1px solid black;
   height: 952px;
+  border-top: none;
   // height: 94vh;
   // margin: 0% 9% 0 9%;
 }
@@ -476,7 +477,7 @@
     grid-template-columns: none;
     grid-template-rows: 3fr 1.4fr;
     border: none;
-    border-top: 1px solid black;
+    //border-top: 1px solid black;
     height: 100%;
     margin: 0%;
   }

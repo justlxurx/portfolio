@@ -1,9 +1,10 @@
 'use client'
 import React, { useRef, useState } from 'react'
 import { nanoid } from 'nanoid'
+//import Slider1 from './Slider1'
 
 import styles from './styles.module.scss'
-const ROADMAP_STEP = 300
+const ROADMAP_STEP = 360
 
 const Details = () => {
   const [setctionPosition, setSectionPosition] = useState(0)

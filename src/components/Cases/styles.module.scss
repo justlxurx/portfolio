@@ -1,55 +1,61 @@
 @import '/src/styles/variables.scss';
-
-.grow_cases {
+.cases_wrapper {
   scroll-snap-align: start;
-  padding: 80px 98px 140px 98px; //146px
-  gap: 65px 135px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  //padding: 80px 98px 140px 98px; //146px
+
   background-image: url('/vector_line.png');
   background-position: cover;
   background-position-x: center;
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: #eaeaea;
-  grid-template-areas:
-    'A A A A   B B B B'
-    'A A A A   B B B B'
-    'C C C C   C C C C';
+}
+.grow_cases {
+  padding: 87px 0 140px 0;
+  // padding: 0 40px;
+  justify-content: center;
+  align-items: center;
 }
 .hidden_social2 {
   display: none;
+}
+.grow_cases_row1 {
+  display: grid;
+  grid-template-columns: 35.5% 51%;
+  column-gap: 106px;
+  padding: 0 50px 64px;
+  //margin: 0 auto;
+  justify-content: space-between;
 }
 .section1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  grid-area: A;
-  padding-left: 65px;
-  width: auto;
+  //grid-area: A;
+  //padding-left: 65px;
+  width: 100%;
   height: 100%;
+  gap: 115px;
 }
 .section2 {
-  grid-area: B;
-  background-color: #eaeaea;
-  width: 80%;
+  // grid-area: B;
+  //background-color: #eaeaea;
+  width: 100%;
   height: 100%;
-  margin-right: 65px;
+  //  margin-right: 65px;
   border: 0.533px solid var(--black, #000);
+  position: relative;
 
   img {
+    background-color: #eaeaea;
     justify-content: flex-start;
     width: 100%;
     height: 100%;
   }
 }
-.section3 {
-  grid-area: C;
-}
 
 .short_info__header {
-  font-size: 64px;
+  font-size: 65px;
   // margin-left: 158px;
   color: #000;
   font-family: Helvetica;
@@ -74,7 +80,6 @@
 .person_info {
   display: grid;
   grid-template-columns: 15% auto 10%;
-
   gap: 2%;
 
   h5 {
@@ -91,8 +96,6 @@
   }
   .avatar1 {
     border-radius: 8px;
-    //align-self: end;
-    // justify-self: start;
     background-image: url('/avatar.png');
     background-size: cover;
     background-position: center 30%;
@@ -110,7 +113,7 @@
   color: #000;
   font-family: Helvetica;
   font-style: normal;
-  font-size: 25px;
+  font-size: 27px;
   line-height: 110%;
 }
 
@@ -174,20 +177,24 @@
     font-family: Helvetica;
     font-size: 24px;
     border: 1px solid #000;
-    padding: 28px;
+    padding: 34px;
     align-items: center;
     text-align: center;
     letter-spacing: 0%;
+    line-height: 101.5%; /* 24.36px */
+    font-weight: 400;
   }
 }
-
-@media (max-width: 1617px) {
-  .grow_cases {
-    gap: 64px 75px;
+@media (max-width: 1970px) {
+  .short_article__description {
+    font-size: 22px;
   }
+}
+@media (max-width: 1700px) {
   .section1 {
     width: auto;
     height: 100%;
+    gap: 30px;
   }
   .short_info__header {
     // margin-left: 96px;
@@ -211,7 +218,7 @@
   }
 
   .short_article__description {
-    font-size: 24px;
+    font-size: 20px;
   }
   .social {
     .cases_button_1 {
@@ -244,11 +251,7 @@
   }
 }
 
-@media (max-width: 1385px) {
-  .grow_cases {
-    gap: 49px 65px;
-  }
-
+@media (max-width: 1545px) {
   .section2 {
     margin-right: 40px;
   }
@@ -276,7 +279,7 @@
   }
 
   .short_article__description {
-    font-size: 22px;
+    font-size: 18px;
   }
   .social {
     .cases_button_1 {
@@ -308,12 +311,8 @@
     }
   }
 }
-@media (max-width: 1370px) {
-  .grow_cases {
-    padding: 53px 96px 100px 96px; //96px
-  }
-}
-@media (max-width: 1240px) {
+
+@media (max-width: 1470px) {
   .person_info {
     h5 {
       font-size: 14px;
@@ -356,13 +355,93 @@
     }
   }
 }
-@media (max-width: 1100px) {
-  .section1 {
-    padding: 0 0 0 50px;
+@media (max-width: 1395px) {
+  .person_info {
+    h5 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
   }
-  .section2 {
-    margin-right: 40px;
+
+  .short_article__description {
+    font-size: 19px;
   }
+  .social {
+    .cases_button_1 {
+      padding: 8px;
+      border-radius: 7px;
+      font-size: 15px;
+      margin-right: 30px;
+
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 9px;
+        height: 25px;
+        width: 25px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 38px;
+        width: 38px;
+        margin-left: 5px;
+      }
+    }
+  }
+  .specialists {
+    p {
+      font-size: 20px;
+      border: 0.533px solid #000;
+      padding: 17px;
+    }
+  }
+}
+@media (max-width: 1260px) {
+  .person_info {
+    h5 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .short_article__description {
+    font-size: 18px;
+  }
+  .social {
+    .cases_button_1 {
+      padding: 8px;
+      border-radius: 7px;
+      font-size: 15px;
+      margin-right: 30px;
+
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 9px;
+        height: 25px;
+        width: 25px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 38px;
+        width: 38px;
+        margin-left: 5px;
+      }
+    }
+  }
+  .specialists {
+    p {
+      font-size: 19px;
+      border: 0.533px solid #000;
+      padding: 17px;
+    }
+  }
+}
+@media (max-width: 1150px) {
   .short_info__header {
     font-size: 30px;
     margin-bottom: 40px;
@@ -376,7 +455,7 @@
     }
   }
   .short_article__description {
-    font-size: 16px;
+    font-size: 14px;
   }
   .social {
     .cases_button_1 {
@@ -406,17 +485,9 @@
     }
   }
 }
-@media (max-width: $desktop-width) {
+@media (max-width: 1011px) {
   //992px
-  .grow_cases {
-    padding: 30px 60px 60px 60px;
-  }
-  .section1 {
-    padding: 0 0 0 50px;
-  }
-  .section2 {
-    margin-right: 40px;
-  }
+
   .short_info__header {
     font-size: 30px;
   }
@@ -429,7 +500,7 @@
     }
   }
   .short_article__description {
-    font-size: 15px;
+    font-size: 12px;
   }
   .social {
     .cases_button_1 {
@@ -460,10 +531,12 @@
     }
   }
 }
-@media (max-width: 920px) {
+@media (max-width: 992px) {
   .grow_cases {
-    padding: 30px 60px 60px 60px; //30
+    padding: 20px 40px 60px;
   }
+}
+@media (max-width: 946px) {
   .person_info {
     .person_name {
       margin-left: 7px;
@@ -508,6 +581,51 @@
   }
 }
 
+@media (max-width: 890px) {
+  .person_info {
+    .person_name {
+      margin-left: 7px;
+    }
+    h5 {
+      font-size: 10px;
+    }
+    p {
+      font-size: 7px;
+    }
+  }
+  .short_article__description {
+    font-size: 10px;
+  }
+  .social {
+    .cases_button_1 {
+      padding: 7px 6px;
+      border-radius: 7px;
+      font-size: 9px;
+      margin-right: 8px;
+      .cases_button__arrow1 {
+        border-radius: 3px;
+        margin-right: 3px;
+        height: 12px;
+        width: 12px;
+      }
+    }
+    .social_networks {
+      img {
+        height: 25px;
+        width: 25px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .specialists {
+    p {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .hidden_social2 {
     display: flex;
@@ -525,6 +643,12 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+  }
+  .grow_cases_row1 {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 22px;
   }
   .section1 {
     margin: 0px;
