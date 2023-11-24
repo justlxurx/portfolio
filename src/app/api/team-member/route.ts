@@ -37,7 +37,7 @@ export async function POST(request: Request) {
                 <p>ФИО: ${res.username}</p>
                 <p>Краткая информация: ${res.about}</p>
                 <p>Дата отправки: ${date}</p>
-                <a href='${res.url}' target='_blank'>Резюме: ${res.url}</a>
+                <a href='https://${res.url}' target='_blank'>Резюме: ${res.url}</a>
               </div>`,
         })
       } catch (error) {
