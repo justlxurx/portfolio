@@ -12,7 +12,7 @@ import Work from '@/components/Work'
 import EightBlock from '../EightBlock'
 import classNames from 'classnames'
 export default function CustomComponent({ children }: { children: ReactNode }) {
-  const [y, setY] = useState(0) // Используем состояние для значения y
+  const [y, setY] = useState(0)
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -21,7 +21,6 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
       const currentScrollY = window.scrollY
       const deltaY = currentScrollY - lastScrollY
 
-      // Увеличиваем или уменьшаем значение y в зависимости от направления скролла
       setY((prevY) => prevY - deltaY)
       lastScrollY = currentScrollY
     }
@@ -123,7 +122,7 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
   const [fixed, setFixed] = useState(true)
 
   useEffect(() => {
-    const component = document.querySelector('.stopped') // Replace with the selector for the component before which the sidebar should stop
+    const component = document.querySelector('.stopped')
     const scrollHandler = () => {
       if (component) {
         const componentPosition = component.getBoundingClientRect()
@@ -132,10 +131,8 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
       }
     }
 
-    // Attach the scroll event listener
     window.addEventListener('scroll', scrollHandler)
 
-    // Define the cleanup function to remove the event listener
     return () => {
       window.removeEventListener('scroll', scrollHandler)
     }
@@ -147,13 +144,13 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
         className={styles.nav_links}
         animate={{ visibility: fixed ? 'hidden' : 'initial' }}
       >
+        <span className={styles.road}></span>
+        <motion.span
+          className={styles.road_link}
+          style={{ scaleY: scrollYProgress, originY: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+        ></motion.span>
         <ul className={styles.nav_links_list}>
-          <span className={styles.road}></span>
-          <motion.span
-            className={styles.road_link}
-            style={{ scaleY: scrollYProgress, originY: 0 }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
-          ></motion.span>
           {links.map((link) => (
             <li key={nanoid()}>
               <span className={styles.nav_row}>
@@ -163,7 +160,6 @@ export default function CustomComponent({ children }: { children: ReactNode }) {
                   }}
                   transition={{ duration: 0.1, ease: 'easeInOut' }}
                   className={styles.nav_row_circle}
-                  //style={{ borderColor: '2px solid #d9d9d9' }}
                 ></motion.span>
                 <p> {link.title}</p>
               </span>

@@ -11,12 +11,12 @@ interface BurgerProps {
 
 const Burger = ({ closeBurgerMenu }: BurgerProps) => {
   const buttons: INavButton[] = [
-    {
-      title: 'Devcorn',
-      description: 'IT мероприятие',
-      path: 'https://devcorn.kz/',
-      redirect: true,
-    },
+    // {
+    //   title: 'Devcorn',
+    //   description: 'IT мероприятие',
+    //   path: 'https://devcorn.kz/',
+    //   redirect: true,
+    // },
     {
       title: 'Devpractice',
       description: 'Учись у нас',

@@ -6,7 +6,7 @@ const DocFlow = () => {
     <section className={styles.doc_flow}>
       <div className={styles.doc_flow__title}>
         <p>Онлайн-документооборот</p>
-        <p className={styles.project_num}>002</p>
+        <p className={styles.project_num}>003</p>
       </div>
 
       <div className={styles.doc_flow__content}>
@@ -22,7 +22,7 @@ const DocFlow = () => {
               контрактов, претензионных документов
             </p>
             <div className={styles.hidden_block1}>
-              <p className={styles.hidden_block1_num}>002</p>
+              <p className={styles.hidden_block1_num}>003</p>
               <div className={styles.hidden_block1_img}></div>
             </div>
           </div>

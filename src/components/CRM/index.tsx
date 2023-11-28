@@ -6,7 +6,7 @@ const CRM = () => {
     <section className={styles.crm}>
       <div className={styles.crm__title}>
         <p>Создание CRM-системы</p>
-        <p className={styles.project_num}>004</p>
+        <p className={styles.project_num}>002</p>
       </div>
 
       <div className={styles.crm__content}>

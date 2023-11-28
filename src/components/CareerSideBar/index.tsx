@@ -16,7 +16,7 @@ export default function CustomComponent({
   children: ReactNode
   component: ReactNode
 }) {
-  const [y, setY] = useState(0) // Используем состояние для значения y
+  const [y, setY] = useState(0)
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -110,7 +110,7 @@ export default function CustomComponent({
   const [fixed, setFixed] = useState(true)
 
   useEffect(() => {
-    const component = document.querySelector('.stopped') // Replace with the selector for the component before which the sidebar should stop
+    const component = document.querySelector('.stopped')
     const scrollHandler = () => {
       if (component) {
         const componentPosition = component.getBoundingClientRect()
@@ -120,10 +120,8 @@ export default function CustomComponent({
       }
     }
 
-    // Attach the scroll event listener
     window.addEventListener('scroll', scrollHandler)
 
-    // Define the cleanup function to remove the event listener
     return () => {
       window.removeEventListener('scroll', scrollHandler)
     }
@@ -154,7 +152,6 @@ export default function CustomComponent({
                   }}
                   transition={{ duration: 0.1, ease: 'easeInOut' }}
                   className={styles.nav_row_circle}
-                  //style={{ borderColor: '2px solid #d9d9d9' }}
                 ></motion.span>
                 <p> {link.title}</p>
               </span>
@@ -162,74 +159,6 @@ export default function CustomComponent({
           ))}
         </ul>
       </motion.div>
-      {/* <motion.svg
-        width="600"
-        height="600"
-        viewBox="0 0 600 600"
-        initial="hidden"
-        animate="visible"
-        className={styles.svg}
-      >
-        <motion.rect
-          width="5"
-          height="200"
-          x="98"
-          y="100"
-          // fill="black"
-          //rx="20"
-          stroke="#0099ff"
-          // variants={draw}
-
-          className="progress"
-          pathLength="1"
-          style={{ pathLength: scrollYProgress }}
-        />
-        <motion.circle
-          cx="100"
-          cy="100"
-          r="8"
-          fill="white"
-          stroke="#ff0055"
-          variants={draw}
-          // custom={1}
-        />
-        <motion.circle
-          cx="100"
-          cy="150"
-          r="8"
-          fill="white"
-          stroke="#ff0055"
-          variants={draw}
-          // custom={1}
-        />
-        <motion.circle
-          cx="100"
-          cy="200"
-          r="8"
-          stroke="#ff0055"
-          variants={draw}
-          fill="white"
-          // custom={1}
-        />
-        <motion.circle
-          cx="100"
-          cy="250"
-          r="8"
-          fill="white"
-          stroke="#ff0055"
-          variants={draw}
-          // custom={1}
-        />
-        <motion.circle
-          cx="100"
-          cy="300"
-          fill="white"
-          r="8"
-          stroke="#ff0055"
-          variants={draw}
-          //custom={3}
-        />
-      </motion.svg> */}
       <div className={styles.box}>
         <div className={styles.snap_box}>
           <div className={classNames(styles.snap_item, 'container')} ref={ref1}>
@@ -246,7 +175,6 @@ export default function CustomComponent({
             <StrongCode />
           </div>
           <div className={classNames(styles.main_elements)} ref={ref4}>
-            {/* <Cases /> */}
             {component}
           </div>
         </div>

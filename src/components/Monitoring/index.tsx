@@ -1,20 +1,11 @@
-// import Button from '@/components/ui/Button'
-'use client'
 import styles from './styles.module.scss'
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import Button from '../ui/Button'
-
-import arrow_icon from 'public/arrow_icon.svg'
 
 const Monitoring = () => {
-  const router = useRouter()
-
   return (
     <section className={styles.monitoring}>
       <div className={styles.monitoring__title}>
         <p>Сервис мониторинга для горнодобывающей компании</p>
-        <p className={styles.project_num}>006</p>
+        <p className={styles.project_num}>005</p>
       </div>
 
       <div className={styles.monitoring__content}>
@@ -28,7 +19,7 @@ const Monitoring = () => {
               участвовала в разработке букинговой системы для круизных лайнеров
             </p>
             <div className={styles.hidden_block_content}>
-              <p className={styles.hidden_block_content_num}>006</p>
+              <p className={styles.hidden_block_content_num}>005</p>
               <div className={styles.hidden_block_content_img}></div>
             </div>
           </div>
@@ -57,19 +48,6 @@ const Monitoring = () => {
           </div>
         </div>
       </div>
-
-      <Button
-        className={styles.cases_button_1}
-        onClick={() => router.back()}
-        type="button"
-      >
-        <Image
-          className={styles.cases_button__arrow1}
-          src={arrow_icon}
-          alt={'Arrow'}
-        />
-        вернуться назад
-      </Button>
     </section>
   )
 }

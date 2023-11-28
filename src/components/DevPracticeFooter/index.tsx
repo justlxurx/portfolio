@@ -122,7 +122,7 @@ const DevPracticeFooter = () => {
                 </p>
               </div>
               <div>
-                <p className={styles.hotkeys}>press Shift+Q</p>
+                <p className={styles.hotkeys}>press Shift+G</p>
                 <Image
                   className={styles.logo}
                   src={logo}

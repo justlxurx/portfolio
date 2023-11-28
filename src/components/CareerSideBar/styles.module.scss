@@ -1,7 +1,5 @@
 @import '/src/styles/variables.scss';
 .nav_links {
-  //background-color: #eaeaea;
-  //opacity: 0.9;
   height: 357px;
   position: fixed;
   display: flex;
@@ -30,18 +28,19 @@
     background-color: black;
     left: 24px;
     position: absolute;
-    // transition: background-color 0.25s ease-out;
     width: 5px;
     z-index: 3;
   }
 
   &_list {
+    position: absolute;
+    left: 18px;
     color: var(--black, #000);
     font-family: Helvetica;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px; /* 125% */
+    line-height: 20px;
     letter-spacing: -0.16px;
     display: flex;
     flex-direction: column;
@@ -76,9 +75,6 @@
 .snap_item {
   scroll-behavior: smooth;
   scroll-snap-align: center;
-  //height: 100vh;
-  // transition-delay: ease-in-out;
-  // transition-duration: 15s;
 }
 @media (max-width: 1640px) {
   .nav_links {
@@ -89,7 +85,7 @@
     .road {
       top: 5%;
       height: 280px;
-      left: 26px;
+      left: 23.5px;
       transition: background-color 0.25s ease-out;
       width: 4px;
     }
@@ -97,7 +93,7 @@
     .road_link {
       top: 5%;
       height: 280px;
-      left: 26px;
+      left: 23.5px;
       transition: background-color 0.25s ease-out;
       width: 4px;
     }
@@ -128,12 +124,6 @@
     height: 300px;
     padding: 0 10px 0 18px;
     max-width: 110px;
-    .road {
-      left: 26.5px;
-    }
-    .road_link {
-      left: 26.5px;
-    }
   }
 }
 @media (max-width: 1415px) {
@@ -152,12 +142,6 @@
   }
 }
 @media (max-width: 992px) {
-  .nav_links {
-    display: none;
-  }
-  .box {
-    width: 100%;
-  }
   .main_elements {
     scroll-snap-stop: always;
     scroll-snap-align: unset;

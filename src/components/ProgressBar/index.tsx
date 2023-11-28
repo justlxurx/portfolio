@@ -8,7 +8,7 @@ import Snake from '@/components/Snake'
 
 const StartAnimation = () => {
   const value = 100
-  const duration = 3
+  const duration = 1
   const progressTextRef = useRef(null)
   const progressColorRef1 = useRef(null)
   const progressColorRef2 = useRef(null)

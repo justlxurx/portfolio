@@ -14,15 +14,6 @@ export default async function JoinUs() {
         <Navbar />
       </div>
       <main>
-        {/* <div className="container">
-            <Career />
-            <Gallery />
-            <StrongCode />
-          </div>
-          <Cases />
-          <div className="container">
-            <TeamMember host={host} />
-          </div> */}
         <ContactUs component={<Cases />}>
           <TeamMember host={host} />
         </ContactUs>

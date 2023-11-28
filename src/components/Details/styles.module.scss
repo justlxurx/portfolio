@@ -2,7 +2,6 @@
 
 .intensive_details {
   overflow: hidden;
-  //height: 100vh;
 
   &__heading {
     scroll-snap-align: start;
@@ -14,14 +13,11 @@
     line-height: 100%;
     letter-spacing: -0.16px;
     text-transform: uppercase;
-    // padding: 40px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // max-width: 1588px;
-    //margin: 0 auto;
     padding: 40px 5px;
 
     .buttons_for_scrolling {
@@ -219,7 +215,7 @@
     &__main {
       max-width: 1588px;
       margin: 0 auto;
-      padding: 69px 40px 124px 40px;
+      padding: 69px 40px 124px 10px;
       gap: 50px;
       &__display {
         font-size: 25px;
@@ -323,7 +319,7 @@
     }
     &__main {
       max-width: 863px;
-      padding: 64px 50px 124px 50px;
+      padding: 64px 50px 124px 10px;
       gap: 37px;
       &__display {
         font-size: 16px;

@@ -172,7 +172,7 @@
     aspect-ratio: 1/1;
     position: relative;
     margin-left: 15%;
-    width: 55%;
+    width: 35%;
   }
 }
 
@@ -252,6 +252,11 @@
 
     &__description {
       margin: 10px 8px;
+    }
+  }
+  .fives_column {
+    &__language {
+      width: 30%;
     }
   }
 }
@@ -352,7 +357,7 @@
     &__language {
       aspect-ratio: 1/1;
       position: relative;
-      width: 55px;
+      width: 35px;
     }
 
     &__short_info {

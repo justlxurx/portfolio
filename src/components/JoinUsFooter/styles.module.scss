@@ -64,7 +64,6 @@
 }
 .social_navigation {
   display: flex;
-  //justify-content: space-between;
   width: 85%;
   gap: 15%;
 
@@ -117,8 +116,15 @@
   text-align: end;
 }
 
-// .logo {
-// }
+@media (max-width: 1635px) {
+  .header {
+    font-size: 40px;
+  }
+
+  .link {
+    font-size: 35px;
+  }
+}
 
 @media (max-width: 1400px) {
   .navigation {

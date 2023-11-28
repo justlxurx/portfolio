@@ -22,11 +22,11 @@ const Socials = () => {
       label: `Следите за всеми нашими новостями в Telegram!`,
       link: 'https://t.me/devcorn',
     },
-    {
-      title: `facebook`,
-      label: `Следите за всеми нашими новостями в Facebook!`,
-      link: 'https://www.facebook.com/qazdevelop.itcompany',
-    },
+    // {
+    //   title: `facebook`,
+    //   label: `Следите за всеми нашими новостями в Facebook!`,
+    //   link: 'https://www.facebook.com/qazdevelop.itcompany',
+    // },
   ]
 
   return (

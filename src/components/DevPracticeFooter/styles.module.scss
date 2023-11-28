@@ -154,7 +154,15 @@
     }
   }
 }
+@media (max-width: 1635px) {
+  .header {
+    font-size: 40px;
+  }
 
+  .link {
+    font-size: 35px;
+  }
+}
 @media (max-width: $desktop-width) {
   .footer {
     margin-top: 60px;

@@ -167,7 +167,7 @@ const Gallery = () => {
         <Image
           className={styles.additional__buttons}
           src={buttons}
-          alt="Shift + F6"
+          alt="Shift + G"
         />
       </header>
       <div className={styles.blocks}>

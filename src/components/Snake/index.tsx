@@ -134,14 +134,9 @@ const App: React.FC = () => {
     context.setTransform(scale, 0, 0, scale, 0, 0)
     context.clearRect(0, 0, canvasSize.x, canvasSize.y)
 
-    // Draw Snake
     context.fillStyle = snakeColor
 
     snake.forEach(({ x, y }) => context.fillRect(x, y, 1, 1))
-
-    // Draw Apple
-    //  context.fillStyle = 'none'
-    // context.fillRect(apple.x, apple.y, 1, 1)
   }, [snake, apple, canvasSize])
 
   const moveSnake = (event: React.KeyboardEvent) => {

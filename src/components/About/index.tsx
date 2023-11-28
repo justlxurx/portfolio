@@ -4,7 +4,9 @@ import classNames from 'classnames'
 import box from 'public/about_box_image.svg'
 import core from 'public/about_core_image.svg'
 import java from 'public/about_java_image.svg'
-import php from 'public/about_php_image.svg'
+import go from 'public/about_go_image.svg'
+import node from 'public/about_node_image.svg'
+import phyton from 'public/about_phyton_image.svg'
 import planet from 'public/about_planet_image.svg'
 import react from 'public/about_react_image.svg'
 import sSymbol from 'public/about_s_image.svg'
@@ -41,16 +43,24 @@ const About = () => {
 
   const programmingLanguages: IProgrammingLanguage[] = [
     {
+      icon: go,
+      alt: 'Go',
+    },
+    {
+      icon: node,
+      alt: 'node.js',
+    },
+    {
       icon: java,
-      alt: 'Java',
+      alt: 'java',
+    },
+    {
+      icon: phyton,
+      alt: 'Phyton',
     },
     {
       icon: react,
       alt: 'React',
-    },
-    {
-      icon: php,
-      alt: 'PHP',
     },
   ]
 

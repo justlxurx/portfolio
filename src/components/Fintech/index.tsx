@@ -6,7 +6,7 @@ const Fintech = () => {
     <section className={styles.fintech}>
       <div className={styles.fintech__title}>
         <p>Доработка финтех-платформы</p>
-        <p className={styles.project_num}>003</p>
+        <p className={styles.project_num}>004</p>
       </div>
 
       <div className={styles.fintech__content}>
@@ -22,7 +22,7 @@ const Fintech = () => {
                 кошелька и доработала финтех-платформу
               </p>
               <div className={styles.hidden_block1}>
-                <p className={styles.hidden_block1_num}>003</p>
+                <p className={styles.hidden_block1_num}>004</p>
                 <div className={styles.hidden_block1_img}></div>
               </div>
             </div>

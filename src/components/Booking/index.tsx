@@ -1,12 +1,19 @@
-// import Button from '@/components/ui/Button'
+'use client'
 import styles from './styles.module.scss'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import Button from '../ui/Button'
+
+import arrow_icon from 'public/arrow_icon.svg'
 
 const Booking = () => {
+  const router = useRouter()
+
   return (
     <section className={styles.booking}>
       <div className={styles.booking__title}>
         <p>Букинговая система для круизных лайнеров</p>
-        <p className={styles.project_num}>005</p>
+        <p className={styles.project_num}>006</p>
       </div>
 
       <div className={styles.booking__content}>
@@ -20,7 +27,7 @@ const Booking = () => {
             контрактов, претензионных документов
           </p>
           <div className={styles.hidden_block_content}>
-            <p className={styles.hidden_block_content_num}>005</p>
+            <p className={styles.hidden_block_content_num}>006</p>
             <div className={styles.hidden_block_content_img}></div>
           </div>
         </div>
@@ -53,6 +60,18 @@ const Booking = () => {
         </div>
         <div></div>
       </div>
+      <Button
+        className={styles.cases_button_1}
+        onClick={() => router.back()}
+        type="button"
+      >
+        <Image
+          className={styles.cases_button__arrow1}
+          src={arrow_icon}
+          alt={'Arrow'}
+        />
+        вернуться назад
+      </Button>
     </section>
   )
 }

@@ -31,7 +31,7 @@ const Game = ({
       }
     }
     const handleKeyPress = (e: any) => {
-      if (e.shiftKey && e.key === 'Q') {
+      if (e.shiftKey && e.key === 'G') {
         openModal()
       }
     }

@@ -1,34 +1,5 @@
 .monitoring {
   width: 100%;
-  .cases_button_1 {
-    padding: 16px;
-    border-radius: 10px;
-    font-weight: 600;
-    background-color: black;
-    color: #eaeaea;
-    text-align: center;
-    font-family: Helvetica;
-    font-size: 23px;
-    letter-spacing: -0.988px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    border: 0;
-    margin-bottom: 25px;
-    cursor: pointer;
-    margin: 130px 5%;
-
-    .cases_button__arrow1 {
-      border-radius: 6px;
-      margin-right: 35px;
-      height: 38px;
-      width: 38px;
-      transform: rotate(180deg);
-    }
-    &:hover {
-      background-color: blue;
-    }
-  }
 
   &__title {
     padding: 0 4%;
@@ -38,13 +9,14 @@
     font-size: 27px;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px; /* 148.148% */
+    line-height: 40px;
     letter-spacing: -1.02px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid black;
+    border-top: 1px solid black;
     .project_num {
       padding: 8px 40px;
       border-left: 1px solid black;
@@ -246,20 +218,6 @@
 
 @media (max-width: 768px) {
   .monitoring {
-    .cases_button_1 {
-      padding: 16px;
-      border-radius: 10px;
-      font-size: 24px;
-      margin-bottom: 25px;
-      margin: 110px 25px 70px 25px;
-
-      .cases_button__arrow1 {
-        border-radius: 6px;
-        margin-right: 16px;
-        height: 38px;
-        width: 38px;
-      }
-    }
     &__title {
       padding: 20px 25px;
       font-size: 27px;
@@ -267,7 +225,6 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: none;
-      border-top: none;
       .project_num {
         display: none;
       }
@@ -318,7 +275,6 @@
         &_second {
           border-right: 1px solid black;
           padding: 44px 16px;
-          border-bottom: 1px solid black;
         }
       }
 
@@ -358,20 +314,6 @@
 
 @media (max-width: 576px) {
   .monitoring {
-    .cases_button_1 {
-      padding: 16px;
-      border-radius: 10px;
-      font-size: 20px;
-      margin-bottom: 25px;
-      margin: 110px 25px 70px 25px;
-
-      .cases_button__arrow1 {
-        border-radius: 6px;
-        margin-right: 16px;
-        height: 35px;
-        width: 35px;
-      }
-    }
     &__title {
       padding: 20px 16px;
       font-size: 27px;

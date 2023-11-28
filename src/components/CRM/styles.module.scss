@@ -15,7 +15,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
     .project_num {
       padding: 8px 40px;
@@ -255,12 +254,10 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: none;
-      border-top: 1px solid black;
       p:first-of-type {
         padding-right: 5px;
       }
       .project_num {
-        // padding: 8px 35px;
         padding: 20px 0;
         border-right: 1px solid black;
         height: auto;

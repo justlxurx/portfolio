@@ -16,7 +16,7 @@ export default function CustomComponent({
   children: ReactNode
   component: ReactNode
 }) {
-  const [y, setY] = useState(0) // Используем состояние для значения y
+  const [y, setY] = useState(0)
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -37,23 +37,6 @@ export default function CustomComponent({
     }
   }, [])
 
-  // const [isScrollingUp, setIsScrollingUp] = useState(true)
-
-  // useEffect(() => {
-  //   let lastScrollY = window.scrollY
-
-  //   function handleScroll() {
-  //     const currentScrollY = window.scrollY
-  //     setIsScrollingUp(currentScrollY < lastScrollY)
-  //     lastScrollY = currentScrollY
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll)
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [])
   const control = useAnimation()
   const [isScrollingUp, setIsScrollingUp] = useState(true)
 
@@ -129,7 +112,7 @@ export default function CustomComponent({
   const [fixed, setFixed] = useState(true)
 
   useEffect(() => {
-    const component = document.querySelector('.stopped') // Replace with the selector for the component before which the sidebar should stop
+    const component = document.querySelector('.stopped')
     const scrollHandler = () => {
       if (component) {
         const componentPosition = component.getBoundingClientRect()
@@ -139,10 +122,8 @@ export default function CustomComponent({
       }
     }
 
-    // Attach the scroll event listener
     window.addEventListener('scroll', scrollHandler)
 
-    // Define the cleanup function to remove the event listener
     return () => {
       window.removeEventListener('scroll', scrollHandler)
     }
@@ -171,7 +152,6 @@ export default function CustomComponent({
                   }}
                   transition={{ duration: 0.1, ease: 'easeInOut' }}
                   className={styles.nav_row_circle}
-                  //style={{ borderColor: '2px solid #d9d9d9' }}
                 ></motion.span>
                 <p> {link.title}</p>
               </span>
