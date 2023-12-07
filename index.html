@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevPractice</title>
+    <link rel="stylesheet" href="./utils/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="favicons/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="favicons/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+      <script src="https://unpkg.com/imask"></script>
+      <script src="/index.js" async></script>
+  </head>
+  <body>
+    
+    <div class="container">
+    <div class="popup">
+        <div class="popup-img">
+            <img src="/utils/images/DevPractice.svg" alt="logo" class="logo-img">
+            <img src="/utils/images/exit.png" alt="leave" class="exit-img" onclick="closePopup()">
+        </div>
+        <form class="popup-form"  action="#" method="post" id="add-form">
+            <input type="text" name="Ваше имя" placeholder="Ваше имя" class="popup-form-input">
+            <input type="text" name="Ваш телефон" placeholder="Ваш телефон" class="popup-form-input input-phone">
+           <div class="choice">  
+              <input name="proga-lang" type="radio" id="python" class="choose-click" checked="checked"><label for="python"><span class="choose-click-dot"></span> Python</label>
+              <input name="proga-lang" type="radio" id="react" class="choose-click"><label for="react"><span class="choose-click-dot"></span> React</label>
+            </div>
+            <button type="submit" class="popup-form-submit-button">Отправить заявку</button>
+        </form>
+    </div>
+    <div class="menu-popup">
+      <div class="popup-img">
+          <img src="/utils/images/DevPractice1.svg" alt="logo" class="logo-img">
+          <img src="/utils/images/exit-white.png" alt="leave" class="exit-img" onclick="closeMenu()">
+      </div>
+      <ul class="menu-popup-list">
+        <a href="#courses" onclick="closeMenu()"><li class="menu-popup-list__item">Курсы</li></a>
+        <a href="#comments" onclick="closeMenu()"><li class="menu-popup-list__item">Отзывы</li></a> 
+        <a href="#prices" onclick="closeMenu()"><li class="menu-popup-list__item">Цены</li></a> 
+        <a href="#prices" onclick="closeMenu()"><li class="menu-popup-list__item">Формат обучения</li></a> 
+      </ul>
+      <a href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+      <button class="menu-popup-insta">
+        <img src="/utils/images/Instagram-black.svg" alt="insta"> 
+        Instagram
+      </button></a>
+    </div>
+    <div class="header-links">
+      <div class="logo"></div>
+      <div class="header-links-wrapper">      
+        <ul class="menu">
+          <a href="#courses"><li class="menu__item">Курсы</li></a>
+          <a href="#comments"><li class="menu__item">Отзывы</li></a> 
+          <a href="#prices"><li class="menu__item">Цены</li></a> 
+          <a href="#prices"><li class="menu__item">Формат обучения</li></a> 
+        </ul>
+        <button class="sign-button" onclick="openPopup()">Записаться</button>
+      </div>
+      <button class="burger-menu"><img src="utils/images/burger.png" alt="burger" onclick="openMenu()"></button>
+    </div>
+    <div class="item-1">
+      <div class="item-1-text">
+        <div class="item-1-text__main">
+          Обучение
+          <span class="item-1-text__main-span">программированию </span> <br />
+          через
+          <span class="item-1-text__main-span">практику</span>
+        </div>
+        <p class="item-1-text__para">
+          Онлайн курсы от действующих <br />
+          разработчиков на базе it-компании
+          <a href="https://qazdev.team/" class="qazdev-link" target="_blank"
+            ><i><strong>qazdev</strong></i></a
+          >
+        </p>
+      </div>
+      <div class="item-1-img">
+        <img src="/utils/images/graphic.svg" alt="graphic" />
+      </div>
+    </div>
+     </div>
+
+    <div class="item-2">
+      <ul class="item-2__list">
+        
+        <li class="item-2__list-item">
+          <img src="/utils//images/icon-1.svg" alt="icon" />
+          <p class="item-2__list-para">6 месяцев обучения</p>
+        </li>
+        <li class="item-2__list-item">
+          <img src="/utils//images/icon-2.svg" alt="icon" />
+          <p class="item-2__list-para">онлайн-формат обучения</p>
+        </li>
+        <li class="item-2__list-item">
+          <img src="/utils//images/icon-4.svg" alt="icon" />
+          <p class="item-2__list-para">практикующие менторы</p>
+        </li>
+        <li class="item-2__list-item">
+          <img src="/utils//images/icon-3.svg" alt="icon" />
+          <p class="item-2__list-para">отработка на практике</p>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+    <button class="second-sign-button" onclick="openPopup()">Записаться</button>
+    <div class="item-3" id="courses">
+      <h4 class="item-3__heading"><span class="add-dot"></span>  Наши курсы</h4>
+      <div class="item-3__wrapper">
+        <div class="item-3__wrapper-1">
+          <div>
+          <span class="item-3__wrapper-1-span">< Frontend ></span>
+          <h5 class="item-3__wrapper-1-heading">React-разработчик</h5>
+          <p class="item-3__wrapper-1-para-1">
+            React-разработчик – как строитель для веб-сайтов и приложений.
+          </p>
+          <p class="item-3__wrapper-1-para-2">
+            React - это библиотека JavaScript, которая используется для создания
+            <br />
+            пользовательских интерфейсов. Она позволяет разработчикам строить
+            <br />
+            большие, масштабируемые веб-приложения, разделяя <br />
+            их на компоненты, которые могут быть повторно использованы.
+          </p>
+          </div>
+          <div class="item-3__wrapper-img">
+           <button class="item-3__wrapper-button"><img src="utils/images/button-right.png" alt="button"></button> 
+          </div>
+          <!-- <img src="/utils/images/buttonSection.png" alt="buttons" class="item-3__wrapper-img" /> -->
+        </div>
+        <div class="item-3__wrapper-2">
+          <div>
+          <span class="item-3__wrapper-2-span">< Frontend ></span>
+          <h5 class="item-3__wrapper-2-heading">Python-разработчик</h5>
+          <p class="item-3__wrapper-2-para-1">
+            В интернете десятки тысяч сайтов, созданных на основе Python.
+          </p>
+          <p class="item-3__wrapper-2-para-2">
+            Это мощный язык программирования для создания <br />
+            бэкенда. Хочешь научиться писать код, делая <br />
+            функциональные и эффективные программы? <br />
+            Тогда Python точно для тебя. 
+          </p>
+          </div>
+          <div class="item-3__wrapper-img-2">
+           <button class="item-3__wrapper-button"><img src="utils/images/button-right.png" alt="button" class="item-3__wrapper-button-img"></button> 
+          </div>
+          <!-- <img src="/utils/images/buttonSection2.png" alt="buttons" class="item-3__wrapper-img" /> -->
+        </div>
+      </div>
+    </div>
+    <div class="item-4" id="prices">
+      <h4 class="item-4__heading"><span class="add-dot"></span> Стать востребованным разработчиком</h4>
+      <div class="item-4__card">
+        <div>
+          <h6 class="item-4__card-heading">Онлайн-формат</h6>
+          <p class="item-4__card-para">
+            >> Занятия проходят на онлайн-платформе </p>
+           <p class="item-4__card-para">>> Новые уроки открываются после выполнения домашнего задания </p>
+           <p class="item-4__card-para"> >> Еженедельно со студентами проводится прямой эфир, на котором  <br />
+            менторы отвечают на вопросы и помогают с решением задач. <br />
+            Ты сам решаешь, когда смотреть уроки!</p>          
+          </p>
+        </div>
+        <div class="item-4__info">
+          <p class="item-4__total-price">600 000 kzt</p>
+          <p class="item-4__monthly-price">
+            100 000 kzt/месяц
+          </p>
+          <div class="item-4__kaspi">
+            <p>За полгода / </p>
+            <img src="/utils/images/kaspi.svg" alt="kaspi" />
+            <p> Kaspi рассрочка</p>
+          </div>
+          <button class="item-4__button" onclick="openPopup()">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-5" id="comments">
+      <div class="item-5-top">
+        <h4 class="item-5__heading"><span class="add-dot"></span>Отзывы наших учеников</h4>
+        <div class="item-5-slider-button-wrapper"> 
+          <button class="item-5-button-left" onclick="plusDivs(-1)"></button>
+          <button class="item-5-button-right" onclick="plusDivs(1)"></button>
+      </div>
+      </div>
+      <div class="item-5__wrapper"></div>
+    </div>
+
+    <footer class="footer-wrapper">
+      <ul class="menu">
+        <a href="#courses"><li class="menu__item">Курсы</li></a>
+        <a href="#comments"><li class="menu__item">Отзывы</li> </a>
+        <a href="#prices"><li class="menu__item">Цены</li></a>
+        <a href="#prices"><li class="menu__item">Формат обучения</li></a>
+      </ul>
+      <a href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ==" class="insta-link" target="_blank">
+      <button class="insta">
+        <img src="/utils/images/Instagram.png" alt="insta"> 
+        Instagram
+      </button>
+      </a>
+    </footer>
+   </div>
+  </body>
+</html>
