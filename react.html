@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <link rel="stylesheet" href="/utils/styles/programs.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/utils/styles/global.css" />
+    <script src="/index.js" async></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="popup">
+        <div class="popup-img">
+          <img
+            src="/utils/images/DevPractice.svg"
+            alt="logo"
+            class="logo-img"
+          />
+          <img
+            src="/utils/images/exit.png"
+            alt="leave"
+            class="exit-img"
+            onclick="closePopup()"
+          />
+        </div>
+        <form class="popup-form" action="#" method="post" id="add-form">
+          <input
+            type="text"
+            name="Ваше имя"
+            placeholder="Ваше имя"
+            class="popup-form-input"
+          />
+          <input
+            type="text"
+            name="Ваш телефон"
+            placeholder="Ваш телефон"
+            class="popup-form-input input-phone"
+          />
+          <button
+            type="submit"
+            class="popup-form-submit-button"
+            onclick="closePopup()"
+          >
+            Отправить заявку
+          </button>
+        </form>
+      </div>
+      <div class="menu-popup">
+        <div class="popup-img">
+          <img
+            src="/utils/images/DevPractice1.svg"
+            alt="logo"
+            class="logo-img"
+          />
+          <img
+            src="/utils/images/exit-white.png"
+            alt="leave"
+            class="exit-img"
+            onclick="closeMenu()"
+          />
+        </div>
+        <ul class="menu-popup-list">
+          <li class="menu-popup-list__item">
+            <a href="#skills-react" onclick="closeMenu()"
+              >Практические навыки</a
+            >
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#price-react" onclick="closeMenu()">Цены</a>
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#format-react" onclick="closeMenu()">Формат обучения</a>
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#comments-react" onclick="closeMenu()">Отзывы</a>
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#program-course-react" onclick="closeMenu()"
+              >Программа курса</a
+            >
+          </li>
+        </ul>
+        <a
+          href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ=="
+          target="_blank"
+        >
+          <button class="menu-popup-insta">
+            <img src="/utils/images/Instagram-black.svg" alt="insta" />
+            Instagram
+          </button></a
+        >
+      </div>
+      <div class="header-links">
+        <a href="/index.html"><div class="logo"></div></a>
+        <div class="header-links-wrapper">
+          <ul class="menu">
+            <li class="menu__item">
+              <a href="#skills-react">Практические навыки</a>
+            </li>
+            <li class="menu__item">
+              <a href="#program-course-react">Программа курса</a>
+            </li>
+            <li class="menu__item"><a href="#comments-react">Отзывы</a></li>
+            <li class="menu__item"><a href="#price-react">Цены</a></li>
+            <li class="menu__item">
+              <a href="#format-react">Формат обучения</a>
+            </li>
+          </ul>
+        </div>
+        <button class="burger-menu">
+          <img
+            src="utils/images/burger.png"
+            alt="burger"
+            onclick="openMenu()"
+          />
+        </button>
+      </div>
+
+      <div class="program-item-1">
+        <div class="program-item-1__wrapper-1">
+          <div class="program-item-1__wrapper-1-links">
+            <a href="/index.html">DevPractice</a>
+            >
+            <a href="">React</a>
+          </div>
+          <div class="program-item-1__wrapper-1-center">
+            <h3>React-разработчик с нуля</h3>
+            <div class="program-item-1__wrapper-1-learning">
+              <p class="program-item-1__wrapper-1-learning-program">
+                React.js Development
+              </p>
+              <p class="program-item-1__wrapper-1-learning-program">
+                Component-Based Architecture
+              </p>
+              <p class="program-item-1__wrapper-1-learning-program">
+                State Management
+              </p>
+            </div>
+            <p class="program-item-1__wrapper-1-text-1">
+              Погружение в магию React: <br />
+              от Основ до Продвинутых Концепций
+            </p>
+          </div>
+          <p class="program-item-1__wrapper-1-text-2">
+            <span> >> </span>Прокачайте свои навыки разработки, чтобы создавать
+            <br />
+            современные и масштабируемые приложения на основе React!
+          </p>
+        </div>
+        <div class="program-item-1__wrapper-2">
+          <span>Что ваш ждет на этом курсе </span>
+          <div class="program-video-wrapper">
+            <video
+              width="100%"
+              height="100%"
+              autoplay
+              muted
+              preload="auto"
+              controls
+              class="program-video"
+              poster="utils/images/video-poster.png"
+              src="/utils/videos/video.mp4"
+            >
+              <!-- <source src="video.mp4" type="video/mp4" /> -->
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="program-item-1__wrapper-2-list">
+            <p class="program-item-1__wrapper-2-list-item">
+              <span></span> 345 часов лекций
+            </p>
+            <p class="program-item-1__wrapper-2-list-item">
+              <span></span> 160 практических материалов
+            </p>
+            <p class="program-item-1__wrapper-2-list-item">
+              <span></span> обратная связь от менторов курса
+            </p>
+          </div>
+          <button class="sign-button" onclick="openPopup()">Записаться</button>
+        </div>
+      </div>
+
+      <div class="program-item-2" id="skills-react">
+        <div class="program-item__heading">
+          <span class="add-dot"></span>
+          <p>Чему вы научитесь</p>
+        </div>
+        <div class="program-item-2__content">
+          <div class="program-item-2__content-1 react-wrapper-1">
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/react.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="react-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">React</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/js.svg"
+                alt="js-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">JavaScript</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/work-with-components.svg"
+                alt="component-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Работа с компонентами
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/jsx.svg"
+                alt="jsx"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">JSX</p>
+            </div>
+          </div>
+          <div class="program-item-2__content-2 react-wrapper-2">
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/work-with-states.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="state"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Работа с состоянием
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/hook.svg"
+                alt="hooks-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">Хуки</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/work-with-animation.svg"
+                alt="animation-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Работа с анимацией
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/works-for-portfolio.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="portfolio-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                +4 проекта в портфолио
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/hook.svg"
+                alt="interview-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Как проходить собеседования
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/work-with-animation.svg"
+                alt="animation-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Работа с анимацией
+              </p>
+            </div>
+            <!-- <div class="react-item-2__content-3">
+            <div class="react-item-2__content-wrapper">
+              <img
+                src="/utils/images/works-for-portfolio.svg"
+                class="react-item-2__content-wrapper-icon"
+                alt="portfolio-icon"
+              />
+              <p class="react-item-2__content-wrapper-para">
+                +4 проекта в портфолио
+              </p>
+            </div>
+            <div class="react-item-2__content-wrapper">
+              <img
+                src="/utils/images/hook.svg"
+                alt="interview-icon"
+                class="react-item-2__content-wrapper-icon"
+              />
+              <p class="react-item-2__content-wrapper-para">
+                Как проходить собеседования
+              </p>
+            </div>
+            <div class="react-item-2__content-wrapper">
+              <img
+                src="/utils/images/work-with-animation.svg"
+                alt="animation-icon"
+                class="react-item-2__content-wrapper-icon"
+              />
+              <p class="react-item-2__content-wrapper-para">
+                Работа с анимацией
+              </p>
+            </div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item-3" id="program-course-react">
+        <div class="program-item__heading">
+          <span class="add-dot"></span>
+          <p>Программа курса</p>
+        </div>
+        <div class="program-item-3__content">
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 1</p>
+              <button
+                onclick="hide('Demo1'); plusOrMinus('collapsed1')"
+                id="collapsed1"
+                class="minus"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main" id="Demo1">
+              <div class="program-item-3__content-wrapper-video">
+                <div class="program-item-3__content-wrapper-video-container">
+                  <a
+                    href=""
+                    class="program-item-3__content-wrapper-video-links"
+                  >
+                    <img src="/utils/images/Exclude.png" alt="run" />
+                    <p class="program-item-3__content-wrapper-video-links-para">
+                      Вступление
+                    </p>
+                  </a>
+                  <p class="program-item-3__content-wrapper-video-links-para">
+                    4 минуты 36 секунд
+                  </p>
+                </div>
+                <div class="program-item-3__content-wrapper-video-container">
+                  <a
+                    href=""
+                    class="program-item-3__content-wrapper-video-links"
+                  >
+                    <img src="/utils/images/Exclude.png" alt="run" />
+                    <p class="program-item-3__content-wrapper-video-links-para">
+                      Обзор курса - как проходит обучение
+                    </p>
+                  </a>
+                  <p class="program-item-3__content-wrapper-video-links-para">
+                    4 минуты 36 секунд
+                  </p>
+                </div>
+              </div>
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Подготовка</p>
+                <p>> Основы веб-разработки (HTML&CSS)</p>
+                <p>
+                  > Основы JavaScript (Переменные, типы данных, операторы,
+                  функции и объекты) 
+                </p>
+                <p>> Javascript & DOM (Document Object Model)</p>
+              </div>
+              <span
+                >Научимся создавать веб-страницы с помощью HTML и CSS. Изучим
+                основы JavaScript, чтобы делать страницы интерактивными.
+                Научимся работать с DOM, что позволит нам изменять содержимое
+                страницы и обрабатывать события. Этот модуль – старт в создании
+                креативных и функциональных веб-страниц.</span
+              >
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 2</p>
+              <button
+                onclick="hide('Demo2'); plusOrMinus('collapsed2')"
+                id="collapsed2"
+                class="plus"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo2">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Основы React</p>
+                <p>> Способы подключения React к проекту</p>
+                <p>> Знакомство с JSX </p>
+                <p>> Виды компонентов</p>
+                <p>> Стилизация компонентов</p>
+                <p>> Обмен данными в приложении</p>
+                <p>> Обработка событий</p>
+                <p>> Жизненный цикл компонентов</p>
+                <p>> Работа с API</p>
+                <p>> Работа с формами</p>
+                <p>> Компонент Error Boundaries (Обработка ошибок)</p>
+              </div>
+              <span>
+                В модуле вы изучите основы JavaScript-библиотеки React, которая
+                позволяет создавать интерфейсы. Разберемся, как подключать React
+                к своим проектам через различные методы, изучим JSX, научимся
+                работать с состоянием, обрабатывать события, а также получать и
+                отправлять данные на сервер.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 3</p>
+              <button
+                onclick="hide('Demo3'); plusOrMinus('collapsed3')"
+                class="plus"
+                id="collapsed3"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo3">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> React Hooks</p>
+                <p>> Кастомные Hooks</p>
+                <p>> Рефы</p>
+                <p>
+                  > useState, useEffects, useContext, для управления состоянием
+                  и выполнения побочных эффектов
+                </p>
+              </div>
+              <span
+                >React Hooks – это своего рода магия, которая позволит нам
+                удобно работать с состоянием и взаимодействовать с данными в
+                наших React-проектах. Мы разберемся с разными видами "крючков" -
+                таких как useState, useEffect и useContext, которые позволят без
+                труда контролировать информацию и внедрять полезные функции в
+                ваши веб-приложения. Этот модуль расширит ваши навыки и позволит
+                создавать более современные и гибкие приложения на React.</span
+              >
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 4</p>
+              <button
+                onclick="hide('Demo4'); plusOrMinus('collapsed4')"
+                class="plus"
+                id="collapsed4"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo4">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Продвинутое управление состоянием приложения</p>
+                <p>> React context</p>
+                <p>> Архитектура Flux</p>
+                <p>> Hooks useReducer</p>
+                <p>> Знакомство с библиотекой Redux</p>
+                <p>> Знакомство с библиотекой MobX</p>
+              </div>
+              <span
+                >В этом модуле мы рассмотрим разные методы и инструменты для
+                более эффективного контроля состояния вашего приложения в React.
+                Познакомимся с разными подходами и инструментами, которые
+                помогут выбрать наилучший способ управления состоянием в ваших
+                проектах. Это поможет организовать код наиболее оптимальным
+                образом, обеспечивая масштабируемость и улучшение
+                производительности в ваших React-приложениях.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 5</p>
+              <button
+                onclick="hide('Demo5'); plusOrMinus('collapsed5')"
+                class="plus"
+                id="collapsed5"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo5">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Продвинутые концепции</p>
+                <p>> Асинхронные запросы к API</p>
+                <p>> Анимация</p>
+                <p>> Принципы интеграции с другими JS-библиотеками</p>
+                <p>> Изучения работы React “под капотом”</p>
+              </div>
+              <span
+                >Многие веб-приложения должны взаимодействовать с разными
+                данными. В этом модуле мы научимся выполнять запросы к внешним
+                источникам данных, что позволит получать информацию с других
+                серверов. А также углубимся в создание анимаций, что сделает
+                наши интерфейсы более привлекательными. Наконец, изучим, как
+                React взаимодействует с виртуальным DOM для более эффективного
+                обновления приложений.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 6</p>
+              <button
+                onclick="hide('Demo6'); plusOrMinus('collapsed6')"
+                class="plus"
+                id="collapsed6"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo6">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Soft skills/job interview</p>
+              </div>
+              <span
+                >Никакие технические навыки могут и не пригодится, если у
+                разработчика нет Soft skills. В последнем модуле курса мы
+                разберем, какие скиллы нужны для более продуктивной работы в
+                команде, Разберем важность проектов в портфолио и CV. А также
+                каждый студент попробует пройти свое первое техническое
+                собеседование, чтобы “прощупать почву”.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item-4">
+        <div class="program-item__heading">
+          <span class="add-dot"></span>
+          <p>Стать востребованным разработчиком</p>
+        </div>
+        <div class="program-item-4__content">
+          <div class="program-item-4__content-wrapper-1" id="format-react">
+            <h3 class="program-item-4__content-wrapper-1-heading">
+              Онлайн-формат
+            </h3>
+            <div class="program-item-4__content-wrapper-1-boxes">
+              <div class="program-item-4__two-box-container">
+                <div class="program-item-4__content-wrapper-1-box">
+                  <img
+                    src="/utils/images/01.png"
+                    alt="01"
+                    class="program-item-4__content-wrapper-1-box-img"
+                  />
+                  <p class="program-item-4__content-wrapper-1-box-text">
+                    Занятия проходят <br />
+                    на онлайн-платформе
+                  </p>
+                </div>
+                <div class="program-item-4__content-wrapper-1-box">
+                  <img
+                    src="/utils/images/02.png"
+                    alt="02"
+                    class="program-item-4__content-wrapper-1-box-img"
+                  />
+                  <p class="program-item-4__content-wrapper-1-box-text">
+                    Новые уроки открываются после <br />
+                    выполнения домашнего задания
+                  </p>
+                </div>
+              </div>
+              <div class="program-item-4__content-wrapper-1-box">
+                <img
+                  src="/utils/images/03.png"
+                  alt="03"
+                  class="program-item-4__content-wrapper-1-box-img"
+                />
+                <p class="program-item-4__content-wrapper-1-box-text">
+                  Еженедельные эфиры с менторами для помощи и ответов на
+                  вопросы. <br />
+                  Ты сам решаешь, когда смотреть уроки!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="program-item-4__content-wrapper-2" id="price-react">
+            <div class="program-item-4-price">
+              <span>Стоимость:</span>
+              <p>600 000 kzt</p>
+            </div>
+            <div>
+              <p class="program-item-4-monthly-price">50 000 kzt/месяц</p>
+              <div class="program-item-4__kaspi">
+                <p>За год /</p>
+                <img src="/utils/images/kaspi.svg" alt="kaspi" />
+                <p>Kaspi рассрочка</p>
+              </div>
+              <button class="program-item-4__button" onclick="openPopup()">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-5" id="comments-react">
+        <script src="/comments.js"></script>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container footer-container">
+        <ul class="menu">
+          <li class="menu__item menu__item-1">
+            <a href="#skills-react">Практические навыки</a>
+          </li>
+          <li class="menu__item menu__item-2">
+            <a href="#program-course-react">Программа курса</a>
+          </li>
+          <li class="menu__item menu__item-3">
+            <a href="#comments-react">Отзывы </a>
+          </li>
+          <li class="menu__item menu__item-4">
+            <a href="#price-react">Цены</a>
+          </li>
+          <li class="menu__item menu__item-5">
+            <a href="#format-react">Формат обучения</a>
+          </li>
+        </ul>
+        <a
+          href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ=="
+          class="insta-link"
+          target="_blank"
+        >
+          <button class="insta">
+            <img src="/utils/images/Instagram.png" alt="insta" />
+            Instagram
+          </button>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python</title>
+    <link rel="stylesheet" href="/utils/styles/programs.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/utils/styles/global.css" />
+    <script src="/index.js" async></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="popup">
+        <div class="popup-img">
+          <img
+            src="/utils/images/DevPractice.svg"
+            alt="logo"
+            class="logo-img"
+          />
+          <img
+            src="/utils/images/exit.png"
+            alt="leave"
+            class="exit-img"
+            onclick="closePopup()"
+          />
+        </div>
+        <form class="popup-form" action="#" method="post" id="add-form">
+          <input
+            type="text"
+            name="Ваше имя"
+            placeholder="Ваше имя"
+            class="popup-form-input"
+          />
+          <input
+            type="text"
+            name="Ваш телефон"
+            placeholder="Ваш телефон"
+            class="popup-form-input input-phone"
+          />
+          <button
+            type="submit"
+            class="popup-form-submit-button"
+            onclick="closePopup()"
+          >
+            Отправить заявку
+          </button>
+        </form>
+      </div>
+      <div class="menu-popup">
+        <div class="popup-img">
+          <img
+            src="/utils/images/DevPractice1.svg"
+            alt="logo"
+            class="logo-img"
+          />
+          <img
+            src="/utils/images/exit-white.png"
+            alt="leave"
+            class="exit-img"
+            onclick="closeMenu()"
+          />
+        </div>
+        <ul class="menu-popup-list">
+          <li class="menu-popup-list__item">
+            <a href="#skills-python" onclick="closeMenu()"
+              >Практические навыки</a
+            >
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#price-python" onclick="closeMenu()">Цены</a>
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#format-python" onclick="closeMenu()">Формат обучения</a>
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#comments-python" onclick="closeMenu()">Отзывы</a>
+          </li>
+          <li class="menu-popup-list__item">
+            <a href="#program-course-python" onclick="closeMenu()"
+              >Программа курса</a
+            >
+          </li>
+        </ul>
+        <a
+          href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ=="
+          target="_blank"
+        >
+          <button class="menu-popup-insta">
+            <img src="/utils/images/Instagram-black.svg" alt="insta" />
+            Instagram
+          </button></a
+        >
+      </div>
+      <div class="header-links">
+        <a href="/index.html"><div class="logo"></div></a>
+        <div class="header-links-wrapper">
+          <ul class="menu">
+            <li class="menu__item">
+              <a href="#skills-python">Практические навыки</a>
+            </li>
+            <li class="menu__item">
+              <a href="#program-course-python">Программа курса</a>
+            </li>
+            <li class="menu__item"><a href="#comments-python">Отзывы</a></li>
+            <li class="menu__item"><a href="#price-python">Цены</a></li>
+            <li class="menu__item">
+              <a href="#format-python">Формат обучения</a>
+            </li>
+          </ul>
+        </div>
+        <button class="burger-menu">
+          <img
+            src="utils/images/burger.png"
+            alt="burger"
+            onclick="openMenu()"
+          />
+        </button>
+      </div>
+
+      <div class="program-item-1">
+        <div class="program-item-1__wrapper-1">
+          <div class="program-item-1__wrapper-1-links">
+            <a href="/index.html">DevPractice</a>
+            >
+            <a href="">Python</a>
+          </div>
+          <div class="program-item-1__wrapper-1-center">
+            <h3>Python-разработчик с нуля</h3>
+            <div class="program-item-1__wrapper-1-learning">
+              <p class="program-item-1__wrapper-1-learning-program">
+                Django-разработка
+              </p>
+              <p class="program-item-1__wrapper-1-learning-program">
+                ООП в Python
+              </p>
+              <p class="program-item-1__wrapper-1-learning-program">
+                Управление состоянием (Flask/Django)
+              </p>
+            </div>
+            <p class="program-item-1__wrapper-1-text-1">
+              Изучи Python разработку с нуля <br />
+              до написания своего веб-приложения
+            </p>
+          </div>
+          <p class="program-item-1__wrapper-1-text-2">
+            <span> >> </span>>> Прокачайте свои навыки разработки, чтобы
+            создавать <br />
+            современные и масштабируемые приложения на основе Python!
+          </p>
+        </div>
+        <div class="program-item-1__wrapper-2">
+          <span>Что ваш ждет на этом курсе </span>
+          <div class="program-video-wrapper">
+            <video
+              width="100%"
+              height="100%"
+              autoplay
+              muted
+              preload="auto"
+              controls
+              class="program-video"
+              poster="utils/images/video-poster.png"
+              src="/utils/videos/video.mp4"
+            >
+              <!-- <source src="video.mp4" type="video/mp4" /> -->
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="program-item-1__wrapper-2-list">
+            <p class="program-item-1__wrapper-2-list-item">
+              <span></span> 345 часов лекций
+            </p>
+            <p class="program-item-1__wrapper-2-list-item">
+              <span></span> 160 практических материалов
+            </p>
+            <p class="program-item-1__wrapper-2-list-item">
+              <span></span> обратная связь от менторов курса
+            </p>
+          </div>
+          <button class="sign-button" onclick="openPopup()">Записаться</button>
+        </div>
+      </div>
+
+      <div class="program-item-2" id="skills-python">
+        <div class="program-item__heading">
+          <span class="add-dot"></span>
+          <p>Чему вы научитесь</p>
+        </div>
+        <div class="program-item-2__content">
+          <div class="program-item-2__content-1 python-wrapper-1">
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="react-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">Python</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill1.svg"
+                alt="js-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Объектно-ориентированное программирование
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill2.svg"
+                alt="component-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Как проходить собеседования
+              </p>
+            </div>
+          </div>
+          <div class="program-item-2__content-2 python-wrapper-2">
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill3.svg"
+                alt="jsx"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Написание графических интерфейсов
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill4.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="state"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Условные операторы и циклы
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill5.svg"
+                alt="hooks-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                4 проекта в портфолио
+              </p>
+            </div>
+          </div>
+          <div class="program-item-2__content-3 python-wrapper-3">
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill6.svg"
+                alt="animation-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">Data Science</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill7.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="portfolio-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Веб-фреймворк Django
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill8.svg"
+                alt="interview-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Как составлять CV
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill9.svg"
+                alt="animation-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Работой с Базами данных
+              </p>
+            </div>
+          </div>
+
+          <div class="mobile-python-wrapper">
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="react-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">Python</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill1.svg"
+                alt="js-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Объектно-ориентированное программирование
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill2.svg"
+                alt="component-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Как проходить собеседования
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill3.svg"
+                alt="jsx"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Написание графических интерфейсов
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill4.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="state"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Условные операторы и циклы
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill5.svg"
+                alt="hooks-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                4 проекта в портфолио
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill6.svg"
+                alt="animation-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">Data Science</p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill7.svg"
+                class="program-item-2__content-wrapper-icon"
+                alt="portfolio-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Веб-фреймворк Django
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill8.svg"
+                alt="interview-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Как составлять CV
+              </p>
+            </div>
+            <div class="program-item-2__content-wrapper">
+              <img
+                src="/utils/images/skill9.svg"
+                alt="animation-icon"
+                class="program-item-2__content-wrapper-icon"
+              />
+              <p class="program-item-2__content-wrapper-para">
+                Работой с Базами данных
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item-3" id="program-course-python">
+        <div class="program-item__heading">
+          <span class="add-dot"></span>
+          <p>Программа курса</p>
+        </div>
+        <div class="program-item-3__content">
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 1</p>
+              <button
+                onclick="hide('Demo1'); plusOrMinus('collapsed1')"
+                id="collapsed1"
+                class="minus"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main" id="Demo1">
+              <div class="program-item-3__content-wrapper-video">
+                <div class="program-item-3__content-wrapper-video-container">
+                  <a
+                    href=""
+                    class="program-item-3__content-wrapper-video-links"
+                  >
+                    <img src="/utils/images/Exclude.png" alt="run" />
+                    <p class="program-item-3__content-wrapper-video-links-para">
+                      Вступление
+                    </p>
+                  </a>
+                  <p class="program-item-3__content-wrapper-video-links-para">
+                    4 минуты 36 секунд
+                  </p>
+                </div>
+                <div class="program-item-3__content-wrapper-video-container">
+                  <a
+                    href=""
+                    class="program-item-3__content-wrapper-video-links"
+                  >
+                    <img src="/utils/images/Exclude.png" alt="run" />
+                    <p class="program-item-3__content-wrapper-video-links-para">
+                      Обзор курса - как проходит обучение
+                    </p>
+                  </a>
+                  <p class="program-item-3__content-wrapper-video-links-para">
+                    4 минуты 36 секунд
+                  </p>
+                </div>
+              </div>
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Введение в Python</p>
+                <p>> Типы данных</p>
+                <p>> Строковые операции</p>
+                <p>> Ввод/вывод и форматирование выходных данных</p>
+                <p>> Операторы в Python</p>
+              </div>
+              <span
+                >В первом модуле мы изучим и сразу применим на практике основы
+                языка программирования Python и его стандартные функции (Print,
+                input, str и т.д.)</span
+              >
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 2</p>
+              <button
+                onclick="hide('Demo2'); plusOrMinus('collapsed2')"
+                id="collapsed2"
+                class="plus"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo2">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Управляющие конструкции и структуры данных</p>
+                <p>> Условные оператор</p>
+                <p>> Циклы</p>
+                <p>> Вложенные управляющие конструкции</p>
+                <p>> Список и кортеж</p>
+                <p>> Словарь и множества</p>
+                <p>> Вложенные структуры данных</p>
+              </div>
+              <span>
+                Во втором модуле мы изучим структуры данных и управляющие
+                конструкции: их методы использования и применения. Так же
+                поработаем с методами вложенности структур данных и управляющих
+                конструкций
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 3</p>
+              <button
+                onclick="hide('Demo3'); plusOrMinus('collapsed3')"
+                class="plus"
+                id="collapsed3"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo3">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Функции и модули</p>
+                <p>> Создание собственных функций с аргументами</p>
+                <p>> Стандартные модули</p>
+                <p>> Создание модулей</p>
+              </div>
+              <span
+                >Третий модуль посвятим теме Функций и Модулей. Рассмотрим
+                стандартные и создадим собственные. Разумеется разберем
+                практике, как их применять на проектных работах для решения
+                различных задач.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 4</p>
+              <button
+                onclick="hide('Demo4'); plusOrMinus('collapsed4')"
+                class="plus"
+                id="collapsed4"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo4">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> ООП и классы</p>
+                <p>> Объектно-ориентированное программирование</p>
+                <p>> Создание классов</p>
+                <p>> Методы экземпляра</p>
+                <p>> Наследование</p>
+                <p>> Полиморфизм</p>
+                <p>> Классы исключений и пользовательские исключения</p>
+              </div>
+              <span
+                >Раскроем тему основных понятий ООП и его применение в
+                разработке. Также разберем Классы, их создание и использование в
+                программе, а также Конструктор класса, Свойства и Методы.
+                Рассмотрим создание объектов на основе классов и их применение.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 5</p>
+              <button
+                onclick="hide('Demo5'); plusOrMinus('collapsed5')"
+                class="plus"
+                id="collapsed5"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo5">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Написание графических интерфейсов</p>
+                <p>> Введение</p>
+                <p>> Компоненты и события</p>
+                <p>> Пример графического интерфейса пользователя</p>
+                <p>> Виджеты</p>
+                <p>> Кнопки проверки</p>
+              </div>
+              <span
+                >В этом модуле рассмотрим тему графических интерфейсов на основе
+                кросс-платформенной графической библиотеки Tkinter и выполним
+                проектную работу.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 6</p>
+              <button
+                onclick="hide('Demo6'); plusOrMinus('collapsed6')"
+                class="plus"
+                id="collapsed6"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo6">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Работа с базой данных (SQL)</p>
+                <p>> Введение и установка</p>
+                <p>> Подключение и создание базы данных</p>
+                <p>> Операции INSERT, READ, UPDATE, DELETE.</p>
+                <p>> Операции COMMIT&ROLLBACK</p>
+                <p>> Обработка ошибок</p>
+              </div>
+              <span
+                >Здесь пройдем тему взаимодействия с операционными системами в
+                Python. Изучим язык запросов SQL и использование Python в связке
+                с Системой управления базы данных (СУБД).
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 7</p>
+              <button
+                onclick="hide('Demo7'); plusOrMinus('collapsed7')"
+                class="plus"
+                id="collapsed7"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo7">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Data Science и взаимодействие с ОС</p>
+                <p>> Операции с файловой системой</p>
+                <p>> Чтение и запись файлов (csv)</p>
+                <p>> Работа с NumPy</p>
+                <p>> Работа с Pandas & Seaborn</p>
+              </div>
+              <span
+                >Этот модуль посвящен взаимодействию Python с операционными
+                системами. Рассмотрим Модуль os стандартной библиотеки, основные
+                методы работы с файлами, а также методы и библиотеки для работы
+                в Data Science.
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 8</p>
+              <button
+                onclick="hide('Demo8'); plusOrMinus('collapsed8')"
+                class="plus"
+                id="collapsed8"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo8">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> DJANGO</p>
+                <p>> Введение и установка Django</p>
+                <p>> Создание проекта</p>
+                <p>> Создание приложения</p>
+                <p>> Создание страницы</p>
+                <p>> Базы данных и представления</p>
+                <p>> Статические формы и файлы</p>
+                <p>> API и безопасность</p>
+              </div>
+              <span
+                >Django использует шаблон проектирование MVC и широко
+                распространен среди разработчиков Python. Этому фреймворку и
+                посвятим восьмой модуль
+              </span>
+            </div>
+          </div>
+
+          <div class="program-item-3__content-wrapper">
+            <div class="program-item-3__content-collapse">
+              <p class="program-item-3__content-collapse-p">Модуль 9</p>
+              <button
+                onclick="hide('Demo9'); plusOrMinus('collapsed9')"
+                class="plus"
+                id="collapsed9"
+              ></button>
+            </div>
+            <div class="program-item-3__content-wrapper-main hide" id="Demo9">
+              <div class="program-item-3__content-wrapper-para">
+                <p>> Soft skills/job interview</p>
+              </div>
+              <span>
+                Пожалуй, один из важнейших модулей для старта карьеры
+                разработчика. Разберем, каким софт скиллы необходимы для
+                продуктивной работы в команде, разберем важность портфолио, CV,
+                а также научимся проходить техническое собеседование.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item-4">
+        <div class="program-item__heading">
+          <span class="add-dot"></span>
+          <p>Стать востребованным разработчиком</p>
+        </div>
+        <div class="program-item-4__content">
+          <div class="program-item-4__content-wrapper-1" id="format-python">
+            <h3 class="program-item-4__content-wrapper-1-heading">
+              Онлайн-формат
+            </h3>
+            <div class="program-item-4__content-wrapper-1-boxes">
+              <div class="program-item-4__two-box-container">
+                <div class="program-item-4__content-wrapper-1-box">
+                  <img
+                    src="/utils/images/01.png"
+                    alt="01"
+                    class="program-item-4__content-wrapper-1-box-img"
+                  />
+                  <p class="program-item-4__content-wrapper-1-box-text">
+                    Занятия проходят <br />
+                    на онлайн-платформе
+                  </p>
+                </div>
+                <div class="program-item-4__content-wrapper-1-box">
+                  <img
+                    src="/utils/images/02.png"
+                    alt="02"
+                    class="program-item-4__content-wrapper-1-box-img"
+                  />
+                  <p class="program-item-4__content-wrapper-1-box-text">
+                    Новые уроки открываются после <br />
+                    выполнения домашнего задания
+                  </p>
+                </div>
+              </div>
+              <div class="program-item-4__content-wrapper-1-box">
+                <img
+                  src="/utils/images/03.png"
+                  alt="03"
+                  class="program-item-4__content-wrapper-1-box-img"
+                />
+                <p class="program-item-4__content-wrapper-1-box-text">
+                  Еженедельные эфиры с менторами для помощи и ответов на
+                  вопросы.
+                  <br />
+                  Ты сам решаешь, когда смотреть уроки!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="program-item-4__content-wrapper-2" id="price-python">
+            <div class="program-item-4-price">
+              <span>Стоимость:</span>
+              <p>600 000 kzt</p>
+            </div>
+            <div>
+              <p class="program-item-4-monthly-price">50 000 kzt/месяц</p>
+              <div class="program-item-4__kaspi">
+                <p>За год /</p>
+                <img src="/utils/images/kaspi.svg" alt="kaspi" />
+                <p>Kaspi рассрочка</p>
+              </div>
+              <button class="program-item-4__button" onclick="openPopup()">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-5" id="comments-python">
+        <script src="/comments.js"></script>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container footer-container">
+        <ul class="menu">
+          <li class="menu__item menu__item-1">
+            <a href="#skills-python">Практические навыки</a>
+          </li>
+          <li class="menu__item menu__item-2">
+            <a href="#program-course-python">Программа курса</a>
+          </li>
+          <li class="menu__item menu__item-3">
+            <a href="#comments-python">Отзывы </a>
+          </li>
+          <li class="menu__item menu__item-4">
+            <a href="#price-python">Цены</a>
+          </li>
+          <li class="menu__item menu__item-5">
+            <a href="#format-python">Формат обучения</a>
+          </li>
+        </ul>
+        <a
+          href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ=="
+          class="insta-link"
+          target="_blank"
+        >
+          <button class="insta">
+            <img src="/utils/images/Instagram.png" alt="insta" />
+            Instagram
+          </button>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
