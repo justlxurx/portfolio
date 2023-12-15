@@ -88,21 +88,36 @@ button {
   display: flex;
   gap: 20px;
 }
+.item-5__wrapper {
+  display: flex;
+}
+.item-5-button {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
+}
 .item-5__wrapper-items {
   display: grid;
-  grid-template-columns: 21.3% auto;
-  justify-content: space-between;
+  /* grid-template-columns: 21.3% auto; */
+  grid-template-columns: 267px 558px;
+  /* justify-content: space-between; */
+  gap: 15px;
 }
 .item-5__wrapper-items img {
   /* width: 370px;
   height: 384px; */
   width: 100%;
+  height: 100%;
 }
 .item-5__wrapper-comment {
-  background-image: url("/utils/images/comments.png");
-  background-size: contain;
+  /* background-image: url("/utils/images/comments.png");
+  background-size: contain; */
   background-repeat: no-repeat;
-  padding: 50px 49.52px 0px 61.48px;
+  /* padding: 50px 49.52px 0px 61.48px; */
+  padding: 50px 30px 50px 60px;
+  background-color: #f0f0f0;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   gap: 40px;

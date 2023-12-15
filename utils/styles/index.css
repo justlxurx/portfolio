@@ -1511,3 +1511,108 @@
     font-size: 13px;
   }
 }
+
+.certificate {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  margin-bottom: 140px;
+  gap: 33px;
+}
+.certificate__congrats-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  border-radius: 52px;
+  background: #f0f0f0;
+  justify-content: space-between;
+  position: relative;
+}
+.certificate__congrats-wrapper img {
+  width: 100%;
+}
+.certificate__congrats-wrapper h4 {
+  color: #000;
+  font-family: Jost;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 86.4px */
+  letter-spacing: -0.109px;
+}
+.certificate__congrats-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 20px;
+  background-image: url("/utils/images/drawing.png");
+  background-size: contain;
+  background-position: center;
+  width: 80%;
+  height: 156px;
+  background-repeat: no-repeat;
+}
+.certificate__congrats-wrapper p {
+  color: #000;
+  font-family: Jost;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 40.8px */
+  letter-spacing: -0.109px;
+}
+.certificate__congrats-text {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+@media (max-width: 1700px) {
+  .certificate {
+    margin-bottom: 140px;
+    gap: 33px;
+  }
+  .certificate__congrats-wrapper {
+    padding: 60px;
+    border-radius: 52px;
+  }
+  .certificate__congrats-wrapper h4 {
+    font-size: 65px;
+  }
+  .certificate__congrats-wrapper::before {
+    top: 4%;
+    left: 20px;
+    width: 80%;
+    height: 156px;
+  }
+  .certificate__congrats-wrapper p {
+    font-size: 27px;
+  }
+  .certificate__congrats-text {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1440px) {
+  /* .certificate {
+    margin-bottom: 140px;
+    gap: 33px;
+  }
+  .certificate__congrats-wrapper {
+    padding: 60px;
+    border-radius: 52px;
+  }
+  .certificate__congrats-wrapper h4 {
+    font-size: 65px;
+  }
+  .certificate__congrats-wrapper::before {
+    top: 4%;
+    left: 20px;
+    width: 80%;
+    height: 156px;
+  }
+  .certificate__congrats-wrapper p {
+    font-size: 27px;
+  }
+  .certificate__congrats-text {
+    gap: 40px;
+  } */
+}
