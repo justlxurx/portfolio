@@ -1,0 +1,29 @@
+variables:
+  IMAGE_NAME: devpractice
+  IMAGE_TAG: latest
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
+    - docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+
+deploy:
+  stage: deploy
+  image: alpine
+  before_script:
+    - apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker pull $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker stop frontend && sudo docker rm frontend"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker run --name frontend -p 3000:3000 -d $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
