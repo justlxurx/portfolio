@@ -137,7 +137,7 @@ function showDivs(n) {
     slideIndex = 1;
   }
   for (i = 0; i < x.length; i++) {
-    //x[i].style.display = "none";
+    x[i].style.display = "none";
   }
   x[slideIndex - 1].style.display = "grid";
 }
