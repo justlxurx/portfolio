@@ -1,15 +1,14 @@
 FROM nginx:latest
 
-COPY index.html /usr/share/nginx/html/
-COPY python.html /usr/share/nginx/html/
-COPY react.html /usr/share/nginx/html/
+COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY utils/images /usr/share/nginx/html/images
-COPY utils/styles /usr/share/nginx/html/styles
-COPY utils/scripts /usr/share/nginx/html/scripts
+WORKDIR /usr/share/nginx/html
+
+COPY index.html .
+COPY react.html .
+COPY python.html .
+COPY utils ./utils
 
 EXPOSE 80
 
-
 CMD ["nginx", "-g", "daemon off;"]
-
