@@ -25,12 +25,13 @@ function validation(form) {
   return result;
 }
 
+const popups = document.querySelector(".popup");
 document
   .getElementById("add-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
     if (validation(this) == true) {
-      // document.querySelector(".popup").style.display = "none";
+      popups.style.display = "none";
       alert("Данные успешно отправлены");
       const inputs = this.querySelectorAll("input");
 

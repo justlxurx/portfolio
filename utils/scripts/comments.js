@@ -54,7 +54,6 @@ const comments = () => {
 const allComments = comments();
 
 const container = document.querySelector(".item-5");
-//const wrapper = document.querySelector(".item-5__wrapper");
 const topWrapper = document.createElement("div");
 topWrapper.className = "item-5-top";
 
@@ -79,7 +78,7 @@ button2.className = "item-5-button-right";
 button2.setAttribute("onclick", "plusDivs(1)");
 
 const blocksWrapper = document.createElement("div");
-blocksWrapper.className = "item-5-button";
+blocksWrapper.className = "item-5-bottom";
 
 headerWrapper.appendChild(span);
 headerWrapper.appendChild(textElement);
@@ -127,17 +126,65 @@ function plusDivs(n) {
   showDivs((slideIndex += n));
 }
 
+// function showDivs(n) {
+//   var i;
+//   var x = document.getElementsByClassName("item-5__wrapper-items");
+//   if (n > x.length) {
+//     slideIndex = slideIndex - 1;
+//   }
+//   if (n < 1) {
+//     slideIndex = 1;
+//   }
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";
+//   }
+
+//   x[slideIndex - 1].style.display = "grid";
+//   x[slideIndex].style.display = "grid";
+//   x[slideIndex + 1].style.display = "grid";
+// }
+
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("item-5__wrapper-items");
-  if (n > x.length) {
-    slideIndex = slideIndex - 1;
+  var slidesToShow;
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    slidesToShow = 1;
+    if (n > x.length) {
+      slideIndex = x.length;
+    }
+  } else if (window.matchMedia("(max-width: 1440px)").matches) {
+    slidesToShow = 2;
+    if (n > x.length) {
+      slideIndex = x.length;
+    }
+  } else {
+    slidesToShow = 3;
+    if (n > x.length - 1) {
+      slideIndex = x.length - 1;
+    }
   }
+
+  // Проверка, чтобы не выйти за границы коллекции элементов
+
   if (n < 1) {
     slideIndex = 1;
   }
+
+  // Скрыть все элементы коллекции
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  x[slideIndex - 1].style.display = "grid";
+
+  // Отобразить текущее количество слайдов
+  for (i = slideIndex - 1; i < slideIndex - 1 + slidesToShow; i++) {
+    if (x[i]) {
+      x[i].style.display = "grid";
+    }
+  }
 }
+
+window.addEventListener("resize", function () {
+  showDivs(slideIndex);
+});

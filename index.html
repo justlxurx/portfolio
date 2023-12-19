@@ -114,12 +114,16 @@
             name="Ваше имя"
             placeholder="Ваше имя"
             class="popup-form-input"
+            pattern="[a-zA-Zа-яА-Я\s]+"
+            maxlength="15"
+            minlength="2"
           />
           <input
             type="text"
             name="Ваш телефон"
             placeholder="Ваш телефон"
             class="popup-form-input input-phone"
+            minlength="16"
           />
           <div class="choice">
             <input
@@ -140,11 +144,7 @@
               ><span class="choose-click-dot"></span> React</label
             >
           </div>
-          <button
-            type="submit"
-            class="popup-form-submit-button"
-            onclick="closePopup()"
-          >
+          <button type="submit" class="popup-form-submit-button">
             Отправить заявку
           </button>
         </form>
@@ -276,7 +276,7 @@
               </p>
             </div>
             <div class="item-3__wrapper-img">
-              <a href="react.html"
+              <a href="react.html" style="--clr: #090909"
                 ><button class="item-3__wrapper-button">
                   <img src="utils/images/button-right.png" alt="button" />
                 </button>

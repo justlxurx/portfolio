@@ -88,6 +88,7 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <script src="https://unpkg.com/imask"></script>
     <script src="utils/scripts/index.js" async></script>
   </head>
   <body>
@@ -112,18 +113,18 @@
             name="Ваше имя"
             placeholder="Ваше имя"
             class="popup-form-input"
+            pattern="[a-zA-Zа-яА-Я\s]+"
+            maxlength="15"
+            minlength="2"
           />
           <input
             type="text"
             name="Ваш телефон"
             placeholder="Ваш телефон"
             class="popup-form-input input-phone"
+            minlength="16"
           />
-          <button
-            type="submit"
-            class="popup-form-submit-button"
-            onclick="closePopup()"
-          >
+          <button type="submit" class="popup-form-submit-button">
             Отправить заявку
           </button>
         </form>
