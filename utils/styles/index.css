@@ -640,13 +640,9 @@
   background-color: initial;
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
-  animation: scaleAnimation 2s infinite; /* Запуск анимации каждые 2 секунды */
+  animation: scaleAnimation 1.5s infinite; /* Запуск анимации каждые 2 секунды */
 }
 
-/* .item-3__wrapper-button:hover {
-  transform: scale(0.96);
-  transition: 0.1s ease-in-out;
-} */
 .item-3__wrapper-img :first-of-type {
   width: 100%;
 }
