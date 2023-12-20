@@ -125,6 +125,7 @@
     background-color: initial;
     border: none;
     cursor: pointer;
+    align-items: center;
   }
   .header-links-wrapper {
     display: none;
@@ -640,7 +641,7 @@
   background-color: initial;
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
-  animation: scaleAnimation 1.5s infinite; /* Запуск анимации каждые 2 секунды */
+  animation: scaleAnimation 1.5s infinite;
 }
 
 .item-3__wrapper-img :first-of-type {
@@ -1651,7 +1652,6 @@
     gap: 20px;
   }
   .certificate__congrats-wrapper {
-    /* padding: 27px 19px 27px; */
     border-radius: 24px;
   }
   .certificate__congrats-wrapper h4 {

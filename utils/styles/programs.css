@@ -99,6 +99,7 @@
     background-color: initial;
     border: none;
     cursor: pointer;
+    align-items: center;
   }
   .header-links-wrapper {
     display: none;
