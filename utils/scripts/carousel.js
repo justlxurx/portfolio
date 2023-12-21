@@ -11,7 +11,7 @@ let isDragging = false,
   startScrollLeft,
   timeoutId;
 
-let cardPerView = Math.random(carousel.offsetWidth / slideWidth);
+let cardPerView = Math.round(carousel.offsetWidth / slideWidth);
 
 carouselChildrens
   .slice(-cardPerView)
