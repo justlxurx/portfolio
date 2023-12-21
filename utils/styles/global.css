@@ -66,6 +66,9 @@ button {
   scroll-behavior: auto;
   scroll-snap-type: none;
 }
+.item-5-bottom.no-transition {
+  scroll-behavior: auto;
+}
 .item-5-button-left {
   display: flex;
   border-radius: 24px;
