@@ -71,11 +71,13 @@ buttonWrapper.className = "item-5-slider-button-wrapper";
 
 const button1 = document.createElement("button");
 button1.className = "item-5-button-left";
-button1.setAttribute("onclick", "plusDivs(-1)");
+button1.id = "left";
+// button1.setAttribute("onclick", "plusDivs(-1)");
 
 const button2 = document.createElement("button");
 button2.className = "item-5-button-right";
-button2.setAttribute("onclick", "plusDivs(1)");
+button2.id = "right";
+// button2.setAttribute("onclick", "plusDivs(1)");
 
 const blocksWrapper = document.createElement("div");
 blocksWrapper.className = "item-5-bottom";
@@ -90,15 +92,16 @@ container.appendChild(topWrapper);
 container.appendChild(blocksWrapper);
 
 allComments.forEach((comment) => {
-  const item5 = document.createElement("div");
-  item5.className = "item-5__wrapper";
-
   const commentWrapper = document.createElement("div");
   commentWrapper.className = "item-5__wrapper-items";
+
+  const imgWrapper = document.createElement("div");
+  imgWrapper.className = "item-5__imgWrapper";
 
   const imgElement = document.createElement("img");
   imgElement.src = comment.img;
   imgElement.alt = "people";
+  imgElement.draggable = false;
 
   const commentTextWrapper = document.createElement("div");
   commentTextWrapper.className = "item-5__wrapper-comment";
@@ -109,22 +112,23 @@ allComments.forEach((comment) => {
   const pElement = document.createElement("p");
   pElement.textContent = comment.text;
 
+  imgWrapper.appendChild(imgElement);
+
   commentTextWrapper.appendChild(h5Element);
   commentTextWrapper.appendChild(pElement);
 
-  commentWrapper.appendChild(imgElement);
+  commentWrapper.appendChild(imgWrapper);
   commentWrapper.appendChild(commentTextWrapper);
 
-  item5.appendChild(commentWrapper);
-  blocksWrapper.appendChild(item5);
+  blocksWrapper.appendChild(commentWrapper);
 });
 
-var slideIndex = 1;
-showDivs(slideIndex);
+// var slideIndex = 1;
+// showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs((slideIndex += n));
-}
+// function plusDivs(n) {
+//   showDivs((slideIndex += n));
+// }
 
 // function showDivs(n) {
 //   var i;
@@ -144,47 +148,47 @@ function plusDivs(n) {
 //   x[slideIndex + 1].style.display = "grid";
 // }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("item-5__wrapper-items");
-  var slidesToShow;
+// function showDivs(n) {
+//   var i;
+//   var x = document.getElementsByClassName("item-5__wrapper-items");
+//   var slidesToShow;
 
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    slidesToShow = 1;
-    if (n > x.length) {
-      slideIndex = x.length;
-    }
-  } else if (window.matchMedia("(max-width: 1440px)").matches) {
-    slidesToShow = 2;
-    if (n > x.length) {
-      slideIndex = x.length;
-    }
-  } else {
-    slidesToShow = 3;
-    if (n > x.length - 1) {
-      slideIndex = x.length - 1;
-    }
-  }
+//   if (window.matchMedia("(max-width: 768px)").matches) {
+//     slidesToShow = 1;
+//     if (n > x.length) {
+//       slideIndex = x.length;
+//     }
+//   } else if (window.matchMedia("(max-width: 1440px)").matches) {
+//     slidesToShow = 2;
+//     if (n > x.length) {
+//       slideIndex = x.length;
+//     }
+//   } else {
+//     slidesToShow = 3;
+//     if (n > x.length - 1) {
+//       slideIndex = x.length - 1;
+//     }
+//   }
 
-  // Проверка, чтобы не выйти за границы коллекции элементов
+//   // Проверка, чтобы не выйти за границы коллекции элементов
 
-  if (n < 1) {
-    slideIndex = 1;
-  }
+//   if (n < 1) {
+//     slideIndex = 1;
+//   }
 
-  // Скрыть все элементы коллекции
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
+//   // Скрыть все элементы коллекции
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";
+//   }
 
-  // Отобразить текущее количество слайдов
-  for (i = slideIndex - 1; i < slideIndex - 1 + slidesToShow; i++) {
-    if (x[i]) {
-      x[i].style.display = "grid";
-    }
-  }
-}
+//   // Отобразить текущее количество слайдов
+//   for (i = slideIndex - 1; i < slideIndex - 1 + slidesToShow; i++) {
+//     if (x[i]) {
+//       x[i].style.display = "grid";
+//     }
+//   }
+// }
 
-window.addEventListener("resize", function () {
-  showDivs(slideIndex);
-});
+// window.addEventListener("resize", function () {
+//   showDivs(slideIndex);
+// });
