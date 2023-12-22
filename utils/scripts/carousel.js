@@ -28,7 +28,7 @@ const autoPlay = () => {
   //   if (window.innerWidth < 800) return;
   timeoutId = setInterval(() => {
     carousel.scrollLeft += slideWidth;
-  }, 4000);
+  }, 8000);
 };
 
 autoPlay();
