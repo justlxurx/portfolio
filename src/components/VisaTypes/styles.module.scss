@@ -1,0 +1,41 @@
+.visa_types {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 100px 8%;
+  gap: 100px;
+  &_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    button {
+      border-radius: 50px;
+      height: 100px;
+      flex-shrink: 0;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Gothic A1", sans-serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      text-decoration-line: underline;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &_text {
+    color: #000;
+    text-align: justify;
+    font-family: "Goldman", sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 139%;
+  }
+}

@@ -1,0 +1,11 @@
+.helpSection {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mainFormSection {
+    display: none;
+  }
+  .helpSection {
+    display: block;
+  }
+}
