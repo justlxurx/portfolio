@@ -244,7 +244,7 @@
               controls
               class="program-video"
               poster="utils/images/video-poster.png"
-              src="/utils/videos/video.mp4"
+              src="/utils/videos/intro_python.webm"
             >
               <!-- <source src="video.mp4" type="video/mp4" /> -->
               Your browser does not support the video tag.
@@ -493,19 +493,33 @@
             <div class="program-item-3__content-wrapper-main" id="Demo1">
               <div class="program-item-3__content-wrapper-video">
                 <div class="program-item-3__content-wrapper-video-container">
-                  <a
-                    href=""
+                  <button
                     class="program-item-3__content-wrapper-video-links"
+                    id="video-container"
                   >
                     <img src="/utils/images/Exclude.png" alt="run" />
                     <p class="program-item-3__content-wrapper-video-links-para">
                       Вступление
                     </p>
-                  </a>
+                  </button>
+                  <div
+                    class="video-wrapper"
+                    id="intro-video-wrapper"
+                    style="display: none"
+                  >
+                    <video muted controls autoplay class="intro-video">
+                      <source
+                        src="/utils/videos/intro_python.webm"
+                        type="video/mp4"
+                      />
+                      Ваш браузер не поддерживает тег video.
+                    </video>
+                  </div>
                   <p class="program-item-3__content-wrapper-video-links-para">
-                    4 минуты 36 секунд
+                    1 минута 09 секунд
                   </p>
                 </div>
+
                 <div class="program-item-3__content-wrapper-video-container">
                   <a
                     href=""
