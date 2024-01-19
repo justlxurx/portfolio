@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 const FeedbackButton = () => {
   return (
     <button className={styles.button}>
-      <a href={'tel:+77212940165'}>
+      <a href="https://t.me/Adil_Akbayev" target="_blank">
         <div className={styles.button__inner}>
           <div>
             <span className={styles.button__inner_title}>Связаться с нами</span>

@@ -6,7 +6,7 @@ import styles from './styles.module.scss'
 
 const MainFooter = () => {
   const host = headers().get('host')
-  const EMAIL = 'team@qazdev.kz'
+  const EMAIL = 'hr@qazdevelop.com'
 
   return (
     <footer className={styles.footer}>
@@ -18,8 +18,8 @@ const MainFooter = () => {
               Воплощаем <br /> будущее в коде
             </h3>
             <p className={styles.footer__description}>
-              Пишем код, который упрощает бизнес-процессы и помогаем компаниям
-              воплощать идеи эффективно и технологично
+              Пишем код, который упрощает бизнес-процессы и помогаем <br />{' '}
+              компаниям воплощать идеи эффективно и технологично
             </p>
             <a className={styles.footer__hr_email} href={`mailto:${EMAIL}`}>
               {EMAIL}

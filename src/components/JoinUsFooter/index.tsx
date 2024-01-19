@@ -30,7 +30,7 @@ const JoinUsFooter = () => {
   const secondaryLinks = [
     {
       title: 'DevPractice',
-      path: '/education',
+      path: 'https://devpractice.kz/',
     },
     // {
     //   title: 'СМИ',

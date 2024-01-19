@@ -6,16 +6,16 @@ const CRM = () => {
     <section className={styles.crm}>
       <div className={styles.crm__title}>
         <p>Создание CRM-системы</p>
-        <p className={styles.project_num}>002</p>
+        <p className={styles.crm__titleNum}>002</p>
       </div>
 
       <div className={styles.crm__content}>
-        <div className={styles.crm__content__column1}>
+        <div className={styles.crm__contentColumn1}>
           <div></div>
         </div>
 
-        <div className={styles.crm__content__column2}>
-          <div className={styles.hidden_text}>
+        <div className={styles.crm__contentColumn2}>
+          <div className={styles.hiddenText}>
             <p>
               Команда{' '}
               <strong>
@@ -23,16 +23,16 @@ const CRM = () => {
               </strong>{' '}
               создала ПО, повышающее уровень продаж
             </p>
-            <div className={styles.hidden_text_last}>
-              <div className={styles.right_icon}></div>
+            <div className={styles.hiddenText__last}>
+              <div className={styles.rightIcon}></div>
               <p>
                 Заказчику нужно было построить платформу, которая позволит
                 компаниям комплексно увеличивать показатели прибыли
               </p>
             </div>
           </div>
-          <div className={styles.crm_img}></div>
-          <div className={styles.crm_text}>
+          <div className={styles.crm__img}></div>
+          <div className={styles.crm__text}>
             <p>
               Команда{' '}
               <strong>
@@ -53,7 +53,7 @@ const CRM = () => {
           </div>
         </div>
 
-        <div className={styles.crm__content__column3}>
+        <div className={styles.crm__contentColumn3}>
           <div></div>
         </div>
       </div>

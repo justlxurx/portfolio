@@ -16,22 +16,16 @@ const Navbar = () => {
   }
 
   const buttons: INavButton[] = [
-    // {
-    //   title: 'Devcorn',
-    //   description: 'IT мероприятие',
-    //   path: 'https://devcorn.kz/',
-    //   redirect: true,
-    // },
     {
       title: 'Devpractice',
       description: 'Учись у нас',
-      path: '/education',
+      path: 'https://devpractice.kz/',
     },
-    {
-      title: 'Карьера',
-      description: 'Будь с нами',
-      path: '/join-us',
-    },
+    // {
+    //   title: 'Карьера',
+    //   description: 'Будь с нами',
+    //   path: '/join-us',
+    // },
   ]
 
   return (

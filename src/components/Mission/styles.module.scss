@@ -1,0 +1,150 @@
+.mission {
+  background-image: url('./../../../public/dnk.png');
+  background-size: 40%;
+  background-position: right calc(100% - 35px);
+  background-repeat: no-repeat;
+
+  &__heading {
+    color: #141414;
+    font-family: Helvetica;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 64.8px */
+    letter-spacing: -1.02px;
+    margin-bottom: 123px;
+    &_grey {
+      color: rgba(20, 20, 20, 0.5);
+      font-family: Helvetica;
+      font-size: 54px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -1.02px;
+    }
+  }
+  &__wrapper {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    width: 50%;
+    gap: 83px 142px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__itemLine {
+    height: 1px;
+    width: 232px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &__itemNum {
+    color: var(--black, #000);
+    font-family: Helvetica;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__itemText {
+    color: var(--black, #000);
+    font-family: Helvetica;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__dnaText {
+    color: var(--black, #000);
+    font-family: Helvetica;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: flex-end;
+  }
+}
+@media (max-width: 1900px) {
+  .mission {
+    &__heading {
+      font-size: 45px;
+      margin-bottom: 123px;
+      &_grey {
+        font-size: 45px;
+      }
+    }
+    &__wrapper {
+      gap: 83px 142px;
+    }
+    &__item {
+      gap: 20px;
+    }
+    &__itemLine {
+      height: 1px;
+      width: 200px;
+    }
+    &__itemNum {
+      font-size: 45px;
+    }
+    &__itemText {
+      font-size: 25px;
+    }
+    &__dnaText {
+      font-size: 25px;
+    }
+  }
+}
+@media (max-width: 1700px) {
+  .mission {
+    &__itemText {
+      font-size: 20px;
+    }
+    &__dnaText {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .mission {
+    background-size: 40%;
+    background-position: right calc(100% - 35px);
+
+    &__heading {
+      font-size: 29px;
+      margin-bottom: 73px;
+      &_grey {
+        font-size: 29px;
+      }
+    }
+    &__wrapper {
+      gap: 43px 62px;
+    }
+    &__item {
+      gap: 20px;
+    }
+    &__itemLine {
+      height: 1px;
+      width: 150px;
+    }
+    &__itemNum {
+      font-size: 29px;
+    }
+    &__itemText {
+      font-size: 15px;
+    }
+    &__dnaText {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .mission {
+    display: none;
+  }
+}

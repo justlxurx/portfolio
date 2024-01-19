@@ -8,7 +8,6 @@ import { contactUsFormSchema } from '@/schemas/contactUs'
 import { sendMail } from '../mailer'
 
 export async function POST(request: Request) {
-  //debugger
   try {
     try {
       const res = await request.json()
@@ -24,7 +23,7 @@ export async function POST(request: Request) {
       )
 
       const client = await clientPromise
-      const db = client.db('contact-us')
+      const db = client.db('order-project')
 
       await db.collection('data').insertOne(data)
 
@@ -36,6 +35,9 @@ export async function POST(request: Request) {
               <h3>Форма обратной связи</h3>
               <p>Телефон: ${res.phone}</p>
               <p>ФИО: ${res.username}</p>
+              <p>E-mail: ${res.email}</p>
+              <p>Выбор услуги: ${res.service}</p>
+              <p>Бюджет проекта: ${res.budget} </p>
               <p>Дата отправки: ${date}</p>
             </div>`,
         })

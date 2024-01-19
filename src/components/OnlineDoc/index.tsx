@@ -3,16 +3,16 @@ import styles from './styles.module.scss'
 
 const DocFlow = () => {
   return (
-    <section className={styles.doc_flow}>
-      <div className={styles.doc_flow__title}>
+    <section className={styles.documentFlow}>
+      <div className={styles.documentFlow__title}>
         <p>Онлайн-документооборот</p>
-        <p className={styles.project_num}>003</p>
+        <p className={styles.documentFlow__titleNum}>003</p>
       </div>
 
-      <div className={styles.doc_flow__content}>
-        <div className={styles.doc_flow__content__row1}>
+      <div className={styles.documentFlow__content}>
+        <div className={styles.documentFlow__contentRow1}>
           <div></div>
-          <div className={styles.first_text}>
+          <div className={styles.firstText}>
             <p>
               Команда
               <strong>
@@ -21,13 +21,13 @@ const DocFlow = () => {
               настроила работу сервиса для создания соглашений, договоров,
               контрактов, претензионных документов
             </p>
-            <div className={styles.hidden_block1}>
-              <p className={styles.hidden_block1_num}>003</p>
-              <div className={styles.hidden_block1_img}></div>
+            <div className={styles.hiddenBlock1}>
+              <p className={styles.hiddenBlock1__num}>003</p>
+              <div className={styles.hiddenBlock1__img}></div>
             </div>
           </div>
-          <div className={styles.second_text}>
-            <div className={styles.hidden_block2}></div>
+          <div className={styles.secondText}>
+            <div className={styles.hiddenBlock2}></div>
             <p>
               Система сервиса-конструктора, который дает возможность создавать,
               подписывать и хранить документы, имеющие правовую ценность,
@@ -37,9 +37,9 @@ const DocFlow = () => {
           </div>
         </div>
 
-        <div className={styles.doc_flow__content__row2}>
+        <div className={styles.documentFlow__contentRow2}>
           <div></div>
-          <div className={styles.flow_img}></div>
+          <div className={styles.flowImg}></div>
           <div></div>
           <p>
             {'<1>'} Мы протестировали работу платформы, нашли и исправили ошибки{' '}
@@ -56,7 +56,7 @@ const DocFlow = () => {
           </p>
         </div>
 
-        <div className={styles.doc_flow__content__row3}>
+        <div className={styles.documentFlow__contentRow3}>
           <div className={styles.border1}></div>
           <div className={styles.border2}></div>
           <div></div>

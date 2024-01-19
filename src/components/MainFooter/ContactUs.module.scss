@@ -2,10 +2,48 @@
 
 .form {
   font-size: 20px;
-
-  &__inputs {
+  &__budget {
     display: flex;
-    flex-wrap: wrap;
+    gap: 19px;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: space-between;
+  }
+  &__radio {
+    padding: 11px 22px;
+    border-radius: 10px;
+    border: 1px solid var(--black, #000);
+    color: var(--black, #000);
+    font-family: Helvetica;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 181.818% */
+    letter-spacing: -1.02px;
+  }
+
+  &__radioInput {
+    display: contents;
+  }
+
+  &__radioInput:checked + .form__radio {
+    background: #000;
+    color: white;
+  }
+
+  &__select {
+    border-bottom: 1px solid #000000;
+    background-color: inherit;
+    border-top: none;
+    border-left: none;
+    border-right: 0;
+    flex: 1;
+    padding-bottom: 20px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  &__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 36px;
   }
 
@@ -51,6 +89,87 @@
   }
 }
 
+@media (max-width: 2090px) {
+  .form {
+    font-size: 18px;
+    &__budget {
+      gap: 10px;
+      margin-top: 50px;
+    }
+    &__radio {
+      padding: 11px 17px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    // &__select {
+    //   padding-bottom: 20px;
+    // }
+  }
+}
+
+@media (max-width: 1725px) {
+  .form {
+    font-size: 18px;
+    &__budget {
+      gap: 5px;
+      margin-top: 50px;
+    }
+    &__radio {
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 1530px) {
+  .form {
+    font-size: 15px;
+    &__budget {
+      gap: 3px;
+      margin-top: 50px;
+    }
+    &__radio {
+      padding: 3px 7px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .form {
+    &__radio {
+      padding: 3px 15px;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .form {
+    &__radio {
+      padding: 0px 10px;
+    }
+  }
+}
+@media (max-width: 1203px) {
+  .form {
+    font-size: 14px;
+    &__radio {
+      padding: 0px 8px;
+      font-size: 12px;
+    }
+  }
+}
+@media (max-width: 1117px) {
+  .form {
+    font-size: 14px;
+    &__radio {
+      padding: 0px 5px;
+      font-size: 11px;
+      border-radius: 5px;
+    }
+  }
+}
+
 @media (max-width: 1090px) {
   .form {
     .agreement {
@@ -64,14 +183,34 @@
     }
   }
 }
-
+@media (max-width: 1032px) {
+  .form {
+    font-size: 13px;
+    &__radio {
+      padding: 0px 5px;
+      font-size: 10px;
+      border-radius: 5px;
+    }
+  }
+}
 @media (max-width: $desktop-width) {
   .form {
     font-size: 11px;
+    &__select {
+      padding-bottom: 10px;
+    }
     &__inputs {
       gap: 19px;
     }
-
+    &__budget {
+      gap: 3px;
+      margin-top: 30px;
+    }
+    &__radio {
+      padding: 0px 10px;
+      font-size: 10px;
+      border-radius: 5px;
+    }
     &__input {
       min-width: 130px;
       font-size: 12px;
@@ -96,6 +235,19 @@
   }
 }
 
+@media (max-width: 875px) {
+  .form {
+    &__budget {
+      gap: 1px;
+    }
+    &__radio {
+      padding: 0px 8px;
+      font-size: 8px;
+      border-radius: 5px;
+    }
+  }
+}
+
 @media (max-width: $tablet-width) {
   .form {
     font-size: 20px;
@@ -103,7 +255,18 @@
       flex-direction: column;
       gap: 36px;
     }
-
+    &__select {
+      padding-bottom: 19px;
+    }
+    &__budget {
+      gap: 3px;
+      margin-top: 50px;
+    }
+    &__radio {
+      padding: 0px 15px;
+      font-size: 15px;
+      border-radius: 5px;
+    }
     &__input {
       min-width: 130px;
       font-size: 20px;
@@ -124,6 +287,61 @@
         height: 24px;
         margin-right: 10px;
       }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .form {
+    &__budget {
+      gap: 1px;
+    }
+    &__radio {
+      padding: 0px 15px;
+      font-size: 10px;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .form {
+    font-size: 15px;
+    &__budget {
+      gap: 1px;
+    }
+    &__radio {
+      padding: 0px 10px;
+      font-size: 9px;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .form {
+    font-size: 13px;
+    &__budget {
+      gap: 1px;
+    }
+    &__radio {
+      padding: 0px 8px;
+      font-size: 8px;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .form {
+    font-size: 12px;
+    &__budget {
+      gap: 1px;
+    }
+    &__radio {
+      padding: 0px 8px;
+      font-size: 7px;
+      border-radius: 5px;
     }
   }
 }

@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid'
-//import HamburgerButton from '../ui/HamburgerButton'
 import NavButton from '../ui/NavButton/index'
 import { INavButton } from '../ui/NavButton/interface'
 
@@ -11,16 +10,10 @@ interface BurgerProps {
 
 const Burger = ({ closeBurgerMenu }: BurgerProps) => {
   const buttons: INavButton[] = [
-    // {
-    //   title: 'Devcorn',
-    //   description: 'IT мероприятие',
-    //   path: 'https://devcorn.kz/',
-    //   redirect: true,
-    // },
     {
       title: 'Devpractice',
       description: 'Учись у нас',
-      path: '/education',
+      path: 'https://devpractice.kz/',
     },
     {
       title: 'Карьера',
@@ -44,11 +37,10 @@ const Burger = ({ closeBurgerMenu }: BurgerProps) => {
             </li>
           ))}
         </ul>
-        {/* <div className={styles.feedback_button}>
-          <FeedbackButton />
-        </div> */}
         <button className={styles.button_to_call}>
-          <a href={'tel:+77212940165'}>связаться с нами</a>
+          <a href="https://t.me/Adil_Akbayev" target="_blank">
+            связаться с нами
+          </a>
         </button>
       </div>
     </section>

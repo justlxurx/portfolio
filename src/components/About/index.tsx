@@ -11,6 +11,9 @@ import planet from 'public/about_planet_image.svg'
 import react from 'public/about_react_image.svg'
 import sSymbol from 'public/about_s_image.svg'
 import tSymbol from 'public/about_t_image.svg'
+import app from 'public/app.svg'
+import ios from 'public/ios.png'
+import android from 'public/android.png'
 import logo from 'public/qazdev_logo.svg'
 import FeedbackButton from '@/components/ui/FeedbackButton'
 
@@ -99,8 +102,16 @@ const About = () => {
               <Image src={core} fill alt={'Core'} />
             </div>
           </div>
-          <div className={styles.second_column__grid} />
-          <div className={styles.second_column__footer} />
+          <div className={styles.second_column__grid}>
+            <div className={styles.second_column__apps}>
+              <Image src={ios} fill alt={'ios'} />
+              <Image src={android} fill alt={'android'} />
+            </div>
+            <div className={styles.second_column__app_wrapper}>
+              <Image src={app} fill alt={'app'} />
+            </div>
+          </div>
+          {/* <div className={styles.second_column__footer} /> */}
         </div>
         <div
           className={classNames(styles.info__third_column, styles.third_column)}

@@ -1,6 +1,5 @@
 import classNames from 'classnames'
-
-import Pages from './components/Pages'
+import Dev from './components/Dev'
 import Socials from './components/Socials'
 
 import styles from './styles.module.scss'
@@ -8,7 +7,7 @@ import styles from './styles.module.scss'
 const Distance = () => {
   return (
     <section className={classNames(styles.container, 'container')}>
-      <Pages />
+      <Dev />
       <Socials />
     </section>
   )

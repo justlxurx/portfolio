@@ -13,12 +13,12 @@ const Booking = () => {
     <section className={styles.booking}>
       <div className={styles.booking__title}>
         <p>Букинговая система для круизных лайнеров</p>
-        <p className={styles.project_num}>006</p>
+        <p className={styles.booking__titleNum}>006</p>
       </div>
 
       <div className={styles.booking__content}>
-        <div className={styles.hidden_block}>
-          <p className={styles.hidden_block_text}>
+        <div className={styles.hiddenBlock}>
+          <p className={styles.hiddenBlock__text}>
             Команда
             <strong>
               <em> qazdev </em>
@@ -26,13 +26,13 @@ const Booking = () => {
             настроила работу сервиса для создания соглашений, договоров,
             контрактов, претензионных документов
           </p>
-          <div className={styles.hidden_block_content}>
-            <p className={styles.hidden_block_content_num}>006</p>
-            <div className={styles.hidden_block_content_img}></div>
+          <div className={styles.hiddenBlock__content}>
+            <p className={styles.hiddenBlock__contentNum}>006</p>
+            <div className={styles.hiddenBlock__contentImg}></div>
           </div>
         </div>
-        <div className={styles.booking_img}></div>
-        <div className={styles.booking_text}>
+        <div className={styles.booking__img}></div>
+        <div className={styles.booking__text}>
           <p>
             Команда{' '}
             <strong>
@@ -61,12 +61,12 @@ const Booking = () => {
         <div></div>
       </div>
       <Button
-        className={styles.cases_button_1}
+        className={styles.backButton}
         onClick={() => router.back()}
         type="button"
       >
         <Image
-          className={styles.cases_button__arrow1}
+          className={styles.backButton__arrow}
           src={arrow_icon}
           alt={'Arrow'}
         />

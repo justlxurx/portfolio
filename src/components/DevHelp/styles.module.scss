@@ -1,0 +1,143 @@
+.devHelp {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  &__title {
+    color: #141414;
+    font-family: Helvetica;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 64.8px */
+    letter-spacing: -1.02px;
+    margin-bottom: 20px;
+  }
+  &__main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  &__mainBox {
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid var(--black, #000);
+    gap: 10px;
+    color: var(--black, #000);
+    font-family: Helvetica;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 181.818% */
+    letter-spacing: -1.02px;
+    align-items: center;
+    padding: 11px;
+    img {
+      width: 28px;
+      aspect-ratio: 1;
+    }
+  }
+}
+@media (max-width: 1900px) {
+  .devHelp {
+    gap: 40px;
+
+    &__title {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+    &__main {
+      gap: 20px;
+    }
+    &__mainBox {
+      border-radius: 10px;
+      font-size: 18px;
+      padding: 10px;
+      img {
+        width: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .devHelp {
+    gap: 20px;
+
+    &__title {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+    &__main {
+      gap: 15px;
+    }
+    &__mainBox {
+      border-radius: 10px;
+      font-size: 15px;
+      padding: 10px;
+      img {
+        width: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .devHelp {
+    gap: 20px;
+
+    &__title {
+      font-size: 29px;
+      margin-bottom: 20px;
+    }
+    &__main {
+      gap: 15px;
+    }
+    &__mainBox {
+      border-radius: 5px;
+      font-size: 10px;
+      padding: 0 10px;
+      img {
+        width: 10px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .devHelp {
+    gap: 60px;
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    &__main {
+      gap: 10px;
+    }
+    &__mainBox {
+      border-radius: 8.2px;
+      font-size: 18px;
+      padding: 0 9.06px;
+      gap: 8.28px;
+      img {
+        width: 23px;
+      }
+    }
+  }
+}
+@media (max-width: 440px) {
+  .devHelp {
+    &__main {
+      gap: 10px;
+    }
+    &__mainBox {
+      border-radius: 8.2px;
+      font-size: 15px;
+      padding: 0 7px;
+      gap: 7.28px;
+      img {
+        width: 20px;
+      }
+    }
+  }
+}

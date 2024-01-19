@@ -1,0 +1,227 @@
+.pageDev {
+  padding: 75px;
+  background-color: black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 227px;
+  background-image: url('../../../../../public/description.svg');
+  background-size: 60%;
+  background-position: 92% center;
+  background-repeat: no-repeat;
+  position: relative;
+  ::before {
+    content: '';
+    position: absolute;
+    background-image: url('../../../../../public/button1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 25%;
+    left: 40%;
+    width: 40px;
+    aspect-ratio: 1;
+  }
+  ::after {
+    content: '';
+    position: absolute;
+    background-image: url('../../../../../public/button2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 55%;
+    left: 28%;
+    width: 30px;
+    aspect-ratio: 1;
+  }
+  &__headings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__smallHeading {
+    color: #fff;
+    font-size: 19.606px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15.389px; /* 78.492% */
+    opacity: 0.7;
+  }
+  &__bigHeading {
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 95.52px;
+    font-style: normal;
+    letter-spacing: -3.821px;
+  }
+  &__bottom {
+  }
+  &__bottomText {
+    color: #dedede;
+    font-size: 16.616px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20.73px;
+    margin-bottom: 20px;
+  }
+  &__bottomButton {
+    color: var(--black, #000);
+    font-family: Helvetica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -1.02px;
+    text-transform: uppercase;
+    padding: 26px 70px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  &__bottomButton:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+@media (max-width: 1850px) {
+  .pageDev {
+    ::before {
+      left: 55%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .pageDev {
+    padding: 45px;
+    border-radius: 15px;
+    gap: 180px;
+    ::before {
+      top: 25%;
+      left: 55%;
+      width: 30px;
+    }
+    ::after {
+      top: 55%;
+      left: 28%;
+      width: 20px;
+    }
+    &__headings {
+      gap: 10px;
+    }
+    &__smallHeading {
+      font-size: 14px;
+    }
+    &__bigHeading {
+      font-size: 70px;
+    }
+    &__bottomText {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    &__bottomButton {
+      font-size: 19px;
+      padding: 20px 50px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .pageDev {
+    padding: 45px;
+
+    &__smallHeading {
+      font-size: 13px;
+    }
+    &__bigHeading {
+      font-size: 60px;
+    }
+    &__bottomText {
+      font-size: 10px;
+      margin-bottom: 15px;
+    }
+    &__bottomButton {
+      font-size: 15px;
+      padding: 15px 45px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pageDev {
+    padding: 511px 17px 30px 17px;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    background-size: 95%;
+    background-position: center 23px;
+    gap: 0;
+    ::before {
+      top: 10%;
+      left: 5%;
+      width: 40px;
+    }
+    ::after {
+      top: 60%;
+      left: 60%;
+      width: 30px;
+      transform: rotate(180deg);
+    }
+    &__smallHeading {
+      font-size: 14px;
+    }
+    &__headings {
+      gap: 20px;
+    }
+    &__bigHeading {
+      font-size: 52px;
+      width: 65%;
+    }
+    &__bottomText {
+      font-size: 10px;
+      margin-bottom: 15px;
+      text-align: end;
+    }
+    &__bottomButton {
+      font-size: 15.6px;
+      padding: 17px 45px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .pageDev {
+    padding: 411px 17px 30px 17px;
+  }
+}
+@media (max-width: 500px) {
+  .pageDev {
+    padding: 311px 17px 30px 17px;
+    ::after {
+      top: 50%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .pageDev {
+    padding: 311px 17px 30px 17px;
+    &__smallHeading {
+      font-size: 12px;
+    }
+    &__headings {
+      gap: 20px;
+    }
+    &__bigHeading {
+      font-size: 42px;
+      width: 65%;
+    }
+    &__bottomText {
+      font-size: 8px;
+      margin-bottom: 15px;
+      line-height: 10.471px;
+    }
+    &__bottomButton {
+      font-size: 13px;
+      padding: 13px 35px;
+      border-radius: 6.522px;
+    }
+  }
+}

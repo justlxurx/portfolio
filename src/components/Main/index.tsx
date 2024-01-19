@@ -6,7 +6,11 @@ import { useRef } from 'react'
 import { motion, useInView, useScroll, useAnimation } from 'framer-motion'
 import About from '@/components/About'
 import FAQ from '@/components/FAQ'
+import TrustUs from '@/components/TrustUs'
 import Projects from '@/components/Projects'
+import Service from '@/components/Service'
+import DevHelp from '../DevHelp'
+import Mission from '../Mission'
 import classNames from 'classnames'
 
 export default function CustomComponent({
@@ -64,13 +68,16 @@ export default function CustomComponent({
   const ref3 = useRef(null)
   const ref4 = useRef(null)
   const ref5 = useRef(null)
+  const ref6 = useRef(null)
+  const ref7 = useRef(null)
+
   const isInView1 = useInView(ref1, { amount: 0, once: true })
   const isInView2 = useInView(ref2, {
     amount: 0.7,
     once: isScrollingUp ? false : true,
   })
   const isInView3 = useInView(ref3, {
-    amount: 0.6,
+    amount: 0.5,
     once: isScrollingUp ? false : true,
   })
   const isInView4 = useInView(ref4, {
@@ -81,6 +88,15 @@ export default function CustomComponent({
     amount: 0.5,
     once: isScrollingUp ? false : true,
   })
+  const isInView6 = useInView(ref6, {
+    amount: 0.5,
+    once: isScrollingUp ? false : true,
+  })
+
+  const isInView7 = useInView(ref7, {
+    amount: 0.5,
+    once: isScrollingUp ? false : true,
+  })
 
   const links = [
     {
@@ -88,21 +104,46 @@ export default function CustomComponent({
       isInViews: isInView1,
     },
     {
-      title: 'Кейсы',
+      title: 'Услуги',
       isInViews: isInView2,
     },
     {
-      title: 'СМИ',
+      title: 'Кейсы',
       isInViews: isInView3,
     },
-
     {
-      title: 'DevPractice',
+      title: 'ДНК',
       isInViews: isInView4,
     },
     {
-      title: 'FAQ',
+      title: 'СМИ',
       isInViews: isInView5,
+    },
+    {
+      title: 'Учись у нас',
+      isInViews: isInView6,
+    },
+    {
+      title: 'FAQ',
+      isInViews: isInView7,
+    },
+  ]
+  const sections = [
+    {
+      ref: ref1,
+      item: <About />,
+    },
+    {
+      ref: ref2,
+      item: <TrustUs />,
+    },
+    {
+      ref: ref3,
+      item: <Service />,
+    },
+    {
+      ref: ref4,
+      item: <DevHelp />,
     },
   ]
   const { scrollYProgress } = useScroll({
@@ -168,15 +209,45 @@ export default function CustomComponent({
         >
           <About />
         </motion.div>
+
         <motion.div
+          className={classNames(styles.snap_item)}
+          animate={control}
+        >
+          <TrustUs />
+        </motion.div>
+
+        <motion.div
+          className={classNames(styles.snap_item)}
           ref={ref2}
+          animate={control}
+        >
+          <Service />
+        </motion.div>
+
+        <motion.div
+          className={classNames(styles.snap_item)}
+          animate={control}
+        >
+          <DevHelp />
+        </motion.div>
+
+        <motion.div
+          ref={ref3}
           className={classNames(styles.snap_item)}
           animate={control}
         >
           <Projects />
         </motion.div>
         <motion.div
-          ref={ref3}
+          ref={ref4}
+          className={classNames(styles.snap_item)}
+          animate={control}
+        >
+          <Mission />
+        </motion.div>
+        <motion.div
+          ref={ref5}
           className={classNames(styles.main_elements)}
           animate={control}
         >
@@ -184,14 +255,14 @@ export default function CustomComponent({
         </motion.div>
         <motion.div
           className={classNames(styles.main_elements)}
-          ref={ref4}
+          ref={ref6}
           animate={control}
         >
           {component}
         </motion.div>
         <motion.div
           className={classNames(styles.main_elements, 'stopped')}
-          ref={ref5}
+          ref={ref7}
           animate={control}
         >
           <FAQ />

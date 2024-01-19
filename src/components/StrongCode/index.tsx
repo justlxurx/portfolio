@@ -41,14 +41,14 @@ const StrongCode = () => {
   }
 
   return (
-    <section className={styles.strong_coding}>
-      <div className={styles.strong_coding_main}>
+    <section className={styles.strongCoding}>
+      <div className={styles.strongCoding__main}>
         <h2>
           Сильный <br />
           код
         </h2>
 
-        <div className={styles.text1}>
+        <div className={styles.strongCoding__textTop}>
           <p></p>
           <p className={styles.text}>
             Компания{' '}
@@ -64,7 +64,7 @@ const StrongCode = () => {
           <hr />
         </div>
 
-        <div className={styles.text2}>
+        <div className={styles.strongCoding__textBottom}>
           <div>
             <button className={styles.cases_button_1} onClick={openModel}>
               <Image

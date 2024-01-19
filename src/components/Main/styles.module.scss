@@ -101,7 +101,7 @@
     .road {
       top: 5%;
       height: 280px;
-      left: 30px;
+      left: 20px;
       transition: background-color 0.25s ease-out;
       width: 4px;
     }
@@ -109,7 +109,7 @@
     .road_link {
       top: 5%;
       height: 280px;
-      left: 30px;
+      left: 20px;
       transition: background-color 0.25s ease-out;
       width: 4px;
     }
@@ -127,39 +127,7 @@
     }
   }
 }
-@media (max-width: 1600px) {
-  .nav_links {
-    .road {
-      left: 30px;
-    }
 
-    .road_link {
-      left: 30px;
-    }
-  }
-}
-@media (max-width: 1510px) {
-  .nav_links {
-    .road {
-      left: 30.6px;
-    }
-
-    .road_link {
-      left: 30.6px;
-    }
-  }
-}
-@media (max-width: 1435px) {
-  .nav_links {
-    .road {
-      left: 30.8px;
-    }
-
-    .road_link {
-      left: 30.8px;
-    }
-  }
-}
 @media (max-width: 1400px) {
   .nav_links {
     display: none;
