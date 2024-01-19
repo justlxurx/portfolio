@@ -62,7 +62,7 @@ document
         body: formData, // Данные формы
       };
 
-      // Отправка запроса
+      // Отправка зdапроса
       fetch("sendmail.php", options)
         .then((response) => {
           if (!response.ok) {
