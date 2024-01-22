@@ -21,10 +21,10 @@ const JoinUsFooter = () => {
       title: 'Наши работы',
       path: '/portfolio',
     },
-    {
-      title: 'Будь с нами',
-      path: '/join-us',
-    },
+    // {
+    //   title: 'Будь с нами',
+    //   path: '/join-us',
+    // },
   ]
 
   const secondaryLinks = [

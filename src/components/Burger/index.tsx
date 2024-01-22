@@ -16,9 +16,9 @@ const Burger = ({ closeBurgerMenu }: BurgerProps) => {
       path: 'https://devpractice.kz/',
     },
     {
-      title: 'Карьера',
-      description: 'Будь с нами',
-      path: '/join-us',
+      title: 'Портфолио',
+      description: 'Наши работы',
+      path: '/portfolio',
     },
   ]
 

@@ -5,7 +5,7 @@ const Monitoring = () => {
     <section className={styles.monitoring}>
       <div className={styles.monitoring__title}>
         <p>Сервис мониторинга для горнодобывающей компании</p>
-        <p className={styles.monitoring__titleNum}>005</p>
+        <p className={styles.monitoring__titleNum}>014</p>
       </div>
 
       <div className={styles.monitoring__content}>
@@ -19,7 +19,7 @@ const Monitoring = () => {
               участвовала в разработке букинговой системы для круизных лайнеров
             </p>
             <div className={styles.hiddenBlock__content}>
-              <p className={styles.hiddenBlock__contentNum}>005</p>
+              <p className={styles.hiddenBlock__contentNum}>014</p>
               <div className={styles.hiddenBlock__contentImg}></div>
             </div>
           </div>

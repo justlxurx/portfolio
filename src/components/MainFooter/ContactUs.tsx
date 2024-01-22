@@ -15,8 +15,11 @@ import close from 'public/close.svg'
 import smile from 'public/smile.png'
 
 const options = [
-  { value: 'option1', label: 'Опция 1' },
-  { value: 'option2', label: 'Опция 2' },
+  { value: 'веб разработка', label: 'веб разработка' },
+  { value: 'мобильная разработка', label: 'мобильная разработка' },
+  { value: 'UX/UI Design', label: 'UX/UI Design' },
+  { value: 'IT поддержка', label: 'IT поддержка' },
+
   // Добавьте другие варианты по мере необходимости
 ]
 

@@ -1,0 +1,384 @@
+.documentFlow {
+  width: 100%;
+
+  &__title {
+    padding: 0 4%;
+    height: 100%;
+    color: #141414;
+    font-family: Helvetica;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 148.148% */
+    letter-spacing: -1.02px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__titleNum {
+    padding: 8px 40px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    display: grid;
+    border-top: 1px solid black;
+    grid-template-rows: 20% auto 20%;
+    height: 745px;
+  }
+  &__contentRow1 {
+    display: grid;
+    grid-template-columns: 33% auto 42%;
+    .firstText {
+      display: grid;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      p {
+        width: 75%;
+      }
+      .hiddenBlock1 {
+        display: none;
+      }
+    }
+    .secondText {
+      display: flex;
+      .hiddenBlock2 {
+        display: none;
+      }
+      p {
+        align-self: center;
+      }
+    }
+    p {
+      align-self: center;
+      padding: 0 25px;
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 126.5%;
+      letter-spacing: -0.16px;
+    }
+  }
+  &__contentRow2 {
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: 14% 35% auto 42%;
+    border-bottom: 1px solid black;
+    p {
+      padding: 28px 25px;
+      border-left: 1px solid black;
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 126.5%;
+      letter-spacing: -0.16px;
+      position: relative;
+      &::after {
+        background-image: url('/folder.svg');
+        background-size: contain;
+        content: '';
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 10%;
+        height: 10%;
+        bottom: 9%;
+        left: 4%;
+      }
+    }
+    .flowImg {
+      background-image: url('/lighting.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+  &__contentRow3 {
+    display: grid;
+    grid-template-columns: 14% 19% auto;
+    border-bottom: 1px solid black;
+    .border1 {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+    .border2 {
+      border-right: 1px solid black;
+    }
+  }
+}
+@media (max-width: 1700px) {
+  .documentFlow {
+    &__title {
+      font-size: 21px;
+    }
+    &__titleNum {
+      padding: 6px 30px;
+    }
+    &__content {
+      height: 650px;
+    }
+    &__contentRow1 {
+      p {
+        padding: 0px 25px;
+        font-size: 15px;
+      }
+    }
+    &__contentRow2 {
+      p {
+        padding: 28px 25px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .documentFlow {
+    &__title {
+      font-size: 19px;
+    }
+    &__titleNum {
+      padding: 4px 30px;
+    }
+    &__content {
+      height: 550px;
+    }
+    &__contentRow1 {
+      p {
+        padding: 0px 25px;
+        font-size: 13px;
+      }
+    }
+    &__contentRow2 {
+      p {
+        padding: 22px 25px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1135px) {
+  .documentFlow {
+    &__content {
+      height: 450px;
+    }
+    &__contentRow1 {
+      p {
+        padding: 0px 25px;
+        font-size: 12px;
+      }
+    }
+    &__contentRow2 {
+      p {
+        padding: 14px 25px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .documentFlow {
+    &__title {
+      font-size: 17px;
+    }
+    &__titleNum {
+      padding: 0px 30px;
+    }
+  }
+}
+
+@media (max-width: 1060px) {
+  .documentFlow {
+    &__content {
+      height: 400px;
+    }
+    &__contentRow1 {
+      p {
+        padding: 0 18px;
+        font-size: 10px;
+      }
+    }
+    &__contentRow2 {
+      p {
+        padding: 14px 18px;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 875px) {
+  .documentFlow {
+    &__contentRow1 {
+      p {
+        padding: 0 18px;
+        font-size: 9px;
+      }
+    }
+    &__contentRow2 {
+      p {
+        padding: 14px 18px;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .documentFlow {
+    &__title {
+      flex-direction: column;
+      padding: 20px;
+      font-size: 30px;
+      align-items: unset;
+      margin-top: 80px;
+      border-top: 1px solid black;
+      p {
+        padding: 0 2%;
+        text-align: center;
+      }
+    }
+    &__titleNum {
+      padding: 10px 60px;
+      border-right: 1px solid black;
+      height: 100%;
+      display: none;
+      align-items: right;
+      width: fit-content;
+    }
+    &__content {
+      display: grid;
+      border-top: 1px solid black;
+      grid-template-rows: none;
+      height: 100%;
+    }
+    &__contentRow1 {
+      display: grid;
+      grid-template-columns: none;
+
+      .firstText {
+        .hiddenBlock1 {
+          width: 100%;
+          display: flex;
+          &__num {
+            font-size: 30px;
+            border-right: 1px solid black;
+            width: 100%;
+            padding: 30px 0;
+            justify-self: center;
+            text-align: center;
+          }
+          &__img {
+            background-position: center;
+            background-image: url('/folder.svg');
+            background-size: 15%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 90px;
+          }
+        }
+      }
+      .secondText {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 35px 25px;
+          font-size: 19px;
+        }
+        .hiddenBlock2 {
+          display: flex;
+          border-top: 1px solid black;
+          background-image: url('/lighting.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 80%;
+          border-left: none;
+          border-right: none;
+          border-bottom: 1px solid black;
+          width: 100%;
+          height: 480px;
+        }
+      }
+    }
+    &__contentRow2 {
+      border-top: 1px solid black;
+      display: grid;
+      grid-template-columns: none;
+      border-bottom: none;
+      p {
+        width: 80%;
+        padding: 45px 25px 30px 25px;
+        border-left: none;
+        border-right: 1px solid black;
+        font-size: 19px;
+        position: relative;
+        &::after {
+          display: none;
+        }
+      }
+      .flowImg {
+        display: none;
+      }
+    }
+    &__contentRow3 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .documentFlow {
+    &__title {
+      padding: 20px;
+      font-size: 27px;
+      p {
+        padding: 0 2%;
+      }
+    }
+    &__titleNum {
+      padding: 10px 60px;
+    }
+    &__contentRow1 {
+      .firstText {
+        p {
+          padding: 0px 16px;
+          font-size: 16px;
+        }
+        .hiddenBlock1 {
+          &__num {
+            font-size: 27px;
+            padding: 30px 0;
+          }
+          &__img {
+            height: 90px;
+          }
+        }
+      }
+      .secondText {
+        p {
+          padding: 28px 16px;
+          font-size: 14px;
+        }
+        .hiddenBlock2 {
+          height: 400px;
+        }
+      }
+    }
+    &__contentRow2 {
+      p {
+        padding: 28px 16px;
+        font-size: 14px;
+      }
+    }
+  }
+}

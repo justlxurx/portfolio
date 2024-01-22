@@ -1,4 +1,3 @@
-// import Button from '@/components/ui/Button'
 import styles from './styles.module.scss'
 
 const DocFlow = () => {
@@ -6,7 +5,7 @@ const DocFlow = () => {
     <section className={styles.documentFlow}>
       <div className={styles.documentFlow__title}>
         <p>Онлайн-документооборот</p>
-        <p className={styles.documentFlow__titleNum}>003</p>
+        <p className={styles.documentFlow__titleNum}>012</p>
       </div>
 
       <div className={styles.documentFlow__content}>
@@ -22,7 +21,7 @@ const DocFlow = () => {
               контрактов, претензионных документов
             </p>
             <div className={styles.hiddenBlock1}>
-              <p className={styles.hiddenBlock1__num}>003</p>
+              <p className={styles.hiddenBlock1__num}>012</p>
               <div className={styles.hiddenBlock1__img}></div>
             </div>
           </div>

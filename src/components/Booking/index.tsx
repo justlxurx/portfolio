@@ -13,7 +13,7 @@ const Booking = () => {
     <section className={styles.booking}>
       <div className={styles.booking__title}>
         <p>Букинговая система для круизных лайнеров</p>
-        <p className={styles.booking__titleNum}>006</p>
+        <p className={styles.booking__titleNum}>015</p>
       </div>
 
       <div className={styles.booking__content}>
@@ -27,7 +27,7 @@ const Booking = () => {
             контрактов, претензионных документов
           </p>
           <div className={styles.hiddenBlock__content}>
-            <p className={styles.hiddenBlock__contentNum}>006</p>
+            <p className={styles.hiddenBlock__contentNum}>015</p>
             <div className={styles.hiddenBlock__contentImg}></div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
+import { useMediaQuery } from 'react-responsive'
 import classNames from 'classnames'
 import arrowIcon from 'public/arrow_icon.svg'
 import firstSlide from 'public/case.png'
@@ -16,6 +17,21 @@ import tenthSlide from 'public/tenthSlide.png'
 import eleventhSlide from 'public/eleventhSlide.png'
 import twelvesSlide from 'public/twelvesSlide.png'
 import thirtiethSlide from 'public/thirtiethSlide.png'
+
+import mobile_case1 from 'public/mobile_case1.png'
+import mobile_case2 from 'public/mobile_case2.png'
+import mobile_case from 'public/mobile_case.png'
+import mobile_case3 from 'public/mobile_case3.png'
+import mobile_case4 from 'public/mobile_case4.png'
+import mobile_case5 from 'public/mobile_case5.png'
+import mobile_case6 from 'public/mobile_case6.png'
+import mobile_case7 from 'public/mobile_case7.png'
+import mobile_case8 from 'public/mobile_case8.png'
+import mobile_case9 from 'public/mobile_case9.png'
+import mobile_case10 from 'public/mobile_case10.png'
+import mobile_case11 from 'public/mobile_case11.png'
+import mobile_case12 from 'public/mobile_case12.png'
+
 import imgSlide from 'public/car_line.svg'
 import folder from 'public/folder-icon.svg'
 import Slider from 'react-slick'
@@ -36,6 +52,7 @@ import 'node_modules/slick-carousel/slick/slick-theme.css'
 import styles from './styles.module.scss'
 
 const Projects = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 })
   const [activeSlide, setActiveSlide] = useState(1)
 
   interface ISlide {
@@ -44,6 +61,7 @@ const Projects = () => {
     src2?: StaticImageData
     link: string
     logo?: StaticImageData | any
+    mobileImg: StaticImageData
   }
 
   const slides: ISlide[] = [
@@ -52,76 +70,89 @@ const Projects = () => {
       src: firstSlide,
       src2: imgSlide,
       link: '',
+      mobileImg: mobile_case1,
     },
     {
-      title: 'Кортим команда',
+      title: 'БУКИНГОВАЯ СИСТЕМА ДЛЯ КРУИЗНЫХ ЛАЙНЕРОВ',
       src: secondSlide,
       link: '',
+      mobileImg: mobile_case,
     },
     {
       title: 'ПО для автомобильных весов',
       src: thirdSlide,
       link: 'https://vesovaya.kz/',
       logo: logo_8,
+      mobileImg: mobile_case2,
     },
     {
       title: 'Краудленинговая платформа',
       src: fourthSlide,
       link: 'https://cofi.ru/',
       logo: logo_18,
+      mobileImg: mobile_case3,
     },
     {
       title: 'Доработка платформы Grupovina',
       src: fifthSlide,
       link: 'https://grupovina.rs/',
       logo: logo_9,
+      mobileImg: mobile_case4,
     },
     {
       title: 'ИИ бот',
       src: sixthSlide,
       link: 'https://thisberry.com/',
       logo: logo_10,
+      mobileImg: mobile_case5,
     },
     {
       title: 'Автоматизированная система управления наружным освещением',
       src: seventhSlide,
       link: 'https://www.saiman.kz',
       logo: logo_11,
+      mobileImg: mobile_case6,
     },
     {
       title: `Приложения для считывания данных с счетчика`,
       src: eighthSlide,
       link: 'https://www.saiman.kz',
       logo: logo_11,
+      mobileImg: mobile_case7,
     },
     {
       title: 'Сервис документооборота для взаимодействия юридических лиц',
       src: ninthSlide,
       link: 'https://datcom.kz/',
       logo: logo_5,
+      mobileImg: mobile_case8,
     },
     {
       title: 'Платежная система',
       src: tenthSlide,
       link: 'https://senim.kz',
       logo: logo_12,
+      mobileImg: mobile_case9,
     },
     {
       title: 'Информационный портал',
       src: eleventhSlide,
       link: 'https://yvision.kz/',
       logo: logo_13,
+      mobileImg: mobile_case10,
     },
     {
       title: 'Московская электронная школа',
       src: twelvesSlide,
       link: 'https://www.mos.ru/city/projects/mesh/',
+      mobileImg: mobile_case11,
     },
     {
       title: 'Сервис доставки',
       src: thirtiethSlide,
       link: 'https://zhiber.kz/ru',
       logo: logo_19,
+      mobileImg: mobile_case12,
     },
   ]
 
@@ -194,17 +225,31 @@ const Projects = () => {
           )}
         </div>
         <Slider {...settings}>
-          {slides.map(({ title, src, src2 }) => (
-            <div className={styles.slide_wrapper} key={title}>
-              <Image src={src} fill alt={title} />
-              <div
-                className={styles.slide_wrapper_img}
-                style={{
-                  backgroundImage: `url(${src2})`,
-                }}
-              ></div>
-            </div>
-          ))}
+          {slides.map(({ title, src, src2, link, mobileImg }) =>
+            link ? (
+              <a href={link} target="_blank" key={title}>
+                <div className={styles.slide_wrapper}>
+                  <Image src={isMobile ? mobileImg : src} fill alt={title} />
+                  <div
+                    className={styles.slide_wrapper_img}
+                    style={{
+                      backgroundImage: `url(${src2})`,
+                    }}
+                  ></div>
+                </div>
+              </a>
+            ) : (
+              <div key={title} className={styles.slide_wrapper}>
+                <Image src={isMobile ? mobileImg : src} fill alt={title} />
+                <div
+                  className={styles.slide_wrapper_img}
+                  style={{
+                    backgroundImage: `url(${src2})`,
+                  }}
+                ></div>
+              </div>
+            ),
+          )}
         </Slider>
       </div>
     </section>
