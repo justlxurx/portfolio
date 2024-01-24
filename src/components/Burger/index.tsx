@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
 import NavButton from '../ui/NavButton/index'
 import { INavButton } from '../ui/NavButton/interface'
-
+import Link from 'next/link'
 import styles from './styles.module.scss'
 
 interface BurgerProps {
@@ -37,10 +37,10 @@ const Burger = ({ closeBurgerMenu }: BurgerProps) => {
             </li>
           ))}
         </ul>
-        <button className={styles.button_to_call}>
-          <a href="https://t.me/Adil_Akbayev" target="_blank">
+        <button className={styles.button_to_call} onClick={closeBurgerMenu}>
+          <Link href="/" as="/#toForm">
             связаться с нами
-          </a>
+          </Link>
         </button>
       </div>
     </section>

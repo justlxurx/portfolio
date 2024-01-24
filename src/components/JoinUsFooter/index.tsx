@@ -68,10 +68,10 @@ const JoinUsFooter = () => {
                   className={styles.feedback_button}
                   variant={ButtonVariant.outlined_transparent}
                 >
-                  <a href={'tel:+77212940165'}>
+                  <Link href="/" as="/#toForm">
                     Связаться с нами
                     <Image src={arrow} alt="arrow" />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

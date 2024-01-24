@@ -1,9 +1,10 @@
+import Link from 'next/link'
 import styles from './styles.module.scss'
 
 const FeedbackButton1 = () => {
   return (
     <button className={styles.button}>
-      <a href="https://t.me/Adil_Akbayev" target="_blank">
+      <Link href="/" as="/#toForm">
         <div className={styles.button__inner}>
           <div>
             <span className={styles.button__inner_title}>Связаться с нами</span>
@@ -12,7 +13,7 @@ const FeedbackButton1 = () => {
             </span>
           </div>
         </div>
-      </a>
+      </Link>
     </button>
   )
 }

@@ -10,7 +10,7 @@ interface IsendMailProps {
 }
 
 export async function sendMail({
-  email = 'aa@qazdev.kz',
+  email = 'team@qazdev.kz',
   theme,
   text,
   textHtml,

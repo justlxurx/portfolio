@@ -12,7 +12,7 @@
   }
   &__logos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 22px;
   }
   &__logoWrapper {
@@ -74,7 +74,7 @@
     }
     &__logos {
       gap: 9.48px;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
     &__logoWrapper {
       border-radius: 7.481px;
@@ -94,7 +94,7 @@
     }
     &__logos {
       gap: 9.48px;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
     &__logoWrapper {
       border-radius: 7.481px;
