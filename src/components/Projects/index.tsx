@@ -66,13 +66,6 @@ const Projects = () => {
 
   const slides: ISlide[] = [
     {
-      title: 'ПО для автомобильных весов',
-      src: thirdSlide,
-      link: 'https://vesovaya.kz/',
-      logo: logo_8,
-      mobileImg: mobile_case2,
-    },
-    {
       title: 'Краудленинговая платформа',
       src: fourthSlide,
       link: 'https://cofi.ru/',
@@ -92,6 +85,13 @@ const Projects = () => {
       link: 'https://thisberry.com/',
       logo: logo_10,
       mobileImg: mobile_case5,
+    },
+    {
+      title: 'ПО для автомобильных весов',
+      src: thirdSlide,
+      link: 'https://vesovaya.kz/',
+      logo: logo_8,
+      mobileImg: mobile_case2,
     },
     {
       title: 'Автоматизированная система управления наружным освещением',
@@ -129,18 +129,19 @@ const Projects = () => {
       mobileImg: mobile_case10,
     },
     {
-      title: 'Московская электронная школа',
-      src: twelvesSlide,
-      link: 'https://www.mos.ru/city/projects/mesh/',
-      mobileImg: mobile_case11,
-    },
-    {
       title: 'Сервис доставки',
       src: thirtiethSlide,
       link: 'https://zhiber.kz/ru',
       logo: logo_19,
       mobileImg: mobile_case12,
     },
+    {
+      title: 'Московская электронная школа',
+      src: twelvesSlide,
+      link: 'https://www.mos.ru/city/projects/mesh/',
+      mobileImg: mobile_case11,
+    },
+
     {
       title: 'Кортим команда ',
       src: firstSlide,

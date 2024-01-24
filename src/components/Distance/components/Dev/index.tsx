@@ -23,7 +23,7 @@ const Dev = () => {
           <br /> Практические навыки, ключевые <br /> компоненты, командная
           работа.
         </p>
-        <a href="https://devpractice.kz/">
+        <a href="https://devpractice.kz/" target="_blank">
           <button className={styles.pageDev__bottomButton}>
             <b>Подробнее</b>
           </button>

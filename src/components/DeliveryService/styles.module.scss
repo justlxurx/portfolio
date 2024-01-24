@@ -1,5 +1,6 @@
 .documentFlow {
   width: 100%;
+  border-top: 1px solid black;
 
   &__hiddenHeading {
     display: none;
@@ -289,6 +290,7 @@
 
 @media (max-width: 768px) {
   .documentFlow {
+    border-bottom: 1px solid black;
     &__headingWrapper {
       display: none;
     }
@@ -312,8 +314,6 @@
       padding: 20px;
       font-size: 30px;
       align-items: unset;
-      margin-top: 80px;
-      border-top: 1px solid black;
       p {
         padding: 0 2%;
         text-align: center;

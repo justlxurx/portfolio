@@ -19,7 +19,7 @@ const NavButton = ({ title, description, path, redirect }: INavButton) => {
   }
 
   return (
-    <Link className={styles.button} href={path} target="_blank">
+    <Link className={styles.button} href={path}>
       <div className={styles.button__inner}>
         <span className={styles.button__title}>{title}</span>
         <span className={styles.button__description}>{description}</span>

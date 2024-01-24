@@ -16,13 +16,15 @@ import ESchool from '@/components/MoscowESchool'
 import Delivery from '@/components/DeliveryService'
 import Grupovina from '@/components/Grupovina'
 import Game from '@/components/Game'
+import Presentation from '@/components/Presentation'
 export default async function Portfolio() {
   return (
     <>
       <Navbar />
       <Game />
       <main>
-        <BlaBlaCar />
+        <Presentation />
+        <Delivery />
         <AI />
         <Crowdsourcing />
         <LightingControl />
@@ -30,7 +32,7 @@ export default async function Portfolio() {
         <PaymentSystem />
         <InfoPortal />
         <ESchool />
-        <Delivery />
+        <BlaBlaCar />
         <Grupovina />
         <CRM />
         <OnlineDoc />

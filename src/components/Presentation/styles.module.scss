@@ -1,0 +1,167 @@
+.casesWrapper {
+  display: flex;
+  padding: 1% 4%;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 100px;
+  align-items: center;
+
+  .qazdev_logo {
+    background-image: url('/logo.svg');
+    background-size: 100%;
+    background-position-y: center;
+    background-position-x: 15%;
+    width: 700px;
+    height: 169px;
+    background-repeat: no-repeat;
+  }
+  &__button {
+    h1 {
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 67px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 103%; /* 69.01px */
+      text-transform: uppercase;
+    }
+    button {
+      border-radius: 10px;
+      background: var(--black, #000);
+      color: #fff;
+      font-family: Helvetica;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px; /* 166.667% */
+      letter-spacing: -1.02px;
+      text-transform: uppercase;
+      padding: 15px 76px;
+      &:hover {
+        background: #2313db;
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .casesWrapper {
+    margin-bottom: 100px;
+    .qazdev_logo {
+      width: 600px;
+      height: 150px;
+    }
+    &__button {
+      h1 {
+        font-size: 60px;
+      }
+      button {
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 13px 76px;
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  .casesWrapper {
+    margin-bottom: 100px;
+    .qazdev_logo {
+      width: 450px;
+      height: 150px;
+    }
+    &__button {
+      h1 {
+        font-size: 46px;
+      }
+      button {
+        border-radius: 10px;
+        font-size: 17px;
+        padding: 10px 56px;
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .casesWrapper {
+    margin-bottom: 100px;
+    .qazdev_logo {
+      width: 380px;
+      height: 100px;
+    }
+    &__button {
+      h1 {
+        font-size: 43px;
+      }
+      button {
+        border-radius: 8px;
+        font-size: 15px;
+        padding: 5px 56px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .casesWrapper {
+    margin-bottom: 100px;
+    .qazdev_logo {
+      width: 300px;
+      height: 80px;
+    }
+    &__button {
+      h1 {
+        font-size: 37px;
+      }
+      button {
+        border-radius: 8px;
+        font-size: 13px;
+        padding: 0px 50px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .casesWrapper {
+    margin-bottom: 100px;
+    justify-content: center;
+    padding: 50px 25px;
+    .qazdev_logo {
+      display: none;
+    }
+    &__button {
+      width: 100%;
+      margin-bottom: 30px;
+      h1 {
+        font-size: 73px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      button {
+        width: 100%;
+        border-radius: 9px;
+        font-size: 30px;
+        padding: 22px 5%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .casesWrapper {
+    margin-bottom: 50px;
+    justify-content: center;
+    padding: 30px 25px;
+    &__button {
+      margin-bottom: 0;
+      h1 {
+        font-size: 41px;
+        margin-bottom: 20px;
+      }
+      button {
+        font-size: 20px;
+        padding: 15px;
+      }
+    }
+  }
+}

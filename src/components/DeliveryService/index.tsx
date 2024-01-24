@@ -17,7 +17,7 @@ const Delivery = () => {
             https://zhiber.kz/ru
           </a>
         </div>
-        <p className={styles.documentFlow__titleNum}>009</p>
+        <p className={styles.documentFlow__titleNum}>001</p>
       </div>
 
       <div className={styles.documentFlow__content}>
@@ -26,7 +26,7 @@ const Delivery = () => {
           <div className={styles.firstText}>
             <p></p>
             <div className={styles.hiddenBlock1}>
-              <p className={styles.hiddenBlock1__num}>009</p>
+              <p className={styles.hiddenBlock1__num}>001</p>
               <div className={styles.hiddenBlock1__img}></div>
             </div>
           </div>

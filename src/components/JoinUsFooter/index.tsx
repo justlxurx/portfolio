@@ -39,10 +39,6 @@ const JoinUsFooter = () => {
   ]
 
   const socialLinks = [
-    // {
-    //   icon: 'twitter.svg',
-    //   path: '#',
-    // },
     {
       icon: 'insta.svg',
       path: 'https://instagram.com/qazdev.team?igshid=MzRlODBiNWFlZA==',
@@ -50,6 +46,10 @@ const JoinUsFooter = () => {
     {
       icon: 'linkedin1.svg',
       path: 'https://www.linkedin.com/in/qazdev-team-067a82205/ ',
+    },
+    {
+      icon: 'telegram.svg',
+      path: 'https://t.me/QazDevelop',
     },
   ]
   return (
@@ -117,7 +117,7 @@ const JoinUsFooter = () => {
             <footer className={styles.secondary_block}>
               <div>
                 <p className={styles.address}>
-                  г.Караганда, ​Проспект Шахтёров, 5/1​
+                  г.Караганда, ​Улица Мустафина, 9/2​, 4 этаж
                 </p>
                 <p className={styles.copyright}>
                   <FormattedString
