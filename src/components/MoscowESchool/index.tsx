@@ -15,7 +15,16 @@ const ESchool = () => {
               Пользователь может вести журнал классов, выдавать задания,
               составлять учебный план, следить за расписанием, школьными
               новостями и мероприятиями.
+              <br />
+              <a
+                href="https://www.mos.ru/city/projects/mesh/"
+                target="_blank"
+                className={styles.monitoring__link}
+              >
+                https://www.mos.ru/city/projects/mesh/
+              </a>
             </p>
+
             <div className={styles.hiddenBlock__content}>
               <p className={styles.hiddenBlock__contentNum}>008</p>
               <div className={styles.hiddenBlock__contentImg}></div>
@@ -30,7 +39,14 @@ const ESchool = () => {
               Пользователь может вести журнал классов, выдавать задания,
               составлять учебный план, следить за расписанием, школьными
               новостями и мероприятиями.
-            </p>
+              <a
+                href="https://www.mos.ru/city/projects/mesh/"
+                target="_blank"
+                className={styles.monitoring__link}
+              >
+                https://www.mos.ru/city/projects/mesh/
+              </a>
+            </p>{' '}
           </div>
         </div>
       </div>

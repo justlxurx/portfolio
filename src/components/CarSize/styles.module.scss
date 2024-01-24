@@ -47,6 +47,37 @@
     justify-content: space-between;
     border-bottom: 1px solid black;
   }
+  &__hiddenHeading {
+    display: none;
+  }
+  &__headingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  &__link {
+    text-transform: lowercase;
+    color: black;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 126.5%; /* 25.3px */
+    letter-spacing: -0.16px;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+  &__heading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 116.5%;
+    text-transform: uppercase;
+  }
+  &__logo {
+    width: 35%;
+    height: auto;
+  }
   &__titleNum {
     padding: 8px 40px;
     border-left: 1px solid black;
@@ -64,10 +95,9 @@
     .hiddenBlock {
       display: none;
     }
-
-    div:last-of-type {
-      border-left: 1px solid black;
-    }
+  }
+  &__forBorder {
+    border-left: 1px solid black;
   }
   &__img {
     background-image: url('/carSize.png');
@@ -129,6 +159,15 @@
     &__content {
       height: 550px;
     }
+    &__headingWrapper {
+      gap: 10px;
+    }
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 25px;
+    }
   }
 }
 
@@ -137,7 +176,6 @@
     &__title {
       font-size: 21px;
     }
-
     &__content {
       height: 450px;
     }
@@ -154,6 +192,15 @@
         height: 5%;
         bottom: 3.5%;
       }
+    }
+    &__headingWrapper {
+      gap: 10px;
+    }
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 20px;
     }
   }
 }
@@ -176,6 +223,16 @@
       p {
         font-size: 10px;
       }
+    }
+    &__headingWrapper {
+      gap: 6px;
+      margin-bottom: 30px;
+    }
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 17px;
     }
   }
 }
@@ -200,6 +257,16 @@
         height: 5%;
         bottom: 2.5%;
       }
+    }
+    &__headingWrapper {
+      gap: 6px;
+      margin-bottom: 30px;
+    }
+    &__link {
+      font-size: 7px;
+    }
+    &__heading {
+      font-size: 14px;
     }
   }
 }
@@ -243,6 +310,7 @@
         width: 38px;
       }
     }
+
     &__title {
       padding: 20px 25px;
       font-size: 27px;
@@ -252,8 +320,25 @@
       border-bottom: none;
       border-top: 1px solid black;
     }
+    &__hiddenHeading {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__link {
+      font-size: 14px;
+    }
+    &__heading {
+      font-size: 30px;
+    }
+    &__headingWrapper {
+      display: none;
+    }
     &__titleNum {
       display: none;
+    }
+    &__forBorder {
+      border-left: none;
     }
     &__content {
       position: relative;
@@ -261,9 +346,7 @@
       display: grid;
       grid-template-columns: none;
       border-bottom: 1px solid black;
-      div:last-of-type {
-        border-left: none;
-      }
+
       .hiddenBlock {
         border-top: 1px solid black;
         display: grid;
@@ -357,6 +440,12 @@
       font-size: 27px;
     }
 
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 23px;
+    }
     &__content {
       .hiddenBlock {
         &__text {

@@ -92,7 +92,7 @@ const JoinUsFooter = () => {
                   <ul className={styles.secondary_navigation}>
                     {secondaryLinks.map(({ path, title }) => (
                       <li key={nanoid()}>
-                        <a className={styles.link} href={path}>
+                        <a className={styles.link} href={path} target="_blank">
                           {title}
                         </a>
                       </li>

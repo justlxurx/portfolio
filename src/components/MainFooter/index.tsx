@@ -9,7 +9,7 @@ const MainFooter = () => {
   const EMAIL = 'hr@qazdevelop.com'
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="toForm">
       <div className="container">
         <div className={styles.footer__image} />
         <div className={styles.footer__inner}>
@@ -21,9 +21,9 @@ const MainFooter = () => {
               Пишем код, который упрощает бизнес-процессы и помогаем <br />{' '}
               компаниям воплощать идеи эффективно и технологично
             </p>
-            <a className={styles.footer__hr_email} href={`mailto:${EMAIL}`}>
+            {/* <a className={styles.footer__hr_email} href={`mailto:${EMAIL}`}>
               {EMAIL}
-            </a>
+            </a> */}
           </div>
           <ContactUs className={styles.footer__contact_us} host={host} />
         </div>

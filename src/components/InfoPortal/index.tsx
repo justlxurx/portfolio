@@ -1,11 +1,23 @@
 'use client'
+import Image from 'next/image'
 import styles from './styles.module.scss'
+import logo_13 from 'public/logo-13.png'
 
 const InfoPortal = () => {
   return (
     <section className={styles.booking}>
       <div className={styles.booking__title}>
-        <p>Информационный портал</p>
+        <div className={styles.booking__hiddenHeading}>
+          <Image src={logo_13} alt="" className={styles.booking__logo} />
+          <h3 className={styles.booking__heading}>Информационный портал</h3>
+          <a
+            href="https://yvision.kz/"
+            className={styles.booking__link}
+            target="_blank"
+          >
+            https://yvision.kz/
+          </a>
+        </div>
         <p className={styles.booking__titleNum}>007</p>
       </div>
 
@@ -18,6 +30,17 @@ const InfoPortal = () => {
         </div>
         <div className={styles.booking__img}></div>
         <div className={styles.booking__text}>
+          <div className={styles.booking__headingWrapper}>
+            <Image src={logo_13} alt="" className={styles.booking__logo} />
+            <h3 className={styles.booking__heading}>Информационный портал</h3>
+            <a
+              href="https://yvision.kz/"
+              className={styles.booking__link}
+              target="_blank"
+            >
+              https://yvision.kz/
+            </a>
+          </div>
           <p>
             Рефакторинг раздела спецпроектов. Добавление в футер поста вывод
             постов соответствующей тематики с Infinite-scroll’ом. Авторизация с
@@ -31,7 +54,7 @@ const InfoPortal = () => {
             интерфейса, рефаторинг кода.
           </p>
         </div>
-        <div></div>
+        <div className={styles.booking__forBorder}></div>
       </div>
     </section>
   )

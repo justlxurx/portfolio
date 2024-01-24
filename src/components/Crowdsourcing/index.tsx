@@ -1,10 +1,24 @@
+import Image from 'next/image'
 import styles from './styles.module.scss'
+import logo_18 from 'public/logo-18.png'
 
 const Crowd = () => {
   return (
     <section className={styles.monitoring}>
       <div className={styles.monitoring__title}>
-        <p>Краудленинговая платформа</p>
+        <div className={styles.monitoring__hiddenHeading}>
+          <Image src={logo_18} alt="logo" className={styles.monitoring__logo} />
+          <h3 className={styles.monitoring__heading}>
+            Краудленинговая платформа
+          </h3>
+          <a
+            href="https://cofi.ru/"
+            className={styles.monitoring__link}
+            target="_blank"
+          >
+            https://cofi.ru/
+          </a>
+        </div>
         <p className={styles.monitoring__titleNum}>003</p>
       </div>
 
@@ -24,7 +38,23 @@ const Crowd = () => {
         </div>
         <div className={styles.monitoring__img}></div>
         <div className={styles.monitoring__text}>
-          <div></div>
+          <div className={styles.monitoring__headingWrapper}>
+            <Image
+              src={logo_18}
+              alt="logo"
+              className={styles.monitoring__logo}
+            />
+            <h3 className={styles.monitoring__heading}>
+              Краудленинговая платформа
+            </h3>
+            <a
+              href="https://cofi.ru/"
+              className={styles.monitoring__link}
+              target="_blank"
+            >
+              https://cofi.ru/
+            </a>
+          </div>
           <div className={styles.monitoring__text1}>
             <p>
               Мы создали программное обеспечение для автомобильных весов,

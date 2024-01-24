@@ -15,8 +15,6 @@ import logo_11 from './../../../public/logo-11.png'
 import logo_12 from './../../../public/logo-12.png'
 import logo_13 from './../../../public/logo-13.png'
 import logo_14 from './../../../public/logo-14.png'
-import logo_15 from './../../../public/logo-15.png'
-import logo_16 from './../../../public/logo-16.png'
 import logo_17 from './../../../public/logo-17.png'
 import logo_18 from './../../../public/logo-18.png'
 const trustUs = () => {
@@ -63,12 +61,12 @@ const trustUs = () => {
     {
       img: logo_14,
     },
-    {
-      img: logo_15,
-    },
-    {
-      img: logo_16,
-    },
+    // {
+    //   img: logo_15,
+    // },
+    // {
+    //   img: logo_16,
+    // },
     {
       img: logo_17,
     },

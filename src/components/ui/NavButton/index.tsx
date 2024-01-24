@@ -9,7 +9,7 @@ import styles from './styles.module.scss'
 const NavButton = ({ title, description, path, redirect }: INavButton) => {
   if (redirect) {
     return (
-      <a className={styles.button} href={path}>
+      <a className={styles.button} href={path} target="_blank">
         <div className={styles.button__inner}>
           <span className={styles.button__title}>{title}</span>
           <span className={styles.button__description}>{description}</span>
@@ -19,7 +19,7 @@ const NavButton = ({ title, description, path, redirect }: INavButton) => {
   }
 
   return (
-    <Link className={styles.button} href={path}>
+    <Link className={styles.button} href={path} target="_blank">
       <div className={styles.button__inner}>
         <span className={styles.button__title}>{title}</span>
         <span className={styles.button__description}>{description}</span>

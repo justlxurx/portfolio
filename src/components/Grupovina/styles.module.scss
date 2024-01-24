@@ -1,5 +1,39 @@
 .booking {
   width: 100%;
+  &__forBorder {
+    border-left: 1px solid black;
+  }
+  &__hiddenHeading {
+    display: none;
+  }
+  &__headingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  &__link {
+    text-transform: lowercase;
+    color: black;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 126.5%; /* 25.3px */
+    letter-spacing: -0.16px;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+  &__heading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 116.5%;
+    text-transform: uppercase;
+  }
+  &__logo {
+    width: 35%;
+    height: auto;
+  }
   .backButton {
     padding: 16px;
     border-radius: 10px;
@@ -64,10 +98,6 @@
     .hiddenBlock {
       display: none;
     }
-
-    div:last-of-type {
-      border-left: 1px solid black;
-    }
   }
   &__img {
     background-image: url('/grupovina.png');
@@ -105,6 +135,15 @@
 }
 @media (max-width: 1700px) {
   .booking {
+    &__headingWrapper {
+      gap: 10px;
+    }
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 25px;
+    }
     &__title {
       font-size: 21px;
     }
@@ -140,6 +179,15 @@
     &__content {
       height: 450px;
     }
+    &__headingWrapper {
+      gap: 10px;
+    }
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 20px;
+    }
     &__text {
       margin-bottom: 15%;
       border-bottom: 1px solid black;
@@ -158,6 +206,16 @@
 }
 @media (max-width: 1300px) {
   .booking {
+    &__headingWrapper {
+      gap: 6px;
+      margin-bottom: 30px;
+    }
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 17px;
+    }
     &__title {
       font-size: 19px;
       .project_num {
@@ -181,6 +239,16 @@
 
 @media (max-width: 1100px) {
   .booking {
+    &__headingWrapper {
+      gap: 6px;
+      margin-bottom: 30px;
+    }
+    &__link {
+      font-size: 7px;
+    }
+    &__heading {
+      font-size: 14px;
+    }
     &__title {
       font-size: 17px;
     }
@@ -228,6 +296,20 @@
 
 @media (max-width: 768px) {
   .booking {
+    &__hiddenHeading {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__link {
+      font-size: 14px;
+    }
+    &__heading {
+      font-size: 30px;
+    }
+    &__headingWrapper {
+      display: none;
+    }
     .backButton {
       padding: 16px;
       border-radius: 10px;
@@ -260,9 +342,7 @@
       display: grid;
       grid-template-columns: none;
       border-bottom: 1px solid black;
-      div:last-of-type {
-        border-left: none;
-      }
+
       .hiddenBlock {
         border-top: 1px solid black;
         display: grid;
@@ -304,6 +384,9 @@
       border-bottom: 1px solid black;
       border-top: 1px solid black;
     }
+    &__forBorder {
+      border-left: none;
+    }
     &__text {
       margin-bottom: 15%;
       border-bottom: none;
@@ -337,6 +420,12 @@
 
 @media (max-width: 576px) {
   .booking {
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 23px;
+    }
     .backButton {
       padding: 16px;
       border-radius: 10px;

@@ -1,10 +1,22 @@
+import Image from 'next/image'
 import styles from './styles.module.scss'
+import logo_19 from 'public/logo-19.png'
 
 const Delivery = () => {
   return (
     <section className={styles.documentFlow}>
       <div className={styles.documentFlow__title}>
-        <p>Сервис доставки</p>
+        <div className={styles.documentFlow__hiddenHeading}>
+          <Image src={logo_19} alt="" className={styles.documentFlow__logo} />
+          <h3 className={styles.documentFlow__heading}>Сервис доставки</h3>
+          <a
+            href="https://zhiber.kz/ru"
+            target="_blank"
+            className={styles.documentFlow__link}
+          >
+            https://zhiber.kz/ru
+          </a>
+        </div>
         <p className={styles.documentFlow__titleNum}>009</p>
       </div>
 
@@ -20,11 +32,21 @@ const Delivery = () => {
           </div>
           <div className={styles.secondText}>
             <div className={styles.hiddenBlock2}></div>
-            <p>
-              Наша команда успешно разработала полную интеграцию с
-              Яндекс.Доставкой, предоставляя вам современные и эффективные
-              функции для управления доставкой вашего товара.
-            </p>
+            <div className={styles.documentFlow__headingWrapper}>
+              <Image
+                src={logo_19}
+                alt=""
+                className={styles.documentFlow__logo}
+              />
+              <h3 className={styles.documentFlow__heading}>Сервис доставки</h3>
+              <a
+                href="https://zhiber.kz/ru"
+                target="_blank"
+                className={styles.documentFlow__link}
+              >
+                https://zhiber.kz/ru
+              </a>
+            </div>
           </div>
         </div>
 
@@ -33,6 +55,10 @@ const Delivery = () => {
           <div className={styles.flowImg}></div>
           <div></div>
           <p>
+            {' '}
+            Наша команда успешно разработала полную интеграцию с
+            Яндекс.Доставкой, предоставляя вам современные и эффективные функции
+            для управления доставкой вашего товара. <br />
             {` <1>`} Мы обеспечили возможность легкого заказа, понятного
             отслеживания пути вашей посылки и безупречного завершения доставки.{' '}
             <br />

@@ -1,5 +1,36 @@
 .documentFlow {
   width: 100%;
+  &__hiddenHeading {
+    display: none;
+  }
+  &__headingWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 25px;
+    justify-content: space-between;
+  }
+  &__link {
+    text-transform: lowercase;
+    color: black;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 126.5%; /* 25.3px */
+    letter-spacing: -0.16px;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+  &__heading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 116.5%;
+    text-transform: uppercase;
+  }
+  &__logo {
+    width: 25%;
+    height: auto;
+  }
 
   &__title {
     padding: 0 4%;
@@ -27,7 +58,7 @@
   &__content {
     display: grid;
     border-top: 1px solid black;
-    grid-template-rows: 20% auto 20%;
+    grid-template-rows: 25% auto 20%;
     height: 745px;
   }
   &__contentRow1 {
@@ -117,6 +148,12 @@
 }
 @media (max-width: 1700px) {
   .documentFlow {
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 23px;
+    }
     &__title {
       font-size: 21px;
     }
@@ -129,13 +166,13 @@
     &__contentRow1 {
       p {
         padding: 0px 25px;
-        font-size: 15px;
+        font-size: 14px;
       }
     }
     &__contentRow2 {
       p {
         padding: 28px 25px;
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }
@@ -143,6 +180,12 @@
 
 @media (max-width: 1300px) {
   .documentFlow {
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 17px;
+    }
     &__title {
       font-size: 19px;
     }
@@ -155,13 +198,13 @@
     &__contentRow1 {
       p {
         padding: 0px 25px;
-        font-size: 13px;
+        font-size: 12px;
       }
     }
     &__contentRow2 {
       p {
         padding: 22px 25px;
-        font-size: 14px;
+        font-size: 12px;
       }
     }
   }
@@ -169,19 +212,25 @@
 
 @media (max-width: 1135px) {
   .documentFlow {
+    &__link {
+      font-size: 7px;
+    }
+    &__heading {
+      font-size: 13px;
+    }
     &__content {
       height: 450px;
     }
     &__contentRow1 {
       p {
         padding: 0px 25px;
-        font-size: 12px;
+        font-size: 10px;
       }
     }
     &__contentRow2 {
       p {
         padding: 14px 25px;
-        font-size: 12px;
+        font-size: 10px;
       }
     }
   }
@@ -199,19 +248,22 @@
 
 @media (max-width: 1060px) {
   .documentFlow {
+    &__headingWrapper {
+      padding: 10px 0 10px 18px;
+    }
     &__content {
       height: 400px;
     }
     &__contentRow1 {
       p {
         padding: 0 18px;
-        font-size: 10px;
+        font-size: 9px;
       }
     }
     &__contentRow2 {
       p {
         padding: 14px 18px;
-        font-size: 10px;
+        font-size: 9px;
       }
     }
   }
@@ -222,13 +274,13 @@
     &__contentRow1 {
       p {
         padding: 0 18px;
-        font-size: 9px;
+        font-size: 8px;
       }
     }
     &__contentRow2 {
       p {
         padding: 14px 18px;
-        font-size: 10px;
+        font-size: 8px;
       }
     }
   }
@@ -236,6 +288,15 @@
 
 @media (max-width: 768px) {
   .documentFlow {
+    &__headingWrapper {
+      display: none;
+    }
+    &__link {
+      font-size: 14px;
+    }
+    &__heading {
+      font-size: 30px;
+    }
     &__title {
       flex-direction: column;
       padding: 20px;
@@ -310,8 +371,13 @@
         }
       }
     }
+    &__hiddenHeading {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
     &__contentRow2 {
-      border-top: 1px solid black;
+      border-top: none;
       display: grid;
       grid-template-columns: none;
       border-bottom: none;
@@ -338,6 +404,12 @@
 
 @media (max-width: 576px) {
   .documentFlow {
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 23px;
+    }
     &__title {
       padding: 20px;
       font-size: 27px;

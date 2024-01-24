@@ -12,7 +12,7 @@
   }
   &__logos {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 22px;
   }
   &__logoWrapper {
@@ -25,7 +25,7 @@
     align-items: center;
   }
   &__img {
-    width: 80%;
+    width: 65%;
     height: auto;
   }
 }
@@ -74,11 +74,31 @@
     }
     &__logos {
       gap: 9.48px;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
     &__logoWrapper {
       border-radius: 7.481px;
-      height: 59.851px;
+      height: 89.851px;
+    }
+    &__img {
+      width: 47%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .trustUs {
+    &__heading {
+      font-size: 28px;
+      margin-bottom: 36px;
+    }
+    &__logos {
+      gap: 9.48px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__logoWrapper {
+      border-radius: 7.481px;
+      height: 69.851px;
     }
     &__img {
       width: 47%;

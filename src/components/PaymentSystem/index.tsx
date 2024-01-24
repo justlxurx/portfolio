@@ -1,10 +1,22 @@
+import Image from 'next/image'
 import styles from './styles.module.scss'
+import logo_12 from 'public/logo-12.png'
 
 const PaymentSystem = () => {
   return (
     <section className={styles.fintech}>
       <div className={styles.fintech__title}>
-        <p>Платежная система</p>
+        <div className={styles.fintech__hiddenHeading}>
+          <Image src={logo_12} alt="logo" className={styles.fintech__logo} />
+          <h3 className={styles.fintech__heading}>Платежная система</h3>
+          <a
+            href="https://senim.kz"
+            className={styles.fintech__link}
+            target="_blank"
+          >
+            https://senim.kz
+          </a>
+        </div>
         <p className={styles.fintech__titleNum}>006</p>
       </div>
 
@@ -12,6 +24,21 @@ const PaymentSystem = () => {
         <div className={styles.fintech__contentRow1}>
           <div className={styles.fintech__text}>
             <div>
+              <div className={styles.fintech__headingWrapper}>
+                <Image
+                  src={logo_12}
+                  alt="logo"
+                  className={styles.fintech__logo}
+                />
+                <h3 className={styles.fintech__heading}>Платежная система</h3>
+                <a
+                  href="https://senim.kz"
+                  className={styles.fintech__link}
+                  target="_blank"
+                >
+                  https://senim.kz
+                </a>
+              </div>
               <div className={styles.hiddenBlock1}>
                 <p className={styles.hiddenBlock1__num}>006</p>
                 <div className={styles.hiddenBlock1__img}></div>

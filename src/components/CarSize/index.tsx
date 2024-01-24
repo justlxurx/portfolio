@@ -1,11 +1,26 @@
 'use client'
 import styles from './styles.module.scss'
+import logo_8 from 'public/logo-8.png'
+import Image from 'next/image'
 
 const CarSize = () => {
   return (
     <section className={styles.booking}>
       <div className={styles.booking__title}>
-        <p>ПО для автомобильных весов</p>
+        {/* <p></p> */}
+        <div className={styles.booking__hiddenHeading}>
+          <Image src={logo_8} alt="" className={styles.booking__logo} />
+          <h3 className={styles.booking__heading}>
+            ПО для автомобильных весов
+          </h3>
+          <a
+            href="https://vesovaya.kz/"
+            target="_blank"
+            className={styles.booking__link}
+          >
+            https://vesovaya.kz/
+          </a>
+        </div>
         <p className={styles.booking__titleNum}>005</p>
       </div>
 
@@ -22,7 +37,21 @@ const CarSize = () => {
           </div>
         </div>
         <div className={styles.booking__img}></div>
+
         <div className={styles.booking__text}>
+          <div className={styles.booking__headingWrapper}>
+            <Image src={logo_8} alt="" className={styles.booking__logo} />
+            <h3 className={styles.booking__heading}>
+              ПО для автомобильных весов
+            </h3>
+            <a
+              href="https://vesovaya.kz/"
+              className={styles.booking__link}
+              target="_blank"
+            >
+              https://vesovaya.kz/
+            </a>
+          </div>
           <p>
             Мы создали программное обеспечение для автомобильных весов,
             использующее передовые технологии компьютерного зрения для
@@ -33,7 +62,7 @@ const CarSize = () => {
             обеспечивая удобство и точность данных о взвешивании автомобилей.
           </p>
         </div>
-        <div></div>
+        <div className={styles.booking__forBorder}></div>
       </div>
     </section>
   )

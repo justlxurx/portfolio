@@ -66,19 +66,6 @@ const Projects = () => {
 
   const slides: ISlide[] = [
     {
-      title: 'Кортим команда ',
-      src: firstSlide,
-      src2: imgSlide,
-      link: '',
-      mobileImg: mobile_case1,
-    },
-    {
-      title: 'БУКИНГОВАЯ СИСТЕМА ДЛЯ КРУИЗНЫХ ЛАЙНЕРОВ',
-      src: secondSlide,
-      link: '',
-      mobileImg: mobile_case,
-    },
-    {
       title: 'ПО для автомобильных весов',
       src: thirdSlide,
       link: 'https://vesovaya.kz/',
@@ -153,6 +140,19 @@ const Projects = () => {
       link: 'https://zhiber.kz/ru',
       logo: logo_19,
       mobileImg: mobile_case12,
+    },
+    {
+      title: 'Кортим команда ',
+      src: firstSlide,
+      src2: imgSlide,
+      link: '',
+      mobileImg: mobile_case1,
+    },
+    {
+      title: 'БУКИНГОВАЯ СИСТЕМА ДЛЯ КРУИЗНЫХ ЛАЙНЕРОВ',
+      src: secondSlide,
+      link: '',
+      mobileImg: mobile_case,
     },
   ]
 

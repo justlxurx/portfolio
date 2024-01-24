@@ -1,5 +1,36 @@
 .crm {
   width: 100%;
+  &__hiddenHeading {
+    display: none;
+  }
+  &__headingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 80px;
+  }
+  &__link {
+    text-transform: lowercase;
+    color: black;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 126.5%; /* 25.3px */
+    letter-spacing: -0.16px;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+  &__heading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 116.5%;
+    text-transform: uppercase;
+  }
+  &__logo {
+    width: 55%;
+    height: auto;
+  }
 
   &__title {
     padding: 0 4%;
@@ -103,6 +134,15 @@
 }
 @media (max-width: 1700px) {
   .crm {
+    &__headingWrapper {
+      gap: 10px;
+    }
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 25px;
+    }
     &__title {
       font-size: 21px;
     }
@@ -131,6 +171,16 @@
 
 @media (max-width: 1500px) {
   .crm {
+    &__headingWrapper {
+      gap: 10px;
+      padding: 30px 55px;
+    }
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 20px;
+    }
     &__title {
       font-size: 21px;
     }
@@ -155,6 +205,16 @@
 }
 @media (max-width: 1300px) {
   .crm {
+    &__headingWrapper {
+      gap: 6px;
+      padding: 30px 45px;
+    }
+    &__link {
+      font-size: 9px;
+    }
+    &__heading {
+      font-size: 17px;
+    }
     &__title {
       font-size: 19px;
     }
@@ -184,6 +244,16 @@
 
 @media (max-width: 1100px) {
   .crm {
+    &__headingWrapper {
+      gap: 6px;
+      padding: 30px 35px;
+    }
+    &__link {
+      font-size: 7px;
+    }
+    &__heading {
+      font-size: 14px;
+    }
     &__title {
       font-size: 17px;
     }
@@ -236,6 +306,26 @@
 
 @media (max-width: 768px) {
   .crm {
+    &__hiddenHeading {
+      display: flex;
+      flex-direction: column;
+      grid-area: 10px;
+      border-right: 1px solid black;
+      padding: 20px 0;
+      gap: 10px;
+    }
+    &__link {
+      font-size: 13px;
+    }
+    &__logo {
+      width: 40%;
+    }
+    &__heading {
+      font-size: 30px;
+    }
+    &__headingWrapper {
+      display: none;
+    }
     &__title {
       padding: 0 0 0 25px;
       font-size: 30px;
@@ -250,7 +340,8 @@
     }
     &__titleNum {
       padding: 20px 0;
-      border-right: 1px solid black;
+      border-right: none;
+      border-left: none;
       height: auto;
       justify-content: center;
       display: flex;
@@ -268,6 +359,7 @@
       }
     }
     &__contentColumn2 {
+      border-top: 1px solid black;
       border-left: none;
       border-right: none;
       display: grid;
@@ -342,6 +434,12 @@
     &__title {
       padding: 0 0 0 16px;
       font-size: 27px;
+    }
+    &__link {
+      font-size: 11px;
+    }
+    &__heading {
+      font-size: 23px;
     }
     &__img {
       height: 260px;

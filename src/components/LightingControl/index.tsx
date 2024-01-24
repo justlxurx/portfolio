@@ -1,10 +1,24 @@
+import Image from 'next/image'
 import styles from './styles.module.scss'
+import logo_11 from 'public/logo-11.png'
 
 const LightingControl = () => {
   return (
     <section className={styles.documentFlow}>
       <div className={styles.documentFlow__title}>
-        <p>Автоматизированная система управления наружным освещением</p>
+        <div className={styles.documentFlow__hiddenHeading}>
+          <Image src={logo_11} alt="" className={styles.documentFlow__logo} />
+          <h3 className={styles.documentFlow__heading}>
+            Автоматизированная система управления наружным освещением
+          </h3>
+          <a
+            href="https://www.saiman.kz"
+            className={styles.documentFlow__link}
+            target="_blank"
+          >
+            https://www.saiman.kz
+          </a>
+        </div>
         <p className={styles.documentFlow__titleNum}>004</p>
       </div>
 
@@ -20,12 +34,23 @@ const LightingControl = () => {
           </div>
           <div className={styles.secondText}>
             <div className={styles.hiddenBlock2}></div>
-            <p>
-              Разработали с нуля систему предназначенную для централизованного
-              сбора и хранения данных о работе наружного освещения и
-              оборудования, предоставляя информацию по запросу. Она также
-              позволяет удаленно снимать показания счетчиков.
-            </p>
+            <div className={styles.documentFlow__headingWrapper}>
+              <Image
+                src={logo_11}
+                alt=""
+                className={styles.documentFlow__logo}
+              />
+              <h3 className={styles.documentFlow__heading}>
+                Автоматизированная система управления наружным освещением
+              </h3>
+              <a
+                href="https://www.saiman.kz"
+                className={styles.documentFlow__link}
+                target="_blank"
+              >
+                https://www.saiman.kz
+              </a>
+            </div>
           </div>
         </div>
 
@@ -34,10 +59,15 @@ const LightingControl = () => {
           <div className={styles.flowImg}></div>
           <div></div>
           <p>
-            Система сервиса-конструктора, который дает возможность создавать,
-            подписывать и хранить документы, имеющие правовую ценность,
-            нуждалась в доработке. Необходимо было разработать новые модули и
-            АРІ, а также грамотно выстроить процессы технической поддержки
+            Разработали с нуля систему предназначенную для централизованного
+            сбора и хранения данных о работе наружного освещения и оборудования,
+            предоставляя информацию по запросу. Она также позволяет удаленно
+            снимать показания счетчиков.
+            <br /> Система сервиса-конструктора, который дает возможность
+            создавать, подписывать и хранить документы, имеющие правовую
+            ценность, нуждалась в доработке. Необходимо было разработать новые
+            модули и АРІ, а также грамотно выстроить процессы технической
+            поддержки
             <br />
             Подключение дополнительных модулей добавляет возможность группового
             управления яркостью светильников и индивидуального контроля каждого,
