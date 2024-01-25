@@ -29,12 +29,12 @@ if(trim(!empty($_POST['proga-lang']))){
 
 $mail->Body = $body;
 
-if(!$mail->send()){
-    $message = 'error';
-}
-else{
-    $message = 'data sended';
-}
+// if(!$mail->send()){
+//     $message = 'error';
+// }
+// else{
+//     $message = 'data sended';
+// }
 
 $response  =['message' => $message];
 
