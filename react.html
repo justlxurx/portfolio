@@ -108,10 +108,10 @@
             onclick="closePopup()"
           />
         </div>
-        <form class="popup-form" action="#" method="post" id="add-form">
+        <form class="popup-form" action="#" method="post" id="add-form-react">
           <input
             type="text"
-            name="Ваше имя"
+            name="name"
             placeholder="Ваше имя"
             class="popup-form-input"
             pattern="[a-zA-Zа-яА-Я\s]+"
@@ -120,10 +120,17 @@
           />
           <input
             type="text"
-            name="Ваш телефон"
+            name="phone"
             placeholder="Ваш телефон"
             class="popup-form-input input-phone"
             maxlength="16"
+          />
+          <input
+            type="radio"
+            name="proga-lang"
+            value="react"
+            checked
+            class="popup-form-input-lang"
           />
           <button type="submit" class="popup-form-submit-button">
             Отправить заявку

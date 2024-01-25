@@ -48,7 +48,7 @@ const popups = document.querySelector(".popup");
 //     }
 //   });
 document
-  .getElementById("add-form")
+  .querySelector(".popup-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -62,7 +62,7 @@ document
         body: formData, // Данные формы
       };
 
-      // Отправка зdапроса
+      // Отправка запроса
       fetch("sendmail.php", options)
         .then((response) => {
           if (!response.ok) {
