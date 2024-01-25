@@ -363,5 +363,9 @@
     &__boxBottomItems {
       font-size: 10px;
     }
+    &__boxBottomItemsWrapper {
+      width: 100%;
+      gap: 10px;
+    }
   }
 }

@@ -24,9 +24,9 @@ export default async function Portfolio() {
       <Game />
       <main>
         <Presentation />
-        <Delivery />
-        <AI />
         <Crowdsourcing />
+        <AI />
+        <Delivery />
         <LightingControl />
         <CarSize />
         <PaymentSystem />

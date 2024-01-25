@@ -17,7 +17,7 @@ const BlaCar = () => {
             <h3>
               <strong>Кортим команда</strong>
             </h3>
-            <p>
+            <p className={styles.bla__text}>
               Команда
               <strong>
                 <em> qazdev </em>

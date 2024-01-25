@@ -1,7 +1,9 @@
 .monitoring {
   width: 100%;
-  &__link {
+  &__link1 {
     color: #000;
+    text-transform: lowercase;
+    display: none;
   }
 
   &__title {
@@ -220,6 +222,10 @@
 
 @media (max-width: 768px) {
   .monitoring {
+    &__link1 {
+      display: block;
+      font-size: 14px;
+    }
     &__title {
       padding: 20px 25px;
       font-size: 27px;
@@ -301,6 +307,9 @@
 
 @media (max-width: 576px) {
   .monitoring {
+    &__link1 {
+      font-size: 11px;
+    }
     &__title {
       padding: 20px 16px;
       font-size: 27px;

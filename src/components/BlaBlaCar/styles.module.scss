@@ -302,6 +302,7 @@
         padding: 0 25px;
       }
     }
+
     &__titleNum {
       padding: 20px 0px !important;
       border-left: 1px solid black;
@@ -385,6 +386,9 @@
 
 @media (max-width: 576px) {
   .bla {
+    &__text {
+      padding: 0 16px 20px !important;
+    }
     p {
       padding: 0 16px;
     }
@@ -394,6 +398,12 @@
     }
     &_contentImg {
       height: 320px;
+    }
+    &__contentInfoFirstRow {
+      h3 {
+        padding: 30px 16px;
+        font-size: 25px;
+      }
     }
     &__contentInfo {
       .desc_row1 {
@@ -406,19 +416,17 @@
           font-size: 14px;
         }
       }
-      .desc_row2 {
-        &::after {
-          left: 20px;
-          top: 28px;
-        }
-        .text1 {
-          font-size: 14px;
-          padding: 15px 10px 25px 16px;
-        }
-        .text2 {
-          font-size: 14px;
-          padding: 22px 16px;
-        }
+      &::after {
+        left: 20px;
+        top: 28px;
+      }
+      .text1 {
+        font-size: 14px;
+        padding: 15px 10px 25px 16px;
+      }
+      .text2 {
+        font-size: 14px;
+        padding: 22px 16px;
       }
     }
   }

@@ -19,7 +19,7 @@ const Crowd = () => {
             https://cofi.ru/
           </a>
         </div>
-        <p className={styles.monitoring__titleNum}>003</p>
+        <p className={styles.monitoring__titleNum}>001</p>
       </div>
 
       <div className={styles.monitoring__content}>
@@ -31,7 +31,7 @@ const Crowd = () => {
               автоматического считывания номеров машин.
             </p>
             <div className={styles.hiddenBlock__content}>
-              <p className={styles.hiddenBlock__contentNum}>003</p>
+              <p className={styles.hiddenBlock__contentNum}>001</p>
               <div className={styles.hiddenBlock__contentImg}></div>
             </div>
           </div>
