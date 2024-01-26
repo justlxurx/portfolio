@@ -11,15 +11,15 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com'; // TODO: Here you need to specify the data of our Qazdev SMTP server
+    $mail->Host       = 'mail.qazdev.kz'; // TODO: Here you need to specify the data of our Qazdev SMTP server
     $mail->Port = 587;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'arzhanovmaxim@gmail.com'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
-    $mail->Password   = 'ouyvceqqueaqyslp'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
+    $mail->Username   = 'test@qazdev.kz'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
+    $mail->Password   = 'kL3Gg*W601'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
 
-    $mail->setFrom('arzhanovmaxim@gmail.com', 'Maxim Arzhanov'); // TODO: Here you need to specify the data of sender
-    $mail->addAddress('arzhanovmaxim@gmail.com');
+    $mail->setFrom('test@qazdev.kz', 'devpractice'); // TODO: Here you need to specify the data of sender
+    $mail->addAddress('aa@qazdev.kz');
 
     $mail->isHTML(true);
     $mail->Subject = 'Application for training';
@@ -29,10 +29,10 @@ try {
     $course = $_POST['proga-lang'];
 
     $body = "
-        <h2>Заявка на обучениe</h2>
-        <b>Имя:</b> $name<br>
-        <b>Номер телефона:</b> $phone<br>
-        <b>Курс:</b> $course
+        <h2>Application for training</h2>
+        <b>Name:</b> $name<br>
+        <b>Phone number:</b> $phone<br>
+        <b>Course:</b> $course
     ";
 
     $mail->Body = $body;
