@@ -1,42 +1,44 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require './phpmailer/src/Exception.php';
+require './phpmailer/src/SMTP.php';
 require './phpmailer/src/PHPMailer.php';
 
 $mail = new PHPMailer(true);
-$mail->CharSet = 'UTF-8';
-$mail->setLanguage('ru', './phpmailer/language/');
-$mail->isHTML(true);
 
-$mail->setFrom('justlxurx0@gmail.com', 'developer');
-$mail->addAddress('justlxurx0@gmail.com');
+try {
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com'; // TODO: Here you need to specify the data of our Qazdev SMTP server
+    $mail->Port = 587;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'arzhanovmaxim@gmail.com'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
+    $mail->Password   = 'ouyvceqqueaqyslp'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
 
-$mail->Subject = 'Hi. this is a program of the programmer';
+    $mail->setFrom('arzhanovmaxim@gmail.com', 'Maxim Arzhanov'); // TODO: Here you need to specify the data of sender
+    $mail->addAddress('arzhanovmaxim@gmail.com');
 
-$body = '<h1>Заявка на обучения</h1>';
+    $mail->isHTML(true);
+    $mail->Subject = 'Application for training';
 
-if(trim(!empty($_POST['name']))){
-    $body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $course = $_POST['proga-lang'];
+
+    $body = "
+        <h2>Заявка на обучениe</h2>
+        <b>Имя:</b> $name<br>
+        <b>Номер телефона:</b> $phone<br>
+        <b>Курс:</b> $course
+    ";
+
+    $mail->Body = $body;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-if(trim(!empty($_POST['phone']))){
-    $body.='<p><strong>Номер телефона :</strong> '.$_POST['phone'].'</p>';
-}
-if(trim(!empty($_POST['proga-lang']))){
-    $body.='<p><strong>Курс :</strong> '.$_POST['proga-lang'].'</p>';
-}
-
-$mail->Body = $body;
-
-// if(!$mail->send()){
-//     $message = 'error';
-// }
-// else{
-//     $message = 'data sended';
-// }
-
-$response  =['message' => $message];
-
-header('Content-type: application/json');
-echo json_encode($response);
