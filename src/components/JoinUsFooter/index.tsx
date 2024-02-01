@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { nanoid } from 'nanoid'
-import arrow from 'public/arrow.svg'
 import logo from 'public/logo.svg'
 import { FormattedString } from '@/helpers/FormattedString'
-import Button from '../ui/Button'
-import { ButtonVariant } from '../ui/Button/interface'
 
 import styles from './styles.module.scss'
 
@@ -64,7 +61,7 @@ const JoinUsFooter = () => {
                 </h2>
               </div>
               <div>
-                <Button
+                {/* <Button
                   className={styles.feedback_button}
                   variant={ButtonVariant.outlined_transparent}
                 >
@@ -72,7 +69,7 @@ const JoinUsFooter = () => {
                     Связаться с нами
                     <Image src={arrow} alt="arrow" />
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </div>
             <nav className={styles.navigation}>

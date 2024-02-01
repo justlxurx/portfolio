@@ -185,7 +185,7 @@ const Projects = () => {
   return (
     <section className={classNames(styles.container, 'container')}>
       <div className={styles.additional}>
-        <h2 className={styles.header}>Последние проекты</h2>
+        <h2 className={styles.header}>Портфолио</h2>
         <a href="/portfolio">
           <Button className={styles.cases_button}>
             <Image
