@@ -27,4 +27,7 @@ deploy:
     - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker pull $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
     - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker stop frontend && sudo docker rm frontend"
     - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker run --name frontend -p 3000:80 -d $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
-    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo mkdir /home/debian/test2"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo mkdir /home/debian/test333"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker image prune -a -f"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker volume prune -f"
+
