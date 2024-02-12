@@ -19,7 +19,7 @@ try {
     $mail->Password   = 'kL3Gg*W601'; // TODO: Here you need to specify the auth data of our Qazdev SMTP server
 
     $mail->setFrom('test@qazdev.kz', 'devpractice'); // TODO: Here you need to specify the data of sender
-    $mail->addAddress('devpracticekz@gmail.com ');
+    $mail->addAddress('aa@qazdev.kz');
 
     $mail->isHTML(true);
     $mail->Subject = 'Application for training';
