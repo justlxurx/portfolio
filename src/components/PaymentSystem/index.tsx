@@ -51,11 +51,7 @@ const PaymentSystem = () => {
             </p>
           </div>
           <div className={styles.fintech__img}></div>
-          <p className={styles.hiddenText}>
-            Разработка REST-сервиса промо-кодов. Доработка существующих
-            интеграций с различными АЗС, для реализации оплаты ГСМ посредством
-            сервиса.
-          </p>
+          <p className={styles.hiddenText}></p>
           <div className={styles.fintech__empty}></div>
         </div>
 

@@ -9,6 +9,7 @@ import styles from './page.module.scss'
 import Game from '@/components/Game'
 import Main from '@/components/Main'
 import Distance from '@/components/Distance'
+import FAQ from '@/components/FAQ'
 import Providers from './providers'
 
 async function getPosts(host: string) {
@@ -31,7 +32,7 @@ export default async function Home() {
         </div>
 
         <main className={styles.main}>
-          <Main component={<Distance />}>
+          <Main component={<Distance />} component2={<FAQ />}>
             {Array.isArray(data) && <News data={...data} />}
           </Main>
 

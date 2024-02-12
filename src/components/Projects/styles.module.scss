@@ -1,5 +1,7 @@
 @import '/src/styles/variables.scss';
-
+.textWrapper {
+  display: none;
+}
 .section {
   &__inner {
     display: flex;
@@ -90,6 +92,7 @@
   margin-bottom: 46px;
   width: auto;
   height: 51px;
+  mix-blend-mode: darken;
 }
 .slider {
   position: initial !important;
@@ -283,6 +286,49 @@
   }
 }
 @media (max-width: $tablet-width) {
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: end;
+  }
+  .text1,
+  .text2 {
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 7px;
+    font-size: 17px;
+    position: relative;
+    width: 70%;
+    height: 100%;
+  }
+  .text1 {
+    margin-top: 65px;
+  }
+  .text1::after {
+    content: '';
+    position: absolute;
+    background-image: url('/arrowTextTop.svg');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: contain;
+    width: 95px;
+    height: 90%;
+    top: 20%;
+    left: -95px;
+  }
+  .text2::after {
+    content: '';
+    position: absolute;
+    background-image: url('/arrowTextBottom.svg');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: contain;
+    width: 95px;
+    height: 90%;
+    bottom: 15%;
+    left: -95px;
+  }
   .container {
     width: calc(100% - 36px);
   }
@@ -322,10 +368,32 @@
   }
   .slide_wrapper {
     aspect-ratio: 1;
+    margin-bottom: 0;
+    align-items: end;
+    display: flex !important;
+    img {
+      height: 60% !important;
+      position: unset !important;
+    }
   }
 
   .title_wrapper {
-    display: none;
+    max-width: calc(100% - 40px);
+  }
+  .title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .link {
+    font-size: 15px;
+  }
+  .folder {
+    width: 15px;
+  }
+  .logo {
+    margin-bottom: 20px;
+    width: auto;
+    height: 55px;
   }
 
   .dots {
@@ -355,11 +423,101 @@
     }
   }
 }
-
+@media (max-width: 705px) {
+  .textWrapper {
+    gap: 70px;
+    align-items: end;
+  }
+  .text1,
+  .text2 {
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 13px;
+    width: 70%;
+    height: 100%;
+  }
+  .text1::after,
+  .text2::after {
+    width: 55px;
+    top: 20%;
+    left: -55px;
+  }
+}
+@media (max-width: 653px) {
+  .text1,
+  .text2 {
+    font-size: 10px;
+    width: 70%;
+    height: 100%;
+  }
+}
+@media (max-width: 590px) {
+  .textWrapper {
+    gap: 50px;
+  }
+  .text1,
+  .text2 {
+    font-size: 10px;
+    width: 80%;
+    height: 100%;
+  }
+}
+@media (max-width: 547px) {
+  .textWrapper {
+    gap: 40px;
+  }
+  .text1,
+  .text2 {
+    font-size: 8px;
+    border: 0.5px solid black;
+  }
+  .text1 {
+    margin-top: 45px;
+  }
+}
+@media (max-width: 492px) {
+  .textWrapper {
+    gap: 30px;
+  }
+  .text1,
+  .text2 {
+    font-size: 8px;
+  }
+  .text1 {
+    margin-top: 35px;
+  }
+  .title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .link {
+    font-size: 12px;
+  }
+  .folder {
+    width: 13px;
+  }
+  .logo {
+    margin-bottom: 10px;
+    height: 35px;
+  }
+  .text1::after,
+  .text2::after {
+    width: 35px;
+    top: 20%;
+    left: -35px;
+  }
+}
 @media (max-width: 420px) {
   .dot {
     font-size: 18px;
     line-height: 22px;
     padding: 5px;
+  }
+  .title {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .link {
+    font-size: 9px;
   }
 }

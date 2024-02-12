@@ -5,7 +5,6 @@ import { nanoid } from 'nanoid'
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useAnimation } from 'framer-motion'
 import About from '@/components/About'
-import FAQ from '@/components/FAQ'
 import TrustUs from '@/components/TrustUs'
 import Projects from '@/components/Projects'
 import Service from '@/components/Service'
@@ -16,9 +15,11 @@ import classNames from 'classnames'
 export default function CustomComponent({
   children,
   component,
+  component2,
 }: {
   children: ReactNode
   component: ReactNode
+  component2: ReactNode
 }) {
   const [y, setY] = useState(0)
 
@@ -92,12 +93,10 @@ export default function CustomComponent({
     amount: 0.5,
     once: isScrollingUp ? false : true,
   })
-
   const isInView7 = useInView(ref7, {
     amount: 0.5,
     once: isScrollingUp ? false : true,
   })
-
   const links = [
     {
       title: 'О нас',
@@ -210,10 +209,7 @@ export default function CustomComponent({
           <About />
         </motion.div>
 
-        <motion.div
-          className={classNames(styles.snap_item)}
-          animate={control}
-        >
+        <motion.div className={classNames(styles.snap_item)} animate={control}>
           <TrustUs />
         </motion.div>
 
@@ -225,10 +221,7 @@ export default function CustomComponent({
           <Service />
         </motion.div>
 
-        <motion.div
-          className={classNames(styles.snap_item)}
-          animate={control}
-        >
+        <motion.div className={classNames(styles.snap_item)} animate={control}>
           <DevHelp />
         </motion.div>
 
@@ -265,7 +258,7 @@ export default function CustomComponent({
           ref={ref7}
           animate={control}
         >
-          <FAQ />
+          {component2}
         </motion.div>
       </div>
     </section>
