@@ -15,8 +15,12 @@ COPY --chown=www-data:www-data index.html .
 COPY --chown=www-data:www-data react.html .
 COPY --chown=www-data:www-data python.html .
 COPY --chown=www-data:www-data utils ./utils
-COPY --chown=www-data:www-data phpmailer ./phpmailer
+# COPY --chown=www-data:www-data phpmailer ./phpmailer
 COPY --chown=www-data:www-data sendmail.php .
+COPY --chown=www-data:www-data vendor ./vendor
+COPY --chown=www-data:www-data composer.json .
+COPY --chown=www-data:www-data composer.lock .
+# COPY --chown=www-data:www-data sendcontact.php .
 
 EXPOSE 80
 
