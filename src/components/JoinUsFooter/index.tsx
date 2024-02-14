@@ -7,8 +7,6 @@ import { FormattedString } from '@/helpers/FormattedString'
 import styles from './styles.module.scss'
 
 const JoinUsFooter = () => {
-  //FIXME: Paths
-
   const primaryLinks = [
     {
       title: 'Главная',
@@ -29,10 +27,6 @@ const JoinUsFooter = () => {
       title: 'DevPractice',
       path: 'https://devpractice.kz/',
     },
-    // {
-    //   title: 'СМИ',
-    //   path: '#',
-    // },
   ]
 
   const socialLinks = [
@@ -60,17 +54,7 @@ const JoinUsFooter = () => {
                   Начни карьеру <br /> в IT стремительно
                 </h2>
               </div>
-              <div>
-                {/* <Button
-                  className={styles.feedback_button}
-                  variant={ButtonVariant.outlined_transparent}
-                >
-                  <Link href="/" as="/#toForm">
-                    Связаться с нами
-                    <Image src={arrow} alt="arrow" />
-                  </Link>
-                </Button> */}
-              </div>
+              <div></div>
             </div>
             <nav className={styles.navigation}>
               <div>
