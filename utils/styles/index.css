@@ -2009,6 +2009,18 @@
   }
 }
 @media (max-width: 768px) {
+  .team__card-img-1 {
+    background-image: url("/utils/images/firstPerson.png");
+  }
+  .team__card-img-2 {
+    background-image: url("/utils/images/secondPerson.png");
+  }
+  .team__card-img-3 {
+    background-image: url("/utils/images/thirdPerson.png");
+  }
+  .team__card-img-4 {
+    background-image: url("/utils/images/lastPerson.png");
+  }
   .team {
     gap: 50px;
     margin-bottom: 80px;
