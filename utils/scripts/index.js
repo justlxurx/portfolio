@@ -26,6 +26,7 @@ function validation(form) {
 }
 
 const popups = document.querySelector(".popup");
+const confirm = document.querySelector(".confirmation");
 // document
 //   .getElementById("add-form")
 //   .addEventListener("submit", function (event) {
@@ -68,12 +69,12 @@ document
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
-          return response.json(); // Опционально: обработка ответа в формате JSON
+          // return response.json(); // Опционально: обработка ответа в формате JSON
         })
         .then((data) => {
           // Обработка успешного ответа от сервера
           popups.style.display = "none";
-          alert("Данные успешно отправлены");
+          confirm.style.display = "flex";
 
           // Сброс значений полей формы
           const inputs = this.querySelectorAll("input");
@@ -99,7 +100,9 @@ document
         });
     }
   });
-
+function closeConfirmation() {
+  confirm.style.display = "none";
+}
 function openPopup() {
   let popup = document.querySelector(".popup");
   popup.style.display = "flex";
@@ -146,7 +149,7 @@ function plusOrMinus(id) {
 }
 
 document
-  .getElementById("video-container")
+  .querySelector(".video-container")
   .addEventListener("click", function () {
     const video = document.getElementById("intro-video-wrapper");
     video.style.display = "flex";

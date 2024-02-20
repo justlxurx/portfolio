@@ -55,7 +55,8 @@ if(isset($_POST['phone'])) {
       $id = $contact->apiAdd();
 
 
-  } catch (\AmoCRM\Exception $e) {
+  } 
+  catch (\AmoCRM\Exception $e) {
       printf('Error (%d): %s' . PHP_EOL, $e->getCode(), $e->getMessage());
   }
 

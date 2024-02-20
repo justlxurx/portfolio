@@ -98,6 +98,24 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
   </head>
   <body>
     <div class="container">
+      <div class="confirmation">
+        <img
+          src="/utils/images/exit.png"
+          alt="leave"
+          class="exit-img confirmation__exit-img"
+          onclick="closeConfirmation()"
+        />
+        <div class="confirmation__content">
+          <img
+            src="/utils/images/confirm.svg"
+            alt="confirm-icon"
+            class="confirmation__content-img"
+          />
+          <p class="confirmation__content-text">
+            Ваша заявка отправлена успешно!
+          </p>
+        </div>
+      </div>
       <div class="popup">
         <div class="popup-img">
           <img
@@ -193,6 +211,8 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
           </button></a
         >
       </div>
+    </div>
+    <div class="main">
       <div class="header-links">
         <a href="/index.html"><div class="logo"></div></a>
         <div class="header-links-wrapper">
@@ -228,12 +248,11 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
             >
           </p>
         </div>
-        <div class="item-1-img">
-          <img src="/utils/images/graphic.svg" alt="graphic" />
-        </div>
+        <!-- <div class="item-1-img">
+        <img src="/utils/images/graphic.svg" alt="graphic" />
+      </div> -->
       </div>
     </div>
-
     <div class="item-2">
       <ul class="item-2__list">
         <li class="item-2__list-item">
@@ -338,13 +357,13 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
             </p>
           </div>
           <div class="item-4__info">
-            <p class="item-4__total-price">500 000 kzt</p>
+            <!-- <p class="item-4__total-price">500 000 kzt</p>
             <p class="item-4__monthly-price">41 666 kzt/месяц</p>
             <div class="item-4__kaspi">
               <p>За год /</p>
               <img src="/utils/images/kaspi.svg" alt="kaspi" />
               <p>Kaspi рассрочка</p>
-            </div>
+            </div> -->
             <button class="item-4__button" onclick="openPopup()">
               Оставить заявку
             </button>
@@ -453,10 +472,14 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
     <footer class="footer-wrapper">
       <div class="container footer-container">
         <ul class="menu">
-          <li class="menu__item"><a href="#courses">Курсы</a></li>
-          <li class="menu__item"><a href="#comments">Отзывы </a></li>
-          <li class="menu__item"><a href="#prices">Цены</a></li>
-          <li class="menu__item"><a href="#prices">Формат обучения</a></li>
+          <li class="menu__item footer-text"><a href="#courses">Курсы</a></li>
+          <li class="menu__item footer-text">
+            <a href="#comments">Отзывы </a>
+          </li>
+          <li class="menu__item footer-text"><a href="#prices">Цены</a></li>
+          <li class="menu__item footer-text">
+            <a href="#prices">Формат обучения</a>
+          </li>
         </ul>
         <a
           href="https://instagram.com/devpractice.kz?igshid=MzMyNGUyNmU2YQ=="

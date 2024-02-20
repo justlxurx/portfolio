@@ -97,6 +97,24 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
   </head>
   <body>
     <div class="container">
+      <div class="confirmation">
+        <img
+          src="/utils/images/exit.png"
+          alt="leave"
+          class="exit-img confirmation__exit-img"
+          onclick="closeConfirmation()"
+        />
+        <div class="confirmation__content">
+          <img
+            src="/utils/images/confirm.svg"
+            alt="confirm-icon"
+            class="confirmation__content-img"
+          />
+          <p class="confirmation__content-text">
+            Ваша заявка отправлена успешно!
+          </p>
+        </div>
+      </div>
       <div class="popup">
         <div class="popup-img">
           <img
@@ -204,7 +222,7 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
         </div>
         <button class="burger-menu">
           <img
-            src="utils/images/burger.svg"
+            src="utils/images/burger2.svg"
             alt="burger"
             onclick="openMenu()"
           />
@@ -504,8 +522,7 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
               <div class="program-item-3__content-wrapper-video">
                 <div class="program-item-3__content-wrapper-video-container">
                   <button
-                    class="program-item-3__content-wrapper-video-links"
-                    id="video-container"
+                    class="program-item-3__content-wrapper-video-links video-container"
                   >
                     <img src="/utils/images/Exclude.png" alt="run" />
                     <p class="program-item-3__content-wrapper-video-links-para">
@@ -850,19 +867,19 @@ https://cdn.jsdelivr.net/npm/dotenv@16.4.3/lib/main.min.js
     <footer class="footer-wrapper">
       <div class="container footer-container">
         <ul class="menu">
-          <li class="menu__item menu__item-1">
+          <li class="menu__item menu__item-1 footer-text">
             <a href="#skills-python">Практические навыки</a>
           </li>
-          <li class="menu__item menu__item-2">
+          <li class="menu__item menu__item-2 footer-text">
             <a href="#program-course-python">Программа курса</a>
           </li>
-          <li class="menu__item menu__item-3">
+          <li class="menu__item menu__item-3 footer-text">
             <a href="#comments-python">Отзывы </a>
           </li>
-          <li class="menu__item menu__item-4">
+          <li class="menu__item menu__item-4 footer-text">
             <a href="#price-python">Цены</a>
           </li>
-          <li class="menu__item menu__item-5">
+          <li class="menu__item menu__item-5 footer-text">
             <a href="#format-python">Формат обучения</a>
           </li>
         </ul>
