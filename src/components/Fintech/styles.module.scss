@@ -354,17 +354,17 @@
       div:last-of-type {
         margin: 0;
       }
-      .hiddenText {
-        padding: 30px 25px;
-        display: flex;
-        color: var(--black, #000);
-        font-family: Helvetica;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 126.5%; /* 17.71px */
-        letter-spacing: -0.16px;
-      }
+    }
+    .hiddenText {
+      padding: 30px 20px;
+      display: flex;
+      color: var(--black, #000);
+      font-family: Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 126.5%; /* 17.71px */
+      letter-spacing: -0.16px;
     }
     &__img {
       height: 400px;
@@ -393,6 +393,11 @@
 
 @media (max-width: 576px) {
   .fintech {
+    &__text {
+      p {
+        padding: 45px 16px;
+      }
+    }
     &__title {
       padding: 20px 0;
       font-size: 27px;
@@ -403,31 +408,11 @@
     &__titleNum {
       padding: 10px 60px;
     }
+    .hiddenText {
+      padding: 28px 16px;
+      font-size: 14px;
+    }
     &__contentRow1 {
-      &__text {
-        p {
-          font-size: 16px;
-          padding: 22px 16px;
-        }
-        div:last-of-type {
-          p {
-            width: 60%;
-          }
-          .hiddenBlock1 {
-            &__num {
-              font-size: 27px;
-              padding: 21px 0;
-            }
-            &__img {
-              background-size: 28%;
-            }
-          }
-        }
-      }
-      .hidden_text {
-        padding: 28px 16px;
-        font-size: 14px;
-      }
       .fintech_img {
         height: 280px;
       }

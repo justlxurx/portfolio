@@ -14,9 +14,9 @@ const Monitoring = () => {
             <p className={styles.hiddenBlock__text}>
               Команда{' '}
               <strong>
-                <em>qazdev</em>
+                <em>qazdev </em>
               </strong>{' '}
-              участвовала в разработке букинговой системы для круизных лайнеров
+              создала сервис мониторинга в режиме реального времени
             </p>
             <div className={styles.hiddenBlock__content}>
               <p className={styles.hiddenBlock__contentNum}>014</p>
@@ -33,7 +33,7 @@ const Monitoring = () => {
               <strong>
                 <em>qazdev </em>
               </strong>{' '}
-              создала сервис мониторинга в режиме реального времени
+              создала сервис мониторинга <br /> в режиме реального времени
             </p>
             <p>
               Заказчику нужна была платформа, которая отображала бы в режиме
