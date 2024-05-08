@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/images/background1.png");
+  background-repeat: no-repeat;
+  height: 1031px;
+  background-size: cover;
+  position: relative;
+}
+
+.main__content {
+  display: flex;
+  justify-content: space-between;
+}
+.main__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: absolute;
+  top: 585px;
+}
+.main__text {
+  font-family: "Onest";
+  font-size: 56.48px;
+  font-weight: 300;
+  line-height: 72.01px;
+  color: white;
+}
+.container {
+  padding: 0px 100px;
+  margin: 0 auto;
+}
+.main__wallet {
+  position: absolute;
+  right: 100px;
+}

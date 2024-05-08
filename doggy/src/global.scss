@@ -1,0 +1,39 @@
+@font-face {
+  font-family: Patsy Sans;
+  src: url("../src/assets/fonts/PatsySans.otf");
+}
+@font-face {
+  font-family: Onest;
+  src: url("../src/assets/fonts/onest/static/Onest-Regular.ttf");
+}
+@font-face {
+  font-family: Offbit;
+  src: url("../src/assets/fonts/OffBit/OffBit-Regular.ttf");
+}
+#root {
+  // max-width: 1534px;
+  margin: 0 auto;
+}
+
+.container {
+  /* max-width: 1534px; */
+  padding: 0px 100px;
+  margin: 0 auto;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}

@@ -1,0 +1,36 @@
+.container {
+  padding: 50px 100px 15px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 114, 14, 1);
+  gap: 40px;
+}
+
+.text {
+  font-family: "Onest";
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 29.32px;
+  color: white;
+}
+.footerSection__top {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.footerSection__icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+.social {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
