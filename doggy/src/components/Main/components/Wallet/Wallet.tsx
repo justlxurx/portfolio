@@ -4,33 +4,19 @@ import { Usdt } from "../../../../assets/icons/usdt";
 import { Input } from "../Input/Input";
 import { Logo } from "../../../../assets/icons/logo";
 import { MouseEventHandler } from "react";
+import CountdownTimer from "../../../../features/countdown/Countdown";
 
 export const Wallet = ({
   handleShowModal,
 }: {
   handleShowModal: MouseEventHandler<HTMLButtonElement>;
 }) => {
+  const targetDate = new Date("2024-05-13T00:00:00");
+
   return (
     <section className={s.wallet}>
       <p className={s.wallet__title}>Next Price Increase In</p>
-      <div className={s.days}>
-        <div className={s.days__num}>
-          <span className={s.days__numText}>days</span>
-          <p className={s.days__numValue}>03</p>
-        </div>
-        <div className={s.days__num}>
-          <span className={s.days__numText}>hours</span>
-          <p className={s.days__numValue}>12</p>
-        </div>
-        <div className={s.days__num}>
-          <span className={s.days__numText}>minutes</span>
-          <p className={s.days__numValue}>46</p>
-        </div>
-        <div className={s.days__num}>
-          <span className={s.days__numText}>seconds</span>
-          <p className={s.days__numValue}>07</p>
-        </div>
-      </div>
+      <CountdownTimer targetDate={targetDate} />
       <p className={s.raisedValue}>USD RAISED: $810,274.41 / $1,123,057</p>
       <div className={s.priceInc}>
         <input type="radio" id="priceInc" />

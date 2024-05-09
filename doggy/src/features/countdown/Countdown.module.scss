@@ -1,0 +1,33 @@
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 94px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 114, 14, 1);
+  padding: 14.04px 1.99px;
+  gap: 10.53px;
+  border-radius: 10px;
+}
+
+.countdown__itemLabel {
+  color: white;
+  font-family: "Onest";
+  font-size: 13.16px;
+  font-weight: 300;
+  line-height: 11.94px;
+  text-align: center;
+}
+
+.countdown__itemValue {
+  color: white;
+  font-family: "Patsy Sans";
+  font-size: 35.09px;
+  font-weight: 400;
+  line-height: 34.21px;
+  text-align: center;
+}
