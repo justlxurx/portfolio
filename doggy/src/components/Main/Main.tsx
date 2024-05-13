@@ -4,6 +4,7 @@ import { Header } from "../Header/Header";
 import { Wallet } from "./components/Wallet/Wallet";
 import { useState } from "react";
 import { Modal } from "./components/Modal/Modal";
+import logo from "../../assets/images/logo_white.svg";
 
 export const Main = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,7 +19,8 @@ export const Main = () => {
       <Header />
       <div className={s.main__content}>
         <div className={s.main__heading}>
-          <LogoDoggy />
+          <img src={logo} alt="logo" className={s.logo} />
+          {/* <LogoDoggy /> */}
           <p className={s.main__text}>The Future of Trading</p>
         </div>
         <div className={s.main__wallet}>

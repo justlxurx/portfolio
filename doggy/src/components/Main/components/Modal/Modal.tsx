@@ -1,7 +1,7 @@
 import s from "./Modal.module.scss";
 import metamask from "../../../../assets/images/metamask.png";
 import coinbase from "../../../../assets/images/coinbase.png";
-import bw from "../../../../assets/images/connect.png";
+import bw from "../../../../assets/images/bw.png";
 import connect from "../../../../assets/images/connect.png";
 import { Exit } from "../../../../assets/icons/exit";
 import { MouseEventHandler } from "react";

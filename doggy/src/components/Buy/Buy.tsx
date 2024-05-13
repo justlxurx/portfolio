@@ -33,7 +33,7 @@ export const Buy = () => {
       <div className={s.buySection__content}>
         {data.map((item, id) => (
           <div key={id} className={s.content}>
-            <div className={s.content__num}>{id}</div>
+            <div className={s.content__num}>{id + 1}</div>
             <div className={s.content__textWrapper}>
               <p className={s.content__title}>{item.title}</p>
               <p className={s.content__text}>

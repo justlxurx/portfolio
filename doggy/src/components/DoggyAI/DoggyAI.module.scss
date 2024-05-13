@@ -75,3 +75,77 @@
   margin: 70px 0 100px;
   width: fit-content;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 50px 150px;
+  }
+  .main {
+    background-image: url("../../assets/images/background.jpeg");
+    background-size: contain;
+    height: auto;
+    background-position: center;
+    background-repeat: repeat-y;
+  }
+
+  .doggyAI {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .doggyAI__title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 28.89px;
+    text-align: center;
+  }
+  .doggyAI__text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19.12px;
+    text-align: center;
+  }
+  .doggyAI__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    gap: 50px;
+  }
+  .card {
+    background-color: rgba(255, 114, 14, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 27px 19px 20px 19px;
+    gap: 30.4px;
+    border-radius: 19px;
+    align-items: center;
+  }
+  .card__title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 21.19px;
+    text-align: center;
+  }
+  .card__text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19.12px;
+    text-align: center;
+    width: 70%;
+  }
+  .doggyAI__button {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19.26px;
+    text-align: center;
+    background-color: white;
+    border-radius: 11.9px;
+    width: 100%;
+    padding: 14.87px 26.02px 14.87px 26.02px;
+    margin: 10px 0 50px;
+  }
+}
