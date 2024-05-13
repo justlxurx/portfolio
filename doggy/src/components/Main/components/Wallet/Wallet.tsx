@@ -1,6 +1,6 @@
 import s from "./Wallet.module.scss";
 import { Input } from "../Input/Input";
-import { Logo } from "../../../../assets/icons/logo";
+// import { Logo } from "../../../../assets/icons/logo";
 import React, { useEffect, useState } from "react";
 import CountdownTimer from "../../../../features/countdown/Countdown";
 import { useWeb3Modal, useWeb3ModalAccount, useWeb3ModalProvider } from '@web3modal/ethers/react'

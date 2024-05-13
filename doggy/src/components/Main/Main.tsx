@@ -1,9 +1,9 @@
 import s from "./Main.module.scss";
-import { LogoDoggy } from "../../assets/icons/logo_doggy";
+// import { LogoDoggy } from "../../assets/icons/logo_doggy";
 import { Header } from "../Header/Header";
 import { Wallet } from "./components/Wallet/Wallet";
-import { useState } from "react";
-import { Modal } from "./components/Modal/Modal";
+// import { useState } from "react";
+// import { Modal } from "./components/Modal/Modal";
 import logo from "../../assets/images/logo_white.svg";
 
 export const Main = () => {
