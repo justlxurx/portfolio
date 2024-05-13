@@ -6,26 +6,30 @@ import { useState } from "react";
 import { Modal } from "./components/Modal/Modal";
 
 export const Main = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
-  const handleExitModal = () => {
-    setShowModal(false);
-  };
+
+  // const [showModal, setShowModal] = useState(false);
+  //
+  // const handleShowModal = () => {
+  //   setShowModal(true);
+  // };
+  //
+  // const handleExitModal = () => {
+  //   setShowModal(false);
+  // };
+
   return (
     <section className={`${s.main} ${s.container}`}>
       <Header />
       <div className={s.main__content}>
         <div className={s.main__heading}>
-          <LogoDoggy />
+          <LogoDoggy width={507} height={100} />
           <p className={s.main__text}>The Future of Trading</p>
         </div>
         <div className={s.main__wallet}>
-          <Wallet handleShowModal={handleShowModal} />
+          <Wallet />
         </div>
       </div>
-      {showModal && <Modal exit={handleExitModal} />}
+      {/*{showModal && <Modal exit={handleExitModal} />}*/}
     </section>
   );
 };
