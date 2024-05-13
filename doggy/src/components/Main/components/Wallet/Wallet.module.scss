@@ -5,7 +5,7 @@
       rgba(71, 45, 26, 0.34)
     ),
     linear-gradient(0deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.46));
-
+  backdrop-filter: blur(3px);
   width: calc(497px - 84px);
   height: calc(729px - 80px);
   border-radius: 8.77px;
@@ -111,12 +111,19 @@
   border-radius: 21.93px;
   align-items: center;
   background-color: rgba(255, 114, 14, 1);
+  opacity: 0.3;
   justify-content: center;
   font-family: "Patsy Sans";
   font-size: 21.93px;
   font-weight: 400;
   line-height: 23px;
   text-align: center;
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    //background-color: rgba(255, 114, 14, 1);
+    opacity: 1;
+  }
   img {
     height: 20px;
   }
@@ -136,11 +143,13 @@
     border-radius: 21.93px;
   }
 }
-.connectButton {
+.connectButton, .buyButton {
   background-color: rgba(255, 114, 14, 1);
-}
-.buyButton {
-  background-color: rgba(160, 66, 0, 0.44);
+
+  &:disabled {
+    background-color: rgba(160, 66, 0, 0.44);
+    cursor: not-allowed;
+  }
 }
 
 .inputs {
@@ -194,6 +203,62 @@
     padding: 11.94px 15px;
   }
 }
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent rgba(255, 114, 14, 1) rgba(255, 114, 14, 1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+
+  &::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+}
+
 
 .inputImg {
   height: 30px;
