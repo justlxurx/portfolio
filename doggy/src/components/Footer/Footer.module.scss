@@ -1,0 +1,95 @@
+.container {
+  padding: 50px 100px 15px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 114, 14, 1);
+  gap: 40px;
+}
+
+.text {
+  font-family: "Onest";
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 29.32px;
+  color: white;
+}
+.footerSection__top {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.footerSection__icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+.social {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  height: 54px;
+}
+.dog {
+  height: 230px;
+}
+.logo {
+  height: 61px;
+}
+
+@media (max-width: 768px) {
+  .dog {
+    height: 102.52px;
+  }
+  .logo {
+    height: 30.45px;
+  }
+  .telega {
+    width: 27.03px;
+    height: 26.73px;
+  }
+  .xSocial {
+    width: 22.5px;
+    height: 22.25px;
+  }
+  .container {
+    padding: 50px 20px 15px;
+  }
+
+  .footerSection {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 114, 14, 1);
+    gap: 40px;
+  }
+
+  .text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.57px;
+    text-align: left;
+  }
+  .footerSection__top {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .footerSection__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .social {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    height: 26.73px;
+  }
+}

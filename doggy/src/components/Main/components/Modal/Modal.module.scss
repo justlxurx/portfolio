@@ -1,0 +1,143 @@
+.modal {
+  background-color: rgba(255, 114, 14, 1);
+  width: 494px;
+  height: 615.12px;
+  border-radius: 10.76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  margin-left: -100px;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__title {
+  color: white;
+  font-family: "Patsy Sans";
+  font-size: 43.05px;
+  font-weight: 400;
+  line-height: 41.46px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.walletWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wallet {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-family: "Onest";
+  font-size: 32.29px;
+  font-weight: 500;
+  line-height: 41.17px;
+  text-align: left;
+  padding: 0 22px;
+  border-radius: 10.76px;
+  align-items: center;
+  height: 86px;
+}
+.modal__button {
+  color: white;
+  font-family: "Onest";
+  font-size: 32.29px;
+  font-weight: 500;
+  line-height: 41.17px;
+  text-align: center;
+  border: 2.15px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1076.25px;
+  height: 72px;
+  margin-top: 20px;
+}
+
+.exit {
+  display: flex;
+  justify-content: end;
+}
+@media (max-width: 768px) {
+  .modal {
+    background-color: rgba(255, 114, 14, 1);
+    width: calc(100% - 100px);
+    height: auto;
+    border-radius: 6.78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 25px 25px;
+  }
+  .main {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    margin-left: 0px;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal__title {
+    font-size: 27.12px;
+    font-weight: 400;
+    line-height: 26.12px;
+    text-align: center;
+  }
+  .walletWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .wallet {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    padding: 0 20px;
+    border-radius: 10.76px;
+    align-items: center;
+    height: 54px;
+    font-size: 20.34px;
+    font-weight: 500;
+    line-height: 25.93px;
+    text-align: left;
+    img {
+      height: 80%;
+    }
+  }
+  .modal__button {
+    color: white;
+    border: 1.36px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1076.25px;
+    margin-top: 20px;
+    font-size: 20.34px;
+    font-weight: 500;
+    line-height: 25.93px;
+    text-align: center;
+    height: 45.43px;
+    border-radius: 677.99px;
+  }
+
+  .exit {
+    display: flex;
+    justify-content: end;
+  }
+}

@@ -1,0 +1,211 @@
+.mainHeader {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55px 0;
+}
+.mainHeader__list {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+.list {
+  display: flex;
+  gap: 45px;
+}
+.list__item {
+  color: white;
+  font-family: "Patsy Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 28.89px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  height: 47px;
+}
+.buttonBuy {
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px 21px;
+  color: rgba(255, 114, 14, 1);
+  font-family: "Patsy Sans";
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 24.07px;
+}
+.buttonLang {
+  padding: 11px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+  font-family: "Patsy Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.lang {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.links:hover + .about {
+  display: flex;
+}
+.about {
+  position: absolute;
+  top: 50px;
+  width: max-content;
+  right: 0;
+  //   display: none;
+}
+.logo {
+  height: 46px;
+  img {
+    height: 100%;
+  }
+}
+.buttonLang__langIcon {
+  height: 22px;
+}
+.buttonLang__downIcon {
+  height: 24px;
+}
+.burger {
+  display: none;
+}
+.mobileList {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobileList__item {
+    color: white;
+    font-family: "Patsy Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 28.89px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .list {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    margin-left: 5px;
+  }
+  .logo {
+    height: 22px;
+  }
+  .mobileList {
+    border: 0px, 0px, 16px, 16px;
+    display: flex;
+    gap: 31.7px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    font-size: 21.18px;
+    font-weight: 400;
+    line-height: 20.39px;
+    text-align: left;
+    flex-direction: column;
+    background: linear-gradient(172.1deg, #000000 -1.8%, #111922 129.61%);
+    box-shadow: 0px 8px 8.4px 0px rgba(0, 0, 0, 0.54);
+  }
+
+  .mobileList__aboutList {
+    padding-top: 31.76px;
+    display: flex;
+    flex-direction: column;
+    gap: 31.76px;
+  }
+
+  .mobileList__aboutListItem {
+    font-family: "Onest";
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19.12px;
+    text-align: left;
+  }
+
+  .mainHeader {
+    width: calc(100% - 40px);
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(174.34deg, #000000 42.86%, #111922 132.39%);
+    box-shadow: 0px 8px 8.4px 0px rgba(0, 0, 0, 0.54);
+  }
+  .mainHeader__list {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+  }
+  .buttons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    height: 47px;
+  }
+  .buttonBuy {
+    font-size: 11.7px;
+    line-height: 11.27px;
+    padding: 6.09px 9.83px;
+    border-radius: 4.68px;
+  }
+  .buttonLang {
+    padding: 4.68px 4.04px;
+    gap: 3.74px;
+    border-radius: 4.68px;
+    border: 0.47px solid rgba(255, 255, 255, 1);
+    font-size: 9.36px;
+    line-height: 11.7px;
+  }
+  .buttonLang__langIcon {
+    height: 10.3px;
+  }
+  .buttonLang__downIcon {
+    height: 11.23px;
+  }
+  .lang {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .mobileList__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .links:hover + .about {
+    display: flex;
+  }
+  // .mobileList__about {
+  //   position: absolute;
+  //   top: 50px;
+  //   width: max-content;
+  //   right: 0;
+  //   //   display: none;
+  // }
+}

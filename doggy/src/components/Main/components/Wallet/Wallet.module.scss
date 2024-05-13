@@ -1,0 +1,440 @@
+.wallet {
+  background: linear-gradient(
+      0deg,
+      rgba(71, 45, 26, 0.34),
+      rgba(71, 45, 26, 0.34)
+    ),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.46));
+
+  width: calc(497px - 84px);
+  height: calc(729px - 80px);
+  border-radius: 8.77px;
+  border: 1px solid rgba(255, 255, 255, 0.31);
+  padding: 40px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wallet__title {
+  color: white;
+  font-family: "Onest";
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 31.87px;
+  text-align: center;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(4, 94px);
+  gap: 10px;
+  justify-content: center;
+}
+.days__num {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 114, 14, 1);
+  padding: 14.04px 1.99px;
+  gap: 10.53px;
+  border-radius: 10px;
+}
+.days__numText {
+  color: white;
+  font-family: "Onest";
+  font-size: 13.16px;
+  font-weight: 300;
+  line-height: 11.94px;
+  text-align: center;
+}
+
+.days__numValue {
+  color: white;
+  font-family: "Patsy Sans";
+  font-size: 35.09px;
+  font-weight: 400;
+  line-height: 34.21px;
+  text-align: center;
+}
+
+.raisedValue {
+  color: white;
+  font-family: "Onest";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25.5px;
+  text-align: center;
+}
+
+.wallet__textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+.wallet__text {
+  font-family: "Onest";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 31px;
+  text-align: center;
+  color: white;
+  span {
+    font-weight: 700;
+  }
+}
+
+.coinst {
+  display: flex;
+  flex-direction: column;
+  span {
+    color: white;
+    font-family: "Patsy Sans";
+    font-size: 21.93px;
+    font-weight: 400;
+    line-height: 31px;
+    text-align: center;
+  }
+}
+
+.coinst__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.coinst__button {
+  gap: 5px;
+  display: flex;
+  width: 184px;
+  color: white;
+  padding: 11.94px;
+  border-radius: 21.93px;
+  align-items: center;
+  background-color: rgba(255, 114, 14, 1);
+  justify-content: center;
+  font-family: "Patsy Sans";
+  font-size: 21.93px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: center;
+  img {
+    height: 20px;
+  }
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  button {
+    font-family: "Patsy Sans";
+    color: white;
+    font-size: 21.93px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: center;
+    width: 200px;
+    padding: 11.94px 0;
+    border-radius: 21.93px;
+  }
+}
+.connectButton {
+  background-color: rgba(255, 114, 14, 1);
+}
+.buyButton {
+  background-color: rgba(160, 66, 0, 0.44);
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputTopText {
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-family: "Onest";
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 31px;
+    text-align: left;
+  }
+  span {
+    color: white;
+    font-family: "Onest";
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 31px;
+    text-align: right;
+  }
+}
+
+.priceInc {
+  background-color: rgba(255, 114, 14, 0.3);
+  padding: 11.94px 1.99px 11.94px 1.99px;
+  gap: 7.96px;
+  border-radius: 21.93px;
+
+  input {
+    display: none;
+  }
+  label {
+    background-color: rgba(255, 114, 14, 1);
+    color: white;
+    font-family: "Patsy Sans";
+    font-size: 21.93px;
+    font-weight: 400;
+    line-height: 19.91px;
+    border-radius: 21.93px;
+    padding: 11.94px 15px;
+  }
+}
+
+.inputImg {
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .wallet {
+    align-items: center;
+    width: calc(100% - 84px);
+    padding: 40px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .priceInc {
+    width: 80%;
+  }
+  .inputs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coinst__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 552px) {
+  .wallet {
+    background: linear-gradient(
+        0deg,
+        rgba(71, 45, 26, 0.34),
+        rgba(71, 45, 26, 0.34)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.36),
+        rgba(255, 255, 255, 0.46)
+      );
+
+    width: calc(100% - 44px);
+    height: calc(480px - 40px);
+    border-radius: 8.77px;
+    border: 1px solid rgba(255, 255, 255, 0.31);
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .wallet__title {
+    font-size: 15.4px;
+    font-weight: 600;
+    line-height: 19.64px;
+    text-align: center;
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(4, 94px);
+    gap: 10px;
+    justify-content: center;
+  }
+  .days__num {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 114, 14, 1);
+    padding: 14.04px 1.99px;
+    gap: 10.53px;
+    border-radius: 10px;
+  }
+  .days__numText {
+    color: white;
+    font-family: "Onest";
+    font-size: 13.16px;
+    font-weight: 300;
+    line-height: 11.94px;
+    text-align: center;
+  }
+
+  .days__numValue {
+    color: white;
+    font-family: "Patsy Sans";
+    font-size: 35.09px;
+    font-weight: 400;
+    line-height: 34.21px;
+    text-align: center;
+  }
+
+  .raisedValue {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16.57px;
+    text-align: center;
+  }
+
+  .wallet__textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+  .wallet__text {
+    font-family: "Onest";
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 19.1px;
+    text-align: center;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .coinst {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-family: "Patsy Sans";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 19.1px;
+      text-align: center;
+    }
+  }
+
+  .coinst__button {
+    gap: 5px;
+    display: flex;
+    width: 113px;
+    color: white;
+    padding: 7.36px, 1.23px, 7.36px, 1.23px;
+    border-radius: 21.93px;
+    align-items: center;
+    background-color: rgba(255, 114, 14, 1);
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 14.17px;
+    text-align: center;
+    img {
+      height: auto;
+    }
+  }
+  .inputImg {
+    height: 19.79px;
+  }
+  .buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    button {
+      font-family: "Patsy Sans";
+      color: white;
+      width: 138px;
+      border-radius: 13.51px;
+      padding: 7.36px, 1.23px, 7.36px, 1.23px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 14.17px;
+      text-align: center;
+    }
+  }
+  .connectButton {
+    background-color: rgba(255, 114, 14, 1);
+  }
+  .buyButton {
+    background-color: rgba(160, 66, 0, 0.44);
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputTopText {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 19.1px;
+      text-align: left;
+    }
+    span {
+      font-size: 9.24px;
+      font-weight: 300;
+      line-height: 19.1px;
+      text-align: right;
+    }
+  }
+
+  .priceInc {
+    background-color: rgba(255, 114, 14, 0.3);
+    padding: 0;
+    gap: 10px;
+    border-radius: 21.93px;
+    display: flex;
+
+    input {
+      display: none;
+    }
+    label {
+      background-color: rgba(255, 114, 14, 1);
+      color: white;
+      border-radius: 13.51px;
+      padding: 7.36px;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 12.26px;
+      text-align: center;
+    }
+  }
+
+  .inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .coinst__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+  }
+}

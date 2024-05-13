@@ -1,0 +1,70 @@
+.numbersSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(20, 23, 30, 1);
+  height: 231px;
+  align-items: center;
+  padding: 0 99px;
+}
+.numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 111px;
+}
+.numbers__title {
+  font-family: "Onest";
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 31.87px;
+  text-align: center;
+  color: white;
+}
+.numbers__value {
+  font-family: "Patsy Sans";
+  font-size: 55px;
+  font-weight: 400;
+  line-height: 52.96px;
+  text-align: center;
+  color: white;
+}
+.container {
+  padding: 0px 100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .numbersSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(20, 23, 30, 1);
+    height: 231px;
+    align-items: center;
+    padding: 0 99px;
+  }
+  .numbers {
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    gap: 5px;
+  }
+  .numbers__title {
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 12.75px;
+    text-align: center;
+  }
+  .numbers__value {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19.26px;
+    text-align: center;
+  }
+  .container {
+    padding: 0px 20px;
+    margin: 0 auto;
+  }
+}

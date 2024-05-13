@@ -1,0 +1,234 @@
+.info {
+  background-image: url("../../assets/images/background2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 1424px;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 0px 100px;
+  margin: 0 auto;
+}
+
+.masterplan,
+.tokenomics {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.masterplan__title,
+.tokenomics__title {
+  font-family: "Patsy Sans";
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 77.04px;
+  text-align: center;
+  color: white;
+  //   box-shadow: 7px 10px 8px 0px rgba(0, 0, 0, 1);
+}
+
+.masterplan__contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.masterplan__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 114, 14, 0.9);
+  padding: 25px;
+  width: 737px;
+  border-radius: 20px;
+  border: 3px solid;
+  border-image-source: linear-gradient(
+    141.14deg,
+    rgba(0, 0, 0, 0.46) 4.36%,
+    rgba(143, 143, 143, 0.46) 45.54%,
+    rgba(149, 149, 149, 0.46) 49.06%,
+    rgba(255, 255, 255, 0.46) 104.81%
+  );
+}
+
+.tokenomics__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 114, 14, 0.9);
+  padding: 25px;
+  width: calc(553px - 50px);
+  height: calc(373px - 50px);
+  border-radius: 20px;
+  border: 3px solid;
+  border-image-source: linear-gradient(
+    141.14deg,
+    rgba(0, 0, 0, 0.46) 4.36%,
+    rgba(143, 143, 143, 0.46) 45.54%,
+    rgba(149, 149, 149, 0.46) 49.06%,
+    rgba(255, 255, 255, 0.46) 104.81%
+  );
+}
+
+.masterplan__text,
+.tokenomics__text {
+  color: white;
+  font-family: "Onest";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35.2px;
+  text-align: left;
+}
+
+.masterplan__num {
+  font-family: "OffBit";
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35.2px;
+  text-align: left;
+}
+
+.masterplan__list,
+.tokenomics__list {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Onest";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35.2px;
+  text-align: left;
+  gap: 5px;
+}
+.masterplan__list {
+  margin: 0 40px;
+}
+
+.masterplan__listItem {
+  list-style: initial;
+}
+
+@media (max-width: 768px) {
+  .info {
+    background-image: url("../../assets/images/background2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .container {
+    padding: 50px;
+    margin: 0 auto;
+  }
+
+  .masterplan,
+  .tokenomics {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .masterplan__title,
+  .tokenomics__title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 28.89px;
+    text-align: center;
+
+    //   box-shadow: 7px 10px 8px 0px rgba(0, 0, 0, 1);
+  }
+
+  .masterplan__contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .masterplan__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 114, 14, 0.9);
+    padding: 20px 10px;
+    width: calc(100% - 20px);
+    border-radius: 20px;
+    border: 3px solid;
+    gap: 20px;
+    border-radius: 20px;
+    border: 3px solid;
+
+    border-image-source: linear-gradient(
+      141.14deg,
+      rgba(0, 0, 0, 0.46) 4.36%,
+      rgba(143, 143, 143, 0.46) 45.54%,
+      rgba(149, 149, 149, 0.46) 49.06%,
+      rgba(255, 255, 255, 0.46) 104.81%
+    );
+  }
+
+  .tokenomics__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 114, 14, 0.9);
+    padding: 20px 10px;
+    width: calc(100% - 20px);
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid;
+    border-image-source: linear-gradient(
+      141.14deg,
+      rgba(0, 0, 0, 0.46) 4.36%,
+      rgba(143, 143, 143, 0.46) 45.54%,
+      rgba(149, 149, 149, 0.46) 49.06%,
+      rgba(255, 255, 255, 0.46) 104.81%
+    );
+  }
+
+  .masterplan__text,
+  .tokenomics__text {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 19.12px;
+    text-align: left;
+  }
+
+  .masterplan__num {
+    font-family: "Patsy Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 17.33px;
+    text-align: center;
+  }
+
+  .masterplan__list,
+  .tokenomics__list {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 5px;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 19.12px;
+    text-align: left;
+  }
+  .masterplan__list {
+    margin: 0 40px;
+  }
+
+  .masterplan__listItem {
+    list-style: initial;
+  }
+}

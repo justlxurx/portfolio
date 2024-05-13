@@ -1,0 +1,120 @@
+.learn {
+  background-color: rgba(255, 114, 14, 0.9);
+  height: calc(734px - 150px);
+  border-radius: 27px;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 50px 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+.learn__title {
+  font-family: "Patsy Sans";
+  color: white;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 57.78px;
+  text-align: center;
+}
+.learn__subtitle {
+  color: white;
+  font-family: "Onest";
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 51px;
+  text-align: center;
+  margin: 40px 0 45px;
+}
+
+.learn__text {
+  color: white;
+  font-family: "Onest";
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 44.62px;
+  text-align: center;
+  padding: 0 50px;
+}
+
+.learn__button {
+  background-color: rgba(0, 0, 0, 1);
+  padding: 24.66px 43.15px;
+  gap: 12.33px;
+  border-radius: 19.73px;
+  font-family: "Patsy Sans";
+  font-size: 36.99px;
+  font-weight: 400;
+  line-height: 35.62px;
+  text-align: center;
+  color: white;
+}
+.learn__textMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .learn__textWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .learn {
+    background-color: rgba(255, 114, 14, 0.9);
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 30px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: calc(100% - 40px);
+    height: auto;
+    border-radius: 10.15px;
+  }
+  .learn__title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 21.19px;
+    text-align: center;
+    width: 90%;
+  }
+  .learn__subtitle {
+    display: none;
+  }
+  .learn__text {
+    display: none;
+  }
+  .learn__textMobile {
+    font-family: "Onest";
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 16.57px;
+    text-align: center;
+    display: block;
+    color: white;
+  }
+  .learn__boldText {
+    font-family: "Onest";
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16.57px;
+    text-align: center;
+  }
+  .learn__button {
+    position: absolute;
+    background-color: white;
+    gap: 12.33px;
+    text-align: center;
+    color: rgba(255, 114, 14, 1);
+    padding: 14.87px 26.02px 14.87px 26.02px;
+    gap: 7.43px;
+    border-radius: 11.9px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19.26px;
+    text-align: center;
+    width: 100%;
+    bottom: -90px;
+  }
+}

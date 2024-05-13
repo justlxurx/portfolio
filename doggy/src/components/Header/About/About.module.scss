@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.main__list {
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main__listItem {
+  font-family: "Patsy Sans";
+  color: black;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 24.07px;
+  text-align: left;
+}
