@@ -1,6 +1,7 @@
 import s from "./Faq.module.scss";
-import { Plus } from "../../assets/icons/plus";
+// import { Plus } from "../../assets/icons/plus";
 import { useState } from "react";
+import plus from "../../assets/images/plus.svg";
 
 export const Faq = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -53,9 +54,10 @@ export const Faq = () => {
         {data.map((item, id) => (
           <div key={id} className={s.faq__content}>
             <div className={s.question}>
-              {item.title}
+              <p className={s.question__text}>{item.title}</p>
               <button onClick={item.toggleFunc}>
-                <Plus />
+                {/* <Plus /> */}
+                <img src={plus} alt="plus" className={s.plus} />
               </button>
             </div>
             {item.isOpen ? <div className={s.answer}>{item.text}</div> : ""}

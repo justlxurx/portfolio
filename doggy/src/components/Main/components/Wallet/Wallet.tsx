@@ -1,17 +1,17 @@
 import s from "./Wallet.module.scss";
-import { Eth } from "../../../../assets/icons/eth";
-import { Usdt } from "../../../../assets/icons/usdt";
 import { Input } from "../Input/Input";
-import { Logo } from "../../../../assets/icons/logo";
 import { MouseEventHandler } from "react";
 import CountdownTimer from "../../../../features/countdown/Countdown";
+import eth from "../../../../assets/images/eth.svg";
+import circle from "../../../../assets/images/circle.svg";
+import usdt from "../../../../assets/images/usdt.svg";
 
 export const Wallet = ({
   handleShowModal,
 }: {
   handleShowModal: MouseEventHandler<HTMLButtonElement>;
 }) => {
-  const targetDate = new Date("2024-05-13T00:00:00");
+  const targetDate = new Date("2024-05-20T00:00:00");
 
   return (
     <section className={s.wallet}>
@@ -34,14 +34,14 @@ export const Wallet = ({
         <span>1 $DOGYAI = $0.000703</span>
         <div className={s.coinst__buttons}>
           <button className={s.coinst__button}>
-            <Eth />
+            <img src={eth} alt="eth" />
             ETH
           </button>
           <button
             className={s.coinst__button}
             style={{ background: "rgba(255, 114, 14, 0.3)" }}
           >
-            <Usdt />
+            <img src={usdt} alt="usdt" />
             USDT
           </button>
         </div>
@@ -53,7 +53,7 @@ export const Wallet = ({
             <span>max</span>
           </div>
           <Input>
-            <Eth />
+            <img src={eth} alt="eth" className={s.inputImg} />
           </Input>
         </div>
         <div className={s.inputWrapper}>
@@ -61,7 +61,7 @@ export const Wallet = ({
             <p>$DOGYAI you recieve</p>
           </div>
           <Input>
-            <Logo />
+            <img src={circle} alt="circle" className={s.inputImg} />
           </Input>
         </div>
       </div>

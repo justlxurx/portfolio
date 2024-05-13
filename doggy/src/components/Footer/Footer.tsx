@@ -1,22 +1,22 @@
 import s from "./Footer.module.scss";
-import { Telega } from "../../assets/icons/telega";
-import { XIcon } from "../../assets/icons/x";
-import { LogoDoggy } from "../../assets/icons/logo_doggy";
 import Dog from "../../assets/images/dog.png";
+import logo from "../../assets/images/logo_white.svg";
+import telega from "../../assets/images/telega.svg";
+import x from "../../assets/images/x.svg";
 
 export const Footer = () => {
   return (
     <footer className={`${s.container} ${s.footerSection}`}>
       <div className={s.footerSection__top}>
-        <img src={Dog} alt="dog" />
+        <img src={Dog} alt="dog" className={s.dog} />
         <div className={s.footerSection__icons}>
-          <LogoDoggy width={310} height={61} />
+          <img src={logo} alt="dog" className={s.logo} />
           <div className={s.social}>
             <a href="">
-              <Telega />
+              <img src={telega} alt="telega" className={s.telega} />
             </a>
             <a href="">
-              <XIcon />
+              <img src={x} alt="x" className={s.xSocial} />
             </a>
           </div>
         </div>
