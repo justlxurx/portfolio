@@ -128,25 +128,18 @@
     height: 20px;
   }
 }
-.buttonWrapper {
-  display: flex;
-  justify-content: space-between;
-  button {
-    font-family: "Patsy Sans";
-    color: white;
-    font-size: 21.93px;
-    font-weight: 400;
-    line-height: 23px;
-    text-align: center;
-    width: 200px;
-    padding: 11.94px 0;
-    border-radius: 21.93px;
-  }
-}
-.connectButton,
-.buyButton {
-  background-color: rgba(255, 114, 14, 1);
 
+.connectButton {
+  background-color: rgba(255, 114, 14, 1);
+  font-family: "Patsy Sans";
+  color: white;
+  font-size: 21.93px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: center;
+  width: 100%;
+  padding: 11.94px 0;
+  border-radius: 21.93px;
   &:disabled {
     background-color: rgba(160, 66, 0, 0.44);
     cursor: not-allowed;
@@ -296,12 +289,6 @@
     align-items: center;
     margin-top: 20px;
   }
-
-  .buttonWrapper {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
 }
 
 @media (max-width: 552px) {
@@ -424,27 +411,18 @@
   .inputImg {
     height: 19.79px;
   }
-  .buttonWrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 0;
-    button {
-      font-family: "Patsy Sans";
-      color: white;
-      width: 138px;
-      border-radius: 13.51px;
-      padding: 7.36px, 1.23px, 7.36px, 1.23px;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 14.17px;
-      text-align: center;
-    }
-  }
+
   .connectButton {
+    font-family: "Patsy Sans";
+    color: white;
+    width: 138px;
+    border-radius: 13.51px;
+    padding: 7.36px, 1.23px, 7.36px, 1.23px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 14.17px;
+    text-align: center;
     background-color: rgba(255, 114, 14, 1);
-  }
-  .buyButton {
-    background-color: rgba(160, 66, 0, 0.44);
   }
 
   .inputWrapper {
