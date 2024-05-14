@@ -1,11 +1,12 @@
-export const LogoDoggy = (width = 507, height = 100) => {
+import {SVGProps} from "react";
+
+export const LogoDoggy = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      width={width}
-      height={height}
       viewBox="0 0 507 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g filter="url(#filter0_b_68_809)">
         <rect

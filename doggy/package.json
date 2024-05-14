@@ -10,6 +10,8 @@
     "preview": "vite preview --host=0.0.0.0 --port=8000"
   },
   "dependencies": {
+    "@web3modal/ethers": "^4.1.11",
+    "ethers": "^6.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

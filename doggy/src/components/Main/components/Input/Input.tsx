@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 import s from "./Input.module.scss";
 
-export const Input = ({ children }: { children: ReactNode }) => {
+export const Input: React.FC<ComponentPropsWithoutRef<'input'>> = ({children, ...other}) => {
   return (
     <section className={s.main}>
-      <input type="number" placeholder="0" />
+      <input {...other} />
       {children}
     </section>
   );

@@ -51,14 +51,15 @@
   }
 
   .main__logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // flex-wrap: wrap;
+    // justify-content: space-between;
     align-items: center;
     height: 14px;
   }
   .main__logoImg {
     height: 100%;
-    width: 15%;
+    width: 90%;
   }
 }
