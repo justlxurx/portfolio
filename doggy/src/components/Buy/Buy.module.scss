@@ -80,11 +80,10 @@
   .buySection {
     display: flex;
     flex-direction: column;
-    gap: 180px;
-    background-image: url("../../assets/images/mobile_background4.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    gap: 100px;
+    background-image: url("../../assets/images/background.jpeg");
+    background-repeat: repeat-y;
+    background-size: 250%;
     height: auto;
     align-items: center;
     justify-content: center;

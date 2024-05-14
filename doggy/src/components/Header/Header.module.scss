@@ -1,15 +1,18 @@
 .mainHeader {
-  width: 100%;
+  width: calc(100% - 200px);
   height: 46px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 55px 0;
+  padding: 45px 100px;
+  background-color: black;
+  box-shadow: 0px 24px 28.8px 0px rgba(1, 1, 1, 0.69);
 }
 .mainHeader__list {
   display: flex;
   gap: 35px;
   align-items: center;
+  z-index: 100;
 }
 .list {
   display: flex;
@@ -201,11 +204,4 @@
   .links:hover + .about {
     display: flex;
   }
-  // .mobileList__about {
-  //   position: absolute;
-  //   top: 50px;
-  //   width: max-content;
-  //   right: 0;
-  //   //   display: none;
-  // }
 }

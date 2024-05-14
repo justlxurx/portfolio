@@ -1,8 +1,8 @@
-export const CryptoNews = () => {
+export const CryptoNews = ({ width = "auto", height = 54 }) => {
   return (
     <svg
-      width="230"
-      height="54"
+      width={width}
+      height={height}
       viewBox="0 0 230 54"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

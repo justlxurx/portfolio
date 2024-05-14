@@ -3,7 +3,7 @@
   flex-direction: column;
   background-image: url("../../assets/images/background1.png");
   background-repeat: no-repeat;
-  height: 1031px;
+  height: 893px;
   background-size: cover;
   position: relative;
 }
@@ -32,8 +32,50 @@
 }
 .main__wallet {
   position: absolute;
+  top: 80px;
   right: 100px;
 }
+
+// @media (max-width: 768px) {
+//   .logo {
+//     height: 42.12px;
+//   }
+//   .main {
+//     display: flex;
+//     flex-direction: column;
+//     background-image: url("../../assets/images/mobile_background.png");
+//     background-repeat: no-repeat;
+//     height: 950px;
+//     background-size: cover;
+//     position: relative;
+//   }
+
+//   .main__content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     padding: 0 50px;
+//   }
+//   .main__heading {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 0px;
+//     position: initial;
+//   }
+//   .main__text {
+//     font-size: 25px;
+//     font-weight: 300;
+//     line-height: 31.87px;
+//     text-align: center;
+//   }
+//   .container {
+//     padding: 0px 0px;
+//   }
+//   .main__wallet {
+//     position: initial;
+//     width: 100%;
+//   }
+// }
 
 @media (max-width: 768px) {
   .logo {
@@ -81,6 +123,6 @@
 @media (max-width: 450px) {
   .main__content {
     padding: 0 20px 50px;
-    margin-top: 200px;
+    margin-top: 300px;
   }
 }

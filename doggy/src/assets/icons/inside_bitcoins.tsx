@@ -1,8 +1,8 @@
-export const InsideBitcoinist = () => {
+export const InsideBitcoinist = ({ width = "auto", height = 65 }) => {
   return (
     <svg
-      width="221"
-      height="65"
+      width={width}
+      height={height}
       viewBox="0 0 221 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

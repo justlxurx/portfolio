@@ -1,8 +1,8 @@
-export const BitcoinistIcon = () => {
+export const BitcoinistIcon = ({ width = "auto", height = 26 }) => {
   return (
     <svg
-      width="194"
-      height="26"
+      width={width}
+      height={height}
       viewBox="0 0 194 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,8 @@
-export const Technopedia = () => {
+export const Technopedia = ({ width = "auto", height = 49 }) => {
   return (
     <svg
-      width="217"
-      height="49"
+      width={width}
+      height={height}
       viewBox="0 0 217 49"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

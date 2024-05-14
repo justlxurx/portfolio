@@ -7,10 +7,12 @@ import { Faq } from "./components/Faq/Faq";
 import { Buy } from "./components/Buy/Buy";
 import { Info } from "./components/Info/Info";
 import { DoggyAI } from "./components/DoggyAI/DoggyAI";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (
     <>
+      <Header />
       <Main />
       <Numbers />
       <FeaturedIn />
