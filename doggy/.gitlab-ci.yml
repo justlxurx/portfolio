@@ -34,4 +34,3 @@ deploy:
     - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker run --name doggy-front -p 8000:8000 -d $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
     - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker image prune -a -f"
     - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker volume prune -f"
-
