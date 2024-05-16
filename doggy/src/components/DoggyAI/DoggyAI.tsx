@@ -37,7 +37,9 @@ export const DoggyAI = () => {
             </div>
           ))}
         </div>
-        <button className={s.doggyAI__button}>buy $DOGYAI presale</button>
+        <a href="#wallet">
+          <button className={s.doggyAI__button}>buy $DOGYAI presale</button>
+        </a>
       </div>
       <Learn />
     </section>

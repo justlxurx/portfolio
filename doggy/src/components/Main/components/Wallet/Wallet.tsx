@@ -129,7 +129,7 @@ export const Wallet = () => {
   // };
 
   return (
-    <section className={s.wallet}>
+    <section className={s.wallet} id="wallet">
       <p className={s.wallet__title}>Next Price Increase In</p>
       <CountdownTimer targetDate={targetDate} />
       <p className={s.raisedValue}>USD RAISED: $810,274.41 / $1,123,057</p>
