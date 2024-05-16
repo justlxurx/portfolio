@@ -2,7 +2,7 @@ import s from "./Wallet.module.scss";
 import { Input } from "../Input/Input";
 // import { Logo } from "../../../../assets/icons/logo";
 import React, { useEffect, useState } from "react";
-import CountdownTimer from "../../../../features/countdown/Countdown";
+// import CountdownTimer from "../../../../features/countdown/Countdown";
 import {
   useWeb3Modal,
   useWeb3ModalAccount,
@@ -15,6 +15,8 @@ import { testETHSmart } from "../../../../web3/smart-contracts/test/TestETH.ts";
 import eth from "../../../../assets/images/eth.svg";
 import circle from "../../../../assets/images/circle.svg";
 import usdt from "../../../../assets/images/usdt.svg";
+import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
+import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 
 const targetDate = new Date("2024-05-18T00:00:00");
 
@@ -127,11 +129,34 @@ export const Wallet = () => {
 
   //   setIsLoading(false);
   // };
-
+  const TO = new Date().getTime() + 24 * 3600 * 1000 + 5000;
+  console.log("TO VALUE", TO);
   return (
     <section className={s.wallet} id="wallet">
       <p className={s.wallet__title}>Next Price Increase In</p>
-      <CountdownTimer targetDate={targetDate} />
+      <FlipClockCountdown
+        to={targetDate}
+        labels={["DAYS", "HOURS", "MINUTES", "SECONDS"]}
+        labelStyle={{
+          textTransform: "lowercase",
+          color: "white",
+          fontFamily: "Onest",
+          fontSize: 13.16,
+          fontWeight: 300,
+        }}
+        digitBlockStyle={{
+          width: 40,
+          height: 60,
+          fontSize: 35,
+          fontFamily: "Patsy Sans",
+          background: "rgba(255, 114, 14, 1)",
+          fontWeight: 400,
+        }}
+        dividerStyle={{ color: "none", height: 1 }}
+        showSeparators={false}
+        className={s.flipClock}
+      />
+      {/* <CountdownTimer targetDate={targetDate} /> */}
       <p className={s.raisedValue}>USD RAISED: $810,274.41 / $1,123,057</p>
       <div className={s.priceInc}>
         <input type="radio" id="priceInc" />

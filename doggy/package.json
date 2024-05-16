@@ -10,6 +10,7 @@
     "preview": "vite preview --host=0.0.0.0 --port=8000"
   },
   "dependencies": {
+    "@leenguyen/react-flip-clock-countdown": "^1.6.0",
     "@web3modal/ethers": "^4.1.11",
     "ethers": "^6.12.1",
     "react": "^18.2.0",
