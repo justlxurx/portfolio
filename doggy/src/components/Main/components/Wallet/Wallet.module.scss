@@ -140,30 +140,31 @@
   line-height: 23px;
   text-align: center;
   width: 100%;
-  padding: 11.94px 0;
+  padding: 1px 0;
   border-radius: 21.93px;
   position: relative;
-  z-index: 0;
+  z-index: 5;
   overflow: hidden;
-
-  // position: relative;
-  // z-index: 0;
-  // width: 200px;
-  // height: 200px;
-  // overflow: hidden;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   &:disabled {
     background-color: rgba(160, 66, 0, 0.44);
     cursor: not-allowed;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 2px);
+    height: 35px;
+    background-color: rgba(255, 114, 14, 1);
+    z-index: 5;
+    border-radius: 21.93px;
   }
 }
 
 .connectButton::before {
   content: "";
   position: absolute;
-  z-index: -2;
+  z-index: -1;
   left: -20%;
   top: 100%;
   width: 200%;
@@ -173,17 +174,6 @@
   background-size: 50% 50%, 50% 50%;
   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
   animation: anim-ramka-5 8s ease-in infinite;
-}
-.connectButton::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 1px;
-  top: 1px;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  background-color: rgba(255, 114, 14, 1);
-  border-radius: 21.93px;
 }
 
 @keyframes anim-ramka-5 {
@@ -469,20 +459,17 @@
     text-align: center;
     background-color: rgba(255, 114, 14, 1);
     position: relative;
-
-    z-index: 0;
     overflow: hidden;
-  }
-
-  .connectButton::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 1px;
-    top: 1px;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    border-radius: 13.51px;
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc(100% - 2px);
+      height: 24px;
+      background-color: rgba(255, 114, 14, 1);
+      z-index: 5;
+      border-radius: 13.51px;
+    }
   }
 
   .inputWrapper {

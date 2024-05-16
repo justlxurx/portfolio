@@ -34,6 +34,20 @@ export const Wallet = () => {
   const [calcValue, setCalcValue] = useState(0);
   // const [isLoading, setIsLoading] = useState(false);
 
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); //
+
   useEffect(() => {
     if (isConnected) {
       switch (chainId) {
@@ -141,13 +155,13 @@ export const Wallet = () => {
           textTransform: "lowercase",
           color: "white",
           fontFamily: "Onest",
-          fontSize: 13.16,
+          fontSize: !isSmallScreen ? 13.16 : 9.28,
           fontWeight: 300,
         }}
         digitBlockStyle={{
-          width: 40,
-          height: 60,
-          fontSize: 35,
+          width: !isSmallScreen ? 45 : 23,
+          height: !isSmallScreen ? 70 : 45,
+          fontSize: !isSmallScreen ? 35 : 20.42,
           fontFamily: "Patsy Sans",
           background: "rgba(255, 114, 14, 1)",
           fontWeight: 400,
@@ -223,7 +237,7 @@ export const Wallet = () => {
         </div>
       </div>
       <button onClick={onClickConnect} className={s.connectButton}>
-        {isConnected ? "Your wallet" : "Connect wallet"}
+        <p>{isConnected ? "Your wallet" : "Connect wallet"}</p>
       </button>
     </section>
   );
