@@ -112,7 +112,12 @@
 .masterplan__listItem {
   list-style: initial;
 }
-
+@media (max-width: 1580px) {
+  .masterplan__content {
+    padding: 25px;
+    width: 500px;
+  }
+}
 @media (max-width: 768px) {
   .info {
     background-image: url("../../assets/images/background2.png");
