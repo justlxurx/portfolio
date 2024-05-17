@@ -18,9 +18,10 @@ export const Info = () => {
   const tokenomics = [
     "30% - Presale",
     "20% - Staking",
-    "20% - Community Rewards",
+    "10% - Community Rewards",
     "10% - DEX/CEX Liquidity",
     "20% - Marketing",
+    "10% - Foundatiom vesting cliff",
   ];
   return (
     <section className={`${s.info} ${s.container}`}>
