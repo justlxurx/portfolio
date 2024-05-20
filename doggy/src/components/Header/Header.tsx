@@ -105,7 +105,11 @@ export const Header = () => {
         </div>
         <div className={s.buttons}>
           <button className={s.buttonBuy}>BUY NOW</button>
-          <button className={s.buttonLang} onClick={handleShowLang}>
+          <button
+            className={s.buttonLang}
+            onClick={handleShowLang}
+            style={{ marginTop: `${showLang ? "13px" : "0"}` }}
+          >
             <div className={s.buttonLang__wrapper}>
               <div
                 className={s.lang}
