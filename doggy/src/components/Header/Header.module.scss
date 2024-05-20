@@ -27,11 +27,22 @@
   text-align: left;
   text-transform: uppercase;
 }
+.bottomButton {
+  display: flex;
+  gap: 5px;
+  color: white;
+  font-family: "Patsy Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 28.89px;
+  text-align: left;
+  text-transform: uppercase;
+}
 
 .buttons {
   display: flex;
   gap: 5px;
-  align-items: center;
+  align-items: flex-start;
   height: 47px;
 }
 .buttonBuy {
@@ -45,6 +56,7 @@
   line-height: 24.07px;
 }
 .buttonLang {
+  z-index: 5;
   padding: 11px;
   gap: 8px;
   border-radius: 10px;
@@ -55,14 +67,20 @@
   font-weight: 400;
   line-height: 25px;
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  align-items: center;
   justify-content: center;
 }
 .lang {
   display: flex;
   gap: 5px;
   align-items: center;
+}
+
+.langs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .link {
@@ -98,6 +116,11 @@
 .mobileList {
   display: none;
 }
+
+.buttonLang__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 @media (max-width: 768px) {
   .mobileList__item {
     color: white;
@@ -118,6 +141,7 @@
   .logo {
     height: 22px;
   }
+
   .mobileList {
     border: 0px, 0px, 16px, 16px;
     display: flex;
@@ -131,6 +155,15 @@
     flex-direction: column;
     background: linear-gradient(172.1deg, #000000 -1.8%, #111922 129.61%);
     box-shadow: 0px 8px 8.4px 0px rgba(0, 0, 0, 0.54);
+    &__bottomButton {
+      color: white;
+      font-family: "Patsy Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 28.89px;
+      text-align: left;
+      text-transform: uppercase;
+    }
   }
 
   .mobileList__aboutList {
@@ -168,7 +201,6 @@
     display: flex;
     gap: 5px;
     align-items: center;
-    height: 47px;
   }
   .buttonBuy {
     font-size: 11.7px;
@@ -183,6 +215,8 @@
     border: 0.47px solid rgba(255, 255, 255, 1);
     font-size: 9.36px;
     line-height: 11.7px;
+    align-self: flex-start;
+    margin-top: 12px;
   }
   .buttonLang__langIcon {
     height: 10.3px;

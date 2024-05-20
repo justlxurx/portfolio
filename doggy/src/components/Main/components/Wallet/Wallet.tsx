@@ -18,7 +18,7 @@ import usdt from "../../../../assets/images/usdt.svg";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 
-const targetDate = new Date("2024-05-18T00:00:00");
+const targetDate = new Date("2024-05-25T00:00:00");
 
 export const Wallet = () => {
   const { open } = useWeb3Modal();
@@ -30,9 +30,9 @@ export const Wallet = () => {
   const [usdtPrice, setUsdtPrice] = useState<number | null>(null);
   const [ethPrice, setEthPrice] = useState<number | null>(null);
   const [balance, setBalance] = useState("0");
-  // const [buyValue, setBuyValue] = useState("");
+  const [buyValue, setBuyValue] = useState("");
   const [calcValue, setCalcValue] = useState(0);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
 
@@ -107,42 +107,41 @@ export const Wallet = () => {
       }
     } catch (err) {
       console.error(err);
+    } finally {
+      setBuyValue(value);
     }
-    // finally {
-    //   setBuyValue(value);
-    // }
   };
 
-  // const onClickBuy = async () => {
-  //   setIsLoading((prevState) => !prevState);
+  const onClickBuy = async () => {
+    setIsLoading((prevState) => !prevState);
 
-  //   if (buyOption === "ETH") {
-  //     switch (chainId) {
-  //       case 97: {
-  //         await testETHSmart.approve(`${buyValue}`);
-  //         await testSaleSmart.buyTokensByEth(`${buyValue}`);
+    if (buyOption === "ETH") {
+      switch (chainId) {
+        case 97: {
+          await testETHSmart.approve(`${buyValue}`);
+          await testSaleSmart.buyTokensByEth(`${buyValue}`);
 
-  //         break;
-  //       }
-  //     }
-  //   } else {
-  //     switch (chainId) {
-  //       case 97: {
-  //         await testUSDTSmart.approve(`${buyValue}`);
-  //         await testSaleSmart.buyTokensByUsdt(`${buyValue}`);
+          break;
+        }
+      }
+    } else {
+      switch (chainId) {
+        case 97: {
+          await testUSDTSmart.approve(`${buyValue}`);
+          await testSaleSmart.buyTokensByUsdt(`${buyValue}`);
 
-  //         break;
-  //       }
-  //     }
-  //   }
+          break;
+        }
+      }
+    }
 
-  //   testSaleSmart
-  //     .usersTokens()
-  //     .then((res) => setBalance(res))
-  //     .catch(console.error);
+    testSaleSmart
+      .usersTokens()
+      .then((res) => setBalance(res))
+      .catch(console.error);
 
-  //   setIsLoading(false);
-  // };
+    setIsLoading(false);
+  };
   const TO = new Date().getTime() + 24 * 3600 * 1000 + 5000;
   console.log("TO VALUE", TO);
   return (
@@ -236,9 +235,18 @@ export const Wallet = () => {
           </Input>
         </div>
       </div>
-      <button onClick={onClickConnect} className={s.connectButton}>
-        <p>{isConnected ? "Your wallet" : "Connect wallet"}</p>
-      </button>
+      <div className={s.buttonWrapper}>
+        <button onClick={onClickConnect} className={s.connectButton}>
+          <p>{isConnected ? "Your wallet" : "Connect wallet"}</p>
+        </button>
+        <button
+          disabled={!isConnected || isLoading}
+          className={s.buyButton}
+          onClick={onClickBuy}
+        >
+          {isLoading ? <span className={s.loader} /> : `Buy with ${buyOption}`}
+        </button>
+      </div>
     </section>
   );
 };

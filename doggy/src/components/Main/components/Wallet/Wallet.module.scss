@@ -131,7 +131,8 @@
   }
 }
 
-.connectButton {
+.connectButton,
+.buyButton {
   background-color: rgba(255, 114, 14, 1);
   font-family: "Patsy Sans";
   color: white;
@@ -174,6 +175,12 @@
   background-size: 50% 50%, 50% 50%;
   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
   animation: anim-ramka-5 8s ease-in infinite;
+}
+
+.buttonWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 @keyframes anim-ramka-5 {
@@ -325,6 +332,9 @@
     align-items: center;
     margin-top: 20px;
   }
+  .buttonWrapper {
+    width: 80%;
+  }
 }
 
 @media (max-width: 552px) {
@@ -448,7 +458,8 @@
     height: 19.79px;
   }
 
-  .connectButton {
+  .connectButton,
+  .buyButton {
     font-family: "Patsy Sans";
     color: white;
     border-radius: 13.51px;
@@ -460,11 +471,12 @@
     background-color: rgba(255, 114, 14, 1);
     position: relative;
     overflow: hidden;
+    width: 100%;
     p {
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: calc(100% - 2px);
       height: 24px;
       background-color: rgba(255, 114, 14, 1);
       z-index: 5;
@@ -528,5 +540,8 @@
     gap: 10px;
     align-items: center;
     margin-top: 20px;
+  }
+  .buttonWrapper {
+    width: 90%;
   }
 }

@@ -1,9 +1,9 @@
 .faq {
   background-image: url("../../assets/images/background3.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: top;
   // height: 960px;
-  background-size: cover;
+  background-size: 120%;
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -62,10 +62,8 @@
 @media (max-width: 768px) {
   .faq {
     background-image: url("../../assets/images/mobile_background3.png");
-    background-repeat: no-repeat;
     background-position: top;
     height: auto;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     gap: 80px;

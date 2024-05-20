@@ -76,6 +76,30 @@
   width: fit-content;
 }
 
+@media (max-width: 1520px) {
+  .card {
+    padding: 30px 18px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .doggyAI__content {
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    height: auto;
+    width: 100%;
+  }
+  .card__title {
+    font-size: 35px;
+    line-height: 38.52px;
+  }
+  .card__text {
+    font-size: 19px;
+    line-height: 29.32px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 100px 50px 150px;

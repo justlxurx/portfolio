@@ -2,18 +2,34 @@ import s from "./Header.module.scss";
 import { BottomIcon } from "../../assets/icons/bottom";
 import { About } from "./About/About";
 import { useState, useEffect, useRef } from "react";
+import { LangIcon } from "../../assets/icons/lang";
 import logo from "../../assets/images/logo.svg";
-import lang from "../../assets/images/lang.svg";
 import down from "../../assets/images/down.svg";
 import burger from "../../assets/images/burger.svg";
 import up from "../../assets/images/up.svg";
 
 export const Header = () => {
+  const [showLang, setShowLang] = useState(false);
   const [show, setShow] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  const handleShowLang = () => {
+    setShowLang(!showLang);
+  };
   const handleShow = () => {
     setShow(true);
   };
@@ -57,6 +73,7 @@ export const Header = () => {
     },
   ];
 
+  const langList = ["EN"];
   return (
     <div>
       <header className={s.mainHeader}>
@@ -70,9 +87,8 @@ export const Header = () => {
               <li className={s.list__item} key={id}>
                 {item.icon ? (
                   <div className={s.link} ref={modalRef}>
-                    {item.title}
                     <button className={s.bottomButton} onClick={handleShow}>
-                      <BottomIcon />
+                      {item.title} <BottomIcon />
                     </button>
                     {show && (
                       <div className={s.about}>
@@ -89,12 +105,30 @@ export const Header = () => {
         </div>
         <div className={s.buttons}>
           <button className={s.buttonBuy}>BUY NOW</button>
-          <button className={s.buttonLang}>
-            <div className={s.lang}>
-              <img src={lang} alt="lang" className={s.buttonLang__langIcon} />
-              En
+          <button className={s.buttonLang} onClick={handleShowLang}>
+            <div className={s.buttonLang__wrapper}>
+              <div
+                className={s.lang}
+                style={{
+                  color: `${showLang ? "rgba(255, 255, 255, 0.6)" : "white"}`,
+                }}
+              >
+                <LangIcon
+                  width={isSmallScreen ? "10" : "22"}
+                  height={isSmallScreen ? "10" : "22"}
+                  color={showLang ? "rgba(255, 255, 255, 0.6)" : "white"}
+                />
+                En
+              </div>
+              <img src={down} alt="down" className={s.buttonLang__downIcon} />
             </div>
-            <img src={down} alt="down" className={s.buttonLang__downIcon} />
+            {showLang && (
+              <ul className={s.langs}>
+                {langList.map((item, id) => (
+                  <p key={id}>{item}</p>
+                ))}
+              </ul>
+            )}
           </button>
           <button onClick={handleShowMenu}>
             <img src={burger} alt="burger" className={s.burger} />
@@ -108,11 +142,11 @@ export const Header = () => {
               {item.icon ? (
                 <>
                   <div className={s.mobileList__link} ref={modalRef}>
-                    {item.title}
                     <button
                       className={s.mobileList__bottomButton}
                       onClick={handleShowAbout}
                     >
+                      {item.title}
                       <img
                         src={up}
                         alt="up"
