@@ -33,9 +33,10 @@
 }
 .doggyAI__content {
   display: grid;
-  grid-template-columns: repeat(4, 299px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
-  height: 303px;
+  height: 373px;
+  gap: 25px;
   width: 100%;
 }
 .card {
@@ -85,18 +86,16 @@
     justify-content: space-between;
   }
   .doggyAI__content {
-    display: grid;
-    grid-template-columns: repeat(4, 260px);
-    height: auto;
+    height: 250px;
     width: 100%;
   }
   .card__title {
-    font-size: 35px;
+    font-size: 32px;
     line-height: 38.52px;
   }
   .card__text {
-    font-size: 19px;
-    line-height: 29.32px;
+    font-size: 15px;
+    line-height: 20.32px;
   }
 }
 

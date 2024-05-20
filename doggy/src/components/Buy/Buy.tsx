@@ -5,30 +5,31 @@ export const Buy = () => {
     {
       title: "Connect Your Wallet",
       text1:
-        "Connect your MetaMask or other wallet to this website using the widget at the top of the page.",
-      text2:
-        "From there you can easily buy $DOGYAI tokens using ETH, BNB, MATIC, USDT, or bank card.",
+        "Locate the presale widget at the top of this webpage and connect your preferred wallet. We offer various wallet options for your convenience.",
     },
     {
-      title: "Fund Your Purchase",
+      title: "Select the Network",
       text1:
-        "Ensure you have either ETH, BNB, MATIC, or USDT in your wallet to swap for $DOGYAI. ",
-      text2:
-        "Deposit crypto into your wallet if you don't. Alternatively, use the Card option.",
+        "After connecting your wallet, you can participate in the presale on the Ethereum chain. Payments are accepted in ETH or ETH USDT.",
     },
     {
-      title: "Swap Tokens For $DOGYAI",
+      title: " Purchase Tokens",
       text1:
-        "Go to the buy widget and select the amount of tokens you wish to swap for $DOGYAI. Authorize the transactions in your wallet and make you leave enough ETH, BNB, or MATIC for gas fees.",
+        "Enter the amount of ETH or USDT you wish to exchange for $DOGYAI tokens and confirm the transaction in your wallet.",
     },
     {
-      title: "Stake $DOGYAI to Earn $DOGYAI",
+      title: "Buy and Stake",
       text1:
-        "Once you've bought $WAI tokens, you can immediately put them to work. Click on 'Staking' in the menu and stake your tokens early to take advantage of the extremely high APY!",
+        "To take advantage of high staking rewards, you will have the option to stake your tokens immediately after purchase. Staked tokens can be unlocked seven days after the presale ends.",
+    },
+    {
+      title: "Claim Unstaked Tokens",
+      text1:
+        "If you opted not to stake your tokens at the time of purchase once the presale concludes, return to our website to claim your $DOGYAI tokens using the same wallet and network you used to purchase them.",
     },
   ];
   return (
-    <section className={s.buySection} id="buy">
+    <section className={`${s.buySection} ${s.container}`} id="buy">
       <h4 className={s.buySection__title}>How to Buy $DOGYAI</h4>
       <div className={s.buySection__content}>
         {data.map((item, id) => (
@@ -36,9 +37,7 @@ export const Buy = () => {
             <div className={s.content__num}>{id + 1}</div>
             <div className={s.content__textWrapper}>
               <p className={s.content__title}>{item.title}</p>
-              <p className={s.content__text}>
-                {item.text1} <br /> <br /> {item.text2}
-              </p>
+              <p className={s.content__text}>{item.text1}</p>
             </div>
           </div>
         ))}

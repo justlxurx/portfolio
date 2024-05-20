@@ -15,14 +15,14 @@ export const Footer = () => {
             <a href="">
               <img src={telega} alt="telega" className={s.telega} />
             </a>
-            <a href="">
+            <a href="http://twitter.com/doggyai" target="_blank">
               <img src={x} alt="x" className={s.xSocial} />
             </a>
           </div>
         </div>
       </div>
       <p className={s.text}>
-        Investing in 'doggyAI' is risky and may lead to loss of capital. Returns
+        Investing in 'DoggyAI' is risky and may lead to loss of capital. Returns
         are not guaranteed. Not financial advice. DYOR.
       </p>
     </footer>

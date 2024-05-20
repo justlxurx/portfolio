@@ -46,13 +46,7 @@
   width: 681px;
   border-radius: 20px;
   border: 3px solid;
-  border-image-source: linear-gradient(
-    141.14deg,
-    rgba(0, 0, 0, 0.46) 4.36%,
-    rgba(143, 143, 143, 0.46) 45.54%,
-    rgba(149, 149, 149, 0.46) 49.06%,
-    rgba(255, 255, 255, 0.46) 104.81%
-  );
+  border-color: rgba(255, 255, 255, 0.46);
 }
 
 .tokenomics__content {
@@ -65,13 +59,7 @@
   height: calc(373px - 56px);
   border-radius: 20px;
   border: 3px solid;
-  border-image-source: linear-gradient(
-    141.14deg,
-    rgba(0, 0, 0, 0.46) 4.36%,
-    rgba(143, 143, 143, 0.46) 45.54%,
-    rgba(149, 149, 149, 0.46) 49.06%,
-    rgba(255, 255, 255, 0.46) 104.81%
-  );
+  border-color: rgba(255, 255, 255, 0.46);
 }
 
 .masterplan__text,

@@ -3,17 +3,16 @@ import s from "./Info.module.scss";
 export const Info = () => {
   const masterplan = [
     [
-      "Sausage Army Launch",
-      "WienerAI Contract Audit",
-      "Presale LAUNCHED",
-      "Final Wiener-y Preparations",
-      "Worldwide Marketing Campaign",
+      "Concept Development",
+      "Token Creation",
+      "Contract Audit",
+      "Presale Launch",
+      "Website and Social Media",
+      "Initial Marketing Push",
     ],
-    ["Sausage Army Expansion", "KOL Blast", "Ethereum Network Takeover"],
-    [
-      "Token Listing: The LONG wait is over. WienerAI launches on Global Exchange Platforms. This is the public $WAI launch",
-      "DoggyAI Trading Bot Launch: Not just a bot; but an AI-powered crypto trading partner designed to give YOU the advantage you’ve been searching for.",
-    ],
+    ["Community Engagement", "Partnerships", "Exchange Listings"],
+    ["Enhanced Features", "Global Outreach:", "Continuous Improvement"],
+    ["Sustainable Growth", "AI Ecosystem", "Mainstream Adoption"],
   ];
   const tokenomics = [
     "30% - Presale",

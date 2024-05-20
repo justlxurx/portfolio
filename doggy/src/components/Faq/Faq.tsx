@@ -71,20 +71,21 @@ export const Faq = () => {
       <p className={s.faq__title}>FAQ</p>
       <div className={s.faq__contentWrapper}>
         {data.map((item, id) => (
-          <div key={id} className={s.faq__content}>
-            <div className={s.question}>
-              <p className={s.question__text}>{item.title}</p>
-              <button onClick={item.toggleFunc}>
+          <button onClick={item.toggleFunc}>
+            <div key={id} className={s.faq__content}>
+              <div className={s.question}>
+                <p className={s.question__text}>{item.title}</p>
+
                 {/* <Plus /> */}
                 <img
                   src={item.isOpen ? plus : plus}
                   alt="plus"
                   className={s.plus}
                 />
-              </button>
+              </div>
+              {item.isOpen ? <div className={s.answer}>{item.text}</div> : ""}
             </div>
-            {item.isOpen ? <div className={s.answer}>{item.text}</div> : ""}
-          </div>
+          </button>
         ))}
       </div>
     </section>
