@@ -241,10 +241,16 @@ export const Wallet = () => {
         </button>
         <button
           disabled={!isConnected || isLoading}
-          className={s.buyButton}
+          className={s.connectButton}
           onClick={onClickBuy}
         >
-          {isLoading ? <span className={s.loader} /> : `Buy with ${buyOption}`}
+          <p>
+            {isLoading ? (
+              <span className={s.loader} />
+            ) : (
+              `Buy with ${buyOption}`
+            )}
+          </p>
         </button>
       </div>
     </section>

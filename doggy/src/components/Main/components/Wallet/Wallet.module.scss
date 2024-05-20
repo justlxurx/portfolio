@@ -131,8 +131,7 @@
   }
 }
 
-.connectButton,
-.buyButton {
+.connectButton {
   background-color: rgba(255, 114, 14, 1);
   font-family: "Patsy Sans";
   color: white;
@@ -147,34 +146,39 @@
   z-index: 5;
   overflow: hidden;
   &:disabled {
-    background-color: rgba(160, 66, 0, 0.44);
+    background-color: rgba(160, 66, 0);
+
     cursor: not-allowed;
   }
+
   p {
     display: flex;
     justify-content: center;
     align-items: center;
     width: calc(100% - 2px);
     height: 35px;
-    background-color: rgba(255, 114, 14, 1);
+    background-color: inherit;
     z-index: 5;
     border-radius: 21.93px;
   }
+  ::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    top: 100%;
+    width: 200%;
+    height: 200%;
+    background-color: #010101;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    animation: anim-ramka-5 8s ease-in infinite;
+  }
 }
 
-.connectButton::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -20%;
-  top: 100%;
-  width: 200%;
-  height: 200%;
-  background-color: #010101;
-  background-repeat: no-repeat;
-  background-size: 50% 50%, 50% 50%;
-  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-  animation: anim-ramka-5 8s ease-in infinite;
+.connectButton::before,
+.buyButton::before {
 }
 
 .buttonWrapper {
@@ -478,7 +482,6 @@
       justify-content: center;
       align-items: center;
       height: 24px;
-      background-color: rgba(255, 114, 14, 1);
       z-index: 5;
       border-radius: 13.51px;
     }

@@ -31,7 +31,7 @@ export const Header = () => {
     setShowLang(!showLang);
   };
   const handleShow = () => {
-    setShow(true);
+    setShow(!show);
   };
   const handleShowAbout = () => {
     setShowAbout(!showAbout);
@@ -108,7 +108,7 @@ export const Header = () => {
           <button
             className={s.buttonLang}
             onClick={handleShowLang}
-            style={{ marginTop: `${showLang ? "13px" : "0"}` }}
+            style={{ marginTop: `${isSmallScreen && showLang ? "13px" : "0"}` }}
           >
             <div className={s.buttonLang__wrapper}>
               <div
