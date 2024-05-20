@@ -60,7 +60,7 @@ export const Faq = () => {
     },
     {
       title: "Do I Need a Crypto Wallet to Buy?",
-      text: "You bet your biscuit you do! To buy and claim your presale $DOGYAI, you’ll need a crypto wallet. We recommend using MetaMask, the go-to decentralized wallet for both crypto newbies and seasoned pros. It’s as easy as teaching an old dog new tricks! Once you’ve set up and added funds to your Best Wallet, simply connect to the widget at the top of the page and fetch yourself some presale $DOGYAI. Easy peasy, pup squeezy!",
+      text: "You bet your biscuit you do! To buy and claim your presale $DOGYAI, you’ll need a crypto wallet. We recommend using MetaMask, the go-to decentralized wallet for both crypto newbies and seasoned pros. It’s as easy as teaching an old dog new tricks! Once you’ve set up and added funds to your Best Wallet, simply connect to the widget at the top of the page and fetch yourself some presale $DOGYAI. Easy peasy, pup squeezy! DoggyAI – Where Meme Magic Meets AI Innovation. Get ready to wag your tail into the future!",
       isOpen: isOpen6,
       toggleFunc: toggleOpenHandler6,
     },
