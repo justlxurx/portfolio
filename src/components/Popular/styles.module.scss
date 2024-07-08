@@ -1,0 +1,365 @@
+.popular {
+  margin: 0px 0px 0px;
+  padding: 0 80px;
+  background-color: white;
+
+  &__heading {
+    display: grid;
+    grid-template-columns: 22% 30% 22%;
+    justify-content: space-between;
+    column-gap: 5%;
+    width: 100%;
+  }
+  h1 {
+    color: #32349a;
+    font-family: 'Goldman', sans-serif;
+    font-size: 60px;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 150px 0 30px 0;
+    align-self: start;
+    position: relative;
+    top: -18%;
+  }
+  hr {
+    transform: rotate(90deg);
+  }
+  &__countryCards {
+    padding: 48px 30px;
+    width: calc(100% - 60px);
+    background-color: green;
+    height: 529px;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 40% auto 15%;
+    position: relative;
+
+    a {
+      align-self: end;
+    }
+    button {
+      cursor: pointer;
+      width: 100%;
+      padding: 15px;
+      border-radius: 20px;
+      background: #ea4f0d;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      color: #fff;
+      font-family: 'Goldman', sans-serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      border: none;
+    }
+  }
+  &__countryCardsTitle {
+    display: grid;
+    grid-template-columns: 15% auto;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-family: Impact;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    img {
+      width: 100%;
+    }
+  }
+  &__countryCardsContent {
+    color: #fff;
+    text-align: end;
+    font-family: Impact;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    align-self: end;
+    line-height: normal;
+
+    p {
+      margin: 0;
+    }
+  }
+  &__contentLabel {
+    font-family: 'Goldman', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+@media (max-width: 1700px) {
+  .popular {
+    h1 {
+      font-size: 50px;
+      margin: 150px 0 30px 0;
+    }
+    &__countryCardsTitle {
+      font-size: 30px;
+    }
+    &__countryCardsContent {
+      font-size: 30px;
+    }
+    &__contentLabel {
+      font-size: 22px;
+    }
+    &__countryCards {
+      padding: 38px 23px;
+      width: calc(100% - 46px);
+      height: 450px;
+      border-radius: 10px;
+
+      button {
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .popular {
+    h1 {
+      font-size: 50px;
+      margin: 150px 0 30px 0;
+    }
+    &__countryCardsTitle {
+      font-size: 25px;
+    }
+    &__countryCardsContent {
+      font-size: 25px;
+    }
+    &__contentLabel {
+      font-size: 18px;
+    }
+    &__countryCards {
+      padding: 30px 18px;
+      width: calc(100% - 36px);
+      height: 400px;
+      border-radius: 10px;
+
+      button {
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .popular {
+    padding: 0 50px;
+    h1 {
+      font-size: 40px;
+      margin: 150px 0 30px 0;
+    }
+    &__countryCardsTitle {
+      font-size: 20px;
+    }
+    &__contentLabel {
+      font-size: 15px;
+    }
+    &__countryCardsContent {
+      font-size: 20px;
+    }
+    &__countryCards {
+      padding: 30px 15px;
+      width: calc(100% - 30px);
+      height: 300px;
+      border-radius: 10px;
+
+      button {
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .popular {
+    padding: 40px;
+    h1 {
+      font-size: 33px;
+      margin: 150px 0 30px 0;
+    }
+    &__countryCardsTitle {
+      font-size: 16px;
+    }
+    &__contentLabel {
+      font-size: 13px;
+    }
+    &__countryCardsContent {
+      font-size: 13px;
+    }
+    &__countryCards {
+      padding: 20px 11px;
+      width: calc(100% - 22px);
+      height: 250px;
+      border-radius: 6px;
+
+      button {
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .popular {
+    h1 {
+      font-size: 28px;
+      margin: 150px 0 30px 0;
+    }
+    &__countryCardsTitle {
+      font-size: 16px;
+    }
+    &__contentLabel {
+      font-size: 13px;
+    }
+    &__countryCardsContent {
+      font-size: 13px;
+    }
+    &__countryCards {
+      padding: 20px 11px;
+      width: calc(100% - 22px);
+      height: 200px;
+      border-radius: 6px;
+
+      button {
+        padding: 7px;
+        border-radius: 15px;
+        font-size: 8px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .popular {
+    margin: 0px 0px 0px;
+    padding: 0 30px;
+    background-color: white;
+
+    &__heading {
+      grid-template-columns: none;
+    }
+    h1 {
+      font-size: 30px;
+      margin: 70px 0 30px 0px;
+      top: -18%;
+    }
+    hr {
+      display: none;
+    }
+    &__countryCardsTitle {
+      font-size: 29px;
+    }
+    &__contentLabel {
+      font-size: 17px;
+    }
+    &__countryCardsContent {
+      font-size: 21px;
+    }
+    &__countryCards {
+      padding: 18px 20px;
+      width: calc(100% - 40px);
+      height: 390px;
+      border-radius: 10px;
+      button {
+        padding: 7px;
+        border-radius: 20px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+@media (max-width: 690px) {
+  .popular {
+    &__countryCards {
+      height: 350px;
+    }
+  }
+}
+@media (max-width: 570px) {
+  .popular {
+    h1 {
+      font-size: 20px;
+      margin: 70px 0 30px 0px;
+    }
+    &__countryCardsTitle {
+      font-size: 24px;
+    }
+    &__contentLabel {
+      font-size: 14px;
+    }
+    &__countryCardsCcontent {
+      font-size: 17px;
+    }
+    &__countryCards {
+      padding: 18px 20px;
+      width: calc(100% - 40px);
+      height: 330px;
+      border-radius: 10px;
+
+      button {
+        padding: 7px;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+    }
+    &__countries {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .popular {
+    padding: 0 20px;
+
+    h1 {
+      font-size: 20px;
+      margin: 70px 0 30px 0px;
+    }
+    &__countryCardsTitle {
+      font-size: 24px;
+    }
+    &__contentLabel {
+      font-size: 14px;
+    }
+    &__countryCardsContent {
+      font-size: 17px;
+    }
+    &__countryCards {
+      padding: 18px 20px;
+      width: calc(100% - 40px);
+      height: 330px;
+      border-radius: 10px;
+
+      button {
+        padding: 7px;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .popular {
+    padding: 0 20px;
+    &__countryCards {
+      height: 270px;
+    }
+  }
+}

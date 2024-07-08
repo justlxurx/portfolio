@@ -1,0 +1,70 @@
+.main {
+  display: grid;
+  grid-template-rows: 12% auto;
+  height: 100%;
+}
+
+.main__bottom {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.main__heading {
+  color: rgba(50, 52, 154, 1);
+  font-family: 'Gothic A1';
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.users {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 5px;
+  padding: 20px 0;
+}
+
+.users__title {
+  font-family: 'Gothic A1';
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 36.25px;
+  text-align: left;
+  color: rgba(50, 52, 154, 1);
+  padding-left: 20px;
+}
+
+.usersTable {
+  border-collapse: collapse;
+  width: 100%;
+  //   border: 1px solid #ddd; /* Задайте стиль границы */
+  background-color: white;
+  margin-top: 25px;
+  th {
+    background: rgba(162, 165, 188, 1);
+    color: white;
+    padding: 15px 0;
+    font-family: 'Hahmlet';
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 26.2px;
+    text-align: center;
+  }
+  td {
+    padding: 15px 0;
+    color: rgba(174, 167, 167, 1);
+    font-family: 'Gothic A1';
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 21.25px;
+    text-align: center;
+  }
+}
+
+.main__top {
+  background: rgba(47, 50, 181, 0.7);
+}

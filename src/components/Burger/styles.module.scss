@@ -1,0 +1,115 @@
+.burger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    padding: 0 17px 50px;
+    display: block;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .burger__navigationList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger__navigationListItems {
+    background: #32349a;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    &:hover {
+      opacity: 0.95;
+    }
+    &:hover > ul {
+      display: block;
+    }
+  }
+  .links {
+    color: #fff;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 12px 40px;
+    display: flex;
+    gap: 3%;
+    img {
+      width: 3%;
+    }
+  }
+  .burgerSubmenu {
+    display: none;
+    li {
+      background: #d9d9d9;
+      padding: 10px 40px;
+      color: rgba(0, 0, 0, 0.7);
+      font-family: 'Gothic A1', sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      &:hover {
+        background: rgba(50, 52, 154, 0.28);
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .burger__infoWrapper {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 10%;
+    padding: 0px 0 30px;
+  }
+  .burger__info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 3%;
+    img {
+      width: auto;
+      height: 65%;
+    }
+    p {
+      color: #32349a;
+      font-family: 'Gothic A1', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.26px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .burger {
+    padding: 0 17px 40px;
+  }
+
+  .links {
+    font-size: 13px;
+  }
+  .burgerSubmenu {
+    li {
+      padding: 10px 40px;
+      font-size: 13px;
+    }
+  }
+  .burger__infoWrapper {
+    padding: 10px 0;
+    gap: 4%;
+  }
+  .burger__info {
+    img {
+      width: auto;
+      height: 20px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}

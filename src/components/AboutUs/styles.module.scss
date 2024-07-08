@@ -1,0 +1,375 @@
+.visa {
+  background-color: white;
+  hr {
+    transform: rotate(90deg);
+  }
+  h1 {
+    color: #32349a;
+    font-family: "Goldman", sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 150px 0;
+  }
+  &__heading {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+  }
+  &__service {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 10% 65% 25%;
+    background-image: url("./../../assets/images/Rectangle 119.png");
+    background-size: 100%;
+    width: 100%;
+    height: 700px;
+    margin: 50px 0;
+
+    &::before {
+      width: 100%;
+      height: 839px;
+      background-color: rgba(50, 52, 154, 0.5);
+      content: "";
+      position: absolute;
+      z-index: 0;
+    }
+  }
+  &__serviceLogo {
+    background: white;
+    width: 80%;
+    height: auto;
+    z-index: 1;
+    border-radius: 50%;
+    justify-self: start;
+  }
+  &__serviceText {
+    border-left: 10px solid #32349a;
+    z-index: 1;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    h2 {
+      font-family: "Goldman", sans-serif;
+      font-size: 47px;
+      color: white;
+    }
+    p {
+      font-family: "Goldman", sans-serif;
+      font-size: 33px;
+      color: white;
+    }
+    b {
+      font-family: "Goldman", sans-serif;
+      font-size: 33px;
+      color: white;
+    }
+    a {
+      color: #ea4f0d;
+      font-family: "Gothic A1", sans-serif;
+      font-size: 34px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .visa {
+    h1 {
+      margin: 80px 0;
+      font-size: 50px;
+    }
+    &__service {
+      height: 600px;
+      &::before {
+        height: 700px;
+      }
+    }
+    &__serviceText {
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 30px;
+      }
+      b {
+        font-size: 30px;
+      }
+      a {
+        font-size: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  .visa {
+    h1 {
+      margin: 80px 0;
+      font-size: 45px;
+    }
+    &__service {
+      height: 550px;
+      &::before {
+        height: 650px;
+      }
+    }
+    &__serviceText {
+      h2 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 26px;
+      }
+      b {
+        font-size: 26px;
+      }
+      a {
+        font-size: 26px;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .visa {
+    h1 {
+      font-size: 40px;
+      margin: 70px 0;
+    }
+    &__service {
+      height: 400px;
+      margin: 50px 0;
+
+      &::before {
+        height: 500px;
+      }
+    }
+    &__serviceText {
+      border-left: 10px solid #32349a;
+
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 20px;
+      }
+      b {
+        font-size: 20px;
+      }
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 915px) {
+  .visa {
+    margin: 0px 0;
+    h1 {
+      font-size: 31px;
+      margin: 80px 0;
+    }
+    &__service {
+      height: 350px;
+      margin: 50px 0;
+
+      &::before {
+        height: 450px;
+      }
+    }
+    &__serviceText {
+      padding-left: 40px;
+
+      h2 {
+        font-size: 31px;
+      }
+      p {
+        font-size: 18px;
+      }
+      b {
+        font-size: 18px;
+      }
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .visa {
+    margin: 20px 0;
+    h1 {
+      margin: 80px 0;
+    }
+    &__service {
+      height: 300px;
+      margin: 50px 0;
+
+      &::before {
+        height: 400px;
+      }
+    }
+    &__serviceText {
+      h2 {
+        font-size: 29px;
+      }
+      p {
+        font-size: 16px;
+      }
+      b {
+        font-size: 16px;
+      }
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .visa {
+    margin: 20px 0;
+    &__heading {
+      display: grid;
+      grid-template-columns: none;
+      justify-content: start;
+      margin-left: 30px;
+    }
+    h1 {
+      font-size: 30px;
+      margin: 40px 0;
+    }
+    &__service {
+      height: 300px;
+      margin: 50px 0;
+
+      &::before {
+        height: 400px;
+      }
+    }
+    &__serviceText {
+      padding-left: 40px;
+      gap: 15px;
+
+      h2 {
+        font-size: 29px;
+      }
+      p {
+        font-size: 16px;
+      }
+      b {
+        font-size: 16px;
+      }
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+  hr {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .visa {
+    margin: 20px 0;
+    h1 {
+      font-size: 30px;
+      margin: 40px 0;
+    }
+    &__service {
+      height: 270px;
+      margin: 50px 0;
+
+      &::before {
+        height: 320px;
+      }
+    }
+    &__serviceText {
+      padding-left: 40px;
+
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 13px;
+      }
+      b {
+        font-size: 13px;
+      }
+      a {
+        font-size: 13px;
+      }
+    }
+  }
+}
+@media (max-width: 570px) {
+  .visa {
+    margin: 20px 0;
+    h1 {
+      font-size: 20px;
+      margin: 40px 0 10px;
+    }
+    &__service {
+      height: 270px;
+      margin: 50px 0;
+
+      &::before {
+        height: 320px;
+      }
+    }
+    &__serviceText {
+      border-left: 5px solid #32349a;
+      padding-left: 30px;
+
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 11px;
+      }
+      b {
+        font-size: 11px;
+      }
+      a {
+        font-size: 11px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .visa {
+    margin: 20px 0;
+    &__heading {
+      margin-left: 20px;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 40px 0 0px;
+    }
+    &__service {
+      height: 250px;
+      margin: 50px 0;
+
+      &::before {
+        height: 270px;
+      }
+    }
+    &__serviceText {
+      padding-left: 10px;
+
+      h2 {
+        font-size: 19px;
+      }
+      p {
+        font-size: 9px;
+      }
+      b {
+        font-size: 9.5px;
+      }
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,305 @@
+.contacts {
+  padding: 50px 120px 180px;
+  background-color: white;
+  &__mobile {
+    display: none;
+  }
+  &__heading {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+  }
+  hr {
+    transform: rotate(90deg);
+  }
+  h1 {
+    color: #32349a;
+    font-family: "Goldman", sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 100px 0;
+  }
+  &__data {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .phoneWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+  }
+  p {
+    color: #000;
+    font-family: "Goldman", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+  }
+  &__firstColumn {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 22%;
+  }
+  &__secondColumn {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 10% auto;
+    img {
+      width: 40px;
+      aspect-ratio: 1;
+    }
+  }
+  &__thirdColumn {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22%;
+  }
+  .address,
+  .time,
+  .email {
+    display: grid;
+    grid-template-columns: 10% auto;
+    img {
+      width: 40px;
+    }
+  }
+  .socials {
+    display: flex;
+    gap: 5%;
+    img {
+      width: 60px;
+      aspect-ratio: 1;
+    }
+  }
+}
+.companyMap {
+  height: 590px;
+  margin-top: 121px;
+}
+
+@media (max-width: 1840px) {
+  .contacts {
+    padding: 50px 120px 180px;
+    h1 {
+      font-size: 50px;
+      margin: 70px 0;
+    }
+    p {
+      font-size: 20px;
+    }
+    &__secondColumn {
+      img {
+        width: 30px;
+      }
+    }
+    .address,
+    .time,
+    .email {
+      img {
+        width: 30px;
+      }
+    }
+    .socials {
+      img {
+        width: 40px;
+      }
+    }
+  }
+  .companyMap {
+    height: 500px;
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 1580px) {
+  .contacts {
+    padding: 50px 65px 140px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .contacts {
+    h1 {
+      font-size: 43px;
+    }
+    p {
+      font-size: 17px;
+    }
+    &__secondColumn {
+      img {
+        width: 20px;
+      }
+    }
+    .address,
+    .time,
+    .email {
+      img {
+        width: 20px;
+      }
+    }
+    .socials {
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .companyMap {
+    height: 400px;
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .contacts {
+    padding: 50px 45px 140px;
+    h1 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 15px;
+    }
+    &__secondColumn {
+      img {
+        width: 17px;
+      }
+    }
+    .address,
+    .time,
+    .email {
+      img {
+        width: 17px;
+      }
+    }
+    .socials {
+      img {
+        width: 25px;
+      }
+    }
+  }
+  .companyMap {
+    height: 350px;
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .contacts {
+    padding: 50px 40px 100px;
+    h1 {
+      font-size: 31px;
+    }
+    hr {
+      visibility: hidden;
+    }
+    p {
+      font-size: 14px;
+    }
+    &__secondColumn {
+      img {
+        width: 20px;
+      }
+    }
+    .address,
+    .time,
+    .email {
+      img {
+        width: 20px;
+      }
+    }
+    .socials {
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .companyMap {
+    height: 350px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .contacts {
+    padding: 0 10px;
+    margin-top: 50px;
+    &__mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+    }
+    &__mobileText {
+      color: #32349a !important;
+      font-family: Gothic A1;
+      font-size: 18px !important;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 138.125%; /* 20.719px */
+      letter-spacing: 5.85px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__heading {
+      display: none;
+    }
+    &__data {
+      display: none;
+    }
+
+    .address {
+      display: flex;
+      gap: 2%;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      p {
+        color: #ea4f0d;
+        font-family: Goldman !important;
+        font-size: 15px !important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        display: inline;
+      }
+      img {
+        width: 3%;
+      }
+    }
+    .socials {
+      display: flex;
+      gap: 10%;
+      img {
+        width: 40px;
+        aspect-ratio: 1;
+      }
+    }
+  }
+  .companyMap {
+    height: 590px;
+    margin-top: 21px;
+  }
+}
+
+@media (max-width: 550px) {
+  .contacts {
+    &__mobileText {
+      font-size: 13px !important;
+    }
+    .address {
+      p {
+        font-size: 11px !important;
+      }
+    }
+    &__mobile {
+      gap: 40px;
+    }
+  }
+  .companyMap {
+    height: 390px;
+    margin-top: 21px;
+  }
+}
