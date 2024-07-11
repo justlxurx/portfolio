@@ -11,6 +11,12 @@ import { useTranslation } from 'react-i18next';
 
 const ContactUs = () => {
   const { t } = useTranslation();
+  const phones = [
+    '+7 (727) 339 83 23',
+    '+7 (707) 908 08 29',
+    '+7 (708) 808 93 03',
+    '+7 (707) 055 67 27',
+    '+7 (707) 228 90 80']
   return (
     <section className={styles.contacts}>
       <div className={styles.contacts__heading}>
@@ -35,18 +41,16 @@ const ContactUs = () => {
         </div>
         <div className={styles.contacts__secondColumn}>
           <img src={icon_phone} alt='phone' />
-          <div className={styles.phoneWrapper}>
-            <p> +7 (727) 339 83 23 </p>
-            <p> +7 (707) 908 08 29 </p>
-            <p> +7 (707) 055 67 27</p>
-            <p>+7 (708) 808 93 03</p>
-            <p> +7 (707) 228 90 80</p>
-          </div>
+          <ul className={styles.phoneWrapper}>
+            {phones.map( (item, index )=> {
+                 return (<li key={index}> 
+                <a  className={styles.link} href={`tel:${item}`}>{item}</a></li>)
+              })}</ul>
         </div>
         <div className={styles.contacts__thirdColumn}>
           <div className={styles.email}>
             <img src={icon_mail} alt='mail' />
-            <p>blsalmatyvisa@gmail.com</p>
+            <a className={styles.link} href={`mailto:blsalmatyvisa@gmail.com`}>blsalmatyvisa@gmail.com</a>
           </div>
           <div className={styles.socials}>
             <a href='' target='_blank'>

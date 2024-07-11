@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { useGetShengenImagesQuery } from '../../service';
 import { setShengen } from '../../slice';
 import { useTranslation } from 'react-i18next';
-
 const Country = () => {
   const { data: countries, isLoading } = useGetShengenImagesQuery();
   const dispatch = useDispatch();
@@ -19,10 +18,10 @@ const Country = () => {
   return (
     <section className={styles.country}>
       <div className={styles.routes}>
-        <a href='/'>Главная /</a>
-        <span>Шенгенская зона</span>
+        <a href='/'>{t('main')} /</a>
+        <span>{t('schengen')}</span>
       </div>
-      <h1>ШЕНГЕНСКАЯ ЗОНА</h1>
+      <h1>{t('schengen')}</h1>
 
       <div className={styles.country__visasWrapper}>
         {isLoading ? (

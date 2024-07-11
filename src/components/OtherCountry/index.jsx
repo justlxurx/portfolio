@@ -20,17 +20,18 @@ const Country = () => {
   return (
     <section className={styles.country}>
       <div className={styles.routes}>
-        <a href='/'>Главная /</a>
-        <span>Другие страны</span>
+        <a href='/'>{t('main')} /</a>
+        <span>{t('other')}</span>
+       
       </div>
-      <h1>Другие страны</h1>
+      <h1>{t('other')}</h1>
 
       <div className={styles.country__visasWrapper}>
         {isLoading ? (
           <div>Loading...</div>
         ) : countries ? (
-          countries.map((countries) => (
-            <Link to={`${countries.countryName}`} key={countries.id}>
+          countries.map((countries, index) => (
+            <Link to={`${countries.countryNameEn}`} key={index}>
               <div className={styles.country__visa}>
                 <img src={`data:image/png;base64,${countries.flag}`} alt='flag' />
                 <p>{i18n.language === 'en' ? countries.countryNameEn : countries.countryName}</p>

@@ -73,9 +73,9 @@ const ServiceTypes = ({ title, titleEn, text, img, id, textEn }) => {
 
       <div className={styles.service__main}>
         <h3>{i18n.language === 'en' ? titleEn : title}</h3>
-        <a href='/'>
+        <Link to='/'>
           <button className={styles.requestButton}>Оставить заявку</button>
-        </a>
+        </Link>
         <img src={img} alt='service' />
         <div className={styles.service__content}>
           <h4>{i18n.language === 'en' ? titleEn : title}</h4>

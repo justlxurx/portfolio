@@ -15,3 +15,5 @@ export { testApi, useShengenImgMutation } from "./test";
 export { otherApi, useGetOtherImagesQuery } from "./other";
 
 export { adminApi, useGetClientQuery } from "./admin";
+
+export {commentApi, useCreateCommentMutation,useGetCommentQuery} from './comments'

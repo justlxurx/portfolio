@@ -8,6 +8,7 @@ import whatsapp from './../../assets/images/whatsapp.png';
 import telega from './../../assets/images/telega.png';
 import logo from './../../assets/images/logo.png';
 import Burger from '../Burger';
+import uncover from '../../assets/images/uncover.svg'
 import { useTranslation } from 'react-i18next';
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -20,6 +21,11 @@ const Header = () => {
   function toggleClass(state) {
     setIsActive(state);
   }
+
+  const phones = ['+7 (707) 908 08 29',
+    '+7 (708) 808 93 03',
+    '+7 (707) 055 67 27',
+    '+7 (707) 228 90 80']
 
   return (
     <section className={styles.navbar}>
@@ -41,10 +47,18 @@ const Header = () => {
 
         <div className={styles.companyInfo__contact}>
           <div className={styles.phones}>
-            <img src={phone} alt='phone' />
-            <p>
-              +7 (727) 339 83 23 <br /> +7 (727) 339 83 23
-            </p>
+            <img src={phone} alt='phone' className={styles.phones__img} />
+            <div className={styles.phoneWrap}>
+             <a href={`tel:+7 (727) 339 83 23`}  className={styles.phoneWrap__link}>+7 (727) 339 83 23 </a>  <img src={uncover} alt="bottom-icon"  width={10} />
+             <ul className={styles.phoneList}>
+              {phones.map( (item, index )=> {
+                 return (<li key={index}> 
+                <a className={styles.phoneList__link} href={`tel:${item}`}>{item}</a></li>)
+              })}
+             
+            </ul></div>
+           
+            
           </div>
 
           <nav className={styles.socials}>
@@ -81,18 +95,28 @@ const Header = () => {
             </div>
             <p className={styles.mobileMenu__heading}>{t('centerVisa')}</p>
           </div>
-          <div className={styles.whatsappWrapper}>
+          {/* <div className={styles.whatsappWrapper}>
             <a href='https://api.whatsapp.com/send?phone=77072289080' target='_blank' rel='noreferrer'>
               <img src={whatsapp} alt='whatsapp' />
             </a>
             <p>+7 (707) 901 2423</p>
-          </div>
+          </div> */}
+         
+        <div className={styles.buttons}>
+        <div className={styles.langMobile}>
+          <button className={styles.langMobile__ru} onClick={() => changeLanguage('ru')}>
+            RU
+          </button>
+          <button className={styles.langMobile__en} onClick={() => changeLanguage('en')}>
+            EN
+          </button>
+        </div>
           <div
             className={`${styles.mobileMenu__burger} ${isActive ? styles.active : ''}`}
             onClick={() => toggleClass(!isActive)}
           >
             <span></span>
-          </div>
+          </div></div>
         </div>
       </div>
 

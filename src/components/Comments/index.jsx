@@ -5,21 +5,23 @@ import message from './../../assets/images/message.png';
 import star from './../../assets/images/rating.svg';
 import show from './../../assets/images/bottom.svg';
 //import { comments } from "./comments.data";
-import { useDispatch } from 'react-redux';
 import { setReview } from '../../slice';
-import { useGetAllReviewQuery } from '../../service';
+//import { useGetAllReviewQuery } from '../../service';
+import { useGetCommentQuery } from '../../service';
 import { showOrHide } from '../../helpers';
+import { Form } from './Form';
+import { useSelector } from 'react-redux';
+import {FaStar} from 'react-icons/fa'
 
 const Comments = () => {
-  const dispatch = useDispatch();
-  const { data: review, isLoading } = useGetAllReviewQuery();
+  // const selector = useSelector(state=>state.comments.comment)
+ // const {comment} = useSelector(state=>state.comments)
+  const { data: comment, isLoading } = useGetCommentQuery();
 
   const [showAllComments, setShowAllComments] = useState(false);
   const [buttonText, setButtonText] = useState('showMore');
 
-  // const visibleComments = showAllComments ? review : review.slice(0, 3);
-  //const visibleComments = showAllComments && review ? review.slice(0, 3) : [];
-  const visibleComments = showOrHide(review, showAllComments);
+  const visibleComments = showOrHide(comment, showAllComments);
 
   const toggleComments = () => {
     setShowAllComments(!showAllComments);
@@ -28,13 +30,7 @@ const Comments = () => {
 
   const { t } = useTranslation();
 
-  console.log(review);
-
-  useEffect(() => {
-    if (review) {
-      dispatch(setReview(review));
-    }
-  }, [dispatch, review]);
+  console.log(comment);
 
   return (
     <section className={styles.comments}>
@@ -51,7 +47,13 @@ const Comments = () => {
             visibleComments.map((comments, index) => (
               <div className={styles.comments__wrapper} key={index}>
                 <div className={styles.comments__stars}>
-                  <img src={star} alt='stars' />
+                  {[...Array(5)].map((star, index) => {
+                    const currentRating = index+1
+                    return (<FaStar size={30}  color={currentRating <= (comments.rating) ? "#ffc107":"#e8e5e9"} 
+                    />)}
+                  )}
+                 
+                  {/* <img src={star} alt='stars' /> */}
                 </div>
 
                 <p className={styles.comments__text}>{comments.text}</p>
@@ -65,12 +67,14 @@ const Comments = () => {
         </div>
       )}
 
-      {review && review.length > 3 && (
+      {comment && comment.length > 3 && (
         <button onClick={toggleComments} className={styles.showMore}>
           <p>{t(buttonText)}</p>
           <img src={show} alt='show-icon' className={showAllComments ? styles.turnOver : ''} />
         </button>
       )}
+
+      <Form/>
     </section>
   );
 };

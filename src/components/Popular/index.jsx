@@ -27,58 +27,79 @@ const Popular = () => {
   const countries = [
     {
       title: "Германия",
-      path: "/germany",
-      price: "20 000KZ",
+      titleEn:'Germany',
+      path: "/shengen/Germany",
+      price: "20 000 KZT",
+      deadline:"от 10 дней",
+      deadlineEn:'from 10 days',
       flag: germany_flag,
       img: germany,
     },
     {
       title: "Франция",
-      path: "/",
-      price: "25 000KZ",
+      titleEn:'French',
+      path: "/shengen/France",
+      price: "20 000 KZT",
+      deadline:"от 3 дней",
+      deadlineEn:'from 3 days',
       flag: france_flag,
       img: france,
       marginChange: "35%",
     },
     {
       title: "Испания",
-      path: "/",
-      price: "25 000KZ",
+      titleEn:'Spain',
+      path: "/shengen/Spain",
+      price: "20 000 KZT",
+      deadline:"от 15 дней",
+      deadlineEn:'from 15 days',
       flag: spain_flag,
       img: spain,
     },
     {
       title: "Египет",
-      path: "/",
-      price: "25 000KZ",
+      titleEn:'Egypt',
+      path: "/others/Egypt",
+      price: "15 000 KZT",
+      deadline:"от 7 дней",
+      deadlineEn:'from 7 days',
       flag: egypt_flag,
       img: egypt,
       marginChange: "35%",
     },
     {
+      titleEn:'South Korea',
       title: "Южная Корея",
-      path: "",
-      price: "25 000KZ",
+      path: "/others/South%20Korea",
+      price: "20 000 KZT",
+      deadline:'от 1 дня',
+      deadlineEn:'from 1 day',
       flag: korea_flag,
       img: korea,
     },
     {
+      titleEn:'USA',
       title: "США",
-      path: "",
-      price: "25 000KZ",
+      path: "/others/USA",
+      price: "50 000 KZT",
+      deadline:'от 3 дней',
+      deadlineEn:'from 3 days',
       flag: usa_flag,
       img: usa,
       marginChange: "35%",
     },
     {
+      titleEn:'Austria',
       title: "Австрия",
-      path: "",
-      price: "25 000KZ",
+      path: "/shengen/Austria",
+      price: "20 000 KZT",
+      deadline:"от 15 дней",
+      deadlineEn:'from 15 days',
       flag: austria_flag,
       img: austria,
     },
   ];
-  const { t } = useTranslation();
+  const { i18n,t } = useTranslation();
   return (
     <section className={styles.popular}>
       <div className={styles.popular__heading}>
@@ -103,8 +124,8 @@ const Popular = () => {
           }}
         >
           {countries.map(
-            ({ title, price, path, flag, img, marginChange }, index) => (
-              <SwiperSlide virtualIndex={index}>
+            ({ title, titleEn, price, path, flag, img, marginChange, deadline, deadlineEn }, index) => (
+              <SwiperSlide virtualIndex={index} key={index}>
                 <div
                   className={styles.popular__countryCards}
                   style={{
@@ -115,7 +136,7 @@ const Popular = () => {
                 >
                   <div className={styles.popular__countryCardsTitle}>
                     <img src={flag} alt="country" />
-                    <p>{title}</p>
+                    <p>{i18n.language === 'en' ? titleEn : title}</p>
                   </div>
                   <div className={styles.popular__countryCardsContent}>
                     <p className={styles.popular__contentLabel}>{t("price")}</p>
@@ -123,7 +144,7 @@ const Popular = () => {
                     <p className={styles.popular__contentLabel}>
                       {t("deadline")}
                     </p>
-                    <p>{t("deadlineDays")}</p>
+                    <p>{i18n.language==='en' ? deadlineEn: deadline}</p>
                   </div>
                   <a href={path}>
                     <button>{t("details")}</button>

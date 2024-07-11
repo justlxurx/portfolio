@@ -7,6 +7,7 @@ import {
   reviewApi,
   countryApi,
   adminApi,
+  commentApi
 } from "../service/index";
 import {
   shengenReducer,
@@ -16,12 +17,14 @@ import {
   reviewReducer,
   countryReducer,
   adminReducer,
+  commentReducer
 } from "../slice/index";
 import { createLogger } from "redux-logger";
 
 const logger = createLogger({ colors: "pink" });
 export const store = configureStore({
   reducer: {
+    comment:commentReducer,
     admin: adminReducer,
     other: otherReducer,
     shengen: shengenReducer,
@@ -29,6 +32,7 @@ export const store = configureStore({
     form: formReducer,
     reviews: reviewReducer,
     country: countryReducer,
+    [commentApi.reducerPath]:commentApi.reducer,
     [adminApi.reducerPath]: adminApi.reducer,
     [otherApi.reducerPath]: otherApi.reducer,
     [shengenApi.reducerPath]: shengenApi.reducer,
@@ -39,6 +43,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
+      commentApi.middleware,
       adminApi.middleware,
       otherApi.middleware,
       shengenApi.middleware,

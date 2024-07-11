@@ -1,5 +1,5 @@
 import styles from './Navbar.module.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './../../assets/images/logo.png';
 import uncover from './../../assets/images/uncover.svg';
 import { nanoid } from 'nanoid';
@@ -13,7 +13,7 @@ export const Navbar = () => {
     <ul className={styles.submenu}>
       {items.map((item) => (
         <li key={nanoid()}>
-          <a href={item.path}>{item.title}</a>
+          <Link to={item.path}>{item.title}</Link>
         </li>
       ))}
     </ul>
@@ -71,15 +71,15 @@ export const Navbar = () => {
   return (
     <header className={styles.menu}>
       <div className={styles.logo}>
-        <a href='/'>
+        <Link to='/'>
           <img src={logo} alt='logo' />
-        </a>
+        </Link>
       </div>
       <div></div>
       <div className={styles.menu__navigation}>
         <ul className={styles.menu__navigationList}>
-          {headerLinks.map(({ path, title, image, subMenu }) => (
-            <li key={nanoid()} className={styles.menu__navigationListItems}>
+          {headerLinks.map(({ path, title, image, subMenu }, index) => (
+            <li key={index} className={styles.menu__navigationListItems} >
               <Link className={styles.links} to={path}>
                 {title}
                 {image && <img src={image} alt='g' className={styles.uncover} />}

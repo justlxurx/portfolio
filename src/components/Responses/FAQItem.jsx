@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import styles from "./FAQItem.module.scss";
-import mark from "../../assets/images/mark.png";
-import mark2 from "../../assets/images/check-mark.png";
+// import mark from "../../assets/images/mark.png";
+// import mark2 from "../../assets/images/check-mark.png";
+import minus from '../../assets/images/minus.png'
+import plus from '../../assets/images/plus.png'
+
 
 const FAQItem = ({ question, answer, fully = false }) => {
   const [showFully, setShowFully] = useState(fully);
@@ -12,14 +15,14 @@ const FAQItem = ({ question, answer, fully = false }) => {
   };
 
   return (
-    <div className={classNames(styles.card, {})}>
-      <div className={styles.card__header}>
+    <div className={classNames(styles.card, {})}  onClick={onClickShowFullyButtonHandler}>
+      <div className={styles.card__header} 
+        >
         <h3 className={styles.card__title}>{question}</h3>
         <button
           className={styles.card__fullyButton}
-          onClick={onClickShowFullyButtonHandler}
         >
-          <img src={showFully ? mark2 : mark} alt="marker" />
+          <img src={showFully ? minus : plus} alt="marker" />
         </button>
       </div>
       <div

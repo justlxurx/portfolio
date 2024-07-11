@@ -18,7 +18,7 @@ export const shengenApi = createApi({
 
     getShengenInfoFromName: builder.query({
       query: (country) => ({
-        url: `shengen-zone/get-one-shengens-zone/${country}`,
+        url: `shengen-zone/get-one-shengen-zone/${country}`,
         method: "GET",
       }),
     }),

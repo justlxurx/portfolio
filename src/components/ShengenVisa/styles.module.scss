@@ -47,6 +47,7 @@
     align-items: end;
     padding: 15% 8%;
     background-image: url('./../../assets/images/city.png');
+    min-height: 250px;
     h1 {
       font-size: 60px;
       color: #fff;
@@ -238,7 +239,7 @@
     &__bottomText {
       margin-top: 130px;
       h1 {
-        font-size: 50px;
+        font-size: 40px;
         margin-bottom: 50px;
       }
       p {
@@ -284,7 +285,7 @@
     &__bottomText {
       margin-top: 80px;
       h1 {
-        font-size: 50px;
+        font-size: 30px;
         margin-bottom: 50px;
       }
       p {
@@ -324,7 +325,7 @@
     &__bottomText {
       margin-top: 80px;
       h1 {
-        font-size: 40px;
+        font-size: 25px;
         margin-bottom: 50px;
       }
       p {

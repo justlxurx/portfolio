@@ -48,10 +48,39 @@
       font-family: 'Gothic A1', sans-serif;
       font-size: 21px;
       letter-spacing: -0.42px;
-      img {
+      &__img {
         height: 4%;
         margin-right: 10px;
       }
+      
+    }
+    .phoneWrap{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+
+      &:hover > ul{
+        display: flex;
+      }
+    }
+    .phoneWrap__link{
+      color: white;
+    }
+    .phoneList__link:hover{
+      color: #32349a;
+    }
+    .phoneList{
+      display: none;
+      position: absolute;
+      top:22px;
+      left: -10px;
+      background-color: white;
+      padding: 10px;
+      color: black;
+      flex-direction: column;
+      gap: 5px;
+      border-radius: 10px
     }
     .socials {
       display: flex;
@@ -132,7 +161,7 @@
     &__contact {
       .phones {
         font-size: 17px;
-        img {
+        &__img {
           height: 4%;
         }
       }
@@ -161,101 +190,8 @@
   }
 }
 
-@media (max-width: 1228px) {
-  .companyInfo {
-    &__address {
-      font-size: 14px;
-      img {
-        height: 20px;
-        margin-right: 7px;
-      }
-    }
 
-    &__timeWorking {
-      font-size: 14px;
-      img {
-        height: 20px;
-        margin-right: 7px;
-      }
-    }
-
-    &__contact {
-      .phones {
-        font-size: 14px;
-        img {
-          height: 20px;
-        }
-      }
-      .socials {
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-
-    .lang {
-      &__ru {
-        height: 35px;
-        border-radius: 15%; //10px
-        font-size: 17px;
-      }
-      &__en {
-        height: 35px;
-        border-radius: 15%; //10px;
-        font-size: 17px;
-      }
-    }
-  }
-}
-@media (max-width: 1090px) {
-  .companyInfo {
-    &__address {
-      font-size: 12px;
-      img {
-        height: 20px;
-        margin-right: 7px;
-      }
-    }
-
-    &__timeWorking {
-      font-size: 12px;
-      img {
-        height: 20px;
-        margin-right: 7px;
-      }
-    }
-
-    &__contact {
-      .phones {
-        font-size: 12px;
-        img {
-          height: 20px;
-        }
-      }
-      .socials {
-        img {
-          width: 27px;
-          height: 27px;
-        }
-      }
-    }
-
-    .lang {
-      &__ru {
-        height: 33px;
-        border-radius: 15%; //10px
-        font-size: 15px;
-      }
-      &__en {
-        height: 33px;
-        border-radius: 15%; //10px;
-        font-size: 15px;
-      }
-    }
-  }
-}
-@media (max-width: 910px) {
+@media (max-width: 1220px) {
   .companyInfo {
     &__address {
       font-size: 11px;
@@ -274,9 +210,16 @@
     }
 
     &__contact {
+      .phoneList{
+        top:15px;
+        left: -10px;
+        padding: 5px 10px;
+        gap: 5px;
+        border-radius: 5px
+      }
       .phones {
         font-size: 11px;
-        img {
+        &__img {
           height: 20px;
           margin-right: 7px;
         }
@@ -300,7 +243,7 @@
     }
   }
 }
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   .companyInfo {
     &__address {
       font-size: 10px;
@@ -321,8 +264,8 @@
     &__contact {
       .phones {
         font-size: 10px;
-        img {
-          height: 17px;
+        &__img {
+          height: 13px;
         }
       }
       .socials {
@@ -330,6 +273,13 @@
           width: 20px;
           height: 20px;
         }
+      }
+      .phoneList{
+        top:12px;
+        left: -10px;
+        padding: 5px 10px;
+        gap: 5px;
+        border-radius: 5px
       }
     }
 
@@ -364,8 +314,61 @@
       display: none;
     }
 
+    .buttons{
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
     .lang {
       display: none;
+    }
+
+    .langMobile {
+      display: flex;
+      justify-content: space-evenly;
+      color: #fff;
+      font-family: 'Gothic A1', sans-serif;
+      font-size: 21px;
+      width: 200px;
+      font-weight: 600;
+      &__ru {
+        color: #fff;
+        font-family: 'Gothic A1' sans-serif;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 66px;
+        height: 40px;
+        border-radius: 15%; //10px;
+        background: #47c9e4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &__en {
+        color: #fff;
+        font-family: 'Gothic A1' sans-serif;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 66px;
+        height: 40px;
+        border-radius: 15%; //10px;
+        background: #d9d9d9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .langMobile {
+      &__ru:hover {
+        color: #32349a;
+      }
+      &__en:hover {
+        color: #32349a;
+      }
     }
   }
   .mobileMenu {

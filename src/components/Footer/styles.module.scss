@@ -20,13 +20,34 @@
     text-decoration: none;
     color: white;
     &:hover {
-      color: gray;
+      color: black;
       font-weight: 500;
     }
   }
-  p {
+  .contacts__list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+  }
+  .contacts__link{
     font-family: 'Goldman', sans-serif;
     font-size: 25px;
+    color: white;
+    &:hover{
+      color: black;
+    }
+  }
+  .link, p {
+    font-family: 'Goldman', sans-serif;
+    font-size: 25px;
+    color: white;
+  }
+  .link{
+    margin-top: 5px;
+    &:hover{
+      color: black;
+    }
   }
 
   &__logo {
@@ -65,7 +86,11 @@
     &__menuItems {
       margin-bottom: 15px;
     }
-    p {
+    .contacts__link{
+      font-family: 'Goldman', sans-serif;
+      font-size: 18px;
+    }
+    .link, p {
       font-size: 18px;
     }
     &__heading {
@@ -84,7 +109,11 @@
     &__menu {
       font-size: 12px;
     }
-    p {
+    .contacts__link{
+      font-family: 'Goldman', sans-serif;
+      font-size: 12px;
+    }
+    .link, p {
       font-size: 12px;
     }
     &__heading {
@@ -106,7 +135,10 @@
     &__column1 {
       display: none;
     }
-    p {
+    .contacts__link{
+      font-size: 25px;
+    }
+    .link, p {
       font-size: 25px;
     }
     &__heading {
@@ -148,7 +180,7 @@
       padding: 21px 42px;
       justify-content: center;
       margin: 15px 15% 0;
-      p {
+      .link, p {
         font-size: 10px;
         text-align: center;
       }
@@ -177,7 +209,11 @@
 @media (max-width: 630px) {
   .footerWrapper {
     padding: 14px 40px;
-    p {
+    .contacts__link{
+      font-family: 'Goldman', sans-serif;
+      font-size: 20px;
+    }
+    .link, p {
       font-size: 20px;
     }
     &__heading {
@@ -193,7 +229,7 @@
     &__bottomText {
       padding: 21px 0px;
       margin: 15px 15% 0;
-      p {
+       p {
         font-size: 10px;
       }
     }
@@ -213,7 +249,10 @@
 @media (max-width: 550px) {
   .footerWrapper {
     padding: 14px 40px;
-    p {
+    .contacts__link{
+      font-size: 15px;
+    }
+    .link, p {
       font-size: 15px;
     }
     &__heading {

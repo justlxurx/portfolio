@@ -15,10 +15,7 @@ const Countries = () => {
       <div className={styles.mainFormSection}>
         <MainForm />
       </div>
-      {/* <Routes>
-        <Route path="germany" element={<Visa />} />
-        <Route path="italy" element={<Visa />} />
-      </Routes> */}
+     
       <OtherCountry />
       <CanHelp />
       <Footer />

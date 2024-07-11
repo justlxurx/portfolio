@@ -6,6 +6,7 @@ import insta from './../../assets/images/instagram.png';
 import logo from './../../assets/images/logo.png';
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -27,17 +28,24 @@ const Footer = () => {
       path: '/faq',
     },
   ];
+  const phones = [
+    '+7 (727) 339 83 23',
+    '+7 (707) 908 08 29',
+    '+7 (708) 808 93 03',
+    '+7 (707) 055 67 27',
+    '+7 (707) 228 90 80']
   return (
     <footer className={styles.footerWrapper}>
-      <img src={logo} alt='logo' className={styles.footerWrapper__logo} />
-      <h5 className={styles.footerWrapper__mainHeading}>{t('firstCenter')}</h5>
+      <Link to='/'><img src={logo} alt='logo' className={styles.footerWrapper__logo} />
+       </Link>
+       <h5 className={styles.footerWrapper__mainHeading}>{t('firstCenter')}</h5>
       <div className={styles.footerWrapper__column1}>
         <h3 className={styles.footerWrapper__heading}>{t('aboutCompany')}</h3>
         <ul className={styles.footerWrapper__menu}>
           {mainLinks.map(({ path, title }) => (
-            <a className={styles.footerWrapper__menuItemsLinks} href={path} key={nanoid()}>
+            <Link className={styles.footerWrapper__menuItemsLinks} to={path} key={nanoid()}>
               <li className={styles.footerWrapper__menuItems}>{title}</li>
-            </a>
+            </Link>
           ))}
         </ul>
       </div>
@@ -51,14 +59,16 @@ const Footer = () => {
           </div>
           <div className={styles.contacts__wrapper}>
             <p className={styles.contacts__wrapperPara}>{t('phone')}</p>
-            <p>
-              +7 (727) 339 83 23 <br />
-              +7 (727) 917 85 00
-            </p>
+            <ul className={styles.contacts__list}>
+            {phones.map( (item, index )=> {
+                 return (<li key={index}> 
+                <a  className={styles.contacts__link} href={`tel:${item}`}>{item}</a></li>)
+              })}</ul>
           </div>
           <div className={styles.contacts__wrapper}>
             <p className={styles.contacts__wrapperPara}>Email:</p>
-            <p> blsvisalmaty@gmail.com</p>
+            <a className={styles.link} href={`mailto:blsalmatyvisa@gmail.com`}>blsalmatyvisa@gmail.com</a>
+      
           </div>
         </div>
         <div className={styles.socialNetworks}>

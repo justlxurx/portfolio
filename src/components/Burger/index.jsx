@@ -7,6 +7,12 @@ import styles from "./styles.module.scss";
 import { headerLinks } from "./links.data";
 
 const BurgerMenu = () => {
+  const phones = [
+    '+7 (727) 339 83 23',
+    '+7 (707) 908 08 29',
+    '+7 (708) 808 93 03',
+    '+7 (707) 055 67 27',
+    '+7 (707) 228 90 80']
   const SubMenu = ({ items }) => (
     <ul className={styles.burgerSubmenu}>
       {items.map((item) => (
@@ -20,18 +26,19 @@ const BurgerMenu = () => {
     <section className={styles.burger}>
       <div className={styles.burger__infoWrapper}>
         <div className={styles.burger__info}>
-          <img src={marker} alt="marker" />
+          <img src={marker} alt="marker"  width={20}/>
           <p>Казахстан, г. Алматы, Маркова 22/37, 4 этаж, офис 6</p>
         </div>
         <div className={styles.burger__info}>
-          <img src={phone} alt="phone" />
-          <div>
-            <p>+7 (707) 901 2423</p>
-            <p>+7 (707) 901 2423</p>
-          </div>
+          <img src={phone} alt="phone" width={20} />
+          <ul className={styles.burger__list}>
+            {phones.map( (item, index )=> {
+                 return (<li key={index}> 
+                <a  className={styles.contacts__link} href={`tel:${item}`}>{item}</a></li>)
+              })}</ul>
         </div>
         <div className={styles.burger__info}>
-          <img src={clock} alt="clock" />
+          <img src={clock} alt="clock" width={20}/>
           <div>
             <p>пн-пт 10:00 - 18:00 сб 10.00-13.00 </p>
             <p>вс выходной</p>

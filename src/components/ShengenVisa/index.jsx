@@ -24,32 +24,33 @@ const Visa = () => {
 
   return (
     <section className={styles.visa}>
-      <ul className={styles.routedList}>
-        <li>
-          <NavLink exact to='/'>
-            Главная/
-          </NavLink>
-        </li>
-        <li>
-          {zone == 'shengen' ? (
-            <NavLink to='/shengen'>Шенгенская зона/</NavLink>
-          ) : (
-            <NavLink to='/others'>Другие страны/</NavLink>
-          )}
-        </li>
-        <li> {path}</li>
-      </ul>
+     
       {isLoading ? (
         <div>loading...</div>
       ) : country ? (
         <>
+         <ul className={styles.routedList}>
+        <li>
+          <NavLink exact to='/'>
+            {t('main')}/
+          </NavLink>
+        </li>
+        <li>
+          {zone == 'shengen' ? (
+            <NavLink to='/shengen'>{t('schengen')}/</NavLink>
+          ) : (
+            <NavLink to='/others'>{t('other')}/</NavLink>
+          )}
+        </li>
+        <li> {i18n.language =='en'? country.nameEn:country.name}</li>
+      </ul>
           <div className={styles.visa__typesWrapper}>
             <div className={styles.visa__typesWrapperLinks}>
-              {country.visa.map((visas, idx) => (
+              {/* {country.visa.map((visas, idx) => (
                 <Link to={`${visas.visaName}`} key={idx}>
                   <button>{visas.visaName}</button>
                 </Link>
-              ))}
+              ))} */}
             </div>
             <div
               className={styles.visa__countryWrapper}
@@ -60,17 +61,17 @@ const Visa = () => {
             >
               <div className={styles.visa__country}>
                 <img src={`data:image/png;base64,${country.flag}`} alt='country' />
-                <h1>{country.countryName}</h1>
+                <h1>{i18n.language =='en'? country.nameEn:country.name}</h1>
               </div>
               <p className={styles.textWrapper}>
-                Цена от: <br />
-                <b>{country.price}</b> <br />
-                Срок оформления: <br />
-                <b>{country.deadline}</b>
+               {t('price')}  <br />
+                <b>{country.price} KZT</b> <br />
+                {t('deadline')} <br />
+                <b>{t('deadlineDays1')} {country.deadline} {t('deadlineDays2')}</b>
               </p>
             </div>
           </div>
-          <div className={styles.mobileWrapper}>
+          {/* <div className={styles.mobileWrapper}>
             {country.visa.map((visas, idx) => (
               <div className={styles.mobileWrapper__visaType} key={idx}>
                 <div className={styles.mobileWrapper__title}>
@@ -95,17 +96,21 @@ const Visa = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
           <div className={styles.visa__bottomText}>
             <h1>{i18n.language === 'en' ? country.titleEn : country.title}</h1>
-            <p> {i18n.language === 'en' ? country.textEn : country.text}</p>
-            <p>
-              {country.text.split('\n').map((line, index) => (
+             <p>
+              {i18n.language ==='en'? <> {country.text.split('\n').map((line, index) => (
                 <Fragment key={index}>
                   {line}
                   <br />
                 </Fragment>
-              ))}
+              ))} </> : <> {country.textEn.split('\n').map((line, index) => (
+                <Fragment key={index}>
+                  {line}
+                  <br />
+                </Fragment>
+              ))}</>}
             </p>
           </div>
         </>

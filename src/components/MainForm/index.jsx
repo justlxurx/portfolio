@@ -9,6 +9,7 @@ import { Navbar } from '../Navbar/Navbar';
 import InputMask from 'react-input-mask';
 
 const Main = () => {
+  const {t} = useTranslation();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -16,21 +17,16 @@ const Main = () => {
     },
     validationSchema: Yup.object({
       name: Yup.string()
-        .matches(/^[A-Za-zА-Яа-яЁё]+$/, 'Имя должно содержать только буквы')
-        .max(15, 'Имя должно состоит максимум 15 символов')
-        .required('Заполните поле "Ваше имя"'),
-      phone: Yup.string().max(15, 'Неправильный номер телефона').required('Заполните поле "Номер телефона"'),
+        .matches(/^[A-Za-zА-Яа-яЁё]+$/, `${t('comment.nameError2')}`)
+        .max(15, `${t('comment.nameError3')}`)
+        .required(`${t('comment.nameError')}`),
+      phone: Yup.string().max(15, t('phoneError')).required(t('phoneError2')),
     }),
-    // onSubmit: (values, { resetForm }) => {
-    //   alert(JSON.stringify(values, null, 2));
-    //   console.log(values);
-    //   resetForm();
-    // },
     onSubmit: async (values, { resetForm }) => {
       try {
         // Вызываем функцию отправки формы из нашего formApi
         const response = await submitForm(values);
-        alert('Данные успешно отправлено');
+        alert(`${t('success')}`);
 
         console.log('Response:', response);
         resetForm();
@@ -43,7 +39,7 @@ const Main = () => {
   });
   const [submitForm] = useFormMutation();
 
-  const [t] = useTranslation();
+
 
   return (
     <div className={styles.outer}>
@@ -65,11 +61,9 @@ const Main = () => {
               <div className={styles.calling__phoneNumbers}>
                 <img src={phone1} alt='phone' />
                 <p>
-                  +7 (727) 339 83 23 <br />
-                  +7 (707) 908 08 29 <br />
-                  {/* +7 (707) 055 67 27
-                <br /> +7 (708) 808 93 03
-                <br /> +7 (707) 228 90 80 */}
+                <a  className={styles.linkTel} href={`tel: +7 (727) 339 83 23`}> +7 (727) 339 83 23</a> <br />
+                <a  className={styles.linkTel} href={`tel: +7 (707) 908 08 29 `}> +7 (707) 908 08 29 </a>
+         
                 </p>
               </div>
             </div>
