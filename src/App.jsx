@@ -1,12 +1,22 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import MainRouting from "./routes/MainRouting";
 
-function App() {
-  return (
-    <Router>
-      <MainRouting />
-    </Router>
-  );
-}
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import MainRouting from './routes/MainRouting';
 
-export default App;
+export const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const path = location.pathname;
+    const token = localStorage.getItem('accessToken');
+
+    if ((path === '/admin' || path === '/admin/clients') && !token) {
+      navigate('/admin/login');
+    } else if (token && path === '/admin/login' || path === '/admin') {
+      navigate('/admin/clients');
+    }
+  }, [location, navigate]);
+
+  return <MainRouting />;
+};

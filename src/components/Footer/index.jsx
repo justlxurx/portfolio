@@ -16,8 +16,8 @@ const Footer = () => {
       path: '/',
     },
     {
-      title: `${t('countries')}`,
-      path: '/shengen',
+      title: `${t('comments')}`,
+      path: '/feedback',
     },
     {
       title: `${t('services')}`,
@@ -26,6 +26,10 @@ const Footer = () => {
     {
       title: `${t('faq')}`,
       path: '/faq',
+    },
+    {
+      title: `${t('contacts')}`,
+      path: '/contact',
     },
   ];
   const phones = [

@@ -282,6 +282,9 @@
   .companyMap {
     height: 590px;
     margin-top: 21px;
+    display: flex;
+    margin-left: -10px;
+    width: calc(100% + 20px);
   }
 }
 

@@ -6,10 +6,10 @@
 
 .main__heading {
   color: white;
-  font-family: 'Gotu';
-  font-size: 40px;
+  font-family: 'Gothic A1';
+  font-size: 35px;
   font-weight: 400;
-  line-height: 66.4px;
+  line-height: 56.4px;
   text-align: center;
   background: rgba(50, 52, 154, 0.9);
 
@@ -25,7 +25,7 @@
 
 .text {
   font-family: 'Gothic A1';
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 25px;
   text-align: left;
@@ -42,9 +42,38 @@
   border-radius: 10px;
   color: rgba(50, 52, 154, 1);
   font-family: 'Gothic A1';
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 800;
   line-height: 31.25px;
   text-align: left;
   padding: 5px 20px;
+}
+@media (max-width:1200px) {
+  .main {
+    grid-template-rows: 12% auto;
+  }
+  
+  .main__heading {
+    font-size: 25px;
+    line-height: 36.4px;
+  }
+  
+  .main__list {
+    padding: 25px 30px;
+  }
+  
+  .text {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .list li {
+    gap: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 31.25px;
+    padding: 5px 20px;
+  }
+  
 }

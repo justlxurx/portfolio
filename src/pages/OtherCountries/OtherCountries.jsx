@@ -15,7 +15,6 @@ const Countries = () => {
       <div className={styles.mainFormSection}>
         <MainForm />
       </div>
-     
       <OtherCountry />
       <CanHelp />
       <Footer />

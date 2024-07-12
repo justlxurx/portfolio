@@ -1,10 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  client: {
-    name: "",
-    phone: "",
-  },
+  client: []
 };
 
 export const adminSlice = createSlice({
@@ -14,9 +11,12 @@ export const adminSlice = createSlice({
     setClient: (state, action) => {
       state.client = action.payload;
     },
+    removeClient: (state, action) => {
+      state.client = state.client.filter((_, index) => index !== action.payload);
+    },
   },
 });
 
-export const { setClient } = adminSlice.actions;
+export const { setClient, removeClient } = adminSlice.actions;
 
 export default adminSlice.reducer;

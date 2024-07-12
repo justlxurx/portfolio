@@ -10,6 +10,6 @@ export {
   default as countryReducer,
 } from "./country";
 
-export { adminSlice, setClient, default as adminReducer } from "./admin";
+export { adminSlice, setClient, removeClient, default as adminReducer } from "./admin";
 
 export {sendCommentSlice, setComment, addComment, rmComment, default as commentReducer} from './comments'

@@ -40,7 +40,7 @@ const Comments = () => {
         <hr />
       </div>
       {isLoading ? (
-        <div>Loading</div>
+        <p className={styles.loading}>Loading</p>
       ) : (
         <div className={styles.comments__section}>
           {visibleComments &&

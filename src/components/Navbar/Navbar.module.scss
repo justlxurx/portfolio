@@ -68,12 +68,13 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      img {
+      
+    }
+    .uncover {
         width: 17px;
         height: 16px;
         margin-left: 5px;
       }
-    }
     &:hover > ul {
       display: flex;
     }
@@ -91,13 +92,12 @@
     }
     &__navigationListItems {
       font-size: 17px;
-      a {
-        img {
+        .uncover {
           width: 15px;
           height: 13px;
           margin-left: 5px;
         }
-      }
+      
     }
     .submenu {
       li {
@@ -113,9 +113,6 @@
   }
 }
 @media (max-width: 1450px) {
-  //   body {
-  //     background-size: 100% 1000px;
-  //   }
 
   .menu {
     padding: 50px 65px;
@@ -132,13 +129,12 @@
     &__navigationListItems {
       font-size: 15px;
       padding: 20px 28px;
-      a {
-        img {
+        .uncover {
           width: 10px;
           height: 10px;
           margin-left: 5px;
         }
-      }
+      
     }
   }
 }
@@ -230,13 +226,13 @@
     &__navigationListItems {
       font-size: 10px;
       padding: 15px 15px;
-      a {
-        img {
+    
+        .uncover{
           width: 7px;
           height: 7px;
           margin-left: 3px;
         }
-      }
+      
     }
   }
 }
@@ -297,4 +293,5 @@
   .menu {
     display: none;
   }
+ 
 }

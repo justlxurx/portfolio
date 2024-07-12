@@ -326,20 +326,15 @@
     .langMobile {
       display: flex;
       justify-content: space-evenly;
-      color: #fff;
-      font-family: 'Gothic A1', sans-serif;
-      font-size: 21px;
-      width: 200px;
-      font-weight: 600;
+      gap: 10px;
       &__ru {
         color: #fff;
         font-family: 'Gothic A1' sans-serif;
-        font-size: 21px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        width: 66px;
-        height: 40px;
+        padding: 5px 15px;
         border-radius: 15%; //10px;
         background: #47c9e4;
         display: flex;
@@ -349,12 +344,11 @@
       &__en {
         color: #fff;
         font-family: 'Gothic A1' sans-serif;
-        font-size: 21px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        width: 66px;
-        height: 40px;
+        padding: 5px 15px;
         border-radius: 15%; //10px;
         background: #d9d9d9;
         display: flex;
@@ -364,10 +358,10 @@
     }
     .langMobile {
       &__ru:hover {
-        color: #32349a;
+        color: #d9d9d9;
       }
       &__en:hover {
-        color: #32349a;
+        color: #47c9e4;
       }
     }
   }

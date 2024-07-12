@@ -1,6 +1,7 @@
 .main {
   display: flex;
-  align-items: center;
+  //align-items: start;
+  
 }
 
 .left {
@@ -10,4 +11,12 @@
 .right {
   width: 75%;
   height: 100vh;
+}
+@media (max-width:992px) {
+  .left{
+    display: none;
+  }
+  .right{
+    width: 100%;
+  }
 }

@@ -20,7 +20,7 @@ const Main = () => {
         .matches(/^[A-Za-zА-Яа-яЁё]+$/, `${t('comment.nameError2')}`)
         .max(15, `${t('comment.nameError3')}`)
         .required(`${t('comment.nameError')}`),
-      phone: Yup.string().max(15, t('phoneError')).required(t('phoneError2')),
+      phone: Yup.string().matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, t('phoneError')).required(t('phoneError2')),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {

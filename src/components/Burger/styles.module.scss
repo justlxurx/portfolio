@@ -35,7 +35,7 @@
     padding: 12px 40px;
     display: flex;
     gap: 3%;
-    
+    align-items: center;
   }
   .burgerSubmenu {
     display: none;
@@ -69,6 +69,7 @@
     top: 0;
     left: 30px;
     a{
+      font-size: 14px;
       color: #32349a;
     }
   }
@@ -88,6 +89,10 @@
       line-height: normal;
       letter-spacing: -0.26px;
     }
+  }
+  .uncover{
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -112,10 +117,18 @@
   .burger__info {
     img {
       width: auto;
-      height: 20px;
+      height: 15px;
     }
     p {
       font-size: 12px;
+    }
+  }
+  .burger__list{
+    left: 30px;
+    top: -5px;
+    a{
+      font-size: 10px;
+      color: #32349a;
     }
   }
 }

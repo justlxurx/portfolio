@@ -5,6 +5,7 @@ import clock from "./../../assets/images/burger-clock.png";
 import phone from "./../../assets/images/burger-phone.png";
 import styles from "./styles.module.scss";
 import { headerLinks } from "./links.data";
+import { useState } from "react";
 
 const BurgerMenu = () => {
   const phones = [
@@ -46,14 +47,14 @@ const BurgerMenu = () => {
         </div>
       </div>
 
-      <ul className={styles.burger__navigationList}>
+      <ul className={styles.burger__navigationList} >
         {headerLinks.map(({ path, title, image, subMenu }) => (
-          <li key={nanoid()} className={styles.burger__navigationListItems}>
+          <li key={nanoid()} className={styles.burger__navigationListItems} >
             <Link className={styles.links} to={path}>
               {title}
               {image && <img src={image} alt="g" className={styles.uncover} />}
             </Link>
-            {subMenu && <SubMenu items={subMenu} />}
+            {subMenu && <SubMenu  items={subMenu} />}
           </li>
         ))}
       </ul>
