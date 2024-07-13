@@ -16,7 +16,7 @@ export const Login = () => {
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        // .matches(/^[A-Za-zА-Яа-яЁё]+$/, `${t('comment.nameError2')}`)
+        .matches(/^[a-zA-Z0-9._%+-]+@gmail\.com$/, `Неправильная почта`)
         .required('Пожалуйста, введите логин'),
       password: Yup.string()
       .required('Пожалуйста, введите пароль'),
@@ -27,7 +27,7 @@ export const Login = () => {
         const res = await log(values);
         console.log('Response:', res);
        if (res.data == undefined) {
-         setError('Неправильный логин или пароль')
+         setError('Неправильная почта или пароль')
          return
        }
          setError('')
@@ -53,6 +53,7 @@ export const Login = () => {
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              type={'text'}
             />
              {formik.touched.email && formik.errors.email  ? <span className={s.error}>{formik.errors.email}</span> : null}
            
@@ -63,6 +64,7 @@ export const Login = () => {
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              type={'password'}
             />
             {formik.touched.password && formik.errors.password  ? <span className={s.error}>{formik.errors.password}</span> : null}
            

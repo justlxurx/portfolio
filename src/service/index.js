@@ -14,6 +14,6 @@ export {
 export { testApi, useShengenImgMutation } from "./test";
 export { otherApi, useGetOtherImagesQuery } from "./other";
 
-export { adminApi, useGetClientQuery , useLoginMutation} from "./admin";
+export { adminApi, useGetClientQuery, useSearchUserQuery, useLoginMutation} from "./admin";
 
 export {commentApi, useCreateCommentMutation,useGetCommentQuery} from './comments'

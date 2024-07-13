@@ -1,3 +1,17 @@
+.search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width:200px
+}
+
+.text{
+  font-family: "Gothic A1";
+  font-family: 400;
+  text-align: center;
+}
+
+
 .main {
   display: grid;
   grid-template-rows: 12% auto;
@@ -12,15 +26,15 @@
 }
 
 .logout{
+  height: 2.5rem;
   font-size: 15px;
   font-family: 'Gothic A1';
-  padding: 12px;
+  padding: 0 12px;
   color: rgba(50, 52, 154, 1);
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   text-transform: uppercase;
   font-weight: 700;
-  margin-right: 30px;
   &:hover{
     background-color:  rgba(50, 52, 154, 1);
     color:white
@@ -62,9 +76,9 @@
 }
 
 .usersTable {  
+  position: relative;
   border-collapse: collapse;
   width: 100%;
-  //   border: 1px solid #ddd; /* Задайте стиль границы */
   background-color: white;
   
   th {
@@ -92,8 +106,10 @@
   background: rgba(47, 50, 181, 0.7);
   display: flex;
   align-items: center;
-  justify-content: end;
-  
+  justify-content: space-between;
+  gap: 35px;
+  padding: 0 20px 0 40px;
+
 }
 
 @media (max-width: 1100px) {
@@ -108,7 +124,6 @@
     font-size: 15px;
     padding: 12px;
     border-radius: 5px;
-    margin-right: 30px;
   }
   
   .main__heading {
@@ -160,10 +175,10 @@
   }
   
   .logout{
-    font-size: 10px;
-    padding: 5px 8px;
+    font-size: 9px;
+    padding: 6px 8px;
     border-radius: 5px;
-    margin-right: 10px;
+    height: auto;
   }
   
   .main__heading {
@@ -196,6 +211,10 @@
       font-size: 8px;
       line-height: 11.25px;
     }
+  }
+
+  .main__top{
+    padding: 0 10px 0 25px;
   }
   
 }

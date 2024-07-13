@@ -1,0 +1,39 @@
+
+.inputWrapper{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    //box-shadow: 0px 0px 2px #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left:5px;
+    &:focus{
+        outline: none;
+    }
+}
+#searchIcon{
+    color: royalblue;
+}
+
+@media (max-width:992px) {
+    .inputWrapper{
+        border-radius: 5px;
+        height: 1.6rem;
+        padding: 0 15px;
+    }
+    
+    .searchInput{
+        font-size: 13px;
+        margin-left:5px;
+    }
+}

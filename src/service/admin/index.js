@@ -14,6 +14,13 @@ export const adminApi = createApi({
       }),
     }),
 
+    searchUser: builder.query({
+      query: (username) => ({
+        url: `searchByUsername/${username}`,
+        method: 'GET',
+      }),
+    }),
+
     login: builder.mutation({
       query: (body) => ({
         body,
@@ -24,4 +31,4 @@ export const adminApi = createApi({
   }),
 });
 
-export const { useGetClientQuery, useLoginMutation } = adminApi;
+export const { useGetClientQuery, useLoginMutation, useSearchUserQuery } = adminApi;
