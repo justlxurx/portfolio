@@ -2,7 +2,7 @@ import s from './styles.module.scss'
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
 import { useCreateCommentMutation } from '../../../service';
-import { addComment, rmComment, setComment } from '../../../slice';
+import { addComment } from '../../../slice';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
@@ -33,18 +33,20 @@ export const Form = () =>{
           try {
             // event.preventDefault();
             const response = await createComment(values);
-            dispatch(setComment())
-            alert(`${t('success')}`);
+            console.log("values is "+values+"\n response is"+response)
+            dispatch(addComment(values))
             console.log('Response:', response );
+            alert(`${t('success')}`);
             resetForm();
             setRating(null)
-
-
-   } catch (error) {
+           }
+          catch (error) {
             console.error('Error submitting form:', error);
-              }
+          }
         },
  } );
+
+  
     return(
         <section className={s.main}>
             <h2 className={s.main__title}>{t('comment.title')}</h2>
@@ -55,7 +57,7 @@ export const Form = () =>{
            {[...Array(5)].map((star, index) => {
                    const currentRating = index+1;
                     return (
-                    <label>
+                    <label key={index}>
                       <input type='radio' name='rating'
                       value={currentRating}
                       onClick={()=> {setRating(currentRating), formik.setFieldValue('rating', currentRating);}}
@@ -72,27 +74,21 @@ export const Form = () =>{
                     )}
                   )}
                   </div>
-           <div
+
+              {formik.touched.fullName && formik.errors.fullName && 
+              <div
                 className={s.error}
-                style={{
-                  color: formik.touched.fullName && formik.errors.fullName ? 'visible' : 'hidden',
-                }}
               >
                 {formik.errors.fullName}
-              </div>
+              </div>}
             <input type="text" placeholder={t('comment.name')} name='fullName' className={s.main__formInput}  value={formik.values.fullName}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 />
          
-              <div
-                className={s.error}
-                style={{
-                  color: formik.touched.text && formik.errors.text ? 'visible' : 'hidden',
-                }}
-              >
+             { formik.touched.text && formik.errors.text &&  <div className={s.error} >
                 {formik.errors.text}
-              </div>
+              </div>}
            <textarea name="text" rows={6} placeholder={t('comment.message')} className={s.main__formText}  value={formik.values.text}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}></textarea>

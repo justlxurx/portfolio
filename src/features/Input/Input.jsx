@@ -9,7 +9,6 @@ const Input = ({
   type,
   name,
   error,
-  updateInput,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,9 +23,6 @@ const Input = ({
       <input
         type={type}
         placeholder={placeholder}
-        onChange={(e) =>
-          updateInput && updateInput(e.target.name, e.target.value)
-        }
         name={name}
         {...rest}
         className={s.input}

@@ -2,26 +2,27 @@ import styles from './styles.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import message from './../../assets/images/message.png';
-import star from './../../assets/images/rating.svg';
 import show from './../../assets/images/bottom.svg';
-//import { comments } from "./comments.data";
-import { setReview } from '../../slice';
-//import { useGetAllReviewQuery } from '../../service';
 import { useGetCommentQuery } from '../../service';
 import { showOrHide } from '../../helpers';
 import { Form } from './Form';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {FaStar} from 'react-icons/fa'
+import { setComment } from '../../slice';
+
 
 const Comments = () => {
-  // const selector = useSelector(state=>state.comments.comment)
- // const {comment} = useSelector(state=>state.comments)
+  const dispatch = useDispatch();
+  const review = useSelector(state => {
+    console.log(state); 
+    return state.comment.comment;
+  });
   const { data: comment, isLoading } = useGetCommentQuery();
 
   const [showAllComments, setShowAllComments] = useState(false);
   const [buttonText, setButtonText] = useState('showMore');
 
-  const visibleComments = showOrHide(comment, showAllComments);
+  const visibleComments = showOrHide(review, showAllComments);
 
   const toggleComments = () => {
     setShowAllComments(!showAllComments);
@@ -30,7 +31,11 @@ const Comments = () => {
 
   const { t } = useTranslation();
 
-  console.log(comment);
+  useEffect(()=>{
+    if(comment){
+      dispatch(setComment(comment))
+    }
+   },[comment,dispatch])
 
   return (
     <section className={`${styles.comments} container`}>
@@ -43,17 +48,15 @@ const Comments = () => {
         <p className={styles.loading}>Loading</p>
       ) : (
         <div className={styles.comments__section}>
-          {visibleComments &&
+          {visibleComments ?
             visibleComments.map((comments, index) => (
-              <div className={styles.comments__wrapper} key={index}>
+              <div key={index} className={styles.comments__wrapper} >
                 <div className={styles.comments__stars}>
                   {[...Array(5)].map((star, index) => {
                     const currentRating = index+1
-                    return (<FaStar size={30}  color={currentRating <= (comments.rating) ? "#ffc107":"#e8e5e9"} 
+                    return (<FaStar key={index} size={30}  color={currentRating <= (comments.rating) ? "#ffc107":"#e8e5e9"} 
                     />)}
                   )}
-                 
-                  {/* <img src={star} alt='stars' /> */}
                 </div>
 
                 <p className={styles.comments__text}>{comments.text}</p>
@@ -61,13 +64,17 @@ const Comments = () => {
                   <img src={message} alt='message-icon' />
                   <p className={styles.comments__name}>{comments.fullName}</p>
                 </div>
-                <p className={styles.comments__data}>{comments.createdAt}</p>
+                <p className={styles.comments__data}>{comments.createdAt
+                ? comments.createdAt.replace(/T(\d{2}:\d{2}:\d{2})\.\d+Z/, ' $1')
+                : t('now')}</p>
               </div>
-            ))}
+            ))
+          : <p>No data found</p>
+          }
         </div>
       )}
 
-      {comment && comment.length > 3 && (
+      {review && review.length > 3 && (
         <button onClick={toggleComments} className={styles.showMore}>
           <p>{t(buttonText)}</p>
           <img src={show} alt='show-icon' className={showAllComments ? styles.turnOver : ''} />

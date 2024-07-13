@@ -1,4 +1,4 @@
-export { reviewApi, useGetAllReviewQuery } from "./review";
+// export { reviewApi, useGetAllReviewQuery } from "./review";
 export {
   shengenApi,
   useGetShengenInfoFromNameQuery,

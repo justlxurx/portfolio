@@ -12,10 +12,10 @@ export const sendCommentSlice = createSlice({
       state.comment = action.payload;
     },
     addComment: (state, action) => {
-      state.comment = state.comment.push(action.payload);
+      state.comment.push(action.payload);
     },
     rmComment: (state) => {
-     state.comment =  state.comment.splice(1) ;
+     state.comment = state.comment.splice(1) ;
     }
   },
 });

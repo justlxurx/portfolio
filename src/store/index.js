@@ -4,7 +4,7 @@ import {
   otherApi,
   visaApi,
   formApi,
-  reviewApi,
+  // reviewApi,
   countryApi,
   adminApi,
   commentApi
@@ -14,7 +14,7 @@ import {
   otherReducer,
   visaReducer,
   formReducer,
-  reviewReducer,
+  // reviewReducer,
   countryReducer,
   adminReducer,
   commentReducer
@@ -30,7 +30,7 @@ export const store = configureStore({
     shengen: shengenReducer,
     visa: visaReducer,
     form: formReducer,
-    reviews: reviewReducer,
+    // reviews: reviewReducer,
     country: countryReducer,
     [commentApi.reducerPath]:commentApi.reducer,
     [adminApi.reducerPath]: adminApi.reducer,
@@ -38,7 +38,7 @@ export const store = configureStore({
     [shengenApi.reducerPath]: shengenApi.reducer,
     [visaApi.reducerPath]: visaApi.reducer,
     [formApi.reducerPath]: formApi.reducer,
-    [reviewApi.reducerPath]: reviewApi.reducer,
+    // [reviewApi.reducerPath]: reviewApi.reducer,
     [countryApi.reducerPath]: countryApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
@@ -49,7 +49,7 @@ export const store = configureStore({
       shengenApi.middleware,
       visaApi.middleware,
       formApi.middleware,
-      reviewApi.middleware,
+      // reviewApi.middleware,
       countryApi.middleware,
       logger
       // refreshToken
