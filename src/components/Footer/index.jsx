@@ -39,7 +39,8 @@ const Footer = () => {
     '+7 (707) 055 67 27',
     '+7 (707) 228 90 80']
   return (
-    <footer className={styles.footerWrapper}>
+    <div className={styles.background}>
+    <footer className={`${styles.footerWrapper} container`}>
       <Link to='/'><img src={logo} alt='logo' className={styles.footerWrapper__logo} />
        </Link>
        <h5 className={styles.footerWrapper__mainHeading}>{t('firstCenter')}</h5>
@@ -91,6 +92,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </div>
   );
 };
 

@@ -32,7 +32,7 @@ const VisaTypes = ({ type, num }) => {
   }, [dispatch, type, isTypeInitialized]);
   console.log(typeFromRedux);
   return (
-    <section className={styles.visaTypes}>
+    <section className={`${styles.visaTypes} container`}>
       <ul className={styles.routedList}>
         <li>
           <NavLink exact to='/'>

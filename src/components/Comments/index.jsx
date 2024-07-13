@@ -33,7 +33,7 @@ const Comments = () => {
   console.log(comment);
 
   return (
-    <section className={styles.comments}>
+    <section className={`${styles.comments} container`}>
       <div className={styles.comments__heading}>
         <hr />
         <h1>{t('comments')}</h1>

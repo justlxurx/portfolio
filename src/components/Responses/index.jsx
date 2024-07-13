@@ -33,7 +33,7 @@ const Responses = () => {
     },
   ];
   return (
-    <section className={styles.faq}>
+    <section className={`${styles.faq} container`}>
       <div className={styles.faq__heading}>
         <hr />
         <h1>{t("faq")}</h1>

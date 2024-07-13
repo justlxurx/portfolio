@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const HowWeWork = () => {
   const { t } = useTranslation();
   return (
-    <section>
+    <section className={'container'}>
       <div className={styles.headings}>
         <h1> {t("workHeading")}</h1>
         <h2>{t("workHeading2")}</h2>

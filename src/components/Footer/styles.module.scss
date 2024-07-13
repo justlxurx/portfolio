@@ -1,5 +1,4 @@
 .footerWrapper {
-  background: #32349a;
   padding: 80px 40px;
   display: flex;
   color: #fff;
@@ -76,6 +75,9 @@
   .socialNetworks {
     display: none;
   }
+}
+.background{
+  background: #32349a;
 }
 @media (max-width: 1500px) {
   .footerWrapper {
@@ -194,8 +196,8 @@
       flex-direction: column;
       &__wrapper {
         display: grid;
-        grid-template-columns: 30% auto;
-        padding: 0 14%;
+        grid-template-columns:100px auto;
+        padding: 0 10%;
       }
     }
     .socialNetworks {
@@ -243,11 +245,6 @@
         width: 30px;
       }
     }
-    .contacts {
-      &__wrapper {
-        padding: 0 20%;
-      }
-    }
   }
 }
 @media (max-width: 550px) {
@@ -278,7 +275,8 @@
     }
     .contacts {
       &__wrapper {
-        padding: 0 10%;
+        padding: 0;
+        grid-template-columns:80px auto;
       }
     }
     .socialNetworks {

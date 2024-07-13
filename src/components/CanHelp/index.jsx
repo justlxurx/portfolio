@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 const FormsToHelp = () => {
   const { t } = useTranslation();
   return (
-    <section className={styles.helpOrder}>
+    <div className={styles.background}>
+    <section className={`${styles.helpOrder} container`}>
       <div className={styles.helpOrder__text}>
         {/* <img src={ph} alt="call" className={styles.helpOrder__icon} /> */}
         <div className={styles.helpOrder__wrapper}>
@@ -27,6 +28,7 @@ const FormsToHelp = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

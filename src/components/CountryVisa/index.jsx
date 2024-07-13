@@ -24,7 +24,7 @@ const Visa = () => {
   }, [country, dispatch]);
 
   return (
-    <section className={styles.visa}>
+    <section className={`${styles.visa} container`}>
       {isLoading ? (
         <div>loading...</div>
       ) : country ? (

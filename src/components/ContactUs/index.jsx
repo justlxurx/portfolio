@@ -18,7 +18,7 @@ const ContactUs = () => {
     '+7 (707) 055 67 27',
     '+7 (707) 228 90 80']
   return (
-    <section className={styles.contacts}>
+    <section className={`${styles.contacts} container`}>
       <div className={styles.contacts__heading}>
         <hr />
         <h1> {t('contacts')} </h1>

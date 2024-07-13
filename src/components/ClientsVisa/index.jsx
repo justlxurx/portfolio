@@ -20,7 +20,8 @@ const Visas = () => {
   const visaImages = [visa1, visa2, visa3, visa4, visa5, visa6, visa7, visa8, visa9, visa11, visa12, visa13];
 
   return (
-    <section className={styles.clientsVisas}>
+    
+    <section className={`${styles.clientsVisas} container`}>
       <div className={styles.clientsVisas__heading}>
         <hr />
         <h1>{t('visas')}</h1>

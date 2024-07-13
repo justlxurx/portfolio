@@ -69,10 +69,16 @@
     top: 0;
     left: 30px;
     a{
+      line-height: normal;
+      letter-spacing: -0.26px;
       font-size: 14px;
       color: #32349a;
+      font-family: 'Gothic A1', sans-serif;
+      font-weight: 600;
+      font-style: normal;
     }
   }
+
   .burger__info {
     position: relative;
     display: flex;
@@ -112,7 +118,8 @@
   }
   .burger__infoWrapper {
     padding: 10px 0;
-    gap: 4%;
+    gap: 0;
+    height: 70px;
   }
   .burger__info {
     img {
@@ -120,15 +127,23 @@
       height: 15px;
     }
     p {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
   .burger__list{
     left: 30px;
     top: -5px;
+
     a{
-      font-size: 10px;
+      line-height: 0px;
+      font-size: 7px;
       color: #32349a;
     }
+  }
+  .burger__listItem{
+    margin: 0;
+    padding: 0;
+    height: 14px
+
   }
 }

@@ -43,6 +43,7 @@ const Main = () => {
 
   return (
     <div className={styles.outer}>
+      <div className={'container'}>
       <Navbar />
       <section className={styles.main}>
         <div className={styles.main__infoVisa}>
@@ -123,6 +124,7 @@ const Main = () => {
           </ul>
         </div>
       </section>
+      </div>
     </div>
   );
 };

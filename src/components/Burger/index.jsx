@@ -5,9 +5,10 @@ import clock from "./../../assets/images/burger-clock.png";
 import phone from "./../../assets/images/burger-phone.png";
 import styles from "./styles.module.scss";
 import { headerLinks } from "./links.data";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const BurgerMenu = () => {
+  const {t} = useTranslation()
   const phones = [
     '+7 (727) 339 83 23',
     '+7 (707) 908 08 29',
@@ -28,21 +29,25 @@ const BurgerMenu = () => {
       <div className={styles.burger__infoWrapper}>
         <div className={styles.burger__info}>
           <img src={marker} alt="marker"  width={20}/>
-          <p>Казахстан, г. Алматы, Маркова 22/37, 4 этаж, офис 6</p>
+          <p>
+            {t('addressValue1')} <br /> {t('addressValue2')}
+          </p>
         </div>
         <div className={styles.burger__info}>
           <img src={phone} alt="phone" width={20} />
           <ul className={styles.burger__list}>
             {phones.map( (item, index )=> {
-                 return (<li key={index}> 
-                <a  className={styles.contacts__link} href={`tel:${item}`}>{item}</a></li>)
+                 return (<li key={index} className={styles.burger__listItem}> 
+                <a  className={styles.contacts} href={`tel:${item}`}>{item}</a></li>)
               })}</ul>
         </div>
         <div className={styles.burger__info}>
           <img src={clock} alt="clock" width={20}/>
           <div>
-            <p>пн-пт 10:00 - 18:00 сб 10.00-13.00 </p>
-            <p>вс выходной</p>
+          <p>
+            {t('timeValue1')}
+            <br /> {t('timeValue2')}
+          </p>
           </div>
         </div>
       </div>

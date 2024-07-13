@@ -46,7 +46,7 @@ const ServiceTypes = ({ title, titleEn, text, img, id, textEn }) => {
   };
 
   return (
-    <section className={styles.service}>
+    <section className={`${styles.service} container`}>
       <div className={styles.service__heading}>
         <hr />
         <h1>{t('whatServices')}</h1>
@@ -70,7 +70,6 @@ const ServiceTypes = ({ title, titleEn, text, img, id, textEn }) => {
           </div>
         ))}
       </div>
-
       <div className={styles.service__main}>
         <h3>{i18n.language === 'en' ? titleEn : title}</h3>
         <Link to='/'>

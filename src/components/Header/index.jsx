@@ -28,8 +28,9 @@ const Header = () => {
     '+7 (707) 228 90 80']
 
   return (
-    <section className={styles.navbar}>
-      <div className={styles.companyInfo}>
+    <section className={styles.navbar} >
+      <div className={styles.background}> 
+      <div className={`${styles.companyInfo} container`}>
         <div className={styles.companyInfo__address}>
           <img src={map} alt='map' />
           <p>
@@ -118,6 +119,7 @@ const Header = () => {
             <span></span>
           </div></div>
         </div>
+      </div>
       </div>
 
       {isActive && <Burger />}

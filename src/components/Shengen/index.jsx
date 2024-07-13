@@ -16,7 +16,7 @@ const Country = () => {
     }
   }, [countries, dispatch]);
   return (
-    <section className={styles.country}>
+    <section className={`${styles.country} container`}>
       <div className={styles.routes}>
         <a href='/'>{t('main')} /</a>
         <span>{t('schengen')}</span>

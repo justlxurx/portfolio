@@ -101,7 +101,7 @@ const Popular = () => {
   ];
   const { i18n,t } = useTranslation();
   return (
-    <section className={styles.popular}>
+    <section className={`${styles.popular} container`}>
       <div className={styles.popular__heading}>
         <hr />
         <h1>{t("popular")}</h1>
