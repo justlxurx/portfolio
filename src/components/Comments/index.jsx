@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {FaStar} from 'react-icons/fa'
 import { setComment } from '../../slice';
 
-
 const Comments = () => {
   const dispatch = useDispatch();
   const review = useSelector(state => {

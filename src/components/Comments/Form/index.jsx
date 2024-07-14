@@ -7,8 +7,10 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import {FaStar} from 'react-icons/fa'
+import { Modal } from '../../Modal/Modal';
 
 export const Form = () =>{
+    const [isOpen, setIsOpen] = useState(true)
     const [createComment] = useCreateCommentMutation();
     const dispatch = useDispatch();
     const {t} = useTranslation()
@@ -35,8 +37,7 @@ export const Form = () =>{
             const response = await createComment(values);
             console.log("values is "+values+"\n response is"+response)
             dispatch(addComment(values))
-            console.log('Response:', response );
-            alert(`${t('success')}`);
+            setIsOpen(true)
             resetForm();
             setRating(null)
            }
@@ -49,6 +50,7 @@ export const Form = () =>{
   
     return(
         <section className={s.main}>
+            {isOpen && <Modal onClose={()=>setIsOpen(false)} title={`${t('published')}`} />}
             <h2 className={s.main__title}>{t('comment.title')}</h2>
             <p className={s.main__subtitle}>{t('comment.subtitle')}</p>
            <form className={s.main__form} onSubmit={formik.handleSubmit}>

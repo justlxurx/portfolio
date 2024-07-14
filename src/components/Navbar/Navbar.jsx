@@ -70,11 +70,11 @@ export const Navbar = () => {
 
   return (
     <header className={styles.menu}>
-      <div className={styles.logo}>
-        <Link to='/'>
-          <img src={logo} alt='logo' />
+       <Link to='/'> 
+         <div className={styles.logo}>
+            <img src={logo} alt='logo' />
+         </div>  
         </Link>
-      </div>
       <div></div>
       <div className={styles.menu__navigation}>
         <ul className={styles.menu__navigationList}>

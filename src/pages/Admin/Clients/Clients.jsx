@@ -14,22 +14,22 @@ export const Clients = () => {
   const users = useSelector((state) => state.admin.client);
 
   const clients = useSelector((state) => state.admin.searchClient);
-    const [val, setVal] = useState('')
-    const {data} = useSearchUserQuery(val);
-    useEffect(() => {
-        if (data) {
-            dispatch(setSearchClient(data));
-        }  
-    }, [data, dispatch]);
+  const [val, setVal] = useState('')
+  const {data} = useSearchUserQuery(val);
+  useEffect(() => {
+    if (data) {
+        dispatch(setSearchClient(data));
+    }  
+  }, [data, dispatch]);
         
-    const handleChange = (value) => {
-        setVal(value);
-        if (value) {
-            dispatch(filterClient(value));
-        } else {
-            dispatch(setSearchClient([])); 
-        }
-    };
+  const handleChange = (value) => {
+    setVal(value);
+    if (value) {
+      dispatch(filterClient(value));
+    } else {
+      dispatch(setSearchClient([])); 
+    }
+  };
 
   useEffect(() => {
     if (queries) {

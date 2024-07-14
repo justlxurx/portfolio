@@ -7,8 +7,11 @@ import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../Navbar/Navbar';
 import InputMask from 'react-input-mask';
+import { Modal } from '../Modal/Modal';
+import { useState } from 'react';
 
 const Main = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const {t} = useTranslation();
   const formik = useFormik({
     initialValues: {
@@ -24,17 +27,13 @@ const Main = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
-        // Вызываем функцию отправки формы из нашего formApi
         const response = await submitForm(values);
-        alert(`${t('success')}`);
-
-        console.log('Response:', response);
+        //alert();
+        setIsOpen(true)
         resetForm();
-        // Здесь можно обработать ответ, например, обновить состояние компонента
-      } catch (error) {
+          } catch (error) {
         console.error('Error submitting form:', error);
-        // Здесь можно обработать ошибку, например, показать сообщение пользователю
-      }
+            }
     },
   });
   const [submitForm] = useFormMutation();
@@ -43,7 +42,8 @@ const Main = () => {
 
   return (
     <div className={styles.outer}>
-      <div className={'container'}>
+      {isOpen &&  <Modal title={`${t('success')}`} onClose={()=>setIsOpen(false)}/> }
+        <div className={'container'}>
       <Navbar />
       <section className={styles.main}>
         <div className={styles.main__infoVisa}>
