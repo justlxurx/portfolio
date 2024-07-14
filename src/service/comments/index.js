@@ -20,6 +20,7 @@ export const commentApi = createApi({
           body:a,
           url: `createReview`,
           method: 'POST',
+          responseHandler:"text"
         }),
       }),
   }),

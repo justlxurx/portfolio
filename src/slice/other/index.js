@@ -6,6 +6,16 @@ const initialState = {
     nameEn: "",
     image: "",
   },
+  country: {
+    id: 0,
+    deadline: "",
+    price: "",
+    text: "",
+    title: "",
+    titleEn: "",
+    image: "",
+    visa: [],
+  },
 };
 
 export const otherSlice = createSlice({
@@ -15,9 +25,12 @@ export const otherSlice = createSlice({
     setOther: (state, action) => {
       state.other = action.payload;
     },
+    setCountry: (state, action) => {
+      state.country = action.payload;
+    },
   },
 });
 
-export const { setOther } = otherSlice.actions;
+export const { setOther, setCountry } = otherSlice.actions;
 
 export default otherSlice.reducer;

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useGetCountryInfoQuery } from '../../service';
 import { getId, textType, findType, getIdFromURL } from '../../helpers';
 import { NavLink } from 'react-router-dom';
-import { setType } from '../../slice/country';
+// import { setType } from '../../slice/other';
 import { useDispatch, useSelector } from 'react-redux';
 
 const VisaTypes = ({ type, num }) => {
@@ -16,21 +16,21 @@ const VisaTypes = ({ type, num }) => {
   const [title, setTitle] = useState(textType(num));
   const zone = url.includes('shengen');
 
-  const handleButtonClick1 = (newText, buttonNumber) => {
-    setActiveButton(buttonNumber);
-    setTitle(textType(buttonNumber));
-    dispatch(setType(newText));
-  };
+  // const handleButtonClick1 = (newText, buttonNumber) => {
+  //   setActiveButton(buttonNumber);
+  //   setTitle(textType(buttonNumber));
+  //   dispatch(setType(newText));
+  // };
 
   const [isTypeInitialized, setIsTypeInitialized] = useState(false);
-  useEffect(() => {
-    // Инициализируем type, только если он не был инициализирован ранее
-    if (!isTypeInitialized) {
-      dispatch(setType(type));
-      setIsTypeInitialized(true);
-    }
-  }, [dispatch, type, isTypeInitialized]);
-  console.log(typeFromRedux);
+  // useEffect(() => {
+  //   // Инициализируем type, только если он не был инициализирован ранее
+  //   if (!isTypeInitialized) {
+  //     dispatch(setType(type));
+  //     setIsTypeInitialized(true);
+  //   }
+  // }, [dispatch, type, isTypeInitialized]);
+  // console.log(typeFromRedux);
   return (
     <section className={`${styles.visaTypes} container`}>
       <ul className={styles.routedList}>

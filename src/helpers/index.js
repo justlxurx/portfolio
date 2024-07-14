@@ -10,26 +10,12 @@ export const getId = (pathname) => {
 
 export const getIdFromURL = (pathname) => {
   try {
-    const id = pathname.substring(pathname.lastIndexOf("/") + 1); // Получаем оследний сегмент
+    const id = pathname.substring(pathname.lastIndexOf("/") + 1); // Получаем последний сегмент
     return id;
   } catch (err) {
     return "";
   }
 };
-
-// export const textType = (num) => {
-//   switch (num) {
-//     case 1:
-//       return "Гостевая виза";
-//       break;
-//     case 2:
-//       return "Деловая виза";
-//       break;
-//     case 3:
-//       return "Туристическая виза";
-//       break;
-//   }
-// };
 
 export const showOrHide = (review, showAllComments) => {
   let visibleComments;
@@ -48,16 +34,3 @@ export const showOrHide = (review, showAllComments) => {
   }
 };
 
-// export const findType = (type) => {
-//   switch (type) {
-//     case "guest":
-//       return 1;
-//       break;
-//     case "business":
-//       return 2;
-//       break;
-//     case "tourist":
-//       return 3;
-//       break;
-//   }
-// };

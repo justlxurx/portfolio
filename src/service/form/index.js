@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-// import { Lesson, LessonContent } from 'src/types';
 
 export const formApi = createApi({
   reducerPath: "formApi",
@@ -11,10 +10,17 @@ export const formApi = createApi({
     form: builder.mutation({
       query: (body) => ({
         url: `client/submitQuickApplication`,
+        responseHandler:"text",
         method: "POST",
         body,
       }),
       keepUnusedDataFor: 0,
+      // transformResponse: (response) => {
+      //   if (typeof response === 'string') {
+      //     return { data: response };
+      //   }
+      //   return response;
+      // },
     }),
   }),
 });

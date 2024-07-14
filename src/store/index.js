@@ -4,8 +4,6 @@ import {
   otherApi,
   visaApi,
   formApi,
-  // reviewApi,
-  countryApi,
   adminApi,
   commentApi
 } from "../service/index";
@@ -13,9 +11,6 @@ import {
   shengenReducer,
   otherReducer,
   visaReducer,
-  formReducer,
-  // reviewReducer,
-  countryReducer,
   adminReducer,
   commentReducer
 } from "../slice/index";
@@ -29,17 +24,12 @@ export const store = configureStore({
     other: otherReducer,
     shengen: shengenReducer,
     visa: visaReducer,
-    form: formReducer,
-    // reviews: reviewReducer,
-    country: countryReducer,
     [commentApi.reducerPath]:commentApi.reducer,
     [adminApi.reducerPath]: adminApi.reducer,
     [otherApi.reducerPath]: otherApi.reducer,
     [shengenApi.reducerPath]: shengenApi.reducer,
     [visaApi.reducerPath]: visaApi.reducer,
-    [formApi.reducerPath]: formApi.reducer,
-    // [reviewApi.reducerPath]: reviewApi.reducer,
-    [countryApi.reducerPath]: countryApi.reducer,
+    [formApi.reducerPath]: formApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -49,10 +39,7 @@ export const store = configureStore({
       shengenApi.middleware,
       visaApi.middleware,
       formApi.middleware,
-      // reviewApi.middleware,
-      countryApi.middleware,
       logger
-      // refreshToken
     ),
 });
 export default store;

@@ -10,7 +10,7 @@ import {FaStar} from 'react-icons/fa'
 import { Modal } from '../../Modal/Modal';
 
 export const Form = () =>{
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
     const [createComment] = useCreateCommentMutation();
     const dispatch = useDispatch();
     const {t} = useTranslation()
@@ -35,11 +35,16 @@ export const Form = () =>{
           try {
             // event.preventDefault();
             const response = await createComment(values);
-            console.log("values is "+values+"\n response is"+response)
-            dispatch(addComment(values))
-            setIsOpen(true)
-            resetForm();
-            setRating(null)
+            //console.log("values is "+values+"\n response is"+response)
+
+            if (response.error) {
+              console.error('Ошибка в ответе сервера:', response.error);
+            } else {
+              setIsOpen(true);
+              resetForm();
+              dispatch(addComment(values))
+              setRating(null)
+            }
            }
           catch (error) {
             console.error('Error submitting form:', error);

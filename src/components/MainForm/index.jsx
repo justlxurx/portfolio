@@ -28,9 +28,14 @@ const Main = () => {
     onSubmit: async (values, { resetForm }) => {
       try {
         const response = await submitForm(values);
-        //alert();
-        setIsOpen(true)
-        resetForm();
+        console.log(response)
+        if (response.error) {
+          console.error('Ошибка в ответе сервера:', response.error);
+          // возможно, показать сообщение об ошибке пользователю
+        } else {
+          setIsOpen(true);
+          resetForm();
+        }
           } catch (error) {
         console.error('Error submitting form:', error);
             }

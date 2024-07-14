@@ -1,7 +1,4 @@
-import { useState } from "react";
 import s from "./Input.module.scss";
-// import { EyeIcon } from '../../assets/icons/eye';
-// import { HiddenIcon } from '../../assets/icons/hidden';
 
 const Input = ({
   title,
@@ -11,11 +8,6 @@ const Input = ({
   error,
   ...rest
 }) => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   return (
     <div className={s.mainInput}>
