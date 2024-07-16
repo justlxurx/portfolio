@@ -52,8 +52,8 @@ const Country = () => {
           countries.map((countries, index) => (
             <Link to={`${countries.countryNameEn}`} key={index}>
               <div className={styles.country__visa}>
-                {/* <img src={`data:image/png;base64,${countries.flag}`} alt='flag' /> */}
-                <img src={images[countries.countryNameEn] } alt={`${countries.countryNameEn}`}  /> 
+                {/* <img src={images[countries.countryNameEn] } alt={`${countries.countryNameEn}`}  />  */}
+                <div className={styles.flag} style={{ backgroundImage:`url('/src/assets/images/Other/${countries.countryNameEn}.png')`}}></div>  
                 <p>{i18n.language === 'en' ? countries.countryNameEn : countries.countryName}</p>
               </div>
             </Link>

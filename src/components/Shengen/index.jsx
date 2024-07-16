@@ -52,7 +52,8 @@ const Country = () => {
           countries.map((country) => (
             <Link to={`${country.nameEn}`} key={country.id}>
               <div className={styles.country__visa}>
-              <img src={images[country.nameEn] } alt={`${country.nameEn}`}  />
+              <div className={styles.flag} style={{ backgroundImage:`url('/src/assets/images/Shengen/${country.nameEn}.png')`}}></div>
+              {/* <img src={images[country.nameEn] } alt={`${country.nameEn}`}  /> */}
               <p>{i18n.language === 'en' ? country.nameEn : country.name}</p>
               </div>
             </Link>

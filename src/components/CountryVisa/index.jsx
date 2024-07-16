@@ -69,10 +69,10 @@ const Visa = () => {
               style={{
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
+                backgroundImage:"url('/src/assets/images/city.png')"
               }}
             >
               <div className={styles.visa__country}>
-                {/* <img src={`data:image/png;base64,${country.flag}`} alt='country' /> */}
                 <img src={images[country.countryNameEn] } alt={`${country.countryNameEn}`} className={styles.flag}  /> 
                 <h1 className={styles.visa__countryName}>{i18n.language === 'en' ? country.countryNameEn : country.countryName}</h1>
               </div>

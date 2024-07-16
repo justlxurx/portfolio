@@ -66,8 +66,7 @@ const Visa = () => {
             <div
               className={styles.visa__countryWrapper}
               style={{
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
+                backgroundImage:`url('/src/assets/images/Shengen/${country.nameEn}_img.png')`
               }}
             >
               <div className={styles.visa__country}>

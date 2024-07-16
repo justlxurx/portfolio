@@ -44,7 +44,10 @@
     justify-content: space-between;
     align-items: end;
     padding: 15% 8%;
-    background-image: url('./../../assets/images/city.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // background-image: url('./../../assets/images/city.png');
     // background-color: #32349a;
     min-height: 250px;
     position: relative;
