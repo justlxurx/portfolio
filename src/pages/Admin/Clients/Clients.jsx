@@ -2,25 +2,26 @@ import styles from './Clients.module.scss';
 import trash from '../../../assets/images/trash.png';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useGetClientQuery } from '../../../service';
+import { useGetClientQuery, useDeleteUserMutation  } from '../../../service';
 import { setClient, removeClient} from '../../../slice';
 import { SearchBar } from '../../../components/SearchBar';
 import { filterClient, setSearchClient } from '../../../slice';
-import { useSearchUserQuery } from '../../../service';
 
 export const Clients = () => {
   const { data: queries, isLoading } = useGetClientQuery();
+  const [deleteUser] = useDeleteUserMutation()
   const dispatch = useDispatch();
   const users = useSelector((state) => state.admin.client);
-
   const clients = useSelector((state) => state.admin.searchClient);
   const [val, setVal] = useState('')
-  const {data} = useSearchUserQuery(val);
+
+
+  
   useEffect(() => {
-    if (data) {
-        dispatch(setSearchClient(data));
+    if (val) {
+        dispatch(setSearchClient(val));
     }  
-  }, [data, dispatch]);
+  }, [dispatch]);
         
   const handleChange = (value) => {
     setVal(value);
@@ -40,6 +41,7 @@ export const Clients = () => {
 
   const handleRemoveClient = (index) => {
     dispatch(removeClient(index));
+    deleteUser(index)
   };
 
   const logOut = () => {
@@ -78,12 +80,12 @@ export const Clients = () => {
             (val!==''  ?     
             clients : users).map((data, index) => (
                 <tr key={index} style={{ backgroundColor: `${index % 2 === 0 ? 'rgba(217, 217, 217, 0.5)' : 'white'}` }}>
-                  <td>{index + 1}</td>
+                  <td>{index+1}</td>
                   <td>{data.name}</td>
                   <td>{data.phone}</td>
                   <td>25 June 2024, 17:16</td>
                   <td>
-                    <button onClick={() => handleRemoveClient(index)}>
+                    <button onClick={() => handleRemoveClient(data.id)}>
                       <img src={trash} alt='trash' width={15} height={15} className={styles.trash} />
                     </button>
                   </td>

@@ -15,12 +15,6 @@ export const formApi = createApi({
         body,
       }),
       keepUnusedDataFor: 0,
-      // transformResponse: (response) => {
-      //   if (typeof response === 'string') {
-      //     return { data: response };
-      //   }
-      //   return response;
-      // },
     }),
   }),
 });

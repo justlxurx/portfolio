@@ -8,8 +8,7 @@ import {
   commentApi
 } from "../service/index";
 import {
-  shengenReducer,
-  otherReducer,
+  countryReducer,
   visaReducer,
   adminReducer,
   commentReducer
@@ -21,8 +20,7 @@ export const store = configureStore({
   reducer: {
     comment:commentReducer,
     admin: adminReducer,
-    other: otherReducer,
-    shengen: shengenReducer,
+    country: countryReducer,
     visa: visaReducer,
     [commentApi.reducerPath]:commentApi.reducer,
     [adminApi.reducerPath]: adminApi.reducer,

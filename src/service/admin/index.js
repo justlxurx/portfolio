@@ -14,13 +14,6 @@ export const adminApi = createApi({
       }),
     }),
 
-    searchUser: builder.query({
-      query: (username) => ({
-        url: `searchByUsername/${username}`,
-        method: 'GET',
-      }),
-    }),
-
     login: builder.mutation({
       query: (body) => ({
         body,
@@ -28,7 +21,14 @@ export const adminApi = createApi({
         method: 'POST',
       }),
     }),
+
+    deleteUser: builder.mutation({
+      query: (id) => ({
+        url: `deleteApplication/${id}`,
+        method: 'DELETE',
+      }),
+    }),
   }),
 });
 
-export const { useGetClientQuery, useLoginMutation, useSearchUserQuery } = adminApi;
+export const { useGetClientQuery, useLoginMutation, useDeleteUserMutation } = adminApi;

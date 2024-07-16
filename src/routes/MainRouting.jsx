@@ -12,6 +12,8 @@ import Feedback from "../pages/Feedback/Feddback";
 import { AdminLayout } from "../pages/Admin/AdminLayout/AdminLayout";
 import { Clients } from "../pages/Admin/Clients/Clients";
 import { Login } from "../pages/Admin/Login/Login";
+import { Dashboard } from "../pages/Admin/Dashboard";
+import { DashboardShengen } from "../pages/Admin/Shengen";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
 
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="/admin/clients" element={<Clients />} />
+        <Route path="/admin/other" element={<Dashboard />} />
+        <Route path="/admin/shengen" element={<DashboardShengen />} />
       </Route>
       <Route path="/admin/login" element={<Login />} />
     </Routes>

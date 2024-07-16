@@ -31,7 +31,6 @@ const Main = () => {
         console.log(response)
         if (response.error) {
           console.error('Ошибка в ответе сервера:', response.error);
-          // возможно, показать сообщение об ошибке пользователю
         } else {
           setIsOpen(true);
           resetForm();

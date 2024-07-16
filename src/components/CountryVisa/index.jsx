@@ -6,7 +6,7 @@ import { getIdFromURL, getId } from '../../helpers';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setCountry } from '../../slice';
+import { getCountry } from '../../slice';
 
 const Visa = () => {
   const zone = getId(window.location.pathname);
@@ -14,12 +14,23 @@ const Visa = () => {
   const { data: country, isLoading } = useGetCountryInfoFromNameQuery(path);
   console.log(country);
   const { t, i18n } = useTranslation();
-
+  const [images, setImages] = useState({});
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (country) {
-      dispatch(setCountry(country));
+      dispatch(getCountry(country));
+      const loadImages = async () => {
+        const newImages = {};
+        try {
+          const image = (await import(`../../assets/images/Other/${country.countryNameEn}.png`)).default;
+          newImages[country.countryNameEn] = image;
+        } catch (err) {
+          console.error(`Error loading image for ${country.countryNameEn}:`, err);
+        }
+        setImages(newImages);
+      };
+      loadImages();
     }
   }, [country, dispatch]);
 
@@ -46,13 +57,13 @@ const Visa = () => {
         
       </ul>
           <div className={styles.visa__typesWrapper}>
-            {/* <div className={styles.visa__typesWrapperLinks}>
-              {country.visa.map((visas, idx) => (
+            <div className={styles.visa__typesWrapperLinks}>
+              {/* {country.visa.map((visas, idx) => (
                 <Link to={`${visas.visaName}`} key={idx}>
                   <button>{visas.visaName}</button>
                 </Link>
-              ))}
-            </div> */}
+              ))} */}
+            </div>
             <div
               className={styles.visa__countryWrapper}
               style={{
@@ -61,16 +72,16 @@ const Visa = () => {
               }}
             >
               <div className={styles.visa__country}>
-                <img src={`data:image/png;base64,${country.flag}`} alt='country' />
-                <h1>{i18n.language === 'en' ? country.countryNameEn : country.countryName}</h1>
+                {/* <img src={`data:image/png;base64,${country.flag}`} alt='country' /> */}
+                <img src={images[country.countryNameEn] } alt={`${country.countryNameEn}`} className={styles.flag}  /> 
+                <h1 className={styles.visa__countryName}>{i18n.language === 'en' ? country.countryNameEn : country.countryName}</h1>
               </div>
-              <p className={styles.textWrapper}>
+              <p className={styles.visa__info}>
                {t('price')} <br />
                 <b> {country.price} KZT </b> <br />
                {t('deadline')}  <br />
                    <b> {country.deadline == 1 ? <>  {t('deadlineDays1')} {country.deadline} {t('deadlineDays3')}</> : <>
-             {t('deadlineDays1')} {country.deadline} {t('deadlineDays2')}   </>}
-             
+             {t('deadlineDays1')} {country.deadline} {t('deadlineDays2')}   </>}     
              </b> 
               </p>
             </div>
@@ -102,9 +113,9 @@ const Visa = () => {
             ))}
           </div> */}
           <div className={styles.visa__bottomText}>
-            <h1>{i18n.language === 'en' ? country.titleEn : country.title}</h1>
+            <h1 className={styles.visa__title}>{i18n.language === 'en' ? country.titleEn : country.title}</h1>
             {/* <p> {i18n.language === 'en' ? country.textEn : country.text}</p> */}
-            <p>
+            <p className={styles.visa__text}>
               {i18n.language ==='en' ? <> {country.textEn.split('\n').map((line, index) => (
                 <Fragment key={index}>
                   {line}

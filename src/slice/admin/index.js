@@ -13,11 +13,8 @@ export const adminSlice = createSlice({
       state.client = action.payload;
     },
     removeClient: (state, action) => {
-      state.client = state.client.filter((_, index) => index !== action.payload);
+      state.client = state.client.filter((data) => data.id !== action.payload);
     },
-    // filterClient:(state, action)=>{
-    //   state.searchClient = state.client.filter((data)=> data.search(action.payload)!==-1)
-    // },
     filterClient:(state, action)=>{
       state.searchClient = state.client.filter((data)=> data.name.includes(action.payload))
     },

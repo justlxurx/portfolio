@@ -1,19 +1,38 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useGetOtherImagesQuery } from '../../service';
-import { setOther } from '../../slice';
+import { useGetOtherCountryQuery } from '../../service';
+import { setCountry } from '../../slice';
 import { useTranslation } from 'react-i18next';
 
 const Country = () => {
-  const { data: countries, isLoading } = useGetOtherImagesQuery();
+  const { data: countries, isLoading } = useGetOtherCountryQuery();
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
+  const [images, setImages] = useState({});
+
+  // useEffect(() => {
+  //   if (countries) {
+  //     dispatch(setCountry(countries));
+  //   }
+  // }, [countries, dispatch]);
 
   useEffect(() => {
     if (countries) {
-      dispatch(setOther(countries));
+      dispatch(setCountry(countries));
+      const loadImages = async () => {
+        const newImages = {};
+        for (const country of countries) {
+          try {
+            newImages[country.countryNameEn] = (await import(`../../assets/images/Other/${country.countryNameEn}.png`)).default;
+          } catch (err) {
+            console.error(`Error loading image for ${country.countryNameEn}:`, err);
+         }
+        }
+        setImages(newImages);
+      };
+      loadImages();
     }
   }, [countries, dispatch]);
 
@@ -33,7 +52,8 @@ const Country = () => {
           countries.map((countries, index) => (
             <Link to={`${countries.countryNameEn}`} key={index}>
               <div className={styles.country__visa}>
-                <img src={`data:image/png;base64,${countries.flag}`} alt='flag' />
+                {/* <img src={`data:image/png;base64,${countries.flag}`} alt='flag' /> */}
+                <img src={images[countries.countryNameEn] } alt={`${countries.countryNameEn}`}  /> 
                 <p>{i18n.language === 'en' ? countries.countryNameEn : countries.countryName}</p>
               </div>
             </Link>

@@ -3,7 +3,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const commentApi = createApi({
   reducerPath: 'commentsApi',
   baseQuery: fetchBaseQuery({
-    // baseUrl: 'http://localhost:3000/comments',
     baseUrl:"http://94.247.129.16:8080/review/",
   }),
 

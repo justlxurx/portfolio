@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const AboutUs = () => {
   const { t } = useTranslation();
   return (
-   <div className={'container'}> 
+  //  <div className={'container'}> 
     <section className={styles.visa}>
       <div className={styles.visa__heading}>
         <hr />
@@ -13,8 +13,7 @@ const AboutUs = () => {
         <hr />
       </div>
      
-      <div className={styles.visa__service}>
-        
+      <div className={styles.visa__service}> 
         <div></div>
         <div className={styles.visa__serviceText}>
           <h2>Visa Service</h2>
@@ -29,7 +28,8 @@ const AboutUs = () => {
      
        </div> 
       
-    </section></div>
+    </section>
+    // </div>
   );
 };
 

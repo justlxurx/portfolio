@@ -7,7 +7,7 @@ export const otherApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    getOtherImages: builder.query({
+    getOtherCountry: builder.query({
       query: () => ({
         url: `get-countries`,
         method: "GET",
@@ -19,7 +19,24 @@ export const otherApi = createApi({
         method: "GET",
       }),
     }),
+
+    updateCountry: builder.mutation({
+      query: ({id, body}) => ({
+        url: `update-country/${id}`,
+        method: "POST",
+        body,
+      }),
+    }),
+
+    saveCountry: builder.mutation({
+      query: (body) => ({
+        url: `save-country`,
+        method: "POST",
+        body,
+      }),
+    }),
+
   }),
 });
 
-export const { useGetOtherImagesQuery, useGetCountryInfoFromNameQuery } = otherApi;
+export const { useGetOtherCountryQuery, useGetCountryInfoFromNameQuery, useUpdateCountryMutation, useSaveCountryMutation } = otherApi;

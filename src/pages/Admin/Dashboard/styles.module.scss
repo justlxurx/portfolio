@@ -1,0 +1,227 @@
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width:200px
+  }
+  
+  .main__title{
+    font-family: "Gothic A1";
+    font-family: 400;
+    text-align: center;
+  }
+  
+  
+  .main {
+    display: grid;
+    grid-template-rows: 12% auto;
+    height: 100%;
+  }
+  
+  .main__bottom {
+    padding: 50px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .logout{
+    height: 2.5rem;
+    font-size: 15px;
+    font-family: 'Gothic A1';
+    padding: 0 12px;
+    color: rgba(50, 52, 154, 1);
+    background-color: white;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover{
+      background-color:  rgba(50, 52, 154, 1);
+      color:white
+    }
+  }
+  
+  .main__heading {
+    color: rgba(50, 52, 154, 1);
+    font-family: 'Gothic A1';
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 40px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+  
+  .users {
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 5px;
+    padding: 20px 0;
+    
+  }
+  
+  .users__title {
+    font-family: 'Gothic A1';
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 33.25px;
+    text-align: left;
+    color: rgba(50, 52, 154, 1);
+    padding-left: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .tableWrap{
+    height: 500px;
+    overflow-y: scroll;
+  }
+  
+  .usersTable {  
+    position: relative;
+    // border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    border-color: gray;
+    padding-bottom: 30px;
+
+    input, textarea{
+        width: 98%;
+        border: none;
+    }
+    
+    th {
+      background: rgba(162, 165, 188, 1);
+      color: white;
+      padding: 10px ;
+      font-family: 'Goldman';
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 13.2px;
+      text-align: center;
+    }
+    td {
+      padding: 10px 0;
+      color: rgba(174, 167, 167, 1);
+      font-family: 'Goldman';
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 11.25px;
+      text-align: center;
+    }
+  }
+  
+  .main__top {
+    background: rgba(47, 50, 181, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 0 20px 0 40px;
+  
+  }
+  
+  @media (max-width: 1100px) {
+    .main__bottom {
+      padding: 30px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .logout{
+      font-size: 15px;
+      padding: 12px;
+      border-radius: 5px;
+    }
+    
+    .main__heading {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    
+    .users {
+      border-radius: 5px;
+      padding: 20px 0;
+    }
+    
+    .users__title {
+      font-size: 15px;
+      line-height: 26.25px;
+      padding-left: 20px;
+    }
+    
+    .usersTable {
+      th {
+        padding: 10px 0;
+        font-size: 10px;
+        line-height: 21.2px;
+      }
+      td {
+        padding: 10px 0;
+        font-size: 10px;
+        line-height: 21.25px;
+      }
+    }
+    .trash{
+      width: 16px;
+      height: 16px;
+    }
+    
+  }
+  
+  @media (max-width: 992px) {
+    .main {
+      display: grid;
+      grid-template-rows: 50px auto;
+      height: 100%;
+    }
+    .main__bottom {
+      padding: 30px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .logout{
+      font-size: 9px;
+      padding: 6px 8px;
+      border-radius: 5px;
+      height: auto;
+    }
+    
+    .main__heading {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    .trash{
+      width: 8px;
+      height: 8px;
+    }
+    .users {
+      border-radius: 5px;
+      padding: 20px 0;
+    }
+    
+    .users__title {
+      font-size: 15px;
+      line-height: 12.25px;
+      padding-left: 20px;
+    }
+    
+    .usersTable {
+      th {
+        padding: 11px 0;
+        font-size: 8px;
+        line-height: 10.2px;
+      }
+      td {
+        padding: 8px 0;
+        font-size: 8px;
+        line-height: 11.25px;
+      }
+    }
+  
+    .main__top{
+      padding: 0 10px 0 25px;
+    }
+    
+  }
