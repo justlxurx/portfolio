@@ -59,6 +59,7 @@ const Comments = () => {
                 </div>
 
                 <p className={styles.comments__text}>{comments.text}</p>
+                <div className={styles.comments__data}>
                 <div className={styles.comments__message}>
                   <img src={message} alt='message-icon' />
                   <p className={styles.comments__name}>{comments.fullName}</p>
@@ -66,6 +67,7 @@ const Comments = () => {
                 <p className={styles.comments__data}>{comments.createdAt
                 ? comments.createdAt.replace(/T(\d{2}:\d{2}:\d{2})\.\d+Z/, ' $1')
                 : t('now')}</p>
+                </div>
               </div>
             ))
           : <p>No data found</p>
