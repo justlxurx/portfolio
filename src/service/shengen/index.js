@@ -23,10 +23,14 @@ export const shengenApi = createApi({
     }),
 
     updateShengenZone: builder.mutation({
-      query: (country) => ({
-        url: `update`,
-        method: "POST",
-        body:country
+      query: ({id, body}) => ({
+        url: `update/${id}`,
+        method: "PUT",
+        // body
+        body: JSON.stringify(body), // убедитесь, что body сериализуется в JSON
+        headers: {
+          'Content-Type': 'application/json'
+        },
       }),
     }),
 

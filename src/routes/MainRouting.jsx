@@ -35,8 +35,8 @@ function App() {
 
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="/admin/clients" element={<Clients />} />
-        <Route path="/admin/other" element={<Dashboard />} />
-        <Route path="/admin/shengen" element={<DashboardShengen />} />
+        {/* <Route path="/admin/other" element={<Dashboard />} />
+        <Route path="/admin/shengen" element={<DashboardShengen />} /> */}
       </Route>
       <Route path="/admin/login" element={<Login />} />
     </Routes>

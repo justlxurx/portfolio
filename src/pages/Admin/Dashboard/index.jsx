@@ -12,8 +12,9 @@ export const Dashboard = () => {
   const [editableData, setEditableData] = useState({});
   const {data: otherCountry, isLoading: countryLoading} = useGetOtherCountryQuery()
   const [val, setVal] = useState('')
-  // const [save] = useUpdateShengenZoneMutation()
-  const [save] = useSaveCountryMutation()
+  const [num, setNum] = useState(0)
+  const [save] = useUpdateCountryMutation()
+  // const [save] = useSaveCountryMutation()
   const dispatch = useDispatch()
   const countries = useSelector((state) => state.country.filterCountryData)
 
@@ -38,6 +39,7 @@ export const Dashboard = () => {
     if (editableRow !== null && editableRow !== index) {
       saveEdits();
     }
+    setNum(index)
     setEditableRow(index);
     setEditableData(data);
   }
@@ -45,7 +47,7 @@ export const Dashboard = () => {
   const saveEdits = async() => {
     if (editableRow !== null) {
         try {
-            const result = await save(editableData); // Вызов мутации для обновления данных
+            const result = await save({id:num, body:editableData}); // Вызов мутации для обновления данных
             console.log("result is:")
             console.log(result)
             dispatch(updateCountry({ index: editableRow, updatedData: editableData }));
@@ -87,7 +89,7 @@ export const Dashboard = () => {
               <th>ID</th>
               <th>Страна</th>
               <th>Country</th>
-              <th>Flag</th>
+              {/* <th>Flag</th> */}
               <th>Price</th>
               <th>Deadline</th>
               <th>Заголовок</th>
@@ -109,26 +111,28 @@ export const Dashboard = () => {
                     <input
                       type="text"
                       value={editableRow === index ? editableData.countryName : data.countryName}
-                      onChange={(e) => handleInputChange(e, 'name')}
-                      disabled={editableRow !== index}
-                      style={{ backgroundColor: `${editableRow !== index ? "inherit" : "white"}` }} />
+                      // onChange={(e) => handleInputChange(e, 'name')}
+                      // disabled={editableRow !== index}
+                      disabled
+                      style={{ backgroundColor: `inherit` }} />
                   </td>
                   <td>
                     <input
                       type="text"
                       value={editableRow === index ? editableData.countryNameEn : data.countryNameEn}
-                      onChange={(e) => handleInputChange(e, 'nameEn')}
-                      disabled={editableRow !== index}
-                      style={{ backgroundColor: `${editableRow !== index ? "inherit" : "white"}` }} />
+                      // onChange={(e) => handleInputChange(e, 'nameEn')}
+                      // disabled={editableRow !== index}
+                      disabled
+                      style={{ backgroundColor: `inherit` }} />
                   </td>
-                  <td>
+                  {/* <td>
                     <input
                       type="text"
                       value={editableRow === index ? editableData.flag : data.flag}
                       onChange={(e) => handleInputChange(e, 'image')}
                       disabled={editableRow !== index}
                       style={{ backgroundColor: `${editableRow !== index ? "inherit" : "white"}` }} />
-                  </td>
+                  </td> */}
                   <td>
                     <input
                       type="text"
@@ -186,12 +190,12 @@ export const Dashboard = () => {
                   </td>
                   <td>
                     {editableRow === index ?
-                      <button onClick={saveEdits}>
-                        <FaSave size={15} />
+                      <button onClick={saveEdits} >
+                        <FaSave size={15} className={styles.icon} />
                       </button>
                       :
                       <button onClick={() => handleEdit(index, data)}>
-                        <SlPencil size={15} />
+                        <SlPencil size={15} className={styles.icon} />
                       </button>}
                   </td>
                 </tr>

@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 export const ControlPanel = () => {
   return (
     <section className={styles.main}>
-      <div className={styles.main__heading}>Control Panel</div>
+      <div className={styles.main__heading}>
+        Control Panel
+        </div>
       <div className={styles.main__list}>
         {/* <p className={styles.text}>administration</p> */}
         <ul className={styles.list}>
@@ -14,13 +16,13 @@ export const ControlPanel = () => {
             <img src={customer} alt='customer' />
              <Link to='clients' className={styles.link}> Clients</Link>
           </li>
-          <li>
+          {/* <li>
             <img src={dashboard} alt='dashboard' />
-             <Link to='other'>Other country </Link>
+             <Link to='other'  className={styles.link}>Other country </Link>
           </li><li>
             <img src={dashboard} alt='dashboard' />
-             <Link to='shengen'>Shengen country</Link>
-          </li>
+             <Link to='shengen'  className={styles.link}>Shengen country</Link>
+          </li> */}
         </ul>
       </div>
     </section>

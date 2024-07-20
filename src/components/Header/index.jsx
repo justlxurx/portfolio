@@ -22,10 +22,8 @@ const Header = () => {
     setIsActive(state);
   }
 
-  const phones = ['+7 (707) 908 08 29',
-    '+7 (708) 808 93 03',
-    '+7 (707) 055 67 27',
-    '+7 (707) 228 90 80']
+  const phones = ['+7 (707) 901 24 23',
+    '+7 (775) 076 19 19']
 
   return (
     <section className={styles.navbar} >
@@ -50,7 +48,7 @@ const Header = () => {
           <div className={styles.phones}>
             <img src={phone} alt='phone' className={styles.phones__img} />
             <div className={styles.phoneWrap}>
-             <a href={`tel:+7 (727) 339 83 23`}  className={styles.phoneWrap__link}>+7 (727) 339 83 23 </a>  <img src={uncover} alt="bottom-icon"  width={10} />
+             <a href={`tel:+7 (707) 341 06 99`}  className={styles.phoneWrap__link}>+7 (707) 341 06 99</a>  <img src={uncover} alt="bottom-icon"  width={10} />
              <ul className={styles.phoneList}>
               {phones.map( (item, index )=> {
                  return (<li key={index}> 
@@ -69,7 +67,7 @@ const Header = () => {
             <a href='' target='_blank'>
               <img src={telega} alt='telega' />
             </a>
-            <a href='https://www.instagram.com/vsqazaqstan/?igshid=NDk5N2NlZjQ%3D' target='_blank' rel='noreferrer'>
+            <a href='https://www.instagram.com/blsvizakz?igsh=ZzNla2dib3hjeGdl' target='_blank' rel='noreferrer'>
               <img src={insta} alt='insta' />
             </a>
           </nav>

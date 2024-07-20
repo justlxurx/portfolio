@@ -1,6 +1,5 @@
 import { React, useState, useEffect, Fragment } from 'react';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
 import { useGetCountryInfoFromNameQuery } from '../../service';
 import { getIdFromURL, getId } from '../../helpers';
 import { useTranslation } from 'react-i18next';
@@ -58,11 +57,11 @@ const Visa = () => {
       </ul>
           <div className={styles.visa__typesWrapper}>
             <div className={styles.visa__typesWrapperLinks}>
-              {/* {country.visa.map((visas, idx) => (
-                <Link to={`${visas.visaName}`} key={idx}>
-                  <button>{visas.visaName}</button>
-                </Link>
-              ))} */}
+              {country.visaCountries.map((visas, idx) => (
+                <a href={`#${visas.visaNameEn}`} key={idx}>
+                  <button>{i18n.language =='en'? visas.visaNameEn:visas.name}</button>
+                </a>
+              ))}
             </div>
             <div
               className={styles.visa__countryWrapper}
@@ -84,13 +83,13 @@ const Visa = () => {
               </p>
             </div>
           </div>
-          {/* <div className={styles.mobileWrapper}>
-            {country.visa.map((visas, idx) => (
-              <div className={styles.mobileWrapper__visaType} key={idx}>
+          <div className={styles.mobileWrapper}>
+            {country.visaCountries.map((visas, idx) => (
+              <div className={styles.mobileWrapper__visaType} key={idx} id={visas.visaNameEn}>
                 <div className={styles.mobileWrapper__title}>
-                  {i18n.language === 'en' ? visas.visaNameEn : visas.visaName}
+                  {i18n.language === 'en' ? visas.visaNameEn : visas.name}
                 </div>
-                <div className={styles.mobileWrapper__text}>
+                <div className={`${styles.mobileWrapper__text} ${visas.visaDoc && styles.textWrap}`}>
                   <p>
                     {i18n.language === 'en'
                       ? visas.visaTextEn.split('\n').map((line, index) => (
@@ -106,10 +105,14 @@ const Visa = () => {
                           </Fragment>
                         ))}
                   </p>
+                  {visas.visaDoc &&  
+                  <div className={styles.doc} style={{backgroundImage:`url('/src/assets/images/Other/doc/${visas.id}.png')`}}>
+                  </div>
+                   }
                 </div>
               </div>
             ))}
-          </div> */}
+          </div>
           <div className={styles.visa__bottomText}>
             <h1 className={styles.visa__title}>{i18n.language === 'en' ? country.titleEn : country.title}</h1>
             {/* <p> {i18n.language === 'en' ? country.textEn : country.text}</p> */}

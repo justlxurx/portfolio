@@ -83,7 +83,11 @@ export const Clients = () => {
                   <td>{index+1}</td>
                   <td>{data.name}</td>
                   <td>{data.phone}</td>
-                  <td>25 June 2024, 17:16</td>
+                  <td>
+                  {data.createdAt
+                ? data.createdAt.replace(/T(\d{2}:\d{2}:\d{2})\.\d+Z/, ' $1')
+                : ''}
+                  </td>
                   <td>
                     <button onClick={() => handleRemoveClient(data.id)}>
                       <img src={trash} alt='trash' width={15} height={15} className={styles.trash} />

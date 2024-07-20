@@ -12,8 +12,9 @@ export const DashboardShengen = () => {
   const [editableData, setEditableData] = useState({});
   const {data: otherCountry, isLoading: countryLoading} = useGetShengenImagesQuery()
   const [val, setVal] = useState('')
-  // const [save] = useUpdateShengenZoneMutation()
-  const [save] = useSaveShengenZoneMutation()
+  const [num, setNum] = useState(0)
+  const [save] = useUpdateShengenZoneMutation()
+  // const [save] = useSaveShengenZoneMutation()
   const dispatch = useDispatch()
   const countries = useSelector((state) => state.country.filterCountryData)
 
@@ -35,18 +36,24 @@ export const DashboardShengen = () => {
   }
 
   const handleEdit = (index, data) => {
-    if (editableRow !== null && editableRow !== index) {
-      saveEdits();
-    }
+    // if (editableRow !== null && editableRow !== index) {
+    //   saveEdits();
+    // }
+
+    setNum(index)
     setEditableRow(index);
     setEditableData(data);
   }
+  console.log('num is:'+num)
 
   const saveEdits = async() => {
     if (editableRow !== null) {
         try {
-            const result = await save(editableData); // Вызов мутации для обновления данных
+            const result = await save({id:num, body:editableData}); // Вызов мутации для обновления данных
+            
             console.log("result is:")
+            console.log(result)
+            console.log("editable data is")
             console.log(editableData)
             dispatch(updateCountry({ index: editableRow, updatedData: editableData }));
           } catch (error) {
@@ -104,14 +111,16 @@ export const DashboardShengen = () => {
               // (val !== '' ? countries : otherCountry)
               countries.map((data, index) => (
                 <tr key={index} style={{ backgroundColor: `${index % 2 === 0 ? 'rgba(217, 217, 217, 0.5)' : 'rgba(217, 207, 207, 0.8)'}` }}>
-                  <td>{index + 1}</td>
+                  <td>{data.id}</td>
                   <td>
                     <input
                       type="text"
                       value={editableRow === index ? editableData.name : data.name}
                       onChange={(e) => handleInputChange(e, 'name')}
                       disabled={editableRow !== index}
-                      style={{ backgroundColor: `${editableRow !== index ? "inherit" : "white"}` }} />
+                      // disabled
+                      style={{ backgroundColor: `inherit` }} 
+                      />
                   </td>
                   <td>
                     <input
@@ -119,7 +128,8 @@ export const DashboardShengen = () => {
                       value={editableRow === index ? editableData.nameEn : data.nameEn}
                       onChange={(e) => handleInputChange(e, 'nameEn')}
                       disabled={editableRow !== index}
-                      style={{ backgroundColor: `${editableRow !== index ? "inherit" : "white"}` }} />
+                      // disabled
+                      style={{ backgroundColor: `inherit` }} />
                   </td>
                   <td>
                     <input
@@ -187,11 +197,11 @@ export const DashboardShengen = () => {
                   <td>
                     {editableRow === index ?
                       <button onClick={saveEdits}>
-                        <FaSave size={15} />
+                        <FaSave size={15} className={styles.icon} />
                       </button>
                       :
-                      <button onClick={() => handleEdit(index, data)}>
-                        <SlPencil size={15} />
+                      <button onClick={() => handleEdit(data.id, data)}>
+                        <SlPencil size={15} className={styles.icon} />
                       </button>}
                   </td>
                 </tr>

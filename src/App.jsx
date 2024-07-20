@@ -10,7 +10,7 @@ export const App = () => {
     const path = location.pathname;
     const token = localStorage.getItem('accessToken');
 
-    if ((path === '/admin' || path === '/admin/clients') && !token) {
+    if ((path === '/admin' || path === '/admin/clients'  || path === '/admin/other'  || path === '/admin/shengen')  && !token) {
       navigate('/admin/login');
     } else if (token && path === '/admin/login' || path === '/admin') {
       navigate('/admin/clients');

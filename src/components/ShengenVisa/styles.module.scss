@@ -14,29 +14,29 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  // &__typesWrapperLinks {
-  //   display: grid;
-  //   gap: 30px;
-  //   padding: 10% 5%;
-  //   justify-content: center;
-  //   align-items: center;
-  //   button {
-  //     width: 100%;
-  //     color: #fff;
-  //     font-family: 'Gothic A1', sans-serif;
-  //     font-size: 25px;
-  //     font-style: normal;
-  //     font-weight: 800;
-  //     line-height: normal;
-  //     text-decoration-line: underline;
-  //     padding: 7%;
-  //     border-radius: 10px;
-  //     background: #32349a;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //   }
-  // }
+  &__typesWrapperLinks {
+    display: grid;
+    gap: 30px;
+    padding: 10% 5%;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 100%;
+      color: #fff;
+      font-family: 'Gothic A1', sans-serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      text-decoration-line: underline;
+      padding: 7%;
+      border-radius: 10px;
+      background: #32349a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   &__countryWrapper {
     border-radius: 0px 20px 20px 0px;
     display: flex;
@@ -47,8 +47,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    // background-image: url('./../../assets/images/city.png');
-    // background-color: #32349a;
     min-height: 250px;
     position: relative;
     overflow: hidden;
@@ -148,6 +146,7 @@
     color: #000;
   }
 }
+
 .mobileWrapper {
   display: flex;
   flex-direction: column;
@@ -159,11 +158,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin:20px 0
   }
   &__title {
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 800;
     font-family: 'Gothic A1', sans-serif;
     background-color: #32349a;
@@ -172,13 +172,33 @@
     text-transform: uppercase;
   }
   &__text {
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Goldman', sans-serif;
     font-weight: 700;
     color: #000;
-    padding: 90px 0;
+    padding: 30px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    height: auto;
+   
+  }
+  .textWrap{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    height: 100%;
+    
+  }
+  .doc{
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  .mobileDoc{
+    display: none;
   }
 }
 
@@ -207,17 +227,35 @@
       }
     }
     &__bottomText {
-      margin-top: 130px;
+      margin-top: 80px;
     }
     &__title {
       font-size: 40px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
     &__text {
       font-size: 25px;
     }
     .flag {
       height: 35px;
+    }
+  }
+  .mobileWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    margin-top: 50px;
+  
+    &__title {
+      font-size: 26px;
+      padding: 18px;
+      border-radius: 50px;
+    }
+    &__text {
+      font-size: 24px;
+      padding: 20px 0;
+      
     }
   }
 }
@@ -252,7 +290,7 @@
       }
     }
     &__bottomText {
-      margin-top: 80px;
+      margin-top: 50px;
     }
     &__title {
       font-size: 30px;
@@ -291,7 +329,7 @@
       }
     }
     &__bottomText {
-      margin-top: 80px;
+      margin-top: 40px;
     }
     &__title {
       font-size: 25px;
@@ -299,6 +337,23 @@
     }
     &__text {
       font-size: 18px;
+    }
+
+  }
+  .mobileWrapper {
+    gap: 30px;
+    width: 100%;
+    margin-top: 50px;
+  
+    &__title {
+      font-size: 20px;
+      padding: 14px;
+      border-radius: 50px;
+    }
+    &__text {
+      font-size: 18px;
+      padding: 20px 0;
+      
     }
   }
 }
@@ -364,7 +419,7 @@
   .mobileWrapper {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 0px;
     width: 100%;
     margin-top: 50px;
 
@@ -391,10 +446,27 @@
       font-weight: 400;
       color: #000;
       background-color: #32349a47;
-      opacity: 0.28;
+      opacity: 1;
       padding: 20px;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
+    }
+    // .mobileDoc{
+    //   display: flex;
+     
+    // }
+    .textWrap{
+      display: flex;
+      flex-direction: column;
+      z-index: 5;
+    }
+    .doc{
+      display: flex;
+      width: 100%;
+      background-size: contain;
+      height: 200px;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 }

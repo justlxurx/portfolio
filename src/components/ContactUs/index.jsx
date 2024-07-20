@@ -11,12 +11,9 @@ import { useTranslation } from 'react-i18next';
 
 const ContactUs = () => {
   const { t } = useTranslation();
-  const phones = [
-    '+7 (727) 339 83 23',
-    '+7 (707) 908 08 29',
-    '+7 (708) 808 93 03',
-    '+7 (707) 055 67 27',
-    '+7 (707) 228 90 80']
+  const phones = ['+7 (707) 901 24 23',
+    '+7 (775) 076 19 19',
+    '+7 (707) 341 06 99']
   return (
     <section className={`${styles.contacts} container`}>
       <div className={styles.contacts__heading}>

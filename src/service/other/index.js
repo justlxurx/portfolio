@@ -23,7 +23,7 @@ export const otherApi = createApi({
     updateCountry: builder.mutation({
       query: ({id, body}) => ({
         url: `update-country/${id}`,
-        method: "POST",
+        method: "PUT",
         body,
       }),
     }),

@@ -34,6 +34,7 @@ const Visa = () => {
     }
   }, [country, dispatch]);
 
+  
   return (
     <section className={`${styles.visa} container`}>
       {isLoading ? (
@@ -57,11 +58,11 @@ const Visa = () => {
       </ul>
           <div className={styles.visa__typesWrapper}>
             <div className={styles.visa__typesWrapperLinks}>
-              {/* {country.visa.map((visas, idx) => (
-                <Link to={`${visas.visaName}`} key={idx}>
-                  <button>{visas.visaName}</button>
-                </Link>
-              ))} */}
+              {country.visaShengens.map((visas, idx) => (
+                <a href={`#${visas.visaNameEn}`} key={idx}>
+                  <button>{i18n.language=='en' ? visas.visaNameEn:visas.name}</button>
+                </a>
+              ))}
             </div>
             <div
               className={styles.visa__countryWrapper}
@@ -81,41 +82,51 @@ const Visa = () => {
               </p>
             </div>
           </div>
-          {/* <div className={styles.mobileWrapper}>
-            {country.visa.map((visas, idx) => (
-              <div className={styles.mobileWrapper__visaType} key={idx}>
+          <div className={styles.mobileWrapper}>
+            {country.visaShengens.map((visas, idx) => (
+              <div className={styles.mobileWrapper__visaType} key={idx} id={visas.visaNameEn}>
                 <div className={styles.mobileWrapper__title}>
-                  {i18n.language === 'en' ? visas.visaNameEn : visas.visaName}
+                  {i18n.language === 'en' ? visas.visaNameEn : visas.name}
                 </div>
-                <div className={styles.mobileWrapper__text}>
+                <div className={`${styles.mobileWrapper__text} ${visas.visaDoc && styles.textWrap}`}>
                   <p>
                     {i18n.language === 'en'
-                      ? visas.visaTextEn.split('\n').map((line, index) => (
-                          <Fragment key={index}>
-                            {line}
-                            <br />
-                          </Fragment>
-                        ))
-                      : visas.visaText.split('\n').map((line, index) => (
-                          <Fragment key={index}>
-                            {line}
-                            <br />
-                          </Fragment>
-                        ))}
+                      ? visas.visaTextEn
+                      // .split('\n').map((line, index) => (
+                      //     <p key={index}>
+                      //       {line}
+                      //       <br />
+                      //     </p>
+                      //   ))
+                      : visas.visaText
+                      // .split('\n').map((line, index) => (
+                      //     <p key={index}>
+                      //       {line}
+                      //       <br />
+                      //     </p>
+                      //   ))
+                        }
                   </p>
-                </div>
+                  {visas.visaDoc &&  
+                  <div className={styles.doc} style={{backgroundImage:`url('/src/assets/images/Shengen/doc/${visas.id}.png')`}}>
+                  </div>
+                   }
+                  </div>
+
+                
+                  
               </div>
             ))}
-          </div> */}
+          </div>
           <div className={styles.visa__bottomText}>
             <h1 className={styles.visa__title}>{i18n.language === 'en' ? country.titleEn : country.title}</h1>
              <p className={styles.visa__text}>
-              {i18n.language ==='en'? <> {country.text.split('\n').map((line, index) => (
+              {i18n.language ==='en'? <> {country.textEn.split('\n').map((line, index) => (
                 <Fragment key={index}>
                   {line}
                   <br />
                 </Fragment>
-              ))} </> : <> {country.textEn.split('\n').map((line, index) => (
+              ))} </> : <> {country.text.split('\n').map((line, index) => (
                 <Fragment key={index}>
                   {line}
                   <br />

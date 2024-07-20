@@ -16,8 +16,14 @@
   height: 100vh;
 }
 @media (max-width:992px) {
+  .main{
+    flex-direction: column;
+  }
   .left{
-    display: none;
+    // display: none;
+    width: 100%;
+    height: auto;
+    position: relative;
   }
   .right{
     position: relative;
