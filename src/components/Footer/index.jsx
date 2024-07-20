@@ -74,9 +74,9 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.socialNetworks}>
-          <a href='' target='_blank'>
+          {/* <a href='' target='_blank'>
             <img src={telega} alt='telega' />
-          </a>
+          </a> */}
           <a href='https://api.whatsapp.com/send?phone=77072289080' target='_blank' rel='noreferrer'>
             <img src={whatsapp1} alt='whatsapp' />
           </a>

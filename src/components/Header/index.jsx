@@ -64,9 +64,9 @@ const Header = () => {
             <a href='https://api.whatsapp.com/send?phone=77072289080' target='_blank' rel='noreferrer'>
               <img src={whatsapp} alt='whatsapp' />
             </a>
-            <a href='' target='_blank'>
+            {/* <a href='' target='_blank'>
               <img src={telega} alt='telega' />
-            </a>
+            </a> */}
             <a href='https://www.instagram.com/blsvizakz?igsh=ZzNla2dib3hjeGdl' target='_blank' rel='noreferrer'>
               <img src={insta} alt='insta' />
             </a>

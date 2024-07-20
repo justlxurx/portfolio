@@ -21,6 +21,7 @@
     justify-content: center;
     align-items: center;
     button {
+      min-width: 450px;
       width: 100%;
       color: #fff;
       font-family: 'Gothic A1', sans-serif;
@@ -208,12 +209,7 @@
     &__typesWrapper {
       border-radius: 20px;
     }
-    // &__typesWrapperLinks {
-    //   button {
-    //     font-size: 17px;
-    //     border-radius: 10px;
-    //   }
-    // } 
+  
     &__countryName {
         font-size: 40px;
     }
@@ -276,6 +272,11 @@
     //     border-radius: 10px;
     //   }
     // }
+    &__typesWrapperLinks {
+      button {
+          min-width: 300px;
+      }
+    } 
     &__countryName {
         font-size: 35px;
     }

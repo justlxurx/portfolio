@@ -50,9 +50,9 @@ const ContactUs = () => {
             <a className={styles.link} href={`mailto:blsalmatyvisa@gmail.com`}>blsalmatyvisa@gmail.com</a>
           </div>
           <div className={styles.socials}>
-            <a href='' target='_blank'>
+            {/* <a href='' target='_blank'>
               <img src={telega} alt='telega' />
-            </a>
+            </a> */}
             <a href='https://www.instagram.com/vsqazaqstan/?igshid=NDk5N2NlZjQ%3D' target='_blank' rel='noreferrer'>
               <img src={insta} alt='insta' />
             </a>
@@ -65,9 +65,9 @@ const ContactUs = () => {
       <div className={styles.contacts__mobile}>
         <p className={styles.contacts__mobileText}>{t('stay')} </p>
         <div className={styles.socials}>
-          <a href='' target='_blank'>
+          {/* <a href='' target='_blank'>
             <img src={telega} alt='telega' />
-          </a>
+          </a> */}
           <a href='https://www.instagram.com/vsqazaqstan/?igshid=NDk5N2NlZjQ%3D' target='_blank' rel='noreferrer'>
             <img src={insta} alt='insta' />
           </a>
@@ -78,7 +78,7 @@ const ContactUs = () => {
         <p className={styles.contacts__mobileText}>{t('findUs')}</p>
         <div className={styles.address}>
           <img src={icon_map} alt='map' />
-          <p>Казахстан, г. Алматы, ул. Шевченко 146</p>
+          <p> {t('addressValue1')} <br /> {t('addressValue2')} </p>
         </div>
       </div>
       <div className={styles.companyMap}>
