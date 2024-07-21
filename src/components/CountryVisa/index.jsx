@@ -75,7 +75,7 @@ const Visa = () => {
               </div>
               <p className={styles.visa__info}>
                {t('price')} <br />
-                <b> {country.price.replace(/тг\.|тг/g,'')} KZT </b> <br />
+                <b> {country.price} KZT </b> <br />
                {t('deadline')}  <br />
                    <b> {country.deadline == 1 ? <>  {t('deadlineDays1')} {country.deadline} {t('deadlineDays3')}</> : <>
              {t('deadlineDays1')} {country.deadline} {t('deadlineDays2')}   </>}     

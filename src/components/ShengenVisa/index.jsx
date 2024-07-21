@@ -1,6 +1,5 @@
 import { React, useState, useEffect, Fragment } from 'react';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
 import { useGetShengenInfoFromNameQuery } from '../../service';
 import { getIdFromURL, getId } from '../../helpers';
 import { useTranslation } from 'react-i18next';
@@ -111,10 +110,7 @@ const Visa = () => {
                   <div className={styles.doc} style={{backgroundImage:`url('/src/assets/images/Shengen/doc/${visas.id}.png')`}}>
                   </div>
                    }
-                  </div>
-
-                
-                  
+                  </div>     
               </div>
             ))}
           </div>
