@@ -1,12 +1,11 @@
 .mobileMenu {
   display: none;
 }
-.background{
+.background {
   background: #32349a;
 }
 
 .companyInfo {
-  
   padding: 1% 4%;
   display: grid;
   grid-template-columns: 25% 29% 32% 14%;
@@ -16,7 +15,7 @@
     display: flex;
     align-items: center;
     color: #fff;
-    font-family: 'Gothic A1', sans-serif;
+    font-family: "Gothic A1", sans-serif;
     font-size: 20px;
     letter-spacing: -0.42px;
     width: 80%;
@@ -30,7 +29,7 @@
     display: flex;
     align-items: center;
     color: #fff;
-    font-family: 'Gothic A1', sans-serif;
+    font-family: "Gothic A1", sans-serif;
     font-size: 20px;
     letter-spacing: -0.42px;
     text-align: center;
@@ -49,42 +48,41 @@
       display: flex;
       align-items: center;
       color: #fff;
-      font-family: 'Gothic A1', sans-serif;
+      font-family: "Gothic A1", sans-serif;
       font-size: 21px;
       letter-spacing: -0.42px;
       &__img {
         height: 4%;
         margin-right: 10px;
       }
-      
     }
-    .phoneWrap{
+    .phoneWrap {
       display: flex;
       align-items: center;
       gap: 5px;
       position: relative;
 
-      &:hover > ul{
+      &:hover > ul {
         display: flex;
       }
     }
-    .phoneWrap__link{
+    .phoneWrap__link {
       color: white;
     }
-    .phoneList__link:hover{
+    .phoneList__link:hover {
       color: #32349a;
     }
-    .phoneList{
+    .phoneList {
       display: none;
       position: absolute;
-      top:22px;
+      top: 15px;
       left: -10px;
       background-color: white;
       padding: 10px;
       color: black;
       flex-direction: column;
       gap: 5px;
-      border-radius: 10px
+      border-radius: 10px;
     }
     .socials {
       margin-left: 20px;
@@ -101,12 +99,12 @@
     display: flex;
     justify-content: space-evenly;
     color: #fff;
-    font-family: 'Gothic A1', sans-serif;
+    font-family: "Gothic A1", sans-serif;
     font-size: 21px;
     font-weight: 600;
     &__ru {
       color: #fff;
-      font-family: 'Gothic A1' sans-serif;
+      font-family: "Gothic A1" sans-serif;
       font-size: 21px;
       font-style: normal;
       font-weight: 700;
@@ -121,7 +119,7 @@
     }
     &__en {
       color: #fff;
-      font-family: 'Gothic A1' sans-serif;
+      font-family: "Gothic A1" sans-serif;
       font-size: 21px;
       font-style: normal;
       font-weight: 700;
@@ -150,51 +148,52 @@
 @media (max-width: 1450px) {
   .companyInfo {
     &__address {
-      font-size: 16px;
+      font-size: 13px;
       img {
-        height: 5%;
+        height: 15px;
       }
     }
 
     &__timeWorking {
-      font-size: 16px;
+      font-size: 13px;
       img {
-        height: 6%;
+        height: 15px;
       }
     }
 
     &__contact {
       .phones {
-        font-size: 17px;
+        font-size: 13px;
         &__img {
-          height: 4%;
+          height: 15px;
         }
       }
       .socials {
         img {
-          width: 37px;
-          height: 37px;
+          width: 27px;
+          height: 27px;
         }
       }
     }
 
     .lang {
       &__ru {
-        width: 35%; //66px;
-        height: 47px;
-        border-radius: 15%; //10px
-        font-size: 21px;
+        padding: 8px 15px;
+        border-radius: 6px;
+        font-size: 16px;
+        width: auto;
+        height: auto;
       }
       &__en {
-        width: 35%; //66px;
-        height: 47px;
-        border-radius: 15%; //10px;
-        font-size: 21px;
+        padding: 8px 15px;
+        border-radius: 6px;
+        font-size: 16px;
+        width: auto;
+        height: auto;
       }
     }
   }
 }
-
 
 @media (max-width: 1220px) {
   .companyInfo {
@@ -215,12 +214,12 @@
     }
 
     &__contact {
-      .phoneList{
-        top:15px;
+      .phoneList {
+        top: 15px;
         left: -10px;
         padding: 5px 10px;
         gap: 5px;
-        border-radius: 5px
+        border-radius: 5px;
       }
       .phones {
         font-size: 11px;
@@ -279,12 +278,12 @@
           height: 20px;
         }
       }
-      .phoneList{
-        top:12px;
+      .phoneList {
+        top: 12px;
         left: -10px;
         padding: 5px 10px;
         gap: 5px;
-        border-radius: 5px
+        border-radius: 5px;
       }
     }
 
@@ -319,7 +318,7 @@
       display: none;
     }
 
-    .buttons{
+    .buttons {
       display: flex;
       align-items: center;
       gap: 40px;
@@ -334,7 +333,7 @@
       gap: 10px;
       &__ru {
         color: #fff;
-        font-family: 'Gothic A1' sans-serif;
+        font-family: "Gothic A1" sans-serif;
         font-size: 15px;
         font-style: normal;
         font-weight: 700;
@@ -348,7 +347,7 @@
       }
       &__en {
         color: #fff;
-        font-family: 'Gothic A1' sans-serif;
+        font-family: "Gothic A1" sans-serif;
         font-size: 15px;
         font-style: normal;
         font-weight: 700;
@@ -395,7 +394,7 @@
     &__heading {
       color: #32349a;
       text-align: center;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       font-size: 11px;
       font-style: normal;
       font-weight: 700;
@@ -439,7 +438,7 @@
       }
       &::after,
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         height: 2px;
         width: 80%;

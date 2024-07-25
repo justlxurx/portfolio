@@ -1,16 +1,16 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const adminApi = createApi({
-  reducerPath: 'adminApi',
+  reducerPath: "adminApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://94.247.129.16:8080/admin/',
+    baseUrl: "http://server.blsvisa.kz:8080/admin/",
   }),
 
   endpoints: (builder) => ({
     getClient: builder.query({
       query: () => ({
         url: `submitQuickApplicationServiceList`,
-        method: 'GET',
+        method: "GET",
       }),
     }),
 
@@ -18,17 +18,18 @@ export const adminApi = createApi({
       query: (body) => ({
         body,
         url: `login`,
-        method: 'POST',
+        method: "POST",
       }),
     }),
 
     deleteUser: builder.mutation({
       query: (id) => ({
         url: `deleteApplication/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
     }),
   }),
 });
 
-export const { useGetClientQuery, useLoginMutation, useDeleteUserMutation } = adminApi;
+export const { useGetClientQuery, useLoginMutation, useDeleteUserMutation } =
+  adminApi;

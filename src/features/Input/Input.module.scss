@@ -33,6 +33,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+  width: calc(100% - 20px);
 
   &::placeholder {
     color: rgba(8, 9, 28, 0.4);

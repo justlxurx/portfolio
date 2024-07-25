@@ -6,14 +6,16 @@ import { service } from "./services.data";
 import styles from "./styles.module.scss";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 const Services = () => {
   return (
     <>
       <Header />
-      <div className={styles.mainFormSection}>
+      {/* <div className={styles.mainFormSection}>
         <MainForm />
-      </div>
+      </div> */}
+      <Navbar />
       <Routes>
         {service.map(({ title, path, img, text, textEn, id, titleEn }) => (
           <Route

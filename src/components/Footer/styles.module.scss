@@ -8,7 +8,7 @@
     text-align: left;
   }
   &__menu {
-    font-family: 'Goldman', sans-serif;
+    font-family: "Goldman", sans-serif;
     font-size: 25px;
     display: contents;
   }
@@ -23,46 +23,48 @@
       font-weight: 500;
     }
   }
-  .contacts__list{
+  .contacts__list {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 5px;
   }
-  .contacts__link{
-    font-family: 'Goldman', sans-serif;
+  .contacts__link {
+    font-family: "Goldman", sans-serif;
     font-size: 25px;
     color: white;
-    &:hover{
+    &:hover {
       color: black;
     }
   }
-  .link, p {
-    font-family: 'Goldman', sans-serif;
+  .link,
+  p {
+    font-family: "Goldman", sans-serif;
     font-size: 25px;
     color: white;
   }
-  .link{
+  .link {
     margin-top: 5px;
-    &:hover{
+    &:hover {
       color: black;
     }
   }
 
   &__logo {
     border-radius: 50%;
-    background: white;
-    height: 200px;
-    width: 200px;
+    // background: white;
+    height: 400px;
+    width: 400px;
     margin-top: 3%;
   }
   &__mainHeading {
     display: none;
   }
   &__heading {
-    font-family: 'Goldman', sans-serif;
+    font-family: "Goldman", sans-serif;
     font-size: 28px;
     margin-bottom: 15px;
+    text-transform: uppercase;
   }
   &__bottomText {
     display: none;
@@ -76,7 +78,16 @@
     display: none;
   }
 }
-.background{
+.socials {
+  margin-top: 50px;
+  display: flex;
+  gap: 10px;
+  img {
+    width: 39px;
+    height: 39px;
+  }
+}
+.background {
   background: #32349a;
 }
 @media (max-width: 1500px) {
@@ -88,11 +99,12 @@
     &__menuItems {
       margin-bottom: 15px;
     }
-    .contacts__link{
-      font-family: 'Goldman', sans-serif;
+    .contacts__link {
+      font-family: "Goldman", sans-serif;
       font-size: 18px;
     }
-    .link, p {
+    .link,
+    p {
       font-size: 18px;
     }
     &__heading {
@@ -100,22 +112,23 @@
     }
 
     &__logo {
-      height: 180px;
-      width: 180px;
+      height: 250px;
+      width: 250px;
     }
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .footerWrapper {
     padding: 80px 40px;
     &__menu {
       font-size: 12px;
     }
-    .contacts__link{
-      font-family: 'Goldman', sans-serif;
+    .contacts__link {
+      font-family: "Goldman", sans-serif;
       font-size: 12px;
     }
-    .link, p {
+    .link,
+    p {
       font-size: 12px;
     }
     &__heading {
@@ -123,8 +136,16 @@
     }
 
     &__logo {
-      height: 100px;
-      width: 100px;
+      height: 180px;
+      width: 180px;
+    }
+  }
+  .socials {
+    margin-top: 10px;
+    gap: 5px;
+    img {
+      width: 25px;
+      height: 25px;
     }
   }
 }
@@ -137,13 +158,14 @@
     &__column1 {
       display: none;
     }
-    .contacts__link{
+    .contacts__link {
       font-size: 25px;
     }
-    .contacts__list{
+    .contacts__list {
       margin-top: 0px;
     }
-    .link, p {
+    .link,
+    p {
       margin: 0;
       font-size: 25px;
     }
@@ -153,14 +175,14 @@
     }
     &__logo {
       border-radius: 50%;
-      background: white;
-      height: 70px;
-      width: 70px;
+      // background: white;
+      height: 120px;
+      width: 120px;
       margin-top: 3%;
-      img {
-        width: 200px;
-        height: 200px;
-      }
+      // img {
+      //   width: 200px;
+      //   height: 200px;
+      // }
     }
     &__mainHeading {
       display: flex;
@@ -186,7 +208,8 @@
       padding: 21px 42px;
       justify-content: center;
       margin: 15px 15% 0;
-      .link, p {
+      .link,
+      p {
         font-size: 10px;
         text-align: center;
       }
@@ -196,7 +219,7 @@
       flex-direction: column;
       &__wrapper {
         display: grid;
-        grid-template-columns:150px auto;
+        grid-template-columns: 150px auto;
         padding: 0 10%;
       }
     }
@@ -215,19 +238,20 @@
 @media (max-width: 630px) {
   .footerWrapper {
     padding: 14px 40px;
-    .contacts__link{
-      font-family: 'Goldman', sans-serif;
+    .contacts__link {
+      font-family: "Goldman", sans-serif;
       font-size: 20px;
     }
-    .link, p {
+    .link,
+    p {
       font-size: 20px;
     }
     &__heading {
       font-size: 24px;
     }
     &__logo {
-      height: 50px;
-      width: 50px;
+      height: 90px;
+      width: 90px;
     }
     &__mainHeading {
       font-size: 13px;
@@ -235,7 +259,7 @@
     &__bottomText {
       padding: 21px 0px;
       margin: 15px 15% 0;
-       p {
+      p {
         font-size: 10px;
       }
     }
@@ -250,18 +274,19 @@
 @media (max-width: 550px) {
   .footerWrapper {
     padding: 14px 40px;
-    .contacts__link{
+    .contacts__link {
       font-size: 15px;
     }
-    .link, p {
+    .link,
+    p {
       font-size: 15px;
     }
     &__heading {
       font-size: 20px;
     }
     &__logo {
-      height: 50px;
-      width: 50px;
+      height: 80px;
+      width: 80px;
     }
     &__mainHeading {
       font-size: 10px;
@@ -276,7 +301,7 @@
     .contacts {
       &__wrapper {
         padding: 0;
-        grid-template-columns:80px auto;
+        grid-template-columns: 80px auto;
       }
     }
     .socialNetworks {

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const visaApi = createApi({
   reducerPath: "visaApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://94.247.129.16:8080/",
+    baseUrl: "http://server.blsvisa.kz:8080/",
   }),
 
   endpoints: (builder) => ({

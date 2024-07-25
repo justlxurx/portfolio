@@ -8,26 +8,26 @@ const FormsToHelp = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.background}>
-    <section className={`${styles.helpOrder} container`}>
-      <div className={styles.helpOrder__text}>
-        {/* <img src={ph} alt="call" className={styles.helpOrder__icon} /> */}
-        <div className={styles.helpOrder__wrapper}>
-          <h1 className={styles.helpOrder__heading}>{t("helpVisas")}</h1>
-          <p className={styles.helpOrder__para}>{t("toWhatsapp")}</p>
+      <section className={`${styles.helpOrder} container`}>
+        <div className={styles.helpOrder__text}>
+          {/* <img src={ph} alt="call" className={styles.helpOrder__icon} /> */}
+          <div className={styles.helpOrder__wrapper}>
+            <h1 className={styles.helpOrder__heading}>{t("helpVisas")}</h1>
+            <p className={styles.helpOrder__para}>{t("toWhatsapp")}</p>
 
-          <a
-            href="https://api.whatsapp.com/send?phone=77072289080"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button className={styles.whatsappButton}>
-              <img src={whatsapp1} alt="whatsapp" />
-              <b>Whats App</b>
-            </button>
-          </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=77079012423"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className={styles.whatsappButton}>
+                <img src={whatsapp1} alt="whatsapp" />
+                <b>Whats App</b>
+              </button>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };

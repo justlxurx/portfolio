@@ -144,9 +144,9 @@ export const service = [
         be sure that we will translate the text as correctly as possible. <br />{" "}
         <br /> The cost of translation depends on the volume and complexity of
         the text. Contact us by phone or mail, and our specialists will help
-        you. <br /> <br /> Our contacts: <br /> Almaty: <br /> +7 (727) 346 82
-        10 <br /> WhatsApp +7 (700) 346 82 10 <br />
-        Astana: +7 747 272 58 88 <br /> WhatsApp +7 (700) 346 82 10
+        you. <br /> <br /> Our contacts: <br /> +7 (707) 901 24 23 <br />
+        +7 (775) 076 19 19 <br />
+        +7 (707) 341 06 99 <br /> WhatsApp +7 (707) 901 24 23 <br />
       </p>
     ),
     text: (
@@ -190,16 +190,9 @@ export const service = [
         максимально корректно.
         <br /> Стоимость перевода зависит от объёма и сложности текста.
         Свяжитесь с нами по телефону или почте, и наши специалисты помогут Вам.{" "}
-        <br /> Наши контакты: <br /> Алматы:
-        <br />
-        <b>
-          +7 (727) 346 82 10 <br />
-          WhatsApp +7 (700) 346 82 10
-        </b>
-        <br /> Астана: <br />
-        <b>
-          +7 747 272 58 88 <br /> WhatsApp +7 (700) 346 82 10
-        </b>
+        <br /> Наши контакты: <br /> +7 (707) 901 24 23 <br />
+        +7 (775) 076 19 19 <br />
+        +7 (707) 341 06 99 <br /> WhatsApp +7 (707) 901 24 23 <br />
       </p>
     ),
     img: save5,
@@ -325,15 +318,9 @@ export const service = [
         services and confidentiality of information. <br /> Contact us to check
         the documents against the list for applying for a visa, and we will do
         our best to ensure that you receive the desired visa <br /> Our
-        contacts: <br />
-        Almaty: <br />
-        <b>
-          +7 (727) 346 82 10 <br /> WhatsApp +7 (700) 346 82 10
-        </b>
-        <br /> Astana: <br />
-        <b>
-          +7 747 272 58 88 <br /> WhatsApp +7 (700) 346 82 10
-        </b>
+        contacts: <br /> +7 (707) 901 24 23 <br />
+        +7 (775) 076 19 19 <br />
+        +7 (707) 341 06 99 <br /> WhatsApp +7 (707) 901 24 23 <br />
       </p>
     ),
     text: (
@@ -347,15 +334,9 @@ export const service = [
         информации. <br /> Обратитесь к нам за проверкой документов по списку
         для подачи на визу, и мы сделаем все возможное, чтобы Вы получили
         желаемую визу <br />
-        Наши контакты: <br />
-        Алматы: <br />
-        <b>
-          +7 (727) 346 82 10 <br /> WhatsApp +7 (700) 346 82 10
-        </b>
-        <br /> Астана: <br />
-        <b>
-          +7 747 272 58 88 <br /> WhatsApp +7 (700) 346 82 10
-        </b>
+        Наши контакты: <br /> +7 (707) 901 24 23 <br />
+        +7 (775) 076 19 19 <br />
+        +7 (707) 341 06 99 <br /> WhatsApp +7 (707) 901 24 23 <br />
       </p>
     ),
     img: save2,

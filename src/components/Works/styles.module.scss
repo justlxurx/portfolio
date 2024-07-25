@@ -2,16 +2,16 @@
   h1 {
     color: #32349a;
     font-family: "Goldman", sans-serif;
-    font-size: 50px;
     text-transform: capitalize;
     text-align: center;
+    font-size: 40px;
     margin: 150px 0 30px 0;
   }
   h2 {
     color: #000;
     text-align: center;
     font-family: "Goldman", sans-serif;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 700;
   }
 }
@@ -32,14 +32,14 @@
 
     &::after {
       background-image: url("./../../assets/images/ellipse.svg");
-      width: 47px;
       aspect-ratio: 1;
       content: "";
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
-      top: 42%;
-      left: calc(50% - 23.5px);
+      width: 35px;
+      top: 47.5%;
+      left: calc(50% - 17.5px);
     }
     &::before {
       background-color: #32349a;
@@ -47,7 +47,7 @@
       width: 100%;
       content: "";
       position: absolute;
-      top: 45%;
+      top: 50%;
     }
 
     b {
@@ -55,7 +55,7 @@
     }
     p {
       text-align: center;
-      font-size: 30px;
+      font-size: 20px;
       font-family: "Goldman", sans-serif;
       margin-bottom: 5%;
       padding: 0 10%;
@@ -99,13 +99,13 @@
   &__heading {
     color: #fff;
     font-family: "Goldman", sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
   }
   &__text {
     color: #fff;
     font-family: "Goldman", sans-serif;
-    font-size: 23px;
+    font-size: 16px;
     width: 70%;
   }
   &__leftWrapper {
@@ -115,68 +115,14 @@
   }
 }
 
-@media (max-width: 1700px) {
-  .headings {
-    h1 {
-      font-size: 45px;
-      margin: 150px 0 30px 0;
-    }
-    h2 {
-      font-size: 30px;
-    }
-  }
-
-  .works {
-    margin: 70px 90px 105px 90px;
-
-    &__section1,
-    &__section2,
-    &__section3 {
-      &::after {
-        width: 35px;
-        top: 47.5%;
-        left: calc(50% - 17.5px);
-      }
-      &::before {
-        top: 50%;
-      }
-      p {
-        font-size: 25px;
-      }
-    }
-    &__section1Img {
-      height: 300px;
-    }
-
-    &__section2Img {
-      height: 300px;
-    }
-    &__section3Img {
-      height: 300px;
-      img {
-        height: 72%;
-      }
-    }
-  }
-  .warning {
-    margin: 50px 120px;
-    &__heading {
-      font-size: 24px;
-    }
-    &__text {
-      font-size: 20px;
-    }
-  }
-}
-
 @media (max-width: 1300px) {
   .headings {
     h1 {
-      font-size: 40px;
+      font-size: 35px;
       margin: 150px 0 30px 0;
     }
     h2 {
-      font-size: 25px;
+      font-size: 22px;
     }
   }
 
@@ -226,11 +172,7 @@
 @media (max-width: 1100px) {
   .headings {
     h1 {
-      font-size: 38px;
       margin: 150px 0 30px 0;
-    }
-    h2 {
-      font-size: 28px;
     }
   }
 

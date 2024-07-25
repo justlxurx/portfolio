@@ -37,8 +37,8 @@
     }
   }
   &__serviceLogo {
-    background: white;
-    width: 80%;
+    // background: white;
+    width: 100%;
     height: auto;
     z-index: 1;
     border-radius: 50%;
@@ -76,44 +76,16 @@
   }
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1600px) {
   .visa {
     h1 {
       margin: 80px 0;
-      font-size: 50px;
+      font-size: 40px;
     }
     &__service {
-      height: 600px;
+      height: 400px;
       &::before {
-        height: 700px;
-      }
-    }
-    &__serviceText {
-      h2 {
-        font-size: 40px;
-      }
-      p {
-        font-size: 30px;
-      }
-      b {
-        font-size: 30px;
-      }
-      a {
-        font-size: 30px;
-      }
-    }
-  }
-}
-@media (max-width: 1500px) {
-  .visa {
-    h1 {
-      margin: 80px 0;
-      font-size: 45px;
-    }
-    &__service {
-      height: 550px;
-      &::before {
-        height: 650px;
+        height: 500px;
       }
     }
     &__serviceText {
@@ -135,7 +107,7 @@
 @media (max-width: 1200px) {
   .visa {
     h1 {
-      font-size: 40px;
+      font-size: 33px;
       margin: 70px 0;
     }
     &__service {

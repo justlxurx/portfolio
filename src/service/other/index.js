@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const otherApi = createApi({
   reducerPath: "otherApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://94.247.129.16:8080/country/",
+    baseUrl: "http://server.blsvisa.kz:8080/country/",
   }),
 
   endpoints: (builder) => ({
@@ -21,7 +21,7 @@ export const otherApi = createApi({
     }),
 
     updateCountry: builder.mutation({
-      query: ({id, body}) => ({
+      query: ({ id, body }) => ({
         url: `update-country/${id}`,
         method: "PUT",
         body,
@@ -35,8 +35,12 @@ export const otherApi = createApi({
         body,
       }),
     }),
-
   }),
 });
 
-export const { useGetOtherCountryQuery, useGetCountryInfoFromNameQuery, useUpdateCountryMutation, useSaveCountryMutation } = otherApi;
+export const {
+  useGetOtherCountryQuery,
+  useGetCountryInfoFromNameQuery,
+  useUpdateCountryMutation,
+  useSaveCountryMutation,
+} = otherApi;

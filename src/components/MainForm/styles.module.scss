@@ -1,18 +1,16 @@
 .outer {
   background-size: 100% 1100px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('./../../assets/images/vissa.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("./../../assets/images/vissa.png");
 }
 
 .main {
   display: grid;
-  // grid-template-areas:
-  //   "A A B B"
-  //   "C C C C";
-  margin: 0 120px;
+  margin: 0 65px;
   .heading {
     color: #32349a;
-    font-family: 'Gothic A1', sans-serif;
-    font-size: 32px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 27px;
     text-transform: capitalize;
     text-align: center;
     margin-top: 0;
@@ -24,11 +22,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   &__leftSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 45px 40px 20px 40px;
+    padding: 35px 70px 15px 70px;
     background: white;
     border-top-left-radius: 25px;
     h1 {
@@ -40,24 +39,24 @@
     .text {
       color: #000;
       text-align: center;
-      font-family: 'Goldman', sans-serif;
-      font-size: 25px;
+      font-family: "Goldman", sans-serif;
+      font-size: 18px;
     }
     .calling {
       display: flex;
       justify-content: space-around;
       &__text {
         text-align: left;
-        font-family: 'Goldman', sans-serif;
-        font-size: 25px;
+        font-family: "Goldman", sans-serif;
+        font-size: 18px;
         width: 50%;
       }
 
       &__phoneNumbers {
         color: #32349a;
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         font-weight: 800;
-        font-size: 26px;
+        font-size: 18px;
         display: flex;
         img {
           width: 20px;
@@ -69,7 +68,7 @@
 
   &__rightSection {
     background: #d9d9d9;
-    padding: 45px 40px 20px 40px;
+    padding: 35px 40px 15px 40px;
     border-top-right-radius: 25px;
     h1 {
       margin-bottom: 23px;
@@ -81,19 +80,19 @@
       align-items: center;
       .error {
         color: red;
-        font-family: 'Goldman', sans-serif;
-        font-size: 17px;
-        width: 70%;
+        font-family: "Goldman", sans-serif;
+        font-size: 14px;
+        width: 80%;
         margin-top: 5px;
       }
       input {
         border-radius: 50px;
         margin-top: 1%;
-        padding: 21px;
         border: #fff;
-        width: calc(70% - 50px);
-        font-family: 'Goldman', sans-serif;
-        font-size: 22px;
+        font-family: "Goldman", sans-serif;
+        font-size: 17px;
+        width: calc(80% - 40px);
+        padding: 13px 20px;
         &::placeholder {
           .placeholder_red {
             color: red;
@@ -101,21 +100,18 @@
           .placeholder_initial {
             color: rgba(0, 0, 0, 0.5);
           }
-          font-family: 'Goldman', sans-serif;
-          font-size: 22px;
         }
       }
       button {
         margin-top: 2%;
-        padding: 18px 60px;
-        border-radius: 5px;
+        border-radius: 50px;
         border: 1px solid #d9d9d9;
         background: #ea4f0d;
         color: #fff;
-        font-family: 'Goldman', sans-serif;
-        font-size: 24px;
+        font-family: "Goldman", sans-serif;
         cursor: pointer;
-        border-radius: 15px;
+        padding: 13px 50px;
+        font-size: 18px;
       }
       button:hover {
         background: #32349a;
@@ -130,8 +126,8 @@
     margin-bottom: 150px;
     &__text {
       color: white;
-      font-family: 'Gothic A1', sans-serif;
-      font-size: 27px;
+      font-family: "Gothic A1", sans-serif;
+      font-size: 17px;
       display: flex;
       align-items: center;
       width: 43%;
@@ -139,119 +135,10 @@
     &__list {
       li {
         color: #fff;
-        font-family: 'Goldman', sans-serif;
-        font-size: 22px;
+        font-family: "Goldman", sans-serif;
+        font-size: 15px;
         font-weight: 400;
       }
-    }
-  }
-}
-@media (max-width: 1580px) {
-  .main {
-    margin: 0 65px;
-
-    .heading {
-      font-size: 27px;
-    }
-    &__leftSection {
-      padding: 35px 70px 15px 70px;
-      .text {
-        font-size: 23px;
-      }
-      .calling {
-        &__text {
-          font-size: 23px;
-        }
-
-        &__phoneNumbers {
-          font-size: 23px;
-        }
-      }
-    }
-
-    &__rightSection {
-      padding: 35px 40px 15px 40px;
-      form {
-        .error {
-          font-size: 17px;
-          width: 80%;
-          margin-top: 5px;
-        }
-        input {
-          width: calc(80% - 40px);
-          padding: 20px 20px;
-          &::placeholder {
-            font-size: 20px;
-          }
-        }
-        button {
-          padding: 20px 50px;
-          border-radius: 5px;
-          font-size: 23px;
-        }
-      }
-    }
-    &__bottomSection__text {
-      font-size: 23px;
-    }
-    &__bottomSection__list {
-      li {
-        font-size: 20px;
-      }
-    }
-  }
-}
-@media (max-width: 1450px) {
-  .main {
-    margin: 0 65px;
-    .heading {
-      font-size: 23px;
-    }
-    &__leftSection {
-      padding: 35px 40px 15px 40px;
-      .text {
-        font-size: 20px;
-      }
-      .calling {
-        &__text {
-          font-size: 20px;
-        }
-
-        &__phoneNumbers {
-          font-size: 20px;
-        }
-      }
-    }
-
-    &__rightSection {
-      form {
-        .error {
-          font-size: 14px;
-          margin-top: 5px;
-        }
-        input {
-          padding: 18px 20px;
-          &::placeholder {
-            font-size: 17px;
-          }
-        }
-        button {
-          padding: 17px 50px;
-          font-size: 20px;
-        }
-      }
-    }
-    &__bottomSection__text {
-      font-size: 20px;
-    }
-    &__bottomSection__list {
-      li {
-        font-size: 17px;
-        font-weight: 400;
-      }
-    }
-    &__bottomSection {
-      margin-bottom: 100px;
     }
   }
 }
@@ -286,9 +173,6 @@
         input {
           font-size: 15px;
           padding: 10px 17px;
-          &::placeholder {
-            font-size: 15px;
-          }
         }
         button {
           padding: 13px 50px;
@@ -308,56 +192,6 @@
 }
 
 @media (max-width: 1220px) {
-  .main {
-    margin: 0 45px;
-    .heading {
-      font-size: 20px;
-    }
-    &__leftSection {
-      padding: 35px 40px 15px 40px;
-      .text {
-        font-size: 15px;
-      }
-      .calling {
-        &__text {
-          font-size: 15px;
-        }
-
-        &__phoneNumbers {
-          font-size: 15px;
-        }
-      }
-    }
-
-    &__rightSection {
-      form {
-        input {
-          font-size: 14px;
-          &::placeholder {
-            font-size: 14px;
-          }
-        }
-        button {
-          padding: 13px 50px;
-          font-size: 17px;
-        }
-      }
-    }
-    &__bottomSection__text {
-      font-size: 15px;
-    }
-    &__bottomSection__list {
-      li {
-        font-size: 14px;
-      }
-    }
-    &__bottomSection {
-      margin-bottom: 90px;
-    }
-  }
-}
-
-@media (max-width: 1113px) {
   .main {
     .heading {
       font-size: 18px;
@@ -384,9 +218,7 @@
     &__rightSection {
       form {
         input {
-          &::placeholder {
-            font-size: 14px;
-          }
+          font-size: 14px;
         }
         button {
           padding: 12px 50px;
@@ -439,9 +271,6 @@
       form {
         input {
           font-size: 14px;
-          &::placeholder {
-            font-size: 14px;
-          }
         }
         button {
           padding: 9px 45px;
@@ -496,9 +325,6 @@
           width: calc(80% - 20px);
           padding: 5px 10px;
           font-size: 14px;
-          &::placeholder {
-            font-size: 14px;
-          }
         }
         button {
           padding: 9px 45px;
@@ -538,7 +364,7 @@
     }
     &__infoVisaHeading {
       color: #32349a;
-      font-family: 'Goldman', sans-serif;
+      font-family: "Goldman", sans-serif;
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -550,7 +376,7 @@
     &__infoVisaText {
       color: #32349a;
       text-align: justify;
-      font-family: 'Goldman', sans-serif;
+      font-family: "Goldman", sans-serif;
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
@@ -584,9 +410,6 @@
           padding: 13px 21px;
           width: calc(70% - 50px);
           font-size: 15px;
-          &::placeholder {
-            font-size: 15px;
-          }
         }
         button {
           margin-top: 5%;
@@ -639,9 +462,6 @@
           padding: 13px 21px;
           width: calc(70% - 50px);
           font-size: 10px;
-          &::placeholder {
-            font-size: 10px;
-          }
         }
         button {
           margin-top: 5%;
@@ -683,9 +503,6 @@
           padding: 13px 21px;
           width: calc(70% - 50px);
           font-size: 10px;
-          &::placeholder {
-            font-size: 10px;
-          }
         }
         button {
           margin-top: 5%;

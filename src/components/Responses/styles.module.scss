@@ -1,6 +1,6 @@
 .faq {
   margin-bottom: 100px;
-  padding: 0 120px;
+  padding: 0 65px;
   background-color: white;
 
   &__heading {
@@ -12,14 +12,12 @@
     h1 {
       color: #32349a;
       font-family: "Goldman", sans-serif;
-      font-size: 55px;
+      font-size: 45px;
       text-transform: uppercase;
       text-align: center;
-      margin: 100px 0 30px 0;
+      margin: 100px 0;
       align-self: start;
       position: relative;
-      top: -18%;
-      padding: 15px;
     }
     hr {
       transform: rotate(90deg);
@@ -34,27 +32,6 @@
   list-style-type: none;
 }
 
-@media (max-width: 1700px) {
-  .faq {
-    &__heading {
-      h1 {
-        font-size: 35px;
-        margin: 80px 0 30px 0;
-        top: -18%;
-      }
-    }
-  }
-}
-@media (max-width: 1580px) {
-  .faq {
-    padding: 0 65px;
-    &__heading {
-      h1 {
-        font-size: 30px;
-      }
-    }
-  }
-}
 @media (max-width: 1300px) {
   .faq {
     &__heading {
@@ -79,6 +56,7 @@
         margin-top: 0;
         font-size: 25px;
         text-align: left;
+        margin-bottom: 50px;
       }
     }
   }

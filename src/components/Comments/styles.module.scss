@@ -1,7 +1,7 @@
 .comments {
   background-color: white;
-  padding: 0 120px 150px;
-  &__data{
+  padding: 0 65px 100px;
+  &__data {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -15,8 +15,8 @@
   }
   h1 {
     color: #32349a;
-    font-family: 'Goldman', sans-serif;
-    font-size: 60px;
+    font-family: "Goldman", sans-serif;
+    font-size: 45px;
     text-transform: uppercase;
     text-align: center;
     margin: 100px 0;
@@ -24,13 +24,13 @@
   &__section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
+    gap: 30px;
   }
   &__stars {
     display: flex;
     justify-content: center;
     img {
-      height: 30px;
+      height: 20px;
       width: auto;
     }
   }
@@ -38,19 +38,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px;
     background: rgba(217, 217, 217, 0.5);
     min-height: 250px;
   }
   &__text {
     color: #000;
     text-align: center;
-    font-family: 'Gothic A1', sans-serif;
-    font-size: 19px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 30px 0;
+    margin: 20px 0;
     padding: 0 7%;
   }
   &__message {
@@ -65,8 +65,8 @@
   &__data {
     color: #000;
     text-align: right;
-    font-family: 'Goldman', sans-serif;
-    font-size: 20px;
+    font-family: "Goldman", sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -79,7 +79,7 @@
   align-items: center;
   color: #32349a;
   text-align: center;
-  font-family: 'Goldman', sans-serif;
+  font-family: "Goldman", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -92,63 +92,6 @@
   }
   .turnOver {
     transform: rotate(180deg);
-  }
-}
-@media (max-width: 1780px) {
-  .comments {
-    h1 {
-      font-size: 45px;
-      margin: 80px 0;
-    }
-    &__section {
-      gap: 30px;
-    }
-    &__stars {
-      img {
-        height: 30px;
-      }
-    }
-    &__wrapper {
-      padding: 30px;
-    }
-    &__text {
-      font-size: 16px;
-      margin: 30px 0;
-    }
-    &__name,
-    &__data {
-      font-size: 17px;
-    }
-  }
-  .showMore {
-    font-size: 17px;
-  }
-}
-@media (max-width: 1580px) {
-  .comments {
-    padding: 0 65px 100px;
-    h1 {
-      font-size: 50px;
-    }
-    &__section {
-      gap: 30px;
-    }
-    &__stars {
-      img {
-        height: 20px;
-      }
-    }
-    &__wrapper {
-      padding: 20px;
-    }
-    &__text {
-      font-size: 15px;
-      margin: 20px 0;
-    }
-    &__name,
-    &__data {
-      font-size: 16px;
-    }
   }
 }
 
@@ -212,7 +155,7 @@
       gap: 50px;
     }
 
-    .loading{
+    .loading {
       padding-left: 20px;
     }
     &__heading {
@@ -220,10 +163,10 @@
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 20px;
-     h1{
-      font-size: 26px;
-      text-align: left;
-     }
+      h1 {
+        font-size: 26px;
+        text-align: left;
+      }
     }
     &__section {
       gap: 30px;

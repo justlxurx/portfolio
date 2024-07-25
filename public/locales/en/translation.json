@@ -1,6 +1,6 @@
 {
-  "published":"Сomment is published",
-  "now":"Now",
+  "published": "Сomment is published",
+  "now": "Now",
   "text": "Some text",
   "aboutUs": "About Us",
   "services": "Services",
@@ -8,10 +8,10 @@
   "countries": "Countries",
   "comments": "Comments",
   "contacts": "Contacts",
-  "main":"Main",
+  "main": "Main",
   "schengen": "Shengen Area",
   "other": "Other Countries",
-  "info": "The company 'BLS Almaty Visa' helps to obtain a visa to most countries of the world, we work with everyone types of visas, ranging from tourist and work, ending with business and guest. You can get yours long-awaited visa from anywhere in Kazakhstan, because in our center you can now apply online, not leaving the house.",
+  "info": "The company 'BLS Kazakhstan Visa' helps to obtain a visa to most countries of the world, we work with everyone types of visas, ranging from tourist and work, ending with business and guest. You can get yours long-awaited visa from anywhere in Kazakhstan, because in our center you can now apply online, not leaving the house.",
   "proposition": "profitable proposition",
   "helpWithReg": "Assistance in obtaining a Schengen multiple visa in just 1-2 weeks",
   "visaManager": "Visa Manager",
@@ -44,8 +44,8 @@
   "price": "Price from:",
   "deadline": "Deadline:",
   "deadlineDays1": "from",
-  "deadlineDays2":"days",
-  "deadlineDays3":"day",
+  "deadlineDays2": "days",
+  "deadlineDays3": "day",
   "aboutCompany": "ABOUT COMPANY",
   "address": "Address:",
   "addressValue": "Kazakhstan, Almaty, Mukanova 113, 3rd floor, office 306",
@@ -73,7 +73,7 @@
   "findUs": "YOU CAN FIND US AT ADDRESS",
   "showMore": "Show More Comments",
   "hide": "Hide Comments",
-  "success":"Data sent successfully",
+  "success": "Data sent successfully",
   "service": {
     "insurance": {
       "title": "Insurance",
@@ -100,21 +100,19 @@
       "content": ""
     }
   },
-  "comment":{
-    "title":"Leave your review",
-    "subtitle":"In order to improve the quality of service, it is very important for us to know your opinion.",
-    "button":"Send",
-    "name":"Your name",
-    "nameError":"Fill in the 'Your name' field",
-    "nameError2":"The name must contain only letters",
-    "nameError3":"The name must be a maximum of 15 characters",
-    "message":"Your comment",
-    "messageError":"Fill in the 'Your comment' field",
-    "messageError2":"The comment must contain a maximum of 100 characters.",
-    "ratingError":"Rate the service from one to five"
+  "comment": {
+    "title": "Leave your review",
+    "subtitle": "In order to improve the quality of service, it is very important for us to know your opinion.",
+    "button": "Send",
+    "name": "Your name",
+    "nameError": "Fill in the 'Your name' field",
+    "nameError2": "The name must contain only letters",
+    "nameError3": "The name must be a maximum of 15 characters",
+    "message": "Your comment",
+    "messageError": "Fill in the 'Your comment' field",
+    "messageError2": "The comment must contain a maximum of 100 characters.",
+    "ratingError": "Rate the service from one to five"
   },
-  "phoneError":"Incorrect number",
-  "phoneError2":"Fill in the 'Your number' field"
-  
-  
+  "phoneError": "Incorrect number",
+  "phoneError2": "Fill in the 'Your number' field"
 }
