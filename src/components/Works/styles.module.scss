@@ -96,6 +96,9 @@
   margin: 50px 120px;
   padding: 15px 55px;
   align-items: center;
+  img {
+    width: 30px;
+  }
   &__heading {
     color: #fff;
     font-family: "Goldman", sans-serif;
@@ -118,8 +121,8 @@
 @media (max-width: 1300px) {
   .headings {
     h1 {
-      font-size: 35px;
-      margin: 150px 0 30px 0;
+      font-size: 33px;
+      margin: 60px 0 30px 0;
     }
     h2 {
       font-size: 22px;
@@ -172,7 +175,8 @@
 @media (max-width: 1100px) {
   .headings {
     h1 {
-      margin: 150px 0 30px 0;
+      margin: 50px 0 30px 0;
+      font-size: 32px;
     }
   }
 
@@ -209,8 +213,7 @@
 @media (max-width: 990px) {
   .headings {
     h1 {
-      font-size: 31px;
-      margin: 150px 0 30px 0;
+      font-size: 30px;
     }
     h2 {
       font-size: 25px;
@@ -297,6 +300,7 @@
       b {
         text-align: center;
         grid-area: B;
+        align-self: flex-end;
       }
       p {
         text-align: center;
@@ -346,10 +350,14 @@
     margin: 50px 30px;
     padding: 5px 55px;
     align-items: center;
+    img {
+      width: 15px;
+    }
     &__heading {
       font-size: 17px;
     }
     &__text {
+      text-align: center;
       margin-top: 0;
       font-size: 13px;
       width: 95%;
@@ -403,7 +411,7 @@
       font-size: 15px;
     }
     &__text {
-      font-size: 12px;
+      font-size: 11px;
     }
   }
 }
@@ -453,12 +461,6 @@
     border-radius: 5px;
     margin: 50px 20px;
     padding: 1px 25px;
-    &__heading {
-      font-size: 17px;
-    }
-    &__text {
-      font-size: 13px;
-    }
   }
 }
 @media (max-width: 400px) {
@@ -508,10 +510,10 @@
     margin: 50px 20px;
     padding: 1px 5px;
     &__heading {
-      font-size: 14px;
+      font-size: 10px;
     }
     &__text {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 }

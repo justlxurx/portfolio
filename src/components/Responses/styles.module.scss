@@ -12,7 +12,7 @@
     h1 {
       color: #32349a;
       font-family: "Goldman", sans-serif;
-      font-size: 45px;
+      font-size: 38px;
       text-transform: uppercase;
       text-align: center;
       margin: 100px 0;
@@ -35,15 +35,37 @@
 @media (max-width: 1300px) {
   .faq {
     &__heading {
-      h1 {
-        font-size: 25px;
-      }
+      display: flex;
+      justify-content: center;
     }
   }
 }
 @media (max-width: 1220px) {
   .faq {
     padding: 0;
+    &__heading {
+      h1 {
+        font-size: 30px;
+        margin: 50px 0;
+      }
+    }
+  }
+}
+@media (max-width: 1090px) {
+  .faq {
+    padding: 0;
+    &__heading {
+      h1 {
+        font-size: 25px;
+        margin: 50px 0;
+      }
+      hr {
+        display: none;
+      }
+    }
+  }
+  .faq__list {
+    gap: 20px;
   }
 }
 @media (max-width: 768px) {

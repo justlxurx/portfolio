@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
-import map from "./../../assets/images/map.png";
-import clock from "./../../assets/images/clock.png";
-import phone from "./../../assets/images/phone.png";
-import insta from "./../../assets/images/insta.png";
-import whatsapp from "./../../assets/images/whatsapp.png";
-import telega from "./../../assets/images/telega.png";
-// import logo from "./../../assets/images/logo.png";
-import logo from "../../assets/images/logo.jpeg";
+import map from "../../assets/images/map.png";
+import clock from "../../assets/images/clock.png";
+import phone from "../../assets/images/phone.png";
+import insta from "../../assets/images/instagram.png";
+import whatsapp from "../../assets/images/whatsapp.png";
+import telega from "../../assets/images/telega.png";
+// import logo from "../../assets/images/logo.jpeg";
+import logo from "../../assets/images/logo.png";
 import Burger from "../Burger";
 import uncover from "../../assets/images/uncover.svg";
 import { Link } from "react-router-dom";
@@ -86,7 +86,7 @@ const Header = () => {
                 <img src={telega} alt="telega" />
               </a>
               <a
-                href="https://www.instagram.com/blsvizakz?igsh=ZzNla2dib3hjeGdl"
+                href="https://www.instagram.com/visablskz?igsh=Y2MxYzk5MDI0OWF5"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -124,7 +124,6 @@ const Header = () => {
                   <img src={logo} alt="logo" />
                 </div>
               </Link>
-              <p className={styles.mobileMenu__heading}>{t("centerVisa")}</p>
             </div>
 
             <div className={styles.buttons}>

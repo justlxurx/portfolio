@@ -1,7 +1,5 @@
 .main {
   display: flex;
-  //align-items: start;
-  
 }
 
 .left {
@@ -15,17 +13,16 @@
   width: 80%;
   height: 100vh;
 }
-@media (max-width:992px) {
-  .main{
+@media (max-width: 992px) {
+  .main {
     flex-direction: column;
   }
-  .left{
-    // display: none;
+  .left {
     width: 100%;
     height: auto;
     position: relative;
   }
-  .right{
+  .right {
     position: relative;
     width: 100%;
   }

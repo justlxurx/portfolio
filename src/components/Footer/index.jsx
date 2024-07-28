@@ -1,13 +1,12 @@
 import { React } from "react";
 import styles from "./styles.module.scss";
-import whatsapp1 from "./../../assets/images/whatsapp1.png";
-import telega from "./../../assets/images/telega.png";
-import insta from "./../../assets/images/instagram.png";
-import logo from "./../../assets/images/logo.png";
+import whatsapp1 from "../../assets/images/whatsapp1.png";
+import telega from "../../assets/images/telega.png";
+import insta from "../../assets/images/instagram.png";
+import logo from "../../assets/images/logo.png";
 import { nanoid } from "nanoid";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-// import logo from "../../assets/images/logo.jpeg";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -44,9 +43,7 @@ const Footer = () => {
         <Link to="/">
           <img src={logo} alt="logo" className={styles.footerWrapper__logo} />
         </Link>
-        <h5 className={styles.footerWrapper__mainHeading}>
-          {t("firstCenter")}
-        </h5>
+
         <div className={styles.footerWrapper__column1}>
           <h3 className={styles.footerWrapper__heading}>{t("aboutCompany")}</h3>
           <ul className={styles.footerWrapper__menu}>
@@ -72,7 +69,7 @@ const Footer = () => {
               <img src={telega} alt="telega" />
             </a>
             <a
-              href="https://www.instagram.com/blsvizakz?igsh=ZzNla2dib3hjeGdl"
+              href="https://www.instagram.com/visablskz?igsh=Y2MxYzk5MDI0OWF5"
               target="_blank"
               rel="noreferrer"
             >
@@ -122,7 +119,7 @@ const Footer = () => {
               <img src={whatsapp1} alt="whatsapp" />
             </a>
             <a
-              href="https://www.instagram.com/blsvizakz?igsh=ZzNla2dib3hjeGdl"
+              href="https://www.instagram.com/visablskz?igsh=Y2MxYzk5MDI0OWF5"
               target="_blank"
               rel="noreferrer"
             >
@@ -130,7 +127,7 @@ const Footer = () => {
             </a>
           </div>
           <div className={styles.footerWrapper__bottomText}>
-            <p>{t("centerVisa")} - BLS Visa Kazakhstan</p>
+            <p> BLS Kazakhstan Visa </p>
           </div>
         </div>
       </footer>

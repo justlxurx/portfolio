@@ -5,7 +5,6 @@ import uncover from "./../../assets/images/uncover.svg";
 import { nanoid } from "nanoid";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-// import logo from "../../assets/images/logo.jpeg";
 
 export const Navbar = () => {
   const { t } = useTranslation();
@@ -14,7 +13,9 @@ export const Navbar = () => {
     <ul className={styles.submenu}>
       {items.map((item) => (
         <li key={nanoid()}>
-          <Link to={item.path}>{item.title}</Link>
+          <Link to={item.path} className={styles.submenu__link}>
+            {item.title}
+          </Link>
         </li>
       ))}
     </ul>

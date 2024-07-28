@@ -10,7 +10,6 @@ const FormsToHelp = () => {
     <div className={styles.background}>
       <section className={`${styles.helpOrder} container`}>
         <div className={styles.helpOrder__text}>
-          {/* <img src={ph} alt="call" className={styles.helpOrder__icon} /> */}
           <div className={styles.helpOrder__wrapper}>
             <h1 className={styles.helpOrder__heading}>{t("helpVisas")}</h1>
             <p className={styles.helpOrder__para}>{t("toWhatsapp")}</p>

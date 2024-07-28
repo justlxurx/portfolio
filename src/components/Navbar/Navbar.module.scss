@@ -40,21 +40,24 @@
       display: none;
 
       li {
-        padding: 20px 28px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        background: #d9d9d9;
-        width: 100%;
-        font-size: 18px;
-        align-items: center;
         list-style: none;
       }
+      &__link {
+        padding: 20px 28px;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #d9d9d9;
+        align-items: center;
+        font-size: 15px;
+      }
+
       :hover {
         background: #32349a;
       }
     }
   }
   &__navigationList {
-    padding: 0px 30px;
+    padding: 0px 25px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -63,12 +66,12 @@
   &__navigationListItems {
     list-style: none;
     font-family: "Gothic A1", sans-serif;
-    font-size: 20px;
     text-transform: uppercase;
     z-index: 1;
     position: relative;
     padding: 30px;
     color: rgba(0, 0, 0, 0.7);
+    font-size: 17px;
 
     &:hover {
       background-color: #32349a;
@@ -82,8 +85,8 @@
       align-items: center;
     }
     .uncover {
-      width: 17px;
-      height: 16px;
+      width: 15px;
+      height: 13px;
       margin-left: 5px;
     }
     &:hover > ul {
@@ -95,28 +98,7 @@
     height: 100%;
   }
 }
-@media (max-width: 1700px) {
-  .menu {
-    padding: 50px 120px;
-    &__navigationList {
-      padding: 0px 25px;
-    }
-    &__navigationListItems {
-      font-size: 17px;
-      .uncover {
-        width: 15px;
-        height: 13px;
-        margin-left: 5px;
-      }
-    }
-    .submenu {
-      li {
-        padding: 20px 28px;
-        font-size: 15px;
-      }
-    }
-  }
-}
+
 @media (max-width: 1580px) {
   .menu {
     padding: 50px 65px;
@@ -127,10 +109,9 @@
     padding: 50px 65px;
     &__navigationList {
       padding: 0px 25px;
-
       .submenu {
         width: 230px;
-        li {
+        &__link {
           padding: 15px 28px;
         }
       }
@@ -156,7 +137,7 @@
 
       .submenu {
         width: 200px;
-        li {
+        &__link {
           padding: 13px 28px;
         }
       }
@@ -191,7 +172,7 @@
 
       .submenu {
         width: 190px;
-        li {
+        &__link {
           padding: 13px 25px;
           font-size: 12px;
         }
@@ -210,7 +191,7 @@
       padding: 0px 20px;
       .submenu {
         width: 150px;
-        li {
+        &__link {
           padding: 15px 20px;
         }
       }
@@ -241,7 +222,7 @@
       padding: 0px 20px;
       .submenu {
         width: 130px;
-        li {
+        &__link {
           font-size: 10px;
           padding: 12px 15px;
         }
@@ -267,7 +248,7 @@
 
       .submenu {
         width: 130px;
-        li {
+        &__link {
           padding: 12px 15px;
           font-size: 9px;
         }
@@ -302,7 +283,7 @@
 
       .submenu {
         width: 100px;
-        li {
+        &__link {
           font-size: 8px;
         }
       }

@@ -233,10 +233,10 @@ export const service = [
     ),
     text: (
       <p>
-        Многократные шенген визы Шенгенские визы категории C делятся на
-        однократные и многократные. К тому же и те и другие называются
-        краткосрочными, то есть не подразумевают, что вы останетесь на несколько
-        лет в Европе жить и работать.
+        Многократные шенген визы категории C делятся на однократные и
+        многократные. К тому же и те и другие называются краткосрочными, то есть
+        не подразумевают, что вы останетесь на несколько лет в Европе жить и
+        работать.
         <br /> Однократные действуют один раз и определённый срок. То есть если
         вы едете в Европу на две недели, и вам дали визу ровно на 14 дней, то
         после возвращения и для следующей поездки придётся делать новую визу.{" "}
@@ -280,9 +280,9 @@ export const service = [
     textEn: (
       <p>
         Service for temporary booking of air tickets for submitting documents -
-        5000 tenge <br /> Hotel booking service directly with PCVP partners{" "}
-        <br /> When ordering an airline ticket or hotel booking service, the
-        reservation is made on the applicant’s card
+        5000 tenge <br /> Hotel booking service directly with BLS KAZAKHSTAN
+        VISA partners <br /> When ordering an airline ticket or hotel booking
+        service, the reservation is made on the applicant’s card
       </p>
     ),
     text: (
@@ -292,9 +292,12 @@ export const service = [
             Услуга для временного бронирования авиабилетов для подачи документов
             - 5000 тенге
           </li>
-          <li>Услуга по бронированию отеля напрямую у // партнеров ПЦВП</li>
           <li>
-            При заказе услуги бронирования авиабилетов или // отеля, бронь
+            Услуга по бронированию отеля напрямую у партнёров BLS KAZAKHSTAN
+            VISA
+          </li>
+          <li>
+            При заказе услуги бронирования авиабилетов или отеля, бронь
             оформляется на карту заявителя
           </li>
         </ul>
@@ -354,8 +357,7 @@ export const service = [
         of Education of the Republic of Kazakhstan in Astana (*if the diploma
         was issued in the Republic of Kazakhstan). <br /> Required documents:{" "}
         <br /> Original diploma <br /> Diploma Supplement <br /> Notarized
-        translation of the diploma into English (done at the Visa Support
-        Center) <br />
+        translation of the diploma into English <br />
         Notarized power of attorney for an employee of Our company <br /> <br />{" "}
         Processing time: 2 weeks <br /> Cost: 14,500 tenge
       </p>
@@ -369,10 +371,7 @@ export const service = [
         <ul>
           <li>Оригинал диплома</li>
           <li>Приложение к диплому </li>
-          <li>
-            Нотариально заверенный перевод диплома на английский язык (делается
-            в Центре Визовой Поддержки)
-          </li>
+          <li>Нотариально заверенный перевод диплома на английский язык</li>
           <li>Нотариальная доверенность на сотрудника Нашей компании</li>
         </ul>
         Срок оформления: 2 недели <br /> Стоимость: 14 500 тг

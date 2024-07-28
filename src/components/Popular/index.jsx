@@ -18,8 +18,6 @@ import { nanoid } from "nanoid";
 import { useTranslation } from "react-i18next";
 import { Grid, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -27,79 +25,79 @@ const Popular = () => {
   const countries = [
     {
       title: "Германия",
-      titleEn:'Germany',
+      titleEn: "Germany",
       path: "/shengen/Germany",
       price: "20 000 KZT",
-      deadline:"от 10 дней",
-      deadlineEn:'from 10 days',
+      deadline: "от 10 дней",
+      deadlineEn: "from 10 days",
       flag: germany_flag,
       img: germany,
     },
     {
       title: "Франция",
-      titleEn:'French',
+      titleEn: "French",
       path: "/shengen/France",
       price: "20 000 KZT",
-      deadline:"от 3 дней",
-      deadlineEn:'from 3 days',
+      deadline: "от 3 дней",
+      deadlineEn: "from 3 days",
       flag: france_flag,
       img: france,
       marginChange: "35%",
     },
     {
       title: "Испания",
-      titleEn:'Spain',
+      titleEn: "Spain",
       path: "/shengen/Spain",
       price: "20 000 KZT",
-      deadline:"от 15 дней",
-      deadlineEn:'from 15 days',
+      deadline: "от 15 дней",
+      deadlineEn: "from 15 days",
       flag: spain_flag,
       img: spain,
     },
     {
       title: "Египет",
-      titleEn:'Egypt',
+      titleEn: "Egypt",
       path: "/others/Egypt",
       price: "15 000 KZT",
-      deadline:"от 7 дней",
-      deadlineEn:'from 7 days',
+      deadline: "от 7 дней",
+      deadlineEn: "from 7 days",
       flag: egypt_flag,
       img: egypt,
       marginChange: "35%",
     },
     {
-      titleEn:'South Korea',
+      titleEn: "South Korea",
       title: "Южная Корея",
       path: "/others/South%20Korea",
       price: "20 000 KZT",
-      deadline:'от 1 дня',
-      deadlineEn:'from 1 day',
+      deadline: "от 1 дня",
+      deadlineEn: "from 1 day",
       flag: korea_flag,
       img: korea,
     },
     {
-      titleEn:'USA',
+      titleEn: "USA",
       title: "США",
       path: "/others/USA",
       price: "50 000 KZT",
-      deadline:'от 3 дней',
-      deadlineEn:'from 3 days',
+      deadline: "от 3 дней",
+      deadlineEn: "from 3 days",
       flag: usa_flag,
       img: usa,
       marginChange: "35%",
     },
     {
-      titleEn:'Austria',
+      titleEn: "Austria",
       title: "Австрия",
       path: "/shengen/Austria",
       price: "20 000 KZT",
-      deadline:"от 15 дней",
-      deadlineEn:'from 15 days',
+      deadline: "от 15 дней",
+      deadlineEn: "from 15 days",
       flag: austria_flag,
       img: austria,
     },
   ];
-  const { i18n,t } = useTranslation();
+  const { i18n, t } = useTranslation();
   return (
     <section className={`${styles.popular} container`}>
       <div className={styles.popular__heading}>
@@ -124,7 +122,20 @@ const Popular = () => {
           }}
         >
           {countries.map(
-            ({ title, titleEn, price, path, flag, img, marginChange, deadline, deadlineEn }, index) => (
+            (
+              {
+                title,
+                titleEn,
+                price,
+                path,
+                flag,
+                img,
+                marginChange,
+                deadline,
+                deadlineEn,
+              },
+              index
+            ) => (
               <SwiperSlide virtualIndex={index} key={index}>
                 <div
                   className={styles.popular__countryCards}
@@ -136,7 +147,7 @@ const Popular = () => {
                 >
                   <div className={styles.popular__countryCardsTitle}>
                     <img src={flag} alt="country" />
-                    <p>{i18n.language === 'en' ? titleEn : title}</p>
+                    <p>{i18n.language === "en" ? titleEn : title}</p>
                   </div>
                   <div className={styles.popular__countryCardsContent}>
                     <p className={styles.popular__contentLabel}>{t("price")}</p>
@@ -144,7 +155,7 @@ const Popular = () => {
                     <p className={styles.popular__contentLabel}>
                       {t("deadline")}
                     </p>
-                    <p>{i18n.language==='en' ? deadlineEn: deadline}</p>
+                    <p>{i18n.language === "en" ? deadlineEn : deadline}</p>
                   </div>
                   <a href={path}>
                     <button>{t("details")}</button>

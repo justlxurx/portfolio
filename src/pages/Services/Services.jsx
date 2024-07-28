@@ -1,4 +1,3 @@
-import MainForm from "../../components/MainForm/index";
 import ServiceTypes from "../../components/ServiceTypes/index";
 import CanHelp from "../../components/CanHelp/index";
 import { Route, Routes } from "react-router-dom";
@@ -12,9 +11,6 @@ const Services = () => {
   return (
     <>
       <Header />
-      {/* <div className={styles.mainFormSection}>
-        <MainForm />
-      </div> */}
       <Navbar />
       <Routes>
         {service.map(({ title, path, img, text, textEn, id, titleEn }) => (

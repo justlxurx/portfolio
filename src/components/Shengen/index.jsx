@@ -1,23 +1,16 @@
-import { React, useEffect, useState } from 'react';
-import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useGetShengenImagesQuery } from '../../service';
-import { setCountry } from '../../slice';
-import { useTranslation } from 'react-i18next';
-
+import { React, useEffect, useState } from "react";
+import styles from "./styles.module.scss";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useGetShengenImagesQuery } from "../../service";
+import { setCountry } from "../../slice";
+import { useTranslation } from "react-i18next";
 
 const Country = () => {
   const { data: countries, isLoading } = useGetShengenImagesQuery();
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const [images, setImages] = useState({});
-
-  // useEffect(() => {
-  //   if (countries) {
-  //     dispatch(setCountry(countries));
-  //   }
-  // }, [countries, dispatch]);
 
   useEffect(() => {
     if (countries) {
@@ -26,10 +19,12 @@ const Country = () => {
         const newImages = {};
         for (const country of countries) {
           try {
-            newImages[country.nameEn] = (await import(`../../assets/images/Shengen/${country.nameEn}.png`)).default;
+            newImages[country.nameEn] = (
+              await import(`../../assets/images/Shengen/${country.nameEn}.png`)
+            ).default;
           } catch (err) {
             console.error(`Error loading image for ${country.nameEn}:`, err);
-         }
+          }
         }
         setImages(newImages);
       };
@@ -40,10 +35,10 @@ const Country = () => {
   return (
     <section className={`${styles.country} container`}>
       <div className={styles.routes}>
-        <a href='/'>{t('main')} /</a>
-        <span>{t('schengen')}</span>
+        <a href="/">{t("main")} /</a>
+        <span>{t("schengen")}</span>
       </div>
-      <h1>{t('schengen')}</h1>
+      <h1>{t("schengen")}</h1>
 
       <div className={styles.country__visasWrapper}>
         {isLoading ? (
@@ -52,9 +47,13 @@ const Country = () => {
           countries.map((country) => (
             <Link to={`${country.nameEn}`} key={country.id}>
               <div className={styles.country__visa}>
-              <div className={styles.flag} style={{ backgroundImage:`url('/src/assets/images/Shengen/${country.nameEn}.png')`}}></div>
-              {/* <img src={images[country.nameEn] } alt={`${country.nameEn}`}  /> */}
-              <p>{i18n.language === 'en' ? country.nameEn : country.name}</p>
+                <div
+                  className={styles.flag}
+                  style={{
+                    backgroundImage: `url('/src/assets/images/Shengen/${country.nameEn}.png')`,
+                  }}
+                ></div>
+                <p>{i18n.language === "en" ? country.nameEn : country.name}</p>
               </div>
             </Link>
           ))

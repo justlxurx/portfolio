@@ -14,7 +14,7 @@
   h1 {
     color: #32349a;
     font-family: "Goldman", sans-serif;
-    font-size: 43px;
+    font-size: 38px;
     text-transform: uppercase;
     text-align: center;
     margin: 100px 0;
@@ -83,9 +83,10 @@
 
 @media (max-width: 1220px) {
   .contacts {
-    padding: 50px 45px 140px;
+    padding: 0px 45px 140px;
     h1 {
-      font-size: 35px;
+      font-size: 30px;
+      margin: 50px 0;
     }
     .link,
     p {
@@ -117,10 +118,10 @@
 
 @media (max-width: 1090px) {
   .contacts {
-    padding: 50px 40px 100px;
+    padding: 0px 40px 100px;
     h1 {
-      font-size: 31px;
-      margin: 20px 0 40px;
+      font-size: 25px;
+      margin: 50px 0 40px;
     }
     hr {
       visibility: hidden;

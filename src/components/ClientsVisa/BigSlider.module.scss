@@ -60,11 +60,11 @@
 @media (max-width: 600px) {
   .slider {
     width: 100%;
-    min-width: 170px;
+    min-width: 100%;
 
     button {
       margin-right: 7px;
-      padding-left: 3%;
+      padding-left: 4%;
 
       &::before {
         font-size: 20px;

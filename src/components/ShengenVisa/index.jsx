@@ -164,7 +164,7 @@ const Visa = () => {
           </div>
         </>
       ) : (
-        <div>No data available</div> // Если country не определен, отображаем сообщение об отсутствии данных
+        <div>No data available</div>
       )}
     </section>
   );

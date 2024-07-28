@@ -1,6 +1,6 @@
 .card {
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 30px;
   background: rgba(50, 52, 154, 0.11);
   overflow: hidden;
   transition: 0.3s all ease;
@@ -12,10 +12,10 @@
     justify-content: space-between;
   }
   &__title {
-    font-size: 33px;
+    font-size: 22px;
     font-weight: 700;
     max-width: 80%;
-    padding: 40px 0 50px;
+    padding: 25px 0 30px;
   }
 
   &__fullyButton {
@@ -26,18 +26,16 @@
     align-items: center;
     justify-content: center;
     aspect-ratio: 1;
-    // img {
-    //   aspect-ratio: 1;
-    //   width: 15px;
-    //   height: 15px;
-    // }
+    img {
+      width: 50%;
+    }
   }
 
   &__description {
-    font-size: 35px;
-    line-height: 36px;
-    padding: 50px 0;
     display: none;
+    padding: 20px 0;
+    font-size: 22px;
+    line-height: 36px;
     p {
       margin-top: 0;
       max-width: 70%;
@@ -45,45 +43,8 @@
   }
 }
 
-@media (max-width: 1900px) {
-  .card {
-    &__title {
-      font-size: 28px;
-    }
-
-    &__description {
-      font-size: 28px;
-    }
-  }
-}
-
-@media (max-width: 1500px) {
-  .card {
-    border-radius: 50px;
-
-    &__title {
-      font-size: 24px;
-      padding: 25px 0 30px;
-    }
-
-    &__fullyButton {
-      img {
-        width: 50%;
-      }
-    }
-
-    &__description {
-      padding: 20px 0;
-      font-size: 24px;
-      line-height: 36px;
-    }
-  }
-}
-
 @media (max-width: 1388px) {
   .card {
-    border-radius: 50px;
-
     &__title {
       font-size: 21px;
     }
@@ -109,7 +70,7 @@
 
 @media (max-width: 1140px) {
   .card {
-    border-radius: 50px;
+    border-radius: 30px;
 
     &__title {
       font-size: 18px;

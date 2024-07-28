@@ -2,32 +2,32 @@ import { configureStore } from "@reduxjs/toolkit";
 import {
   shengenApi,
   otherApi,
-  visaApi,
+  // visaApi,
   formApi,
   adminApi,
-  commentApi
+  commentApi,
 } from "../service/index";
 import {
   countryReducer,
   visaReducer,
   adminReducer,
-  commentReducer
+  commentReducer,
 } from "../slice/index";
 import { createLogger } from "redux-logger";
 
 const logger = createLogger({ colors: "pink" });
 export const store = configureStore({
   reducer: {
-    comment:commentReducer,
+    comment: commentReducer,
     admin: adminReducer,
     country: countryReducer,
     visa: visaReducer,
-    [commentApi.reducerPath]:commentApi.reducer,
+    [commentApi.reducerPath]: commentApi.reducer,
     [adminApi.reducerPath]: adminApi.reducer,
     [otherApi.reducerPath]: otherApi.reducer,
     [shengenApi.reducerPath]: shengenApi.reducer,
-    [visaApi.reducerPath]: visaApi.reducer,
-    [formApi.reducerPath]: formApi.reducer
+    // [visaApi.reducerPath]: visaApi.reducer,
+    [formApi.reducerPath]: formApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -35,7 +35,7 @@ export const store = configureStore({
       adminApi.middleware,
       otherApi.middleware,
       shengenApi.middleware,
-      visaApi.middleware,
+      // visaApi.middleware,
       formApi.middleware,
       logger
     ),

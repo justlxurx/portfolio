@@ -162,7 +162,6 @@ const Visa = () => {
             <h1 className={styles.visa__title}>
               {i18n.language === "en" ? country.titleEn : country.title}
             </h1>
-            {/* <p> {i18n.language === 'en' ? country.textEn : country.text}</p> */}
             <p className={styles.visa__text}>
               {i18n.language === "en" ? (
                 <>
@@ -189,7 +188,7 @@ const Visa = () => {
           </div>
         </>
       ) : (
-        <div>No data available</div> // Если country не определен, отображаем сообщение об отсутствии данных
+        <div>No data available</div>
       )}
     </section>
   );

@@ -5,7 +5,6 @@ import { useFormik } from "formik";
 import { useFormMutation } from "../../service";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
-import { Navbar } from "../Navbar/Navbar";
 import InputMask from "react-input-mask";
 import { Modal } from "../Modal/Modal";
 import { useState } from "react";
@@ -50,7 +49,6 @@ const Main = ({ child }) => {
         <Modal title={`${t("success")}`} onClose={() => setIsOpen(false)} />
       )}
       <div className={"container"}>
-        {/* <Navbar /> */}
         {child}
         <section className={styles.main}>
           <div className={styles.main__infoVisa}>
@@ -129,14 +127,7 @@ const Main = ({ child }) => {
                   onBlur={formik.handleBlur}
                 >
                   {() => (
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder={t("number")}
-                      // value={formik.values.phone}
-                      // onChange={formik.handleChange}
-                      // onBlur={formik.handleBlur}
-                    />
+                    <input type="text" name="phone" placeholder={t("number")} />
                   )}
                 </InputMask>
 

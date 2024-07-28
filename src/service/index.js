@@ -3,10 +3,24 @@ export {
   useGetShengenInfoFromNameQuery,
   useGetShengenImagesQuery,
   useUpdateShengenZoneMutation,
-  useSaveShengenZoneMutation
+  useSaveShengenZoneMutation,
 } from "./shengen";
-export { visaApi, useGetAllVisaQuery } from "./visa";
 export { formApi, useFormMutation } from "./form";
-export { otherApi, useGetOtherCountryQuery, useGetCountryInfoFromNameQuery, useSaveCountryMutation, useUpdateCountryMutation } from "./other";
-export { adminApi, useGetClientQuery, useDeleteUserMutation, useLoginMutation} from "./admin";
-export { commentApi, useCreateCommentMutation,useGetCommentQuery} from './comments'
+export {
+  otherApi,
+  useGetOtherCountryQuery,
+  useGetCountryInfoFromNameQuery,
+  useSaveCountryMutation,
+  useUpdateCountryMutation,
+} from "./other";
+export {
+  adminApi,
+  useGetClientQuery,
+  useDeleteUserMutation,
+  useLoginMutation,
+} from "./admin";
+export {
+  commentApi,
+  useCreateCommentMutation,
+  useGetCommentQuery,
+} from "./comments";
