@@ -12,7 +12,7 @@ const Footer = () => {
   const { t } = useTranslation();
   const mainLinks = [
     {
-      title: `${t("aboutUs")}`,
+      title: `${t("main")}`,
       path: "/",
     },
     {
@@ -127,7 +127,7 @@ const Footer = () => {
             </a>
           </div>
           <div className={styles.footerWrapper__bottomText}>
-            <p> BLS Kazakhstan Visa </p>
+            <p> BLS Visa Kazakhstan</p>
           </div>
         </div>
       </footer>

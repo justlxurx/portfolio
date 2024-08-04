@@ -34,3 +34,11 @@ export const showOrHide = (review, showAllComments) => {
   }
 };
 
+export const convertToLocalTime = (utcTime) => {
+  const date = new Date(utcTime);
+  const localTime = new Date(date.getTime() + 5 * 60 * 60 * 1000);
+  const localTimeString = localTime
+    .toISOString()
+    .replace(/T(\d{2}:\d{2}:\d{2})\.\d+Z/, " $1");
+  return localTimeString;
+};

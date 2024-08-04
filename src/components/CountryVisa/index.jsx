@@ -16,6 +16,15 @@ const Visa = () => {
   const [images, setImages] = useState({});
   const dispatch = useDispatch();
 
+  const decodeBase64 = (encodedString) => {
+    try {
+      return atob(encodedString);
+    } catch (e) {
+      console.error("Error decoding Base64 string:", e);
+      return "";
+    }
+  };
+
   useEffect(() => {
     if (country) {
       dispatch(getCountry(country));
@@ -150,7 +159,9 @@ const Visa = () => {
                     <div
                       className={styles.doc}
                       style={{
-                        backgroundImage: `url('/src/assets/images/Other/doc/${visas.id}.png')`,
+                        backgroundImage: `url('/src/assets/images/Other/doc/${decodeBase64(
+                          visas.visaDoc
+                        )}.png')`,
                       }}
                     ></div>
                   )}

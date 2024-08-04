@@ -13,7 +13,7 @@ const BurgerMenu = () => {
   const { t } = useTranslation();
   const headerLinks = [
     {
-      title: t("aboutUs"),
+      title: t("main"),
       path: "/",
     },
     {

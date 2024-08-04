@@ -53,7 +53,7 @@ const Main = ({ child }) => {
         <section className={styles.main}>
           <div className={styles.main__infoVisa}>
             <h4 className={styles.main__infoVisaHeading}>
-              BLS Kazakhstan Visa
+              BLS Visa Kazakhstan
             </h4>
             <p className={styles.main__infoVisaText}>{t("info")}</p>
           </div>

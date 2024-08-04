@@ -6,6 +6,7 @@ import { useGetClientQuery, useDeleteUserMutation } from "../../../service";
 import { setClient, removeClient } from "../../../slice";
 import { SearchBar } from "../../../components/SearchBar";
 import { filterClient, setSearchClient } from "../../../slice";
+import { convertToLocalTime } from "../../../helpers";
 
 export const Clients = () => {
   const { data: queries, isLoading } = useGetClientQuery();
@@ -87,14 +88,7 @@ export const Clients = () => {
                       <td>{index + 1}</td>
                       <td>{data.name}</td>
                       <td>{data.phone}</td>
-                      <td>
-                        {data.createdAt
-                          ? data.createdAt.replace(
-                              /T(\d{2}:\d{2}:\d{2})\.\d+Z/,
-                              " $1"
-                            )
-                          : ""}
-                      </td>
+                      <td>{convertToLocalTime(data.createdAt)}</td>
                       <td>
                         <button onClick={() => handleRemoveClient(data.id)}>
                           <img

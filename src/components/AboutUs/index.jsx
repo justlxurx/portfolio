@@ -17,7 +17,7 @@ const AboutUs = () => {
       <div className={styles.visa__service}>
         <div></div>
         <div className={styles.visa__serviceText}>
-          <h2>BLS KAZAKHSTAN VISA</h2>
+          <h2>BLS Visa Kazakhstan</h2>
           <p>{t("visaServiceText")}</p>
           <b>
             <p>{t("visaSerciceText2")}</p>

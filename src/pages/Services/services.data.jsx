@@ -280,9 +280,9 @@ export const service = [
     textEn: (
       <p>
         Service for temporary booking of air tickets for submitting documents -
-        5000 tenge <br /> Hotel booking service directly with BLS KAZAKHSTAN
-        VISA partners <br /> When ordering an airline ticket or hotel booking
-        service, the reservation is made on the applicant’s card
+        5000 tenge <br /> Hotel booking service directly with BLS VISA
+        KAZAKHSTAN partners <br /> When ordering an airline ticket or hotel
+        booking service, the reservation is made on the applicant’s card
       </p>
     ),
     text: (
@@ -293,8 +293,8 @@ export const service = [
             - 5000 тенге
           </li>
           <li>
-            Услуга по бронированию отеля напрямую у партнёров BLS KAZAKHSTAN
-            VISA
+            Услуга по бронированию отеля напрямую у партнёров BLS VISA
+            KAZAKHSTAN
           </li>
           <li>
             При заказе услуги бронирования авиабилетов или отеля, бронь

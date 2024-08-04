@@ -23,7 +23,7 @@ export const Navbar = () => {
 
   const headerLinks = [
     {
-      title: `${t("aboutUs")} `,
+      title: `${t("main")} `,
       path: "/",
     },
     {
