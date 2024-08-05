@@ -7,8 +7,6 @@ visa - A project where I used React framework and Redux state manager. Website i
 
 devpactice - It's a simple project when I created a landing for educational platform. Here I am not using any framework, just using html and css. In landing we have 3 pages and 2 forms.
 
-doggai - A landing website which created using React. In this project we have about 20 languages.
-
 qazdev - A website with many pages, when I used Next.js. 
 
 
