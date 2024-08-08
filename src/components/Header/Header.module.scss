@@ -1,0 +1,44 @@
+.main {
+  display: flex;
+  gap: 20px;
+  margin-top: 35px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main__list {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.main__buttonWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link {
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 30.22px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+
+.main__button {
+  width: 236px;
+  height: 55px;
+  //   padding: 0px 17px 0px 17px;
+  gap: 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}

@@ -1,0 +1,132 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  padding: 150px 244px;
+}
+
+.background {
+  // background-image: url("../../assets/images/faq bg.jpg");
+  background-repeat: repeat;
+  background-position: top;
+  background-size: 100%;
+}
+
+.faq__title {
+  font-family: "Patsy Sans";
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 67.41px;
+  text-align: center;
+  color: black;
+}
+.faq__subtitle {
+  font-family: "Patsy Sans";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  color: black;
+}
+.faq__contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.faq__content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 27px;
+  padding: 11px 35px;
+  gap: 30px;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question__text {
+  font-family: "Onest";
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 57.37px;
+  text-align: left;
+}
+.answer {
+  font-family: "Onest";
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 38.25px;
+  text-align: left;
+  width: 95%;
+  padding-bottom: 20px;
+}
+
+.container {
+  padding: 150px 100px;
+}
+// .plus {
+//   width: 47px;
+// }
+
+@media (max-width: 768px) {
+  .faq {
+    //   background-image: url("../../assets/images/mobile_background3.jpg");
+    background-position: top;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    background-size: 100%;
+    padding: 80px 52px;
+  }
+  .faq__title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 28.89px;
+    text-align: center;
+  }
+  .faq__contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .faq__content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 114, 14, 1);
+    padding: 10px 15px;
+    border-radius: 12.43px;
+    gap: 20px;
+  }
+
+  .question__text {
+    width: 90%;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 19.12px;
+    text-align: left;
+  }
+  .answer {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.3px;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+
+  .container {
+    padding: 100px 28px;
+  }
+
+  .plus {
+    width: 12px;
+  }
+}

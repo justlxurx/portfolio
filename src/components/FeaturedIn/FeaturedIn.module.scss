@@ -1,0 +1,66 @@
+.container {
+  padding: 0px 88px;
+  // margin: 0 auto;
+}
+
+.main {
+  // background: rgba(231, 107, 21, 1);
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  padding: 0px 100px;
+}
+
+.main__title {
+  font-family: "Patsy Sans";
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 33.7px;
+  text-align: center;
+  color: black;
+}
+
+.main__logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 20px;
+  }
+
+  .main__title {
+    color: white;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 9.63px;
+    text-align: center;
+  }
+
+  .main__logos {
+    display: flex;
+    // flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 14px;
+  }
+  .main__logoImg {
+    height: 100%;
+    width: 90%;
+  }
+}
