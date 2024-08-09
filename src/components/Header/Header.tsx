@@ -3,9 +3,12 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Logo } from "../../assets/icons/logo";
 import profile from "../../assets/icons/profile.svg";
+import profile__white from "../../assets/icons/profile__white.svg";
+import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 export const Header = () => {
-  // const t = useTranslation();
+  const { open } = useWeb3Modal();
+  const { address, isConnected } = useWeb3ModalAccount();
   const links = [
     {
       title: "Properties",
@@ -37,8 +40,19 @@ export const Header = () => {
         ))}
       </ul>
       <div className={s.main__buttonWrap}>
-        <button className={s.main__button}>Connect wallet</button>
-        <img src={profile} alt="profile" />
+        <button
+          className={s.main__button}
+          style={{
+            background: `${isConnected ? "white" : ""}`,
+            color: `${isConnected ? "rgba(24, 39, 67, 1)" : "white"}`,
+          }}
+          onClick={() => {
+            isConnected ? open({ view: "Account" }) : open({ view: "Connect" });
+          }}
+        >
+          {isConnected ? address : " Connect wallet"}
+        </button>
+        <img src={`${isConnected ? profile__white : profile}`} alt="profile" />
       </div>
     </header>
   );
