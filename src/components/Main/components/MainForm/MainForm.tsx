@@ -2,34 +2,45 @@ import s from "./MainForm.module.scss";
 import { Input } from "../../../../features/Input/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { BalanceInfo } from "../BalanceInfo/BalanceInfo";
+import { useState } from "react";
 
 export const MainForm = () => {
-  const data = [
-    {
-      token: "10 tokens",
-      usdt: "1.000 USDT",
-    },
-    {
-      token: "25 tokens",
-      usdt: "1.000 USDT",
-    },
-    {
-      token: "50 tokens",
-      usdt: "5.000 USDT",
-    },
-    {
-      token: "100 tokens",
-      usdt: "10.000 USDT",
-    },
-    {
-      token: "250 tokens",
-      usdt: "25.000 USDT",
-    },
-    {
-      token: "500 tokens",
-      usdt: "50.000 USDT",
-    },
-  ];
+  const getOutputPosition = () => {
+    const min = 0;
+    const max = 500;
+
+    const sliderContainer = document.querySelector(`.${s.sliderWrap}`);
+    const sliderContainerWidth = sliderContainer
+      ? sliderContainer.clientWidth
+      : 200;
+    const sliderWidthPercent = 110;
+    const thumbWidthPercent = 15;
+
+    const sliderWidth = (sliderWidthPercent / 100) * sliderContainerWidth; // Переводим в пиксели
+    const thumbWidth = (thumbWidthPercent / 100) * sliderContainerWidth; // Переводим в пиксели
+
+    const position = ((value - min) / (max - min)) * (sliderWidth - thumbWidth);
+    return position;
+  };
+
+  const [value, setValue] = useState(0);
+  const [valueUsdt, setValueUsdt] = useState(0);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(event.target.value);
+    setValue(newValue);
+    setValueUsdt(newValue * 100);
+  };
+  const getBackgroundStyle = () => {
+    const percentage = (value / 500) * 100; // Вычисляем процент заполнения
+    return {
+      background: `linear-gradient(
+        to right,
+        rgba(84, 126, 208, 1)${percentage}%,  /* Левая часть */
+        rgba(84, 126, 208, 0.15) ${percentage}%       /* Правая часть */
+      )`,
+    };
+  };
   //   const formik = useFormik({
   //     initialValues: {
   //       amount: 0,
@@ -53,6 +64,7 @@ export const MainForm = () => {
   //   });
   return (
     <div className={s.main}>
+      <BalanceInfo />
       <h1 className={s.main__heading}>Amount</h1>
       <div>
         <Input
@@ -64,22 +76,61 @@ export const MainForm = () => {
         </Input>
       </div>
       <div className={s.wrap}>
-        {data.map((item, index) => (
-          <div key={index} className={s.block}>
+        <div className={s.sliderWrap}>
+          <div className={s.slider}>
+            <output
+              className={s.output1}
+              htmlFor="tokens"
+              id="volume"
+              style={{
+                left: `${getOutputPosition()}px`,
+                transform: `${
+                  value == 0 ? "translateX(0%)" : " translateX(-50%)"
+                }`,
+              }}
+            >
+              {value}
+            </output>
             <input
-              type="radio"
-              name="token"
-              id={`${index}`}
-              value={item.token}
-              className={s.block__input}
-              defaultChecked={index === 0}
+              type="range"
+              id={s.tokens}
+              min="0"
+              max={"500"}
+              value={value}
+              onChange={handleChange}
+              step={"1"}
+              style={getBackgroundStyle()}
             />
-            <label htmlFor={`${index}`} className={s.block__label}>
-              {item.token} <br />
-              {item.usdt}
-            </label>
+            <p className={s.label}>tokens</p>
           </div>
-        ))}
+          <div className={s.slider}>
+            <output
+              className={s.output2}
+              htmlFor="usdt"
+              id="volume2"
+              style={{
+                left: ` ${getOutputPosition()}px`,
+                transform: `${
+                  value == 0 ? "translateX(0%)" : " translateX(-50%)"
+                }`,
+              }}
+            >
+              {valueUsdt}
+            </output>
+            <input
+              type="range"
+              id={s.usdt}
+              min="0"
+              max={"50000"}
+              value={valueUsdt}
+              onChange={handleChange}
+              step={"1"}
+              style={getBackgroundStyle()}
+              disabled
+            />
+            <p className={s.label}>usdt</p>
+          </div>
+        </div>
       </div>
       <button className={s.main__button}>BUY TOKENS</button>
     </div>

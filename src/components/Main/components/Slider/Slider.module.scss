@@ -1,31 +1,22 @@
-.main {
-  // display: grid;
-  // grid-template-columns: 2fr 1fr;
-  // justify-content: space-between;
-  margin-top: 120px;
-  margin-bottom: 50px;
-  // gap: 20px;
-  display: flex;
-  gap: 30px;
+.main__slider {
+  margin: 0 0px;
 }
 
 .main__left {
-  width: 65%;
-  // background-color: white;
-  // box-shadow: 0px 4px 9.7px 0px rgba(0, 0, 0, 0.25);
-  // border-radius: 20px;
-  // padding: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 9.7px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  height: fit-content;
+  height: auto;
 }
 
 .main__right {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 35%;
 }
 
 .apartment {
@@ -77,7 +68,7 @@
   width: 40%;
 }
 .apartment__img1 {
-  background-image: url("../../assets/images/img1.png");
+  background-image: url("../../../../assets/images/img1.png");
   background-position: center;
   background-size: cover;
   border-radius: 18.88px;
@@ -85,7 +76,7 @@
   width: 60%;
 }
 .apartment__img2 {
-  background-image: url("../../assets/images/img2.png");
+  background-image: url("../../../../assets/images/img2.png");
   background-position: center;
   background-size: cover;
   border-radius: 9.44px;
@@ -93,7 +84,7 @@
   height: 100%;
 }
 .apartment__img3 {
-  background-image: url("../../assets/images/img3.png");
+  background-image: url("../../../../assets/images/img3.png");
   background-position: center;
   background-size: cover;
   border-radius: 9.44px;
@@ -102,7 +93,7 @@
 }
 
 .apartment__img4 {
-  background-image: url("../../assets/images/img4.png");
+  background-image: url("../../../../assets/images/img4.png");
   background-position: center;
   background-size: cover;
   border-radius: 9.44px;

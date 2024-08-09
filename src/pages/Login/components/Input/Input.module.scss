@@ -1,0 +1,95 @@
+.mainInput {
+  display: flex;
+  flex-direction: column;
+  gap: 11.49px;
+  width: 100%;
+}
+
+.labelName {
+  font-family: Helvetica Neue;
+  font-size: 24.47px;
+  font-weight: 500;
+  line-height: 29.88px;
+  text-align: left;
+  color: white;
+}
+
+.input {
+  background-color: unset;
+  border-radius: 5.74px;
+  border: 1.15px solid rgba(255, 255, 255, 1);
+  padding: 0px 15px;
+  width: calc(100% - 22px);
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 39.06px;
+  text-align: left;
+  margin-left: 0;
+  color: rgba(255, 255, 255, 1);
+  height: 72.67px;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  //   &:hover {
+  //     border: 1px solid rgba(8, 9, 28, 0.4);
+  //     cursor: pointer;
+  //   }
+  &:disabled {
+    border: 1px solid #08091c1f;
+    background-color: #08091c0a;
+    color: #08091c66;
+    cursor: not-allowed;
+  }
+}
+.labelWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forgotPassword {
+  color: rgba(69, 77, 231, 1);
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.passwordInput {
+  background-color: white;
+  width: 100%;
+  &::placeholder {
+    color: rgba(8, 9, 28, 0.4);
+  }
+}
+.passwordIcon {
+  cursor: pointer;
+}
+.passwordInputWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #08091c1f;
+  padding: 8px 10px;
+  width: 467px;
+
+  &:focus {
+    border: 1px solid rgba(69, 77, 231, 1);
+  }
+  &:hover {
+    border: 1px solid rgba(8, 9, 28, 0.4);
+    cursor: pointer;
+  }
+}
+
+.error {
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(229, 62, 62, 1);
+}

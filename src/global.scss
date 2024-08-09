@@ -3,6 +3,11 @@
   src: url("../src/assets/fonts/HelveticaNeue/HelveticaNeueMedium.ttf");
 }
 
+@font-face {
+  font-family: Actay Wide;
+  src: url("../src/assets/fonts/ActayWide/Actay-Regular.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +23,10 @@ a {
 
 body {
   margin: 0;
-  background-image: url("../src/assets/images/background.png");
+  background: rgba(24, 39, 67, 1) url("../src/assets/images/background.png")
+    no-repeat;
+  background-position: bottom;
+  background-size: 100%;
 }
 
 .container {

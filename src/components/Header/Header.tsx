@@ -29,7 +29,9 @@ export const Header = () => {
   ];
   return (
     <header className={`${s.main} container`}>
-      <Logo />
+      <Link to={"/"}>
+        <Logo />
+      </Link>
       <ul className={s.main__list}>
         {links.map((item, index) => (
           <li key={index}>
@@ -52,7 +54,12 @@ export const Header = () => {
         >
           {isConnected ? address : " Connect wallet"}
         </button>
-        <img src={`${isConnected ? profile__white : profile}`} alt="profile" />
+        <Link to={"/login"} className={s.link}>
+          <img
+            src={`${isConnected ? profile__white : profile}`}
+            alt="profile"
+          />
+        </Link>
       </div>
     </header>
   );

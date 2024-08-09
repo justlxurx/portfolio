@@ -1,51 +1,45 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  background: rgba(24, 39, 67, 0.81);
-  box-shadow: 0px 4px 9.7px 0px rgba(0, 0, 0, 0.25);
+  background: rgba(35, 55, 84, 0.72);
   padding: 44.48px 32px;
+  gap: 34px;
   border-radius: 20px;
 }
 .info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.info__left {
-  font-family: Helvetica Neue;
-  font-size: 35px;
-  font-weight: 600;
-  line-height: 42.73px;
-  text-align: left;
-  span {
-    font-weight: 200;
-  }
-}
-.info__right {
-  font-family: Helvetica Neue;
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 26.25px;
-  text-align: right;
-  span {
-    font-weight: 200;
-  }
+  flex-direction: column;
+  gap: 30px;
 }
 
-.balance__wrap {
+.info__title {
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.42px;
+  text-align: left;
+}
+
+.info__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-.balance {
+.info__listItem {
   font-family: Helvetica Neue;
   font-size: 20px;
   font-weight: 300;
   line-height: 23.86px;
   text-align: left;
-  span {
-    font-weight: 200;
+  display: flex;
+  align-items: center;
+  color: white;
+  .circle {
+    aspect-ratio: 1;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 50%;
   }
 }
