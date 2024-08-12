@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  front-admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: front
+    ports:
+      - "3535:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev -- --host
