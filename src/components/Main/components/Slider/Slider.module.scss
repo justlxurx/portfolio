@@ -1,7 +1,20 @@
+.buttons {
+  margin: 0 -5px;
+  z-index: 20px;
+  &::after,
+  &::before {
+    content: none;
+  }
+}
+
 .main__slider {
   margin: 0 0px;
 }
-
+.swiperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main__left {
   background-color: white;
   box-shadow: 0px 4px 9.7px 0px rgba(0, 0, 0, 0.25);
@@ -11,6 +24,8 @@
   flex-direction: column;
   gap: 40px;
   height: auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .main__right {
