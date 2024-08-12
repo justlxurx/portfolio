@@ -5,7 +5,7 @@
   background: rgba(35, 55, 84, 0.72);
   box-shadow: -1px 4px 5.4px 0px rgba(24, 39, 67, 0.6);
 
-  padding: 44.48px 32px 65px;
+  padding: 44.48px 32px;
   border-radius: 20px;
 }
 .main__heading {
@@ -15,6 +15,7 @@
   line-height: 30.52px;
   text-align: left;
   color: white;
+  text-transform: uppercase;
 }
 .main__button {
   background-color: white;
@@ -27,6 +28,12 @@
   padding: 8.58px 9.65px;
   border-radius: 10px;
   border: 1.07px solid rgba(255, 255, 255, 1);
+  height: 60px;
+}
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .input__text {
   color: rgba(84, 126, 208, 1);
@@ -40,7 +47,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
-  gap: 15px;
 }
 .block__input:checked + .block__label {
   background-color: white;
@@ -69,10 +75,10 @@
 }
 .sliderWrap {
   width: 200%;
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 70px;
 }
 
 .slider {

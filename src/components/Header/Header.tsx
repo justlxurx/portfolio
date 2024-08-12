@@ -22,10 +22,10 @@ export const Header = () => {
       title: "Contact Us",
       links: "#contact-us",
     },
-    {
-      title: "Dashboard",
-      links: "#dashboard",
-    },
+    // {
+    //   title: "Dashboard",
+    //   links: "#dashboard",
+    // },
   ];
   return (
     <header className={`${s.main} container`}>

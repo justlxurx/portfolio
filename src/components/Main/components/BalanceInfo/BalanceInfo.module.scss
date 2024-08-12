@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   // background: rgba(24, 39, 67, 0.81);
   // box-shadow: 0px 4px 9.7px 0px rgba(0, 0, 0, 0.25);
   // padding: 44.48px 32px;
@@ -14,7 +14,7 @@
 }
 .info__left {
   font-family: Helvetica Neue;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 42.73px;
   text-align: left;
@@ -36,14 +36,14 @@
 .balance__wrap {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0px;
 }
 
 .balance {
   font-family: Helvetica Neue;
   font-size: 20px;
   font-weight: 300;
-  line-height: 23.86px;
+  line-height: 36.63px;
   text-align: left;
   span {
     font-weight: 200;

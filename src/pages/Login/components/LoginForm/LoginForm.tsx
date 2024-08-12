@@ -96,6 +96,7 @@ export const LoginForm = () => {
                 ? " rgba(255, 255, 255, 0.45)"
                 : "rgba(24, 39, 67, 1)",
           }}
+        
         >
           Sign in/ Log in
         </button>
