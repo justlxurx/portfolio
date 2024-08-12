@@ -322,8 +322,8 @@ export const SliderSection = () => {
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,
-          stretch: 81.5,
-          depth: 20,
+          stretch: 86.8,
+          depth: 5,
           modifier: 8.8,
           // slideShadows: false,
         }}
