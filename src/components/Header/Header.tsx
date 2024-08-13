@@ -12,7 +12,7 @@ export const Header = () => {
   const links = [
     {
       title: "Properties",
-      links: "#properties",
+      links: "/properties",
     },
     {
       title: "FAQ",
@@ -35,9 +35,9 @@ export const Header = () => {
       <ul className={s.main__list}>
         {links.map((item, index) => (
           <li key={index}>
-            <a href={`${item.links}`} className={s.link}>
+            <Link to={`${item.links}`} className={s.link}>
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

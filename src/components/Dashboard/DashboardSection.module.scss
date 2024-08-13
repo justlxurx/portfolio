@@ -1,0 +1,77 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin: 100px 0;
+}
+
+.main__heading {
+  color: white;
+  font-family: Actay Wide;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 56.84px;
+  text-align: center;
+}
+
+.main__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 40px 50px;
+  min-width: 1220px;
+}
+
+.main__searching {
+  display: flex;
+  gap: 5px;
+  position: relative;
+  height: 79px;
+}
+.searchBar {
+  width: calc(100% - 290px);
+}
+.dropdown {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 193px;
+  padding: 25px 10px 25px 16px;
+  gap: 19px;
+  border-radius: 20px;
+  border: 1.27px solid rgba(255, 255, 255, 0.33);
+  justify-content: center;
+  background-color: rgba(84, 126, 208, 0.14);
+}
+.dropdown:hover > .dropdown__bottom {
+  display: flex;
+}
+.dropdown__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Inter Tight;
+  font-size: 25.31px;
+  font-weight: 400;
+  line-height: 30.62px;
+  text-align: left;
+  color: white;
+}
+.dropdown__bottom {
+  //   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 25px;
+  display: none;
+}
+.dropdown__botton {
+  font-family: "Inter Tight";
+  font-size: 24px !important;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  padding: 0;
+  color: white;
+}

@@ -65,7 +65,6 @@ export const MainForm = () => {
   return (
     <div className={s.main}>
       <BalanceInfo />
-
       <div className={s.inputWrap}>
         <h1 className={s.main__heading}>Amount</h1>
         <Input

@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin: 100px 0;
+}
+
+.main__heading {
+  color: white;
+  font-family: Actay Wide;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 56.84px;
+  text-align: center;
+}
+
+.main__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 40px 50px;
+  min-width: 1220px;
+}
+
+.links {
+  color: white;
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 100;
+  line-height: 30.52px;
+  text-align: right;
+  position: absolute;
+  right: 80px;
+  padding: 10px 0;
+  a:first-of-type {
+    font-weight: 400;
+  }
+}
