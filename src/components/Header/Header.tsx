@@ -52,7 +52,9 @@ export const Header = () => {
             isConnected ? open({ view: "Account" }) : open({ view: "Connect" });
           }}
         >
-          {isConnected ? address : " Connect wallet"}
+          {isConnected
+            ? `${address!.slice(0, 12)}...${address!.slice(-2)}`
+            : " Connect wallet"}
         </button>
         <Link to={"/login"} className={s.link}>
           <img
