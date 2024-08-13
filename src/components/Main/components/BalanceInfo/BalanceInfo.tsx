@@ -1,11 +1,30 @@
 import s from "./BalanceInfo.module.scss";
+import { refreshSelect } from "../../../../store/slices/refreshSlice.ts";
+import { useSmarts } from "../../../../hooks/useSmart.ts";
+import {
+  useWeb3Modal,
+  useWeb3ModalAccount,
+  useWeb3ModalProvider,
+} from "@web3modal/ethers/react";
+import { useState, useEffect } from "react";
 
 export const BalanceInfo = () => {
+  const refreshIndicator = useAppSelector(refreshSelect);
+  const { address, chainId, isConnected } = useWeb3ModalAccount();
+  const { smarts } = useSmarts();
+  const { walletProvider } = useWeb3ModalProvider();
+  const [payableBalance, setPayableBalance] = useState<string>("0");
+  useEffect(() => {
+    if (isConnected) {
+      smarts?.usdt.balanceOf(address!).then((res) => setPayableBalance(res));
+    }
+  }, [isConnected, walletProvider, address, smarts, refreshIndicator]);
   return (
     <div className={s.main}>
       <div className={s.info}>
         <p className={s.info__left}>
-          120,000
+          {/* 120,000 */}
+          {payableBalance}
           <br /> USDT
         </p>
         <p className={s.info__right}>
@@ -19,7 +38,7 @@ export const BalanceInfo = () => {
           Token price: <span>100 USDT</span>
         </p>
         <p className={s.balance}>
-          Balance: <span>129 USDT</span>
+          Balance: <span>{payableBalance} USDT</span>
         </p>
       </div>
     </div>
