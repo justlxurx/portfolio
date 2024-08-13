@@ -1,9 +1,8 @@
 import s from "./Header.module.scss";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Logo } from "../../assets/icons/logo";
 import profile from "../../assets/icons/profile.svg";
-import profile__white from "../../assets/icons/profile__white.svg";
+import { Profile } from "../../assets/icons/profile";
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 export const Header = () => {
@@ -12,7 +11,7 @@ export const Header = () => {
   const links = [
     {
       title: "Properties",
-      links: "#properties",
+      links: "/properties",
     },
     {
       title: "FAQ",
@@ -29,15 +28,15 @@ export const Header = () => {
   ];
   return (
     <header className={`${s.main} container`}>
-      <Link to={"/"}>
+      <Link to={"/"} className={s.logo}>
         <Logo />
       </Link>
       <ul className={s.main__list}>
         {links.map((item, index) => (
           <li key={index}>
-            <a href={`${item.links}`} className={s.link}>
+            <Link to={`${item.links}`} className={s.link}>
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -57,10 +56,10 @@ export const Header = () => {
             : " Connect wallet"}
         </button>
         <Link to={"/login"} className={s.link}>
-          <img
-            src={`${isConnected ? profile__white : profile}`}
-            alt="profile"
-          />
+          <button className={s.accountButton}>
+            <Profile />
+            My account
+          </button>
         </Link>
       </div>
     </header>

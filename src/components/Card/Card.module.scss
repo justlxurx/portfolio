@@ -1,0 +1,110 @@
+.apartment {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 12.09px;
+  padding: 20.49px 20.14px;
+  border-radius: 20.14px;
+  max-width: 373px;
+  box-sizing: border-box;
+  justify-self: center;
+}
+.apartment__info {
+  font-family: Helvetica Neue;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22.97px;
+  text-align: center;
+  color: rgba(24, 39, 67, 1);
+}
+
+.apartment__img {
+  width: 100%;
+  height: 225.6px;
+  border-radius: 13.86px;
+}
+
+.apartment__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apartment__name {
+  font-family: Helvetica Neue;
+  font-size: 20.14px;
+  font-weight: 500;
+  line-height: 24.59px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+.apartment__country {
+  display: flex;
+  align-items: center;
+  gap: 12.35px;
+}
+
+.apartment__countryName {
+  font-family: Helvetica Neue;
+  font-size: 15.11px;
+  font-weight: 200;
+  line-height: 18.26px;
+  text-align: right;
+  color: rgba(24, 39, 67, 1);
+}
+.apartment__countryFlag {
+  width: 29.21px;
+  height: 17.12px;
+  border-radius: 1.83px;
+}
+.apartment__priceWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-family: Helvetica Neue;
+    font-size: 15.11px;
+    font-weight: 300;
+    line-height: 18.26px;
+    text-align: left;
+    color: rgba(84, 126, 208, 1);
+  }
+}
+
+.apartment__price {
+  font-family: Helvetica Neue;
+  font-size: 20.14px;
+  font-weight: 300;
+  line-height: 24.03px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+.apartment__percents {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica Neue;
+  font-size: 18.63px;
+  font-weight: 200;
+  line-height: 22.22px;
+  text-align: left;
+  gap: 10.07px;
+  padding: 12.11px 6.52px;
+  border-radius: 6.52px;
+  background: rgba(84, 126, 208, 0.14);
+  p {
+    color: rgba(24, 39, 67, 1);
+  }
+}
+
+.apartment__progress {
+  background-color: rgba(24, 39, 67, 1);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10.07px;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21.47px;
+  text-align: left;
+  color: white;
+}

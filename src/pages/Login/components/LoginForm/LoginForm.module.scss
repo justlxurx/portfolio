@@ -4,7 +4,7 @@
   align-items: center;
   gap: 30px;
   height: 90vh;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .main__heading {
@@ -20,25 +20,25 @@
   flex-direction: column;
   gap: 15px;
   align-items: center;
-  width: 500px;
+  width: 712px;
 }
 .loginForm__button {
-  background: rgba(255, 255, 255, 0.45);
-  width: 354.95px;
+  background: rgba(84, 126, 208, 1);
+  width: 100%;
   height: calc(75.82px - 0px);
   padding: 0;
   gap: 9.19px;
-  border-radius: 9.19px;
+  border-radius: 5px;
   font-family: Helvetica Neue;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
-  line-height: 26.86px;
-  color: rgba(255, 255, 255, 0.45);
+  line-height: 30.53px;
+  text-align: left;
+  color: white;
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .error {
@@ -52,5 +52,52 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.orWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 24.18px;
+  text-align: center;
+  color: white;
+  gap: 10px;
+  width: 712px;
+  margin: 20px 0;
+
+  hr {
+    width: 320px;
+  }
+}
+
+.buttons {
+  width: 712px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.buttons__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: white;
+  padding: 17.26px 5px;
+  border-radius: 5px;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.42px;
+  text-align: center;
+  color: rgba(57, 57, 57, 1);
+}
+
+.buttons__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }

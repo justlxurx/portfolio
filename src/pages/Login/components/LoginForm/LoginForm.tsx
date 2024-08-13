@@ -2,13 +2,17 @@ import Input from "../Input/Input";
 import s from "./LoginForm.module.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import apple from "../../../../assets/icons/apple.svg";
+import connect from "../../../../assets/icons/connect.svg";
+import google from "../../../../assets/icons/google.svg";
+import metamask from "../../../../assets/icons/metamask.svg";
 
 export const LoginForm = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
-      verifyPassword: "",
+      // password: "",
+      // verifyPassword: "",
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -17,15 +21,15 @@ export const LoginForm = () => {
           `Invalid email`
         )
         .required(`Email is required`),
-      password: Yup.string()
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/,
-          "Must be 8-20 characters long, with at least 1 uppercase, 1 lowercase, 1 digit, and 1 special character."
-        )
-        .required("Password is required"),
-      verifyPassword: Yup.string()
-        .oneOf([Yup.ref("password"), ""], "Passwords must match")
-        .required("Please confirm your password"),
+      // password: Yup.string()
+      //   .matches(
+      //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/,
+      //     "Must be 8-20 characters long, with at least 1 uppercase, 1 lowercase, 1 digit, and 1 special character."
+      //   )
+      //   .required("Password is required"),
+      // verifyPassword: Yup.string()
+      //   .oneOf([Yup.ref("password"), ""], "Passwords must match")
+      //   .required("Please confirm your password"),
     }),
     onSubmit: async (values) => {
       //   try {
@@ -57,32 +61,6 @@ export const LoginForm = () => {
             <div className={s.error}>{formik.errors.email}</div>
           )}
         </div>
-        <div className={s.input}>
-          <Input
-            title="Password"
-            placeholder="Enter password"
-            name="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.password && formik.errors.password && (
-            <div className={s.error}>{formik.errors.password}</div>
-          )}
-        </div>
-        <div className={s.input}>
-          <Input
-            title="Verify password"
-            placeholder="Verify password"
-            name="verifyPassword"
-            value={formik.values.verifyPassword}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.verifyPassword && formik.errors.verifyPassword && (
-            <div className={s.error}>{formik.errors.verifyPassword}</div>
-          )}
-        </div>
         <button
           className={s.loginForm__button}
           type="submit"
@@ -90,17 +68,39 @@ export const LoginForm = () => {
             background:
               Object.keys(formik.errors).length > 0
                 ? " rgba(255, 255, 255, 0.45)"
-                : "white",
+                : " rgba(84, 126, 208, 1)",
             color:
               Object.keys(formik.errors).length > 0
                 ? " rgba(255, 255, 255, 0.45)"
-                : "rgba(24, 39, 67, 1)",
+                : "white",
           }}
-        
         >
-          Sign in/ Log in
+          Continue with E-mail
         </button>
       </form>
+      <div className={s.orWrap}>
+        <hr /> OR <hr />
+      </div>
+      <div className={s.buttons}>
+        <button className={s.buttons__item}>
+          <img src={google} alt="google" />
+          Continue with Google account
+        </button>
+        <button className={s.buttons__item}>
+          <img src={apple} alt="apple" />
+          Continue with Apple account
+        </button>
+        <div className={s.buttons__wrap}>
+          <button className={s.buttons__item}>
+            <img src={metamask} alt="metamask" />
+            Continue with MetaMask
+          </button>
+          <button className={s.buttons__item}>
+            <img src={connect} alt="connect wallet" />
+            Continue with Wallet Connect
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
