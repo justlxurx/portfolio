@@ -8,6 +8,46 @@ import google from "../../../../assets/icons/google.svg";
 import metamask from "../../../../assets/icons/metamask.svg";
 
 export const LoginForm = () => {
+  const onInit = (auth2: gapi.auth2.GoogleAuth) => {
+    console.log("init OK", auth2);
+  };
+
+  const onError = (err: any) => {
+    console.log("error", err);
+  };
+
+  window.gapi.load("auth2", () => {
+    window.gapi.auth2
+      .init({
+        client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID as string,
+      })
+      .then(onInit, onError);
+  });
+
+  const signIn = () => {
+    const auth2 = window.gapi.auth2.getAuthInstance();
+    auth2.signIn().then((googleUser: gapi.auth2.GoogleUser) => {
+      const profile = googleUser.getBasicProfile();
+      console.log("ID: " + profile.getId());
+      console.log("Full Name: " + profile.getName());
+      console.log("Given Name: " + profile.getGivenName());
+      console.log("Family Name: " + profile.getFamilyName());
+      console.log("Image URL: " + profile.getImageUrl());
+      console.log("Email: " + profile.getEmail());
+
+      const id_token = googleUser.getAuthResponse().id_token;
+      console.log("ID Token: " + id_token);
+
+      // Здесь можно отправить токен на сервер для аутентификации
+    });
+  };
+
+  const signOut = () => {
+    const auth2 = window.gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log("User signed out.");
+    });
+  };
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -42,6 +82,7 @@ export const LoginForm = () => {
       //     console.error("Error submitting form:", error);
       //   }
       alert("Submitted successfully");
+      window.location.href = "/dashboard";
     },
   });
   return (
@@ -82,7 +123,7 @@ export const LoginForm = () => {
         <hr /> OR <hr />
       </div>
       <div className={s.buttons}>
-        <button className={s.buttons__item}>
+        <button className={`${s.buttons__item}`} onClick={signIn}>
           <img src={google} alt="google" />
           Continue with Google account
         </button>
