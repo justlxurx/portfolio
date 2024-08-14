@@ -1,0 +1,36 @@
+variables:
+  IMAGE_NAME: real-estate
+  IMAGE_TAG: latest
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_TLS_CERTDIR: ""
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
+    - docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+
+deploy:
+  stage: deploy
+  image: alpine
+  before_script:
+    - apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker pull $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker stop frontend || true && sudo docker rm frontend || true"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker run --name frontend -p 3535:5173 -d $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker image prune -a -f"
+    - ssh -o StrictHostKeyChecking=no $SSH_URL "sudo docker volume prune -f"
