@@ -1,15 +1,15 @@
 .main {
   display: flex;
-  flex-direction: column;
-  background: rgba(35, 55, 84, 0.72);
+  // flex-direction: column;
+  background: white;
   padding: 44.48px 32px;
-  gap: 34px;
+  gap: 25px;
   border-radius: 20px;
 }
 .info {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 .info__title {
@@ -18,11 +18,16 @@
   font-weight: 600;
   line-height: 24.42px;
   text-align: left;
+  color: rgba(24, 39, 67, 1);
 }
 
 .info__list {
   display: flex;
   flex-direction: column;
+  background-color: rgba(84, 126, 208, 0.03);
+  border: 1px solid rgba(84, 126, 208, 0.17);
+  border-radius: 20px;
+  padding: 20px 10px;
 }
 
 .info__listItem {
@@ -33,12 +38,12 @@
   text-align: left;
   display: flex;
   align-items: center;
-  color: white;
+  color: rgba(7, 40, 104, 1);
   .circle {
     aspect-ratio: 1;
     width: 4px;
     height: 4px;
-    background-color: white;
+    background-color: rgba(7, 40, 104, 1);
     margin: 0 10px;
     border-radius: 50%;
   }

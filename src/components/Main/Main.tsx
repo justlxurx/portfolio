@@ -9,10 +9,10 @@ export const Main = () => {
       <div className={`${s.main} container`}>
         <div className={s.main__left}>
           <SliderSection />
+          <Info />
         </div>
         <div className={s.main__right}>
           <MainForm />
-          <Info />
         </div>
       </div>
     </>
