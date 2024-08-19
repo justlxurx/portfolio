@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 80px;
   justify-content: center;
-  padding: 150px 244px;
+  padding: 150px 0px;
 }
 
 .background {
@@ -14,21 +14,15 @@
 }
 
 .faq__title {
-  font-family: "Patsy Sans";
-  font-size: 70px;
-  font-weight: 400;
-  line-height: 67.41px;
-  text-align: center;
-  color: black;
-}
-.faq__subtitle {
-  font-family: "Patsy Sans";
-  font-size: 40px;
-  font-weight: 400;
+  font-family: Helvetica;
+  font-size: 54px;
+  font-weight: 700;
   line-height: 40px;
-  text-align: center;
-  color: black;
+  letter-spacing: -1.0199999809265137px;
+  text-align: left;
+  color: white;
 }
+
 .faq__contentWrapper {
   display: flex;
   flex-direction: column;

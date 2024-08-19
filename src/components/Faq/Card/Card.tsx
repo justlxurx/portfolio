@@ -1,9 +1,9 @@
-import s from "./../Faq.module.scss";
+import s from "./Card.module.scss";
 import { useState } from "react";
-//import plus from "../../../assets/images/plus.svg";
-//import minus from "../../../assets/images/minus.svg";
+import { Plus } from "../../../assets/icons/plus";
+import { Minus } from "../../../assets/icons/minus";
 
-export const Question = ({
+export const QuestionCard = ({
   question,
   answer,
 }: {
@@ -15,14 +15,22 @@ export const Question = ({
     setIsOpen(!isOpen);
   };
   return (
-    <button onClick={toggleOpenHandler}>
-      <div className={s.faq__content}>
-        <div className={s.question}>
-          <p className={s.question__text}>{question}</p>
-          {/* <img src={isOpen ? minus : plus} alt="plus" className={s.plus} /> */}
-        </div>
-        {isOpen ? <div className={s.answer}>{answer}</div> : ""}
+    <button onClick={toggleOpenHandler} className={s.faqButton}>
+      <div
+        className={s.faqContent}
+        style={{
+          background: `${isOpen ? "white" : "rgba(84, 126, 208, 0.1)"}`,
+        }}
+      >
+        <p
+          className={s.question}
+          style={{ color: `${isOpen ? "rgba(24, 39, 67, 1)" : "white"}` }}
+        >
+          {question}
+        </p>
+        {isOpen ? <p className={s.answer}>{answer}</p> : ""}
       </div>
+      <div className={s.faqIcon}>{isOpen ? <Minus /> : <Plus />}</div>
     </button>
   );
 };

@@ -1,12 +1,12 @@
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
-import { PropertyCard } from "../../components/PropertyCard/PropertyCard";
+import { Properties } from "./components/Main/Main";
 
-export const Property = () => {
+export const AllProperties = () => {
   return (
     <>
       <Header />
-      <PropertyCard />
+      <Properties />
       <Footer />
     </>
   );

@@ -1,13 +1,13 @@
-import { Footer } from "../../components/Footer/Footer";
+import { Faq } from "../../components/Faq/Faq";
+import { Contacts } from "../../components/Contacts/Contacts";
 import { Header } from "../../components/Header/Header";
-import { Main } from "../../components/Main/Main";
 
 export const MainPage = () => {
   return (
     <>
       <Header />
-      <Main />
-      <Footer />
+      <Faq />
+      <Contacts />
     </>
   );
 };

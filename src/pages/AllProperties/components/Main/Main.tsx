@@ -1,7 +1,7 @@
-import s from "./Properties.module.scss";
-import { Card } from "../Card/Card";
-import { SearchBar } from "../../features/SearchBar/SearchBar";
-import { Down } from "../../assets/icons/Down";
+import s from "./Main.module.scss";
+import { Card } from "../../../../components/Card/Card";
+import { SearchBar } from "../../../../features/SearchBar/SearchBar";
+import { Down } from "../../../../assets/icons/Down";
 
 export const Properties = () => {
   const item = [
