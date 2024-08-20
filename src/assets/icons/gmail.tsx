@@ -1,8 +1,8 @@
 export const Gmail = ({ width = "36", height = "25" }) => {
   return (
     <svg
-      width={width}
-      height={height}
+      // width={width}
+      // height={height}
       viewBox="0 0 36 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

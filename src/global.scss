@@ -48,3 +48,19 @@ a {
   cursor: pointer;
   color: inherit;
 }
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}

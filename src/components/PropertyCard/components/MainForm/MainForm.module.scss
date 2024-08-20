@@ -4,7 +4,6 @@
   gap: 30px;
   background: rgba(35, 55, 84, 0.72);
   box-shadow: -1px 4px 5.4px 0px rgba(24, 39, 67, 0.6);
-
   padding: 44.48px 32px;
   border-radius: 20px;
 }
@@ -136,4 +135,142 @@ output {
   line-height: 21.76px;
   text-align: right;
   margin-right: 10px;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    gap: 30px;
+    padding: 30px;
+    border-radius: 20px;
+  }
+  .main__heading {
+    font-size: 17px;
+    line-height: 20.52px;
+  }
+  .main__button {
+    font-size: 15px;
+    line-height: 16.86px;
+    padding: 8.58px 9.65px;
+    border-radius: 10px;
+    height: 50px;
+  }
+  .inputWrap {
+    gap: 10px;
+  }
+  .input__text {
+    font-size: 15px;
+    line-height: 18.13px;
+  }
+
+  .block__label {
+    padding: 8.58px 9.65px;
+    border-radius: 10px;
+    font-size: 17px;
+    line-height: 20.18px;
+  }
+
+  .sliderWrap {
+    margin-top: 30px;
+    gap: 40px;
+  }
+
+  output {
+    top: -40px;
+    font-size: 17.29px;
+    line-height: 20.95px;
+  }
+
+  #tokens,
+  #usdt {
+    height: 5px;
+    border-radius: 4px;
+    top: -9px;
+  }
+
+  #tokens::-webkit-slider-thumb,
+  #usdt::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+  }
+
+  #tokens::-moz-range-thumb,
+  #usdt::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+  }
+
+  .label {
+    font-size: 15px;
+    line-height: 16.76px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    gap: 30px;
+    padding: 30px;
+    border-radius: 12px;
+  }
+  .main__heading {
+    font-size: 14px;
+    line-height: 15.52px;
+  }
+  .main__button {
+    font-size: 12px;
+    line-height: 13.86px;
+    padding: 8.58px 9.65px;
+    border-radius: 10px;
+    height: 40px;
+  }
+  .inputWrap {
+    gap: 10px;
+  }
+  .input__text {
+    font-size: 12px;
+    line-height: 15.13px;
+  }
+
+  .block__label {
+    padding: 8.58px 9.65px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 16.18px;
+  }
+
+  .sliderWrap {
+    margin-top: 30px;
+    gap: 40px;
+  }
+
+  output {
+    top: -40px;
+    font-size: 14px;
+    line-height: 16.95px;
+  }
+
+  #tokens,
+  #usdt {
+    height: 5px;
+    border-radius: 4px;
+    top: -9px;
+  }
+
+  #tokens::-webkit-slider-thumb,
+  #usdt::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+  }
+
+  #tokens::-moz-range-thumb,
+  #usdt::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+  }
+
+  .label {
+    font-size: 12px;
+    line-height: 13px;
+    margin-right: 10px;
+  }
 }

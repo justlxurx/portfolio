@@ -90,6 +90,7 @@ export const SliderSection = () => {
         centeredSlides={true}
         loop={true}
         slidesPerView={"auto"}
+        spaceBetween={68}
         coverflowEffect={{
           rotate: 0,
           stretch: 86.8,

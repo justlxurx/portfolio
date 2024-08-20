@@ -25,17 +25,13 @@ export const Faq = () => {
   ];
 
   return (
-    <div className={s.background}>
-      <section className={"container"} id="faq">
-        <div className={s.faq}>
-          <p className={s.faq__title}>FAQ</p>
-          <div className={s.faq__contentWrapper}>
-            {data.map((item, id) => (
-              <QuestionCard question={item.title} answer={item.text} key={id} />
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className={`${s.faq} container`} id="faq">
+      <p className={s.faq__title}>FAQ</p>
+      <div className={s.faq__contentWrapper}>
+        {data.map((item, id) => (
+          <QuestionCard question={item.title} answer={item.text} key={id} />
+        ))}
+      </div>
     </div>
   );
 };

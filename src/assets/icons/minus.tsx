@@ -1,8 +1,8 @@
-export const Minus = () => {
+export const Minus = ({ width = "12", height = "6" }) => {
   return (
     <svg
-      width="12"
-      height="6"
+      width={width}
+      height={height}
       viewBox="0 0 12 6"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

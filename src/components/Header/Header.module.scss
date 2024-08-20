@@ -1,7 +1,7 @@
 .main {
   display: flex;
   gap: 20px;
-  margin-top: 35px;
+  padding-top: 35px;
   align-items: center;
   justify-content: space-between;
 }
@@ -67,6 +67,14 @@
   text-transform: uppercase;
   height: 55px;
 }
+
+.burger {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
 @media (max-width: 1400px) {
   .logo {
     width: 301px;
@@ -74,7 +82,6 @@
   }
   .main {
     gap: 20px;
-    margin-top: 35px;
   }
 
   .main__list {
@@ -116,7 +123,6 @@
 @media (max-width: 1200px) {
   .main {
     gap: 20px;
-    margin-top: 35px;
   }
 
   .main__list {
@@ -159,7 +165,6 @@
 @media (max-width: 1000px) {
   .main {
     gap: 20px;
-    margin-top: 35px;
   }
 
   .main__list {
@@ -196,5 +201,83 @@
     font-size: 9px;
     line-height: 15px;
     height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    position: relative;
+    padding-bottom: 35px;
+  }
+  .logo {
+    width: 252px;
+  }
+  .main__list {
+    display: none;
+  }
+  .main__buttonWrap {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .menu {
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: calc(100% - 60px);
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(84, 126, 208, 1);
+    border-radius: 0px 0px 20px 20px;
+  }
+  .link {
+    font-family: Helvetica Neue;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 27.81px;
+    text-align: center;
+    color: white;
+  }
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .menu__buttonWrap {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .main__button {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.8px;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    height: 55px;
+  }
+
+  .accountButton {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.8px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 55px;
   }
 }

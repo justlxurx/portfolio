@@ -23,14 +23,14 @@ export const Contacts = () => {
     },
   ];
   return (
-    <div className={`${s.main} container`}>
+    <div className={`${s.main} container`} id="contacts">
       <h1 className={s.main__title}> Contact us</h1>
       <div className={s.main__content}>
         {links.map((item, index) => (
           <Link key={index} to={item.link}>
             <div className={s.contact}>
               <p className={s.contact__name}>{item.name}</p>
-              {item.img}
+              <div className={s.contact__img}>{item.img}</div>
             </div>
           </Link>
         ))}

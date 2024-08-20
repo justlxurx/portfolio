@@ -86,7 +86,7 @@ export const LoginForm = () => {
   //   },
   // });
   return (
-    <div className={s.main}>
+    <div className={`${s.main} container`}>
       <h1 className={s.main__heading}>Sign In/ Log in</h1>
       {/* <form className={s.loginForm} onSubmit={formik.handleSubmit}>
         <div className={s.input}>
@@ -127,10 +127,10 @@ export const LoginForm = () => {
           <img src={google} alt="google" />
           Continue with Google account
         </button> */}
-        <button className={s.buttons__item}>
+        {/* <button className={s.buttons__item}>
           <img src={apple} alt="apple" />
           Continue with Apple account
-        </button>
+        </button> */}
         <div className={s.buttons__wrap}>
           <button className={s.buttons__item}>
             <img src={metamask} alt="metamask" />

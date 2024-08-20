@@ -30,7 +30,9 @@ export const QuestionCard = ({
         </p>
         {isOpen ? <p className={s.answer}>{answer}</p> : ""}
       </div>
-      <div className={s.faqIcon}>{isOpen ? <Minus /> : <Plus />}</div>
+      <div className={s.faqIcon}>
+        <div className={s.faqIcon__img}>{isOpen ? <Minus /> : <Plus />}</div>
+      </div>
     </button>
   );
 };

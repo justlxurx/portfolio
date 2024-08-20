@@ -1,0 +1,154 @@
+.main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  gap: 30px;
+  margin: 150px 0;
+}
+
+.main__left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.main__right {
+  img {
+    width: 100%;
+  }
+}
+
+.main__heading {
+  font-family: Helvetica Neue;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 67.15px;
+  text-align: left;
+  color: white;
+  span {
+    color: rgba(190, 255, 107, 1);
+  }
+}
+
+.main__button {
+  color: rgba(24, 39, 67, 1);
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30.52px;
+  text-align: center;
+  background-color: rgba(190, 255, 107, 1);
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 10.89px;
+  width: 325px;
+  height: 85px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1500px) {
+  .main {
+    gap: 30px;
+  }
+
+  .main__left {
+    gap: 30px;
+  }
+
+  .main__heading {
+    font-size: 45px;
+    line-height: 57.15px;
+  }
+
+  .main__button {
+    font-size: 17px;
+    line-height: 20.52px;
+    border-radius: 15px;
+    padding: 10.89px;
+    width: 255px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .main {
+    gap: 50px;
+  }
+
+  .main__left {
+    gap: 30px;
+  }
+
+  .main__heading {
+    font-size: 35px;
+    line-height: 37.15px;
+  }
+
+  .main__button {
+    font-size: 15px;
+    line-height: 17.52px;
+    border-radius: 15px;
+    padding: 10.89px;
+    width: 205px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    gap: 50px;
+  }
+
+  .main__left {
+    gap: 30px;
+  }
+
+  .main__heading {
+    font-size: 30px;
+    line-height: 32.15px;
+  }
+
+  .main__button {
+    font-size: 13px;
+    line-height: 14.52px;
+    border-radius: 12px;
+    padding: 10.89px;
+    width: 185px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-top: 50px;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__left {
+    gap: 30px;
+    align-items: center;
+  }
+
+  .main__heading {
+    font-family: Helvetica Neue;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 28.08px;
+    text-align: center;
+  }
+
+  .main__button {
+    font-family: Helvetica Neue;
+    font-size: 10.79px;
+    font-weight: 700;
+    line-height: 13.17px;
+    text-align: center;
+    border-radius: 8.63px;
+    padding: 4.7px 47.03px;
+    width: 201px;
+    height: 46px;
+  }
+}

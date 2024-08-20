@@ -132,3 +132,153 @@
   text-align: center;
   color: rgba(24, 39, 67, 1);
 }
+
+@media (max-width: 1200px) {
+  .main {
+    padding: 24.48px 26px;
+    gap: 25px;
+    border-radius: 20px;
+  }
+  .info {
+    gap: 10px;
+  }
+  .info__title {
+    font-size: 15px;
+    line-height: 20.42px;
+  }
+  .info__list {
+    border-radius: 20px;
+    padding: 20px 10px;
+  }
+  .info__listItem {
+    font-size: 15px;
+    line-height: 20.86px;
+    .circle {
+      width: 4px;
+      height: 4px;
+      margin: 0 10px;
+    }
+  }
+  .apartment__about {
+    gap: 12px;
+  }
+  .apartment__aboutTitleWrap {
+    gap: 10px;
+  }
+  .apartment__aboutTitle {
+    font-size: 15.77px;
+    line-height: 25.36px;
+  }
+  .apartment__aboutItemWrap {
+    gap: 10.29px;
+  }
+  .apartment__aboutItem {
+    padding: 12.35px;
+    gap: 10.29px;
+    border-radius: 9.44px;
+    font-size: 13.53px;
+    line-height: 17.1px;
+  }
+  .apartment__aboutPropertyWrap {
+    border-radius: 10px;
+    padding: 20px 10px;
+  }
+  .apartment__aboutPropertyText {
+    font-size: 13.88px;
+    line-height: 17.53px;
+    span {
+      width: 4px;
+      height: 4px;
+      margin: 0 10px;
+    }
+  }
+  .apartment {
+    border-radius: 18.38px;
+    padding: 24.48px 26px;
+    gap: 20.56px;
+  }
+  .apartment__list {
+    gap: 9.46px;
+  }
+  .apartment__listItem {
+    padding: 11.35px;
+    border-radius: 8.67px;
+    font-size: 13px;
+    line-height: 17.47px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    padding: 20px 22px;
+    gap: 25px;
+    border-radius: 12px;
+  }
+  .info {
+    gap: 10px;
+  }
+  .info__title {
+    font-size: 12px;
+    line-height: 15.42px;
+  }
+  .info__list {
+    border-radius: 20px;
+    padding: 20px 10px;
+  }
+  .info__listItem {
+    font-size: 12px;
+    line-height: 16.86px;
+    .circle {
+      width: 4px;
+      height: 4px;
+      margin: 0 10px;
+    }
+  }
+  .apartment__about {
+    gap: 12px;
+  }
+  .apartment__aboutTitleWrap {
+    gap: 10px;
+  }
+  .apartment__aboutTitle {
+    font-size: 12.77px;
+    line-height: 20.36px;
+  }
+  .apartment__aboutItemWrap {
+    gap: 10.29px;
+  }
+  .apartment__aboutItem {
+    padding: 12.35px;
+    gap: 10.29px;
+    border-radius: 9.44px;
+    font-size: 10.53px;
+    line-height: 12.1px;
+  }
+  .apartment__aboutPropertyWrap {
+    border-radius: 10px;
+    padding: 20px 10px;
+  }
+  .apartment__aboutPropertyText {
+    font-size: 10.88px;
+    line-height: 12.53px;
+    span {
+      width: 4px;
+      height: 4px;
+      margin: 0 10px;
+    }
+  }
+  .apartment {
+    border-radius: 12px;
+    padding: 20px 22px;
+    gap: 15px;
+  }
+  .apartment__list {
+    gap: 9.46px;
+  }
+  .apartment__listItem {
+    padding: 11.35px;
+    border-radius: 8.67px;
+    font-size: 10px;
+    line-height: 12.47px;
+  }
+}

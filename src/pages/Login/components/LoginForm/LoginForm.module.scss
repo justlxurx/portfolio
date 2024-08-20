@@ -101,3 +101,30 @@
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
+@media (max-width: 768px) {
+  .buttons__wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main__heading {
+    font-size: 30px;
+    line-height: 35.57px;
+  }
+
+  .buttons__item {
+    gap: 5px;
+    padding: 10.26px 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 14.42px;
+  }
+}

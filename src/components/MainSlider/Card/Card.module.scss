@@ -8,6 +8,7 @@
   max-width: 373px;
   box-sizing: border-box;
   justify-self: center;
+  margin: 0 auto;
 }
 .apartment__info {
   font-family: Helvetica Neue;
@@ -27,16 +28,15 @@
 .apartment__wrap {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .apartment__name {
   font-family: Helvetica Neue;
-  font-size: 20.14px;
-  font-weight: 500;
-  line-height: 24.59px;
-  text-align: left;
-  color: rgba(24, 39, 67, 1);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22.67px;
+  text-align: center;
+  color: rgba(84, 126, 208, 1);
 }
 .apartment__country {
   display: flex;
@@ -84,7 +84,7 @@
   flex-direction: column;
   font-family: Helvetica Neue;
   font-size: 18.63px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 22.22px;
   text-align: left;
   gap: 10.07px;
@@ -96,9 +96,18 @@
   }
 }
 
+.apartment__info {
+  font-family: Helvetica Neue;
+  font-size: 20.14px;
+  font-weight: 500;
+  line-height: 24.59px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+
 .apartment__progress {
   background-color: rgba(24, 39, 67, 1);
-  padding: 10px 20px;
+  padding: 17.5px 20px;
   display: flex;
   justify-content: space-between;
   border-radius: 10.07px;
@@ -108,6 +117,11 @@
   line-height: 21.47px;
   text-align: left;
   color: white;
+  span {
+    color: rgba(190, 255, 107, 1);
+    line-height: 21.76px;
+    text-align: right;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -116,6 +130,10 @@
     padding: 15.49px 15.14px;
     border-radius: 20.14px;
     max-width: 373px;
+  }
+  .apartment__info {
+    font-size: 19px;
+    line-height: 22.97px;
   }
 
   .apartment__img {
@@ -152,8 +170,8 @@
     line-height: 19.03px;
   }
   .apartment__percents {
-    font-size: 9.63px;
-    line-height: 11.22px;
+    font-size: 13.63px;
+    line-height: 15.22px;
     gap: 10.07px;
     padding: 12.11px 6.52px;
     border-radius: 6.52px;
@@ -165,7 +183,7 @@
   }
 
   .apartment__progress {
-    padding: 7.5px 15px;
+    padding: 12.5px 15px;
     border-radius: 10.07px;
     font-size: 13px;
     line-height: 21.47px;
@@ -175,7 +193,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
   .apartment {
     gap: 6.09px;
     padding: 10.49px 10.14px;
@@ -240,6 +258,130 @@
     line-height: 8.47px;
     span {
       line-height: 8.76px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .apartment {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 12.09px;
+    padding: 20.49px 20.14px;
+    border-radius: 13.39px;
+    max-width: 247px;
+    box-sizing: border-box;
+    justify-self: center;
+    margin: 0 auto;
+  }
+  .apartment__info {
+    font-family: Helvetica Neue;
+    font-size: 13.39px;
+    font-weight: 500;
+    line-height: 16.35px;
+    text-align: left;
+    color: rgba(24, 39, 67, 1);
+  }
+
+  .apartment__img {
+    width: 100%;
+    height: 149px;
+    border-radius: 9.21px;
+  }
+
+  .apartment__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .apartment__name {
+    font-family: Helvetica Neue;
+    font-size: 12.63px;
+    font-weight: 400;
+    line-height: 15.06px;
+    text-align: center;
+    color: rgba(84, 126, 208, 1);
+  }
+  .apartment__country {
+    display: flex;
+    align-items: center;
+    gap: 12.35px;
+  }
+
+  .apartment__countryName {
+    font-family: Helvetica Neue;
+    font-size: 15.11px;
+    font-weight: 200;
+    line-height: 18.26px;
+    text-align: right;
+    color: rgba(24, 39, 67, 1);
+  }
+  .apartment__countryFlag {
+    width: 29.21px;
+    height: 17.12px;
+    border-radius: 1.83px;
+  }
+  .apartment__priceWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-family: Helvetica Neue;
+      font-size: 13.39px;
+      font-weight: 300;
+      line-height: 15.97px;
+      text-align: left;
+    }
+  }
+
+  .apartment__price {
+    font-family: Helvetica Neue;
+    font-size: 13.39px;
+    line-height: 15.97px;
+    text-align: left;
+    color: rgba(24, 39, 67, 1);
+  }
+  .apartment__percents {
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica Neue;
+    font-size: 12.38px;
+    line-height: 14.77px;
+    text-align: left;
+    gap: 10.07px;
+    padding: 12.11px 6.52px;
+    border-radius: 4.33px;
+    background: rgba(84, 126, 208, 0.14);
+    p {
+      color: rgba(24, 39, 67, 1);
+    }
+  }
+
+  .apartment__info {
+    font-family: Helvetica Neue;
+    font-size: 20.14px;
+    font-weight: 500;
+    line-height: 24.59px;
+    text-align: left;
+    color: rgba(24, 39, 67, 1);
+  }
+
+  .apartment__progress {
+    background-color: rgba(24, 39, 67, 1);
+    padding: 17.5px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10.07px;
+    font-family: Helvetica Neue;
+    font-size: 11.96px;
+    line-height: 14.27px;
+    text-align: left;
+    color: white;
+    span {
+      color: rgba(190, 255, 107, 1);
+      line-height: 14.27px;
+      text-align: right;
     }
   }
 }

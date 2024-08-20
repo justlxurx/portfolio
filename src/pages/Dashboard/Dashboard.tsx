@@ -1,13 +1,12 @@
 import { DashboardSection } from "../../components/Dashboard/DashboardSection";
-import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
+import s from "./Dashboard.module.scss";
 
 export const Dashboard = () => {
   return (
-    <>
+    <div className={s.wrap}>
       <Header />
       <DashboardSection />
-      <Footer />
-    </>
+    </div>
   );
 };

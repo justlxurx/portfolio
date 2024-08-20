@@ -32,6 +32,19 @@
   color: royalblue;
 }
 
+@media (max-width: 1200px) {
+  .inputWrapper {
+    border-radius: 13px;
+    padding: 17px 20.31px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+  }
+
+  .searchInput {
+    margin-left: 5px;
+    font-size: 18px;
+    line-height: 20.62px;
+  }
+}
 // @media (max-width: 992px) {
 //   .inputWrapper {
 //     border-radius: 5px;
