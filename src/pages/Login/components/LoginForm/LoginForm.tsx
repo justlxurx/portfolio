@@ -2,9 +2,10 @@ import s from "./LoginForm.module.scss";
 import connect from "../../../../assets/icons/connect.svg";
 import metamask from "../../../../assets/icons/metamask.svg";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
-import { useGetNonceQuery } from "../../../../service";
 import { useState } from "react";
 import { ethers } from "ethers";
+import { Link } from "react-router-dom";
+// import { handleLogin } from "../../../../processes/Processes";
 
 export const LoginForm = () => {
   const { address } = useWeb3ModalAccount();
@@ -14,102 +15,82 @@ export const LoginForm = () => {
   const [lastName, setLastName] = useState("");
   const [isRegistered, setIsRegistered] = useState(false);
 
-  const fetchNonce = async () => {
-    if (!address) return;
+  // const fetchNonce = async () => {
+  //   if (!address) return;
 
-    const response = await fetch(
-      `https://estate.hotcode.kz/user/nonce/${address}`
-    );
-    const data = await response.json();
-    setNonce(data.nonce);
-  };
+  //   const response = await fetch(
+  //     `https://estate.hotcode.kz/user/nonce/${address}`
+  //   );
+  //   const data = await response.json();
+  //   setNonce(data.nonce);
+  // };
 
-  const handleSignMessage = async (nonce: string) => {
-    if (!address) return;
+  // const handleSignMessage = async (nonce: string) => {
+  //   if (!address) return;
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
+  //   const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //   const signer = provider.getSigner();
 
-    const message = `I am signing my one-time nonce: ${nonce}`;
-    const signature = await signer.signMessage(message);
+  //   const message = `I am signing my one-time nonce: ${nonce}`;
+  //   const signature = await signer.signMessage(message);
 
-    return { address, signature };
-  };
+  //   return { address, signature };
+  // };
 
-  const handleAuthenticate = async ({
-    address,
-    signature,
-  }: {
-    address: string;
-    signature: string;
-  }) => {
-    const response = await fetch(`https://estate.hotcode.kz/user/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ publicAddress: address, signature }),
-    });
-    const result = await response.json();
-    console.log("Authentication result:", result);
-  };
+  // const handleAuthenticate = async ({
+  //   address,
+  //   signature,
+  // }: {
+  //   address: string;
+  //   signature: string;
+  // }) => {
+  //   const response = await fetch(`https://estate.hotcode.kz/user/login`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ publicAddress: address, signature }),
+  //   });
+  //   const result = await response.json();
+  //   console.log("Authentication result:", result);
+  // };
 
-  const handleRegister = async () => {
-    if (!address) return;
+  // const handleLogin = async () => {
+  //   try {
+  //     if (!address) return;
 
-    const response = await fetch(`https://estate.hotcode.kz/user/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        wallet_address: address.toLowerCase(),
-        email,
-        first_name: firstName,
-        last_name: lastName,
-      }),
-    });
-    const result = await response.json();
-    console.log("User registered:", result);
-    setIsRegistered(true);
-  };
+  //     const userResponse = await fetch(
+  //       `https://estate.hotcode.kz/user/nonce/${address}`
+  //     );
+  //     const users = await userResponse.json();
 
-  const handleLogin = async () => {
-    try {
-      if (!address) return;
+  //     if (users.length === 0) {
+  //       await handleRegister();
+  //     } else {
+  //       setIsRegistered(true);
+  //     }
 
-      const userResponse = await fetch(
-        `https://estate.hotcode.kz/user/nonce/${address}`
-      );
-      const users = await userResponse.json();
+  //     if (isRegistered) {
+  //       if (!nonce) {
+  //         await fetchNonce();
+  //       }
 
-      if (users.length === 0) {
-        await handleRegister();
-      } else {
-        setIsRegistered(true);
-      }
-
-      if (isRegistered) {
-        if (!nonce) {
-          await fetchNonce();
-        }
-
-        if (nonce) {
-          const { address, signature } = await handleSignMessage(nonce);
-          await handleAuthenticate({ address, signature });
-        }
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-    }
-  };
+  //       if (nonce) {
+  //         const { address, signature } = await handleSignMessage(nonce);
+  //         await handleAuthenticate({ address, signature });
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //   }
+  // };
 
   return (
     <div className={`${s.main} container`}>
       <h1 className={s.main__heading}>Sign In/ Log in</h1>
       <div className={s.buttons}>
         <div className={s.buttons__wrap}>
-          <button className={s.buttons__item} onClick={handleLogin}>
+          <button className={s.buttons__item}>
             <img src={metamask} alt="metamask" />
             Continue with MetaMask
           </button>
@@ -118,33 +99,11 @@ export const LoginForm = () => {
             Continue with Wallet Connect
           </button>
         </div>
+        {/* <div>
+          you don't have an account yet?{" "}
+          <Link to="/register">Register moew</Link>
+        </div> */}
       </div>
-      {/* {!isRegistered ? (
-        <div>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <button onClick={handleRegister}>Register</button>
-          <button onClick={handleLogin}>Login</button>
-        </div>
-      ) : (
-        <div>Welcome, {address}</div>
-      )} */}
     </div>
   );
 };
