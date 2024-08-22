@@ -1,5 +1,5 @@
 .main {
-  margin: 150px 0 0;
+  margin: 150px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@
 
 @media (max-width: 1500px) {
   .main {
-    margin: 150px 0 0;
+    margin: 150px auto 0;
   }
 
   .main__title {
@@ -126,10 +126,6 @@
 }
 
 @media (max-width: 1200px) {
-  .main {
-    margin: 150px 0 0;
-  }
-
   .main__title {
     font-size: 30px;
     line-height: 31.05px;
@@ -173,7 +169,7 @@
 
 @media (max-width: 950px) {
   .main {
-    margin: 100px 0 0;
+    margin: 100px auto 0;
   }
 
   .main__title {
@@ -219,7 +215,7 @@
 
 @media (max-width: 768px) {
   .main {
-    margin: 150px 0 0;
+    margin: 150px auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
