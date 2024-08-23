@@ -3,7 +3,6 @@ import { authorizeAPI } from "../../../../api/authorize";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 const RegisterForm = () => {
-  // const [walletAddress, setWalletAddress] = useState("");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
