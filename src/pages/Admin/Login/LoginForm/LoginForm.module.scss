@@ -1,0 +1,52 @@
+.main {
+  background-image: rgba(24, 39, 67, 1)
+    url("../../../../../assets/images/AdminBackground.png") no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.main__form {
+  display: flex;
+  flex-direction: column;
+  width: 787px;
+  align-items: center;
+  gap: 30px;
+}
+
+.main__formButton {
+  background: #747474;
+  padding: 10px 16px;
+  border-radius: 8px;
+  width: 309px;
+  box-sizing: border-box;
+  font-family: Actay Wide;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.21px;
+  text-align: left;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 66px;
+  margin-top: 30px;
+}
+
+.logo {
+  width: 391px;
+  margin-bottom: 80px;
+}
+
+.errors {
+  font-family: Actay Wide;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(229, 62, 62, 1);
+  align-self: flex-start;
+}

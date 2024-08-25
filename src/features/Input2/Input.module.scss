@@ -15,9 +15,9 @@
 }
 
 .input {
-  background-color: white;
+  background-color: unset;
   border-radius: 5.74px;
-  border: 1.15px solid rgba(255, 255, 255, 1);
+  border: 1px solid rgba(212, 211, 213, 1);
   padding: 0px 15px;
   width: calc(100% - 32px);
   font-family: Helvetica Neue;
@@ -26,11 +26,12 @@
   line-height: 39.9px;
   text-align: left;
   margin-left: 0;
-  color: rgba(71, 71, 71, 1);
+  color: white;
   height: 72.67px;
 
   &::placeholder {
-    color: rgba(71, 71, 71, 1) !important;
+    color: inherit;
+    opacity: 0.55;
   }
 
   //   &:hover {

@@ -6,12 +6,12 @@
   display: flex;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.32);
+  height: -webkit-fill-available;
 }
 
 .searchInput {
   background-color: transparent;
   border: none;
-  height: 100%;
   width: 100%;
   margin-left: 5px;
   font-family: Inter Tight;
@@ -20,8 +20,10 @@
   line-height: 30.62px;
   text-align: left;
   color: white;
+  border-radius: 0;
+  padding: 5px 0;
   &::placeholder {
-    color: white;
+    color: inherit;
   }
 
   &:focus {

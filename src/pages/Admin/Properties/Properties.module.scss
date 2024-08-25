@@ -1,0 +1,112 @@
+.main {
+  background-color: white;
+  margin: 110px 50px;
+  max-width: 1000px;
+}
+
+.main__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__title {
+  font-family: Inter Tight;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 42.35px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+
+.main__button {
+  border-radius: 7.92px;
+  background-color: rgba(24, 39, 67, 1);
+  height: 52px;
+  width: 205px;
+  font-family: Inter Tight;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  text-align: center;
+  color: white;
+}
+
+.main__bottom {
+  margin-top: 50px;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 193px;
+  padding: 15px 10px 15px 16px;
+  gap: 19px;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 211, 213, 1);
+  justify-content: center;
+  background-color: white;
+  box-sizing: border-box;
+  width: 205px;
+}
+.dropdown:hover > .dropdown__bottom {
+  display: flex;
+}
+.dropdown__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Inter Tight;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+  color: rgba(62, 61, 64, 1);
+}
+.dropdown__bottom {
+  //   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 25px;
+  display: none;
+}
+.dropdown__botton {
+  font-family: Inter Tight;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+  padding: 0;
+  color: rgba(62, 61, 64, 1);
+}
+.main__searching {
+  display: flex;
+  gap: 5px;
+  position: relative;
+  height: 51px;
+}
+.searchBar {
+  width: calc(100% - 270px);
+  height: 51px;
+}
+@media (max-width: 1200px) {
+  .main__searching {
+    gap: 5px;
+  }
+  .dropdown {
+    gap: 19px;
+  }
+  .dropdown__top {
+    font-size: 18px;
+    line-height: 20.62px;
+  }
+  .dropdown__bottom {
+    gap: 15px;
+  }
+  .dropdown__botton {
+    font-size: 18px !important;
+    line-height: 16.94px;
+  }
+}

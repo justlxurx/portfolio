@@ -11,6 +11,8 @@ const Input = ({
   name,
   updateInput,
   disabled = false,
+  color,
+  inputColor,
   ...rest
 }: IInput) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +23,9 @@ const Input = ({
 
   return (
     <div className={s.mainInput}>
-      <label className={s.labelName}>{title}</label>
+      <label className={s.labelName} style={{ color: `${color}` }}>
+        {title}
+      </label>
       <input
         type={type}
         placeholder={placeholder}
@@ -31,8 +35,9 @@ const Input = ({
         name={name}
         {...rest}
         className={s.input}
-        style={disabled ? { cursor: "not-allowed" } : {}}
-        disabled={disabled}
+        // style={disabled ? { cursor: "not-allowed" } : {}}
+        // disabled={disabled}
+        style={{ color: `${inputColor}` }}
       />
     </div>
   );

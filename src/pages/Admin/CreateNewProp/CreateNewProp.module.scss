@@ -1,0 +1,162 @@
+.main {
+  background-color: white;
+  min-height: 100vh;
+}
+
+.logo {
+  width: 391px;
+  padding: 40px;
+}
+
+.main__content {
+  border-top: 1px solid rgba(206, 205, 210, 1);
+  padding: 40px;
+}
+
+.main__title {
+  font-family: Inter Tight;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 45.5px;
+  text-align: left;
+  color: rgba(29, 29, 29, 1);
+  margin-bottom: 30px;
+}
+
+.apartment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apartment__text {
+  font-family: Inter;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30.26px;
+  text-align: left;
+  color: rgba(29, 29, 29, 1);
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.area {
+  border-radius: 5px;
+  border: 1px solid var(--dark-50, rgba(29, 29, 29, 0.5));
+  width: 100%;
+  font-family: Inter Tight;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 34px;
+  text-align: left;
+  color: rgba(29, 29, 29, 0.35);
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.apartmentWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.addApartment {
+  color: black;
+  font-family: Inter Tight;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  padding: 16.49px 18.74px;
+  border-radius: 7.49px;
+  border: 0.75px solid rgba(24, 39, 67, 1);
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.percents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.buttons__cancel {
+  background-color: rgba(212, 212, 212, 1);
+  border-radius: 7.49px;
+  font-family: Inter Tight;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+  width: 266px;
+  box-sizing: border-box;
+  padding: 16.49px 18.74px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons__create {
+  border-radius: 7.49px;
+  background-color: rgba(24, 39, 67, 1);
+  color: white;
+  font-family: Inter Tight;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  padding: 16.49px 18.74px;
+  display: flex;
+  justify-content: center;
+  width: 266px;
+  box-sizing: border-box;
+}
+
+.property {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.property__text {
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.63px;
+  text-align: left;
+  color: black;
+}
+
+.property__input {
+  border-radius: 5px;
+  border: 1px solid rgba(142, 142, 142, 1);
+  width: 88px;
+  height: 54px;
+  background-color: unset;
+  padding: 10px;
+  box-sizing: border-box;
+  color: black;
+  text-align: center;
+}
+
+.apartment__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uploadImg {
+  width: fit-content;
+  margin-bottom: 50px;
+}

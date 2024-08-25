@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  height: 100vh;
+}
+.main__left {
+  width: 23%;
+  height: 100%;
+}
+
+.main__right {
+  width: 77%;
+  background-color: white;
+}
