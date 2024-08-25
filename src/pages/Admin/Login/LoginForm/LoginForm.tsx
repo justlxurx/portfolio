@@ -3,6 +3,7 @@ import Input from "../../../../features/Input2/Input";
 import { Logo } from "../../../../assets/icons/logo";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
   const formik = useFormik({
@@ -62,18 +63,20 @@ export const LoginForm = () => {
           <p className={s.errors}>{formik.errors.password}</p>
         )}
 
-        <button
-          type="submit"
-          className={s.main__formButton}
-          style={{
-            background:
-              Object.keys(formik.errors).length === 0 && formik.touched
-                ? "rgba(84, 126, 208, 1)"
-                : "#747474",
-          }}
-        >
-          Log in
-        </button>
+        <Link to="/admin/properties">
+          <button
+            type="submit"
+            className={s.main__formButton}
+            style={{
+              background:
+                Object.keys(formik.errors).length === 0 && formik.touched
+                  ? "rgba(84, 126, 208, 1)"
+                  : "#747474",
+            }}
+          >
+            Log in
+          </button>
+        </Link>
       </form>
     </div>
   );

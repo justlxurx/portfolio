@@ -14,10 +14,10 @@ export const SideBar = () => {
       title: "Properties",
       link: "/admin/properties",
     },
-    {
-      title: "Name",
-      link: "/admin",
-    },
+    // {
+    //   title: "Name",
+    //   link: "/admin",
+    // },
   ];
   return (
     <div className={s.main}>
