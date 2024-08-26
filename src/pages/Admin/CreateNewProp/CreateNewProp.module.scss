@@ -44,18 +44,52 @@
   gap: 40px;
 }
 
+.mainForm__input {
+  border: 1px solid var(--dark-50, rgba(29, 29, 29, 0.5)) !important;
+  font-family: Inter !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 34px !important;
+  text-align: left;
+  color: rgba(29, 29, 29, 1) !important;
+  &::placeholder {
+    color: rgba(29, 29, 29, 0.35);
+  }
+}
+
+.mainForm__input2 {
+  border: 1px solid var(--dark-50, rgba(29, 29, 29, 0.5)) !important;
+  font-family: Helvetica Neue !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 24.42px !important;
+  text-align: left;
+  color: rgba(29, 29, 29, 1) !important;
+  &::placeholder {
+    color: rgba(29, 29, 29, 0.35) !important;
+    font-weight: 300 !important;
+    font-family: Inter !important;
+    font-size: 20px !important;
+    line-height: 34px !important;
+    text-align: left;
+  }
+}
+
 .area {
   border-radius: 5px;
-  border: 1px solid var(--dark-50, rgba(29, 29, 29, 0.5));
+  border: 1px solid rgba(29, 29, 29, 0.5);
   width: 100%;
-  font-family: Inter Tight;
+  font-family: Helvetica Neue;
   font-size: 20px;
-  font-weight: 400;
-  line-height: 34px;
+  font-weight: 300;
+  line-height: 23.86px;
   text-align: left;
-  color: rgba(29, 29, 29, 0.35);
+  color: rgba(0, 0, 0, 1);
   padding: 15px;
   box-sizing: border-box;
+  &:focus {
+    outline: unset;
+  }
 }
 
 .apartmentWrap {
@@ -80,9 +114,10 @@
 
 .percents {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 30px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .buttons {
@@ -148,9 +183,19 @@
   box-sizing: border-box;
   color: black;
   text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.63px;
+  text-align: center;
 }
 
 .apartment__info {
+  display: flex;
+  gap: 100px;
+}
+
+.propertyWrap {
   display: flex;
   flex-direction: column;
   gap: 10px;

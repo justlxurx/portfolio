@@ -40,6 +40,33 @@ export const CreateNewProp = () => {
   });
   const [apartNum, setApartNum] = useState(0);
 
+  const property = [
+    {
+      name: "Number of Beds:",
+    },
+    {
+      name: "Number of Bath:",
+    },
+    {
+      name: "Number of Rooms:",
+    },
+    {
+      name: "Number of Kitchen:",
+    },
+    {
+      name: "Number of LivingRooms:",
+    },
+    {
+      name: "Number of Terraces:",
+    },
+    {
+      name: "Number of Balconies:",
+    },
+    {
+      name: "Number of Garages:",
+    },
+  ];
+
   const addNew = () => {
     event.preventDefault();
     setApartNum(apartNum + 1);
@@ -62,8 +89,10 @@ export const CreateNewProp = () => {
             onBlur={formik.handleBlur}
             color="black"
             inputColor="rgba(29, 29, 29, 0.35)"
+            className={s.mainForm__input}
           />
           <Input
+            className={s.mainForm__input}
             inputColor="rgba(29, 29, 29, 0.35)"
             color="black"
             title="Location"
@@ -79,22 +108,28 @@ export const CreateNewProp = () => {
               <img src={info} alt="info" className={s.apartment__img} />
               <p className={s.apartment__text}>About apartments</p>
             </div>
+
             <div className={s.apartment__info}>
-              <div className={s.property}>
-                <p className={s.property__text}>Number of beds:</p>
-                <input className={s.property__input} type="text" />
+              <div className={s.propertyWrap}>
+                {property.map((item, index) => (
+                  <div className={s.property} key={index}>
+                    <p className={s.property__text}>{item.name}</p>
+                    <input className={s.property__input} type="text" />
+                  </div>
+                ))}
               </div>
-              <div className={s.property}>
-                <p className={s.property__text}>Number of bath:</p>
-                <input className={s.property__input} type="text" />
-              </div>
-              <div className={s.property}>
-                <p className={s.property__text}>Size of the apartment (m²):</p>
-                <input className={s.property__input} type="text" />
-              </div>
-              <div className={s.property}>
-                <p className={s.property__text}>Type of the apartment:</p>
-                <input className={s.property__input} type="text" />
+
+              <div className={s.propertyWrap}>
+                <div className={s.property}>
+                  <p className={s.property__text}>
+                    Size of the apartment (m²):
+                  </p>
+                  <input className={s.property__input} type="text" />
+                </div>
+                <div className={s.property}>
+                  <p className={s.property__text}>Type of the apartment:</p>
+                  <input className={s.property__input} type="text" />
+                </div>
               </div>
             </div>
           </div>
@@ -133,10 +168,18 @@ export const CreateNewProp = () => {
 
           {Array.from({ length: apartNum }).map((_, a) => (
             <div key={a} className={s.apartmentWrap}>
-              <div className={s.apartment}>
-                <img src={dollar} alt="dollar" className={s.apartment__img} />
-                <p className={s.apartment__text}>Investment Appeal</p>
-              </div>
+              <Input
+                className={s.mainForm__input2}
+                title="Title"
+                placeholder="Title"
+                type="text"
+                name="title"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                color="black"
+                inputColor="rgba(29, 29, 29, 0.35)"
+              />
+              <p className={s.apartment__text}>Text</p>
               <div className={s.apartment__info}>
                 <textarea
                   className={s.area}

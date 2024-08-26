@@ -13,6 +13,7 @@ const Input = ({
   disabled = false,
   color,
   inputColor,
+  className,
   ...rest
 }: IInput) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +35,7 @@ const Input = ({
         }
         name={name}
         {...rest}
-        className={s.input}
+        className={`${s.input} ${className}`}
         // style={disabled ? { cursor: "not-allowed" } : {}}
         // disabled={disabled}
         style={{ color: `${inputColor}` }}

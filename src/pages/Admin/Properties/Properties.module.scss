@@ -1,12 +1,13 @@
 .main {
   background-color: white;
-  margin: 110px 50px;
-  max-width: 1000px;
+  margin: 110px 0px;
+  // max-width: 1000px;
 }
 
 .main__top {
   display: flex;
   justify-content: space-between;
+  margin: 0 50px;
 }
 
 .main__title {
@@ -86,10 +87,15 @@
   gap: 5px;
   position: relative;
   height: 51px;
+  margin: 0 50px;
 }
 .searchBar {
   width: calc(100% - 270px);
   height: 51px;
+}
+
+.main__table {
+  margin-top: 50px;
 }
 @media (max-width: 1200px) {
   .main__searching {

@@ -2,6 +2,7 @@ import { SearchBar } from "../../../features/SearchBar/SearchBar";
 import s from "./Properties.module.scss";
 import { Down } from "../../../assets/icons/Down";
 import { Link } from "react-router-dom";
+import { MainTable } from "./MainTable/MainTable";
 
 export const AdminProperties = () => {
   const item = [
@@ -33,6 +34,7 @@ export const AdminProperties = () => {
               fontSize="15px"
             />
           </div>
+
           <div className={s.dropdown}>
             <div className={s.dropdown__top}>
               Sort by
@@ -46,6 +48,10 @@ export const AdminProperties = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className={s.main__table}>
+          <MainTable />
         </div>
       </div>
     </div>

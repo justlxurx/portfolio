@@ -12,6 +12,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { Button, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
+import { UploadIcon } from "../../assets/icons/upload";
 
 interface DraggableUploadListItemProps {
   originNode: React.ReactElement<
@@ -94,8 +95,10 @@ const UploadImg: React.FC = () => {
             <DraggableUploadListItem originNode={originNode} file={file} />
           )}
         >
-          <Button icon={<UploadOutlined />}>
-            Image size should be: 948*500, not more than 5MB
+          <Button icon={<UploadIcon />} className={s.button}>
+            <p>
+              Image size should be: 948*500, <br /> not more than 5MB
+            </p>
           </Button>
         </Upload>
       </SortableContext>
