@@ -14,6 +14,7 @@ const Input = ({
   color,
   inputColor,
   className,
+  borderColor,
   ...rest
 }: IInput) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,7 +39,10 @@ const Input = ({
         className={`${s.input} ${className}`}
         // style={disabled ? { cursor: "not-allowed" } : {}}
         // disabled={disabled}
-        style={{ color: `${inputColor}` }}
+        style={{
+          color: `${inputColor}`,
+          borderColor: `${borderColor} `,
+        }}
       />
     </div>
   );

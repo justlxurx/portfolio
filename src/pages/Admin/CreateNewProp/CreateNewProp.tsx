@@ -15,19 +15,55 @@ export const CreateNewProp = () => {
     initialValues: {
       name: "",
       location: "",
+      investment: "",
+      aboutProperty: "",
+      price: "",
+      rentalReturn: "",
+      capitalAprec: "",
+      nftQuantity: "",
+      nftPrice: "",
+      beds: "",
+      bath: "",
+      rooms: "",
+      kitchen: "",
+      livingRooms: "",
+      terrace: "",
+      balcon: "",
+      garage: "",
+      size: "",
+      type: "",
     },
     validationSchema: Yup.object({
       name: Yup.string()
         // .matches(/^[A-Za-zА-Яа-яЁё]+$/, ``)
-        .required(`Password is required`),
+        .required(`Name is required`),
       location: Yup.string()
         // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
-        .required("Password is required"),
+        .required("Location is required"),
+      investment: Yup.string().required(`Investment Appeal is required`),
+      aboutProperty: Yup.string().required("About the Property is required"),
+      price: Yup.number().required("required"),
+      rentalReturn: Yup.string().required("equired"),
+      capitalAprec: Yup.string().required("required"),
+      nftQuantity: Yup.string().required("required"),
+      nftPrice: Yup.number().required("required"),
+      beds: Yup.number().required("required"),
+      bath: Yup.number().required("required"),
+      rooms: Yup.number().required("required"),
+      kitchen: Yup.number().required("required"),
+      livingRooms: Yup.number().required("required"),
+      terrace: Yup.number().required("required"),
+      balcon: Yup.number().required("required"),
+      garage: Yup.number().required("required"),
+      size: Yup.string().required("required"),
+      type: Yup.string().required("required"),
     }),
     onSubmit: async (values, { resetForm }) => {
+      event.preventDefault();
       try {
         const response = ""; //await submitForm(values);
         console.log(response);
+        alert("Successfully created");
         // if (response.error) {
         //   console.error("Ошибка в ответе сервера:", response.error);
         // } else {
@@ -42,28 +78,52 @@ export const CreateNewProp = () => {
 
   const property = [
     {
-      name: "Number of Beds:",
+      label: "Number of Beds:",
+      value: formik.values.beds,
+      error: formik.errors.beds,
+      name: "beds",
     },
     {
-      name: "Number of Bath:",
+      label: "Number of Bath:",
+      value: formik.values.bath,
+      error: formik.errors.bath,
+      name: "bath",
     },
     {
-      name: "Number of Rooms:",
+      label: "Number of Rooms:",
+      value: formik.values.rooms,
+      error: formik.errors.rooms,
+      name: "rooms",
     },
     {
-      name: "Number of Kitchen:",
+      label: "Number of Kitchen:",
+      value: formik.values.kitchen,
+      error: formik.errors.kitchen,
+      name: "kitchen",
     },
     {
-      name: "Number of LivingRooms:",
+      label: "Number of LivingRooms:",
+      value: formik.values.livingRooms,
+      error: formik.errors.livingRooms,
+      name: "livingRooms",
     },
     {
-      name: "Number of Terraces:",
+      label: "Number of Terraces:",
+      value: formik.values.terrace,
+      error: formik.errors.terrace,
+      name: "terrace",
     },
     {
-      name: "Number of Balconies:",
+      label: "Number of Balconies:",
+      value: formik.values.balcon,
+      error: formik.errors.balcon,
+      name: "balcon",
     },
     {
-      name: "Number of Garages:",
+      label: "Number of Garages:",
+      value: formik.values.garage,
+      error: formik.errors.garage,
+      name: "garage",
     },
   ];
 
@@ -79,29 +139,41 @@ export const CreateNewProp = () => {
       </div>
       <div className={s.main__content}>
         <h1 className={s.main__title}>Create new property</h1>
-        <form className={s.mainForm}>
-          <Input
-            title="Name"
-            placeholder="Name of the property"
-            type="text"
-            name="name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            color="black"
-            inputColor="rgba(29, 29, 29, 0.35)"
-            className={s.mainForm__input}
-          />
-          <Input
-            className={s.mainForm__input}
-            inputColor="rgba(29, 29, 29, 0.35)"
-            color="black"
-            title="Location"
-            placeholder="Choose location"
-            type="text"
-            name="location"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
+        <form className={s.mainForm} onSubmit={formik.handleSubmit}>
+          <div>
+            <Input
+              value={formik.values.name}
+              title="Name"
+              placeholder="Name of the property"
+              type="text"
+              name="name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              color="black"
+              inputColor="rgba(29, 29, 29, 0.35)"
+              className={s.mainForm__input}
+            />
+            {formik.errors.name && formik.touched.name && (
+              <p className={s.error}>{formik.errors.name}</p>
+            )}
+          </div>
+          <div>
+            <Input
+              value={formik.values.location}
+              className={s.mainForm__input}
+              inputColor="rgba(29, 29, 29, 0.35)"
+              color="black"
+              title="Location"
+              placeholder="Choose location"
+              type="text"
+              name="location"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.errors.location && formik.touched.location && (
+              <p className={s.error}>{formik.errors.location}</p>
+            )}
+          </div>
 
           <div className={s.apartmentWrap}>
             <div className={s.apartment}>
@@ -113,8 +185,17 @@ export const CreateNewProp = () => {
               <div className={s.propertyWrap}>
                 {property.map((item, index) => (
                   <div className={s.property} key={index}>
-                    <p className={s.property__text}>{item.name}</p>
-                    <input className={s.property__input} type="text" />
+                    <p className={s.property__text}>{item.label}</p>
+                    <input
+                      style={{
+                        borderColor: item.error ? "red" : "",
+                      }}
+                      className={s.property__input}
+                      type="text"
+                      value={item.value}
+                      onChange={formik.handleChange}
+                      name={item.name}
+                    />
                   </div>
                 ))}
               </div>
@@ -124,11 +205,29 @@ export const CreateNewProp = () => {
                   <p className={s.property__text}>
                     Size of the apartment (m²):
                   </p>
-                  <input className={s.property__input} type="text" />
+                  <input
+                    name="size"
+                    className={s.property__input}
+                    type="text"
+                    value={formik.values.size}
+                    style={{
+                      borderColor: formik.errors.size ? "red" : "",
+                    }}
+                    onChange={formik.handleChange}
+                  />
                 </div>
                 <div className={s.property}>
                   <p className={s.property__text}>Type of the apartment:</p>
-                  <input className={s.property__input} type="text" />
+                  <input
+                    name="type"
+                    onChange={formik.handleChange}
+                    className={s.property__input}
+                    type="text"
+                    value={formik.values.type}
+                    style={{
+                      borderColor: formik.errors.type ? "red" : "",
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -141,13 +240,19 @@ export const CreateNewProp = () => {
             </div>
             <div className={s.apartment__info}>
               <textarea
-                name="property"
+                name="aboutProperty"
                 id="property"
                 placeholder="Text area "
                 rows={5}
                 className={s.area}
+                value={formik.values.aboutProperty}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               ></textarea>
             </div>
+            {formik.errors.aboutProperty && formik.touched.aboutProperty && (
+              <p className={s.error}>{formik.errors.aboutProperty}</p>
+            )}
           </div>
 
           <div className={s.apartmentWrap}>
@@ -157,13 +262,18 @@ export const CreateNewProp = () => {
             </div>
             <div className={s.apartment__info}>
               <textarea
+                onChange={formik.handleChange}
                 className={s.area}
-                name="property"
+                name="investment"
                 id="property"
                 placeholder="Text area "
                 rows={5}
+                value={formik.values.investment}
               ></textarea>
-            </div>
+            </div>{" "}
+            {formik.errors.investment && formik.touched.investment && (
+              <p className={s.error}>{formik.errors.investment}</p>
+            )}
           </div>
 
           {Array.from({ length: apartNum }).map((_, a) => (
@@ -206,30 +316,71 @@ export const CreateNewProp = () => {
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
+              className={s.mainForm__input}
+              value={formik.values.price}
+              borderColor={formik.errors.price ? "red" : ""}
             />
 
             <Input
               title="Estimated Rental Return:"
               placeholder="Enter %"
               type="text"
-              name="rental"
+              name="rentalReturn"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
+              className={s.mainForm__input}
+              value={formik.values.rentalReturn}
+              borderColor={formik.errors.rentalReturn ? "red" : ""}
             />
 
             <Input
               title="Estimated Capital Appreciation:"
               placeholder="Enter %"
               type="text"
-              name="capital"
+              name="capitalAprec"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
+              className={s.mainForm__input}
+              value={formik.values.capitalAprec}
+              borderColor={formik.errors.capitalAprec ? "red" : ""}
             />
           </div>
+
+          <div className={s.nft}>
+            <Input
+              title="NFT Quantity:"
+              placeholder="NFT Quantity"
+              type="text"
+              name="nftQuantity"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              color="black"
+              inputColor="rgba(29, 29, 29, 0.35)"
+              className={s.mainForm__input}
+              value={formik.values.nftQuantity}
+              borderColor={formik.errors.nftQuantity ? "red" : ""}
+            />
+
+            <Input
+              title="NFT Price:"
+              placeholder="NFT Price"
+              type="text"
+              name="nftPrice"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              color="black"
+              inputColor="rgba(29, 29, 29, 0.35)"
+              className={s.mainForm__input}
+              value={formik.values.nftPrice}
+              borderColor={formik.errors.nftPrice ? "red" : ""}
+            />
+          </div>
+
+          <button className={s.NFTButton}>Issue NFT</button>
 
           <div className={s.uploadImg}>
             <UploadImg />

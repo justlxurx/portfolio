@@ -9,4 +9,5 @@ export interface IInput extends React.HTMLProps<HTMLInputElement> {
   disabled?: boolean;
   updateInput?: (name: string, value: string) => void;
   inputColor?: string;
+  borderColor?: string;
 }
