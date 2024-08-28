@@ -9,6 +9,8 @@ import * as Yup from "yup";
 import { useState } from "react";
 import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
+import { property } from "./data";
+import { createPropertyApi } from "../../../api/property/createProperty";
 
 export const CreateNewProp = () => {
   const formik = useFormik({
@@ -22,15 +24,15 @@ export const CreateNewProp = () => {
       capitalAprec: "",
       nftQuantity: "",
       nftPrice: "",
-      beds: "",
-      bath: "",
-      rooms: "",
-      kitchen: "",
-      livingRooms: "",
-      terrace: "",
-      balcon: "",
-      garage: "",
-      size: "",
+      beds: 0,
+      bath: 0,
+      rooms: 0,
+      kitchen: 0,
+      livingRooms: 0,
+      terrace: 0,
+      balcon: 0,
+      garage: 0,
+      size: 0,
       type: "",
     },
     validationSchema: Yup.object({
@@ -60,72 +62,56 @@ export const CreateNewProp = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       event.preventDefault();
+      // try {
+      //   const response = ""; //await submitForm(values);
+      //   console.log(response);
+      //   alert("Successfully created");
+      //   // if (response.error) {
+      //   //   console.error("Ошибка в ответе сервера:", response.error);
+      //   // } else {
+      //   //   resetForm();
+      //   // }
+      // } catch (error) {
+      //   console.error("Error submitting form:", error);
+      // }
       try {
-        const response = ""; //await submitForm(values);
-        console.log(response);
-        alert("Successfully created");
-        // if (response.error) {
-        //   console.error("Ошибка в ответе сервера:", response.error);
-        // } else {
-        //   resetForm();
-        // }
-      } catch (error) {
-        console.error("Error submitting form:", error);
+        const result = await createPropertyApi.create({
+          balconies: formik.values.balcon,
+          bathrooms: formik.values.bath,
+          bedrooms: formik.values.beds,
+          completion_date: "",
+          construction_status: "",
+          description: formik.values.aboutProperty,
+          expected_apr: 0,
+          expected_irr: 0,
+          garages: formik.values.garage,
+          is_on_secondary_market: true,
+          kitchens: formik.values.kitchen,
+          land_area: formik.values.size,
+          land_type: formik.values.type,
+          leasehold_years: 0,
+          living_rooms: formik.values.livingRooms,
+          location: formik.values.location,
+          main_image_url: "",
+          name: formik.values.name,
+          occupation_status: "",
+          property_area: 0,
+          property_type: "",
+          rent_start_date: "",
+          terraces: formik.values.terrace,
+          token_price: 0,
+          tokens_available: 0,
+          total_rooms: formik.values.rooms,
+          total_tokens: 0,
+        });
+
+        console.log(result);
+      } catch (err) {
+        console.error("Error when try to create property:", err);
       }
     },
   });
   const [apartNum, setApartNum] = useState(0);
-
-  const property = [
-    {
-      label: "Number of Beds:",
-      value: formik.values.beds,
-      error: formik.errors.beds,
-      name: "beds",
-    },
-    {
-      label: "Number of Bath:",
-      value: formik.values.bath,
-      error: formik.errors.bath,
-      name: "bath",
-    },
-    {
-      label: "Number of Rooms:",
-      value: formik.values.rooms,
-      error: formik.errors.rooms,
-      name: "rooms",
-    },
-    {
-      label: "Number of Kitchen:",
-      value: formik.values.kitchen,
-      error: formik.errors.kitchen,
-      name: "kitchen",
-    },
-    {
-      label: "Number of LivingRooms:",
-      value: formik.values.livingRooms,
-      error: formik.errors.livingRooms,
-      name: "livingRooms",
-    },
-    {
-      label: "Number of Terraces:",
-      value: formik.values.terrace,
-      error: formik.errors.terrace,
-      name: "terrace",
-    },
-    {
-      label: "Number of Balconies:",
-      value: formik.values.balcon,
-      error: formik.errors.balcon,
-      name: "balcon",
-    },
-    {
-      label: "Number of Garages:",
-      value: formik.values.garage,
-      error: formik.errors.garage,
-      name: "garage",
-    },
-  ];
 
   const addNew = () => {
     event.preventDefault();
@@ -188,11 +174,20 @@ export const CreateNewProp = () => {
                     <p className={s.property__text}>{item.label}</p>
                     <input
                       style={{
-                        borderColor: item.error ? "red" : "",
+                        borderColor:
+                          formik.errors[
+                            item.name as keyof typeof formik.values
+                          ] || ""
+                            ? "red"
+                            : "",
                       }}
                       className={s.property__input}
                       type="text"
-                      value={item.value}
+                      value={
+                        formik.values[
+                          item.name as keyof typeof formik.values
+                        ] || ""
+                      }
                       onChange={formik.handleChange}
                       name={item.name}
                     />
@@ -389,7 +384,9 @@ export const CreateNewProp = () => {
             <Link to="/admin/properties">
               <button className={s.buttons__cancel}>Cancel</button>
             </Link>
-            <button className={s.buttons__create}>Create Property</button>
+            <button className={s.buttons__create} type="submit">
+              Create Property
+            </button>
           </div>
         </form>
       </div>

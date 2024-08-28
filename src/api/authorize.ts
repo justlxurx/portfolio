@@ -5,7 +5,7 @@ type AuthorizeReq = {
 
 type RegisterReq = {
   wallet_address: string;
-  email: string;
+  username: string;
   first_name: string;
   last_name: string;
 };
@@ -13,7 +13,7 @@ type RegisterReq = {
 class AuthorizeAPI {
   async getNonce(walletAddress: string) {
     const res = await fetch(
-      `https://estate.hotcode.kz/user/nonce/${walletAddress}`,
+      `https://estate.hotcode.kz/v1/user/nonce/${walletAddress}`,
       {
         method: "GET",
         headers: {
@@ -31,7 +31,7 @@ class AuthorizeAPI {
   }
 
   async authorize(args: AuthorizeReq) {
-    const res = await fetch("https://estate.hotcode.kz/user/login", {
+    const res = await fetch("https://estate.hotcode.kz/v1/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ class AuthorizeAPI {
   }
 
   async register(args: RegisterReq) {
-    const res = await fetch("https://estate.hotcode.kz/user/register", {
+    const res = await fetch("https://estate.hotcode.kz/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

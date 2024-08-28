@@ -1,108 +1,43 @@
 import s from "./LoginForm.module.scss";
 import connect from "../../../../assets/icons/connect.svg";
 import metamask from "../../../../assets/icons/metamask.svg";
-import { useWeb3ModalAccount } from "@web3modal/ethers/react";
-import { useState } from "react";
-import { ethers } from "ethers";
-import { Link } from "react-router-dom";
-// import { handleLogin } from "../../../../processes/Processes";
+import { useCallback, useState } from "react";
+import { useProcesses } from "../../../../processes/Processes";
 
 export const LoginForm = () => {
-  const { address } = useWeb3ModalAccount();
-  const [nonce, setNonce] = useState<string | null>(null);
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [isRegistered, setIsRegistered] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const { processAuth } = useProcesses();
 
-  // const fetchNonce = async () => {
-  //   if (!address) return;
-
-  //   const response = await fetch(
-  //     `https://estate.hotcode.kz/user/nonce/${address}`
-  //   );
-  //   const data = await response.json();
-  //   setNonce(data.nonce);
-  // };
-
-  // const handleSignMessage = async (nonce: string) => {
-  //   if (!address) return;
-
-  //   const provider = new ethers.providers.Web3Provider(window.ethereum);
-  //   const signer = provider.getSigner();
-
-  //   const message = `I am signing my one-time nonce: ${nonce}`;
-  //   const signature = await signer.signMessage(message);
-
-  //   return { address, signature };
-  // };
-
-  // const handleAuthenticate = async ({
-  //   address,
-  //   signature,
-  // }: {
-  //   address: string;
-  //   signature: string;
-  // }) => {
-  //   const response = await fetch(`https://estate.hotcode.kz/user/login`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ publicAddress: address, signature }),
-  //   });
-  //   const result = await response.json();
-  //   console.log("Authentication result:", result);
-  // };
-
-  // const handleLogin = async () => {
-  //   try {
-  //     if (!address) return;
-
-  //     const userResponse = await fetch(
-  //       `https://estate.hotcode.kz/user/nonce/${address}`
-  //     );
-  //     const users = await userResponse.json();
-
-  //     if (users.length === 0) {
-  //       await handleRegister();
-  //     } else {
-  //       setIsRegistered(true);
-  //     }
-
-  //     if (isRegistered) {
-  //       if (!nonce) {
-  //         await fetchNonce();
-  //       }
-
-  //       if (nonce) {
-  //         const { address, signature } = await handleSignMessage(nonce);
-  //         await handleAuthenticate({ address, signature });
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.error("Login error:", error);
-  //   }
-  // };
+  const handleLogin = useCallback(async () => {
+    setIsProcessing(true);
+    try {
+      await processAuth();
+      console.log("User successfully logged in or registered");
+    } catch (err) {
+      console.error("Login/registration failed:", err);
+    } finally {
+      setIsProcessing(false);
+    }
+  }, [processAuth]);
 
   return (
     <div className={`${s.main} container`}>
-      <h1 className={s.main__heading}>Sign In/ Log in</h1>
+      <h1 className={s.main__heading}>Sign In / Log In</h1>
       <div className={s.buttons}>
         <div className={s.buttons__wrap}>
-          <button className={s.buttons__item}>
+          <button
+            className={s.buttons__item}
+            onClick={handleLogin}
+            disabled={isProcessing}
+          >
             <img src={metamask} alt="metamask" />
-            Continue with MetaMask
+            {isProcessing ? "Processing..." : "Continue with MetaMask"}
           </button>
-          <button className={s.buttons__item}>
+          <button className={s.buttons__item} disabled={isProcessing}>
             <img src={connect} alt="connect wallet" />
             Continue with Wallet Connect
           </button>
         </div>
-        {/* <div>
-          you don't have an account yet?{" "}
-          <Link to="/register">Register moew</Link>
-        </div> */}
       </div>
     </div>
   );

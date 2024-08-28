@@ -5,7 +5,6 @@ import { Login } from "../pages/Login/Login";
 import { AllProperties } from "../pages/AllProperties/AllProperties";
 import { Dashboard } from "../pages/Dashboard/Dashboard";
 import { Property } from "../pages/Property/Property";
-import { Register } from "../pages/Register/Register.";
 import { LoginForm } from "../pages/Admin/Login/LoginForm/LoginForm";
 import { AdminLayout } from "../layouts/AdminLayout/AdminLayout";
 import { AdminProperties } from "../pages/Admin/Properties/Properties";
@@ -17,7 +16,6 @@ export const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/properties" element={<AllProperties />} />
         <Route path="/properties/:id" element={<Property />} />
         <Route path="/dashboard" element={<Dashboard />} />

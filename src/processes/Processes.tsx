@@ -102,26 +102,24 @@
 // export default Processes;
 
 ///////second one
-
 import {
   useWeb3ModalAccount,
   useWeb3ModalProvider,
 } from "@web3modal/ethers/react";
 import { ethers } from "ethers";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { authorizeAPI } from "../api/authorize.ts";
 import { parseJwt } from "../utils/parseJwt.ts";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks.ts";
 import { authSelect, setAuth, setInitialAuth } from "../slice/authSlice.ts";
 
-const Processes = () => {
+export const useProcesses = () => {
   const { address, isConnected } = useWeb3ModalAccount();
   const { walletProvider } = useWeb3ModalProvider();
   const dispatch = useAppDispatch();
   const auth = useAppSelector(authSelect);
   const [nonce, setNonce] = useState<string | null>(null);
 
-  //to get nonce and save its state
   const fetchNonce = useCallback(async () => {
     if (address) {
       try {
@@ -141,17 +139,31 @@ const Processes = () => {
         const signature = await signer.signMessage(message);
         return signature;
       } catch (err) {
-        console.error(err);
+        console.error("Error signing message:", err);
       }
     },
     [walletProvider]
   );
 
+  const handleRegister = useCallback(async () => {
+    try {
+      const result = await authorizeAPI.register({
+        wallet_address: address,
+        username: "",
+        first_name: "",
+        last_name: "",
+      });
+      return result;
+    } catch (err) {
+      console.error("Registration failed:", err);
+      throw err;
+    }
+  }, [address]);
+
   const authorize = useCallback(async () => {
     if (nonce) {
       const message = `I am signing into estate.hotcode.kz using nonce: ${nonce}`;
       const signature = await signMessage(message);
-
       if (address && signature) {
         try {
           const token = await authorizeAPI.authorize({ address, signature });
@@ -164,56 +176,21 @@ const Processes = () => {
             );
           }
         } catch (err) {
-          console.error(err);
+          console.error("Authorization failed:", err);
+          await handleRegister();
         }
       }
     }
-  }, [address, nonce, signMessage]);
+  }, [address, nonce, signMessage, dispatch, handleRegister]);
 
-  useEffect(() => {
+  const processAuth = useCallback(async () => {
     if (isConnected && !auth.isAuthorized) {
-      fetchNonce()
-        .then(() => {
-          authorize()
-            .then(() => {
-              console.log("Successfully authorized");
-              console.log("nonce is" + nonce);
-            })
-            .catch(console.error);
-        })
-        .catch(console.error);
-    }
-  }, [isConnected, address, nonce, authorize, auth]);
-
-  useEffect(() => {
-    if (!isConnected) {
+      await fetchNonce();
+      await authorize();
+    } else if (!isConnected) {
       dispatch(setInitialAuth());
     }
-  }, [isConnected]);
+  }, [isConnected, auth.isAuthorized, fetchNonce, authorize, dispatch]);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    if (auth.isAuthorized) {
-      const time = auth.exp - Date.now();
-
-      console.log("timeout time", time);
-
-      timeout = setTimeout(() => {
-        authorize()
-          .then(() => {
-            console.log("Successfully re-authorized");
-          })
-          .catch(console.error);
-      }, time);
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [auth, auth]);
-
-  return null;
+  return { processAuth };
 };
-
-export default Processes;
