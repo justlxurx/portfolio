@@ -1,13 +1,6 @@
 type AuthorizeReq = {
-  address: string;
   signature: string;
-};
-
-type RegisterReq = {
-  wallet_address: string;
-  username: string;
-  first_name: string;
-  last_name: string;
+  address: string;
 };
 
 class AuthorizeAPI {
@@ -45,23 +38,6 @@ class AuthorizeAPI {
 
     const resJson = await res.json();
     return resJson.token;
-  }
-
-  async register(args: RegisterReq) {
-    const res = await fetch("https://estate.hotcode.kz/v1/user/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(args),
-    });
-
-    if (!res.ok) {
-      throw new Error("Registration failed");
-    }
-
-    const resJson = await res.json();
-    return resJson;
   }
 }
 

@@ -2,13 +2,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store/index";
 
 type AuthType = {
-  token: string;
+  accessToken: string;
+  // refreshToken: string;
   exp: number;
   isAuthorized: boolean;
 };
 
 const initialState: AuthType = {
-  token: "",
+  accessToken: "",
+  // refreshToken: "",
   exp: 0,
   isAuthorized: false,
 };

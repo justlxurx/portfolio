@@ -1,0 +1,74 @@
+.main__left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 35px 20px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(104, 117, 141, 1);
+  background: rgba(33, 52, 88, 1);
+}
+
+.info__title {
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30.52px;
+  text-align: left;
+  color: rgba(84, 126, 208, 1);
+}
+
+.info__value {
+  font-family: Helvetica Neue;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.84px;
+  text-align: left;
+  color: white;
+}
+
+.exchange {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.exchange__title {
+  font-family: Helvetica Neue;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36.63px;
+  text-align: left;
+  color: white;
+}
+
+.exchange__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exchange__button {
+  height: 92.53px;
+  padding: 12.4px 13.95px 12.4px 13.95px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-family: Helvetica Neue;
+  font-size: 31.81px;
+  font-weight: 700;
+  line-height: 38.84px;
+  text-align: center;
+  background-color: white;
+  color: rgba(24, 39, 67, 1);
+}

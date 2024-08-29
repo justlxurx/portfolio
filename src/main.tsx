@@ -3,16 +3,14 @@ import App from "./App.tsx";
 import Web3Provider from "./web3/provider/Web3Provider.tsx";
 import { store } from "./store/index.ts";
 import { Provider } from "react-redux";
-// import { lazy, Suspense } from "react";
-// const Processes = lazy(() => import("./processes/Processes.tsx"));
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <Provider store={store}>
-    <Web3Provider>
-      <App />
-      {/* <Suspense fallback={null}>
-        <Processes />
-      </Suspense> */}
-    </Web3Provider>
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <Web3Provider>
+        <App />
+      </Web3Provider>
+    </Provider>
+  </BrowserRouter>
 );

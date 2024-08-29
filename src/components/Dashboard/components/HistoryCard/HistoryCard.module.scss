@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid rgba(104, 117, 141, 1);
+  padding: 37px 20px 15px;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.main__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.main__title {
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30.52px;
+  text-align: left;
+  color: rgba(100, 100, 100, 1);
+}
+
+.main__time {
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 29.82px;
+  text-align: right;
+  color: rgba(114, 114, 114, 1);
+}
+
+.main__val {
+  font-family: Helvetica Neue;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.84px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+
+.main__name {
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.42px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+  text-decoration: underline;
+}

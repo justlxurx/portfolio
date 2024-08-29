@@ -3,20 +3,27 @@ import connect from "../../../../assets/icons/connect.svg";
 import metamask from "../../../../assets/icons/metamask.svg";
 import { useCallback, useState } from "react";
 import { useProcesses } from "../../../../processes/Processes";
+import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 export const LoginForm = () => {
+  const { address } = useWeb3ModalAccount();
   const [isProcessing, setIsProcessing] = useState(false);
   const { processAuth } = useProcesses();
 
   const handleLogin = useCallback(async () => {
-    setIsProcessing(true);
-    try {
-      await processAuth();
-      console.log("User successfully logged in or registered");
-    } catch (err) {
-      console.error("Login/registration failed:", err);
-    } finally {
-      setIsProcessing(false);
+    if (address) {
+      setIsProcessing(true);
+      try {
+        await processAuth();
+        console.log("User successfully logged in or registered");
+        window.location.href = "/dashboard";
+      } catch (err) {
+        console.error("Login/registration failed:", err);
+      } finally {
+        setIsProcessing(false);
+      }
+    } else {
+      alert("You must connect wallet, then try again ");
     }
   }, [processAuth]);
 

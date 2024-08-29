@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  margin: 150px auto 50px;
+  margin: 150px auto 200px;
   align-items: center;
 }
 
@@ -51,7 +51,7 @@
 
 @media (max-width: 1500px) {
   .main {
-    margin: 150px auto 50px;
+    margin: 150px auto 200px;
   }
 
   .main__heading {

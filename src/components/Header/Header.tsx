@@ -5,8 +5,13 @@ import { Profile } from "../../assets/icons/profile";
 import burger from "../../assets/icons/burger.svg";
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { useState } from "react";
+import { authSelect } from "../../slice/authSlice";
+import { useAppSelector } from "../../hooks/hooks";
+import useScrollToAnchor from "../../hooks/useScrollToAnchor";
 
 export const Header = () => {
+  useScrollToAnchor();
+  const auth = useAppSelector(authSelect);
   const [isOpen, setIsOpen] = useState(false);
   const { open } = useWeb3Modal();
   const { address, isConnected } = useWeb3ModalAccount();
@@ -24,6 +29,7 @@ export const Header = () => {
       links: "/#contacts",
     },
   ];
+  console.log("auth :" + auth.isAuthorized);
   return (
     <header
       className={`${s.main} container`}
@@ -35,9 +41,15 @@ export const Header = () => {
       <ul className={s.main__list}>
         {links.map((item, index) => (
           <li key={index}>
-            <Link to={`${item.links}`} className={s.link}>
-              {item.title}
-            </Link>
+            {index == 0 ? (
+              <Link to={`${item.links}`} className={s.link}>
+                {item.title}
+              </Link>
+            ) : (
+              <a href={`${item.links}`} className={s.link}>
+                {item.title}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -57,7 +69,13 @@ export const Header = () => {
             : " Connect wallet"}
         </button>
         <Link to={"/login"} className={s.link}>
-          <button className={s.accountButton}>
+          <button
+            className={s.accountButton}
+            style={{
+              backgroundColor: auth.isAuthorized ? "white" : "unset",
+              color: auth.isAuthorized ? "rgba(24, 39, 67, 1)" : "white",
+            }}
+          >
             <Profile />
             My account
           </button>

@@ -1,0 +1,89 @@
+.input {
+  background-color: unset;
+  border-radius: 5.74px;
+  border: unset;
+  width: calc(100% - 32px);
+  font-family: Helvetica Neue;
+  font-size: 31.81px;
+  font-weight: 400;
+  line-height: 37.95px;
+  text-align: left;
+  margin-left: 0;
+  color: white;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.55;
+  }
+
+  //   &:hover {
+  //     border: 1px solid rgba(8, 9, 28, 0.4);
+  //     cursor: pointer;
+  //   }
+  &:disabled {
+    border: 1px solid #08091c1f;
+    background-color: #08091c0a;
+    color: #08091c66;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(229, 62, 62, 1);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12.4px 23px;
+  border-radius: 20px;
+  border: 1px solid rgba(104, 117, 141, 1);
+  background: rgba(33, 52, 88, 1);
+}
+
+.info__title {
+  font-family: Helvetica Neue;
+  font-size: 26.02px;
+  font-weight: 300;
+  line-height: 31.46px;
+  text-align: left;
+  color: rgba(84, 126, 208, 1);
+}
+
+.info__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wallet {
+  display: flex;
+  gap: 14.46px;
+  align-items: center;
+}
+
+.wallet__img {
+  width: 36.99px;
+  height: 36.99px;
+}
+
+.wallet__text {
+  font-family: Helvetica Neue;
+  font-size: 21.69px;
+  font-weight: 300;
+  line-height: 26.22px;
+  text-align: center;
+  color: rgba(84, 126, 208, 1);
+  text-transform: uppercase;
+}
+
+.down {
+  width: 12.27px;
+  height: 8.01px;
+}

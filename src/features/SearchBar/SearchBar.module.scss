@@ -2,11 +2,12 @@
   background-color: rgba(84, 126, 208, 0.14);
   width: 100%;
   border-radius: 20px;
-  padding: 25px 25.31px;
+  padding: 0px 25.31px;
   display: flex;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.32);
-  height: -webkit-fill-available;
+  // height: -webkit-fill-available;
+  height: 100%;
 }
 
 .searchInput {
