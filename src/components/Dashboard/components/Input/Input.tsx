@@ -2,6 +2,7 @@ import s from "./Input.module.scss";
 import { IInput } from "./Interface";
 import arrow from "../../../../assets/icons/arrow.svg";
 
+
 const Input = ({
   title,
   name,

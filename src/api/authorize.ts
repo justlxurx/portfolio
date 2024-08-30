@@ -1,6 +1,7 @@
 type AuthorizeReq = {
+  message: string;
   signature: string;
-  address: string;
+  wallet_address: string;
 };
 
 class AuthorizeAPI {
@@ -36,8 +37,8 @@ class AuthorizeAPI {
       throw new Error("Authorization failed");
     }
 
-    const resJson = await res.json();
-    return resJson.token;
+    const { access_token, refresh_token } = await res.json();
+    return { access_token, refresh_token };
   }
 }
 

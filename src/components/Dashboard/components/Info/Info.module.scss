@@ -38,37 +38,4 @@
   color: white;
 }
 
-.exchange {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
 
-.exchange__title {
-  font-family: Helvetica Neue;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 36.63px;
-  text-align: left;
-  color: white;
-}
-
-.exchange__content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.exchange__button {
-  height: 92.53px;
-  padding: 12.4px 13.95px 12.4px 13.95px;
-  border-radius: 20px;
-  box-sizing: border-box;
-  font-family: Helvetica Neue;
-  font-size: 31.81px;
-  font-weight: 700;
-  line-height: 38.84px;
-  text-align: center;
-  background-color: white;
-  color: rgba(24, 39, 67, 1);
-}

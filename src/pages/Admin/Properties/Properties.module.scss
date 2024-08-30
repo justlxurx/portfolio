@@ -50,6 +50,7 @@
   background-color: white;
   box-sizing: border-box;
   width: 205px;
+  z-index: 50;
 }
 .dropdown:hover > .dropdown__bottom {
   display: flex;

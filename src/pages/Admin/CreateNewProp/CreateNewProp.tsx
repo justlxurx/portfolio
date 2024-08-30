@@ -11,8 +11,16 @@ import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
 import { property } from "./data";
 import { createPropertyApi } from "../../../api/property/createProperty";
+import { useNavigate } from "react-router-dom";
 
 export const CreateNewProp = () => {
+  const navigate = useNavigate();
+  const [nft, setNft] = useState(0);
+  const handleIssueNFT = async () => {
+    const total =
+      Number(formik.values.nftQuantity) * Number(formik.values.nftPrice);
+    setNft(total);
+  };
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -62,52 +70,48 @@ export const CreateNewProp = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       event.preventDefault();
-      // try {
-      //   const response = ""; //await submitForm(values);
-      //   console.log(response);
-      //   alert("Successfully created");
-      //   // if (response.error) {
-      //   //   console.error("Ошибка в ответе сервера:", response.error);
-      //   // } else {
-      //   //   resetForm();
-      //   // }
-      // } catch (error) {
-      //   console.error("Error submitting form:", error);
-      // }
-      try {
-        const result = await createPropertyApi.create({
-          balconies: formik.values.balcon,
-          bathrooms: formik.values.bath,
-          bedrooms: formik.values.beds,
-          completion_date: "",
-          construction_status: "",
-          description: formik.values.aboutProperty,
-          expected_apr: 0,
-          expected_irr: 0,
-          garages: formik.values.garage,
-          is_on_secondary_market: true,
-          kitchens: formik.values.kitchen,
-          land_area: formik.values.size,
-          land_type: formik.values.type,
-          leasehold_years: 0,
-          living_rooms: formik.values.livingRooms,
-          location: formik.values.location,
-          main_image_url: "",
-          name: formik.values.name,
-          occupation_status: "",
-          property_area: 0,
-          property_type: "",
-          rent_start_date: "",
-          terraces: formik.values.terrace,
-          token_price: 0,
-          tokens_available: 0,
-          total_rooms: formik.values.rooms,
-          total_tokens: 0,
-        });
 
+      const formattedValues = {
+        token_price: Number(values.nftPrice),
+        tokens_available: Number(values.nftQuantity),
+        total_tokens: Number(values.nftQuantity),
+
+        balconies: Number(values.balcon),
+        bathrooms: Number(values.bath),
+        bedrooms: Number(values.beds),
+        garages: Number(values.garage),
+        kitchens: Number(values.kitchen),
+        living_rooms: Number(values.livingRooms),
+        terraces: Number(values.terrace),
+        total_rooms: Number(values.rooms),
+
+        property_area: Number(values.size),
+        property_type: values.type,
+
+        description: values.aboutProperty,
+        location: values.location,
+        name: values.name,
+
+        construction_status: "",
+        expected_apr: 0,
+        expected_irr: 0,
+        // is_on_secondary_market: true,
+        leasehold_years: 0,
+        main_image_url: "",
+        occupation_status: "",
+        // land_area: 0,
+        // land_type: "",
+        // rent_start_date: "",
+        // completion_date: "",
+      };
+
+      try {
+        const result = await createPropertyApi.create(formattedValues);
+        alert("Property created successfully");
+        navigate("/admin/properties");
         console.log(result);
       } catch (err) {
-        console.error("Error when try to create property:", err);
+        console.error("Error when trying to create property:", err);
       }
     },
   });
@@ -375,7 +379,9 @@ export const CreateNewProp = () => {
             />
           </div>
 
-          <button className={s.NFTButton}>Issue NFT</button>
+          <button className={s.NFTButton} onClick={handleIssueNFT}>
+            {nft === 0 ? "Issue NFT" : "Total nft:  " + nft}
+          </button>
 
           <div className={s.uploadImg}>
             <UploadImg />

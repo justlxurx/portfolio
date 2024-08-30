@@ -76,7 +76,7 @@ export const Header = () => {
               color: auth.isAuthorized ? "rgba(24, 39, 67, 1)" : "white",
             }}
           >
-            <Profile />
+            <Profile color={auth.isAuthorized ? "black" : "white"} />
             My account
           </button>
         </Link>

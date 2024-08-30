@@ -8,7 +8,7 @@ import { authorizeAPI } from "../api/authorize.ts";
 import { parseJwt } from "../utils/parseJwt.ts";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks.ts";
 import { authSelect, setAuth, setInitialAuth } from "../slice/authSlice.ts";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const useProcesses = () => {
   const { address, isConnected } = useWeb3ModalAccount();
@@ -24,19 +24,23 @@ export const useProcesses = () => {
         if (fetchedNonce) {
           const message = `I am signing into estate.hotcode.kz using nonce: ${fetchedNonce}`;
           const signature = await signMessage(message);
+
           if (signature && address) {
             try {
               const payload = {
+                message: message,
                 signature: signature,
                 wallet_address: address,
               };
-              const response = await authorizeAPI.authorize(payload);
-              if (response) {
+              const res = await authorizeAPI.authorize(payload);
+              console.log("response: ");
+              console.log(res);
+              if (res) {
                 dispatch(
                   setAuth({
-                    accessToken: response.accessToken,
-                    refreshToken: response.refreshToken,
-                    exp: parseJwt(response).exp * 1000,
+                    accessToken: res.access_token,
+                    refreshToken: res.refresh_token,
+                    exp: parseJwt(res.access_token).exp * 1000,
                   })
                 );
               }
@@ -64,6 +68,7 @@ export const useProcesses = () => {
     },
     [walletProvider]
   );
+
   const processAuth = useCallback(async () => {
     console.log("isConnected:", isConnected);
     console.log("auth.isAuthorized:", auth.isAuthorized);
@@ -81,11 +86,21 @@ export const useProcesses = () => {
     }
   }, [isConnected, auth.isAuthorized, fetchNonce, dispatch]);
 
+  // useEffect(() => {
+  //   if (!isConnected) {
+  //     dispatch(setInitialAuth());
+  //   }
+  // }, [isConnected]);
+
   useEffect(() => {
-    if (!isConnected) {
-      dispatch(setInitialAuth());
+    if (isConnected && !auth.isAuthorized) {
+      processAuth()
+        .then(() => {
+          console.log("Successfully authorized");
+        })
+        .catch(console.error);
     }
-  }, [isConnected]);
+  }, [isConnected, address, fetchNonce, auth]);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;

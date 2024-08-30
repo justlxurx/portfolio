@@ -3,7 +3,6 @@ import { Card } from "../Card/Card";
 import { SearchBar } from "../../features/SearchBar/SearchBar";
 import { Down } from "../../assets/icons/Down";
 import { Info } from "./components/Info/Info";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { HistoryCard } from "./components/HistoryCard/HistoryCard";
 

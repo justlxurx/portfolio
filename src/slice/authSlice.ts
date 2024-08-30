@@ -3,14 +3,14 @@ import { RootState } from "../store/index";
 
 type AuthType = {
   accessToken: string;
-  // refreshToken: string;
+  refreshToken: string;
   exp: number;
   isAuthorized: boolean;
 };
 
 const initialState: AuthType = {
   accessToken: "",
-  // refreshToken: "",
+  refreshToken: "",
   exp: 0,
   isAuthorized: false,
 };

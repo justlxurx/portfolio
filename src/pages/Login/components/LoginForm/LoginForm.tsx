@@ -4,19 +4,28 @@ import metamask from "../../../../assets/icons/metamask.svg";
 import { useCallback, useState } from "react";
 import { useProcesses } from "../../../../processes/Processes";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
+import { authSelect } from "../../../../slice/authSlice";
+import { useAppSelector } from "../../../../hooks/hooks";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   const { address } = useWeb3ModalAccount();
   const [isProcessing, setIsProcessing] = useState(false);
   const { processAuth } = useProcesses();
 
+  const navigate = useNavigate();
+  const auth = useAppSelector(authSelect).isAuthorized;
+
   const handleLogin = useCallback(async () => {
     if (address) {
       setIsProcessing(true);
       try {
         await processAuth();
-        console.log("User successfully logged in or registered");
-        window.location.href = "/dashboard";
+        console.log("User successfully logged in or registered" + auth);
+        if (auth) {
+          navigate("/dashboard");
+        }
+        // window.location.href = "/dashboard";
       } catch (err) {
         console.error("Login/registration failed:", err);
       } finally {

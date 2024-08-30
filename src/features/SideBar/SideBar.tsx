@@ -1,8 +1,10 @@
 import s from "./SideBar.module.scss";
-import { Logo } from "../../assets/icons/logo";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AdminProfile } from "../../assets/icons/adminProfile";
+import { logout } from "../../slice/adminAuthSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const SideBar = () => {
   const [activeButton, setActiveButton] = useState(1);
@@ -19,6 +21,12 @@ export const SideBar = () => {
     //   link: "/admin",
     // },
   ];
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/admin/login");
+  };
   return (
     <div className={s.main}>
       <div>
@@ -55,7 +63,9 @@ export const SideBar = () => {
           </ul>
         </div>
       </div>
-      <button className={s.main__logout}>Log Out</button>
+      <button className={s.main__logout} onClick={handleLogout}>
+        Log Out
+      </button>
     </div>
   );
 };
