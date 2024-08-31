@@ -22,6 +22,7 @@ const App = () => {
     }
     if (
       (path === "/admin/properties" ||
+        path === "/admin" ||
         path === "/admin/properties/create-new") &&
       !adminAuth
     ) {

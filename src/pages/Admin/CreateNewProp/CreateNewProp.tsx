@@ -9,40 +9,35 @@ import * as Yup from "yup";
 import { useState } from "react";
 import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
-import { property } from "./data";
-import { createPropertyApi } from "../../../api/property/createProperty";
+import { property, initVal } from "./data";
+import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useNavigate } from "react-router-dom";
+import type { UploadFile, UploadProps } from "antd";
+import { manageImgApi } from "../../../api/property/manageImg";
+import type { DragEndEvent } from "@dnd-kit/core";
+import { arrayMove } from "@dnd-kit/sortable";
 
 export const CreateNewProp = () => {
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const [propertyId, setPropertyId] = useState<number>(0);
   const navigate = useNavigate();
   const [nft, setNft] = useState(0);
   const handleIssueNFT = async () => {
+    event?.preventDefault();
     const total =
       Number(formik.values.nftQuantity) * Number(formik.values.nftPrice);
     setNft(total);
   };
+  const [apartNum, setApartNum] = useState(0);
+  const [mainImg, setMainImg] = useState("");
+
+  const addNew = () => {
+    event?.preventDefault();
+    setApartNum(apartNum + 1);
+  };
+
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      location: "",
-      investment: "",
-      aboutProperty: "",
-      price: "",
-      rentalReturn: "",
-      capitalAprec: "",
-      nftQuantity: "",
-      nftPrice: "",
-      beds: 0,
-      bath: 0,
-      rooms: 0,
-      kitchen: 0,
-      livingRooms: 0,
-      terrace: 0,
-      balcon: 0,
-      garage: 0,
-      size: 0,
-      type: "",
-    },
+    initialValues: initVal,
     validationSchema: Yup.object({
       name: Yup.string()
         // .matches(/^[A-Za-zА-Яа-яЁё]+$/, ``)
@@ -69,7 +64,7 @@ export const CreateNewProp = () => {
       type: Yup.string().required("required"),
     }),
     onSubmit: async (values, { resetForm }) => {
-      event.preventDefault();
+      event?.preventDefault();
 
       const formattedValues = {
         token_price: Number(values.nftPrice),
@@ -92,22 +87,29 @@ export const CreateNewProp = () => {
         location: values.location,
         name: values.name,
 
-        construction_status: "",
+        // construction_status: "",
         expected_apr: 0,
         expected_irr: 0,
         // is_on_secondary_market: true,
-        leasehold_years: 0,
-        main_image_url: "",
-        occupation_status: "",
+        // leasehold_years: 0,
+        main_image_url: mainImg,
+        // occupation_status: "",
         // land_area: 0,
         // land_type: "",
         // rent_start_date: "",
         // completion_date: "",
+        completion_date: new Date().toISOString(),
+        rent_start_date: new Date().toISOString(),
       };
 
       try {
-        const result = await createPropertyApi.create(formattedValues);
+        const result = await managePropertyApi.create(formattedValues);
+        setPropertyId(result.id);
+
         alert("Property created successfully");
+
+        await uploadImages();
+
         navigate("/admin/properties");
         console.log(result);
       } catch (err) {
@@ -115,13 +117,46 @@ export const CreateNewProp = () => {
       }
     },
   });
-  const [apartNum, setApartNum] = useState(0);
 
-  const addNew = () => {
-    event.preventDefault();
-    setApartNum(apartNum + 1);
+  const uploadImages = async () => {
+    for (const file of fileList) {
+      if (file.status !== "uploading" && propertyId) {
+        try {
+          const formData = new FormData();
+          formData.append("file", file.originFileObj as Blob);
+
+          await manageImgApi.uploadImg(propertyId, formData);
+          console.log("Image uploaded successfully");
+        } catch (error) {
+          console.error("Image upload failed", error);
+        }
+      }
+    }
   };
-  console.log(apartNum);
+
+  const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
+    setFileList(newFileList);
+    if (newFileList.length > 0) {
+      const latestFile = newFileList[newFileList.length - 1].originFileObj;
+      if (latestFile) {
+        const fileUrl = URL.createObjectURL(latestFile);
+        setMainImg(fileUrl);
+      }
+    }
+  };
+
+  const onDragEnd = ({ active, over }: DragEndEvent) => {
+    if (active.id !== over?.id) {
+      setFileList((prev) => {
+        const activeIndex = prev.findIndex((i) => i.uid === active.id);
+        const overIndex = prev.findIndex((i) => i.uid === over?.id);
+        return arrayMove(prev, activeIndex, overIndex);
+      });
+    }
+  };
+
+  console.log("main img is " + mainImg);
+
   return (
     <div className={s.main}>
       <div className={s.logo}>
@@ -180,7 +215,7 @@ export const CreateNewProp = () => {
                       style={{
                         borderColor:
                           formik.errors[
-                            item.name as keyof typeof formik.values
+                            item.name as keyof typeof formik.errors
                           ] || ""
                             ? "red"
                             : "",
@@ -210,7 +245,8 @@ export const CreateNewProp = () => {
                     type="text"
                     value={formik.values.size}
                     style={{
-                      borderColor: formik.errors.size ? "red" : "",
+                      borderColor:
+                        formik.touched.size && formik.errors.size ? "red" : "",
                     }}
                     onChange={formik.handleChange}
                   />
@@ -224,7 +260,8 @@ export const CreateNewProp = () => {
                     type="text"
                     value={formik.values.type}
                     style={{
-                      borderColor: formik.errors.type ? "red" : "",
+                      borderColor:
+                        formik.touched.type && formik.errors.type ? "red" : "",
                     }}
                   />
                 </div>
@@ -269,7 +306,7 @@ export const CreateNewProp = () => {
                 rows={5}
                 value={formik.values.investment}
               ></textarea>
-            </div>{" "}
+            </div>
             {formik.errors.investment && formik.touched.investment && (
               <p className={s.error}>{formik.errors.investment}</p>
             )}
@@ -317,7 +354,9 @@ export const CreateNewProp = () => {
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
               value={formik.values.price}
-              borderColor={formik.errors.price ? "red" : ""}
+              borderColor={
+                formik.touched.price && formik.errors.price ? "red" : ""
+              }
             />
 
             <Input
@@ -331,7 +370,11 @@ export const CreateNewProp = () => {
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
               value={formik.values.rentalReturn}
-              borderColor={formik.errors.rentalReturn ? "red" : ""}
+              borderColor={
+                formik.touched.rentalReturn && formik.errors.rentalReturn
+                  ? "red"
+                  : ""
+              }
             />
 
             <Input
@@ -345,7 +388,11 @@ export const CreateNewProp = () => {
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
               value={formik.values.capitalAprec}
-              borderColor={formik.errors.capitalAprec ? "red" : ""}
+              borderColor={
+                formik.touched.capitalAprec && formik.errors.capitalAprec
+                  ? "red"
+                  : ""
+              }
             />
           </div>
 
@@ -361,7 +408,11 @@ export const CreateNewProp = () => {
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
               value={formik.values.nftQuantity}
-              borderColor={formik.errors.nftQuantity ? "red" : ""}
+              borderColor={
+                formik.touched.nftQuantity && formik.errors.nftQuantity
+                  ? "red"
+                  : ""
+              }
             />
 
             <Input
@@ -375,7 +426,9 @@ export const CreateNewProp = () => {
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
               value={formik.values.nftPrice}
-              borderColor={formik.errors.nftPrice ? "red" : ""}
+              borderColor={
+                formik.touched.nftPrice && formik.errors.nftPrice ? "red" : ""
+              }
             />
           </div>
 
@@ -384,7 +437,11 @@ export const CreateNewProp = () => {
           </button>
 
           <div className={s.uploadImg}>
-            <UploadImg />
+            <UploadImg
+              onChange={onChange}
+              onDragEnd={onDragEnd}
+              fileList={fileList}
+            />
           </div>
           <div className={s.buttons}>
             <Link to="/admin/properties">

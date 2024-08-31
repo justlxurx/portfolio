@@ -11,7 +11,7 @@ export const SearchBar = ({
   fontSize,
 }: {
   val: string;
-  handleChange: () => void;
+  handleChange: (val: any) => void;
   backgroundColor?: string;
   color?: string;
   borderRadius?: string;

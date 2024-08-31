@@ -41,15 +41,9 @@ export const Header = () => {
       <ul className={s.main__list}>
         {links.map((item, index) => (
           <li key={index}>
-            {index == 0 ? (
-              <Link to={`${item.links}`} className={s.link}>
-                {item.title}
-              </Link>
-            ) : (
-              <a href={`${item.links}`} className={s.link}>
-                {item.title}
-              </a>
-            )}
+            <Link to={`${item.links}`} className={s.link}>
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>

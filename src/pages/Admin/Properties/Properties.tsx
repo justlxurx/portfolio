@@ -3,16 +3,45 @@ import s from "./Properties.module.scss";
 import { Down } from "../../../assets/icons/Down";
 import { Link } from "react-router-dom";
 import { MainTable } from "./MainTable/MainTable";
+import { filteredPropertyAPI } from "../../../api/property/filteredProperty";
+import { managePropertyApi } from "../../../api/property/manageProperty";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 export const AdminProperties = () => {
-  const item = [
-    {
-      title: "Name",
-    },
-    {
-      title: "Desc",
-    },
-  ];
+  const manage = managePropertyApi;
+  // const dispatch = useDispatch();
+  const [val, setVal] = useState("");
+  const [properties, setProperties] = useState([]);
+
+  const item = [{ title: "Name" }, { title: "Desc" }];
+
+  // useEffect(() => {
+  //   if (val) {
+  //     dispatch(filteredPropertyAPI.filter(val));
+  //   }
+  // }, [val, dispatch]);
+
+  const handleChange = (value: any) => {
+    setVal(value);
+  };
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const response = await filteredPropertyAPI.filter({
+          offset: 0,
+          limit: 0,
+        });
+        setProperties(response);
+      } catch (error) {
+        console.error("Failed to fetch properties", error);
+      }
+    };
+
+    fetchProperties();
+  }, [val]);
+
   return (
     <div className={s.main}>
       <div className={s.main__top}>
@@ -25,8 +54,8 @@ export const AdminProperties = () => {
         <div className={s.main__searching}>
           <div className={s.searchBar}>
             <SearchBar
-              handleChange={() => ""}
-              val="val"
+              handleChange={handleChange}
+              val={val}
               backgroundColor="rgba(206, 205, 210, 0.55)"
               color="rgba(62, 61, 64, 1)"
               borderRadius="8px"
@@ -51,7 +80,11 @@ export const AdminProperties = () => {
         </div>
 
         <div className={s.main__table}>
-          <MainTable />
+          <MainTable
+            properties={properties}
+            updateProp={() => {}}
+            deleteProp={manage.delete}
+          />
         </div>
       </div>
     </div>

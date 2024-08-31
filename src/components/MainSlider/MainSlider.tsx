@@ -9,9 +9,25 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Card } from "./Card/Card";
+import { filteredPropertyAPI } from "../../api/property/filteredProperty";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const MainSlider = () => {
-  const items = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await filteredPropertyAPI.filter({ offset: 0, limit: 0 });
+        setData(res);
+        console.log(res);
+      } catch (err) {
+        console.log("Error when try to get data: " + err);
+      }
+    };
+    fetchData();
+  });
+
   return (
     <div className={`${s.main} container`}>
       <h1 className={s.main__heading}>
@@ -52,8 +68,18 @@ export const MainSlider = () => {
             },
           }}
         >
-          {items.map((a, index) => (
-            <SwiperSlide key={index}>{a}</SwiperSlide>
+          {data.map((a, index) => (
+            <SwiperSlide key={index}>
+              <Card
+                id={a.id}
+                name={a.name}
+                location={a.location}
+                token_price={a.token_price}
+                rental={""}
+                capital={""}
+                img={a.main_image_url}
+              />
+            </SwiperSlide>
           ))}
 
           <div className={`slider-controller ${s.sliderController}`}>
