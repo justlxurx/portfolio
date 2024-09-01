@@ -8,7 +8,7 @@ import { authorizeAPI } from "../api/authorize.ts";
 import { parseJwt } from "../utils/parseJwt.ts";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks.ts";
 import { authSelect, setAuth, setInitialAuth } from "../slice/authSlice.ts";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 
 export const useProcesses = () => {
   const { address, isConnected } = useWeb3ModalAccount();
@@ -72,6 +72,7 @@ export const useProcesses = () => {
   const processAuth = useCallback(async () => {
     console.log("isConnected:", isConnected);
     console.log("auth.isAuthorized:", auth.isAuthorized);
+    
 
     if (isConnected && !auth.isAuthorized) {
       console.log("Starting authorization process...");
@@ -86,11 +87,11 @@ export const useProcesses = () => {
     }
   }, [isConnected, auth.isAuthorized, fetchNonce, dispatch]);
 
-  // useEffect(() => {
-  //   if (!isConnected) {
-  //     dispatch(setInitialAuth());
-  //   }
-  // }, [isConnected]);
+  useEffect(() => {
+    if (!isConnected) {
+      dispatch(setInitialAuth());
+    }
+  }, [isConnected]);
 
   useEffect(() => {
     if (isConnected && !auth.isAuthorized) {

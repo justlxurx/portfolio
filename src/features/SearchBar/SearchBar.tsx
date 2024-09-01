@@ -32,7 +32,7 @@ export const SearchBar = ({
         placeholder="Type to search..."
         className={s.searchInput}
         style={{ color: `${color}`, fontSize: `${fontSize}` }}
-        // value={val}
+        value={val}
         onChange={(e) => handleChange(e.target.value)}
       />
       <FaSearch id={s.searchIcon} color={`${iconColor}`} />

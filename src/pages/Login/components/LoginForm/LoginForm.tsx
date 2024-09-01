@@ -22,9 +22,9 @@ export const LoginForm = () => {
       try {
         await processAuth();
         console.log("User successfully logged in or registered" + auth);
-        if (auth) {
-          navigate("/dashboard");
-        }
+        // if (auth) {
+        //   navigate("/dashboard");
+        // }
         // window.location.href = "/dashboard";
       } catch (err) {
         console.error("Login/registration failed:", err);

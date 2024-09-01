@@ -6,40 +6,86 @@ import { MainTable } from "./MainTable/MainTable";
 import { filteredPropertyAPI } from "../../../api/property/filteredProperty";
 import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { sortProperties } from "../../../utils/sort";
 
 export const AdminProperties = () => {
   const manage = managePropertyApi;
-  // const dispatch = useDispatch();
   const [val, setVal] = useState("");
   const [properties, setProperties] = useState([]);
+  const [sortCriteria, setSortCriteria] = useState("name");
 
-  const item = [{ title: "Name" }, { title: "Desc" }];
+  const item = [
+    { title: "name", name: "name" },
+    { title: "location", name: "location" },
+    { title: "price", name: "maxTokenPrice" },
+    // { title: "", name: "constructionStatus" },
+    // { title: "", name: "isOnSecondaryMarket" },
+    // { title: "", name: "landType" },
+    // { title: "",  name:"limit"},
+    // { title: "", name: "maxBalconies" },
+    // { title: "", name: "maxBathrooms" },
+    // { title: "", name: "maxBedrooms" },
+    // { title: "", name: "maxCompletionDate" },
+    // { title: "", name: "maxGarage" },
+    // { title: "", name: "maxKitchens" },
+    // { title: "", name: "maxLandArea" },
+    // { title: "", name: "maxLeaseholdYears" },
+    // { title: "", name: "maxLandArea" },
+    // { title: "", name: "maxLivingRooms" },
+    // { title: "", name: "maxPropertyArea" },
+    // { title: "", name: "maxPropertyArea" },
+  ];
 
-  // useEffect(() => {
-  //   if (val) {
-  //     dispatch(filteredPropertyAPI.filter(val));
-  //   }
-  // }, [val, dispatch]);
+  const handleSort = (name: string) => {
+    setSortCriteria(name);
+  };
 
-  const handleChange = (value: any) => {
+  const t = sortProperties(properties, sortCriteria);
+
+  const handleChange = async (value: any) => {
     setVal(value);
+
+    for (const filter of item) {
+      if (filter.name && value) {
+        try {
+          const response = await filteredPropertyAPI.filter({
+            offset: 0,
+            limit: 100,
+            [filter.name]: value,
+          });
+
+          if (response !== null && response.length > 0) {
+            setProperties(response);
+            break;
+          } else {
+            setProperties([]);
+          }
+        } catch (error) {
+          console.error(
+            `Failed to fetch properties using ${filter.name}`,
+            error
+          );
+        }
+      }
+    }
   };
 
   useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const response = await filteredPropertyAPI.filter({
-          offset: 0,
-          limit: 0,
-        });
-        setProperties(response);
-      } catch (error) {
-        console.error("Failed to fetch properties", error);
-      }
-    };
+    if (val === "") {
+      const fetchProperties = async () => {
+        try {
+          const response = await filteredPropertyAPI.filter({
+            offset: 0,
+            limit: 1000,
+          });
+          setProperties(response);
+        } catch (error) {
+          console.error("Failed to fetch properties", error);
+        }
+      };
 
-    fetchProperties();
+      fetchProperties();
+    }
   }, [val]);
 
   return (
@@ -71,7 +117,11 @@ export const AdminProperties = () => {
             </div>
             <div className={s.dropdown__bottom}>
               {item.map((a, index) => (
-                <button className={s.dropdown__botton} key={index}>
+                <button
+                  className={s.dropdown__botton}
+                  key={index}
+                  onClick={() => handleSort(a.title)}
+                >
                   {a.title}
                 </button>
               ))}
@@ -81,7 +131,7 @@ export const AdminProperties = () => {
 
         <div className={s.main__table}>
           <MainTable
-            properties={properties}
+            properties={t}
             updateProp={() => {}}
             deleteProp={manage.delete}
           />

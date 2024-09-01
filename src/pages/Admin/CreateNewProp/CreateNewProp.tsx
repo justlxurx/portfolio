@@ -6,7 +6,7 @@ import home from "../../../assets/icons/home.svg";
 import dollar from "../../../assets/icons/dollar.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
 import { property, initVal } from "./data";
@@ -105,34 +105,57 @@ export const CreateNewProp = () => {
       try {
         const result = await managePropertyApi.create(formattedValues);
         setPropertyId(result.id);
+        // await uploadImages();
 
         alert("Property created successfully");
 
-        await uploadImages();
-
-        navigate("/admin/properties");
+        // navigate("/admin/properties");
         console.log(result);
+        console.log("result id:" + result.id);
       } catch (err) {
         console.error("Error when trying to create property:", err);
       }
     },
   });
 
-  const uploadImages = async () => {
-    for (const file of fileList) {
-      if (file.status !== "uploading" && propertyId) {
-        try {
-          const formData = new FormData();
-          formData.append("file", file.originFileObj as Blob);
+  // const uploadImages = async () => {
+  //   for (const file of fileList) {
+  //     if (file.status !== "uploading" && propertyId) {
+  //       try {
+  //         const formData = new FormData();
+  //         formData.append("file", file.originFileObj as Blob);
 
-          await manageImgApi.uploadImg(propertyId, formData);
-          console.log("Image uploaded successfully");
-        } catch (error) {
-          console.error("Image upload failed", error);
+  //         await manageImgApi.uploadImg(propertyId, formData);
+  //         console.log("Image uploaded successfully");
+  //       } catch (error) {
+  //         console.error("Image upload failed", error);
+  //       }
+  //     }
+  //   }
+  // };
+  useEffect(() => {
+    const fetchUploadImg = async () => {
+      if (!propertyId) {
+        console.warn("No property ID available for uploading images");
+        return;
+      }
+
+      for (const file of fileList) {
+        if (file.status !== "uploading") {
+          try {
+            const formData = new FormData();
+            formData.append("file", file.originFileObj as Blob);
+
+            await manageImgApi.uploadImg(propertyId, formData);
+            console.log("Image uploaded successfully");
+          } catch (error) {
+            console.error("Image upload failed", error);
+          }
         }
       }
-    }
-  };
+    };
+    fetchUploadImg();
+  }, [propertyId]);
 
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setFileList(newFileList);

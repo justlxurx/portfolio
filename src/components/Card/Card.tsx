@@ -14,7 +14,7 @@ export const Card = ({
   name: string;
   img: any;
   country: string;
-  price: string;
+  price: string | number;
   rental: string;
   capital: string;
 }) => {

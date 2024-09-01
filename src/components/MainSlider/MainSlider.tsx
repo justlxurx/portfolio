@@ -13,12 +13,22 @@ import { filteredPropertyAPI } from "../../api/property/filteredProperty";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+interface Property {
+  id: number;
+  name: string;
+  token_price: string;
+  location: string;
+  main_image_url: string;
+  rental: string;
+  capital: string;
+}
+
 export const MainSlider = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Property[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await filteredPropertyAPI.filter({ offset: 0, limit: 0 });
+        const res = await filteredPropertyAPI.filter({ offset: 0, limit: 100 });
         setData(res);
         console.log(res);
       } catch (err) {

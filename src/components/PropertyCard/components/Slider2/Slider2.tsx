@@ -11,20 +11,9 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
   const items = [
-    <div
-      className={s.apartment__img1}
-      style={{
-        backgroundImage: `url(10-AdminBackground.png053a3a33-1e8c-444b-8d87-b3ee2076450e)`,
-      }}
-    ></div>,
-    <img
-      src="https://estate.hotcode.kz/images/10-AdminBackground.png053a3a33-1e8c-444b-8d87-b3ee2076450e"
-      alt=""
-    />,
     <div className={s.apartment__img2}></div>,
     <div className={s.apartment__img3}></div>,
     <div className={s.apartment__img4}></div>,
-    <div className={s.apartment__img1}></div>,
     <div className={s.apartment__img2}></div>,
     <div className={s.apartment__img3}></div>,
     <div className={s.apartment__img4}></div>,
@@ -46,11 +35,14 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
   return (
     <div className={s.outer}>
       <div className={s.apartment__wrap}>
-        <p className={s.apartment__name}>{/* {data.name} */}</p>
+        <p className={s.apartment__name}>
+          {/* {data.name} */}
+          Property 1
+        </p>
         <div className={s.apartment__country}>
           <img src={Cancun} alt="Cancun" className={s.apartment__countryFlag} />
           <p className={s.apartment__countryName}>
-            {/* Cancun, Mexico */}
+            Cancun, Mexico
             {/* {data.location} */}
           </p>
         </div>

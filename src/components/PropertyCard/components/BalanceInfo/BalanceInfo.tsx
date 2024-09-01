@@ -5,12 +5,37 @@ import {
   useWeb3ModalProvider,
 } from "@web3modal/ethers/react";
 import { useState, useEffect } from "react";
+import { formatEther, formatUnits, isError } from "ethers";
 
 export const BalanceInfo = () => {
   const { address, isConnected } = useWeb3ModalAccount();
   const { smarts } = useSmarts();
   const { walletProvider } = useWeb3ModalProvider();
   const [payableBalance, setPayableBalance] = useState<string>("0");
+  // const [buyOption, setBuyOption] = useState<"ETH" | "USDT">("ETH");
+
+  // useEffect(() => {
+  //   if (isConnected) {
+  //     // if (buyOption === "ETH") {
+  //     walletProvider!
+  //       .request({
+  //         method: "eth_getBalance",
+  //         params: [address, "latest"],
+  //       })
+  //       .then((res) => setPayableBalance(formatEther(res)))
+  //       .catch(console.error);
+  //     // } else {
+  //     //   // smarts?.usdt.balanceOf(address!).then((res) => setPayableBalance(res));
+  //     // }
+  //   }
+  // }, [
+  //   isConnected,
+  //   buyOption,
+  //   walletProvider,
+  //   address,
+  //   // smarts,=
+  // ]);
+
   useEffect(() => {
     if (isConnected) {
       smarts?.usdt.balanceOf(address!).then((res) => setPayableBalance(res));
