@@ -1,4 +1,4 @@
 export const Chains = {
-  Mainnet: 1,
+  Mainnet: 137,
   Testnet: 11155111,
 };

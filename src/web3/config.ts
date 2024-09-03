@@ -6,19 +6,19 @@ const projectId = import.meta.env.VITE_WALLET_CONNECT_ID as string;
 
 // 2. Set chains
 const chains = [
-  // {
-  //   chainId: Chains.Mainnet,
-  //   name: "Ethereum Mainnet",
-  //   currency: "ETH",
-  //   explorerUrl: "https://etherscan.io/",
-  //   rpcUrl: "https://ethereum-rpc.publicnode.com",
-  // },
+  {
+    chainId: Chains.Mainnet,
+    name: "Polygon Mainnet",
+    currency: "POL",
+    explorerUrl: "https://polygonscan.com/",
+    rpcUrl: "https://endpoints.omniatech.io/v1/matic/mainnet/public",
+  },
   {
     chainId: Chains.Testnet,
-    name: "Sepolia Test Netwok",
-    currency: "SepoliaETH",
-    explorerUrl: "https://sepolia.etherscan.io/",
-    rpcUrl: "https://1rpc.io/sepolia",
+    name: "Polygon zkEVM Testnet",
+    currency: "ETH",
+    explorerUrl: "https://explorer.public.zkevm-test.net",
+    rpcUrl: "https://endpoints.omniatech.io/v1/polygon-zkevm/testnet/public	",
   },
 ];
 
