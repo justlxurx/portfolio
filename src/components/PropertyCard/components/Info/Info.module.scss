@@ -119,6 +119,7 @@
 .apartment__list {
   display: flex;
   gap: 9.46px;
+  flex-wrap: wrap;
 }
 
 .apartment__listItem {

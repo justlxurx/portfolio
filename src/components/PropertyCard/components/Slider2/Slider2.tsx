@@ -10,20 +10,27 @@ import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
-  const items = [
-    <div className={s.apartment__img2}></div>,
-    <div className={s.apartment__img3}></div>,
-    <div className={s.apartment__img4}></div>,
-    <div className={s.apartment__img2}></div>,
-    <div className={s.apartment__img3}></div>,
-    <div className={s.apartment__img4}></div>,
-  ];
+  const [img, setImg] = useState([]);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  console.log("img is" + img);
+  // const items = [
+  //   <div className={s.apartment__img1}>
+  //     <img src={`${img ? img[0].image_url : ""}`} alt="" />
+  //   </div>,
+  //   <div className={s.apartment__img2}></div>,
+  //   <div className={s.apartment__img3}></div>,
+  //   <div className={s.apartment__img4}></div>,
+  //   <div className={s.apartment__img2}></div>,
+  //   <div className={s.apartment__img3}></div>,
+  //   <div className={s.apartment__img4}></div>,
+  // ];
 
   useEffect(() => {
     const fetch = async () => {
       try {
         const a = await manageImgApi.getImg(id);
+        setImg(a);
         console.log("response is " + a);
       } catch (err) {
         console.log(err);
@@ -36,14 +43,14 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
     <div className={s.outer}>
       <div className={s.apartment__wrap}>
         <p className={s.apartment__name}>
-          {/* {data.name} */}
-          Property 1
+          {data.name}
+          {/* Property 1 */}
         </p>
         <div className={s.apartment__country}>
           <img src={Cancun} alt="Cancun" className={s.apartment__countryFlag} />
           <p className={s.apartment__countryName}>
-            Cancun, Mexico
-            {/* {data.location} */}
+            {/* Cancun, Mexico */}
+            {data.location}
           </p>
         </div>
       </div>
@@ -59,8 +66,21 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
           modules={[FreeMode, Navigation, Thumbs]}
           className={s.swiperTop}
         >
-          {items.map((a, index) => (
+          {/* {items.map((a, index) => (
             <SwiperSlide key={index}>{a}</SwiperSlide>
+          ))} */}
+
+          {img.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className={s.apartment__img1}
+                style={{
+                  backgroundImage: item.image_url
+                    ? `url(https://minio.estate.kz/${item.image_url})`
+                    : "",
+                }}
+              ></div>
+            </SwiperSlide>
           ))}
         </Swiper>
 
@@ -73,9 +93,29 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
           modules={[FreeMode, Navigation, Thumbs]}
           className={s.swiperBottom}
         >
-          {items.map((a, index) => (
+          {/* {items.map((a, index) => (
             <SwiperSlide key={index}>
               <div className={s.apartment__images}>{a}</div>
+            </SwiperSlide>
+          ))} */}
+
+          {img.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className={s.apartment__images}>
+                <div
+                  className={s.apartment__img1}
+                  style={{
+                    backgroundImage: item.image_url
+                      ? `url(https://minio.estate.kz/${item.image_url})`
+                      : "",
+                  }}
+                >
+                  {/* <img
+                    src={`https://minio.estate.kz/${item.image_url}`}
+                    alt=""
+                  /> */}
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

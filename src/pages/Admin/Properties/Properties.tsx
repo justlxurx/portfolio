@@ -7,8 +7,10 @@ import { filteredPropertyAPI } from "../../../api/property/filteredProperty";
 import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useState, useEffect } from "react";
 import { sortProperties } from "../../../utils/sort";
+import { manageImgApi } from "../../../api/property/manageImg";
 
 export const AdminProperties = () => {
+  const manageImg = manageImgApi;
   const manage = managePropertyApi;
   const [val, setVal] = useState("");
   const [properties, setProperties] = useState([]);
@@ -39,7 +41,6 @@ export const AdminProperties = () => {
   const handleSort = (name: string) => {
     setSortCriteria(name);
   };
-
   const t = sortProperties(properties, sortCriteria);
 
   const handleChange = async (value: any) => {
@@ -70,23 +71,35 @@ export const AdminProperties = () => {
     }
   };
 
+  const fetchProperties = async () => {
+    try {
+      const response = await filteredPropertyAPI.filter({
+        offset: 0,
+        limit: 1000,
+      });
+      setProperties(response);
+    } catch (error) {
+      console.error("Failed to fetch properties", error);
+    }
+  };
+
   useEffect(() => {
     if (val === "") {
-      const fetchProperties = async () => {
-        try {
-          const response = await filteredPropertyAPI.filter({
-            offset: 0,
-            limit: 1000,
-          });
-          setProperties(response);
-        } catch (error) {
-          console.error("Failed to fetch properties", error);
-        }
-      };
-
       fetchProperties();
     }
   }, [val]);
+
+  const handleDeleteProperty = async (id: number) => {
+    try {
+      // await manageImg.(id);
+      await manage.delete(id);
+      fetchProperties(); // Обновляем список свойств после удаления
+      alert("Deleted successfully");
+    } catch (error) {
+      console.error("Failed to delete property", error);
+      alert("Failed to delete property");
+    }
+  };
 
   return (
     <div className={s.main}>
@@ -133,7 +146,7 @@ export const AdminProperties = () => {
           <MainTable
             properties={t}
             updateProp={() => {}}
-            deleteProp={manage.delete}
+            deleteProp={handleDeleteProperty}
           />
         </div>
       </div>

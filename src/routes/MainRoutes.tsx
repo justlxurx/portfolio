@@ -8,6 +8,7 @@ import { LoginForm } from "../pages/Admin/Login/LoginForm/LoginForm";
 import { AdminLayout } from "../layouts/AdminLayout/AdminLayout";
 import { AdminProperties } from "../pages/Admin/Properties/Properties";
 import { CreateNewProp } from "../pages/Admin/CreateNewProp/CreateNewProp";
+import { EditProp } from "../pages/Admin/EditProperty/EditProperty";
 
 export const MainRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const MainRoutes = () => {
         <Route path="/admin/properties" element={<AdminProperties />} />
       </Route>
       <Route path="/admin/properties/create-new" element={<CreateNewProp />} />
+      <Route path="/admin/properties/update/:id" element={<EditProp />} />
     </Routes>
   );
 };

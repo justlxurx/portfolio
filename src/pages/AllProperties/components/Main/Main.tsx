@@ -29,6 +29,7 @@ export const Properties = () => {
     setSortCriteria(name);
   };
   const t = sortProperties(properties, sortCriteria);
+
   useEffect(() => {
     const fetchProperties = async () => {
       try {
@@ -43,7 +44,7 @@ export const Properties = () => {
     };
 
     fetchProperties();
-  }, []);
+  }, [val]);
 
   const handleChange = async (value: any) => {
     setVal(value);

@@ -1,4 +1,4 @@
-import s from "./CreateNewProp.module.scss";
+import s from "./EditProperty.module.scss";
 import { Logo } from "../../../assets/icons/logo";
 import Input from "../../../features/Input2/Input";
 import info from "../../../assets/icons/info.svg";
@@ -9,27 +9,45 @@ import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
-import { property, initVal } from "./data";
+import { property } from "../CreateNewProp/data";
 import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useNavigate } from "react-router-dom";
 import type { UploadFile, UploadProps } from "antd";
 import { manageImgApi } from "../../../api/property/manageImg";
 import type { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
+import { useLocation } from "react-router-dom";
 
-export const CreateNewProp = () => {
+export const EditProp = () => {
+  const location = useLocation().pathname;
+  const parts = location.split("/");
+  const id = Number(parts.pop() || "");
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [propertyId, setPropertyId] = useState<number>(0);
   const navigate = useNavigate();
   const [nft, setNft] = useState(0);
+  const [apartNum, setApartNum] = useState(0);
+  const [mainImg, setMainImg] = useState("");
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const fetchedData = async () => {
+      try {
+        const data = await managePropertyApi.get(id);
+        setData(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchedData();
+  }, [id]);
+
   const handleIssueNFT = async () => {
     event?.preventDefault();
     const total =
       Number(formik.values.nftQuantity) * Number(formik.values.nftPrice);
     setNft(total);
   };
-  const [apartNum, setApartNum] = useState(0);
-  const [mainImg, setMainImg] = useState("");
 
   const addNew = () => {
     event?.preventDefault();
@@ -37,14 +55,31 @@ export const CreateNewProp = () => {
   };
 
   const formik = useFormik({
-    initialValues: initVal,
+    enableReinitialize: true,
+    initialValues: {
+      name: data.name,
+      location: data.location,
+      investment: "",
+      aboutProperty: data.description,
+      price: data.token_price,
+      rentalReturn: "",
+      capitalAprec: "",
+      nftQuantity: data.tokens_available,
+      nftPrice: data.token_price,
+      beds: data.bedrooms,
+      bath: data.bathrooms,
+      rooms: data.total_rooms,
+      kitchen: data.kitchens,
+      livingRooms: data.living_rooms,
+      terrace: data.terraces,
+      balcon: data.balconies,
+      garage: data.garages,
+      size: data.property_area,
+      type: data.property_type,
+    },
     validationSchema: Yup.object({
-      name: Yup.string()
-        // .matches(/^[A-Za-zА-Яа-яЁё]+$/, ``)
-        .required(`Name is required`),
-      location: Yup.string()
-        // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
-        .required("Location is required"),
+      name: Yup.string().required(`Name is required`),
+      location: Yup.string().required("Location is required"),
       investment: Yup.string().required(`Investment Appeal is required`),
       aboutProperty: Yup.string().required("About the Property is required"),
       price: Yup.number().required("required"),
@@ -65,12 +100,10 @@ export const CreateNewProp = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       event?.preventDefault();
-
       const formattedValues = {
         token_price: Number(values.nftPrice),
         tokens_available: Number(values.nftQuantity),
         total_tokens: Number(values.nftQuantity),
-
         balconies: Number(values.balcon),
         bathrooms: Number(values.bath),
         bedrooms: Number(values.beds),
@@ -79,14 +112,11 @@ export const CreateNewProp = () => {
         living_rooms: Number(values.livingRooms),
         terraces: Number(values.terrace),
         total_rooms: Number(values.rooms),
-
         property_area: Number(values.size),
         property_type: values.type,
-
         description: values.aboutProperty,
         location: values.location,
         name: values.name,
-
         // construction_status: "",
         expected_apr: 0,
         expected_irr: 0,
@@ -103,11 +133,9 @@ export const CreateNewProp = () => {
       };
 
       try {
-        const result = await managePropertyApi.create(formattedValues);
+        const result = await managePropertyApi.update(id, formattedValues);
         setPropertyId(result.id);
-
-        alert("Property created successfully");
-
+        alert("Property updated successfully");
         navigate("/admin/properties");
         console.log(result);
         console.log("result id:" + result.id);
@@ -162,15 +190,13 @@ export const CreateNewProp = () => {
     }
   };
 
-  console.log("main img is " + mainImg);
-
   return (
     <div className={s.main}>
       <div className={s.logo}>
         <Logo color="rgba(24, 39, 67, 1)" />
       </div>
       <div className={s.main__content}>
-        <h1 className={s.main__title}>Create new property</h1>
+        <h1 className={s.main__title}>Edit property</h1>
         <form className={s.mainForm} onSubmit={formik.handleSubmit}>
           <div>
             <Input

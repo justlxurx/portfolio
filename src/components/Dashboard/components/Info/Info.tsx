@@ -15,7 +15,9 @@ export const Info = () => {
 
   useEffect(() => {
     if (isConnected) {
-      smarts?.usdt.balanceOf(address!).then((res) => setPayableBalance(res));
+      smarts?.realEstate
+        .balanceOf(address!)
+        .then((res) => setPayableBalance(res));
     }
   }, [isConnected, walletProvider, address, smarts]);
 

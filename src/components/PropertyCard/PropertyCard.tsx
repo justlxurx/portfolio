@@ -28,11 +28,11 @@ export const PropertyCard = () => {
     <>
       <div className={`${s.main} container`}>
         <div className={s.main__left}>
-          <SliderSection2 id={id} data={data} />
-          <Info />
+          <SliderSection2 id={id} data={data ? data : ""} />
+          <Info data={data ? data : ""} />
         </div>
         <div className={s.main__right}>
-          <MainForm />
+          <MainForm data={data ? data : ""} />
         </div>
       </div>
     </>

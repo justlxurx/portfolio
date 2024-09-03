@@ -1,17 +1,19 @@
 import s from "./MainTable.module.scss";
 import edit from "../../../../assets/icons/edit.svg";
 import trash from "../../../../assets/icons/trash.svg";
+import { formatDate } from "../../../../utils/formatData";
+import gift from "../../../../assets/icons/gift.svg";
+import { Link } from "react-router-dom";
 
-// interface Property {
-//   id: number;
-//   name: string;
-//   location: string;
-//   token_price: number;
-//   date: string;
-//   rental: string;
-//   capital: string;
-//   created_at: string;
-// }
+interface Property {
+  id: number;
+  name: string;
+  location: string;
+  token_price: number;
+  rental: string;
+  capital: string;
+  created_at: string;
+}
 
 interface MainTableProps {
   properties: Property[];
@@ -32,14 +34,19 @@ export const MainTable = ({
             <th className={s.firstColumnItem}>Name</th>
             <th>Location</th>
             <th>Price</th>
-            <th>Date of publication</th>
             <th>
-              Estimated Rental <br /> Return
+              Date of <br /> publication
             </th>
             <th>
-              Estimated Capital <br /> Appreciation
+              Distribute <br /> rewards
             </th>
             <th>Manage</th>
+            <th>
+              Dividend <br /> date
+            </th>
+            <th>
+              Dividend <br /> status
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -56,17 +63,22 @@ export const MainTable = ({
                 <td className={s.firstColumnItem}>{data.name}</td>
                 <td>{data.location}</td>
                 <td>{data.token_price} $</td>
-                <td>{data.created_at.replace("T", " ").split(".")[0]}</td>
-                <td>{data.rental}</td>
-                <td>{data.capital}</td>
+                <td>{formatDate(data.created_at)}</td>
+                <td>
+                  <button className={s.giftButton}>
+                    <img src={gift} alt="gift" />
+                  </button>
+                </td>
                 <td>
                   <div className={s.buttons}>
-                    <button
-                      className={s.manageButton}
-                      onClick={() => updateProp(index)}
-                    >
-                      Edit <img src={edit} alt="edit" />
-                    </button>
+                    <Link to={`/admin/properties/update/${data.id}`}>
+                      <button
+                        className={s.manageButton}
+                        // onClick={() => updateProp(index)}
+                      >
+                        Edit <img src={edit} alt="edit" />
+                      </button>
+                    </Link>
                     <button
                       className={s.manageButton}
                       onClick={() => deleteProp(data.id)}
@@ -75,6 +87,8 @@ export const MainTable = ({
                     </button>
                   </div>
                 </td>
+                <td>01/01/2024</td>
+                <td>distributed</td>
               </tr>
             ))}
         </tbody>

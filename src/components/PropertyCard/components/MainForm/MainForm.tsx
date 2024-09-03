@@ -3,9 +3,9 @@ import { Input } from "../../../../features/Input/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { BalanceInfo } from "../BalanceInfo/BalanceInfo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const MainForm = () => {
+export const MainForm = ({ data }: { data: any }) => {
   const getOutputPosition = () => {
     const min = 0;
     const max = 500;
@@ -29,7 +29,7 @@ export const MainForm = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(event.target.value);
     setValue(newValue);
-    setValueUsdt(newValue * 100);
+    setValueUsdt(newValue * data.token_price);
   };
   const getBackgroundStyle = () => {
     const percentage = (value / 500) * 100; // Вычисляем процент заполнения
@@ -41,27 +41,7 @@ export const MainForm = () => {
       )`,
     };
   };
-  //   const formik = useFormik({
-  //     initialValues: {
-  //       amount: 0,
-  //     },
-  //     validationSchema: Yup.object({
-  //       amount: Yup.number()
-  //         // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, 'Only number')
-  //         .required(),
-  //     }),
-  //     onSubmit: async (values) => {
-  //       try {
-  //          if (response.error) {
-  //            console.error("Ошибка в ответе сервера:", response.error);
-  //          } else {
-  //            resetForm();
-  //          }
-  //       } catch (error) {
-  //         console.error("Error submitting form:", error);
-  //       }
-  //     },
-  //   });
+
   return (
     <div className={s.main}>
       <BalanceInfo />
@@ -84,6 +64,7 @@ export const MainForm = () => {
               id="volume"
               style={{
                 left: `${getOutputPosition()}px`,
+                // left: `${getOutputPosition(value, 0, 500)}px`,
                 transform: `${
                   value == 0 ? "translateX(0%)" : " translateX(-50%)"
                 }`,
@@ -111,7 +92,7 @@ export const MainForm = () => {
               style={{
                 left: ` ${getOutputPosition()}px`,
                 transform: `${
-                  value == 0 ? "translateX(0%)" : " translateX(-50%)"
+                  valueUsdt == 0 ? "translateX(0%)" : " translateX(-50%)"
                 }`,
               }}
             >
@@ -121,7 +102,7 @@ export const MainForm = () => {
               type="range"
               id={s.usdt}
               min="0"
-              max={"50000"}
+              max={data.token_price * 500}
               value={valueUsdt}
               onChange={handleChange}
               step={"1"}
@@ -136,3 +117,25 @@ export const MainForm = () => {
     </div>
   );
 };
+
+//   const formik = useFormik({
+//     initialValues: {
+//       amount: 0,
+//     },
+//     validationSchema: Yup.object({
+//       amount: Yup.number()
+//         // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, 'Only number')
+//         .required(),
+//     }),
+//     onSubmit: async (values) => {
+//       try {
+//          if (response.error) {
+//            console.error("Ошибка в ответе сервера:", response.error);
+//          } else {
+//            resetForm();
+//          }
+//       } catch (error) {
+//         console.error("Error submitting form:", error);
+//       }
+//     },
+//   });

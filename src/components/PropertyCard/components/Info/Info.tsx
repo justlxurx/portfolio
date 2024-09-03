@@ -3,10 +3,10 @@ import dollar from "../../../../assets/icons/dollar.svg";
 import home from "../../../../assets/icons/home.svg";
 import info from "../../../../assets/icons/info.svg";
 
-export const Info = () =>
+export const Info = ({ data }: { data: any }) =>
   // {data}:{data:any}
   {
-    const data = [
+    const data1 = [
       {
         title: "Complex and Infrastructure:",
         text: [
@@ -39,6 +39,18 @@ export const Info = () =>
     ];
     const apartment = ["1 Bed", "1 Bath", "49 m²", "Commerce"];
 
+    const renderListItem = (
+      quantity: number,
+      singular: string,
+      plural: string
+    ) => {
+      return quantity ? (
+        <li className={s.apartment__listItem}>
+          {quantity} {quantity === 1 ? singular : plural}
+        </li>
+      ) : null;
+    };
+
     return (
       <>
         <div className={s.apartment}>
@@ -48,11 +60,26 @@ export const Info = () =>
               <p className={s.apartment__aboutTitle}>About apartments</p>
             </div>
             <ul className={s.apartment__list}>
-              {apartment.map((index) => (
+              {renderListItem(data.bedrooms, "Bed", "Beds")}
+              {renderListItem(data.balconies, "Balcony", "Balconies")}
+              {renderListItem(data.bathrooms, "Bathroom", "Bathrooms")}
+              {renderListItem(data.kitchens, "Kitchen", "Kitchens")}
+              {renderListItem(data.garages, "Garage", "Garages")}
+              {renderListItem(data.living_rooms, "Living room", "Living rooms")}
+              {renderListItem(data.terraces, "Terrace", "Terraces")}
+              {data.property_area && (
+                <li className={s.apartment__listItem}>
+                  {data.property_area} m²
+                </li>
+              )}
+              {data.property_type && (
+                <li className={s.apartment__listItem}>{data.property_type}</li>
+              )}
+              {/* {apartment.map((index) => (
                 <li className={s.apartment__listItem} key={index}>
                   {index}
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
           <div className={s.apartment__about}>
@@ -62,10 +89,7 @@ export const Info = () =>
             </div>
             <div className={s.apartment__aboutPropertyWrap}>
               <p className={s.apartment__aboutPropertyText}>
-                A premium complex designed like a 5-star hotel, located on one
-                of the main streets in the highly sought-after Canggu area,
-                surrounded by rice fields, and just 7 minutes from the ocean and
-                world-famous beach clubs.
+                {data.description}
               </p>
             </div>
           </div>
@@ -86,7 +110,7 @@ export const Info = () =>
           </div>
         </div>
         <div className={s.main}>
-          {data.map((item, index) => (
+          {data1.map((item, index) => (
             <div key={index} className={s.info}>
               <h1 className={s.info__title}>{item.title}</h1>
               <ul className={s.info__list}>
