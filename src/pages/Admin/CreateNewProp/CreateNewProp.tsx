@@ -108,7 +108,6 @@ export const CreateNewProp = () => {
 
         alert("Property created successfully");
 
-        navigate("/admin/properties");
         console.log(result);
         console.log("result id:" + result.id);
       } catch (err) {
@@ -131,6 +130,7 @@ export const CreateNewProp = () => {
             formData.append("file", file.originFileObj as Blob);
 
             await manageImgApi.uploadImg(propertyId, formData);
+            navigate("/admin/properties");
             console.log("Image uploaded successfully");
           } catch (error) {
             console.error("Image upload failed", error);
@@ -161,8 +161,6 @@ export const CreateNewProp = () => {
       });
     }
   };
-
-  console.log("main img is " + mainImg);
 
   return (
     <div className={s.main}>

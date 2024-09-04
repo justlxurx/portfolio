@@ -70,18 +70,19 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
             <SwiperSlide key={index}>{a}</SwiperSlide>
           ))} */}
 
-          {img.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className={s.apartment__img1}
-                style={{
-                  backgroundImage: item.image_url
-                    ? `url(https://minio.hotcode.kz/${item.image_url})`
-                    : "",
-                }}
-              ></div>
-            </SwiperSlide>
-          ))}
+          {img &&
+            img.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className={s.apartment__img1}
+                  style={{
+                    backgroundImage: item.image_url
+                      ? `url(https://minio.hotcode.kz/${item.image_url})`
+                      : "",
+                  }}
+                ></div>
+              </SwiperSlide>
+            ))}
         </Swiper>
 
         <Swiper
@@ -99,25 +100,26 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
             </SwiperSlide>
           ))} */}
 
-          {img.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className={s.apartment__images}>
-                <div
-                  className={s.apartment__img1}
-                  style={{
-                    backgroundImage: item.image_url
-                      ? `url(https://minio.hotcode.kz/${item.image_url})`
-                      : "",
-                  }}
-                >
-                  {/* <img
+          {img &&
+            img.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className={s.apartment__images}>
+                  <div
+                    className={s.apartment__img1}
+                    style={{
+                      backgroundImage: item.image_url
+                        ? `url(https://minio.hotcode.kz/${item.image_url})`
+                        : "",
+                    }}
+                  >
+                    {/* <img
                     src={`https://minio.estate.kz/${item.image_url}`}
                     alt=""
                   /> */}
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>
