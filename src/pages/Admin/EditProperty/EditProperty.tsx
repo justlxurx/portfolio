@@ -1,7 +1,7 @@
 import s from "./EditProperty.module.scss";
 import { Logo } from "../../../assets/icons/logo";
 import Input from "../../../features/Input2/Input";
-import info from "../../../assets/icons/info.svg";
+import infoImg from "../../../assets/icons/info.svg";
 import home from "../../../assets/icons/home.svg";
 import dollar from "../../../assets/icons/dollar.svg";
 import { useFormik } from "formik";
@@ -17,13 +17,21 @@ import { manageImgApi } from "../../../api/property/manageImg";
 import type { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import { useLocation } from "react-router-dom";
+import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
+
+type Apartment = {
+  id: number;
+  charName: string;
+  charVal: string;
+};
 
 export const EditProp = () => {
+  const [apartments, setApartments] = useState<Apartment[]>([]);
+
   const location = useLocation().pathname;
   const parts = location.split("/");
   const id = Number(parts.pop() || "");
   const [fileList, setFileList] = useState<UploadFile[]>([]);
-  const [propertyId, setPropertyId] = useState<number>(0);
   const navigate = useNavigate();
   const [nft, setNft] = useState(0);
   const [apartNum, setApartNum] = useState(0);
@@ -40,6 +48,19 @@ export const EditProp = () => {
       }
     };
     fetchedData();
+  }, [id]);
+
+  useEffect(() => {
+    const fetchCharacteristic = async () => {
+      try {
+        const res = await characacteristicsApi.get(id);
+        setApartments(res); // Заполняем массив apartments полученными данными
+        console.log("Res: " + res);
+      } catch (err) {
+        console.log("Error when getting info :" + err);
+      }
+    };
+    fetchCharacteristic();
   }, [id]);
 
   const handleIssueNFT = async () => {
@@ -134,9 +155,8 @@ export const EditProp = () => {
 
       try {
         const result = await managePropertyApi.update(id, formattedValues);
-        setPropertyId(result.id);
+        // setPropertyId(result.id);
         alert("Property updated successfully");
-        navigate("/admin/properties");
         console.log(result);
         console.log("result id:" + result.id);
       } catch (err) {
@@ -147,7 +167,7 @@ export const EditProp = () => {
 
   useEffect(() => {
     const fetchUploadImg = async () => {
-      if (!propertyId) {
+      if (!id) {
         console.warn("No property ID available for uploading images");
         return;
       }
@@ -158,8 +178,9 @@ export const EditProp = () => {
             const formData = new FormData();
             formData.append("file", file.originFileObj as Blob);
 
-            await manageImgApi.uploadImg(propertyId, formData);
+            await manageImgApi.uploadImg(id, formData);
             console.log("Image uploaded successfully");
+            navigate("/admin/properties");
           } catch (error) {
             console.error("Image upload failed", error);
           }
@@ -167,7 +188,36 @@ export const EditProp = () => {
       }
     };
     fetchUploadImg();
-  }, [propertyId]);
+  }, [id]);
+
+  // const handleInputChange = (
+  //   index: number,
+  //   field: "charName" | "charVal",
+  //   value: string
+  // ) => {
+  //   const newApartments = [...apartments];
+  //   newApartments[index][field] = value; // Обновляем данные на основе индекса
+  //   setApartments(newApartments); // Обновляем состояние
+  // };
+
+  const handleInputChange = (
+    index: number,
+    field: "charName" | "charVal",
+    value: string
+  ) => {
+    // Создаем копию массива apartments
+    const newApartments = [...apartments];
+
+    // Обновляем нужное поле в элементе массива
+    if (field === "charName") {
+      newApartments[index].characteristic_name = value;
+    } else if (field === "charVal") {
+      newApartments[index].characteristic_value = value;
+    }
+
+    // Обновляем состояние, чтобы произошел ререндер
+    setApartments(newApartments);
+  };
 
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
@@ -235,7 +285,7 @@ export const EditProp = () => {
 
           <div className={s.apartmentWrap}>
             <div className={s.apartment}>
-              <img src={info} alt="info" className={s.apartment__img} />
+              <img src={infoImg} alt="info" className={s.apartment__img} />
               <p className={s.apartment__text}>About apartments</p>
             </div>
 
@@ -345,7 +395,7 @@ export const EditProp = () => {
             )}
           </div>
 
-          {Array.from({ length: apartNum }).map((_, a) => (
+          {/* {Array.from({ length: apartNum }).map((_, a) => (
             <div key={a} className={s.apartmentWrap}>
               <Input
                 className={s.mainForm__input2}
@@ -369,7 +419,38 @@ export const EditProp = () => {
                 ></textarea>
               </div>
             </div>
-          ))}
+          ))} */}
+          {apartments &&
+            apartments.map((apartment, a) => (
+              <div key={apartment.id} className={s.apartmentWrap}>
+                <Input
+                  color="black"
+                  className={s.mainForm__input2}
+                  title="Title"
+                  placeholder="Title"
+                  type="text"
+                  name={`charName-${a}`}
+                  onChange={(e) =>
+                    handleInputChange(a, "charName", e.target.value)
+                  }
+                  value={apartment.characteristic_name}
+                />
+                <p className={s.apartment__text}>Text</p>
+                <div className={s.apartment__info}>
+                  <textarea
+                    className={s.area}
+                    name={`charVal-${a}`}
+                    id={`property-${a}`}
+                    placeholder="Text area"
+                    rows={5}
+                    onChange={(e) =>
+                      handleInputChange(a, "charVal", e.target.value)
+                    }
+                    value={apartment.characteristic_value}
+                  ></textarea>
+                </div>
+              </div>
+            ))}
 
           <button className={s.addApartment} onClick={addNew}>
             + Add new characteristics

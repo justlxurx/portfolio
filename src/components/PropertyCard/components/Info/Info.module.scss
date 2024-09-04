@@ -1,6 +1,8 @@
 .main {
-  display: flex;
+  // display: flex;
   // flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   background: white;
   padding: 44.48px 32px;
   gap: 25px;

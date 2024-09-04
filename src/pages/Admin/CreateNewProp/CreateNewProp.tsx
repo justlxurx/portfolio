@@ -14,26 +14,39 @@ import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useNavigate } from "react-router-dom";
 import type { UploadFile, UploadProps } from "antd";
 import { manageImgApi } from "../../../api/property/manageImg";
+import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
 import type { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
+
+type Apartment = {
+  charName: string;
+  charVal: string;
+};
 
 export const CreateNewProp = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [propertyId, setPropertyId] = useState<number>(0);
   const navigate = useNavigate();
   const [nft, setNft] = useState(0);
+  const [apartNum, setApartNum] = useState(0);
+  const [characteristic, setCharacteristic] = useState<Apartment[]>([
+    { charName: "", charVal: "" },
+  ]);
+
+  const [mainImg, setMainImg] = useState("");
+
   const handleIssueNFT = async () => {
     event?.preventDefault();
     const total =
       Number(formik.values.nftQuantity) * Number(formik.values.nftPrice);
     setNft(total);
   };
-  const [apartNum, setApartNum] = useState(0);
-  const [mainImg, setMainImg] = useState("");
 
+  // add new inputs for characteristics
   const addNew = () => {
     event?.preventDefault();
     setApartNum(apartNum + 1);
+    setCharacteristic([...characteristic, { charName: "", charVal: "" }]);
   };
 
   const formik = useFormik({
@@ -107,7 +120,7 @@ export const CreateNewProp = () => {
         setPropertyId(result.id);
 
         alert("Property created successfully");
-
+        setTimeout(() => navigate("/admin/properties"), 3000);
         console.log(result);
         console.log("result id:" + result.id);
       } catch (err) {
@@ -130,7 +143,7 @@ export const CreateNewProp = () => {
             formData.append("file", file.originFileObj as Blob);
 
             await manageImgApi.uploadImg(propertyId, formData);
-            navigate("/admin/properties");
+
             console.log("Image uploaded successfully");
           } catch (error) {
             console.error("Image upload failed", error);
@@ -141,6 +154,53 @@ export const CreateNewProp = () => {
     fetchUploadImg();
   }, [propertyId]);
 
+  // useEffect(() => {
+  //   const fetchCharac = async () => {
+  //     const values = {
+  //       name: formik.values.charName,
+  //       value: formik.values.charVal,
+  //     };
+  //     try {
+  //       const res = await characacteristicsApi.create(propertyId, values);
+  //       console.log("charac: " + res);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   fetchCharac();
+  // }, [propertyId]);
+  useEffect(() => {
+    const fetchCharac = async () => {
+      try {
+        for (const char of characteristic) {
+          const values = {
+            name: char.charName,
+            value: char.charVal,
+          };
+          const res = await characacteristicsApi.create(propertyId, values);
+          console.log("charac: " + res);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    if (propertyId) {
+      fetchCharac();
+    }
+  }, [propertyId, characteristic]);
+
+  const handleInputChange = (
+    index: number,
+    field: "charName" | "charVal",
+    value: string
+  ) => {
+    const newApartments = [...characteristic];
+    newApartments[index][field] = value;
+    setCharacteristic(newApartments);
+  };
+
+  //file upload functions
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
     if (newFileList.length > 0) {
@@ -324,20 +384,26 @@ export const CreateNewProp = () => {
                 title="Title"
                 placeholder="Title"
                 type="text"
-                name="title"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
+                name={`charName-${a}`}
+                onChange={(e) =>
+                  handleInputChange(a, "charName", e.target.value)
+                }
                 color="black"
                 inputColor="rgba(29, 29, 29, 0.35)"
+                value={characteristic[a].charName}
               />
               <p className={s.apartment__text}>Text</p>
               <div className={s.apartment__info}>
                 <textarea
                   className={s.area}
-                  name="property"
+                  name={`charVal-${a}`}
                   id="property"
                   placeholder="Text area"
                   rows={5}
+                  onChange={(e) =>
+                    handleInputChange(a, "charVal", e.target.value)
+                  }
+                  value={characteristic[a].charVal}
                 ></textarea>
               </div>
             </div>
