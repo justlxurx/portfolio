@@ -76,7 +76,7 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
                 className={s.apartment__img1}
                 style={{
                   backgroundImage: item.image_url
-                    ? `url(https://minio.estate.kz/${item.image_url})`
+                    ? `url(https://minio.hotcode.kz/${item.image_url})`
                     : "",
                 }}
               ></div>
@@ -106,7 +106,7 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
                   className={s.apartment__img1}
                   style={{
                     backgroundImage: item.image_url
-                      ? `url(https://minio.estate.kz/${item.image_url})`
+                      ? `url(https://minio.hotcode.kz/${item.image_url})`
                       : "",
                   }}
                 >

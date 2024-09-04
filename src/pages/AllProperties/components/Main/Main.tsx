@@ -108,12 +108,12 @@ export const Properties = () => {
         {t.map((item, index) => (
           <Link key={index} to={`/properties/${item.id}`}>
             <Card
+              id={item.id}
               name={item.name}
               price={item.token_price}
               capital={""}
               rental={""}
               country={item.location}
-              img={item.main_image_url}
             />
           </Link>
         ))}

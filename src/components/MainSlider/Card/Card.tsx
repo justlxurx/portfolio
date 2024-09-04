@@ -1,6 +1,8 @@
 import s from "./Card.module.scss";
 import a from "../../../assets/images/img1.png";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { manageImgApi } from "../../../api/property/manageImg";
 
 export const Card = ({
   id,
@@ -19,6 +21,20 @@ export const Card = ({
   location: string;
   img: any;
 }) => {
+  const [mainImg, setMainImg] = useState();
+  useEffect(() => {
+    const fetchImg = async () => {
+      try {
+        const a = await manageImgApi.getImg(id);
+        setMainImg(a[0].image_url);
+        console.log("Изображение: " + a[0].image_url);
+      } catch (error) {
+        console.error("Failed to fetch properties", error);
+      }
+    };
+
+    fetchImg();
+  }, [id]);
   return (
     <Link to={`/properties/${id}`}>
       <div className={s.apartment}>
@@ -27,7 +43,11 @@ export const Card = ({
             Sold and Rented since APR 04. 2022
           </p>
         </div>
-        <img src={img} alt="img1" className={s.apartment__img} />
+        <img
+          src={`https://minio.hotcode.kz/${mainImg}`}
+          alt="img1"
+          className={s.apartment__img}
+        />
         <p className={s.apartment__info}>
           {/* Karra Loft 3A */}
           {location}
