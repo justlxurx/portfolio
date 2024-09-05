@@ -59,9 +59,11 @@ const DraggableUploadListItem = ({
 const UploadImg = ({
   onChange,
   onDragEnd,
+  onRemove,
   fileList,
 }: {
   onChange: (info: any) => void;
+  onRemove?: () => void;
   onDragEnd: ({ active, over }: DragEndEvent) => void;
   fileList: any;
 }) => {
@@ -76,7 +78,7 @@ const UploadImg = ({
         strategy={verticalListSortingStrategy}
       >
         <Upload
-          action={""}
+          onRemove={onRemove}
           fileList={fileList}
           onChange={onChange}
           itemRender={(originNode, file) => (
@@ -102,48 +104,17 @@ const UploadImg = ({
 
 export default UploadImg;
 
-// import React, { useState } from "react";
+// import { Button, Upload } from "antd";
 // import s from "./UploadImg.module.scss";
-// import { manageImgApi } from "../../api/property/manageImg"; // Импорт вашего API класса
 
-// interface UploadImgProps {
-//   id: number;
-// }
+// const uploadImg = ({ fileList }: { fileList: [] }) => (
+//   <Upload listType="picture" defaultFileList={fileList}  onChange={onChange}>
+//     <Button type="primary" icon={<UploadIcon />} className={s.button}>
+//       <p>
+//         Image size should be: 948*500, <br /> not more than 5MB
+//       </p>
+//     </Button>
+//   </Upload>
+// );
 
-// const UploadImg: React.FC<UploadImgProps> = ({ id }) => {
-//   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
-//   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     if (event.target.files && event.target.files.length > 0) {
-//       setSelectedFile(event.target.files[0]);
-//     }
-//   };
-
-//   const handleUpload = async () => {
-//     if (!selectedFile) {
-//       alert("Please select a file first!");
-//       return;
-//     }
-
-//     try {
-//       const formData = new FormData();
-//       formData.append("image", selectedFile);
-
-//       // Вызов API для загрузки изображения
-//       await manageImgApi.uploadImg(id, formData);
-//       alert("Image uploaded successfully!");
-//     } catch (error) {
-//       console.error("Image upload failed", error);
-//       alert("Image upload failed.");
-//     }
-//   };
-
-//   return (
-//     <div className={s.uploadImg}>
-//       <input type="file" onChange={handleFileChange} multiple />
-//       <button onClick={handleUpload}>Upload Image</button>
-//     </div>
-//   );
-// };
-
-// export default UploadImg;
+// export default uploadImg;

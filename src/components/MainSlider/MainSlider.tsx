@@ -78,19 +78,20 @@ export const MainSlider = () => {
             },
           }}
         >
-          {data.map((a, index) => (
-            <SwiperSlide key={index}>
-              <Card
-                id={a.id}
-                name={a.name}
-                location={a.location}
-                token_price={a.token_price}
-                rental={""}
-                capital={""}
-                img={a.main_image_url}
-              />
-            </SwiperSlide>
-          ))}
+          {data &&
+            data.map((a, index) => (
+              <SwiperSlide key={index}>
+                <Card
+                  id={a.id}
+                  name={a.name}
+                  location={a.location}
+                  token_price={a.token_price}
+                  rental={""}
+                  capital={""}
+                  img={a.main_image_url}
+                />
+              </SwiperSlide>
+            ))}
 
           <div className={`slider-controller ${s.sliderController}`}>
             <div className={`swiper-button-prev slider-arrow ${s.buttons}`}>

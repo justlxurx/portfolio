@@ -88,7 +88,7 @@ export const MainTable = ({
                   </div>
                 </td>
                 <td>01/01/2024</td>
-                <td>distributed</td>
+                <td>not distributed</td>
               </tr>
             ))}
         </tbody>

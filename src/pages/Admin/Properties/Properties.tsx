@@ -8,6 +8,7 @@ import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useState, useEffect } from "react";
 import { sortProperties } from "../../../utils/sort";
 import { manageImgApi } from "../../../api/property/manageImg";
+import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
 
 export const AdminProperties = () => {
   const manageImg = manageImgApi;
@@ -93,6 +94,7 @@ export const AdminProperties = () => {
     try {
       // await manageImg.(id);
       await manage.delete(id);
+      await characacteristicsApi.delete(id);
       fetchProperties(); // Обновляем список свойств после удаления
       alert("Deleted successfully");
     } catch (error) {

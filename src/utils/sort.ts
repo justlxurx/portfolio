@@ -13,6 +13,8 @@ export const sortProperties = (
   properties: Property[],
   sortCriteria: string
 ) => {
+  if (!properties) return []; // Возвращаем пустой массив, если properties = null или undefined
+
   return properties.slice().sort((a, b) => {
     let comparison = 0;
 

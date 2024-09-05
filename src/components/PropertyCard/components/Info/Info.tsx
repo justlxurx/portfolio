@@ -121,20 +121,24 @@ export const Info = ({ data, id }: { data: any; id: number }) => {
       </div>
       {info && (
         <div className={s.main}>
-          {info.map((item, index) => (
-            <div key={index} className={s.info}>
-              <h1 className={s.info__title}>{item.characteristic_name}</h1>
-              <ul className={s.info__list}>
-                {/* {item.text.map((a, index) => (
+          {info.map(
+            (item, index) =>
+              item.characteristic_name &&
+              item.characteristic_value && (
+                <div key={index} className={s.info}>
+                  <h1 className={s.info__title}>{item.characteristic_name}</h1>
+                  <ul className={s.info__list}>
+                    {/* {item.text.map((a, index) => (
                 <li key={index} className={s.info__listItem}>
                   <span className={s.circle}></span>
                   {a}
                 </li>
               ))} */}
-                {item.characteristic_value}
-              </ul>
-            </div>
-          ))}
+                    {item.characteristic_value}
+                  </ul>
+                </div>
+              )
+          )}
         </div>
       )}
     </>

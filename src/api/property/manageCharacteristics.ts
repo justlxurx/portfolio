@@ -1,7 +1,10 @@
-type PropertyReq = {
-  name: string;
-  value: string;
-};
+type PropertyReq = [
+  {
+    // id: number;
+    charName: string;
+    charVal: string;
+  }
+];
 
 class ManageCharacteristicsApi {
   async create(num: number, args: PropertyReq) {
@@ -50,9 +53,9 @@ class ManageCharacteristicsApi {
     return resJson;
   }
 
-  async update(id: number, args: PropertyReq) {
+  async update(args: PropertyReq) {
     const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/characteristic/${id}`,
+      `https://estate.hotcode.kz/v1/property/characteristic/update`,
       {
         method: "PUT",
         headers: {
@@ -74,6 +77,35 @@ class ManageCharacteristicsApi {
   }
 
   async delete(id: number) {
+    const res = await fetch(
+      `https://estate.hotcode.kz/v1/property/${id}/characteristic`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": `admin`,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Delete property is failed: ${errorText}`);
+    }
+
+    // Если ответ пустой, не пытайтесь парсить его как JSON
+    let resJson;
+    try {
+      resJson = await res.json();
+    } catch (error) {
+      resJson = null;
+    }
+
+    console.log(resJson || "Property deleted successfully");
+    return resJson;
+  }
+
+  async deleteOne(id: number) {
     const res = await fetch(
       `https://estate.hotcode.kz/v1/property/characteristic/${id}`,
       {

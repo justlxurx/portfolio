@@ -154,21 +154,6 @@ export const CreateNewProp = () => {
     fetchUploadImg();
   }, [propertyId]);
 
-  // useEffect(() => {
-  //   const fetchCharac = async () => {
-  //     const values = {
-  //       name: formik.values.charName,
-  //       value: formik.values.charVal,
-  //     };
-  //     try {
-  //       const res = await characacteristicsApi.create(propertyId, values);
-  //       console.log("charac: " + res);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   fetchCharac();
-  // }, [propertyId]);
   useEffect(() => {
     const fetchCharac = async () => {
       try {

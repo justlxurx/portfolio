@@ -3,7 +3,6 @@ import { Logo } from "../../../assets/icons/logo";
 import Input from "../../../features/Input2/Input";
 import infoImg from "../../../assets/icons/info.svg";
 import home from "../../../assets/icons/home.svg";
-import dollar from "../../../assets/icons/dollar.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
@@ -18,26 +17,29 @@ import type { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import { useLocation } from "react-router-dom";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
+import { Apartment, Apartment2 } from "./interface";
+// import dollar from "../../../assets/icons/dollar.svg";
 
-type Apartment = {
-  id: number;
-  charName: string;
-  charVal: string;
-};
+interface CustomUploadFile extends UploadFile {
+  imageId: number;
+}
 
 export const EditProp = () => {
-  const [apartments, setApartments] = useState<Apartment[]>([]);
-
+  const [characacteristic, setCharacacteristic] = useState<Apartment[]>([]);
+  const [addCharacacteristic, setAddCharacacteristic] = useState<Apartment2[]>(
+    []
+  );
+  // const [apartments, setApartments] = useState<Apartment[]>([]);
   const location = useLocation().pathname;
   const parts = location.split("/");
   const id = Number(parts.pop() || "");
-  const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const [fileList, setFileList] = useState<CustomUploadFile[]>([]);
   const navigate = useNavigate();
   const [nft, setNft] = useState(0);
-  const [apartNum, setApartNum] = useState(0);
   const [mainImg, setMainImg] = useState("");
   const [data, setData] = useState({});
 
+  //fetch all data
   useEffect(() => {
     const fetchedData = async () => {
       try {
@@ -50,11 +52,31 @@ export const EditProp = () => {
     fetchedData();
   }, [id]);
 
+  //delete empty characteristics
+  useEffect(() => {
+    const deleteProp = async () => {
+      try {
+        for (const char of characacteristic) {
+          if (
+            char.characteristic_name == "" &&
+            char.characteristic_value == ""
+          ) {
+            await characacteristicsApi.deleteOne(char.id);
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    deleteProp();
+  }, [characacteristic]);
+
+  //fetch characteristic
   useEffect(() => {
     const fetchCharacteristic = async () => {
       try {
         const res = await characacteristicsApi.get(id);
-        setApartments(res); // Заполняем массив apartments полученными данными
+        setCharacacteristic(res); // Заполняем массив apartments полученными данными
         console.log("Res: " + res);
       } catch (err) {
         console.log("Error when getting info :" + err);
@@ -63,6 +85,30 @@ export const EditProp = () => {
     fetchCharacteristic();
   }, [id]);
 
+  //fetch img
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const a = await manageImgApi.getImg(id);
+        if (a) {
+          const newFileList = a.map((img: any) => ({
+            name: img.image_url, // URL изображения
+            imageId: img.id,
+          }));
+
+          setFileList(newFileList);
+        }
+
+        console.log("img are: ", a);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetch();
+  }, [id]);
+
+  //give nft total sum
   const handleIssueNFT = async () => {
     event?.preventDefault();
     const total =
@@ -70,9 +116,16 @@ export const EditProp = () => {
     setNft(total);
   };
 
+  // add new characteristic button
   const addNew = () => {
     event?.preventDefault();
-    setApartNum(apartNum + 1);
+    const newCharact = {
+      characteristic_name: "",
+      characteristic_value: "",
+    };
+
+    // Добавляем новый объект в массив apartments и обновляем состояние
+    setAddCharacacteristic([...addCharacacteristic, newCharact]);
   };
 
   const formik = useFormik({
@@ -101,7 +154,7 @@ export const EditProp = () => {
     validationSchema: Yup.object({
       name: Yup.string().required(`Name is required`),
       location: Yup.string().required("Location is required"),
-      investment: Yup.string().required(`Investment Appeal is required`),
+      // investment: Yup.string().required(`Investment Appeal is required`),
       aboutProperty: Yup.string().required("About the Property is required"),
       price: Yup.number().required("required"),
       rentalReturn: Yup.string().required("equired"),
@@ -119,7 +172,7 @@ export const EditProp = () => {
       size: Yup.string().required("required"),
       type: Yup.string().required("required"),
     }),
-    onSubmit: async (values, { resetForm }) => {
+    onSubmit: async (values) => {
       event?.preventDefault();
       const formattedValues = {
         token_price: Number(values.nftPrice),
@@ -155,70 +208,68 @@ export const EditProp = () => {
 
       try {
         const result = await managePropertyApi.update(id, formattedValues);
-        // setPropertyId(result.id);
-        alert("Property updated successfully");
+        const charact = await characacteristicsApi.update(characacteristic);
+
+        for (const char of addCharacacteristic) {
+          const values = {
+            name: char.charName,
+            value: char.charVal,
+          };
+          const res = await characacteristicsApi.create(id, values);
+          console.log("charac: " + res);
+        }
+
+        for (const file of fileList) {
+          if (file.status !== "uploading") {
+            try {
+              const formData = new FormData();
+              formData.append("file", file.originFileObj as Blob);
+              await manageImgApi.uploadImg(id, formData);
+              console.log("Image uploaded successfully");
+              navigate("/admin/properties");
+            } catch (error) {
+              console.error("Image upload failed", error);
+            }
+          }
+        }
+
         console.log(result);
-        console.log("result id:" + result.id);
+        console.log(charact);
+        alert("Property updated successfully");
       } catch (err) {
         console.error("Error when trying to create property:", err);
       }
     },
   });
 
-  useEffect(() => {
-    const fetchUploadImg = async () => {
-      if (!id) {
-        console.warn("No property ID available for uploading images");
-        return;
-      }
-
-      for (const file of fileList) {
-        if (file.status !== "uploading") {
-          try {
-            const formData = new FormData();
-            formData.append("file", file.originFileObj as Blob);
-
-            await manageImgApi.uploadImg(id, formData);
-            console.log("Image uploaded successfully");
-            navigate("/admin/properties");
-          } catch (error) {
-            console.error("Image upload failed", error);
-          }
-        }
-      }
-    };
-    fetchUploadImg();
-  }, [id]);
-
-  // const handleInputChange = (
-  //   index: number,
-  //   field: "charName" | "charVal",
-  //   value: string
-  // ) => {
-  //   const newApartments = [...apartments];
-  //   newApartments[index][field] = value; // Обновляем данные на основе индекса
-  //   setApartments(newApartments); // Обновляем состояние
-  // };
-
+  //for update input change
   const handleInputChange = (
     index: number,
     field: "charName" | "charVal",
     value: string
   ) => {
-    // Создаем копию массива apartments
-    const newApartments = [...apartments];
+    const newCharact = [...characacteristic];
 
-    // Обновляем нужное поле в элементе массива
     if (field === "charName") {
-      newApartments[index].characteristic_name = value;
+      newCharact[index].characteristic_name = value;
     } else if (field === "charVal") {
-      newApartments[index].characteristic_value = value;
+      newCharact[index].characteristic_value = value;
     }
 
-    // Обновляем состояние, чтобы произошел ререндер
-    setApartments(newApartments);
+    setCharacacteristic(newCharact);
+  };
+  //for create input change
+  const handleInputChange2 = (
+    index: number,
+    field: "charName" | "charVal",
+    value: string
+  ) => {
+    const newApartments = [...addCharacacteristic];
+    newApartments[index][field] = value;
+    setAddCharacacteristic(newApartments);
   };
 
+  //for file change
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
     if (newFileList.length > 0) {
@@ -237,6 +288,24 @@ export const EditProp = () => {
         const overIndex = prev.findIndex((i) => i.uid === over?.id);
         return arrayMove(prev, activeIndex, overIndex);
       });
+    }
+  };
+
+  //remove img one to one
+  const onRemove = async (file: CustomUploadFile) => {
+    try {
+      const imageId = file.imageId; // получаем `imageId` из файла
+      if (imageId) {
+        const response = await characacteristicsApi.delete(imageId); // вызываем API для удаления
+        console.log("Remove action:", response);
+
+        // Обновляем список после удаления
+        setFileList((prevFileList) =>
+          prevFileList.filter((f) => f.imageId !== imageId)
+        );
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -345,6 +414,7 @@ export const EditProp = () => {
                     style={{
                       borderColor:
                         formik.touched.type && formik.errors.type ? "red" : "",
+                      width: "127px",
                     }}
                   />
                 </div>
@@ -374,7 +444,7 @@ export const EditProp = () => {
             )}
           </div>
 
-          <div className={s.apartmentWrap}>
+          {/* <div className={s.apartmentWrap}>
             <div className={s.apartment}>
               <img src={dollar} alt="dollar" className={s.apartment__img} />
               <p className={s.apartment__text}>Investment Appeal</p>
@@ -393,36 +463,11 @@ export const EditProp = () => {
             {formik.errors.investment && formik.touched.investment && (
               <p className={s.error}>{formik.errors.investment}</p>
             )}
-          </div>
+          </div> */}
 
-          {/* {Array.from({ length: apartNum }).map((_, a) => (
-            <div key={a} className={s.apartmentWrap}>
-              <Input
-                className={s.mainForm__input2}
-                title="Title"
-                placeholder="Title"
-                type="text"
-                name="title"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                color="black"
-                inputColor="rgba(29, 29, 29, 0.35)"
-              />
-              <p className={s.apartment__text}>Text</p>
-              <div className={s.apartment__info}>
-                <textarea
-                  className={s.area}
-                  name="property"
-                  id="property"
-                  placeholder="Text area"
-                  rows={5}
-                ></textarea>
-              </div>
-            </div>
-          ))} */}
-          {apartments &&
-            apartments.map((apartment, a) => (
-              <div key={apartment.id} className={s.apartmentWrap}>
+          {characacteristic &&
+            characacteristic.map((apartment, a) => (
+              <div key={a} className={s.apartmentWrap}>
                 <Input
                   color="black"
                   className={s.mainForm__input2}
@@ -447,6 +492,38 @@ export const EditProp = () => {
                       handleInputChange(a, "charVal", e.target.value)
                     }
                     value={apartment.characteristic_value}
+                  ></textarea>
+                </div>
+              </div>
+            ))}
+
+          {addCharacacteristic &&
+            addCharacacteristic.map((apartment, a) => (
+              <div key={a} className={s.apartmentWrap}>
+                <Input
+                  color="black"
+                  className={s.mainForm__input2}
+                  title="Title"
+                  placeholder="Title"
+                  type="text"
+                  name={`charName-${a}`}
+                  onChange={
+                    (e) => handleInputChange2(a, "charName", e.target.value) // используем флаг для дополнительных
+                  }
+                  value={apartment.charName}
+                />
+                <p className={s.apartment__text}>Text</p>
+                <div className={s.apartment__info}>
+                  <textarea
+                    className={s.area}
+                    name={`charVal-${a}`}
+                    id={`property-${a}`}
+                    placeholder="Text area"
+                    rows={5}
+                    onChange={
+                      (e) => handleInputChange2(a, "charVal", e.target.value) // используем флаг для дополнительных
+                    }
+                    value={apartment.charVal}
                   ></textarea>
                 </div>
               </div>
@@ -555,6 +632,7 @@ export const EditProp = () => {
               onChange={onChange}
               onDragEnd={onDragEnd}
               fileList={fileList}
+              onRemove={onRemove}
             />
           </div>
           <div className={s.buttons}>
@@ -562,7 +640,7 @@ export const EditProp = () => {
               <button className={s.buttons__cancel}>Cancel</button>
             </Link>
             <button className={s.buttons__create} type="submit">
-              Create Property
+              Edit Property
             </button>
           </div>
         </form>
