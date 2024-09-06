@@ -18,7 +18,7 @@ import { arrayMove } from "@dnd-kit/sortable";
 import { useLocation } from "react-router-dom";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
 import { Apartment, Apartment2 } from "./interface";
-// import dollar from "../../../assets/icons/dollar.svg";
+import dollar from "../../../assets/icons/dollar.svg";
 
 interface CustomUploadFile extends UploadFile {
   imageId: number;
@@ -296,7 +296,7 @@ export const EditProp = () => {
     try {
       const imageId = file.imageId; // получаем `imageId` из файла
       if (imageId) {
-        const response = await characacteristicsApi.delete(imageId); // вызываем API для удаления
+        const response = await manageImgApi.delete(imageId); // вызываем API для удаления
         console.log("Remove action:", response);
 
         // Обновляем список после удаления
@@ -444,7 +444,7 @@ export const EditProp = () => {
             )}
           </div>
 
-          {/* <div className={s.apartmentWrap}>
+          <div className={s.apartmentWrap}>
             <div className={s.apartment}>
               <img src={dollar} alt="dollar" className={s.apartment__img} />
               <p className={s.apartment__text}>Investment Appeal</p>
@@ -463,7 +463,7 @@ export const EditProp = () => {
             {formik.errors.investment && formik.touched.investment && (
               <p className={s.error}>{formik.errors.investment}</p>
             )}
-          </div> */}
+          </div>
 
           {characacteristic &&
             characacteristic.map((apartment, a) => (

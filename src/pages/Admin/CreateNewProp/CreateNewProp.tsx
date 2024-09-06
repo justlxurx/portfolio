@@ -312,6 +312,7 @@ export const CreateNewProp = () => {
                     style={{
                       borderColor:
                         formik.touched.type && formik.errors.type ? "red" : "",
+                      width: "127px",
                     }}
                   />
                 </div>
