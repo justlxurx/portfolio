@@ -17,7 +17,7 @@ export const Header = () => {
   const { address, isConnected } = useWeb3ModalAccount();
   const links = [
     {
-      title: "Properties",
+      title: "Browse Properties",
       links: "/properties",
     },
     {

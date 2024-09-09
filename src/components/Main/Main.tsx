@@ -10,8 +10,8 @@ export const Main = () => {
     <div className={`${s.main} container`}>
       <div className={s.main__left}>
         <h1 className={s.main__heading}>
-          Make your first step towards <span> passive income</span> and
-          financial independence <span>with us!</span>
+          <span>Revolutionize</span> your investment strategy with the most
+          advanced passive income strategy ever created
         </h1>
         <Link to="/properties">
           <button className={s.main__button}>Properties</button>

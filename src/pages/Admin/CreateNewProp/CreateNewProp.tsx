@@ -17,6 +17,7 @@ import { manageImgApi } from "../../../api/property/manageImg";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
 import type { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
+import { manageNftApi } from "../../../api/nft/manageNft";
 
 type Apartment = {
   charName: string;
@@ -76,7 +77,7 @@ export const CreateNewProp = () => {
       size: Yup.string().required("required"),
       type: Yup.string().required("required"),
     }),
-    onSubmit: async (values, { resetForm }) => {
+    onSubmit: async (values) => {
       event?.preventDefault();
 
       const formattedValues = {
@@ -143,6 +144,7 @@ export const CreateNewProp = () => {
             formData.append("file", file.originFileObj as Blob);
 
             await manageImgApi.uploadImg(propertyId, formData);
+            await manageNftApi.mintNft(propertyId, formData);
 
             console.log("Image uploaded successfully");
           } catch (error) {

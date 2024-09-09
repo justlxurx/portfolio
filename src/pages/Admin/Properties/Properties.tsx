@@ -7,12 +7,9 @@ import { filteredPropertyAPI } from "../../../api/property/filteredProperty";
 import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useState, useEffect } from "react";
 import { sortProperties } from "../../../utils/sort";
-import { manageImgApi } from "../../../api/property/manageImg";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
 
 export const AdminProperties = () => {
-  const manageImg = manageImgApi;
-  const manage = managePropertyApi;
   const [val, setVal] = useState("");
   const [properties, setProperties] = useState([]);
   const [sortCriteria, setSortCriteria] = useState("name");
@@ -92,8 +89,9 @@ export const AdminProperties = () => {
 
   const handleDeleteProperty = async (id: number) => {
     try {
-      // await manageImg.(id);
-      await manage.delete(id);
+      const a = await managePropertyApi.delete(id);
+      console.log("Delete: " + a);
+      console.log(a);
       await characacteristicsApi.delete(id);
       fetchProperties(); // Обновляем список свойств после удаления
       alert("Deleted successfully");

@@ -108,7 +108,7 @@ class ManagePropertyApi {
   }
 
   async delete(id: number) {
-    const res = await fetch(`https://estate.hotcode.kz/v1/property/${id}/characteristic`, {
+    const res = await fetch(`https://estate.hotcode.kz/v1/property/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
