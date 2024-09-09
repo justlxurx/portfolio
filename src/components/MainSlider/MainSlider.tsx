@@ -41,18 +41,13 @@ export const MainSlider = () => {
   return (
     <div className={`${s.main} container`}>
       <h1 className={s.main__heading}>
-        Start earning passive income today with rental properties available now.
-        Our platform offers a variety of high-yield real estate options ready
-        for rental.
-        <br /> <br />
-        Easily invest and start generating revenue without the hassle of
-        traditional property management. Take the first step towards financial
-        freedom and let your money work for you!
+        Our platform offers a variety of high-yield <br /> real estate options
+        ready for rental
       </h1>
-      <div className={s.country}>
+      {/* <div className={s.country}>
         <img src={Cancun} alt="Cancun" className={s.country__flag} />
         <p className={s.country__name}>Cancun, Mexico</p>
-      </div>
+      </div> */}
       <div className={s.wrapper}>
         <Swiper
           slidesPerView={3}

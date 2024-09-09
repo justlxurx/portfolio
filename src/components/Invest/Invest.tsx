@@ -1,62 +1,66 @@
 import s from "./Invest.module.scss";
-import { Dollar } from "../../assets/icons/dollar";
-import { Smile } from "../../assets/icons/smile";
-import { Exit } from "../../assets/icons/exit";
+import Smile from "../../assets/icons/smile.svg";
+import Dollar from "../../assets/icons/dollar.svg";
+import Calendar from "../../assets/icons/calendar.svg";
+import Shop from "../../assets/icons/shop.svg";
 
 export const Invest = () => {
   const data = [
     {
-      img: <Dollar />,
-      title: "Start with only 100$",
+      img: Dollar,
+      title: "Start with as little as $100 per share",
       description: (
         <p className={s.description}>
-          We divide properties into equal <span>$100</span>
-          fractions. Invest small amounts monthly in high-yield real estate and
-          earn up to <span>-16.3% annual rental return</span>
+          This blockchain-powered feature democratizes real estate ownership,
+          making it accessible to anyone. Skip the large down payments, interest
+          payments, and credit checks
         </p>
       ),
     },
     {
-      img: <Smile />,
-      title: "Passive Income",
+      img: Calendar,
+      title: "Earn monthly & yearly passive income",
       description: (
         <p className={s.description}>
-          <span>Avoid the hassle</span> of paperwork and managing properties.
-          Let our <span>real estate experts</span> take care of everything for
-          you.
+          Receive monthly rental income plus yearly payouts from capital
+          appreciation if the property’s value increases. This unique annual
+          payout feature, created by PassiveMoney.com, is a groundbreaking
+          innovation in the real estate investment industry
         </p>
       ),
     },
     {
-      img: <Exit />,
-      title: "Exit whenever you want",
+      img: Shop,
+      title: "Sell whenever you want",
       description: (
         <p className={s.description}>
-          <span>Easily sell your fractions</span> on the secondary market with
-          just a few clicks and <span>quickly retrieve your investments.</span>
+          Benefit from unmatched liquidity by selling your shares anytime
+          through a dedicated marketplace on each property’s webpage, an
+          unprecedented feature in real estate investing
+        </p>
+      ),
+    },
+    {
+      img: Smile,
+      title: "Diversify your real estate holdings",
+      description: (
+        <p className={s.description}>
+          Own multiple properties without the landlord headaches. Purchase
+          shares in as many properties as you wish
         </p>
       ),
     },
   ];
   return (
     <div className={`${s.main} container`}>
-      <div className={s.main__textWrap}>
-        <p className={s.main__para}>
-          Invest in real estate by purchasing fractional shares
-        </p>
-        <h1 className={s.main__title}>
-          <span>Co-own property</span> with other investors and{" "}
-          <span>earn</span> proportional <span>rental income</span>
-        </h1>
-      </div>
       <div className={s.main__cards}>
         {data.map((item, index) => (
-          <div key={index} className={s.card}>
-            <div className={s.card__img}>{item.img}</div>
+          <div className={s.card} key={index}>
             <div className={s.card__info}>
               <h1 className={s.card__heading}>{item.title}</h1>
               {item.description}
             </div>
+            <img src={item.img} alt="icon" className={s.card__img} />
           </div>
         ))}
       </div>

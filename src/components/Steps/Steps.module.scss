@@ -19,11 +19,12 @@
 
 .main__content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   justify-content: center;
   height: 444.15px;
   margin-top: 100px;
+  width: 100%;
 }
 
 .card {
@@ -81,8 +82,9 @@
   border-radius: 20px;
   border: 1px solid white;
   padding: 20.89px 36px;
-  text-transform: uppercase;
   margin-top: 60px;
+  width: 387px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1500px) {
@@ -96,7 +98,6 @@
   }
 
   .main__content {
-    gap: 10px;
     height: 394.15px;
     margin-top: 100px;
   }
@@ -132,8 +133,7 @@
   }
 
   .main__content {
-    gap: 10px;
-    height: 304.15px;
+    height: auto;
     margin-top: 100px;
   }
 
@@ -179,7 +179,7 @@
 
   .main__content {
     gap: 10px;
-    height: 224.15px;
+    height: auto;
     margin-top: 70px;
   }
 

@@ -9,25 +9,20 @@ export const Steps = () => {
   const data = [
     {
       img: step1,
-      title: "Sign up and Pass Verification",
+      title: "Sign Up or Log In",
       width: "80%",
       height: "75%",
     },
     {
       img: step2,
-      title: "Select a ready-to-rent property",
+      title: "Select A Property To Purchase",
       width: "100%",
       height: "65%",
     },
     {
-      img: step3,
-      title: "Top up as you would like",
-      width: "80%",
-      height: "75%",
-    },
-    {
       img: step4,
-      title: "Buy digital property for only 100$",
+      title:
+        "Pay via any cryptocurrency of your choice or other options through our payment gateway",
       width: "90%",
       height: "50%",
     },
@@ -35,8 +30,8 @@ export const Steps = () => {
   return (
     <div className={`${s.main} container`}>
       <h1 className={s.main__title}>
-        Start <span>earning rental income </span> online in just
-        <span> four simple steps</span> and become a digital property owner
+        Start building your real estate <br /> portfolio in
+        <span> 3 simple steps</span>
       </h1>
       <div className={s.main__content}>
         {data.map((item, index) => (
@@ -54,7 +49,7 @@ export const Steps = () => {
         ))}
       </div>
       <Link to="/properties">
-        <button className={s.main__button}>browse Properties</button>
+        <button className={s.main__button}>Browse Properties</button>
       </Link>
     </div>
   );
