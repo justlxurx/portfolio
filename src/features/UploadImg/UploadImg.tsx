@@ -63,7 +63,7 @@ const UploadImg = ({
   fileList,
 }: {
   onChange: (info: any) => void;
-  onRemove?: () => void;
+  onRemove?: (file: any) => void;
   onDragEnd: ({ active, over }: DragEndEvent) => void;
   fileList: any;
 }) => {

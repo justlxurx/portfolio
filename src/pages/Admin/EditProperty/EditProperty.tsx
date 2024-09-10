@@ -52,7 +52,7 @@ export const EditProp = () => {
     fetchedData();
   }, [id]);
 
-  //delete empty characteristics
+  // delete empty characteristics
   useEffect(() => {
     const deleteProp = async () => {
       try {
@@ -211,12 +211,14 @@ export const EditProp = () => {
         const charact = await characacteristicsApi.update(characacteristic);
 
         for (const char of addCharacacteristic) {
-          const values = {
-            name: char.charName,
-            value: char.charVal,
-          };
-          const res = await characacteristicsApi.create(id, values);
-          console.log("charac: " + res);
+          if (char.characteristic_name && char.characteristic_value) {
+            const values = {
+              name: char.characteristic_name,
+              value: char.characteristic_value,
+            };
+            const res = await characacteristicsApi.create(id, values);
+            console.log("charac: " + res);
+          }
         }
 
         for (const file of fileList) {
@@ -245,14 +247,14 @@ export const EditProp = () => {
   //for update input change
   const handleInputChange = (
     index: number,
-    field: "charName" | "charVal",
+    field: "characteristic_name" | "characteristic_value",
     value: string
   ) => {
     const newCharact = [...characacteristic];
 
-    if (field === "charName") {
+    if (field === "characteristic_name") {
       newCharact[index].characteristic_name = value;
-    } else if (field === "charVal") {
+    } else if (field === "characteristic_value") {
       newCharact[index].characteristic_value = value;
     }
 
@@ -261,7 +263,7 @@ export const EditProp = () => {
   //for create input change
   const handleInputChange2 = (
     index: number,
-    field: "charName" | "charVal",
+    field: "characteristic_name" | "characteristic_value",
     value: string
   ) => {
     const newApartments = [...addCharacacteristic];
@@ -444,58 +446,77 @@ export const EditProp = () => {
             )}
           </div>
 
-          <div className={s.apartmentWrap}>
-            <div className={s.apartment}>
-              <img src={dollar} alt="dollar" className={s.apartment__img} />
-              <p className={s.apartment__text}>Investment Appeal</p>
-            </div>
-            <div className={s.apartment__info}>
-              <textarea
-                onChange={formik.handleChange}
-                className={s.area}
-                name="investment"
-                id="property"
-                placeholder="Text area "
-                rows={5}
-                value={formik.values.investment}
-              ></textarea>
-            </div>
-            {formik.errors.investment && formik.touched.investment && (
-              <p className={s.error}>{formik.errors.investment}</p>
-            )}
-          </div>
-
           {characacteristic &&
-            characacteristic.map((apartment, a) => (
-              <div key={a} className={s.apartmentWrap}>
-                <Input
-                  color="black"
-                  className={s.mainForm__input2}
-                  title="Title"
-                  placeholder="Title"
-                  type="text"
-                  name={`charName-${a}`}
-                  onChange={(e) =>
-                    handleInputChange(a, "charName", e.target.value)
-                  }
-                  value={apartment.characteristic_name}
-                />
-                <p className={s.apartment__text}>Text</p>
-                <div className={s.apartment__info}>
-                  <textarea
-                    className={s.area}
-                    name={`charVal-${a}`}
-                    id={`property-${a}`}
-                    placeholder="Text area"
-                    rows={5}
-                    onChange={(e) =>
-                      handleInputChange(a, "charVal", e.target.value)
-                    }
-                    value={apartment.characteristic_value}
-                  ></textarea>
+            characacteristic.map((apartment, a) =>
+              a == 0 ? (
+                <div className={s.apartmentWrap}>
+                  <div className={s.apartment}>
+                    <img
+                      src={dollar}
+                      alt="dollar"
+                      className={s.apartment__img}
+                    />
+                    <p className={s.apartment__text}>
+                      {apartment.characteristic_name}
+                    </p>
+                  </div>
+                  <div className={s.apartment__info}>
+                    <textarea
+                      className={s.area}
+                      id="property"
+                      placeholder="Text area "
+                      rows={5}
+                      name={`characteristic_value-${a}`}
+                      onChange={(e) =>
+                        handleInputChange(
+                          a,
+                          "characteristic_value",
+                          e.target.value
+                        )
+                      }
+                      value={apartment.characteristic_value}
+                    ></textarea>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ) : (
+                <div key={a} className={s.apartmentWrap}>
+                  <Input
+                    color="black"
+                    className={s.mainForm__input2}
+                    title="Title"
+                    placeholder="Title"
+                    type="text"
+                    name={`characteristic_name-${a}`}
+                    onChange={(e) =>
+                      handleInputChange(
+                        a,
+                        "characteristic_name",
+                        e.target.value
+                      )
+                    }
+                    value={apartment.characteristic_name}
+                  />
+                  <p className={s.apartment__text}>Text</p>
+                  <div className={s.apartment__info}>
+                    <textarea
+                      className={s.area}
+                      name={`characteristic_value-${a}`}
+                      id={`property-${a}`}
+                      placeholder="Text area"
+                      rows={5}
+                      onChange={(e) =>
+                        handleInputChange(
+                          a,
+                          "characteristic_value",
+                          e.target.value
+                        )
+                      }
+                      value={apartment.characteristic_value}
+                    ></textarea>
+                  </div>
+                </div>
+              )
+            )}
 
           {addCharacacteristic &&
             addCharacacteristic.map((apartment, a) => (
@@ -506,24 +527,34 @@ export const EditProp = () => {
                   title="Title"
                   placeholder="Title"
                   type="text"
-                  name={`charName-${a}`}
+                  name={`characteristic_name-${a}`}
                   onChange={
-                    (e) => handleInputChange2(a, "charName", e.target.value) // используем флаг для дополнительных
+                    (e) =>
+                      handleInputChange2(
+                        a,
+                        "characteristic_name",
+                        e.target.value
+                      ) // используем флаг для дополнительных
                   }
-                  value={apartment.charName}
+                  value={apartment.characteristic_name}
                 />
                 <p className={s.apartment__text}>Text</p>
                 <div className={s.apartment__info}>
                   <textarea
                     className={s.area}
-                    name={`charVal-${a}`}
+                    name={`characteristic_value-${a}`}
                     id={`property-${a}`}
                     placeholder="Text area"
                     rows={5}
                     onChange={
-                      (e) => handleInputChange2(a, "charVal", e.target.value) // используем флаг для дополнительных
+                      (e) =>
+                        handleInputChange2(
+                          a,
+                          "characteristic_value",
+                          e.target.value
+                        ) // используем флаг для дополнительных
                     }
-                    value={apartment.charVal}
+                    value={apartment.characteristic_value}
                   ></textarea>
                 </div>
               </div>
@@ -593,7 +624,7 @@ export const EditProp = () => {
               placeholder="NFT Quantity"
               type="text"
               name="nftQuantity"
-              onChange={formik.handleChange}
+              // onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
@@ -611,7 +642,7 @@ export const EditProp = () => {
               placeholder="NFT Price"
               type="text"
               name="nftPrice"
-              onChange={formik.handleChange}
+              // onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"

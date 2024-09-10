@@ -69,6 +69,6 @@ export const initVal = {
   garage: 0,
   size: 0,
   type: "",
-  charName: "",
-  charVal: "",
+  characteristic_name: "",
+  characteristic_value: "",
 };

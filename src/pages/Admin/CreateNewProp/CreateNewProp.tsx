@@ -20,8 +20,8 @@ import { arrayMove } from "@dnd-kit/sortable";
 import { manageNftApi } from "../../../api/nft/manageNft";
 
 type Apartment = {
-  charName: string;
-  charVal: string;
+  characteristic_name: string;
+  characteristic_value: string;
 };
 
 export const CreateNewProp = () => {
@@ -29,9 +29,9 @@ export const CreateNewProp = () => {
   const [propertyId, setPropertyId] = useState<number>(0);
   const navigate = useNavigate();
   const [nft, setNft] = useState(0);
-  const [apartNum, setApartNum] = useState(0);
+  const [apartNum, setApartNum] = useState(1);
   const [characteristic, setCharacteristic] = useState<Apartment[]>([
-    { charName: "", charVal: "" },
+    { characteristic_name: "Investment Appeal", characteristic_value: "" },
   ]);
 
   const [mainImg, setMainImg] = useState("");
@@ -47,7 +47,10 @@ export const CreateNewProp = () => {
   const addNew = () => {
     event?.preventDefault();
     setApartNum(apartNum + 1);
-    setCharacteristic([...characteristic, { charName: "", charVal: "" }]);
+    setCharacteristic([
+      ...characteristic,
+      { characteristic_name: "", characteristic_value: "" },
+    ]);
   };
 
   const formik = useFormik({
@@ -59,7 +62,6 @@ export const CreateNewProp = () => {
       location: Yup.string()
         // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
         .required("Location is required"),
-      investment: Yup.string().required(`Investment Appeal is required`),
       aboutProperty: Yup.string().required("About the Property is required"),
       price: Yup.number().required("required"),
       rentalReturn: Yup.string().required("equired"),
@@ -160,12 +162,15 @@ export const CreateNewProp = () => {
     const fetchCharac = async () => {
       try {
         for (const char of characteristic) {
-          const values = {
-            name: char.charName,
-            value: char.charVal,
-          };
-          const res = await characacteristicsApi.create(propertyId, values);
-          console.log("charac: " + res);
+          if (char.characteristic_name && char.characteristic_value) {
+            const values = {
+              name: char.characteristic_name,
+              value: char.characteristic_value,
+            };
+
+            const res = await characacteristicsApi.create(propertyId, values);
+            console.log("charac: " + res);
+          }
         }
       } catch (err) {
         console.log(err);
@@ -179,7 +184,7 @@ export const CreateNewProp = () => {
 
   const handleInputChange = (
     index: number,
-    field: "charName" | "charVal",
+    field: "characteristic_name" | "characteristic_value",
     value: string
   ) => {
     const newApartments = [...characteristic];
@@ -344,7 +349,7 @@ export const CreateNewProp = () => {
             )}
           </div>
 
-          <div className={s.apartmentWrap}>
+          {/* <div className={s.apartmentWrap}>
             <div className={s.apartment}>
               <img src={dollar} alt="dollar" className={s.apartment__img} />
               <p className={s.apartment__text}>Investment Appeal</p>
@@ -363,39 +368,77 @@ export const CreateNewProp = () => {
             {formik.errors.investment && formik.touched.investment && (
               <p className={s.error}>{formik.errors.investment}</p>
             )}
-          </div>
+          </div> */}
 
-          {Array.from({ length: apartNum }).map((_, a) => (
-            <div key={a} className={s.apartmentWrap}>
-              <Input
-                className={s.mainForm__input2}
-                title="Title"
-                placeholder="Title"
-                type="text"
-                name={`charName-${a}`}
-                onChange={(e) =>
-                  handleInputChange(a, "charName", e.target.value)
-                }
-                color="black"
-                inputColor="rgba(29, 29, 29, 0.35)"
-                value={characteristic[a].charName}
-              />
-              <p className={s.apartment__text}>Text</p>
-              <div className={s.apartment__info}>
-                <textarea
-                  className={s.area}
-                  name={`charVal-${a}`}
-                  id="property"
-                  placeholder="Text area"
-                  rows={5}
-                  onChange={(e) =>
-                    handleInputChange(a, "charVal", e.target.value)
-                  }
-                  value={characteristic[a].charVal}
-                ></textarea>
+          {Array.from({ length: apartNum }).map((_, a) =>
+            a == 0 ? (
+              <div className={s.apartmentWrap} key={a}>
+                <div className={s.apartment}>
+                  <img src={dollar} alt="dollar" className={s.apartment__img} />
+                  <p className={s.apartment__text}>
+                    {characteristic[a].characteristic_name}
+                  </p>
+                </div>
+                <div className={s.apartment__info}>
+                  <textarea
+                    className={s.area}
+                    id="property"
+                    placeholder="Text area "
+                    rows={5}
+                    // value={formik.values.investment}
+                    // name="investment"
+                    // onChange={formik.handleChange}
+                    name={`characteristic_value-${a}`}
+                    onChange={(e) =>
+                      handleInputChange(
+                        a,
+                        "characteristic_value",
+                        e.target.value
+                      )
+                    }
+                    value={characteristic[a].characteristic_value}
+                  ></textarea>
+                </div>
+                {/* {formik.errors.investment && formik.touched.investment && (
+                  <p className={s.error}>{formik.errors.investment}</p>
+                )} */}
               </div>
-            </div>
-          ))}
+            ) : (
+              <div key={a} className={s.apartmentWrap}>
+                <Input
+                  className={s.mainForm__input2}
+                  title="Title"
+                  placeholder="Title"
+                  type="text"
+                  name={`characteristic_name-${a}`}
+                  onChange={(e) =>
+                    handleInputChange(a, "characteristic_name", e.target.value)
+                  }
+                  value={characteristic[a].characteristic_name}
+                  color="black"
+                  inputColor="rgba(29, 29, 29, 0.35)"
+                />
+                <p className={s.apartment__text}>Text</p>
+                <div className={s.apartment__info}>
+                  <textarea
+                    className={s.area}
+                    name={`characteristic_value-${a}`}
+                    id="property"
+                    placeholder="Text area"
+                    rows={5}
+                    onChange={(e) =>
+                      handleInputChange(
+                        a,
+                        "characteristic_value",
+                        e.target.value
+                      )
+                    }
+                    value={characteristic[a].characteristic_value}
+                  ></textarea>
+                </div>
+              </div>
+            )
+          )}
 
           <button className={s.addApartment} onClick={addNew}>
             + Add new characteristics
