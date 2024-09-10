@@ -4,6 +4,8 @@ import trash from "../../../../assets/icons/trash.svg";
 import { formatDate } from "../../../../utils/formatData";
 import gift from "../../../../assets/icons/gift.svg";
 import { Link } from "react-router-dom";
+import { DistributeRewards } from "../DistributeRewards/DistributeRewards";
+import { useState } from "react";
 
 interface Property {
   id: number;
@@ -17,14 +19,14 @@ interface Property {
 
 interface MainTableProps {
   properties: Property[];
-  updateProp: (id: number) => void;
   deleteProp: (id: number) => void;
+  openDistributeRew: () => void;
 }
 
 export const MainTable = ({
   properties,
-  updateProp,
   deleteProp,
+  openDistributeRew,
 }: MainTableProps) => {
   return (
     <div className={s.tableWrap}>
@@ -65,17 +67,14 @@ export const MainTable = ({
                 <td>{data.token_price} $</td>
                 <td>{formatDate(data.created_at)}</td>
                 <td>
-                  <button className={s.giftButton}>
+                  <button className={s.giftButton} onClick={openDistributeRew}>
                     <img src={gift} alt="gift" />
                   </button>
                 </td>
                 <td>
                   <div className={s.buttons}>
                     <Link to={`/admin/properties/update/${data.id}`}>
-                      <button
-                        className={s.manageButton}
-                        // onClick={() => updateProp(index)}
-                      >
+                      <button className={s.manageButton}>
                         Edit <img src={edit} alt="edit" />
                       </button>
                     </Link>

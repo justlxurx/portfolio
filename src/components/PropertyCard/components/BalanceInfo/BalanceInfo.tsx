@@ -18,12 +18,19 @@ export const BalanceInfo = () => {
   const parts = location.split("/");
   const id = Number(parts.pop() || "");
 
+  const [soldTokens, setSoldTokens] = useState(0);
+
   const [data, setData] = useState();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await managePropertyApi.get(id);
         setData(res);
+        const n =
+          ((res.total_tokens - res.tokens_available) * 100) / res.total_tokens;
+        setSoldTokens(n);
+        console.log("sold: " + soldTokens);
         console.log("Getting data " + res);
       } catch (err) {
         console.log(err);
@@ -39,28 +46,56 @@ export const BalanceInfo = () => {
         .then((res) => setPayableBalance(res));
     }
   }, [isConnected, walletProvider, address, smarts]);
+
   return (
     <div className={s.main}>
       <div className={s.info}>
-        <p className={s.info__left}>
-          {/* 120,000 */}
-          {payableBalance}
-          <br /> USDT
-        </p>
-        <p className={s.info__right}>
-          Estimated Rental <br /> Return: <span>20%</span>
-          <br />
-          <hr />
-          Estimated Capital <br /> Appreciation: <span>10%</span>
+        <p className={s.info__balance}>${payableBalance} USDT</p>
+        <div className={s.info__estimatedWrap}>
+          <p className={s.info__estimatedText}>
+            Estimated Rental Return: 20%/ year
+          </p>
+          <p className={s.info__estimatedText}>
+            Estimated Capital Appreciation: 20%/ year
+          </p>
+        </div>
+        <p className={s.info__estimatedText}>
+          Estimated Yearly Return:
+          <span>13 - 22% / year</span>
         </p>
       </div>
-      <div className={s.balance__wrap}>
-        <p className={s.balance}>
-          Token price: <span>{data ? data.token_price : ""} USDT</span>
+      <div className={s.sharesSold}>
+        <div className={s.sharesSold__top}>
+          <p className={s.sharesSold__title}>Shares Sold</p>
+          <span>{Math.round(soldTokens)}%</span>
+        </div>
+        <div className={s.sharesSold__progress}>
+          <div
+            className={s.sharesSold__progressLine}
+            style={{ width: data && `${soldTokens}%` }}
+          ></div>
+        </div>
+        <p className={s.sharesSold__text}>
+          <span>
+            ${" "}
+            {data && (data.token_price * data.total_tokens * soldTokens) / 100}
+            {/* 95,5 */}
+          </span>{" "}
+          / $ {data && data.token_price * data.total_tokens}
+          ,000
         </p>
-        <p className={s.balance}>
-          Balance: <span>{payableBalance} USDT</span>
-        </p>
+      </div>
+      <div className={s.wrap}>
+        <div className={s.balance__wrap}>
+          <p className={s.balance}>Token price:</p>
+          <span className={s.balance__val}>
+            {data ? data.token_price : ""} USDT
+          </span>
+        </div>
+        <div className={s.balance__wrap}>
+          <p className={s.balance}>Balance:</p>
+          <span className={s.balance__val}>{payableBalance} USDT</span>
+        </div>
       </div>
     </div>
   );

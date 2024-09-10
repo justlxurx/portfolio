@@ -8,11 +8,13 @@ import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useState, useEffect } from "react";
 import { sortProperties } from "../../../utils/sort";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
+import { DistributeRewards } from "./DistributeRewards/DistributeRewards";
 
 export const AdminProperties = () => {
   const [val, setVal] = useState("");
   const [properties, setProperties] = useState([]);
   const [sortCriteria, setSortCriteria] = useState("name");
+  const [openDistributeRew, setOpenDistributeRew] = useState(false);
 
   const item = [
     { title: "name", name: "name" },
@@ -144,11 +146,14 @@ export const AdminProperties = () => {
 
         <div className={s.main__table}>
           <MainTable
+            openDistributeRew={() => setOpenDistributeRew(true)}
             properties={t}
-            updateProp={() => {}}
             deleteProp={handleDeleteProperty}
           />
         </div>
+        {openDistributeRew && (
+          <DistributeRewards closeModal={() => setOpenDistributeRew(false)} />
+        )}
       </div>
     </div>
   );

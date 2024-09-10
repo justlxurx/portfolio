@@ -36,7 +36,7 @@ export const MainSlider = () => {
       }
     };
     fetchData();
-  });
+  }, []);
 
   return (
     <div className={`${s.main} container`}>

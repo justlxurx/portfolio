@@ -5,6 +5,8 @@ import { SliderSection2 } from "./components/Slider2/Slider2";
 import { useEffect, useState } from "react";
 import { managePropertyApi } from "../../api/property/manageProperty";
 import { useLocation } from "react-router-dom";
+import { Timeline } from "./components/Timeline/Timeline";
+import { Documents } from "./components/Documents/Documents";
 
 export const PropertyCard = () => {
   const location = useLocation().pathname;
@@ -30,6 +32,8 @@ export const PropertyCard = () => {
         <div className={s.main__left}>
           <SliderSection2 id={id} data={data ? data : ""} />
           <Info id={id} data={data ? data : ""} />
+          <Timeline />
+          <Documents />
         </div>
         <div className={s.main__right}>
           <MainForm data={data ? data : ""} />

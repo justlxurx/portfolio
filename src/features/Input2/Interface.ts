@@ -10,4 +10,5 @@ export interface IInput extends React.HTMLProps<HTMLInputElement> {
   updateInput?: (name: string, value: string) => void;
   inputColor?: string;
   borderColor?: string;
+  textClassName?: string;
 }

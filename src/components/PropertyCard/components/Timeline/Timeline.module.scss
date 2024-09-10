@@ -1,0 +1,56 @@
+.main {
+  padding: 40px 32px 40px 32px;
+  gap: 25px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__title {
+  font-family: Helvetica Neue;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30.52px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    border-left: 1px dashed rgba(151, 158, 171, 1);
+    width: 1px;
+    height: 85%;
+  }
+}
+
+.timeline {
+  display: flex;
+  gap: 15px;
+}
+
+.timeline__name {
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.42px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}
+
+.timeline__time {
+  color: rgba(24, 39, 67, 1);
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.47px;
+  text-align: left;
+}

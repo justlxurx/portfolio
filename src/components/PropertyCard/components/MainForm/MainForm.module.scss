@@ -1,17 +1,23 @@
+.form {
+  background: rgba(29, 43, 63, 1);
+  border-radius: 10px;
+  padding: 20px 15px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   gap: 30px;
   background: rgba(35, 55, 84, 0.72);
-  box-shadow: -1px 4px 5.4px 0px rgba(24, 39, 67, 0.6);
   padding: 44.48px 32px;
   border-radius: 20px;
+  box-shadow: -1px 4px 5.4px 0px rgba(24, 39, 67, 0.6);
 }
 .main__heading {
   font-family: Helvetica Neue;
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 30.52px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26.86px;
   text-align: left;
   color: white;
   text-transform: uppercase;
@@ -46,6 +52,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
+  margin-top: 35px;
 }
 .block__input:checked + .block__label {
   background-color: white;
@@ -88,7 +95,7 @@
 
 output {
   position: absolute;
-  top: -50px; /* Можно настроить в зависимости от ваших требований */
+  top: -50px;
   font-family: Helvetica Neue;
   font-size: 22.29px;
   font-weight: 300;
@@ -114,7 +121,7 @@ output {
 #usdt::-webkit-slider-thumb {
   -webkit-appearance: none;
   border-radius: 50%;
-  background: rgba(84, 126, 208, 1);
+  background: rgba(190, 255, 107, 1);
   width: 15px;
   height: 15px;
 }
@@ -123,7 +130,7 @@ output {
 #usdt::-moz-range-thumb {
   width: 15px;
   height: 15px;
-  background-color: rgba(84, 126, 208, 1);
+  background-color: rgba(190, 255, 107, 1);
   border-radius: 50%;
   cursor: pointer;
 }

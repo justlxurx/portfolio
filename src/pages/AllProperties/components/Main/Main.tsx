@@ -13,11 +13,14 @@ interface Property {
   token_price: number;
   location: string;
   main_image_url: string;
+  total_tokens: number;
+  tokens_available: number;
 }
 export const Properties = () => {
   const [val, setVal] = useState("");
   const [properties, setProperties] = useState<Property[]>([]);
   const [sortCriteria, setSortCriteria] = useState("name");
+  const [active, setActive] = useState(false);
 
   const item = [
     { title: "name", name: "name" },
@@ -80,7 +83,18 @@ export const Properties = () => {
     <div className={`${s.main} container`}>
       <h1 className={s.main__heading}>Properties</h1>
       <div className={s.links}>
-        <a href="">All /</a> <a href="/active">Active</a>
+        <button
+          style={{ color: !active ? "white" : "rgba(255,255,255,0.6)" }}
+          onClick={() => setActive(false)}
+        >
+          All /
+        </button>{" "}
+        <button
+          style={{ color: active ? "white" : "rgba(255,255,255,0.6)" }}
+          onClick={() => setActive(true)}
+        >
+          Active
+        </button>
       </div>
       <div className={s.main__searching}>
         <div className={s.searchBar}>
@@ -105,18 +119,31 @@ export const Properties = () => {
         </div>
       </div>
       <div className={s.main__content}>
-        {t.map((item, index) => (
-          <Link key={index} to={`/properties/${item.id}`}>
-            <Card
-              id={item.id}
-              name={item.name}
-              price={item.token_price}
-              capital={""}
-              rental={""}
-              country={item.location}
-            />
-          </Link>
-        ))}
+        {t.map((item, index) => {
+          const soldTokens =
+            ((item.total_tokens - item.tokens_available) * 100) /
+            item.total_tokens;
+
+          if (active && soldTokens === 100) {
+            return null;
+          }
+
+          return (
+            <Link key={index} to={`/properties/${item.id}`}>
+              <Card
+                id={item.id}
+                name={item.name}
+                price={item.token_price}
+                capital={""}
+                rental={""}
+                country={item.location}
+                token_price={item.token_price}
+                total_tokens={item.total_tokens}
+                soldTokens={soldTokens}
+              />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

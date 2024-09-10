@@ -42,9 +42,15 @@ export const LoginForm = () => {
           onChange={(e) => setApiKey(e.target.value)}
           required
         />
-        {!isAuthenticated && <p className={s.errors}>{error}</p>}
+        {error && <p className={s.errors}>{error}</p>}
 
-        <button type="submit" className={s.main__formButton}>
+        <button
+          type="submit"
+          className={s.main__formButton}
+          style={{
+            background: apiKey ? "rgba(84, 126, 208, 1)" : "#747474",
+          }}
+        >
           Log in
         </button>
       </form>

@@ -1,0 +1,17 @@
+.main {
+  padding: 40px 32px 40px 32px;
+  gap: 25px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__title {
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.42px;
+  text-align: left;
+  color: rgba(24, 39, 67, 1);
+}

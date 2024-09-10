@@ -449,7 +449,7 @@ export const EditProp = () => {
           {characacteristic &&
             characacteristic.map((apartment, a) =>
               a == 0 ? (
-                <div className={s.apartmentWrap}>
+                <div className={s.apartmentWrap} key={a}>
                   <div className={s.apartment}>
                     <img
                       src={dollar}
@@ -528,13 +528,8 @@ export const EditProp = () => {
                   placeholder="Title"
                   type="text"
                   name={`characteristic_name-${a}`}
-                  onChange={
-                    (e) =>
-                      handleInputChange2(
-                        a,
-                        "characteristic_name",
-                        e.target.value
-                      ) // используем флаг для дополнительных
+                  onChange={(e) =>
+                    handleInputChange2(a, "characteristic_name", e.target.value)
                   }
                   value={apartment.characteristic_name}
                 />

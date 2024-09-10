@@ -1,9 +1,8 @@
 import s from "./Card.module.scss";
 import a from "../../assets/images/img1.png";
 import Cancun from "../../assets/images/Cancun.svg";
-import { Link } from "react-router-dom";
 import { manageImgApi } from "../../api/property/manageImg";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 export const Card = ({
   name,
@@ -12,6 +11,10 @@ export const Card = ({
   rental,
   capital,
   id,
+  token_price,
+  total_tokens,
+  soldTokens,
+  dash,
 }: {
   name: string;
   country: string;
@@ -19,6 +22,10 @@ export const Card = ({
   rental: string;
   capital: string;
   id: number;
+  token_price?: number;
+  total_tokens?: number;
+  soldTokens?: number;
+  dash?: boolean;
 }) => {
   const [mainImg, setMainImg] = useState();
   useEffect(() => {
@@ -44,20 +51,77 @@ export const Card = ({
         </div>
       </div>
       {/* <p className={s.apartment__info}>Sold and Rented since APR 04. 2022</p> */}
-      <img
-        src={`https://minio.hotcode.kz/${mainImg}`}
-        alt="img1"
-        className={s.apartment__img}
-      />
+      {mainImg && (
+        <img
+          src={`https://minio.hotcode.kz/${mainImg}`}
+          alt="img1"
+          className={s.apartment__img}
+        />
+      )}
+
       <div className={s.apartment__priceWrap}>
         <p className={s.apartment__price}>${price} USDT</p>
         <span>1985/2200</span>
       </div>
-      <div className={s.apartment__percents}>
-        <p>Estimated Rental Return: {rental}%</p>
-        <p>Estimated Capital Appreciation: {capital}%</p>
-      </div>
-      <div className={s.apartment__progress}>Progress</div>
+      {dash ? (
+        <>
+          <div className={s.apartment__percents}>
+            <p>
+              Estimated Rental Return: {rental} <br />
+              Estimated Capital Appreciation: {capital}
+            </p>
+          </div>
+          <div className={s.valsWrap}>
+            <div className={s.vals}>
+              <p className={s.vals__title}>You Invested</p>
+              <span>X</span>
+            </div>
+            <div className={s.vals}>
+              <p className={s.vals__title}>You Received</p>
+              <span>Y</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={s.apartment__percents}>
+            <p>
+              Estimated Rental <br /> Return:
+            </p>
+            <span>5 - 10% /year</span>
+          </div>
+          <div className={s.apartment__percents}>
+            <p>
+              Estimated Capital <br /> Appreciation:
+            </p>
+            <span>8 - 12% /year</span>
+          </div>
+          <div className={s.apartment__percents}>
+            <p>
+              Estimated Yearly <br /> Return::
+            </p>
+            <span>13 - 22% /year</span>
+          </div>
+          <div className={s.apartment__progress}>
+            <div className={s.progressTop}>
+              <p className={s.progressTop__title}> Shares Sold: </p>
+              <p className={s.progressVal}>
+                <span>{(token_price * total_tokens * soldTokens) / 100}</span>/
+                {token_price * total_tokens}
+              </p>
+            </div>
+            <div className={s.progressBottom}>
+              <div className={s.progressLine}>
+                <div
+                  className={s.progressLineInner}
+                  style={{ width: `${soldTokens}` }}
+                ></div>
+              </div>
+              <p className={s.progressPer}>{soldTokens}%</p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

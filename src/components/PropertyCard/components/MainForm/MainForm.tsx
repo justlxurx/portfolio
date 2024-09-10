@@ -1,14 +1,14 @@
 import s from "./MainForm.module.scss";
 import { Input } from "../../../../features/Input/Input";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
 import { BalanceInfo } from "../BalanceInfo/BalanceInfo";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const MainForm = ({ data }: { data: any }) => {
   const getOutputPosition = () => {
     const min = 0;
-    const max = 500;
+    const max = data.total_tokens;
 
     const sliderContainer = document.querySelector(`.${s.sliderWrap}`);
     const sliderContainerWidth = sliderContainer
@@ -17,8 +17,8 @@ export const MainForm = ({ data }: { data: any }) => {
     const sliderWidthPercent = 110;
     const thumbWidthPercent = 15;
 
-    const sliderWidth = (sliderWidthPercent / 100) * sliderContainerWidth; // Переводим в пиксели
-    const thumbWidth = (thumbWidthPercent / 100) * sliderContainerWidth; // Переводим в пиксели
+    const sliderWidth = (sliderWidthPercent / 100) * sliderContainerWidth;
+    const thumbWidth = (thumbWidthPercent / 100) * sliderContainerWidth;
 
     const position = ((value - min) / (max - min)) * (sliderWidth - thumbWidth);
     return position;
@@ -32,12 +32,12 @@ export const MainForm = ({ data }: { data: any }) => {
     setValueUsdt(newValue * data.token_price);
   };
   const getBackgroundStyle = () => {
-    const percentage = (value / 500) * 100; // Вычисляем процент заполнения
+    const percentage = (value / data.total_tokens) * 100;
     return {
       background: `linear-gradient(
         to right,
-        rgba(84, 126, 208, 1)${percentage}%,  /* Левая часть */
-        rgba(84, 126, 208, 0.15) ${percentage}%       /* Правая часть */
+       rgba(190, 255, 107, 1)${percentage}%,  /* Левая часть */
+       rgba(123, 189, 39, 0.11) ${percentage}%       /* Правая часть */
       )`,
     };
   };
@@ -45,71 +45,73 @@ export const MainForm = ({ data }: { data: any }) => {
   return (
     <div className={s.main}>
       <BalanceInfo />
-      <div className={s.inputWrap}>
-        <h1 className={s.main__heading}>Amount</h1>
-        <Input
-          placeholder="Amount to buy"
-          //   value={formik.values.amount}
-          //   onChange={formik.handleChange}
-        >
-          <p className={s.input__text}>MAX</p>
-        </Input>
-      </div>
-      <div className={s.wrap}>
-        <div className={s.sliderWrap}>
-          <div className={s.slider}>
-            <output
-              className={s.output1}
-              htmlFor="tokens"
-              id="volume"
-              style={{
-                left: `${getOutputPosition()}px`,
-                // left: `${getOutputPosition(value, 0, 500)}px`,
-                transform: `${
-                  value == 0 ? "translateX(0%)" : " translateX(-50%)"
-                }`,
-              }}
-            >
-              {value}
-            </output>
-            <input
-              type="range"
-              id={s.tokens}
-              min="0"
-              max={"500"}
-              value={value}
-              onChange={handleChange}
-              step={"1"}
-              style={getBackgroundStyle()}
-            />
-            <p className={s.label}>shares</p>
-          </div>
-          <div className={s.slider}>
-            <output
-              className={s.output2}
-              htmlFor="usdt"
-              id="volume2"
-              style={{
-                left: ` ${getOutputPosition()}px`,
-                transform: `${
-                  valueUsdt == 0 ? "translateX(0%)" : " translateX(-50%)"
-                }`,
-              }}
-            >
-              {valueUsdt}
-            </output>
-            <input
-              type="range"
-              id={s.usdt}
-              min="0"
-              max={data.token_price * 500}
-              value={valueUsdt}
-              onChange={handleChange}
-              step={"1"}
-              style={getBackgroundStyle()}
-              disabled
-            />
-            <p className={s.label}>usdt</p>
+      <div className={s.form}>
+        <div className={s.inputWrap}>
+          <h1 className={s.main__heading}>Amount</h1>
+          <Input
+            placeholder="Amount to buy"
+            //   value={formik.values.amount}
+            //   onChange={formik.handleChange}
+          >
+            <p className={s.input__text}>MAX</p>
+          </Input>
+        </div>
+        <div className={s.wrap}>
+          <div className={s.sliderWrap}>
+            <div className={s.slider}>
+              <output
+                className={s.output1}
+                htmlFor="tokens"
+                id="volume"
+                style={{
+                  left: `${getOutputPosition()}px`,
+                  // left: `${getOutputPosition(value, 0, 500)}px`,
+                  transform: `${
+                    value == 0 ? "translateX(0%)" : " translateX(-50%)"
+                  }`,
+                }}
+              >
+                {value}
+              </output>
+              <input
+                type="range"
+                id={s.tokens}
+                min="0"
+                max={data ? data.total_tokens : ""}
+                value={value}
+                onChange={handleChange}
+                step={"1"}
+                style={getBackgroundStyle()}
+              />
+              <p className={s.label}>shares</p>
+            </div>
+            <div className={s.slider}>
+              <output
+                className={s.output2}
+                htmlFor="usdt"
+                id="volume2"
+                style={{
+                  left: ` ${getOutputPosition()}px`,
+                  transform: `${
+                    valueUsdt == 0 ? "translateX(0%)" : " translateX(-50%)"
+                  }`,
+                }}
+              >
+                {valueUsdt}
+              </output>
+              <input
+                type="range"
+                id={s.usdt}
+                min="0"
+                max={data ? data.token_price * data.total_tokens : ""}
+                value={valueUsdt}
+                onChange={handleChange}
+                step={"1"}
+                style={getBackgroundStyle()}
+                disabled
+              />
+              <p className={s.label}>USDT</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,5 @@
-import { useState } from "react";
 import s from "./Input.module.scss";
 import { IInput } from "./Interface";
-// import { EyeIcon } from "../../assets/icons/eye";
-// import { HiddenIcon } from "../../assets/icons/hidden";
 
 const Input = ({
   title,
@@ -14,18 +11,16 @@ const Input = ({
   color,
   inputColor,
   className,
+  textClassName,
   borderColor,
   ...rest
 }: IInput) => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   return (
     <div className={s.mainInput}>
-      <label className={s.labelName} style={{ color: `${color}` }}>
+      <label
+        className={`${s.labelName} ${textClassName}`}
+        style={{ color: `${color}` }}
+      >
         {title}
       </label>
       <input
