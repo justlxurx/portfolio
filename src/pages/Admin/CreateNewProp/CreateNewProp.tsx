@@ -3,7 +3,7 @@ import { Logo } from "../../../assets/icons/logo";
 import Input from "../../../features/Input2/Input";
 import info from "../../../assets/icons/info.svg";
 import home from "../../../assets/icons/home.svg";
-import dollar from "../../../assets/icons/dollar.svg";
+import dollar from "../../../assets/icons/dollar2.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";

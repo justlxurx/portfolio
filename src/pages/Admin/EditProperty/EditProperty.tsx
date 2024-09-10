@@ -18,7 +18,7 @@ import { arrayMove } from "@dnd-kit/sortable";
 import { useLocation } from "react-router-dom";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
 import { Apartment, Apartment2 } from "./interface";
-import dollar from "../../../assets/icons/dollar.svg";
+import dollar from "../../../assets/icons/dollar2.svg";
 
 interface CustomUploadFile extends UploadFile {
   imageId: number;
