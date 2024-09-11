@@ -79,7 +79,6 @@ export const BalanceInfo = () => {
           <span>
             ${" "}
             {data && (data.token_price * data.total_tokens * soldTokens) / 100}
-            {/* 95,5 */}
           </span>{" "}
           / $ {data && data.token_price * data.total_tokens}
           ,000

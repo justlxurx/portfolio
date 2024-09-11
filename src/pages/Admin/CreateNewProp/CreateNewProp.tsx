@@ -63,20 +63,57 @@ export const CreateNewProp = () => {
         // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
         .required("Location is required"),
       aboutProperty: Yup.string().required("About the Property is required"),
-      price: Yup.number().required("required"),
+      price: Yup.number()
+        .required("required")
+        .positive("Must be a positive number")
+        .required("required"),
       rentalReturn: Yup.string().required("equired"),
       capitalAprec: Yup.string().required("required"),
-      nftQuantity: Yup.string().required("required"),
-      nftPrice: Yup.number().required("required"),
-      beds: Yup.number().required("required"),
-      bath: Yup.number().required("required"),
-      rooms: Yup.number().required("required"),
-      kitchen: Yup.number().required("required"),
-      livingRooms: Yup.number().required("required"),
-      terrace: Yup.number().required("required"),
-      balcon: Yup.number().required("required"),
-      garage: Yup.number().required("required"),
-      size: Yup.string().required("required"),
+      nftQuantity: Yup.string().required("required").matches(/^\d+$/, ""),
+      nftPrice: Yup.number()
+        .required("required")
+        .positive("Must be a positive number")
+        .required("required"),
+      beds: Yup.number()
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      bath: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      rooms: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      kitchen: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      livingRooms: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      terrace: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      balcon: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      garage: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      size: Yup.string().required("required").matches(/^\d+$/, ""),
       type: Yup.string().required("required"),
     }),
     onSubmit: async (values) => {

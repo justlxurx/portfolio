@@ -34,6 +34,7 @@
   border-radius: 10px;
   border: 1.07px solid rgba(255, 255, 255, 1);
   height: 60px;
+  width: 100%;
 }
 .inputWrap {
   display: flex;
@@ -142,6 +143,12 @@ output {
   line-height: 21.76px;
   text-align: right;
   margin-right: 10px;
+}
+
+.notAllow {
+  cursor: not-allowed;
+  border: none;
+  background-color: gray;
 }
 
 @media (max-width: 1200px) {

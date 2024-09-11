@@ -1,7 +1,7 @@
 import s from "./MainForm.module.scss";
 import { Input } from "../../../../features/Input/Input";
-// import { useFormik } from "formik";
-// import * as Yup from "yup";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { BalanceInfo } from "../BalanceInfo/BalanceInfo";
 import { useState } from "react";
 
@@ -41,17 +41,43 @@ export const MainForm = ({ data }: { data: any }) => {
       )`,
     };
   };
+  const soldTokens =
+    ((data.total_tokens - data.tokens_available) * 100) / data.total_tokens;
+
+  const formik = useFormik({
+    initialValues: {
+      amount: 0,
+    },
+    validationSchema: Yup.object({
+      amount: Yup.number().positive("Only positive number").required(),
+    }),
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        alert("Sent successfully");
+        resetForm();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    },
+  });
 
   return (
-    <div className={s.main}>
+    <form className={s.main} onSubmit={formik.handleSubmit}>
       <BalanceInfo />
       <div className={s.form}>
         <div className={s.inputWrap}>
           <h1 className={s.main__heading}>Amount</h1>
           <Input
-            placeholder="Amount to buy"
-            //   value={formik.values.amount}
-            //   onChange={formik.handleChange}
+            name="amount"
+            placeholder="0"
+            value={formik.values.amount}
+            onChange={formik.handleChange}
+            style={{
+              border:
+                formik.touched.amount && formik.errors.amount
+                  ? "1px solid red"
+                  : "",
+            }}
           >
             <p className={s.input__text}>MAX</p>
           </Input>
@@ -115,29 +141,13 @@ export const MainForm = ({ data }: { data: any }) => {
           </div>
         </div>
       </div>
-      <button className={s.main__button}>BUY SHARES</button>
-    </div>
+      <button
+        type="submit"
+        className={`${s.main__button} ${soldTokens == 100 && s.notAllow}`}
+        disabled={soldTokens === 100}
+      >
+        BUY SHARES
+      </button>
+    </form>
   );
 };
-
-//   const formik = useFormik({
-//     initialValues: {
-//       amount: 0,
-//     },
-//     validationSchema: Yup.object({
-//       amount: Yup.number()
-//         // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, 'Only number')
-//         .required(),
-//     }),
-//     onSubmit: async (values) => {
-//       try {
-//          if (response.error) {
-//            console.error("Ошибка в ответе сервера:", response.error);
-//          } else {
-//            resetForm();
-//          }
-//       } catch (error) {
-//         console.error("Error submitting form:", error);
-//       }
-//     },
-//   });

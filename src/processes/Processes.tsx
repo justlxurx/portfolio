@@ -8,7 +8,7 @@ import { authorizeAPI } from "../api/authorize.ts";
 import { parseJwt } from "../utils/parseJwt.ts";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks.ts";
 import { authSelect, setAuth, setInitialAuth } from "../slice/authSlice.ts";
-import { useEffect } from "react";
+import { useEffect} from "react";
 
 export const useProcesses = () => {
   const { address, isConnected } = useWeb3ModalAccount();
@@ -72,6 +72,7 @@ export const useProcesses = () => {
   const processAuth = useCallback(async () => {
     console.log("isConnected:", isConnected);
     console.log("auth.isAuthorized:", auth.isAuthorized);
+    
 
     if (isConnected && !auth.isAuthorized) {
       console.log("Starting authorization process...");
@@ -102,27 +103,27 @@ export const useProcesses = () => {
     }
   }, [isConnected, address, fetchNonce, auth]);
 
-  // useEffect(() => {
-  //   let timeout: NodeJS.Timeout;
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
 
-  //   if (auth.isAuthorized) {
-  //     const time = auth.exp - Date.now();
+    if (auth.isAuthorized) {
+      const time = auth.exp - Date.now();
 
-  //     console.log("timeout time", time);
+      console.log("timeout time", time);
 
-  //     timeout = setTimeout(() => {
-  //       processAuth()
-  //         .then(() => {
-  //           console.log("Successfully re-authorized");
-  //         })
-  //         .catch(console.error);
-  //     }, time);
-  //   }
+      timeout = setTimeout(() => {
+        processAuth()
+          .then(() => {
+            console.log("Successfully re-authorized");
+          })
+          .catch(console.error);
+      }, time);
+    }
 
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, [auth, auth]);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [auth, auth]);
 
   return { processAuth };
 };

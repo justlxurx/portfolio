@@ -48,7 +48,7 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
           </div>
         </div>
       </div>
-      {img && (
+      {img &&  (
         <div className={s.wrapper}>
           <Swiper
             style={{

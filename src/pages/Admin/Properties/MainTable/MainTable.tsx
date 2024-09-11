@@ -92,6 +92,7 @@ export const MainTable = ({
             ))}
         </tbody>
       </table>
+      
     </div>
   );
 };

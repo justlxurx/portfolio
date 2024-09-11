@@ -83,8 +83,6 @@ export const Info = ({ data, id }: { data: any; id: number }) => {
         <div className={s.main}>
           {info.map(
             (item, index) =>
-              // item.characteristic_name &&
-              // item.characteristic_value &&
               index > 0 && (
                 <div key={index} className={s.info}>
                   <h1 className={s.info__title}>{item.characteristic_name}</h1>

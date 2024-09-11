@@ -29,7 +29,6 @@ export const EditProp = () => {
   const [addCharacacteristic, setAddCharacacteristic] = useState<Apartment2[]>(
     []
   );
-  // const [apartments, setApartments] = useState<Apartment[]>([]);
   const location = useLocation().pathname;
   const parts = location.split("/");
   const id = Number(parts.pop() || "");
@@ -152,24 +151,64 @@ export const EditProp = () => {
       type: data.property_type,
     },
     validationSchema: Yup.object({
-      name: Yup.string().required(`Name is required`),
-      location: Yup.string().required("Location is required"),
-      // investment: Yup.string().required(`Investment Appeal is required`),
+      name: Yup.string()
+        // .matches(/^[A-Za-zА-Яа-яЁё]+$/, ``)
+        .required(`Name is required`),
+      location: Yup.string()
+        // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
+        .required("Location is required"),
       aboutProperty: Yup.string().required("About the Property is required"),
-      price: Yup.number().required("required"),
+      price: Yup.number()
+        .required("required")
+        .positive("Must be a positive number")
+        .required("required"),
       rentalReturn: Yup.string().required("equired"),
       capitalAprec: Yup.string().required("required"),
-      nftQuantity: Yup.string().required("required"),
-      nftPrice: Yup.number().required("required"),
-      beds: Yup.number().required("required"),
-      bath: Yup.number().required("required"),
-      rooms: Yup.number().required("required"),
-      kitchen: Yup.number().required("required"),
-      livingRooms: Yup.number().required("required"),
-      terrace: Yup.number().required("required"),
-      balcon: Yup.number().required("required"),
-      garage: Yup.number().required("required"),
-      size: Yup.string().required("required"),
+      nftQuantity: Yup.string().required("required").matches(/^\d+$/, ""),
+      nftPrice: Yup.number()
+        .required("required")
+        .positive("Must be a positive number")
+        .required("required"),
+      beds: Yup.number()
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      bath: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      rooms: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      kitchen: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      livingRooms: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      terrace: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      balcon: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      garage: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .positive("Must be a positive number")
+        .required("required"),
+      size: Yup.string().required("required").matches(/^\d+$/, ""),
       type: Yup.string().required("required"),
     }),
     onSubmit: async (values) => {
@@ -238,6 +277,7 @@ export const EditProp = () => {
         console.log(result);
         console.log(charact);
         alert("Property updated successfully");
+        setTimeout(() => navigate("/admin/properties"), 2000);
       } catch (err) {
         console.error("Error when trying to create property:", err);
       }

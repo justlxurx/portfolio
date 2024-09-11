@@ -51,13 +51,12 @@ export const Card = ({
         </div>
       </div>
       {/* <p className={s.apartment__info}>Sold and Rented since APR 04. 2022</p> */}
-      {mainImg && (
-        <img
-          src={`https://minio.hotcode.kz/${mainImg}`}
-          alt="img1"
-          className={s.apartment__img}
-        />
-      )}
+
+      <img
+        src={mainImg ? `https://minio.hotcode.kz/${mainImg}` : ""}
+        alt="img1"
+        className={s.apartment__img}
+      />
 
       <div className={s.apartment__priceWrap}>
         <p className={s.apartment__price}>${price} USDT</p>
