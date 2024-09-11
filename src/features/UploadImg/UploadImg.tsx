@@ -61,11 +61,15 @@ const UploadImg = ({
   onDragEnd,
   onRemove,
   fileList,
+  text,
+  className,
 }: {
   onChange: (info: any) => void;
   onRemove?: (file: any) => void;
   onDragEnd: ({ active, over }: DragEndEvent) => void;
-  fileList: any;
+  fileList?: any;
+  text?: string;
+  className?: string;
 }) => {
   const sensor = useSensor(PointerSensor, {
     activationConstraint: { distance: 10 },
@@ -78,6 +82,7 @@ const UploadImg = ({
         strategy={verticalListSortingStrategy}
       >
         <Upload
+          style={{ width: "100%" }}
           onRemove={onRemove}
           fileList={fileList}
           onChange={onChange}
@@ -87,14 +92,18 @@ const UploadImg = ({
         >
           <Button
             icon={<UploadIcon />}
-            className={s.button}
+            className={`${s.button} ${className}`}
             onClick={() => {
               event?.preventDefault;
             }}
           >
-            <p>
-              Image size should be: 948*500, <br /> not more than 5MB
-            </p>
+            {text ? (
+              <p> {text}</p>
+            ) : (
+              <p>
+                Image size should be: 948*500, <br /> not more than 5MB
+              </p>
+            )}
           </Button>
         </Upload>
       </SortableContext>

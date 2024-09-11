@@ -151,62 +151,51 @@ export const EditProp = () => {
       type: data.property_type,
     },
     validationSchema: Yup.object({
-      name: Yup.string()
-        // .matches(/^[A-Za-zА-Яа-яЁё]+$/, ``)
-        .required(`Name is required`),
-      location: Yup.string()
-        // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
-        .required("Location is required"),
+      name: Yup.string().required(`Name is required`),
+      location: Yup.string().required("Location is required"),
       aboutProperty: Yup.string().required("About the Property is required"),
       price: Yup.number()
         .required("required")
-        .positive("Must be a positive number")
-        .required("required"),
+        .integer("Must be an integer")
+        .min(0, "Must be 0 or a positive number"),
       rentalReturn: Yup.string().required("equired"),
       capitalAprec: Yup.string().required("required"),
       nftQuantity: Yup.string().required("required").matches(/^\d+$/, ""),
       nftPrice: Yup.number()
         .required("required")
-        .positive("Must be a positive number")
-        .required("required"),
-      beds: Yup.number()
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
+      beds: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .min(0, "Must be 0 or a positive number"),
       bath: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       rooms: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       kitchen: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       livingRooms: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       terrace: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       balcon: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       garage: Yup.number()
-        .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
+        .min(0, "Must be 0 or a positive number")
         .required("required"),
       size: Yup.string().required("required").matches(/^\d+$/, ""),
       type: Yup.string().required("required"),
@@ -261,7 +250,10 @@ export const EditProp = () => {
         }
 
         for (const file of fileList) {
-          if (file.status !== "uploading") {
+          if (
+            file.status !== "uploading" &&
+            !file.name.includes("image-bucket")
+          ) {
             try {
               const formData = new FormData();
               formData.append("file", file.originFileObj as Blob);
@@ -417,9 +409,7 @@ export const EditProp = () => {
                       className={s.property__input}
                       type="text"
                       value={
-                        formik.values[
-                          item.name as keyof typeof formik.values
-                        ] || ""
+                        formik.values[item.name as keyof typeof formik.values]
                       }
                       onChange={formik.handleChange}
                       name={item.name}

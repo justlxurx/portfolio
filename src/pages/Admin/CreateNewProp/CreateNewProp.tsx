@@ -65,53 +65,46 @@ export const CreateNewProp = () => {
       aboutProperty: Yup.string().required("About the Property is required"),
       price: Yup.number()
         .required("required")
-        .positive("Must be a positive number")
-        .required("required"),
+        .integer("Must be an integer")
+        .min(0, "Must be 0 or a positive number"),
       rentalReturn: Yup.string().required("equired"),
       capitalAprec: Yup.string().required("required"),
       nftQuantity: Yup.string().required("required").matches(/^\d+$/, ""),
       nftPrice: Yup.number()
         .required("required")
-        .positive("Must be a positive number")
-        .required("required"),
-      beds: Yup.number()
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
+      beds: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .min(0, "Must be 0 or a positive number"),
       bath: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       rooms: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       kitchen: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       livingRooms: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       terrace: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       balcon: Yup.number()
         .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
-        .required("required"),
+        .min(0, "Must be 0 or a positive number"),
       garage: Yup.number()
-        .required("required")
         .integer("Must be an integer")
-        .positive("Must be a positive number")
+        .min(0, "Must be 0 or a positive number")
         .required("required"),
       size: Yup.string().required("required").matches(/^\d+$/, ""),
       type: Yup.string().required("required"),
@@ -308,9 +301,13 @@ export const CreateNewProp = () => {
                     <input
                       style={{
                         borderColor:
-                          formik.errors[
+                          (formik.errors[
                             item.name as keyof typeof formik.errors
-                          ] || ""
+                          ] &&
+                            formik.touched[
+                              item.name as keyof typeof formik.errors
+                            ]) ||
+                          ""
                             ? "red"
                             : "",
                       }}

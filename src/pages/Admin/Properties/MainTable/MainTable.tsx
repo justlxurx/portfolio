@@ -28,6 +28,9 @@ export const MainTable = ({
   deleteProp,
   openDistributeRew,
 }: MainTableProps) => {
+  const [status, setStatus] = useState<"not distributed" | "distributed">(
+    "not distributed"
+  );
   return (
     <div className={s.tableWrap}>
       <table className={s.usersTable}>
@@ -87,12 +90,20 @@ export const MainTable = ({
                   </div>
                 </td>
                 <td>01/01/2024</td>
-                <td>not distributed</td>
+                <td
+                  style={{
+                    color:
+                      status == "not distributed"
+                        ? "rgba(204, 112, 92, 1)"
+                        : "rgba(94, 165, 3, 1)",
+                  }}
+                >
+                  {status}
+                </td>
               </tr>
             ))}
         </tbody>
       </table>
-      
     </div>
   );
 };

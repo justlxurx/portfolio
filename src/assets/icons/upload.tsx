@@ -1,8 +1,8 @@
-export const UploadIcon = () => {
+export const UploadIcon = ({ size = "35" }) => {
   return (
     <svg
-      width="35"
-      height="35"
+      width={size}
+      height={size}
       viewBox="0 0 35 35"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

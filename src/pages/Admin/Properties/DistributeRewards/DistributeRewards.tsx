@@ -2,6 +2,10 @@ import s from "./Distribute.module.scss";
 import Input from "../../../../features/Input2/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import UploadImg from "../../../../features/UploadImg/UploadImg";
+import type { UploadFile, UploadProps } from "antd";
+import type { DragEndEvent } from "@dnd-kit/core";
+import { useState } from "react";
 
 export const DistributeRewards = ({
   closeModal,
@@ -44,6 +48,29 @@ export const DistributeRewards = ({
       }
     },
   });
+
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
+    setFileList(newFileList);
+    // if (newFileList.length > 0) {
+    //   const latestFile = newFileList[newFileList.length - 1].originFileObj;
+    //   if (latestFile) {
+    //     const fileUrl = URL.createObjectURL(latestFile);
+    //     setMainImg(fileUrl);
+    //   }
+    // }
+  };
+
+  const onDragEnd = ({ active, over }: DragEndEvent) => {
+    if (active.id !== over?.id) {
+      setFileList((prev) => {
+        const activeIndex = prev.findIndex((i) => i.uid === active.id);
+        const overIndex = prev.findIndex((i) => i.uid === over?.id);
+        return arrayMove(prev, activeIndex, overIndex);
+      });
+    }
+  };
+
   return (
     <div className={s.outer}>
       <div className={s.main}>
@@ -65,7 +92,7 @@ export const DistributeRewards = ({
               formik.touched.amount && formik.errors.amount ? "red" : ""
             }
           />
-          <Input
+          {/* <Input
             value={formik.values.file}
             title="Upload P&L:"
             placeholder="Upload P&L:"
@@ -78,7 +105,17 @@ export const DistributeRewards = ({
             className={s.mainForm__input}
             textClassName={s.labelName}
             borderColor={formik.touched.file && formik.errors.file ? "red" : ""}
-          />
+          /> */}
+          <p className={s.uploadTitle}>Upload P&L:</p>
+          <div className={s.uploadWrap}>
+            <UploadImg
+              onChange={onChange}
+              onDragEnd={onDragEnd}
+              fileList={fileList}
+              text="Upload P&L"
+              className={s.upload}
+            />
+          </div>
           <Input
             value={formik.values.rentProfit}
             title="Gros rent profit"
