@@ -29,7 +29,7 @@ export const SearchBar = ({
       <input
         type="text"
         name="search"
-        placeholder="Type to search..."
+        placeholder="Search"
         className={s.searchInput}
         style={{ color: `${color}`, fontSize: `${fontSize}` }}
         value={val}

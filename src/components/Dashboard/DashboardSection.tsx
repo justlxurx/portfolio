@@ -88,7 +88,7 @@ export const DashboardSection = () => {
           </div>
           {!openHistory ? (
             <div className={s.main__content}>
-              {/* <Card
+              <Card
                 name={item.name}
                 price={item.token_price}
                 capital={""}
@@ -96,7 +96,16 @@ export const DashboardSection = () => {
                 country={item.location}
                 id={item.id}
                 dash={true}
-              /> */}
+              />
+              <Card
+                name={item.name}
+                price={item.token_price}
+                capital={""}
+                rental={""}
+                country={item.location}
+                id={item.id}
+                dash={true}
+              />
             </div>
           ) : (
             <div className={s.main__historyContent}>

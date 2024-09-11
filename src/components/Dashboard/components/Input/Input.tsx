@@ -2,7 +2,6 @@ import s from "./Input.module.scss";
 import { IInput } from "./Interface";
 import arrow from "../../../../assets/icons/arrow.svg";
 
-
 const Input = ({
   title,
   name,
@@ -10,10 +9,12 @@ const Input = ({
   className,
   img,
   text,
+  border,
+  color,
   ...rest
 }: IInput) => {
   return (
-    <div className={s.info}>
+    <div className={s.info} style={{ border: border }}>
       <div className={s.info__wrap}>
         <p className={s.info__title}>{title}:</p>
         <input
@@ -23,6 +24,7 @@ const Input = ({
           name={name}
           {...rest}
           className={`${s.input} ${className}`}
+          style={{ color: color }}
         />
       </div>
       <div className={s.wallet}>

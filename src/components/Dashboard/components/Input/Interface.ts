@@ -7,4 +7,6 @@ export interface IInput extends React.HTMLProps<HTMLInputElement> {
   img: any;
   text: string;
   updateInput?: (name: string, value: string) => void;
+  border?: string;
+  color?: string;
 }
