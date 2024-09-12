@@ -4,8 +4,19 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { BalanceInfo } from "../BalanceInfo/BalanceInfo";
 import { useState } from "react";
+import { useSmarts } from "../../../../hooks/useSmart";
+import { manageNftApi } from "../../../../api/nft/manageNft";
+
+import { useAppSelector } from "../../../../hooks/hooks.ts";
+import { authSelect } from "../../../../slice/authSlice.ts";
+import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 export const MainForm = ({ data }: { data: any }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [payableBalance, setPayableBalance] = useState<string>("0");
+  const { address, isConnected } = useWeb3ModalAccount();
+  const auth = useAppSelector(authSelect);
+  const { smarts } = useSmarts();
   const getOutputPosition = () => {
     const min = 0;
     const max = data.total_tokens;
@@ -46,20 +57,119 @@ export const MainForm = ({ data }: { data: any }) => {
 
   const formik = useFormik({
     initialValues: {
-      amount: 0,
+      amount: "",
     },
     validationSchema: Yup.object({
-      amount: Yup.number().positive("Only positive number").required(),
+      amount: Yup.string()
+        .matches(/^\d+$/, "")
+        .required()
+        .test(
+          "max-amount",
+          "Amount exceeds the maximum allowed",
+          function (value) {
+            const sum = data.token_price * data.tokens_available;
+            return value ? parseFloat(value) <= sum : false;
+          }
+        ),
     }),
     onSubmit: async (values, { resetForm }) => {
+      setIsLoading((prevState) => !prevState);
       try {
-        alert("Sent successfully");
-        resetForm();
-      } catch (error) {
-        console.error("Error submitting form:", error);
+        if (data.id) {
+          const nft = await manageNftApi.getNft(data.id);
+          await smarts?.realEstate.approve(
+            smarts.marketplace.SMART_ADDRESS,
+            `${values.amount}`
+          );
+          const b = smarts?.marketplace.buyNFT(nft.id, `${values.amount}`);
+
+          smarts?.realEstate
+            .balanceOf(address!)
+            .then((res) => setPayableBalance(res));
+
+          console.log(nft);
+          // console.log("smart buy");
+
+          console.log(b);
+          resetForm();
+        }
+      } catch (err) {
+        alert("Buy shares is failed");
+        console.log(err);
       }
+      setIsLoading(false);
     },
   });
+
+  // console.log("balance is: " + payableBalance);
+
+  // const onClickBuy = async () => {
+  //   if (buyOption === "ETH" && Number(buyAmount) < 0.001) {
+  //     alert("Min ETH buy amount is 0.001");
+  //   } else {
+  //     setIsLoading((prevState) => !prevState);
+
+  //     try {
+  //       if (buyOption === "ETH") {
+  //         await smarts?.sale.buyTokenByETH(buyAmount);
+
+  //         orderCRMAPI
+  //           .getEthPriceInUsd()
+  //           .then((res) => {
+  //             const ethToUsd = res.ethereum.usd * Number(buyAmount);
+
+  //             orderCRMAPI.order({
+  //               buyAmount: Number(buyAmount),
+  //               usdAmount: ethToUsd,
+  //               address,
+  //             });
+  //           })
+  //           .catch(console.error);
+
+  //         walletProvider!
+  //           .request({
+  //             method: "eth_getBalance",
+  //             params: [address, "latest"],
+  //           })
+  //           .then((res) => setPayableBalance(formatEther(res)))
+  //           .catch(console.error);
+  //       } else {
+  //         await smarts?.usdt.approve(smarts?.sale.SMART_ADDRESS, buyAmount);
+
+  //         await smarts?.sale.buyTokensBuyUSDT(buyAmount);
+
+  //         orderCRMAPI
+  //           .order({
+  //             buyAmount: Number(buyAmount),
+  //             usdAmount: Number(buyAmount),
+  //             address,
+  //           })
+  //           .then(console.log)
+  //           .catch(console.error);
+
+  //         smarts?.usdt
+  //           .balanceOf(address!)
+  //           .then((res) => setPayableBalance(res));
+  //       }
+
+  //       dispatch(refresh());
+  //       setIsOpenCongrats(true);
+
+  //       // const newBalance = await smarts?.sale.totalTokensBought(address!)
+  //       //
+  //       // if(newBalance) setDoggyBalance(newBalance)
+  //     } catch (e) {
+  //       console.error(e);
+  //       if (isError(e, "INSUFFICIENT_FUNDS")) {
+  //         alert("Make sure you have enough funds for the transaction!");
+  //       } else {
+  //         alert("Something went wrong try again later!");
+  //       }
+  //     }
+
+  //     setIsLoading(false);
+  //   }
+  // };
 
   return (
     <form className={s.main} onSubmit={formik.handleSubmit}>
@@ -143,10 +253,12 @@ export const MainForm = ({ data }: { data: any }) => {
       </div>
       <button
         type="submit"
-        className={`${s.main__button} ${soldTokens == 100 && s.notAllow}`}
-        disabled={soldTokens === 100}
+        className={`${s.main__button} ${
+          soldTokens == 100 || (!auth.isAuthorized && s.notAllow)
+        }`}
+        disabled={soldTokens === 100 || !auth.isAuthorized}
       >
-        BUY SHARES
+        {isLoading ? <span className={s.loader} /> : `BUY SHARES`}
       </button>
     </form>
   );

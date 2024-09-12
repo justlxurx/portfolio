@@ -82,7 +82,6 @@ const UploadImg = ({
         strategy={verticalListSortingStrategy}
       >
         <Upload
-          style={{ width: "100%" }}
           onRemove={onRemove}
           fileList={fileList}
           onChange={onChange}

@@ -87,13 +87,13 @@ export const Card = ({
             <p>
               Estimated Rental <br /> Return:
             </p>
-            <span>5 - 10% /year</span>
+            <span>{rental}%/year</span>
           </div>
           <div className={s.apartment__percents}>
             <p>
               Estimated Capital <br /> Appreciation:
             </p>
-            <span>8 - 12% /year</span>
+            <span>{capital}%/year</span>
           </div>
           <div className={s.apartment__percents}>
             <p>

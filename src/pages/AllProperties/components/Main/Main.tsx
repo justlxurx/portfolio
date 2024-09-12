@@ -134,8 +134,8 @@ export const Properties = () => {
                 id={item.id}
                 name={item.name}
                 price={item.token_price}
-                capital={""}
-                rental={""}
+                capital={item.estimated_capital_appreciation}
+                rental={item.estimated_rental_return}
                 country={item.location}
                 token_price={item.token_price}
                 total_tokens={item.total_tokens}

@@ -12,8 +12,8 @@ export const BalanceInfo = () => {
   const { address, isConnected } = useWeb3ModalAccount();
   const { smarts } = useSmarts();
   const { walletProvider } = useWeb3ModalProvider();
-  const [payableBalance, setPayableBalance] = useState<string>("0");
 
+  const [payableBalance, setPayableBalance] = useState<string>("0");
   const location = useLocation().pathname;
   const parts = location.split("/");
   const id = Number(parts.pop() || "");
@@ -53,10 +53,12 @@ export const BalanceInfo = () => {
         <p className={s.info__balance}>${payableBalance} USDT</p>
         <div className={s.info__estimatedWrap}>
           <p className={s.info__estimatedText}>
-            Estimated Rental Return: 20%/ year
+            Estimated Rental Return: {data && data.estimated_rental_return}%/
+            year
           </p>
           <p className={s.info__estimatedText}>
-            Estimated Capital Appreciation: 20%/ year
+            Estimated Capital Appreciation:{" "}
+            {data && data.estimated_capital_appreciation}%/ year
           </p>
         </div>
         <p className={s.info__estimatedText}>

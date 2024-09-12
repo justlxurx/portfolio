@@ -67,8 +67,6 @@ export const CreateNewProp = () => {
         .required("required")
         .integer("Must be an integer")
         .min(0, "Must be 0 or a positive number"),
-      rentalReturn: Yup.string().required("equired"),
-      capitalAprec: Yup.string().required("required"),
       nftQuantity: Yup.string().required("required").matches(/^\d+$/, ""),
       nftPrice: Yup.number()
         .required("required")
@@ -108,6 +106,14 @@ export const CreateNewProp = () => {
         .required("required"),
       size: Yup.string().required("required").matches(/^\d+$/, ""),
       type: Yup.string().required("required"),
+      estimated_capital_appreciation: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .min(0, "Must be 0 or a positive number"),
+      estimated_rental_return: Yup.number()
+        .required("required")
+        .integer("Must be an integer")
+        .min(0, "Must be 0 or a positive number"),
     }),
     onSubmit: async (values) => {
       event?.preventDefault();
@@ -125,6 +131,11 @@ export const CreateNewProp = () => {
         living_rooms: Number(values.livingRooms),
         terraces: Number(values.terrace),
         total_rooms: Number(values.rooms),
+
+        estimated_capital_appreciation: Number(
+          values.estimated_capital_appreciation
+        ),
+        estimated_rental_return: Number(values.estimated_rental_return),
 
         property_area: Number(values.size),
         property_type: values.type,
@@ -499,15 +510,16 @@ export const CreateNewProp = () => {
               title="Estimated Rental Return:"
               placeholder="Enter %"
               type="text"
-              name="rentalReturn"
+              name="estimated_rental_return"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
-              value={formik.values.rentalReturn}
+              value={formik.values.estimated_rental_return}
               borderColor={
-                formik.touched.rentalReturn && formik.errors.rentalReturn
+                formik.touched.estimated_rental_return &&
+                formik.errors.estimated_rental_return
                   ? "red"
                   : ""
               }
@@ -517,15 +529,16 @@ export const CreateNewProp = () => {
               title="Estimated Capital Appreciation:"
               placeholder="Enter %"
               type="text"
-              name="capitalAprec"
+              name="estimated_capital_appreciation"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
-              value={formik.values.capitalAprec}
+              value={formik.values.estimated_capital_appreciation}
               borderColor={
-                formik.touched.capitalAprec && formik.errors.capitalAprec
+                formik.touched.estimated_capital_appreciation &&
+                formik.errors.estimated_capital_appreciation
                   ? "red"
                   : ""
               }

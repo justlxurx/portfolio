@@ -55,8 +55,6 @@ export const initVal = {
   investment: "",
   aboutProperty: "",
   price: "",
-  rentalReturn: "",
-  capitalAprec: "",
   nftQuantity: "",
   nftPrice: "",
   beds: 0,
@@ -71,4 +69,6 @@ export const initVal = {
   type: "",
   characteristic_name: "",
   characteristic_value: "",
+  estimated_capital_appreciation: 0,
+  estimated_rental_return: 0,
 };

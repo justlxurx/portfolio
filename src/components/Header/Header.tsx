@@ -29,7 +29,6 @@ export const Header = () => {
       links: "/#contacts",
     },
   ];
-  console.log("auth :" + auth.isAuthorized);
   return (
     <header
       className={`${s.main} container`}
@@ -90,9 +89,9 @@ export const Header = () => {
           <ul className={s.menu__list}>
             {links.map((item, index) => (
               <li key={index}>
-                <a href={`${item.links}`} className={s.link}>
+                <Link to={`${item.links}`} className={s.link}>
                   {item.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -114,7 +113,13 @@ export const Header = () => {
                 : " Connect wallet"}
             </button>
             <Link to={"/login"} className={s.link}>
-              <button className={s.accountButton}>
+              <button
+                className={s.accountButton}
+                style={{
+                  backgroundColor: auth.isAuthorized ? "white" : "unset",
+                  color: auth.isAuthorized ? "rgba(24, 39, 67, 1)" : "white",
+                }}
+              >
                 <Profile />
                 My account
               </button>

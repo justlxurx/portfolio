@@ -36,6 +36,14 @@ export class RealEstateSmart implements IRealEstateSmart {
   }
 
   // Read contracts
+  async allowance(owner: string, spender: string): Promise<string> {
+    const allowance = await this.smart.callStaticReadMethod<bigint>(
+      "allowance",
+      owner,
+      spender
+    );
+    return formatUnits(allowance, 18);
+  }
   async balanceOf(account: string): Promise<string> {
     const balance = await this.smart.callStaticReadMethod<bigint>(
       "balanceOf",
@@ -43,21 +51,9 @@ export class RealEstateSmart implements IRealEstateSmart {
     );
     return formatUnits(balance, 18);
   }
-  async getApproved(tokenId: string): Promise<string> {
-    const getApproved = await this.smart.callStaticReadMethod<string>(
-      "getApproved",
-      tokenId
-    );
-    return getApproved;
-    //formatUnits(balance, 18);
-  }
-  async isAppovedForAll(owner: string, operator: string): Promise<boolean> {
-    const isAppovedForAll = await this.smart.callStaticReadMethod<boolean>(
-      "isAppovedForAll",
-      owner,
-      operator
-    );
-    return isAppovedForAll;
+  async decimals(): Promise<string> {
+    const decimals = await this.smart.callStaticReadMethod<string>("decimals");
+    return decimals;
   }
   async name(): Promise<string> {
     const name = await this.smart.callStaticReadMethod<string>("name");
@@ -67,96 +63,34 @@ export class RealEstateSmart implements IRealEstateSmart {
     const owner = await this.smart.callStaticReadMethod<string>("owner");
     return owner;
   }
-  async ownerOf(tokenId: string): Promise<string> {
-    const ownerOf = await this.smart.callStaticReadMethod<string>(
-      "ownerOf",
-      tokenId
-    );
-    return ownerOf;
-  }
-  async supportsInterface(interfaceId: string): Promise<boolean> {
-    const supportsInterface = await this.smart.callStaticReadMethod<boolean>(
-      "upportsInterface",
-      interfaceId
-    );
-    return supportsInterface;
-  }
   async symbol(): Promise<string> {
     const symbol = await this.smart.callStaticReadMethod<string>("symbol");
     return symbol;
   }
-  async tokenURI(tokenId: string): Promise<string> {
-    const supportsInterface = await this.smart.callStaticReadMethod<string>(
-      "supportsInterface",
-      tokenId
+  async totalSupply(): Promise<string> {
+    const totalSupply = await this.smart.callStaticReadMethod<string>(
+      "totalSupply"
     );
-    return supportsInterface;
+    return totalSupply;
   }
 
   // Write contracts
-  async _setURI(_newURI: string): Promise<void> {
-    const tx = await this.smart.callMethod("_setURI", _newURI);
+
+  async approve(spender: string, value: string): Promise<void> {
+    const amountValue = parseUnits(value, 18);
+    const tx = await this.smart.callMethod("approve", spender, amountValue);
     await tx.wait();
   }
-  async approve(to: string, tokenId: string): Promise<void> {
-    const amountValue = parseUnits(tokenId, 18);
-    const tx = await this.smart.callMethod("approve", to, amountValue);
-    await tx.wait();
-  }
-  async burn(tokenId: string): Promise<void> {
-    const tx = await this.smart.callMethod("burn", tokenId);
-    await tx.wait();
-  }
-  async mintBatch(to: string, _amount: string): Promise<void> {
-    const tx = await this.smart.callMethod("mintBatch", to, _amount);
+  async mint(to: string, amount: string): Promise<void> {
+    const tx = await this.smart.callMethod("mintBatch", to, amount);
     await tx.wait();
   }
   async renounceOwnership(): Promise<void> {
     const tx = await this.smart.callMethod("renounceOwnership");
     await tx.wait();
   }
-  async safeMint(to: string): Promise<void> {
-    const tx = await this.smart.callMethod("safeMint", to);
-    await tx.wait();
-  }
-  async safeTransferFrom(
-    from: string,
-    to: string,
-    tokenId: string
-  ): Promise<void> {
-    const tx = await this.smart.callMethod(
-      "safeTransferFrom",
-      from,
-      to,
-      tokenId
-    );
-    await tx.wait();
-  }
-  async safeTransferFrom2(
-    from: string,
-    to: string,
-    tokenId: string,
-    data: number
-  ): Promise<void> {
-    const tx = await this.smart.callMethod(
-      "safeTransferFrom",
-      from,
-      to,
-      tokenId,
-      data
-    );
-    await tx.wait();
-  }
-  async setApprovalForAll(operator: string, approved: boolean): Promise<void> {
-    const tx = await this.smart.callMethod(
-      "setApprovalForAll",
-      operator,
-      approved
-    );
-    await tx.wait();
-  }
-  async transferFrom(from: string, to: string, tokenId: string): Promise<void> {
-    const amountValue = parseUnits(tokenId, 18);
+  async transferFrom(from: string, to: string, value: string): Promise<void> {
+    const amountValue = parseUnits(value, 18);
     const tx = await this.smart.callMethod(
       "transferFrom",
       from,
@@ -165,8 +99,8 @@ export class RealEstateSmart implements IRealEstateSmart {
     );
     await tx.wait();
   }
-  async transfer(to: string, amount: string): Promise<void> {
-    const amountValue = parseUnits(amount, 18);
+  async transfer(to: string, value: string): Promise<void> {
+    const amountValue = parseUnits(value, 18);
     const tx = await this.smart.callMethod("transfer", to, amountValue);
     await tx.wait();
   }

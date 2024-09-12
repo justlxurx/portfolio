@@ -19,8 +19,8 @@ interface Property {
   token_price: string;
   location: string;
   main_image_url: string;
-  rental: string;
-  capital: string;
+  estimated_rental_return: string;
+  estimated_capital_appreciation: string;
 }
 
 export const MainSlider = () => {
@@ -81,8 +81,8 @@ export const MainSlider = () => {
                   name={a.name}
                   location={a.location}
                   token_price={a.token_price}
-                  rental={""}
-                  capital={""}
+                  rental={a.estimated_rental_return}
+                  capital={a.estimated_capital_appreciation}
                   img={a.main_image_url}
                 />
               </SwiperSlide>
