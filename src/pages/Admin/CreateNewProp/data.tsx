@@ -72,3 +72,8 @@ export const initVal = {
   estimated_capital_appreciation: 0,
   estimated_rental_return: 0,
 };
+
+export type Apartment = {
+  characteristic_name: string;
+  characteristic_value: string;
+};

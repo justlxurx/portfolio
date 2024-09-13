@@ -121,15 +121,16 @@ export class MarketplaceSmart implements IMarketplaceSmart {
   }
 
   async setOffer(
-    tokenid: string,
+    tokenId: string,
     _price: string,
     _amountToSell: string
   ): Promise<void> {
+    const amountValue = parseUnits(_amountToSell, 6);
     const tx = await this.smart.callMethod(
       "setOffer",
-      tokenid,
+      tokenId,
       _price,
-      _amountToSell
+      amountValue
     );
     await tx.wait();
   }

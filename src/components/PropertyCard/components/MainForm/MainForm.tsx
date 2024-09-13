@@ -81,6 +81,7 @@ export const MainForm = ({ data }: { data: any }) => {
             smarts.marketplace.SMART_ADDRESS,
             `${values.amount}`
           );
+
           const b = smarts?.marketplace.buyNFT(nft.id, `${values.amount}`);
 
           smarts?.realEstate
@@ -93,6 +94,9 @@ export const MainForm = ({ data }: { data: any }) => {
           console.log(b);
           resetForm();
         }
+        const r = await smarts?.marketplace.Price();
+        console.log("nft is: " + r);
+        console.log(r);
       } catch (err) {
         alert("Buy shares is failed");
         console.log(err);
@@ -101,8 +105,6 @@ export const MainForm = ({ data }: { data: any }) => {
     },
   });
 
-  // console.log("balance is: " + payableBalance);
-
   // const onClickBuy = async () => {
   //   if (buyOption === "ETH" && Number(buyAmount) < 0.001) {
   //     alert("Min ETH buy amount is 0.001");
@@ -110,30 +112,7 @@ export const MainForm = ({ data }: { data: any }) => {
   //     setIsLoading((prevState) => !prevState);
 
   //     try {
-  //       if (buyOption === "ETH") {
-  //         await smarts?.sale.buyTokenByETH(buyAmount);
-
-  //         orderCRMAPI
-  //           .getEthPriceInUsd()
-  //           .then((res) => {
-  //             const ethToUsd = res.ethereum.usd * Number(buyAmount);
-
-  //             orderCRMAPI.order({
-  //               buyAmount: Number(buyAmount),
-  //               usdAmount: ethToUsd,
-  //               address,
-  //             });
-  //           })
-  //           .catch(console.error);
-
-  //         walletProvider!
-  //           .request({
-  //             method: "eth_getBalance",
-  //             params: [address, "latest"],
-  //           })
-  //           .then((res) => setPayableBalance(formatEther(res)))
-  //           .catch(console.error);
-  //       } else {
+  //
   //         await smarts?.usdt.approve(smarts?.sale.SMART_ADDRESS, buyAmount);
 
   //         await smarts?.sale.buyTokensBuyUSDT(buyAmount);
@@ -150,14 +129,12 @@ export const MainForm = ({ data }: { data: any }) => {
   //         smarts?.usdt
   //           .balanceOf(address!)
   //           .then((res) => setPayableBalance(res));
-  //       }
+  //
 
   //       dispatch(refresh());
   //       setIsOpenCongrats(true);
 
-  //       // const newBalance = await smarts?.sale.totalTokensBought(address!)
-  //       //
-  //       // if(newBalance) setDoggyBalance(newBalance)
+  //
   //     } catch (e) {
   //       console.error(e);
   //       if (isError(e, "INSUFFICIENT_FUNDS")) {
@@ -201,7 +178,6 @@ export const MainForm = ({ data }: { data: any }) => {
                 id="volume"
                 style={{
                   left: `${getOutputPosition()}px`,
-                  // left: `${getOutputPosition(value, 0, 500)}px`,
                   transform: `${
                     value == 0 ? "translateX(0%)" : " translateX(-50%)"
                   }`,

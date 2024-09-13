@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
-import { property, initVal } from "./data";
+import { property, initVal, Apartment } from "./data";
 import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useNavigate } from "react-router-dom";
 import type { UploadFile, UploadProps } from "antd";
@@ -18,13 +18,10 @@ import { characacteristicsApi } from "../../../api/property/manageCharacteristic
 import type { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import { manageNftApi } from "../../../api/nft/manageNft";
-
-type Apartment = {
-  characteristic_name: string;
-  characteristic_value: string;
-};
+import { useSmarts } from "../../../hooks/useSmart";
 
 export const CreateNewProp = () => {
+  const { smarts } = useSmarts();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [propertyId, setPropertyId] = useState<number>(0);
   const navigate = useNavigate();
@@ -56,12 +53,8 @@ export const CreateNewProp = () => {
   const formik = useFormik({
     initialValues: initVal,
     validationSchema: Yup.object({
-      name: Yup.string()
-        // .matches(/^[A-Za-zА-Яа-яЁё]+$/, ``)
-        .required(`Name is required`),
-      location: Yup.string()
-        // .matches(/^(\d{1}-\d{3}-\d{3}-\d{2}-\d{2})$/, "")
-        .required("Location is required"),
+      name: Yup.string().required(`Name is required`),
+      location: Yup.string().required("Location is required"),
       aboutProperty: Yup.string().required("About the Property is required"),
       price: Yup.number()
         .required("required")
@@ -179,20 +172,43 @@ export const CreateNewProp = () => {
         console.warn("No property ID available for uploading images");
         return;
       }
+      const data = new FormData();
 
       for (const file of fileList) {
         if (file.status !== "uploading") {
           try {
             const formData = new FormData();
             formData.append("file", file.originFileObj as Blob);
-
+            data.append("file", file.originFileObj as Blob);
             await manageImgApi.uploadImg(propertyId, formData);
-            await manageNftApi.mintNft(propertyId, formData);
-
             console.log("Image uploaded successfully");
           } catch (error) {
             console.error("Image upload failed", error);
           }
+        }
+      }
+
+      const token = await manageNftApi.mintNft(propertyId, data);
+
+      if (token.id) {
+        console.log(
+          "id: " +
+            token.id +
+            " price: " +
+            formik.values.nftPrice +
+            " amount: " +
+            formik.values.nftQuantity
+        );
+        try {
+          const offer = await smarts?.marketplace.setOffer(
+            `${token.id}`,
+            formik.values.nftPrice,
+            formik.values.nftQuantity
+          );
+
+          console.log("offer success: " + offer);
+        } catch (offerError) {
+          console.error("Error in setOffer: ", offerError);
         }
       }
     };
@@ -394,27 +410,6 @@ export const CreateNewProp = () => {
             )}
           </div>
 
-          {/* <div className={s.apartmentWrap}>
-            <div className={s.apartment}>
-              <img src={dollar} alt="dollar" className={s.apartment__img} />
-              <p className={s.apartment__text}>Investment Appeal</p>
-            </div>
-            <div className={s.apartment__info}>
-              <textarea
-                onChange={formik.handleChange}
-                className={s.area}
-                name="investment"
-                id="property"
-                placeholder="Text area "
-                rows={5}
-                value={formik.values.investment}
-              ></textarea>
-            </div>
-            {formik.errors.investment && formik.touched.investment && (
-              <p className={s.error}>{formik.errors.investment}</p>
-            )}
-          </div> */}
-
           {Array.from({ length: apartNum }).map((_, a) =>
             a == 0 ? (
               <div className={s.apartmentWrap} key={a}>
@@ -430,9 +425,6 @@ export const CreateNewProp = () => {
                     id="property"
                     placeholder="Text area "
                     rows={5}
-                    // value={formik.values.investment}
-                    // name="investment"
-                    // onChange={formik.handleChange}
                     name={`characteristic_value-${a}`}
                     onChange={(e) =>
                       handleInputChange(
@@ -444,9 +436,6 @@ export const CreateNewProp = () => {
                     value={characteristic[a].characteristic_value}
                   ></textarea>
                 </div>
-                {/* {formik.errors.investment && formik.touched.investment && (
-                  <p className={s.error}>{formik.errors.investment}</p>
-                )} */}
               </div>
             ) : (
               <div key={a} className={s.apartmentWrap}>

@@ -22,10 +22,10 @@ const chains = [
   // },
   {
     chainId: Chains.Testnet,
-    name: "Sepolia Test Netwok",
-    currency: "SepoliaETH",
+    name: "Sepolia Test Network",
+    currency: "ETH",
     explorerUrl: "https://sepolia.etherscan.io/",
-    rpcUrl: "https://1rpc.io/sepolia",
+    rpcUrl: "https://ethereum-sepolia-rpc.publicnode.com",
   },
 ];
 

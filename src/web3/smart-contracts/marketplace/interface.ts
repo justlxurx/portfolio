@@ -35,7 +35,7 @@ export interface IMarketplaceSmart extends IMarketplaceProperties {
   ): Promise<void>;
   renounceOwnership(): Promise<void>;
   setOffer(
-    tokenid: string,
+    tokenId: string,
     _price: string,
     _amountToSell: string
   ): Promise<void>;
