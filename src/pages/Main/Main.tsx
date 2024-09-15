@@ -6,6 +6,7 @@ import { Main } from "../../components/Main/Main";
 import { Steps } from "../../components/Steps/Steps";
 import { MainSlider } from "../../components/MainSlider/MainSlider";
 import s from "./Main.module.scss";
+import { HowWorks } from "../../components/HowWorks/HowWorks";
 
 export const MainPage = () => {
   return (
@@ -15,6 +16,7 @@ export const MainPage = () => {
       <Invest />
       <Steps />
       <MainSlider />
+      <HowWorks />
       <Faq />
       <Contacts />
     </div>

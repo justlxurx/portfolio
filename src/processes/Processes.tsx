@@ -92,15 +92,15 @@ export const useProcesses = () => {
     }
   }, [isConnected]);
 
-  // useEffect(() => {
-  //   if (isConnected && !auth.isAuthorized) {
-  //     processAuth()
-  //       .then(() => {
-  //         console.log("Successfully authorized");
-  //       })
-  //       .catch(console.error);
-  //   }
-  // }, [isConnected, address, fetchNonce, auth]);
+  useEffect(() => {
+    if (isConnected && !auth.isAuthorized) {
+      processAuth()
+        .then(() => {
+          console.log("Successfully authorized");
+        })
+        .catch(console.error);
+    }
+  }, [isConnected, address, fetchNonce, auth]);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
