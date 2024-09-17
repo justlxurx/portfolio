@@ -2,10 +2,11 @@ import s from "./MainTable.module.scss";
 import edit from "../../../../assets/icons/edit.svg";
 import trash from "../../../../assets/icons/trash.svg";
 import { formatDate } from "../../../../utils/formatData";
-import gift from "../../../../assets/icons/gift.svg";
-import { Link } from "react-router-dom";
 import { DistributeRewards } from "../DistributeRewards/DistributeRewards";
 import { useState } from "react";
+import { Gift } from "../../../../assets/icons/gift";
+import { Link } from "react-router-dom";
+import { manageImgApi } from "../../../../api/property/manageImg";
 
 interface Property {
   id: number;
@@ -26,11 +27,28 @@ interface MainTableProps {
 export const MainTable = ({
   properties,
   deleteProp,
-  openDistributeRew,
-}: MainTableProps) => {
+}: // openDistributeRew,
+MainTableProps) => {
   const [status, setStatus] = useState<"not distributed" | "distributed">(
     "not distributed"
   );
+  const [openDistributeRew, setOpenDistributeRew] = useState(false);
+  const [id, setId] = useState(0);
+  const [img, setImg] = useState("");
+  const handleOpenModal = async (num: number, num2: number) => {
+    setOpenDistributeRew(true);
+    setId(num);
+    if (num2) {
+      try {
+        const img = await manageImgApi.getImg(num2);
+        setImg(img[0].image_url);
+      } catch (err) {
+        console.log(err);
+        setImg("");
+      }
+    }
+  };
+
   return (
     <div className={s.tableWrap}>
       <table className={s.usersTable}>
@@ -70,8 +88,11 @@ export const MainTable = ({
                 <td>{data.token_price} $</td>
                 <td>{formatDate(data.created_at)}</td>
                 <td>
-                  <button className={s.giftButton} onClick={openDistributeRew}>
-                    <img src={gift} alt="gift" />
+                  <button
+                    className={s.giftButton}
+                    onClick={() => handleOpenModal(index, data.id)}
+                  >
+                    <Gift />
                   </button>
                 </td>
                 <td>
@@ -104,6 +125,13 @@ export const MainTable = ({
             ))}
         </tbody>
       </table>
+      {openDistributeRew && (
+        <DistributeRewards
+          closeModal={() => setOpenDistributeRew(false)}
+          title={`${properties[id].name}`}
+          img={img ? `https://minio.hotcode.kz/${img}` : ""}
+        />
+      )}
     </div>
   );
 };

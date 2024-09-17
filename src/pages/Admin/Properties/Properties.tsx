@@ -15,7 +15,6 @@ export const AdminProperties = () => {
   const [properties, setProperties] = useState([]);
   const [sortCriteria, setSortCriteria] = useState("name");
   const [sortName, setSortName] = useState("Sort by");
-  const [openDistributeRew, setOpenDistributeRew] = useState(false);
 
   const item = [
     { title: "name", name: "name" },
@@ -148,14 +147,18 @@ export const AdminProperties = () => {
 
         <div className={s.main__table}>
           <MainTable
-            openDistributeRew={() => setOpenDistributeRew(true)}
+            // openDistributeRew={() => setOpenDistributeRew(true)}
             properties={t}
             deleteProp={handleDeleteProperty}
           />
         </div>
-        {openDistributeRew && (
-          <DistributeRewards closeModal={() => setOpenDistributeRew(false)} />
-        )}
+        {/* {openDistributeRew && (
+          <DistributeRewards
+            closeModal={() => setOpenDistributeRew(false)}
+            title={""}
+            img=""
+          />
+        )} */}
       </div>
     </div>
   );

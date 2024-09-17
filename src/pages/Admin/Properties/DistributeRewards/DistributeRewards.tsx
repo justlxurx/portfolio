@@ -6,11 +6,17 @@ import UploadImg from "../../../../features/UploadImg/UploadImg";
 import type { UploadFile, UploadProps } from "antd";
 import type { DragEndEvent } from "@dnd-kit/core";
 import { useState } from "react";
+import { Gift } from "../../../../assets/icons/gift";
+import a from "../../../../assets/images/img1.png";
 
 export const DistributeRewards = ({
   closeModal,
+  img,
+  title,
 }: {
   closeModal: () => void;
+  img?: string;
+  title: string;
 }) => {
   const formik = useFormik({
     enableReinitialize: true,
@@ -48,6 +54,7 @@ export const DistributeRewards = ({
       }
     },
   });
+  // const [openDistributeRew, setOpenDistributeRew] = useState(false);
 
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const onChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
@@ -70,52 +77,115 @@ export const DistributeRewards = ({
       });
     }
   };
+  console.log("img is: " + img);
 
   return (
     <div className={s.outer}>
       <div className={s.main}>
         <h1 className={s.main__title}> Distribute Rewards</h1>
         <form className={s.form} onSubmit={formik.handleSubmit}>
-          <Input
-            value={formik.values.amount}
-            title="Amount of rewards"
-            placeholder="Amount of rewards"
-            type="text"
-            name="amount"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            color="black"
-            inputColor="rgba(29, 29, 29, 0.35)"
-            className={s.mainForm__input}
-            textClassName={s.labelName}
-            borderColor={
-              formik.touched.amount && formik.errors.amount ? "red" : ""
-            }
-          />
-          {/* <Input
-            value={formik.values.file}
-            title="Upload P&L:"
-            placeholder="Upload P&L:"
-            type="file"
-            name="file"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            color="black"
-            inputColor="rgba(29, 29, 29, 0.35)"
-            className={s.mainForm__input}
-            textClassName={s.labelName}
-            borderColor={formik.touched.file && formik.errors.file ? "red" : ""}
-          /> */}
-          <p className={s.uploadTitle}>Upload P&L:</p>
-          <div className={s.uploadWrap}>
-            <UploadImg
-              onChange={onChange}
-              onDragEnd={onDragEnd}
-              fileList={fileList}
-              text="Upload P&L"
-              className={s.upload}
-            />
-          </div>
+          {img ? (
+            <div className={s.form__inputWrap}>
+              <div className={s.form__img}>
+                <p>{title}</p>
+                <img src={img} alt="img" />
+              </div>
+
+              <div className={s.form__inputs}>
+                <Input
+                  value={formik.values.amount}
+                  title="Amount of rewards"
+                  placeholder="Amount of rewards"
+                  type="text"
+                  name="amount"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  color="black"
+                  inputColor="rgba(29, 29, 29, 0.35)"
+                  className={s.mainForm__input}
+                  textClassName={s.labelName}
+                  borderColor={
+                    formik.touched.amount && formik.errors.amount ? "red" : ""
+                  }
+                />
+                <p className={s.uploadTitle}>Upload P&L:</p>
+                <div className={s.uploadWrap}>
+                  <UploadImg
+                    onChange={onChange}
+                    onDragEnd={onDragEnd}
+                    fileList={fileList}
+                    text="Upload P&L"
+                    className={s.upload}
+                  />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className={s.form__inputs}>
+              <p className={s.title}>{title}</p>
+              <Input
+                value={formik.values.amount}
+                title="Amount of rewards"
+                placeholder="Amount of rewards"
+                type="text"
+                name="amount"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                color="black"
+                inputColor="rgba(29, 29, 29, 0.35)"
+                className={s.mainForm__input}
+                textClassName={s.labelName}
+                borderColor={
+                  formik.touched.amount && formik.errors.amount ? "red" : ""
+                }
+              />
+              <p className={s.uploadTitle}>Upload P&L:</p>
+              <div className={s.uploadWrap}>
+                <UploadImg
+                  onChange={onChange}
+                  onDragEnd={onDragEnd}
+                  fileList={fileList}
+                  text="Upload P&L"
+                  className={s.upload}
+                />
+              </div>
+            </div>
+          )}
+          {/* <div className={s.form__inputWrap}>
+            <div className={s.form__img}>
+              <p>{title}</p>
+              <img src={img} alt="img" />
+            </div>
+
+            <div className={s.form__inputs}>
+              <Input
+                value={formik.values.amount}
+                title="Amount of rewards"
+                placeholder="Amount of rewards"
+                type="text"
+                name="amount"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                color="black"
+                inputColor="rgba(29, 29, 29, 0.35)"
+                className={s.mainForm__input}
+                textClassName={s.labelName}
+                borderColor={
+                  formik.touched.amount && formik.errors.amount ? "red" : ""
+                }
+              />
+              <p className={s.uploadTitle}>Upload P&L:</p>
+              <div className={s.uploadWrap}>
+                <UploadImg
+                  onChange={onChange}
+                  onDragEnd={onDragEnd}
+                  fileList={fileList}
+                  text="Upload P&L"
+                  className={s.upload}
+                />
+              </div>
+            </div>
+          </div> */}
           <Input
             value={formik.values.rentProfit}
             title="Gros rent profit"
@@ -186,13 +256,12 @@ export const DistributeRewards = ({
           />
 
           <div className={s.buttonWrap}>
-            <button className={s.cancelButton}>Distibute</button>
             <button onClick={closeModal} className={s.cancelButton}>
-              {" "}
-              Cancel{" "}
+              Cancel
             </button>
             <button onClick={() => ""} className={s.saveButton} type="submit">
-              Save
+              <Gift color="white" size="17.25" />
+              Distibute
             </button>
           </div>
         </form>
