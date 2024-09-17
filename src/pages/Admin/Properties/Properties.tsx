@@ -88,7 +88,7 @@ export const AdminProperties = () => {
     if (val === "") {
       fetchProperties();
     }
-  }, [val]);
+  }, []);
 
   const handleDeleteProperty = async (id: number) => {
     try {

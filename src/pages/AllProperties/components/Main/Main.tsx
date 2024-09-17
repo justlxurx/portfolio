@@ -49,11 +49,22 @@ export const Properties = () => {
     };
 
     fetchProperties();
-  }, [val]);
+  }, []);
 
   const handleChange = async (value: any) => {
     setVal(value);
-
+    if (!value) {
+      try {
+        const response = await filteredPropertyAPI.filter({
+          offset: 0,
+          limit: 100,
+        });
+        setProperties(response);
+      } catch (error) {
+        console.error("Failed to fetch all properties", error);
+      }
+      return;
+    }
     for (const filter of item) {
       if (filter.name && value) {
         try {
