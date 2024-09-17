@@ -20,6 +20,7 @@ export const DashboardSection = () => {
   const [val, setVal] = useState("");
   const [sortCriteria, setSortCriteria] = useState("name");
   const [properties, setProperties] = useState<Property[]>([]);
+  const [sortName, setSortName] = useState("Sort by");
 
   const handleChange = async (value: any) => {
     setVal(value);
@@ -33,6 +34,7 @@ export const DashboardSection = () => {
 
   const handleSort = (name: string) => {
     setSortCriteria(name);
+    setSortName(name);
   };
   const t = sortProperties(properties, sortCriteria);
 
@@ -70,7 +72,7 @@ export const DashboardSection = () => {
             </div>
             <div className={s.dropdown}>
               <div className={s.dropdown__top}>
-                Sort by
+                {sortName}
                 <Down />
               </div>
               <div className={s.dropdown__bottom}>

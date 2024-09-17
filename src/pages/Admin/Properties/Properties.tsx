@@ -14,6 +14,7 @@ export const AdminProperties = () => {
   const [val, setVal] = useState("");
   const [properties, setProperties] = useState([]);
   const [sortCriteria, setSortCriteria] = useState("name");
+  const [sortName, setSortName] = useState("Sort by");
   const [openDistributeRew, setOpenDistributeRew] = useState(false);
 
   const item = [
@@ -40,6 +41,7 @@ export const AdminProperties = () => {
 
   const handleSort = (name: string) => {
     setSortCriteria(name);
+    setSortName(name);
   };
   const t = sortProperties(properties, sortCriteria);
 
@@ -127,7 +129,7 @@ export const AdminProperties = () => {
 
           <div className={s.dropdown}>
             <div className={s.dropdown__top}>
-              Sort by
+              {sortName}
               <Down color="rgba(212, 211, 213, 1)" width="8.46" height="5.52" />
             </div>
             <div className={s.dropdown__bottom}>

@@ -21,6 +21,7 @@ export const Properties = () => {
   const [properties, setProperties] = useState<Property[]>([]);
   const [sortCriteria, setSortCriteria] = useState("name");
   const [active, setActive] = useState(false);
+  const [sortName, setSortName] = useState("Sort by");
 
   const item = [
     { title: "name", name: "name" },
@@ -30,6 +31,7 @@ export const Properties = () => {
 
   const handleSort = (name: string) => {
     setSortCriteria(name);
+    setSortName(name);
   };
   const t = sortProperties(properties, sortCriteria);
 
@@ -102,7 +104,7 @@ export const Properties = () => {
         </div>
         <div className={s.dropdown}>
           <div className={s.dropdown__top}>
-            Sort by
+            {sortName}
             <Down />
           </div>
           <div className={s.dropdown__bottom}>
