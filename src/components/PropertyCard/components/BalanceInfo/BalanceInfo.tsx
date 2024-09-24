@@ -40,52 +40,30 @@ export const BalanceInfo = () => {
   }, [id]);
 
   // useEffect(() => {
-  //   if (isConnected) {
-  //     async () => {
+  //   const mintTokens = async () => {
+  //     if (isConnected) {
   //       try {
-  //         const a = smarts?.realEstate.mint(
+  //         // Минтим токены
+  //         const a = await smarts?.realEstate.mint(
   //           address,
   //           "1000000000000000000000000000000000000"
   //         );
-  //         console.log("a:");
+  //         console.log("Tokens minted:");
   //         console.log(a);
+
+  //         // Получаем баланс
+  //         await smarts?.realEstate
+  //           .balanceOf(address)
+  //           .then((res) => setPayableBalance(res));
   //       } catch (err) {
-  //         console.log("error when try to mint");
+  //         console.log("Error during minting");
   //         console.log(err);
   //       }
-  //     };
-  //     smarts?.realEstate
-  //       .balanceOf(address!)
-  //       .then((res) => setPayableBalance(res));
-  //     console.log("address" + address);
-  //   }
+  //     }
+  //   };
+
+  //   mintTokens();
   // }, [isConnected, walletProvider, address, smarts]);
-
-  useEffect(() => {
-    const mintTokens = async () => {
-      if (isConnected) {
-        try {
-          // Минтим токены
-          const a = await smarts?.realEstate.mint(
-            address,
-            "1000000000000000000000000000000000000"
-          );
-          console.log("Tokens minted:");
-          console.log(a);
-
-          // Получаем баланс
-          await smarts?.realEstate
-            .balanceOf(address)
-            .then((res) => setPayableBalance(res));
-        } catch (err) {
-          console.log("Error during minting");
-          console.log(err);
-        }
-      }
-    };
-
-    mintTokens();
-  }, [isConnected, walletProvider, address, smarts]);
 
   return (
     <div className={s.main}>

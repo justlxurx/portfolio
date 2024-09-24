@@ -3,8 +3,8 @@ import { SVGProps } from "react";
 export const Logo = ({ color = "white" }) => {
   return (
     <svg
-      width="265"
-      height="55"
+      // width="265"
+      // height="55"
       viewBox="0 0 265 55"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
