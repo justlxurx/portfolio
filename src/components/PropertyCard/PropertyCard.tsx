@@ -32,6 +32,9 @@ export const PropertyCard = () => {
         <div className={s.main__left}>
           <SliderSection2 id={id} data={data ? data : ""} />
           <Info id={id} data={data ? data : ""} />
+          <div className={s.mobileForm}>
+            <MainForm data={data ? data : ""} />
+          </div>
           <Timeline />
           <Documents />
         </div>

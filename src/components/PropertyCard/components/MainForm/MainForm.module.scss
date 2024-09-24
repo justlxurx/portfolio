@@ -349,3 +349,90 @@ output {
     margin-right: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .main {
+    gap: 17px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .main__heading {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.54px;
+    text-align: left;
+  }
+  .main__button {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.54px;
+    text-align: center;
+    height: 55px;
+  }
+  .inputWrap {
+    gap: 10px;
+  }
+  .input__text {
+    font-size: 12px;
+    line-height: 15.13px;
+  }
+
+  .block__label {
+    padding: 8.58px 9.65px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 16.18px;
+  }
+
+  .sliderWrap {
+    margin-top: 30px;
+    gap: 40px;
+  }
+
+  output {
+    top: -40px;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.93px;
+    text-align: center;
+  }
+
+  #tokens,
+  #usdt {
+    height: 5px;
+    border-radius: 4px;
+    top: -9px;
+    padding: 0;
+  }
+
+  #tokens::-webkit-slider-thumb,
+  #usdt::-webkit-slider-thumb {
+    // width: 15px;
+    // height: 15px;
+    width: 10.62px;
+    height: 10.62px;
+  }
+
+  #tokens::-moz-range-thumb,
+  #usdt::-moz-range-thumb {
+    // width: 15px;
+    // height: 15px;
+    width: 10.62px;
+    height: 10.62px;
+  }
+
+  .label {
+    font-family: Helvetica Neue;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14.51px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  .form {
+    border-radius: 7.08px;
+  }
+}

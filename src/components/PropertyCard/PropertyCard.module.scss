@@ -21,6 +21,10 @@
   width: 37%;
 }
 
+.mobileForm {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .main {
     margin-top: 80px;
@@ -75,6 +79,10 @@
   }
 
   .main__right {
+    display: none;
+  }
+
+  .mobileForm {
     display: flex;
     flex-direction: column;
     gap: 20px;

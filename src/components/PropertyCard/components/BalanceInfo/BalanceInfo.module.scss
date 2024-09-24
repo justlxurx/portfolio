@@ -173,3 +173,96 @@
     line-height: 18.63px;
   }
 }
+
+@media (max-width: 768px) {
+  .main {
+    gap: 16px;
+    border-radius: 15px;
+  }
+
+  .info {
+    gap: 12px;
+  }
+
+  .info__balance {
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.98px;
+    text-align: center;
+  }
+  .info__estimatedWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .info__estimatedText {
+    font-family: Helvetica Neue;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.32px;
+    text-align: center;
+  }
+
+  .sharesSold {
+    gap: 11px;
+  }
+
+  .sharesSold__title {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.54px;
+    text-align: left;
+  }
+
+  .sharesSold__top {
+    span {
+      font-family: Helvetica Neue;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19.54px;
+      text-align: right;
+    }
+  }
+
+  .sharesSold__text {
+    font-family: Helvetica Neue;
+    font-size: 17.7px;
+    font-weight: 400;
+    line-height: 21.11px;
+    text-align: center;
+
+    span {
+      font-family: Helvetica Neue;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21.98px;
+      text-align: center;
+    }
+  }
+
+  .info__right {
+    font-size: 10px;
+    line-height: 10.86px;
+    hr {
+      margin: 10px 0;
+    }
+  }
+  .balance {
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.09px;
+    text-align: left;
+  }
+
+  .balance__val {
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.09px;
+    text-align: right;
+  }
+}
