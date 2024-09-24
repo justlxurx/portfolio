@@ -91,6 +91,7 @@ export const DashboardSection = () => {
           {!openHistory ? (
             <div className={s.main__content}>
               <Card
+                width="100%"
                 name={item.name}
                 price={item.token_price}
                 capital={""}
@@ -100,6 +101,7 @@ export const DashboardSection = () => {
                 dash={true}
               />
               <Card
+                width="100%"
                 name={item.name}
                 price={item.token_price}
                 capital={""}

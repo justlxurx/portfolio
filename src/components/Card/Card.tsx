@@ -15,6 +15,7 @@ export const Card = ({
   total_tokens,
   soldTokens,
   dash,
+  width,
 }: {
   name: string;
   country: string;
@@ -26,6 +27,7 @@ export const Card = ({
   total_tokens?: number;
   soldTokens?: number;
   dash?: boolean;
+  width?: string;
 }) => {
   const [mainImg, setMainImg] = useState();
   useEffect(() => {
@@ -44,7 +46,7 @@ export const Card = ({
     fetchImg();
   }, [id]);
   return (
-    <div className={s.apartment}>
+    <div className={s.apartment} style={{ width: width }}>
       <div className={s.apartment__wrap}>
         <p className={s.apartment__name}>{name}</p>
         <div className={s.apartment__country}>
