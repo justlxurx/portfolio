@@ -113,6 +113,7 @@
   border-bottom: 1px solid rgba(24, 39, 67, 0.72);
   background-color: unset;
   color: rgba(81, 100, 101, 1);
+  width: 55%;
   &::placeholder {
     color: rgba(81, 100, 101, 1);
     font-family: Helvetica Neue;
@@ -123,7 +124,35 @@
   }
 }
 
+.email {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.join {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background: rgba(84, 126, 208, 1);
+  padding: 0px 20px 0px 20px;
+  border-radius: 5px;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 39.9px;
+  text-align: center;
+  color: white;
+}
+
 @media (max-width: 1600px) {
+  .join {
+    padding: 0px 17px;
+    border-radius: 5px;
+    font-size: 17px;
+    line-height: 30.9px;
+  }
+
   .main {
     gap: 60px;
     margin-bottom: 130px;
@@ -191,6 +220,28 @@
 }
 
 @media (max-width: 768px) {
+  .email {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  .join {
+    gap: 5px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 5px;
+    font-family: Helvetica Neue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 39.9px;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
   .main {
     display: flex;
     flex-direction: column;

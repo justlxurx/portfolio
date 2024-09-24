@@ -7,6 +7,7 @@ import telega from "../../assets/icons/telega.svg";
 import xx from "../../assets/icons/xx.svg";
 import insta from "../../assets/icons/insta.svg";
 import facebook from "../../assets/icons/facebook.svg";
+import gmail from "../../assets/icons/gmail.svg";
 
 export const HowWorks = () => {
   const data = [
@@ -88,11 +89,16 @@ export const HowWorks = () => {
                       subscribe to its specific newsletter for updates on that
                       property:
                     </p>
-                    <input
-                      type="email"
-                      placeholder="Enter your e-mail"
-                      className={s.input}
-                    />
+                    <div className={s.email}>
+                      <input
+                        type="email"
+                        placeholder="Enter your e-mail"
+                        className={s.input}
+                      />
+                      <button className={s.join}>
+                        Join <img src={gmail} alt="gmail" />
+                      </button>
+                    </div>
                   </div>
                   <div className={s.card__inner}>
                     <p className={s.contacts}>
