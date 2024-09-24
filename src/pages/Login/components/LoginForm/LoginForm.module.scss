@@ -94,6 +94,10 @@
   line-height: 24.42px;
   text-align: center;
   color: rgba(57, 57, 57, 1);
+  img {
+    width: auto;
+    height: auto;
+  }
 }
 
 .buttons__wrap {
@@ -116,15 +120,26 @@
   }
 
   .main__heading {
-    font-size: 30px;
-    line-height: 35.57px;
+    font-family: Actay Wide;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 31.58px;
+    text-align: center;
   }
 
   .buttons__item {
-    gap: 5px;
-    padding: 10.26px 5px;
+    font-family: Helvetica Neue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.42px;
+    text-align: left;
+
+    padding: 17.26px;
+    gap: 10px;
     border-radius: 5px;
-    font-size: 15px;
-    line-height: 14.42px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
 }

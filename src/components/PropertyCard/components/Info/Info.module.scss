@@ -288,20 +288,31 @@
 
 @media (max-width: 768px) {
   .main {
-    padding: 20px 22px;
-    gap: 25px;
-    border-radius: 12px;
+    padding: 20px;
+    gap: 12px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
   }
   .info {
     gap: 10px;
   }
   .info__title {
-    font-size: 12px;
-    line-height: 15.42px;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.54px;
+    text-align: center;
   }
   .info__list {
-    border-radius: 20px;
-    padding: 20px 10px;
+    padding: 9px 16px 9px 16px;
+    gap: 9.46px;
+    border-radius: 8px;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: center;
   }
   .info__listItem {
     font-size: 12px;
