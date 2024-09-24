@@ -52,3 +52,44 @@
     color: rgba(139, 139, 139, 1);
   }
 }
+
+@media (max-width: 768px) {
+  .exchange {
+    gap: 30px;
+  }
+
+  .exchange__title {
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.98px;
+    text-align: left;
+  }
+
+  .exchange__content {
+    gap: 20px;
+  }
+
+  .exchange__button {
+    height: 55px;
+    padding: 12.4px 13.95px 12.4px 13.95px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.98px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .exchange__form {
+    gap: 20px;
+  }
+
+  .exchange__currentRate {
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.93px;
+    text-align: center;
+  }
+}

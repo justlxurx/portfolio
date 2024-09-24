@@ -37,7 +37,8 @@ export interface IMarketplaceSmart extends IMarketplaceProperties {
   setOffer(
     tokenId: string,
     _price: string,
-    _amountToSell: string
+    _amountToSell: string,
+    data: string
   ): Promise<void>;
   transferOwnership(newOwner: string): Promise<void>;
   withdrawNFT(tokenId: string): Promise<void>;

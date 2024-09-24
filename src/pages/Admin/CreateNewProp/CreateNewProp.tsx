@@ -157,7 +157,12 @@ export const CreateNewProp = () => {
         setPropertyId(result.id);
 
         alert("Property created successfully");
+        // const approve = await smarts?.nft.setApprovalForAll(
+        //   smarts.marketplace.SMART_ADDRESS,
+        //   true
+        // );
         setTimeout(() => navigate("/admin/properties"), 3000);
+
         console.log(result);
         console.log("result id:" + result.id);
       } catch (err) {
@@ -189,28 +194,25 @@ export const CreateNewProp = () => {
       }
 
       const token = await manageNftApi.mintNft(propertyId, data);
-
-      if (token.id) {
-        console.log(
-          "id: " +
-            token.id +
-            " price: " +
-            formik.values.nftPrice +
-            " amount: " +
-            formik.values.nftQuantity
-        );
-        try {
-          const offer = await smarts?.marketplace.setOffer(
-            `${token.id}`,
-            formik.values.nftPrice,
-            formik.values.nftQuantity
-          );
-
-          console.log("offer success: " + offer);
-        } catch (offerError) {
-          console.error("Error in setOffer: ", offerError);
-        }
-      }
+      const offer = await manageNftApi.setOffer(propertyId);
+      console.log("offer:");
+      console.log(offer);
+      // if (token.id) {
+      //   console.log(
+      //     "id: " +
+      //       token.id +
+      //       " price: " +
+      //       formik.values.nftPrice +
+      //       " amount: " +
+      //       formik.values.nftQuantity
+      //   );
+      //   try {
+      //     const offer = await smarts?.marketplace.setOffer(15, 1, 1, "0x00");
+      //     console.log("offer success: " + offer);
+      //   } catch (offerError) {
+      //     console.error("Error in setOffer: ", offerError);
+      //   }
+      // }
     };
     fetchUploadImg();
   }, [propertyId]);

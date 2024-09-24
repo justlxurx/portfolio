@@ -82,7 +82,7 @@ export class RealEstateSmart implements IRealEstateSmart {
     await tx.wait();
   }
   async mint(to: string, amount: string): Promise<void> {
-    const tx = await this.smart.callMethod("mintBatch", to, amount);
+    const tx = await this.smart.callMethod("mint", to, amount);
     await tx.wait();
   }
   async renounceOwnership(): Promise<void> {

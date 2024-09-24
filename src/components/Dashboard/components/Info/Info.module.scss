@@ -38,4 +38,39 @@
   color: white;
 }
 
+@media (max-width: 768px) {
+  .main__left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .info__wrap {
+    gap: 26px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 8px;
+  }
+
+  .info__title {
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.09px;
+    text-align: left;
+    color: rgba(84, 126, 208, 1);
+  }
+
+  .info__value {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.54px;
+    text-align: left;
+  }
+}

@@ -35,11 +35,11 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
             <p className={s.apartment__name}>{data.name}</p>
             <div className={s.apartment__country}>
               <p className={s.apartment__countryName}>{data.location}</p>
-              <img
+              {/* <img
                 src={Cancun}
                 alt="Cancun"
                 className={s.apartment__countryFlag}
-              />
+              /> */}
             </div>
           </div>
           <div className={s.users}>
@@ -48,7 +48,7 @@ export const SliderSection2 = ({ id, data }: { id: number; data: any }) => {
           </div>
         </div>
       </div>
-      {img &&  (
+      {img && (
         <div className={s.wrapper}>
           <Swiper
             style={{

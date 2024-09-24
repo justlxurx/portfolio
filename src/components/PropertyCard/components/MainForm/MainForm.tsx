@@ -61,7 +61,7 @@ export const MainForm = ({ data }: { data: any }) => {
     },
     validationSchema: Yup.object({
       amount: Yup.string()
-        .matches(/^\d+$/, "")
+        // .matches(/^\d+$/, "")
         .required()
         .test(
           "max-amount",
@@ -94,7 +94,7 @@ export const MainForm = ({ data }: { data: any }) => {
           console.log(b);
           resetForm();
         }
-        const r = await smarts?.marketplace.Price();
+        const r = await smarts?.marketplace.NFT();
         console.log("nft is: " + r);
         console.log(r);
       } catch (err) {

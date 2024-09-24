@@ -344,3 +344,72 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .apartment {
+    gap: 6.09px;
+    padding: 10.49px 10.14px;
+    border-radius: 13.14px;
+    width: 100%;
+  }
+  .apartment__info {
+    font-size: 15px;
+    line-height: 15.97px;
+  }
+
+  .apartment__img {
+    height: 125.6px;
+    border-radius: 6.86px;
+  }
+
+  .apartment__name {
+    font-size: 9px;
+    line-height: 10.67px;
+  }
+  .apartment__country {
+    gap: 12.35px;
+  }
+
+  .apartment__countryName {
+    font-size: 10.11px;
+    line-height: 15.26px;
+  }
+  .apartment__countryFlag {
+    width: 29.21px;
+    height: 17.12px;
+    border-radius: 1.83px;
+  }
+  .apartment__priceWrap {
+    span {
+      font-size: 11.11px;
+      line-height: 13.26px;
+    }
+  }
+
+  .apartment__price {
+    font-size: 11.14px;
+    line-height: 15.03px;
+  }
+  .apartment__percents {
+    font-size: 10.63px;
+    line-height: 15.22px;
+    gap: 5.07px;
+    padding: 6.11px 4.52px;
+    border-radius: 5.52px;
+  }
+
+  .apartment__info {
+    font-size: 10.14px;
+    line-height: 20.59px;
+  }
+
+  .apartment__progress {
+    padding: 6.5px 5px;
+    border-radius: 5.07px;
+    font-size: 8px;
+    line-height: 8.47px;
+    span {
+      line-height: 8.76px;
+    }
+  }
+}

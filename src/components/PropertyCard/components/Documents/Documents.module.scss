@@ -15,3 +15,18 @@
   text-align: left;
   color: rgba(24, 39, 67, 1);
 }
+
+@media (max-width: 768px) {
+  .main {
+    padding: 20px;
+    gap: 12px;
+    border-radius: 15px;
+  }
+  .main__title {
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.98px;
+    text-align: center;
+  }
+}

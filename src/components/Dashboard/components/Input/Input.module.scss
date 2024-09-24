@@ -87,3 +87,60 @@
   width: 12.27px;
   height: 8.01px;
 }
+
+@media (max-width: 768px) {
+  .input {
+    border-radius: 5.74px;
+    width: calc(100% - 32px);
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: left;
+  }
+
+  .error {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .info {
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .info__title {
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.93px;
+    text-align: left;
+  }
+
+  .info__wrap {
+    gap: 10px;
+  }
+
+  .wallet {
+    gap: 14.46px;
+  }
+
+  .wallet__img {
+    width: 20.67px;
+    height: 20.67px;
+  }
+
+  .wallet__text {
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19.34px;
+    text-align: center;
+  }
+
+  .down {
+    width: 12.27px;
+    height: 8.01px;
+  }
+}

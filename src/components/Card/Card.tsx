@@ -32,10 +32,12 @@ export const Card = ({
     const fetchImg = async () => {
       try {
         const a = await manageImgApi.getImg(id);
-        setMainImg(a[0].image_url);
-        console.log("Изображение: " + a[0].image_url);
+        if (a && a[0] && a[0].image_url) {
+          setMainImg(a[0].image_url);
+          console.log("Изображение: " + a[0].image_url);
+        }
       } catch (error) {
-        console.error("Failed to fetch properties", error);
+        // console.error("Failed to fetch properties", error);
       }
     };
 
@@ -46,7 +48,7 @@ export const Card = ({
       <div className={s.apartment__wrap}>
         <p className={s.apartment__name}>{name}</p>
         <div className={s.apartment__country}>
-          <img src={Cancun} alt="Cancun" className={s.apartment__countryFlag} />
+          {/* <img src={Cancun} alt="Cancun" className={s.apartment__countryFlag} /> */}
           <p className={s.apartment__countryName}>{country}</p>
         </div>
       </div>
