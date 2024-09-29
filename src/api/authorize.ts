@@ -5,16 +5,14 @@ type AuthorizeReq = {
 };
 
 class AuthorizeAPI {
+  private url = import.meta.env.VITE_URL;
   async getNonce(walletAddress: string) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/user/nonce/${walletAddress}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`${this.url}/user/nonce/${walletAddress}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!res.ok) {
       throw new Error(`Failed to fetch nonce for address: ${walletAddress}`);
@@ -25,7 +23,7 @@ class AuthorizeAPI {
   }
 
   async authorize(args: AuthorizeReq) {
-    const res = await fetch("https://estate.hotcode.kz/v1/user/login", {
+    const res = await fetch(`${this.url}/user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

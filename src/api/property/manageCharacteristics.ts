@@ -7,18 +7,16 @@ type PropertyReq = [
 ];
 
 class ManageCharacteristicsApi {
+  private url = import.meta.env.VITE_URL;
   async create(num: number, args: PropertyReq) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/${num}/characteristic`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `admin`,
-        },
-        body: JSON.stringify(args),
-      }
-    );
+    const res = await fetch(`${this.url}/property/${num}/characteristic`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+      body: JSON.stringify(args),
+    });
     if (!res.ok) {
       const errorText = await res.text();
       throw new Error(`Property is not created: ${errorText}`);
@@ -32,16 +30,13 @@ class ManageCharacteristicsApi {
   }
 
   async get(num: number) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/${num}/characteristic`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `admin`,
-        },
-      }
-    );
+    const res = await fetch(`${this.url}/property/${num}/characteristic`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+    });
 
     if (!res.ok) {
       const errorText = await res.text();
@@ -54,17 +49,14 @@ class ManageCharacteristicsApi {
   }
 
   async update(args: PropertyReq) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/characteristic/update`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `admin`,
-        },
-        body: JSON.stringify(args),
-      }
-    );
+    const res = await fetch(`${this.url}/property/characteristic/update`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+      body: JSON.stringify(args),
+    });
 
     if (!res.ok) {
       const errorText = await res.text();
@@ -77,16 +69,13 @@ class ManageCharacteristicsApi {
   }
 
   async delete(id: number) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/${id}/characteristic`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `admin`,
-        },
-      }
-    );
+    const res = await fetch(`${this.url}/property/${id}/characteristic`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+    });
 
     if (!res.ok) {
       const errorText = await res.text();
@@ -106,16 +95,13 @@ class ManageCharacteristicsApi {
   }
 
   async deleteOne(id: number) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/characteristic/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `admin`,
-        },
-      }
-    );
+    const res = await fetch(`${this.url}/property/characteristic/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+    });
 
     if (!res.ok) {
       const errorText = await res.text();

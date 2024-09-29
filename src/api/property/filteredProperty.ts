@@ -45,8 +45,9 @@ type FilterReq = {
 };
 
 class FilteredPropertyAPI {
+  private url = import.meta.env.VITE_URL;
   async filter(args: FilterReq) {
-    const res = await fetch("https://estate.hotcode.kz/v1/property/filtered", {
+    const res = await fetch(`${this.url}/property/filtered`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

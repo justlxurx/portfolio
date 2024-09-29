@@ -1,15 +1,13 @@
 class ManageImgApi {
+  private url = import.meta.env.VITE_URL;
   async uploadImg(num: number, img: FormData) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/${num}/image`,
-      {
-        method: "POST",
-        headers: {
-          "x-api-key": `admin`,
-        },
-        body: img,
-      }
-    );
+    const res = await fetch(`${this.url}/property/${num}/image`, {
+      method: "POST",
+      headers: {
+        "x-api-key": `admin`,
+      },
+      body: img,
+    });
     if (!res.ok) {
       const errorText = await res.text();
       throw new Error(`Image is not uploaded: ${errorText}`);
@@ -21,15 +19,12 @@ class ManageImgApi {
   }
 
   async getImg(num: number) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/${num}/image`,
-      {
-        method: "GET",
-        // headers: {
-        //   "x-api-key": `admin`,
-        // },
-      }
-    );
+    const res = await fetch(`${this.url}/property/${num}/image`, {
+      method: "GET",
+      // headers: {
+      //   "x-api-key": `admin`,
+      // },
+    });
     if (!res.ok) {
       const errorText = await res.text();
       throw new Error(`Error when getting image: ${errorText}`);
@@ -41,16 +36,13 @@ class ManageImgApi {
   }
 
   async delete(id: number) {
-    const res = await fetch(
-      `https://estate.hotcode.kz/v1/property/image/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `admin`,
-        },
-      }
-    );
+    const res = await fetch(`${this.url}/property/image/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+    });
 
     if (!res.ok) {
       const errorText = await res.text();

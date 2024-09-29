@@ -38,6 +38,7 @@ type PropertyReq = {
 };
 
 class ManagePropertyApi {
+  private url = import.meta.env.VITE_URL;
   async create(args: PropertyReq) {
     const formattedArgs = {
       ...args,
@@ -48,7 +49,7 @@ class ManagePropertyApi {
         ? new Date(args.rent_start_date).toISOString()
         : null,
     };
-    const res = await fetch("https://estate.hotcode.kz/v1/property/create", {
+    const res = await fetch(`${this.url}/property/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +70,7 @@ class ManagePropertyApi {
   }
 
   async update(id: number, args: PropertyReq) {
-    const res = await fetch(`https://estate.hotcode.kz/v1/property/${id}`, {
+    const res = await fetch(`${this.url}/property/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +90,7 @@ class ManagePropertyApi {
   }
 
   async get(id: number) {
-    const res = await fetch(`https://estate.hotcode.kz/v1/property/${id}`, {
+    const res = await fetch(`${this.url}/property/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +109,7 @@ class ManagePropertyApi {
   }
 
   async delete(id: number) {
-    const res = await fetch(`https://estate.hotcode.kz/v1/property/${id}`, {
+    const res = await fetch(`${this.url}/property/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

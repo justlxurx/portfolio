@@ -23,6 +23,13 @@
     "type": "error"
   },
   {
+    "inputs": [
+      { "internalType": "string", "name": "_reason", "type": "string" }
+    ],
+    "name": "noOwner",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -51,19 +58,6 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "NFTdata",
-    "outputs": [
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
-      { "internalType": "address", "name": "owner", "type": "address" },
-      { "internalType": "bool", "name": "isForSale", "type": "bool" },
-      { "internalType": "uint256", "name": "PriceForAnNFT", "type": "uint256" },
-      { "internalType": "uint256", "name": "amountToSell", "type": "uint256" }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "Price",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
@@ -82,11 +76,68 @@
   {
     "inputs": [
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
-      { "internalType": "uint256", "name": "amountToBuy", "type": "uint256" }
+      { "internalType": "uint256", "name": "amountToBuy", "type": "uint256" },
+      { "internalType": "address", "name": "_ownerOfNFT", "type": "address" }
     ],
     "name": "buyNFT",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "informationAboutNFT",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "remainingNFTamount",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "owner", "type": "address" }
+    ],
+    "name": "findOfferIndex",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "index", "type": "uint256" }
+    ],
+    "name": "getNFTInfo",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "ownerOfNFT",
+            "type": "address"
+          },
+          { "internalType": "bool", "name": "isForSale", "type": "bool" },
+          {
+            "internalType": "uint256",
+            "name": "PriceForAnNFT",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amountToSell",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketPlace.NFT_INFO",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -96,7 +147,11 @@
       {
         "components": [
           { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
-          { "internalType": "address", "name": "owner", "type": "address" },
+          {
+            "internalType": "address",
+            "name": "ownerOfNFT",
+            "type": "address"
+          },
           { "internalType": "bool", "name": "isForSale", "type": "bool" },
           {
             "internalType": "uint256",
@@ -113,6 +168,22 @@
         "name": "",
         "type": "tuple[]"
       }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "nftDATA",
+    "outputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "ownerOfNFT", "type": "address" },
+      { "internalType": "bool", "name": "isForSale", "type": "bool" },
+      { "internalType": "uint256", "name": "PriceForAnNFT", "type": "uint256" },
+      { "internalType": "uint256", "name": "amountToSell", "type": "uint256" }
     ],
     "stateMutability": "view",
     "type": "function"
