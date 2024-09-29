@@ -56,7 +56,7 @@ export const initVal = {
   aboutProperty: "",
   price: "",
   nftQuantity: "",
-  nftPrice: "",
+  nftPrice: 100,
   beds: 0,
   bath: 0,
   rooms: 0,

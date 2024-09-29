@@ -58,12 +58,16 @@ export const useProcesses = () => {
   const signMessage = useCallback(
     async (message: string) => {
       try {
-        const provider = new ethers.BrowserProvider(walletProvider!);
+        if (!walletProvider) {
+          throw new Error("No wallet provider found");
+        }
+        const provider = new ethers.BrowserProvider(walletProvider);
         const signer = await provider.getSigner();
         const signature = await signer.signMessage(message);
         return signature;
       } catch (err) {
         console.error("Error signing message:", err);
+        throw err; // Важный момент - если ошибка, можно пробросить её дальше
       }
     },
     [walletProvider]

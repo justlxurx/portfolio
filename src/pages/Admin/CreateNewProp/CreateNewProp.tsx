@@ -1,4 +1,9 @@
 import s from "./CreateNewProp.module.scss";
+import {
+  useWeb3ModalProvider,
+  useWeb3ModalAccount,
+} from "@web3modal/ethers/react";
+import { ethers } from "ethers";
 import { Logo } from "../../../assets/icons/logo";
 import Input from "../../../features/Input2/Input";
 import info from "../../../assets/icons/info.svg";
@@ -6,7 +11,7 @@ import home from "../../../assets/icons/home.svg";
 import dollar from "../../../assets/icons/dollar2.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import UploadImg from "../../../features/UploadImg/UploadImg";
 import { Link } from "react-router-dom";
 import { property, initVal, Apartment } from "./data";
@@ -21,6 +26,8 @@ import { manageNftApi } from "../../../api/nft/manageNft";
 import { useSmarts } from "../../../hooks/useSmart";
 
 export const CreateNewProp = () => {
+  const { address, isConnected } = useWeb3ModalAccount();
+  const { walletProvider } = useWeb3ModalProvider();
   const { smarts } = useSmarts();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [propertyId, setPropertyId] = useState<number>(0);
@@ -171,6 +178,68 @@ export const CreateNewProp = () => {
     },
   });
 
+  // const signTransaction = useCallback(
+  //   async (txData: any) => {
+  //     try {
+  //       const web3Provider = new ethers.BrowserProvider(walletProvider!);
+  //       const signer = web3Provider.getSigner();
+  //       const tx = {
+  //         to: txData.to,
+  //         nonce: parseInt(txData.nonce, 16),
+  //         gasLimit: txData.gas,
+  //         gasPrice: txData.gasPrice,
+  //         data: txData.input,
+  //         value: txData.value,
+  //         chainId: await web3Provider
+  //           .getNetwork()
+  //           .then((network) => network.chainId),
+  //       };
+
+  //       const transactionResponse = await (await signer).sendTransaction(tx);
+  //       console.log("Transaction sent:", transactionResponse);
+
+  //       // Ожидаем подтверждения
+  //       const receipt = await transactionResponse;
+  //       console.log("Transaction confirmed:", receipt);
+  //     } catch (error) {
+  //       console.error("Error signing transaction:", error);
+  //     }
+  //   },
+  //   [walletProvider]
+  // );
+
+  const signTransaction = useCallback(
+    async (txData: any): Promise<string | null> => {
+      try {
+        const web3Provider = new ethers.BrowserProvider(walletProvider!);
+        const signer = web3Provider.getSigner();
+
+        const tx = {
+          to: txData.to,
+          nonce: parseInt(txData.nonce, 16),
+          gasLimit: txData.gas,
+          gasPrice: txData.gasPrice,
+          data: txData.input,
+          value: txData.value,
+          chainId: await web3Provider
+            .getNetwork()
+            .then((network) => network.chainId),
+        };
+
+        const transactionResponse = await (await signer).sendTransaction(tx);
+
+        console.log("Transaction sent:", transactionResponse);
+        console.log(transactionResponse.hash);
+
+        return transactionResponse.hash; // Возвращаем хэш транзакции
+      } catch (error) {
+        console.error("Error signing transaction:", error);
+        return null;
+      }
+    },
+    [walletProvider]
+  );
+
   useEffect(() => {
     const fetchUploadImg = async () => {
       if (!propertyId) {
@@ -192,27 +261,57 @@ export const CreateNewProp = () => {
           }
         }
       }
+      // const create = await manageNftApi.mint(propertyId, data);
+      const create = await manageNftApi.createNft(propertyId, data);
+      console.log("create: ");
+      console.log(create);
+      const mint = await manageNftApi.mintNft(propertyId);
+      console.log("mint: ");
+      console.log(mint);
+      if (mint) {
+        const jsonData = atob(mint);
+        const txData = JSON.parse(jsonData);
 
-      const token = await manageNftApi.mintNft(propertyId, data);
-      const offer = await manageNftApi.setOffer(propertyId);
-      console.log("offer:");
-      console.log(offer);
-      // if (token.id) {
+        const signature = await signTransaction(txData);
+        console.log("signature: ");
+        console.log(signature);
+        const formData = new FormData();
+        formData.append("signature", signature || "");
+        const send = await manageNftApi.sendMint(propertyId, formData);
+        console.log("send");
+        console.log(send);
+      }
+
+      // if (create.id) {
       //   console.log(
       //     "id: " +
-      //       token.id +
+      //       create.id +
       //       " price: " +
       //       formik.values.nftPrice +
       //       " amount: " +
       //       formik.values.nftQuantity
       //   );
       //   try {
-      //     const offer = await smarts?.marketplace.setOffer(15, 1, 1, "0x00");
+      //     await smarts?.nft.setApprovalForAll(
+      //       smarts.marketplace.SMART_ADDRESS,
+      //       true
+      //     );
+
+      //     const offer = await smarts?.marketplace.setOffer(
+      //       create.id,
+      //       "100",
+      //       formik.values.nftQuantity,
+      //       "0x00"
+      //     );
       //     console.log("offer success: " + offer);
       //   } catch (offerError) {
       //     console.error("Error in setOffer: ", offerError);
       //   }
       // }
+
+      const offer = await manageNftApi.setOffer(propertyId);
+      console.log("offer:");
+      console.log(offer);
     };
     fetchUploadImg();
   }, [propertyId]);
@@ -560,15 +659,16 @@ export const CreateNewProp = () => {
               placeholder="NFT Price"
               type="text"
               name="nftPrice"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              // onChange={formik.handleChange}
+              // onBlur={formik.handleBlur}
               color="black"
               inputColor="rgba(29, 29, 29, 0.35)"
               className={s.mainForm__input}
               value={formik.values.nftPrice}
-              borderColor={
-                formik.touched.nftPrice && formik.errors.nftPrice ? "red" : ""
-              }
+              disabled
+              // borderColor={
+              //   formik.touched.nftPrice && formik.errors.nftPrice ? "red" : ""
+              // }
             />
           </div>
 

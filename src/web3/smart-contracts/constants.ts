@@ -1,4 +1,5 @@
 export const ethereumRpcUrls = {
-  testnet: "https://ethereum-sepolia-rpc.publicnode.com",
+  testnet: "https://polygon-amoy.drpc.org",
+  // "https://ethereum-sepolia-rpc.publicnode.com",
   mainnet: "https://ethereum-rpc.publicnode.com",
 };

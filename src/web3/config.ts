@@ -13,20 +13,20 @@ const chains = [
   //   explorerUrl: "https://polygonscan.com/",
   //   rpcUrl: "https://endpoints.omniatech.io/v1/matic/mainnet/public",
   // },
-  // {
-  //   chainId: Chains.Testnet,
-  //   name: "Polygon zkEVM Testnet",
-  //   currency: "ETH",
-  //   explorerUrl: "https://explorer.public.zkevm-test.net",
-  //   rpcUrl: "https://endpoints.omniatech.io/v1/polygon-zkevm/testnet/public	",
-  // },
   {
     chainId: Chains.Testnet,
-    name: "Sepolia Test Network",
-    currency: "ETH",
-    explorerUrl: "https://sepolia.etherscan.io/",
-    rpcUrl: "https://ethereum-sepolia-rpc.publicnode.com",
+    name: "Amoy",
+    currency: "MATIC",
+    explorerUrl: "https://explorer.public.zkevm-test.net",
+    rpcUrl: "https://polygon-amoy.drpc.org",
   },
+  // {
+  //   chainId: Chains.Testnet,
+  //   name: "Sepolia Test Network",
+  //   currency: "ETH",
+  //   explorerUrl: "https://sepolia.etherscan.io/",
+  //   rpcUrl: "https://ethereum-sepolia-rpc.publicnode.com",
+  // },
 ];
 
 // 3. Create a metadata object
