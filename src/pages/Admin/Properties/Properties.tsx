@@ -44,9 +44,50 @@ export const AdminProperties = () => {
   };
   const t = sortProperties(properties, sortCriteria);
 
+  const fetchProperties = async () => {
+    try {
+      const response = await filteredPropertyAPI.filter({
+        offset: 0,
+        limit: 1000,
+      });
+      setProperties(response);
+    } catch (error) {
+      console.error("Failed to fetch properties", error);
+    }
+  };
+
+  const handleDeleteProperty = async (id: number) => {
+    try {
+      const a = await managePropertyApi.delete(id);
+      console.log("Delete: " + a);
+      console.log(a);
+      await characacteristicsApi.delete(id);
+      fetchProperties(); // Обновляем список свойств после удаления
+      alert("Deleted successfully");
+    } catch (error) {
+      console.error("Failed to delete property", error);
+      alert("Failed to delete property");
+    }
+  };
+
+  useEffect(() => {
+    fetchProperties();
+  }, []);
+
   const handleChange = async (value: any) => {
     setVal(value);
-
+    if (!value) {
+      try {
+        const response = await filteredPropertyAPI.filter({
+          offset: 0,
+          limit: 100,
+        });
+        setProperties(response);
+      } catch (error) {
+        console.error("Failed to fetch all properties", error);
+      }
+      return;
+    }
     for (const filter of item) {
       if (filter.name && value) {
         try {
@@ -69,38 +110,6 @@ export const AdminProperties = () => {
           );
         }
       }
-    }
-  };
-
-  const fetchProperties = async () => {
-    try {
-      const response = await filteredPropertyAPI.filter({
-        offset: 0,
-        limit: 1000,
-      });
-      setProperties(response);
-    } catch (error) {
-      console.error("Failed to fetch properties", error);
-    }
-  };
-
-  useEffect(() => {
-    if (val === "") {
-      fetchProperties();
-    }
-  }, []);
-
-  const handleDeleteProperty = async (id: number) => {
-    try {
-      const a = await managePropertyApi.delete(id);
-      console.log("Delete: " + a);
-      console.log(a);
-      await characacteristicsApi.delete(id);
-      fetchProperties(); // Обновляем список свойств после удаления
-      alert("Deleted successfully");
-    } catch (error) {
-      console.error("Failed to delete property", error);
-      alert("Failed to delete property");
     }
   };
 
@@ -146,19 +155,8 @@ export const AdminProperties = () => {
         </div>
 
         <div className={s.main__table}>
-          <MainTable
-            // openDistributeRew={() => setOpenDistributeRew(true)}
-            properties={t}
-            deleteProp={handleDeleteProperty}
-          />
+          <MainTable properties={t} deleteProp={handleDeleteProperty} />
         </div>
-        {/* {openDistributeRew && (
-          <DistributeRewards
-            closeModal={() => setOpenDistributeRew(false)}
-            title={""}
-            img=""
-          />
-        )} */}
       </div>
     </div>
   );
