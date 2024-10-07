@@ -23,6 +23,8 @@
   flex-direction: column;
   gap: 30px;
   z-index: 120;
+  overflow-y: scroll;
+  height: 90%;
 }
 
 .main__title {

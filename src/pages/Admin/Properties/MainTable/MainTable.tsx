@@ -7,6 +7,11 @@ import { useState } from "react";
 import { Gift } from "../../../../assets/icons/gift";
 import { Link } from "react-router-dom";
 import { manageImgApi } from "../../../../api/property/manageImg";
+import { manageNftApi } from "../../../../api/nft/manageNft";
+import { useCallback } from "react";
+import { useWeb3ModalProvider } from "@web3modal/ethers/react";
+import { ethers } from "ethers";
+import { useSmarts } from "../../../../hooks/useSmart";
 
 interface Property {
   id: number;
@@ -29,12 +34,47 @@ export const MainTable = ({
   deleteProp,
 }: // openDistributeRew,
 MainTableProps) => {
+  const { smarts } = useSmarts();
+  const { walletProvider } = useWeb3ModalProvider();
   const [status, setStatus] = useState<"not distributed" | "distributed">(
     "not distributed"
   );
   const [openDistributeRew, setOpenDistributeRew] = useState(false);
   const [id, setId] = useState(0);
   const [img, setImg] = useState("");
+
+  const signTransaction = useCallback(
+    async (txData: any): Promise<string | null> => {
+      try {
+        const web3Provider = new ethers.BrowserProvider(walletProvider!);
+        const signer = web3Provider.getSigner();
+
+        const tx = {
+          to: txData.to,
+          nonce: parseInt(txData.nonce, 16),
+          gasLimit: txData.gas,
+          gasPrice: txData.gasPrice,
+          data: txData.input,
+          value: txData.value,
+          chainId: await web3Provider
+            .getNetwork()
+            .then((network) => network.chainId),
+        };
+
+        const transactionResponse = await (await signer).sendTransaction(tx);
+
+        console.log("Transaction sent:", transactionResponse);
+        console.log(transactionResponse);
+
+        return transactionResponse.hash; // Возвращаем хэш транзакции
+      } catch (error) {
+        console.error("Error signing transaction:", error);
+        return null;
+      }
+    },
+    [walletProvider]
+  );
+
   const handleOpenModal = async (num: number, num2: number) => {
     setOpenDistributeRew(true);
     setId(num);
@@ -49,6 +89,95 @@ MainTableProps) => {
     }
   };
 
+  const handleSetOffer = async (num: number) => {
+    try {
+      const approve = await manageNftApi.approve(num);
+
+      console.log("approve: ");
+      console.log(approve);
+
+      if (approve) {
+        const jsonData = atob(approve);
+        const txData = JSON.parse(jsonData);
+
+        const signature = await signTransaction(txData);
+        console.log("signature: ", signature);
+
+        if (signature) {
+          const formData = new FormData();
+          formData.append("tx_hex", signature);
+
+          const provider = new ethers.BrowserProvider(walletProvider!);
+
+          // Ожидаем подтверждения транзакции
+          let receipt = null;
+          while (!receipt) {
+            console.log("Ожидание квитанции о транзакции...");
+            receipt = await provider.getTransactionReceipt(signature);
+
+            if (receipt) {
+              console.log("Квитанция о транзакции:", receipt);
+            } else {
+              await new Promise((resolve) => setTimeout(resolve, 5000)); // Ждем 5 секунд перед повторной проверкой
+            }
+          }
+
+          // Теперь транзакция подтверждена, и можно отправлять данные
+          const approveVerify = await manageNftApi.approveVerify(num, formData);
+          console.log("Результат отправки sendMint:", approveVerify);
+          // while(!approveVerify)
+
+          const setOffer = await manageNftApi.setOffer(num);
+
+          console.log("setOffer: ");
+          console.log(setOffer);
+
+          if (setOffer) {
+            const jsonData = atob(setOffer);
+            const txData = JSON.parse(jsonData);
+
+            const tx = await signTransaction(txData);
+            console.log("tx: ", tx);
+
+            if (tx) {
+              const formData = new FormData();
+              formData.append("tx_hex", tx);
+
+              const provider = new ethers.BrowserProvider(walletProvider!);
+
+              // Ожидаем подтверждения транзакции
+              let receipt = null;
+              while (!receipt) {
+                console.log("Ожидание квитанции о транзакции...");
+                receipt = await provider.getTransactionReceipt(tx);
+
+                if (receipt) {
+                  console.log("Квитанция о транзакции:", receipt);
+                } else {
+                  await new Promise((resolve) => setTimeout(resolve, 5000)); // Ждем 5 секунд перед повторной проверкой
+                }
+              }
+
+              // Теперь транзакция подтверждена, и можно отправлять данные
+              const setOfferVerify = await manageNftApi.setOfferVerify(
+                num,
+                formData
+              );
+              console.log("Результат отправки sendMint:", setOfferVerify);
+            }
+          }
+        }
+      }
+      // await smarts?.nft.setApprovalForAll(
+      //   smarts.marketplace.SMART_ADDRESS,
+      //   true
+      // );
+    } catch (err) {
+      console.log(err);
+      setImg("");
+    }
+  };
+
   return (
     <div className={s.tableWrap}>
       <table className={s.usersTable}>
@@ -60,6 +189,7 @@ MainTableProps) => {
             <th>
               Date of <br /> publication
             </th>
+            <th>Set offer</th>
             <th>
               Distribute <br /> rewards
             </th>
@@ -87,6 +217,11 @@ MainTableProps) => {
                 <td>{data.location}</td>
                 <td>{data.token_price} $</td>
                 <td>{formatDate(data.created_at)}</td>
+                <td>
+                  <button onClick={() => handleSetOffer(data.id)}>
+                    set offer
+                  </button>
+                </td>
                 <td>
                   <button
                     className={s.giftButton}

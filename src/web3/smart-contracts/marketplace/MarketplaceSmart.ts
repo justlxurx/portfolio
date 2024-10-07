@@ -74,9 +74,18 @@ export class MarketplaceSmart implements IMarketplaceSmart {
 
   // Write contracts
 
-  async buyNFT(tokenId: string, amountToBuy: string): Promise<void> {
+  async buyNFT(
+    tokenId: string,
+    amountToBuy: string,
+    _ownerOfNFT: string
+  ): Promise<void> {
     const amountValue = parseUnits(amountToBuy, 18);
-    const tx = await this.smart.callMethod("buyNFT", tokenId, amountValue);
+    const tx = await this.smart.callMethod(
+      "buyNFT",
+      tokenId,
+      amountValue,
+      _ownerOfNFT
+    );
     await tx.wait();
   }
 

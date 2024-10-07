@@ -222,8 +222,8 @@ export const DistributeRewards = ({
           />
           <Input
             value={formik.values.maintenanceFee2}
-            title="Maintenance fee"
-            placeholder="Maintenance fee"
+            title="Management fee"
+            placeholder="Management fee"
             type="text"
             name="maintenanceFee2"
             onChange={formik.handleChange}

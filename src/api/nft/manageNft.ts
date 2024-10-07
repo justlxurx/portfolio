@@ -65,7 +65,7 @@ class ManageNftApi {
   }
 
   async sendMint(num: number, tx: FormData) {
-    const res = await fetch(`${this.url}/property/${num}/nft/mint/send`, {
+    const res = await fetch(`${this.url}/property/${num}/nft/mint/verify`, {
       method: "POST",
       headers: {
         "x-api-key": `admin`,
@@ -97,7 +97,7 @@ class ManageNftApi {
   }
 
   async setOffer(num: number) {
-    const res = await fetch(`${this.url}/property/${num}/nft/list`, {
+    const res = await fetch(`${this.url}/property/${num}/nft/set_offer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -113,6 +113,64 @@ class ManageNftApi {
     const resJson = await res.json();
     console.log(resJson);
     return resJson;
+  }
+
+  async setOfferVerify(num: number, tx: FormData) {
+    const res = await fetch(
+      `${this.url}/property/${num}/nft/set_offer/verify`,
+      {
+        method: "POST",
+        headers: {
+          "x-api-key": `admin`,
+        },
+        body: tx,
+      }
+    );
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Error when getting image: ${errorText}`);
+    }
+
+    const { id } = await res.json();
+    // console.log(resJson);
+    return { id };
+  }
+
+  async approve(num: number) {
+    const res = await fetch(`${this.url}/property/${num}/nft/approve`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": `admin`,
+      },
+      // body
+    });
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Error when getting image: ${errorText}`);
+    }
+
+    const resJson = await res.json();
+    console.log(resJson);
+    return resJson;
+  }
+
+  async approveVerify(num: number, tx: FormData) {
+    const res = await fetch(`${this.url}/property/${num}/nft/approve/verify`, {
+      method: "POST",
+      headers: {
+        "x-api-key": `admin`,
+      },
+      body: tx,
+    });
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Error when approve verify: ${errorText}`);
+    }
+
+    const { id } = await res.json();
+    // console.log(resJson);
+    return { id };
   }
 }
 

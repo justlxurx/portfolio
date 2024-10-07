@@ -76,13 +76,20 @@ export const MainForm = ({ data }: { data: any }) => {
       setIsLoading((prevState) => !prevState);
       try {
         if (data.id) {
+          const val = Number(values.amount) * Math.pow(10, 18);
+          console.log("val is:" + val);
           const nft = await manageNftApi.getNft(data.id);
           await smarts?.realEstate.approve(
             smarts.marketplace.SMART_ADDRESS,
-            `${values.amount}`
+            `${val}`
           );
-
-          const b = smarts?.marketplace.buyNFT(nft.id, `${values.amount}`);
+          console.log("id: " + data.id);
+          console.log("amount: " + values.amount);
+          const b = smarts?.marketplace.buyNFT(
+            data.id,
+            `${values.amount}`,
+            "0xc3460e1dda5b67fb7d6d1f62516f73c0c14026cc"
+          );
 
           smarts?.realEstate
             .balanceOf(address!)

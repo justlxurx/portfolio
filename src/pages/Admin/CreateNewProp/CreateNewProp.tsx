@@ -1,8 +1,5 @@
 import s from "./CreateNewProp.module.scss";
-import {
-  useWeb3ModalProvider,
-  useWeb3ModalAccount,
-} from "@web3modal/ethers/react";
+import { useWeb3ModalProvider } from "@web3modal/ethers/react";
 import { ethers } from "ethers";
 import { Logo } from "../../../assets/icons/logo";
 import Input from "../../../features/Input2/Input";
@@ -26,7 +23,6 @@ import { manageNftApi } from "../../../api/nft/manageNft";
 import { useSmarts } from "../../../hooks/useSmart";
 
 export const CreateNewProp = () => {
-  const { address, isConnected } = useWeb3ModalAccount();
   const { walletProvider } = useWeb3ModalProvider();
   const { smarts } = useSmarts();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -119,7 +115,7 @@ export const CreateNewProp = () => {
       event?.preventDefault();
 
       const formattedValues = {
-        token_price: Number(values.nftPrice),
+        token_price: Number(values.nftPrice), // * Math.pow(10, 18),
         tokens_available: Number(values.nftQuantity),
         total_tokens: Number(values.nftQuantity),
 
@@ -167,7 +163,8 @@ export const CreateNewProp = () => {
         // const approve = await smarts?.nft.setApprovalForAll(
         //   smarts.marketplace.SMART_ADDRESS,
         //   true
-        // );
+        // );'
+        console.log("price:" + formik.values.nftPrice);
         setTimeout(() => navigate("/admin/properties"), 3000);
 
         console.log(result);
@@ -178,39 +175,12 @@ export const CreateNewProp = () => {
     },
   });
 
-  // const signTransaction = useCallback(
-  //   async (txData: any) => {
-  //     try {
-  //       const web3Provider = new ethers.BrowserProvider(walletProvider!);
-  //       const signer = web3Provider.getSigner();
-  //       const tx = {
-  //         to: txData.to,
-  //         nonce: parseInt(txData.nonce, 16),
-  //         gasLimit: txData.gas,
-  //         gasPrice: txData.gasPrice,
-  //         data: txData.input,
-  //         value: txData.value,
-  //         chainId: await web3Provider
-  //           .getNetwork()
-  //           .then((network) => network.chainId),
-  //       };
-
-  //       const transactionResponse = await (await signer).sendTransaction(tx);
-  //       console.log("Transaction sent:", transactionResponse);
-
-  //       // Ожидаем подтверждения
-  //       const receipt = await transactionResponse;
-  //       console.log("Transaction confirmed:", receipt);
-  //     } catch (error) {
-  //       console.error("Error signing transaction:", error);
-  //     }
-  //   },
-  //   [walletProvider]
-  // );
-
   const signTransaction = useCallback(
     async (txData: any): Promise<string | null> => {
       try {
+        if (!walletProvider) {
+          throw new Error("Wallet provider not found");
+        }
         const web3Provider = new ethers.BrowserProvider(walletProvider!);
         const signer = web3Provider.getSigner();
 
@@ -229,7 +199,7 @@ export const CreateNewProp = () => {
         const transactionResponse = await (await signer).sendTransaction(tx);
 
         console.log("Transaction sent:", transactionResponse);
-        console.log(transactionResponse.hash);
+        console.log(transactionResponse);
 
         return transactionResponse.hash; // Возвращаем хэш транзакции
       } catch (error) {
@@ -261,25 +231,43 @@ export const CreateNewProp = () => {
           }
         }
       }
-      // const create = await manageNftApi.mint(propertyId, data);
       const create = await manageNftApi.createNft(propertyId, data);
       console.log("create: ");
       console.log(create);
       const mint = await manageNftApi.mintNft(propertyId);
       console.log("mint: ");
       console.log(mint);
+
       if (mint) {
         const jsonData = atob(mint);
         const txData = JSON.parse(jsonData);
 
         const signature = await signTransaction(txData);
-        console.log("signature: ");
-        console.log(signature);
-        const formData = new FormData();
-        formData.append("signature", signature || "");
-        const send = await manageNftApi.sendMint(propertyId, formData);
-        console.log("send");
-        console.log(send);
+        console.log("signature: ", signature);
+
+        if (signature) {
+          const formData = new FormData();
+          formData.append("tx_hex", signature);
+
+          const provider = new ethers.BrowserProvider(walletProvider!);
+
+          // Ожидаем подтверждения транзакции
+          let receipt = null;
+          while (!receipt) {
+            console.log("Ожидание квитанции о транзакции...");
+            receipt = await provider.getTransactionReceipt(signature);
+
+            if (receipt) {
+              console.log("Квитанция о транзакции:", receipt);
+            } else {
+              await new Promise((resolve) => setTimeout(resolve, 5000)); // Ждем 5 секунд перед повторной проверкой
+            }
+          }
+
+          // Теперь транзакция подтверждена, и можно отправлять данные
+          const send = await manageNftApi.sendMint(propertyId, formData);
+          console.log("Результат отправки sendMint:", send);
+        }
       }
 
       // if (create.id) {
@@ -308,10 +296,6 @@ export const CreateNewProp = () => {
       //     console.error("Error in setOffer: ", offerError);
       //   }
       // }
-
-      const offer = await manageNftApi.setOffer(propertyId);
-      console.log("offer:");
-      console.log(offer);
     };
     fetchUploadImg();
   }, [propertyId]);
@@ -656,7 +640,7 @@ export const CreateNewProp = () => {
 
             <Input
               title="NFT Price:"
-              placeholder="NFT Price"
+              placeholder="100"
               type="text"
               name="nftPrice"
               // onChange={formik.handleChange}

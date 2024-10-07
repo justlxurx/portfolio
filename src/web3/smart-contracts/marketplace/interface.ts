@@ -18,7 +18,11 @@ export interface IMarketplaceSmart extends IMarketplaceProperties {
   supportsInterface(interfaceId: string): Promise<boolean>;
 
   // Write contracts
-  buyNFT(tokenId: string, amountToBuy: string): Promise<void>;
+  buyNFT(
+    tokenId: string,
+    amountToBuy: string,
+    _ownerOfNFT: string
+  ): Promise<void>;
   onERC1155BatchReceived(
     address1: string,
     address2: string,
