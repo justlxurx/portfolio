@@ -349,8 +349,12 @@ export const CreateNewProp = () => {
   const onDragEnd = ({ active, over }: DragEndEvent) => {
     if (active.id !== over?.id) {
       setFileList((prev) => {
-        const activeIndex = prev.findIndex((i) => i.uid === active.id);
-        const overIndex = prev.findIndex((i) => i.uid === over?.id);
+        const activeIndex = prev.findIndex(
+          (i) => i.uid === active.id && i.status === "done"
+        );
+        const overIndex = prev.findIndex(
+          (i) => i.uid === over?.id && i.status === "done"
+        );
         return arrayMove(prev, activeIndex, overIndex);
       });
     }

@@ -82,6 +82,13 @@ const UploadImg = ({
         strategy={verticalListSortingStrategy}
       >
         <Upload
+          beforeUpload={(file) => {
+            const isJPG = file.type === "image/jpeg";
+            if (!isJPG) {
+              console.error("You can only upload JPG file!");
+            }
+            return false;
+          }}
           onRemove={onRemove}
           fileList={fileList}
           onChange={onChange}
