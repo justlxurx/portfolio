@@ -8,7 +8,6 @@ import { managePropertyApi } from "../../../api/property/manageProperty";
 import { useState, useEffect } from "react";
 import { sortProperties } from "../../../utils/sort";
 import { characacteristicsApi } from "../../../api/property/manageCharacteristics";
-import { DistributeRewards } from "./DistributeRewards/DistributeRewards";
 
 export const AdminProperties = () => {
   const [val, setVal] = useState("");

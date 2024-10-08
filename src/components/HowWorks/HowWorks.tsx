@@ -114,6 +114,11 @@ export const HowWorks = () => {
           </div>
         ))}
       </div>
+      <div className={s.bottomWrap}>
+        <h1 className={s.bottomWrap__title}>
+          Read about PassiveMoney.com in the news!
+        </h1>
+      </div>
     </div>
   );
 };
