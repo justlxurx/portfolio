@@ -9,4 +9,6 @@ devpactice - It's a simple project when I created a landing for educational plat
 
 qazdev - A website with many pages, when I used Next.js. 
 
+Real estate - a blockchain project with admin page where I have created landing where is displayed properties to buy and with functionalities as login with metamask. In admin you can create new properties. 
+
 
